@@ -1,4 +1,7 @@
 {
   "name": "growthforge-website",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "echo no build step needed"
+  }
 }
