@@ -49,8 +49,12 @@ footer p{color:#475569}
 .price{font-size:32px;font-weight:800;margin:10px 0}
 .price-period{font-size:14px;color:#64748b}
 .price span{font-size:18px;font-weight:400}
+.price .price-note{font-size:18px;font-weight:400}
 .pricing-detailed{max-width:800px;margin:0 auto}
 .price-header{margin-bottom:20px}
+.pricing-list,.partnership-list{margin:20px 0 0;padding-left:20px;line-height:1.8}
+.partnership-options{align-items:start}
+.partnership-next-step{display:flex;flex-direction:column;justify-content:center}
 
 /* FAQ Styles */
 .faq{display:grid;gap:20px}
