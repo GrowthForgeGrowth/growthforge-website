@@ -1,0 +1,87 @@
+name: New Trend Blog Request
+description: >
+  Submit a trending keyword or topic. A draft blog post will be automatically
+  generated and opened as a pull request for editorial review.
+  Apply the label **trend-post** (added automatically by this template).
+title: "[Trend] "
+labels:
+  - trend-post
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## How this works
+        1. Fill in all required fields below.
+        2. Submit the issue — the `trend-post` label is applied automatically.
+        3. A GitHub Action generates a Markdown draft and opens a PR within minutes.
+        4. Review the draft PR, complete any `<!-- TODO -->` sections, and merge when ready.
+
+        > **Note:** Only one draft PR can be open at a time. If the automation skips your request,
+        > check for an existing open [trend-post PR](../../pulls?q=is%3Apr+is%3Aopen+label%3Atrend-post).
+
+  - type: input
+    id: keyword
+    attributes:
+      label: Keyword / Topic
+      description: The primary keyword or topic this post should target.
+      placeholder: "e.g. AI SEO for B2B SaaS startups"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: intent
+    attributes:
+      label: Search Intent
+      description: What stage of the buyer journey does this post target?
+      options:
+        - TOFU — Top of Funnel (awareness, education)
+        - MOFU — Middle of Funnel (consideration, evaluation)
+        - BOFU — Bottom of Funnel (decision, conversion)
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Proposed Target Slug
+      description: >
+        The URL path for this post (no leading slash, no .html extension).
+        Use lowercase letters, numbers, and hyphens only.
+      placeholder: "ai-seo-for-b2b-saas"
+    validations:
+      required: true
+
+  - type: textarea
+    id: internal_links
+    attributes:
+      label: Internal Links to Include
+      description: >
+        List internal paths to weave into the post (one per line).
+        Use clean paths consistent with site conventions (e.g. /about, /pricing).
+      placeholder: |
+        /geo-generative-engine-optimization
+        /ai-seo-for-b2b-saas
+        /pricing
+        /discovery
+    validations:
+      required: false
+
+  - type: input
+    id: cta
+    attributes:
+      label: Call to Action (CTA)
+      description: The primary action you want readers to take at the end of the post.
+      placeholder: "Schedule a free Growth Discovery Session"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes / Context
+      description: >
+        Optional. Include any angle, competitor context, recent news hook,
+        target audience nuance, or brand voice guidance.
+      placeholder: "Focus on mid-market SaaS (50-200 employees). Avoid comparing to specific agency names."
+    validations:
+      required: false
