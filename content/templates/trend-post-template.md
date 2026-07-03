@@ -9,7 +9,7 @@ tags:
 slug: "{{SLUG}}"
 intent: "{{INTENT}}"
 draft: true
-canonical_url: "https://www.growthforge-ai.com/{{SLUG}}"
+canonical_url: "{{SITE_URL}}/{{SLUG}}"
 source_issue: "{{ISSUE_URL}}"
 ---
 

@@ -1,11 +1,14 @@
 name: Trend Post Generator
 
-# Trigger when an issue is opened with, or has the label added of, "trend-post".
+# Trigger only when the "trend-post" label is explicitly added to an issue.
+# GitHub Issue Forms apply labels via the "labeled" event (fired after the
+# "opened" event), so relying solely on "labeled" is the most reliable trigger
+# for both form submissions and programmatic issue creation.
 on:
   issues:
-    types: [opened, labeled]
+    types: [labeled]
 
-# Prevent duplicate runs for the same issue (e.g. opened + labeled in quick succession).
+# Prevent duplicate runs for the same issue if it is labeled multiple times.
 concurrency:
   group: trend-post-issue-${{ github.event.issue.number }}
   cancel-in-progress: true
@@ -15,10 +18,8 @@ jobs:
     name: Generate Blog Draft
     runs-on: ubuntu-latest
 
-    # Only proceed when the trend-post label is the active trigger.
-    if: |
-      (github.event.action == 'labeled' && github.event.label.name == 'trend-post') ||
-      (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'trend-post'))
+    # Only proceed when the label that was just added is "trend-post".
+    if: github.event.label.name == 'trend-post'
 
     permissions:
       contents: write        # create branch + commit
@@ -27,6 +28,9 @@ jobs:
 
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Site URL used to build canonical URLs in generated drafts.
+      # Override with a repository variable (Settings → Variables) if needed.
+      SITE_URL: ${{ vars.SITE_URL || 'https://www.growthforge-ai.com' }}
 
     steps:
       # ── 1. Checkout ──────────────────────────────────────────────────────────
@@ -56,7 +60,7 @@ jobs:
             --jq length \
             --repo "${{ github.repository }}")
 
-          echo "open_trend_post_prs=$OPEN_PRS"
+          echo "::debug::open_trend_post_prs=$OPEN_PRS"
           echo "open_prs=$OPEN_PRS" >> "$GITHUB_OUTPUT"
 
           if [ "$OPEN_PRS" -ge 1 ]; then
@@ -125,7 +129,7 @@ jobs:
               f.write(f'branch={branch}\n')
               f.write(f'filename={filename}\n')
 
-          print(f"keyword={keyword!r}  slug={slug!r}  branch={branch!r}")
+          print(f"::debug::keyword={keyword!r}  slug={slug!r}  branch={branch!r}")
           PYEOF
 
       # ── 5. Blocked-topic check ────────────────────────────────────────────────
@@ -169,6 +173,7 @@ jobs:
           FILENAME:       ${{ steps.parse.outputs.filename }}
           ISSUE_NUMBER:   ${{ github.event.issue.number }}
           ISSUE_URL:      ${{ github.event.issue.html_url }}
+          SITE_URL:       ${{ env.SITE_URL }}
         run: |
           python3 << 'PYEOF'
           import os, datetime
@@ -182,6 +187,7 @@ jobs:
           filename       = os.environ['FILENAME']
           issue_number   = os.environ['ISSUE_NUMBER']
           issue_url      = os.environ['ISSUE_URL']
+          site_url       = os.environ.get('SITE_URL', 'https://www.growthforge-ai.com').rstrip('/')
           today          = datetime.date.today().isoformat()
 
           # Format internal links as a Markdown list
@@ -206,6 +212,7 @@ jobs:
               '{{NOTES}}':          notes,
               '{{ISSUE_NUMBER}}':   issue_number,
               '{{ISSUE_URL}}':      issue_url,
+              '{{SITE_URL}}':       site_url,
           }
           for placeholder, value in replacements.items():
               draft = draft.replace(placeholder, value)
@@ -214,7 +221,7 @@ jobs:
           with open(filename, 'w') as f:
               f.write(draft)
 
-          print(f"Draft written to: {filename}")
+          print(f"::notice::Draft written to: {filename}")
           PYEOF
 
       # ── 7. Create branch, commit, push, and open draft PR ────────────────────
@@ -293,7 +300,7 @@ jobs:
 
           with open('/tmp/pr-body.md', 'w') as fh:
               fh.write(body)
-          print("PR body written.")
+          print("::debug::PR body written.")
           PYEOF
 
           PR_URL=$(gh pr create \
@@ -306,7 +313,7 @@ jobs:
             --draft \
             --repo "${{ github.repository }}")
 
-          echo "Created PR: $PR_URL"
+          echo "::notice::Created PR: $PR_URL"
 
           # Post a helpful comment on the originating issue
           gh issue comment "$ISSUE_NUMBER" \

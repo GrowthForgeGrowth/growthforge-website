@@ -90,7 +90,7 @@ No secrets or external API keys are required — the workflow uses the built-in 
 | Guardrail | Behaviour |
 |-----------|-----------|
 | **No direct publish** | Workflow always creates a PR; never commits to `main` |
-| **Rate limit** | Maximum **1 open trend-post PR** at a time; additional requests receive an issue comment explaining how to proceed |
+| **Rate limit** | Maximum **1 open trend-post PR** at a time; the issue stays open and receives a comment explaining how to re-trigger once the existing PR is merged or closed (re-apply the `trend-post` label) |
 | **Blocked topics** | Keywords matching `.github/blocked-topics.txt` are rejected with an explanatory comment |
 | **Draft PR** | PRs are opened as GitHub **draft PRs** — they cannot be accidentally merged |
 
