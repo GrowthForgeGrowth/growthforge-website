@@ -2,6 +2,7 @@
   "name": "growthforge-website",
   "private": true,
   "scripts": {
-    "build": "echo no build step needed"
+    "build": "echo no build step needed",
+    "test": "node test-url-normalization.js"
   }
 }
