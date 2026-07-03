@@ -6,6 +6,8 @@ header{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(8px);bord
 nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
 a{text-decoration:none;color:#0f172a}
 .logo{font:800 30px Manrope,sans-serif}.logo span{color:#2563eb}
+header .logo{display:inline-flex;align-items:center;flex-shrink:0;line-height:0}
+header .logo img{display:block;height:64px;width:auto;max-width:220px;object-fit:contain}
 .btn{background:#2563eb;color:#fff;padding:12px 20px;border-radius:10px;display:inline-block;transition:background 0.2s}
 .btn:hover{background:#1d4ed8}
 .ghost{padding:12px 20px;color:#2563eb;transition:color 0.2s}
@@ -103,6 +105,7 @@ h1{font-size:42px}
 .steps{grid-template-columns:1fr 1fr}
 .nav{flex-direction:column;gap:10px}
 nav{flex-direction:column;gap:15px;width:100%}
+header .logo img{height:52px;max-width:70vw}
 .nav a.btn{width:100%;text-align:center}
 .grid{grid-template-columns:1fr}
 }
