@@ -1,0 +1,33 @@
+# Blocked Topics — Trend Post Automation
+#
+# Add one keyword/phrase per line (case-insensitive partial match).
+# Any trend-post issue whose keyword matches a line here will be blocked
+# from automatic draft generation. The issue will receive a comment explaining
+# the block, and the request must be handled manually.
+#
+# Lines starting with # are comments and are ignored.
+# Blank lines are ignored.
+
+# ── Regulated / liability-risk content ──────────────────────────────────────
+financial advice
+investment advice
+legal advice
+medical advice
+health claim
+cure
+diagnose
+treat disease
+
+# ── Competitor brand names (avoid generating posts about competitors) ────────
+# Add specific competitor names below as needed:
+# competitor-name-here
+
+# ── Sensitive / reputational topics ─────────────────────────────────────────
+lawsuit
+litigation
+scandal
+
+# ── Compliance / YMYL areas ─────────────────────────────────────────────────
+cryptocurrency investment
+crypto trading
+forex trading

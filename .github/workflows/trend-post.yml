@@ -1,0 +1,364 @@
+name: Trend Post Generator
+
+# Trigger when an issue is opened with, or has the label added of, "trend-post".
+on:
+  issues:
+    types: [opened, labeled]
+
+# Prevent duplicate runs for the same issue (e.g. opened + labeled in quick succession).
+concurrency:
+  group: trend-post-issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  generate-draft:
+    name: Generate Blog Draft
+    runs-on: ubuntu-latest
+
+    # Only proceed when the trend-post label is the active trigger.
+    if: |
+      (github.event.action == 'labeled' && github.event.label.name == 'trend-post') ||
+      (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'trend-post'))
+
+    permissions:
+      contents: write        # create branch + commit
+      pull-requests: write   # open PR
+      issues: write          # post comment on issue
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Ensure required labels exist ──────────────────────────────────────
+      - name: Ensure labels exist
+        run: |
+          gh label create "trend-post" \
+            --color "0075ca" \
+            --description "Trend-topic blog post (auto-generated draft)" \
+            --repo "${{ github.repository }}" 2>/dev/null || true
+          gh label create "content-draft" \
+            --color "e4e669" \
+            --description "Auto-generated content draft awaiting editorial review" \
+            --repo "${{ github.repository }}" 2>/dev/null || true
+
+      # ── 3. Rate-limit check (max 1 open trend-post PR at a time) ─────────────
+      - name: Rate-limit check
+        id: rate_limit
+        run: |
+          OPEN_PRS=$(gh pr list \
+            --label "trend-post" \
+            --state open \
+            --json number \
+            --jq length \
+            --repo "${{ github.repository }}")
+
+          echo "open_trend_post_prs=$OPEN_PRS"
+          echo "open_prs=$OPEN_PRS" >> "$GITHUB_OUTPUT"
+
+          if [ "$OPEN_PRS" -ge 1 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::Rate-limit: $OPEN_PRS open trend-post PR(s) already exist. Skipping draft generation."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── 4. Parse issue form body ──────────────────────────────────────────────
+      - name: Parse issue body
+        id: parse
+        if: steps.rate_limit.outputs.skip == 'false'
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python3 << 'PYEOF'
+          import os, re
+
+          body    = os.environ.get('ISSUE_BODY', '')
+          number  = os.environ.get('ISSUE_NUMBER', '0')
+          out     = os.environ.get('GITHUB_OUTPUT', '')
+
+          def section(text, heading):
+              """Extract the first non-empty block after a ### heading."""
+              pat = rf'### {re.escape(heading)}\s*\n+(.*?)(?=\n###|\Z)'
+              m = re.search(pat, text, re.DOTALL)
+              if m:
+                  val = m.group(1).strip()
+                  # GitHub issue forms use "_No response_" for empty optional fields
+                  return '' if val in ('_No response_', 'N/A', 'n/a', '-') else val
+              return ''
+
+          keyword        = section(body, 'Keyword / Topic')
+          intent         = section(body, 'Search Intent')
+          raw_slug       = section(body, 'Proposed Target Slug')
+          internal_links = section(body, 'Internal Links to Include')
+          cta            = section(body, 'Call to Action (CTA)')
+          notes          = section(body, 'Additional Notes / Context')
+
+          # Sanitise slug: lowercase, hyphens only, no leading/trailing hyphens
+          base = raw_slug or keyword
+          slug = re.sub(r'[^a-z0-9\-]', '',
+                        base.lower().replace(' ', '-').replace('_', '-'))
+          slug = re.sub(r'-+', '-', slug).strip('-')[:80]
+          if not slug:
+              slug = f"trend-post-{number}"
+
+          branch   = f"trend-post/{number}-{slug}"
+          filename = f"content/drafts/{slug}.md"
+
+          # Write multiline-safe outputs using heredoc syntax
+          with open(out, 'a') as f:
+              for key, val in [
+                  ('keyword',        keyword),
+                  ('intent',         intent),
+                  ('internal_links', internal_links),
+                  ('cta',            cta),
+                  ('notes',          notes),
+              ]:
+                  # Use a unique EOF marker per field to avoid collisions
+                  delim = f'EOF_{key.upper()}'
+                  f.write(f'{key}<<{delim}\n{val}\n{delim}\n')
+              f.write(f'slug={slug}\n')
+              f.write(f'branch={branch}\n')
+              f.write(f'filename={filename}\n')
+
+          print(f"keyword={keyword!r}  slug={slug!r}  branch={branch!r}")
+          PYEOF
+
+      # ── 5. Blocked-topic check ────────────────────────────────────────────────
+      - name: Check blocked topics
+        id: blocked
+        if: steps.rate_limit.outputs.skip == 'false'
+        env:
+          KEYWORD: ${{ steps.parse.outputs.keyword }}
+        run: |
+          BLOCKED=false
+          MATCHED=""
+          if [ -f ".github/blocked-topics.txt" ]; then
+            while IFS= read -r topic || [ -n "$topic" ]; do
+              # Skip comments and blank lines
+              [[ "$topic" =~ ^[[:space:]]*# ]] && continue
+              [[ -z "${topic// }" ]]           && continue
+              if echo "$KEYWORD" | grep -qiF "$topic"; then
+                BLOCKED=true
+                MATCHED="$topic"
+                echo "::warning::Keyword '$KEYWORD' matches blocked topic: '$topic'"
+                break
+              fi
+            done < ".github/blocked-topics.txt"
+          fi
+          echo "blocked=$BLOCKED"   >> "$GITHUB_OUTPUT"
+          echo "matched=$MATCHED"   >> "$GITHUB_OUTPUT"
+
+      # ── 6. Generate Markdown draft from template ──────────────────────────────
+      - name: Generate blog draft
+        id: generate
+        if: |
+          steps.rate_limit.outputs.skip == 'false' &&
+          steps.blocked.outputs.blocked == 'false'
+        env:
+          KEYWORD:        ${{ steps.parse.outputs.keyword }}
+          INTENT:         ${{ steps.parse.outputs.intent }}
+          SLUG:           ${{ steps.parse.outputs.slug }}
+          INTERNAL_LINKS: ${{ steps.parse.outputs.internal_links }}
+          CTA:            ${{ steps.parse.outputs.cta }}
+          NOTES:          ${{ steps.parse.outputs.notes }}
+          FILENAME:       ${{ steps.parse.outputs.filename }}
+          ISSUE_NUMBER:   ${{ github.event.issue.number }}
+          ISSUE_URL:      ${{ github.event.issue.html_url }}
+        run: |
+          python3 << 'PYEOF'
+          import os, datetime
+
+          keyword        = os.environ['KEYWORD']
+          intent         = os.environ['INTENT']
+          slug           = os.environ['SLUG']
+          internal_links = os.environ['INTERNAL_LINKS']
+          cta            = os.environ.get('CTA') or 'Schedule a free Growth Discovery Session'
+          notes          = os.environ.get('NOTES') or '_No additional context provided._'
+          filename       = os.environ['FILENAME']
+          issue_number   = os.environ['ISSUE_NUMBER']
+          issue_url      = os.environ['ISSUE_URL']
+          today          = datetime.date.today().isoformat()
+
+          # Format internal links as a Markdown list
+          raw_links = [l.strip().lstrip('-').strip()
+                       for l in internal_links.splitlines()
+                       if l.strip() and l.strip() not in ('_No response_', 'N/A')]
+          links_md = ('\n'.join(f'- [{l}]({l})' for l in raw_links)
+                      if raw_links else '- _Add internal links here_')
+
+          # Read template
+          with open('content/templates/trend-post-template.md') as f:
+              draft = f.read()
+
+          # Substitute all placeholders
+          replacements = {
+              '{{KEYWORD}}':        keyword,
+              '{{SLUG}}':           slug,
+              '{{DATE}}':           today,
+              '{{INTENT}}':         intent,
+              '{{CTA}}':            cta,
+              '{{INTERNAL_LINKS}}': links_md,
+              '{{NOTES}}':          notes,
+              '{{ISSUE_NUMBER}}':   issue_number,
+              '{{ISSUE_URL}}':      issue_url,
+          }
+          for placeholder, value in replacements.items():
+              draft = draft.replace(placeholder, value)
+
+          os.makedirs(os.path.dirname(filename), exist_ok=True)
+          with open(filename, 'w') as f:
+              f.write(draft)
+
+          print(f"Draft written to: {filename}")
+          PYEOF
+
+      # ── 7. Create branch, commit, push, and open draft PR ────────────────────
+      - name: Create branch and open PR
+        if: |
+          steps.rate_limit.outputs.skip == 'false' &&
+          steps.blocked.outputs.blocked == 'false'
+        env:
+          KEYWORD:         ${{ steps.parse.outputs.keyword }}
+          SLUG:            ${{ steps.parse.outputs.slug }}
+          BRANCH:          ${{ steps.parse.outputs.branch }}
+          FILENAME:        ${{ steps.parse.outputs.filename }}
+          INTENT:          ${{ steps.parse.outputs.intent }}
+          ISSUE_NUMBER:    ${{ github.event.issue.number }}
+          ISSUE_URL:       ${{ github.event.issue.html_url }}
+          DEFAULT_BRANCH:  ${{ github.event.repository.default_branch }}
+        run: |
+          # Guard: skip if the branch already exists remotely (idempotency)
+          if git ls-remote --heads origin "$BRANCH" | grep -q .; then
+            echo "::warning::Branch '$BRANCH' already exists. A PR may already have been generated for issue #$ISSUE_NUMBER."
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+          git add "$FILENAME"
+          git commit -m "draft: add trend post '${KEYWORD}' (resolves #${ISSUE_NUMBER})"
+          git push origin "$BRANCH"
+
+          # Write PR body to a temp file (avoids shell-escaping issues)
+          python3 - << 'PYEOF'
+          import os
+
+          keyword      = os.environ['KEYWORD']
+          intent       = os.environ['INTENT']
+          slug         = os.environ['SLUG']
+          filename     = os.environ['FILENAME']
+          issue_number = os.environ['ISSUE_NUMBER']
+          issue_url    = os.environ['ISSUE_URL']
+
+          body = f"""\
+          ## 🤖 Auto-generated Blog Draft
+
+          This PR was automatically created from issue #{issue_number} by the \
+          [Trend Post Generator](../../actions/workflows/trend-post.yml) workflow.
+
+          | Field | Value |
+          |-------|-------|
+          | **Keyword** | {keyword} |
+          | **Search Intent** | {intent} |
+          | **Slug** | `/{slug}` |
+          | **Draft file** | `{filename}` |
+          | **Source issue** | {issue_url} |
+
+          ## What to do next
+
+          1. Open `{filename}` and complete **all** `<!-- TODO -->` sections.
+          2. Verify every internal link resolves to a live `200` page.
+          3. Write the meta description (150–160 chars) in the frontmatter.
+          4. Convert the draft to an HTML file (`{slug}.html`) following site conventions.
+          5. Add the HTML file to this PR, then complete the editorial QA checklist.
+          6. Request review from an editor; merge only after approval.
+
+          > ⚠️ **This is a draft PR. Do not merge directly to `{os.environ["DEFAULT_BRANCH"]}` \
+          without completing the checklist and obtaining human approval.**
+
+          Closes #{issue_number}
+          """
+          # De-indent (textwrap.dedent equivalent for f-strings)
+          lines = body.splitlines()
+          if lines:
+              indent = len(lines[0]) - len(lines[0].lstrip())
+              body = '\n'.join(l[indent:] if len(l) > indent else l for l in lines)
+
+          with open('/tmp/pr-body.md', 'w') as fh:
+              fh.write(body)
+          print("PR body written.")
+          PYEOF
+
+          PR_URL=$(gh pr create \
+            --title "Draft: ${KEYWORD}" \
+            --body-file /tmp/pr-body.md \
+            --label "trend-post" \
+            --label "content-draft" \
+            --head "$BRANCH" \
+            --base "$DEFAULT_BRANCH" \
+            --draft \
+            --repo "${{ github.repository }}")
+
+          echo "Created PR: $PR_URL"
+
+          # Post a helpful comment on the originating issue
+          gh issue comment "$ISSUE_NUMBER" \
+            --repo "${{ github.repository }}" \
+            --body "🤖 **Blog draft generated!**
+
+          A draft PR has been opened for your trend topic: $PR_URL
+
+          **Next steps:**
+          1. Open \`$FILENAME\` in the PR and complete all \`<!-- TODO -->\` sections.
+          2. Verify internal links and convert to HTML when ready.
+          3. Request editorial review before merging.
+
+          > The PR is marked as a **draft** — it cannot be merged until converted to ready."
+
+      # ── 8. Comment when skipped due to rate limit ─────────────────────────────
+      - name: Comment — rate limit skip
+        if: steps.rate_limit.outputs.skip == 'true'
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          OPEN_PRS:     ${{ steps.rate_limit.outputs.open_prs }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" \
+            --repo "${{ github.repository }}" \
+            --body "⏱️ **Rate limit — draft generation skipped**
+
+          There is already **$OPEN_PRS** open trend-post PR(s). \
+          To keep the review queue manageable, only one draft PR can be open at a time.
+
+          **What to do:**
+          - Review and merge (or close) the existing open PR first:
+            [View open trend-post PRs](../../pulls?q=is%3Apr+is%3Aopen+label%3Atrend-post)
+          - Once it is merged or closed, re-apply the \`trend-post\` label to this issue \
+          to trigger generation again."
+
+      # ── 9. Comment when blocked by topic filter ───────────────────────────────
+      - name: Comment — blocked topic
+        if: |
+          steps.rate_limit.outputs.skip == 'false' &&
+          steps.blocked.outputs.blocked == 'true'
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" \
+            --repo "${{ github.repository }}" \
+            --body "🚫 **Blocked topic — draft generation skipped**
+
+          The submitted keyword matches a topic on the blocked list \
+          (\`.github/blocked-topics.txt\`). Automatic draft generation has been \
+          prevented to avoid compliance or reputational risk.
+
+          **What to do:**
+          - Review the keyword and adjust it to avoid the blocked phrase.
+          - Or contact the site administrator to review the blocked-topics list.
+          - This issue must be handled **manually** if it is still required."
