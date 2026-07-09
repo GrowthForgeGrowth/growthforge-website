@@ -1,5 +1,8 @@
 {
   "name": "wispy-bar-ed35",
   "compatibility_date": "2026-07-02",
-  "pages_build_output_dir": "."
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "single-page-application"
+  }
 }
