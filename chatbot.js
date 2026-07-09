@@ -194,7 +194,9 @@
         <header class="gf-chatbot-header">
           <p><strong>GrowthForge Assistant</strong><span>Ask about services, pricing, or next steps.</span></p>
           <div class="gf-chatbot-header-actions">
-            <button type="button" class="gf-chatbot-minimize" aria-label="Minimize chat assistant">Minimize</button>
+            <button type="button" class="gf-chatbot-minimize" aria-label="Minimize chat assistant" title="Minimize">
+              <span class="gf-chatbot-minimize-icon" aria-hidden="true">&minus;</span>
+            </button>
           </div>
         </header>
         <div class="gf-chatbot-messages" aria-live="polite"></div>
