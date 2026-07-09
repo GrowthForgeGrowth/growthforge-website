@@ -196,7 +196,6 @@
           <div class="gf-chatbot-header-actions">
             <button type="button" class="gf-chatbot-minimize" aria-label="Minimize chat assistant" title="Minimize">
               <span class="gf-chatbot-minimize-icon" aria-hidden="true">−</span>
-              <span class="gf-chatbot-visually-hidden">Minimize</span>
             </button>
           </div>
         </header>
