@@ -129,8 +129,9 @@ nav{flex-direction:column;gap:15px;width:100%}
 .gf-chatbot-header p{margin:0;font-size:14px;line-height:1.4}
 .gf-chatbot-header span{display:block;color:#cbd5e1;font-size:12px;margin-top:4px}
 .gf-chatbot-header-actions{display:flex;align-items:center}
-.gf-chatbot-minimize{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 10px;font-size:12px;line-height:1.2;font-weight:600;cursor:pointer}
+.gf-chatbot-minimize{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:999px;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
 .gf-chatbot-minimize:hover{background:rgba(255,255,255,0.2)}
+.gf-chatbot-minimize-icon{font-size:18px;line-height:1;font-weight:700;transform:translateY(-1px)}
 .gf-chatbot-messages{padding:14px;display:grid;gap:10px;overflow:auto;background:#f8fafc}
 .gf-chatbot-message{max-width:92%;padding:10px 12px;border-radius:12px;font-size:14px;line-height:1.45}
 .gf-chatbot-message p{margin:0}
