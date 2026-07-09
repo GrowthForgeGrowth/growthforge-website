@@ -186,11 +186,16 @@
     var root = document.createElement('div');
     root.className = 'gf-chatbot';
     root.innerHTML = `
-      <button type="button" class="gf-chatbot-launcher" aria-label="Open GrowthForge chat assistant" aria-expanded="false" aria-controls="gf-chatbot-panel">Chat</button>
+      <button type="button" class="gf-chatbot-launcher" aria-label="Open GrowthForge chat assistant" aria-expanded="false" aria-controls="gf-chatbot-panel">
+        <span class="gf-chatbot-launcher-label">Chat with GrowthForge</span>
+        <span class="gf-chatbot-launcher-hint">Open assistant</span>
+      </button>
       <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="GrowthForge chat assistant" hidden>
         <header class="gf-chatbot-header">
           <p><strong>GrowthForge Assistant</strong><span>Ask about services, pricing, or next steps.</span></p>
-          <button type="button" class="gf-chatbot-close" aria-label="Close chat assistant">×</button>
+          <div class="gf-chatbot-header-actions">
+            <button type="button" class="gf-chatbot-minimize" aria-label="Minimize chat assistant">Minimize</button>
+          </div>
         </header>
         <div class="gf-chatbot-messages" aria-live="polite"></div>
         <div class="gf-chatbot-quick-actions" aria-label="Quick actions"></div>
@@ -204,8 +209,9 @@
     document.body.appendChild(root);
 
     var launcher = root.querySelector('.gf-chatbot-launcher');
+    var launcherHint = root.querySelector('.gf-chatbot-launcher-hint');
     var panel = root.querySelector('.gf-chatbot-panel');
-    var closeButton = root.querySelector('.gf-chatbot-close');
+    var minimizeButton = root.querySelector('.gf-chatbot-minimize');
     var messages = root.querySelector('.gf-chatbot-messages');
     var quickActionsContainer = root.querySelector('.gf-chatbot-quick-actions');
     var form = root.querySelector('.gf-chatbot-form');
@@ -225,15 +231,22 @@
       quickActionsContainer.appendChild(button);
     });
 
+    function setChatState(isOpen) {
+      root.setAttribute('data-state', isOpen ? 'open' : 'minimized');
+      launcher.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      launcher.setAttribute('aria-label', isOpen ? 'GrowthForge chat assistant is open' : 'Open GrowthForge chat assistant');
+      launcherHint.textContent = isOpen ? 'Assistant open' : 'Reopen assistant';
+    }
+
     function openPanel() {
       panel.hidden = false;
-      launcher.setAttribute('aria-expanded', 'true');
+      setChatState(true);
       input.focus();
     }
 
     function closePanel() {
       panel.hidden = true;
-      launcher.setAttribute('aria-expanded', 'false');
+      setChatState(false);
       launcher.focus();
     }
 
@@ -241,11 +254,11 @@
       if (panel.hidden) {
         openPanel();
       } else {
-        closePanel();
+        input.focus();
       }
     });
 
-    closeButton.addEventListener('click', closePanel);
+    minimizeButton.addEventListener('click', closePanel);
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -265,6 +278,8 @@
         closePanel();
       }
     });
+
+    setChatState(false);
   }
 
   if (document.readyState === 'loading') {
