@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
+# AI content usage preference
+ai-train: no
+
+# Block selected AI/extended crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
 Sitemap: https://www.growthforge-ai.com/sitemap.xml
