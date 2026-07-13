@@ -402,14 +402,35 @@ LinkedIn
 </footer>
 
 <script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  alert('Thank you! We\'ll respond within 24 hours.');
-  this.reset();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch('https://growthforgegrowth.app.n8n.cloud/webhook/5cf6247d-349f-4bc1-8042-e076c16145e8', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      throw new Error('Submission failed.');
+    }
+
+    alert("Thank you! We've received your message and will respond within 24 hours.");
+    form.reset();
+
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please try again or email charlie@growthforge-ai.com.");
+  }
 });
 </script>
 
 <script src="/chatbot.js"></script>
-
-</body>
-</html>
