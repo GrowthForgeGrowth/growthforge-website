@@ -1,6 +1,6 @@
 # AI Visibility Policy
 
-Last updated: 2026-07-09
+Last updated: 2026-07-14
 
 GrowthForge uses crawler directives to balance discoverability with content protection.
 
@@ -9,9 +9,9 @@ GrowthForge uses crawler directives to balance discoverability with content prot
 - Search engine indexing by standard search crawlers.
 - Public access to website pages for normal browsing.
 
-## Restricted
+## Allowed
 
-- AI training usage preference is set to `ai-train: no`.
+- AI training usage preference is set to `ai-train: yes`.
 - The following AI-related crawlers are disallowed in `robots.txt`:
   - GPTBot
   - Google-Extended
