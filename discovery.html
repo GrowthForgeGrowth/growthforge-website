@@ -531,30 +531,67 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
         startDate: formData.get("start-date")
     };
 
+   document.getElementById("discovery-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const submitButton = this.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+
     try {
-    const response = await fetch(
-        "https://growthforgegrowth.app.n8n.cloud/webhook/acf4be7e-454b-448e-a6be-276be9e28111",
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+        const formData = new FormData(this);
+
+        const services = formData.getAll("services");
+
+        const data = {
+            company: formData.get("company"),
+            name: formData.get("name"),
+            email: formData.get("email"),
+            website: formData.get("website"),
+            industry: formData.get("industry"),
+            employees: formData.get("employees"),
+            revenue: formData.get("revenue"),
+            challenge: formData.get("challenge"),
+            services: services,
+            budget: formData.get("budget"),
+            startDate: formData.get("start-date")
+        };
+
+        const response = await fetch(
+            "https://growthforgegrowth.app.n8n.cloud/webhook/acf4be7e-454b-448e-a6be-276be9e28111",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
         }
-    );
 
-    alert("HTTP Status: " + response.status);
+        const result = await response.json();
 
-    const text = await response.text();
+        console.log("Webhook response:", result);
 
-    alert(text);
+        // Handle object or array response
+        const lead = Array.isArray(result) ? result[0] : result;
 
-} catch (error) {
-    console.error(error);
-    alert(error.message);
+        if (!lead.property_payment_url) {
+            throw new Error("Payment URL was not returned by the webhook.");
+        }
 
-    submitButton.disabled = false;
-    submitButton.textContent = "Purchase Executive Growth Audit";
-}
+        // Redirect to PayMongo
+        window.location.assign(lead.property_payment_url);
+
+    } catch (error) {
+        console.error(error);
+        alert(error.message);
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Purchase Executive Growth Audit";
+    }
 });
 </script>
