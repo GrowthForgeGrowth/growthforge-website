@@ -511,37 +511,8 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
     submitButton.disabled = true;
     submitButton.textContent = "Submitting...";
 
-    const formData = new FormData(this);
-
-    // Handle multiple checkboxes
-    const services = [];
-    formData.getAll("services").forEach(service => services.push(service));
-
-    const data = {
-        company: formData.get("company"),
-        name: formData.get("name"),
-        email: formData.get("email"),
-        website: formData.get("website"),
-        industry: formData.get("industry"),
-        employees: formData.get("employees"),
-        revenue: formData.get("revenue"),
-        challenge: formData.get("challenge"),
-        services: services,
-        budget: formData.get("budget"),
-        startDate: formData.get("start-date")
-    };
-
-   document.getElementById("discovery-form").addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const submitButton = this.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
-
     try {
         const formData = new FormData(this);
-
-        const services = formData.getAll("services");
 
         const data = {
             company: formData.get("company"),
@@ -552,7 +523,7 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
             employees: formData.get("employees"),
             revenue: formData.get("revenue"),
             challenge: formData.get("challenge"),
-            services: services,
+            services: formData.getAll("services"),
             budget: formData.get("budget"),
             startDate: formData.get("start-date")
         };
@@ -574,17 +545,13 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
 
         const result = await response.json();
 
-        console.log("Webhook response:", result);
-
-        // Handle object or array response
         const lead = Array.isArray(result) ? result[0] : result;
 
         if (!lead.property_payment_url) {
-            throw new Error("Payment URL was not returned by the webhook.");
+            throw new Error("Payment URL was not returned.");
         }
 
-        // Redirect to PayMongo
-        window.location.assign(lead.property_payment_url);
+        window.location.href = lead.property_payment_url;
 
     } catch (error) {
         console.error(error);
