@@ -424,3 +424,66 @@ nav{flex-direction:column;gap:15px;width:100%}
     font-size:13px;
     letter-spacing:.2px;
 }
+/* ================================= */
+/* Executive Growth Audit Preview */
+/* ================================= */
+
+.audit-preview{
+    padding:80px 0;
+}
+
+.audit-preview-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.audit-preview-text{
+    flex:1;
+}
+
+.audit-preview-text h2{
+    margin-top:15px;
+}
+
+.audit-preview-text p{
+    color:#475569;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.audit-preview-text ul{
+    margin:25px 0;
+    padding-left:20px;
+    color:#475569;
+    line-height:1.9;
+}
+
+.audit-preview-image{
+    flex:0.8;
+    display:flex;
+    justify-content:center;
+}
+
+.audit-preview-image img{
+    width:100%;
+    max-width:380px;
+    height:auto;
+    border-radius:20px;
+    box-shadow:0 30px 80px rgba(15,23,42,.25);
+}
+
+
+@media(max-width:800px){
+
+.audit-preview-container{
+    flex-direction:column;
+    gap:40px;
+}
+
+.audit-preview-image img{
+    max-width:320px;
+}
+
+}
