@@ -1,16 +1,23 @@
 (function () {
 
   var quickActions = [
-    { label: 'AI SEO / GEO', query: 'Tell me about AI SEO and GEO' },
-    { label: 'Google Ads', query: 'How can GrowthForge help with Google Ads?' },
-    { label: 'Meta Ads', query: 'Tell me about Meta Ads support' },
-    { label: 'CRO', query: 'How do you approach CRO?' },
-    { label: 'Marketing Automation & AI', query: 'What do you do for marketing automation and AI?' },
-    { label: 'Executive Consulting', query: 'What is executive consulting?' },
-    { label: 'Pricing / Growth Audit', query: 'What are pricing options and growth audit details?' },
-    { label: 'Book Discovery Session', query: 'How do I book a discovery session?' },
-    { label: 'Contact & Response Time', query: 'How can I contact you and how fast do you respond?' }
-  ];
+    { 
+        label: 'AI SEO & GEO', 
+        query: 'Tell me about AI SEO and GEO' 
+    },
+    { 
+        label: 'Growth Audit', 
+        query: 'What is included in the Executive Growth Audit?' 
+    },
+    { 
+        label: 'Services', 
+        query: 'What services does GrowthForge provide?' 
+    },
+    { 
+        label: 'Pricing', 
+        query: 'What are GrowthForge pricing options?' 
+    }
+];
 
   var fallbackAnswer = {
     text: 'I can help with AI SEO/GEO, paid media, CRO, automation, consulting, pricing, and next steps. For the quickest path, choose one of these:',
