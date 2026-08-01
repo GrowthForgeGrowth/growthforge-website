@@ -429,7 +429,7 @@ nav{flex-direction:column;gap:15px;width:100%}
 /* ================================= */
 
 .audit-preview{
-    padding:80px 0;
+    padding:50px 0;
 }
 
 .audit-preview-container{
@@ -464,22 +464,32 @@ nav{flex-direction:column;gap:15px;width:100%}
     flex:0.8;
     display:flex;
     justify-content:center;
+    max-height:520px;
+    overflow:hidden;
 }
 
 .audit-preview-image img{
     width:100%;
-    max-width:380px;
+    max-width:420px;
     height:auto;
-    border-radius:20px;
-    box-shadow:0 30px 80px rgba(15,23,42,.25);
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(15,23,42,.22);
 }
 
 
 @media(max-width:800px){
 
+.audit-preview{
+    padding:40px 0;
+}
+
 .audit-preview-container{
     flex-direction:column;
     gap:40px;
+}
+
+.audit-preview-image{
+    max-height:none;
 }
 
 .audit-preview-image img{
