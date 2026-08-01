@@ -199,8 +199,11 @@
       </button>
       <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="GrowthForge chat assistant" hidden>
         <header class="gf-chatbot-header">
-          <p><strong>GrowthForge Assistant</strong><span>Ask about services, pricing, or next steps.</span></p>
-          <div class="gf-chatbot-header-actions">
+<p>
+<strong>GrowthForge Assistant</strong>
+<span>Ask about services, pricing, or next steps.</span>
+</p>          
+<div class="gf-chatbot-header-actions">
             <button type="button" class="gf-chatbot-minimize" aria-label="Close chat assistant" aria-controls="gf-chatbot-panel" title="Close">
     <span class="gf-chatbot-minimize-icon" aria-hidden="true">−</span>
             </button>
