@@ -424,6 +424,21 @@ nav{flex-direction:column;gap:15px;width:100%}
     font-size:13px;
     letter-spacing:.2px;
 }
+
+.gf-chatbot-header p strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.gf-chatbot-header p span{
+    display:block;
+}
+
+
+/* Messages */
+
+.gf-chatbot-messages{
+
 /* ================================= */
 /* Executive Growth Audit Preview */
 /* ================================= */
