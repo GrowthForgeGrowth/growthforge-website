@@ -168,7 +168,7 @@ nav{flex-direction:column;gap:15px;width:100%}
 }
 
 .gf-chatbot-launcher-hint:before{
-    content:"AI";
+    content:"GF";
     font-size:18px;
     font-weight:800;
 }
