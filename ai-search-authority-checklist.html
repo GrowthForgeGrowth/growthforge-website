@@ -261,23 +261,22 @@ LinkedIn
 document.getElementById("ai-checklist-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const formData = new FormData(this);
+    const formData = new URLSearchParams(new FormData(this));
 
     try {
         const response = await fetch("https://growthforgegrowth.app.n8n.cloud/webhook/3727f916-05fa-4279-a50c-b02a3f103501", {
             method: "POST",
-            body: new URLSearchParams(formData)
+            mode: "cors",
+            body: formData
         });
 
-        if (response.ok) {
-            alert("Thank you! Your checklist is being prepared.");
-            this.reset();
-        } else {
-            alert("Something went wrong. Please try again.");
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Unable to submit the form.");
+        console.log(response.status);
+
+        alert("Thank you! Your checklist is being prepared.");
+        this.reset();
+
+    } catch (err) {
+        console.error(err);
     }
 });
 </script>
