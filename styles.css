@@ -164,3 +164,58 @@ nav{flex-direction:column;gap:15px;width:100%}
 .gf-chatbot[data-state="open"] .gf-chatbot-panel{
     display:flex !important;
 }
+/* AI Checklist Form Enhancement */
+
+.contact form#ai-checklist-form{
+    gap:18px !important;
+    margin-top:35px;
+}
+
+.contact form#ai-checklist-form input{
+    width:100%;
+    height:58px;
+    padding:0 20px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.08);
+    color:#ffffff;
+    font-size:16px;
+    font-family:inherit;
+    transition:all .25s ease;
+    box-sizing:border-box;
+}
+
+.contact form#ai-checklist-form input::placeholder{
+    color:rgba(255,255,255,0.65);
+}
+
+.contact form#ai-checklist-form input:focus{
+    outline:none;
+    border-color:#60A5FA;
+    background:rgba(255,255,255,0.12);
+    box-shadow:0 0 0 4px rgba(96,165,250,.15);
+}
+
+.contact form#ai-checklist-form .btn{
+    height:60px;
+    border-radius:12px;
+    margin-top:8px;
+    font-size:17px;
+    font-weight:700;
+    transition:all .25s ease;
+}
+
+.contact form#ai-checklist-form .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(37,99,235,.35);
+}
+
+.contact form#ai-checklist-form::after{
+    content:"✓ Executive Edition   ✓ Instant Delivery   ✓ No Spam";
+    display:block;
+    margin-top:18px;
+    text-align:center;
+    color:rgba(255,255,255,.7);
+    font-size:13px;
+    letter-spacing:.2px;
+}
