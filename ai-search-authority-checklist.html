@@ -10,7 +10,7 @@
   <meta property="og:description" content="A practical framework for evaluating whether your site is ready to earn trust, citations, and commercial visibility in AI search.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.growthforge-ai.com/ai-search-authority-checklist">
-  <meta property="og:image" content="https://www.growthforge-ai.com/founder.jpg">
+ <meta property="og:image" content="https://www.growthforge-ai.com/ai-search-authority-checklist.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI Search Authority Checklist | GrowthForge">
   <meta name="twitter:description" content="A citation-ready checklist for improving trust, extractability, and internal authority flow for AI SEO and GEO.">
@@ -257,7 +257,8 @@ LinkedIn
 </a>
 </div>
 </div>
-</footer><script>
+</footer>
+<script>
 document.getElementById("ai-checklist-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -271,6 +272,15 @@ document.getElementById("ai-checklist-form").addEventListener("submit", async fu
         });
 
         console.log(response.status);
+
+        // GA4 Checklist Conversion Tracking
+        if (typeof gtag === "function") {
+            gtag("event", "ai_search_checklist_download", {
+                form_id: "ai-checklist-form",
+                form_name: "AI Search Authority Checklist",
+                page_location: window.location.href
+            });
+        }
 
         alert("Thank you! Your checklist is being prepared.");
         this.reset();
