@@ -547,7 +547,15 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
         }
 
         const result = await response.json();
-
+      
+      // GA4 Conversion Tracking
+if (typeof gtag === "function") {
+    gtag("event", "executive_growth_audit_submit", {
+        form_id: "discovery-form",
+        form_name: "Executive Growth Audit",
+        page_location: window.location.href
+    });
+}
         const lead = Array.isArray(result) ? result[0] : result;
 
         if (!lead.property_payment_url) {
