@@ -544,19 +544,19 @@ nav{flex-direction:column;gap:15px;width:100%}
     box-shadow:0 25px 50px rgba(37,99,235,.45);
 }
     
-/* Checklist Download CTA Highlight */
+/* Checklist Download CTA */
 
-a.checklist-link{
+ul.checklist a.checklist-link{
     color:#2563eb !important;
     font-weight:800 !important;
-    background:#eff6ff !important;
-    padding:6px 10px !important;
-    border-radius:8px !important;
-    display:inline-block !important;
+    background:#eff6ff;
+    padding:5px 10px;
+    border-radius:8px;
     text-decoration:none !important;
+    display:inline-block;
 }
 
-a.checklist-link:hover{
+ul.checklist a.checklist-link:hover{
     color:#1d4ed8 !important;
-    background:#dbeafe !important;
+    background:#dbeafe;
 }
