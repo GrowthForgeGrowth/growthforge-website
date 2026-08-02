@@ -423,6 +423,15 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       throw new Error('Submission failed.');
     }
 
+    // GA4 Contact Form Conversion Tracking
+    if (typeof gtag === "function") {
+      gtag("event", "contact_form_submit", {
+        form_id: "contact-form",
+        form_name: "GrowthForge Contact Form",
+        page_location: window.location.href
+      });
+    }
+
     alert("Thank you! We've received your message and will respond within 24 hours.");
     form.reset();
 
@@ -432,5 +441,5 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   }
 });
 </script>
-
+  
 <script src="/chatbot.js"></script>
