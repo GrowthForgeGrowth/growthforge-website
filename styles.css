@@ -548,10 +548,16 @@ nav{flex-direction:column;gap:15px;width:100%}
 
 .checklist-link{
     color:#2563eb;
-    font-weight:700;
+    font-weight:800;
     text-decoration:none;
+    background:#eff6ff;
+    padding:4px 8px;
+    border-radius:6px;
+    transition:all .2s ease;
 }
 
 .checklist-link:hover{
-    text-decoration:underline;
+    color:#1d4ed8;
+    background:#dbeafe;
+    text-decoration:none;
 }
