@@ -51,9 +51,32 @@ footer p{color:#475569}
 .pricing-card.highlight p{color:#dbeafe}
 .badge{background:#dc2626;color:#fff;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:10px}
 .pricing-card .badge{background:#fbbf24}
-.price{font-size:32px;font-weight:800;margin:10px 0}
-.price-period{font-size:14px;color:#64748b}
-.price span{font-size:18px;font-weight:400}
+.price{
+    font-size:42px;
+    font-weight:800;
+    color:#0f172a;
+    line-height:1.2;
+    margin:10px 0;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+}
+
+.price span{
+    font-size:16px;
+    font-weight:600;
+}
+
+.price .price-note{
+    font-size:16px;
+    font-weight:600;
+    color:#2563eb;
+    background:rgba(37,99,235,0.08);
+    padding:6px 12px;
+    border-radius:20px;
+    white-space:nowrap;
+    letter-spacing:.2px;
+}
 .price .price-note{font-size:18px;font-weight:400}
 .pricing-detailed{max-width:800px;margin:0 auto}
 .price-header{margin-bottom:20px}
