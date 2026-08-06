@@ -680,97 +680,44 @@ ul.checklist a.checklist-link{
     display:inline-block;
 }
 
-/* Checklist Links */
-ul.checklist a.checklist-link{
-    transition:all .25s ease;
-    border-radius:8px;
-}
+<!-- AI Search Checklist Modal -->
 
-ul.checklist a.checklist-link:hover{
-    color:#1d4ed8 !important;
-    background:#dbeafe;
-    text-decoration:none;
-}
+<div id="welcome-popup" class="popup-overlay">
 
-/* Overlay */
-.popup-overlay{
-    position:fixed;
-    inset:0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:24px;
-    background:rgba(15,23,42,.65);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-    z-index:9999;
-}
+    <div class="popup-box">
 
-/* Modal */
-.popup-box{
-    position:relative;
-    width:100%;
-    max-width:520px;
-    background:#fff;
-    border-radius:24px;
-    padding:40px;
-    box-shadow:0 30px 80px rgba(15,23,42,.25);
-    animation:popupFade .25s ease;
-}
+        <button class="popup-close">×</button>
 
-/* Heading */
-.popup-box h2{
-    margin:0 0 12px;
-    font-size:32px;
-    line-height:1.2;
-    color:#0f172a;
-}
+        <h2>
+            Is Your Business Ready for AI Search?
+        </h2>
 
-/* Description */
-.popup-box p{
-    margin:0 0 24px;
-    color:#64748b;
-    line-height:1.7;
-}
+        <p>
+            AI is changing how customers discover companies. Get the GrowthForge AI Search Authority Checklist and identify opportunities to improve your visibility across ChatGPT, Google AI Overviews, and AI-powered search.
+        </p>
 
-/* Input */
-.popup-box input{
-    width:100%;
-    padding:14px 16px;
-    border:1px solid #d1d5db;
-    border-radius:12px;
-    font-size:16px;
-    transition:border-color .2s ease, box-shadow .2s ease;
-    outline:none;
-    margin-bottom:16px;
-}
+        <form id="checklist-form">
 
-.popup-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(15,23,42,0.65);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:999999;
-}
+            <label>
+                Work Email
+            </label>
 
-.popup-box{
-    position:relative;
-    background:white;
-    width:90%;
-    max-width:500px;
-    padding:40px;
-    border-radius:24px;
-    box-shadow:0 25px 80px rgba(0,0,0,.25);
-}
+            <input 
+                type="email" 
+                placeholder="Enter your work email"
+                required
+            >
 
-.popup-close{
-    position:absolute;
-    top:15px;
-    right:20px;
-    background:none;
-    border:none;
-    font-size:28px;
-    cursor:pointer;
-}
+            <button type="submit">
+                Get Free Checklist
+            </button>
+
+        </form>
+
+        <small>
+            No spam. Just practical AI and growth insights.
+        </small>
+
+    </div>
+
+</div>
