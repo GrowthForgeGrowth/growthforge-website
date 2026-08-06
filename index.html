@@ -630,41 +630,38 @@ LinkedIn
 <script src="/chatbot.js"></script>
 
 
-<!-- AI Search Checklist Modal -->
-
 <script>
 
-window.addEventListener("load", function(){
+document.addEventListener("DOMContentLoaded", function(){
 
     const popup = document.getElementById("welcome-popup");
     const closeButton = document.querySelector(".popup-close");
 
 
+    if(!popup){
+        console.log("Popup element not found");
+        return;
+    }
+
+
     setTimeout(function(){
 
-        popup.classList.add("active");
+        popup.style.display = "flex";
 
-    },1500);
-
-
-
-    closeButton.addEventListener("click", function(){
-
-        popup.classList.remove("active");
-
-    });
+    }, 1500);
 
 
 
-    popup.addEventListener("click", function(e){
+    if(closeButton){
 
-        if(e.target === popup){
+        closeButton.addEventListener("click", function(){
 
-            popup.classList.remove("active");
+            popup.style.display = "none";
 
-        }
+        });
 
-    });
+    }
+
 
 });
 
