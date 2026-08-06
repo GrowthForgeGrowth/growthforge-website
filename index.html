@@ -657,36 +657,27 @@ LinkedIn
 
 </div>
 
-  <script>
+<script>
 
-document.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("load", function(){
 
     const popup = document.getElementById("welcome-popup");
-    const closeButton = document.querySelector(".popup-close");
 
-
-    if(!popup){
-        console.log("Popup element not found");
-        return;
-    }
+    const close = document.querySelector(".popup-close");
 
 
     setTimeout(function(){
 
-        popup.style.display = "flex";
+        popup.style.display="flex";
 
     },1500);
 
 
-    if(closeButton){
+    close.addEventListener("click",function(){
 
-        closeButton.addEventListener("click", function(){
+        popup.style.display="none";
 
-            popup.style.display = "none";
-
-        });
-
-    }
+    });
 
 
 });
