@@ -632,73 +632,41 @@ LinkedIn
 
 <!-- AI Search Checklist Modal -->
 
-<div id="welcome-popup">
-  
-    <div class="popup-box">
-
-        <button class="popup-close">
-            ×
-        </button>
-
-
-        <h2>
-            Is Your Business Ready for AI Search?
-        </h2>
-
-
-        <p>
-            AI is changing how customers discover companies. Get the GrowthForge AI Search Authority Checklist and identify opportunities to improve your visibility across ChatGPT, Google AI Overviews, and AI-powered search.
-        </p>
-
-
-        <form id="checklist-form">
-
-            <input 
-                type="email" 
-                placeholder="Enter your work email"
-                required
-            >
-
-
-            <button type="submit">
-                Get Free Checklist
-            </button>
-
-
-        </form>
-
-
-        <small>
-            No spam. Just practical AI and growth insights.
-        </small>
-
-
-    </div>
-
-</div>
-
-
-
 <script>
 
 window.addEventListener("load", function(){
 
+    const popup = document.getElementById("welcome-popup");
+    const closeButton = document.querySelector(".popup-close");
+
+
     setTimeout(function(){
 
-        document.getElementById("welcome-popup").style.display="flex";
+        popup.classList.add("active");
 
     },1500);
 
 
+
+    closeButton.addEventListener("click", function(){
+
+        popup.classList.remove("active");
+
+    });
+
+
+
+    popup.addEventListener("click", function(e){
+
+        if(e.target === popup){
+
+            popup.classList.remove("active");
+
+        }
+
+    });
+
 });
-
-
-document.querySelector(".popup-close").addEventListener("click", function(){
-
-    document.getElementById("welcome-popup").style.display="none";
-
-});
-
 
 </script>
 
