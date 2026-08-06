@@ -745,79 +745,32 @@ ul.checklist a.checklist-link:hover{
     margin-bottom:16px;
 }
 
-.popup-box input:focus{
-    border-color:#2563eb;
-    box-shadow:0 0 0 4px rgba(37,99,235,.15);
-}
-
-/* Button */
-.popup-box button{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    background:#2563eb;
-    color:#fff;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:background .2s ease, transform .15s ease;
-}
-
-.popup-box button:hover{
-    background:#1d4ed8;
-}
-
-.popup-box button:active{
-    transform:scale(.98);
-}
-
-/* Close Button */
-.popup-close{
-    position:absolute;
-    top:18px;
-    right:18px;
-    width:40px !important;
-    height:40px !important;
+.popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,0.65);
     display:flex;
     align-items:center;
     justify-content:center;
+    z-index:999999;
+}
+
+.popup-box{
+    position:relative;
+    background:white;
+    width:90%;
+    max-width:500px;
+    padding:40px;
+    border-radius:24px;
+    box-shadow:0 25px 80px rgba(0,0,0,.25);
+}
+
+.popup-close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    background:none;
     border:none;
-    background:transparent !important;
-    color:#64748b !important;
-    font-size:24px;
+    font-size:28px;
     cursor:pointer;
-    transition:all .2s ease;
-}
-
-.popup-close:hover{
-    color:#0f172a !important;
-    background:#f1f5f9 !important;
-    border-radius:50%;
-}
-
-/* Animation */
-@keyframes popupFade{
-    from{
-        opacity:0;
-        transform:translateY(12px) scale(.98);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-}
-
-/* Mobile */
-@media (max-width:640px){
-
-    .popup-box{
-        padding:28px 24px;
-        border-radius:20px;
-    }
-
-    .popup-box h2{
-        font-size:26px;
-    }
-
 }
