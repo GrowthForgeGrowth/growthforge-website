@@ -629,11 +629,6 @@ LinkedIn
 
 <script src="/chatbot.js"></script>
 
-  <!-- Your existing page content -->
-
-<section>
-   ...
-</section>
 
 <!-- AI Search Checklist Modal -->
 
@@ -641,21 +636,22 @@ LinkedIn
 
     <div class="popup-box">
 
-        <button class="popup-close">×</button>
+        <button class="popup-close">
+            ×
+        </button>
+
 
         <h2>
             Is Your Business Ready for AI Search?
         </h2>
 
+
         <p>
             AI is changing how customers discover companies. Get the GrowthForge AI Search Authority Checklist and identify opportunities to improve your visibility across ChatGPT, Google AI Overviews, and AI-powered search.
         </p>
 
-        <form id="checklist-form">
 
-            <label>
-                Work Email
-            </label>
+        <form id="checklist-form">
 
             <input 
                 type="email" 
@@ -663,21 +659,27 @@ LinkedIn
                 required
             >
 
+
             <button type="submit">
                 Get Free Checklist
             </button>
 
+
         </form>
+
 
         <small>
             No spam. Just practical AI and growth insights.
         </small>
 
+
     </div>
 
 </div>
-  
-  <script>
+
+
+
+<script>
 
 window.addEventListener("load", function(){
 
@@ -691,13 +693,18 @@ window.addEventListener("load", function(){
 });
 
 
-document.querySelector(".popup-close").onclick=function(){
+document.querySelector(".popup-close").addEventListener("click", function(){
 
     document.getElementById("welcome-popup").style.display="none";
 
-};
+});
+
 
 </script>
+
+
+</body>
+</html>
 
 </body>
 </html>
