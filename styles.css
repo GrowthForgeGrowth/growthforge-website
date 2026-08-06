@@ -146,13 +146,19 @@ footer p{color:#475569}
 
 .technology-ecosystem-banner{
     width:100%;
-    max-width:1200px;
-    display:block;
-    border-radius:24px;
     margin-bottom:40px;
+    overflow:hidden;
+    border-radius:24px;
     border:1px solid #e5e7eb;
 }
 
+.technology-ecosystem-banner img{
+    width:100%;
+    max-width:1200px;
+    height:auto;
+    display:block;
+    object-fit:cover;
+}
 
 /* Disclaimer */
 
