@@ -640,32 +640,19 @@ LinkedIn
 
     <div class="popup-box">
 
-        <button class="popup-close" aria-label="Close popup">×</button>
+        <button class="popup-close">×</button>
 
         <h2>Is Your Business Ready for AI Search?</h2>
 
         <p>
-        AI is changing how customers discover companies. Download the GrowthForge AI Search Authority Checklist and identify opportunities to improve your visibility across ChatGPT, Google AI Overviews, and other AI search platforms.
+        AI is changing how customers discover companies. Download the GrowthForge AI Search Authority Checklist and identify opportunities to improve your AI visibility.
         </p>
 
-        <form id="ai-checklist-form">
+        <input type="email" placeholder="Work Email">
 
-            <input 
-                type="email" 
-                name="email"
-                placeholder="Work Email" 
-                required
-            >
-
-            <button type="submit">
-                Get Free Checklist
-            </button>
-
-        </form>
-
-        <p class="popup-note">
-        No spam. Just practical growth insights.
-        </p>
+        <button>
+        Get Free Checklist
+        </button>
 
     </div>
 
@@ -674,56 +661,14 @@ LinkedIn
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
-
-    const popup = document.getElementById("welcome-popup");
-    const closeButton = document.querySelector(".popup-close");
-    const form = document.getElementById("ai-checklist-form");
-
-    // Show popup only once per visitor
-    if(!localStorage.getItem("growthforgeChecklistPopup")){
-
-        setTimeout(function(){
-            popup.style.display = "flex";
-        },5000);
-
-    }
+document.getElementById("welcome-popup").style.display="flex";
 
 
-    // Close popup
-    closeButton.addEventListener("click", function(){
-
-        popup.style.display = "none";
-        localStorage.setItem("growthforgeChecklistPopup","true");
-
-    });
-
-
-    // Close when clicking outside box
-    popup.addEventListener("click", function(e){
-
-        if(e.target === popup){
-            popup.style.display="none";
-            localStorage.setItem("growthforgeChecklistPopup","true");
-        }
-
-    });
-
-
-    // Form submission placeholder
-    form.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        // Connect this to n8n webhook / email automation
-        window.location.href="/ai-search-authority-checklist";
-
-    });
-
-});
+document.querySelector(".popup-close").onclick=function(){
+    document.getElementById("welcome-popup").style.display="none";
+};
 
 </script>
-
 
 </body>
 </html>
