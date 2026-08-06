@@ -672,27 +672,19 @@ nav{flex-direction:column;gap:15px;width:100%}
 /* AI Search Popup */
 
 #welcome-popup{
+
     position:fixed;
+
     inset:0;
+
     background:rgba(15,23,42,.65);
 
-    display:flex;
+    display:none;
 
     align-items:center;
+
     justify-content:center;
 
-    z-index:999999;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:.3s ease;
-}
-
-
-#welcome-popup.active{
-
-    opacity:1;
-    visibility:visible;
+    z-index:9999999;
 
 }
