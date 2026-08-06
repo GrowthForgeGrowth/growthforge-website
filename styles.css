@@ -673,114 +673,44 @@ nav{flex-direction:column;gap:15px;width:100%}
 
 #welcome-popup{
 
-    position:fixed;
+    position:fixed !important;
 
-    top:0;
-    left:0;
+    top:0 !important;
+    left:0 !important;
 
-    width:100vw;
-    height:100vh;
+    width:100vw !important;
+    height:100vh !important;
 
-    background:rgba(15,23,42,0.70);
+    background:rgba(15,23,42,.75) !important;
 
     display:none;
 
-    align-items:center;
-    justify-content:center;
+    align-items:center !important;
+    justify-content:center !important;
 
-    z-index:9999999;
+    z-index:2147483647 !important;
 
+}
+
+
+#welcome-popup.active{
+    display:flex !important;
 }
 
 
 .popup-box{
 
-    position:relative;
+    position:relative !important;
 
-    width:90%;
+    background:#fff !important;
 
-    max-width:520px;
+    width:90% !important;
+    max-width:520px !important;
 
-    background:#ffffff;
+    padding:45px !important;
 
-    padding:45px;
+    border-radius:24px !important;
 
-    border-radius:24px;
-
-    box-shadow:
-    0 30px 100px rgba(0,0,0,.35);
-
-}
-
-
-.popup-box h2{
-
-    margin-top:0;
-
-    font-size:34px;
-
-    line-height:1.2;
-
-}
-
-
-.popup-box p{
-
-    color:#475569;
-
-    line-height:1.7;
-
-}
-
-
-.popup-close{
-
-    position:absolute;
-
-    top:15px;
-
-    right:20px;
-
-    background:none;
-
-    border:none;
-
-    font-size:32px;
-
-    cursor:pointer;
-
-}
-
-
-.popup-box input{
-
-    width:100%;
-
-    padding:15px;
-
-    border:1px solid #e5e7eb;
-
-    border-radius:12px;
-
-    margin:20px 0;
-
-}
-
-
-.popup-box button[type="submit"]{
-
-    width:100%;
-
-    padding:15px;
-
-    background:#2563eb;
-
-    color:#fff;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-weight:700;
+    box-shadow:0 30px 100px rgba(0,0,0,.35) !important;
 
 }
