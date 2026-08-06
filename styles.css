@@ -668,56 +668,121 @@ nav{flex-direction:column;gap:15px;width:100%}
     box-shadow:0 25px 50px rgba(37,99,235,.45);
 }
     
-/* Checklist Download CTA */
+/* AI Search Popup Modal */
 
-ul.checklist a.checklist-link{
-    color:#2563eb !important;
-    font-weight:800 !important;
-    background:#eff6ff;
-    padding:5px 10px;
-    border-radius:8px;
-    text-decoration:none !important;
-    display:inline-block;
+#welcome-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+
+    background:rgba(15,23,42,0.65);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    z-index:999999;
+
+    padding:20px;
 }
 
-<!-- AI Search Checklist Modal -->
 
-<div id="welcome-popup" class="popup-overlay">
+.popup-box{
 
-    <div class="popup-box">
+    position:relative;
 
-        <button class="popup-close">×</button>
+    background:#ffffff;
 
-        <h2>
-            Is Your Business Ready for AI Search?
-        </h2>
+    width:100%;
+    max-width:520px;
 
-        <p>
-            AI is changing how customers discover companies. Get the GrowthForge AI Search Authority Checklist and identify opportunities to improve your visibility across ChatGPT, Google AI Overviews, and AI-powered search.
-        </p>
+    padding:40px;
 
-        <form id="checklist-form">
+    border-radius:24px;
 
-            <label>
-                Work Email
-            </label>
+    box-shadow:0 30px 80px rgba(0,0,0,0.35);
 
-            <input 
-                type="email" 
-                placeholder="Enter your work email"
-                required
-            >
+}
 
-            <button type="submit">
-                Get Free Checklist
-            </button>
 
-        </form>
+.popup-box h2{
 
-        <small>
-            No spam. Just practical AI and growth insights.
-        </small>
+    font-size:32px;
+    line-height:1.2;
+    color:#0f172a;
 
-    </div>
+    margin-top:0;
+    margin-bottom:20px;
 
-</div>
+}
+
+
+.popup-box p{
+
+    color:#475569;
+    line-height:1.6;
+
+}
+
+
+.popup-box input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+}
+
+
+.popup-box button:not(.popup-close){
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+
+.popup-close{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    background:none!important;
+
+    border:none;
+
+    color:#64748b;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
