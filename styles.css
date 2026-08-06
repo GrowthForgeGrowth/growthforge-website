@@ -669,22 +669,115 @@ nav{flex-direction:column;gap:15px;width:100%}
 }
     
     
-/* AI Search Popup */
+/* AI Search Checklist Modal */
 
 #welcome-popup{
 
-    position:fixed;
+    position:fixed !important;
 
-    inset:0;
+    top:0 !important;
+    left:0 !important;
 
-    background:rgba(15,23,42,.65);
+    width:100vw !important;
+    height:100vh !important;
+
+    background:rgba(15,23,42,0.65) !important;
 
     display:none;
 
-    align-items:center;
+    align-items:center !important;
+    justify-content:center !important;
 
-    justify-content:center;
+    z-index:999999999 !important;
 
-    z-index:9999999;
+}
+
+
+#welcome-popup .popup-box{
+
+    position:relative !important;
+
+    background:#ffffff !important;
+
+    width:90% !important;
+
+    max-width:520px !important;
+
+    padding:40px !important;
+
+    border-radius:24px !important;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.35) !important;
+
+}
+
+
+#welcome-popup h2{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+
+#welcome-popup p{
+
+    color:#475569;
+
+    line-height:1.6;
+
+}
+
+
+#welcome-popup input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:20px 0;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:10px;
+
+}
+
+
+#welcome-popup form button{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+
+.popup-close{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    background:none;
+
+    border:none;
+
+    font-size:32px;
+
+    cursor:pointer;
 
 }
