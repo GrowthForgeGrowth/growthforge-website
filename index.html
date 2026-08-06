@@ -657,5 +657,41 @@ LinkedIn
 
 </div>
 
+  <script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const popup = document.getElementById("welcome-popup");
+    const closeButton = document.querySelector(".popup-close");
+
+
+    if(!popup){
+        console.log("Popup element not found");
+        return;
+    }
+
+
+    setTimeout(function(){
+
+        popup.style.display = "flex";
+
+    },1500);
+
+
+    if(closeButton){
+
+        closeButton.addEventListener("click", function(){
+
+            popup.style.display = "none";
+
+        });
+
+    }
+
+
+});
+
+</script>
+
 </body>
 </html>
