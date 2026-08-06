@@ -95,6 +95,7 @@ footer p{color:#475569}
 .pricing-preview .grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 
 /* Technology Ecosystem */
+
 .technology-ecosystem-grid{
     display:grid;
     grid-template-columns:1fr;
@@ -111,6 +112,7 @@ footer p{color:#475569}
 .technology-ecosystem-card h3{
     margin-top:0;
     margin-bottom:22px;
+    color:#0f172a;
 }
 
 .technology-ecosystem-card ul{
@@ -119,68 +121,66 @@ footer p{color:#475569}
     padding:0;
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap:12px;
 }
 
 .technology-ecosystem-card li{
-    margin:0;
-}
-
-.technology-ecosystem-card a{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    color:#0f172a;
-    text-decoration:none;
+    color:#334155;
     font-size:16px;
     font-weight:500;
-    padding:6px 8px;
-    border-radius:10px;
-    transition:background 0.2s ease,color 0.2s ease,transform 0.2s ease;
+    line-height:1.6;
+    position:relative;
+    padding-left:20px;
 }
 
-.technology-ecosystem-card a img{
-    width:28px;
-    height:28px;
-    object-fit:contain;
-    flex-shrink:0;
+.technology-ecosystem-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#2563eb;
+    font-weight:700;
 }
 
-.technology-ecosystem-card a span{
-    line-height:1.4;
+
+/* Infrastructure Banner Image */
+
+.technology-ecosystem-banner{
+    width:100%;
+    max-width:1200px;
+    display:block;
+    border-radius:24px;
+    margin-bottom:40px;
+    border:1px solid #e5e7eb;
 }
 
-.technology-ecosystem-card a:hover,
-.technology-ecosystem-card a:focus-visible{
-    background:#eff6ff;
-    color:#1d4ed8;
-    transform:translateX(4px);
-}
 
-.technology-ecosystem-card a:focus-visible{
-    outline:2px solid #2563eb;
-    outline-offset:2px;
-}
+/* Disclaimer */
 
 .technology-ecosystem-disclaimer{
-    margin-top:20px;
+    margin-top:24px;
     font-size:14px;
     color:#475569;
+    line-height:1.6;
 }
 
 
 /* Responsive Layout */
+
 @media(min-width:640px){
+
     .technology-ecosystem-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
     }
+
 }
 
 
 @media(min-width:1024px){
+
     .technology-ecosystem-grid{
         grid-template-columns:repeat(3,minmax(0,1fr));
     }
+
 }
 
 .reference-block{background:#0f172a;color:#fff;border-radius:24px;padding:32px}
