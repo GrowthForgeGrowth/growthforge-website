@@ -4453,3 +4453,21 @@ EXECUTIVE AUDIT OVERVIEW
     margin-top:30px;
 
 }
+
+.audit-divider{
+
+    padding:70px 0 20px;
+
+}
+
+.divider-line{
+
+    width:120px;
+
+    height:1px;
+
+    margin:0 auto;
+
+    background:#dbe4f0;
+
+}
