@@ -659,35 +659,63 @@ LinkedIn
 <script src="/chatbot.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     const popup = document.getElementById("welcome-popup");
     const close = document.querySelector(".popup-close");
     const form = document.getElementById("popup-form");
+    const emailInput = document.getElementById("popup-email");
+
+    if (!popup) {
+        console.error("Popup not found");
+        return;
+    }
+
+    if (!close) {
+        console.error("Close button not found");
+        return;
+    }
+
+    if (!form) {
+        console.error("Popup form not found");
+        return;
+    }
+
+    if (!emailInput) {
+        console.error("Input with id='popup-email' not found");
+        return;
+    }
 
     function closePopup() {
         popup.style.display = "none";
         document.body.style.overflow = "";
     }
 
-    setTimeout(function () {
+    setTimeout(() => {
         popup.style.display = "flex";
         document.body.style.overflow = "hidden";
     }, 600);
 
     close.addEventListener("click", closePopup);
 
-    popup.addEventListener("click", function (e) {
+    popup.addEventListener("click", (e) => {
         if (e.target === popup) {
             closePopup();
         }
     });
 
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", async (e) => {
 
         e.preventDefault();
 
-        const email = document.getElementById("popup-email").value;
+        const email = emailInput.value.trim();
+
+        if (!email) {
+            alert("Please enter your work email.");
+            return;
+        }
+
+        console.log("Submitting:", email);
 
         try {
 
@@ -699,7 +727,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        email: email,
+                        email,
                         source: "Website Popup",
                         page: window.location.href,
                         timestamp: new Date().toISOString()
@@ -707,7 +735,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
+            console.log("Status:", response.status);
+
             if (response.ok) {
+
+                console.log("Webhook success");
 
                 alert("Thank you! Your AI Search Checklist is on its way.");
 
@@ -717,7 +749,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             } else {
 
-                alert("Something went wrong. Please try again.");
+                const error = await response.text();
+
+                console.error(error);
+
+                alert(
+                    "Webhook returned " +
+                    response.status +
+                    ". Check the browser console."
+                );
 
             }
 
@@ -725,7 +765,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.error(err);
 
-            alert("Unable to submit the form.");
+            alert(
+                "Network error. Open F12 → Console and copy the red error message."
+            );
 
         }
 
