@@ -3053,3 +3053,143 @@ EXECUTIVE GROWTH AUDIT
     }
 
 }
+
+/* =========================================
+   BELIEFS
+========================================= */
+
+.beliefs{
+
+    padding:110px 0;
+
+    background:#fff;
+
+}
+
+.beliefs .section-header{
+
+    max-width:760px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.beliefs .section-header h2{
+
+    margin:0 0 18px;
+
+}
+
+.beliefs .section-header p{
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+.beliefs-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:30px;
+
+}
+
+.belief-card{
+
+    position:relative;
+
+    padding:36px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:22px;
+
+    transition:all .25s ease;
+
+}
+
+.belief-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:0 22px 55px rgba(15,23,42,.08);
+
+}
+
+.belief-number{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:24px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-weight:800;
+
+    font-size:15px;
+
+}
+
+.belief-card h3{
+
+    margin:0 0 16px;
+
+    font:700 24px Manrope,sans-serif;
+
+    line-height:1.3;
+
+    color:#0f172a;
+
+}
+
+.belief-card p{
+
+    margin:0;
+
+    font-size:16px;
+
+    line-height:1.85;
+
+    color:#64748b;
+
+}
+
+@media(max-width:960px){
+
+    .beliefs{
+
+        padding:80px 0;
+
+    }
+
+    .beliefs-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
