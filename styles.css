@@ -1129,29 +1129,69 @@ nav{flex-direction:column;gap:15px;width:100%}
 .gf-chatbot[data-state="open"] .gf-chatbot-panel{
     display:flex !important;
 }
-<section class="download-section">
+<section class="executive-resource">
 
     <div class="container">
 
-        <div id="download-checklist" class="download-card">
+        <div id="download-checklist" class="resource-card">
 
-            <div class="download-content">
+            <div class="resource-content">
 
-                <span class="download-badge">
-                    Free Resource
+                <span class="resource-badge">
+                    Executive Resource
                 </span>
 
                 <h2>
-                    Download the AI Search Authority Checklist
+                    AI Search Authority Checklist
                 </h2>
 
-                <p>
-                    Enter your details below to receive your complimentary PDF checklist and evaluate your organization's AI Search readiness.
+                <p class="resource-intro">
+                    Evaluate how prepared your organization is for AI-powered search, Google AI Overviews, ChatGPT, Gemini, and other generative discovery platforms.
                 </p>
+
+                <p class="resource-description">
+                    This executive framework outlines the foundational signals that influence AI visibility, entity authority, buyer confidence, and commercial discoverability. Use it to identify strategic gaps before investing further in AI SEO, Generative Engine Optimization (GEO), or large-scale content initiatives.
+                </p>
+
+                <div class="resource-highlights">
+
+                    <div class="resource-item">
+
+                        <strong>Entity Authority</strong>
+
+                        <span>Evaluate how clearly your business, expertise, and authorship are understood.</span>
+
+                    </div>
+
+                    <div class="resource-item">
+
+                        <strong>AI Search Readiness</strong>
+
+                        <span>Assess technical, structural, and content signals used by modern AI search platforms.</span>
+
+                    </div>
+
+                    <div class="resource-item">
+
+                        <strong>Commercial Trust Signals</strong>
+
+                        <span>Review the credibility elements that strengthen buyer confidence and AI citations.</span>
+
+                    </div>
+
+                    <div class="resource-item">
+
+                        <strong>Executive Action Plan</strong>
+
+                        <span>Prioritize the highest-impact improvements before scaling AI search investment.</span>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <form id="ai-checklist-form" class="download-form">
+            <form id="ai-checklist-form" class="resource-form">
 
                 <div class="form-grid">
 
@@ -1221,9 +1261,15 @@ nav{flex-direction:column;gap:15px;width:100%}
 
                 <button class="btn download-button" type="submit">
 
-                    Download Free Checklist
+                    Download Executive Checklist
 
                 </button>
+
+                <p class="resource-disclaimer">
+
+                    Complimentary PDF • Instant delivery • No commitment required
+
+                </p>
 
             </form>
 
