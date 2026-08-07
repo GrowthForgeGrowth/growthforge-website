@@ -5790,3 +5790,171 @@ PRICING SECTION
 .pricing-package{
     padding:100px 0 120px;
 }
+
+/* =========================================
+PRICING CTA
+========================================= */
+
+.pricing-cta{
+
+    padding:120px 0;
+
+}
+
+.pricing-cta-card{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:70px 80px;
+
+    text-align:center;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:28px;
+
+    box-shadow:0 24px 70px rgba(15,23,42,.06);
+
+}
+
+.pricing-cta-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 20px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+}
+
+.pricing-cta-card h2{
+
+    margin:0 0 24px;
+
+    font:800 52px Manrope,sans-serif;
+
+    line-height:1.08;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+}
+
+.pricing-cta-card p{
+
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+.pricing-cta .btn{
+
+    min-width:320px;
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width:960px){
+
+    .pricing-cta{
+
+        padding:90px 0;
+
+    }
+
+    .pricing-cta-card{
+
+        padding:60px 50px;
+
+    }
+
+    .pricing-cta-card h2{
+
+        font-size:42px;
+
+    }
+
+    .pricing-cta-card p{
+
+        font-size:18px;
+
+    }
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:640px){
+
+    .pricing-cta{
+
+        padding:70px 0;
+
+    }
+
+    .pricing-cta-card{
+
+        padding:40px 28px;
+
+        border-radius:22px;
+
+    }
+
+    .pricing-cta-card h2{
+
+        font-size:34px;
+
+    }
+
+    .pricing-cta-card p{
+
+        font-size:17px;
+
+    }
+
+    .pricing-cta .btn{
+
+        width:100%;
+
+        min-width:0;
+
+    }
+
+}
