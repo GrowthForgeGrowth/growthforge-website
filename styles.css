@@ -1699,3 +1699,193 @@ nav{flex-direction:column;gap:15px;width:100%}
 
     transform:translateY(-2px);
 }
+
+/* ==========================================
+EXECUTIVE GROWTH AUDIT
+========================================== */
+
+.audit-preview{
+    padding:110px 0;
+    position:relative;
+}
+
+.audit-preview .container{
+    max-width:1250px;
+}
+
+.audit-preview .section-heading{
+    max-width:900px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.audit-preview .section-badge{
+    display:inline-flex;
+    align-items:center;
+    padding:10px 18px;
+    border-radius:999px;
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.audit-preview h2{
+    font-size:clamp(3rem,5vw,4.5rem);
+    line-height:1.05;
+    margin-bottom:24px;
+}
+
+.audit-preview .section-heading p{
+    font-size:20px;
+    line-height:1.8;
+    color:#475569;
+}
+
+.audit-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
+}
+
+.audit-card{
+    background:#ffffff;
+    border:1px solid rgba(37,99,235,.10);
+    border-radius:28px;
+    padding:34px;
+    box-shadow:
+        0 20px 50px rgba(37,99,235,.07);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.audit-card:hover{
+    transform:translateY(-8px);
+    border-color:#93c5fd;
+    box-shadow:
+        0 35px 80px rgba(37,99,235,.14);
+}
+
+.audit-icon{
+    width:54px;
+    height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#eff6ff;
+    color:#2563eb;
+    font-weight:800;
+    font-size:18px;
+    margin-bottom:26px;
+}
+
+.audit-card h3{
+    font-size:30px;
+    line-height:1.15;
+    margin-bottom:18px;
+    color:#0f172a;
+}
+
+.audit-card p{
+    color:#475569;
+    line-height:1.8;
+    font-size:17px;
+    margin-bottom:28px;
+}
+
+.audit-card ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.audit-card li{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:14px;
+    color:#334155;
+    line-height:1.7;
+}
+
+.audit-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#2563eb;
+    font-weight:800;
+}
+
+.audit-link{
+    display:inline-flex;
+    margin-top:22px;
+    color:#2563eb;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.audit-link:hover{
+    color:#1d4ed8;
+}
+
+.audit-highlight{
+    background:
+        linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#ffffff;
+    border:none;
+}
+
+.audit-highlight h3{
+    color:#ffffff;
+}
+
+.audit-highlight p{
+    color:#dbeafe;
+}
+
+.audit-highlight .audit-icon{
+    background:rgba(255,255,255,.18);
+    color:#ffffff;
+}
+
+.audit-highlight .audit-link{
+    color:#ffffff;
+}
+
+.audit-highlight .audit-link:hover{
+    color:#eff6ff;
+}
+
+@media (max-width:1200px){
+
+.audit-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:768px){
+
+.audit-grid{
+    grid-template-columns:1fr;
+}
+
+.audit-preview{
+    padding:80px 0;
+}
+
+.audit-preview h2{
+    font-size:42px;
+}
+
+.audit-card{
+    padding:28px;
+}
+
+}
