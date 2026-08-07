@@ -800,5 +800,100 @@ LinkedIn
 
 <script src="/chatbot.js"></script>
 
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.getElementById("ai-checklist-form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const button = form.querySelector("button[type='submit']");
+
+        button.disabled = true;
+        button.textContent = "Submitting...";
+
+        const payload = {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            company: form.company.value.trim(),
+            website: form.website.value.trim(),
+            source: "AI Search Authority Checklist",
+            page: window.location.pathname,
+            url: window.location.href,
+            referrer: document.referrer,
+            timestamp: new Date().toISOString()
+        };
+
+        try {
+
+            const response = await fetch(
+                "https://growthforgegrowth.app.n8n.cloud/webhook/34d32526-59c4-488a-8445-bf4e6a60cc59",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error("Webhook failed");
+            }
+
+            /* ===============================
+               GOOGLE ANALYTICS 4 EVENT
+            =============================== */
+
+            if (typeof gtag === "function") {
+
+                gtag("event", "generate_lead", {
+                    lead_type: "newsletter",
+                    form_name: "AI Search Authority Checklist",
+                    page_location: window.location.href,
+                    page_title: document.title,
+                    method: "website"
+                });
+
+            }
+
+            /* ===============================
+               GOOGLE TAG MANAGER
+            =============================== */
+
+            window.dataLayer = window.dataLayer || [];
+
+            window.dataLayer.push({
+                event: "newsletter_signup",
+                form_name: "AI Search Authority Checklist",
+                lead_type: "newsletter",
+                page_location: window.location.href
+            });
+
+            window.location.href = "/thank-you-checklist";
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            alert("Something went wrong. Please try again.");
+
+            button.disabled = false;
+            button.textContent = "Download Executive Checklist →";
+
+        }
+
+    });
+
+});
+    
+</script>
+
 </body>
 </html>
