@@ -5165,7 +5165,7 @@ PRICING HERO
 
 .pricing-hero{
 
-    padding:120px 0 80px;
+    padding:110px 0 70px;
 
     background:#fff;
 
@@ -5209,9 +5209,11 @@ PRICING HERO
 
 .pricing-hero h1{
 
-    margin:0 0 24px;
+    margin:0 0 22px;
 
-    font:800 68px Manrope,sans-serif;
+    max-width:760px;
+
+    font:800 64px Manrope,sans-serif;
 
     line-height:1.05;
 
@@ -5219,19 +5221,17 @@ PRICING HERO
 
     color:#0f172a;
 
-    max-width:760px;
-
 }
 
 .pricing-hero .lead{
 
-    max-width:700px;
+    max-width:680px;
 
     margin:0;
 
     font-size:21px;
 
-    line-height:1.8;
+    line-height:1.75;
 
     color:#64748b;
 
@@ -5249,7 +5249,7 @@ RESOURCE LINKS
 
     gap:14px;
 
-    margin-top:40px;
+    margin-top:36px;
 
 }
 
@@ -5261,7 +5261,7 @@ RESOURCE LINKS
 
     justify-content:center;
 
-    padding:12px 18px;
+    padding:12px 20px;
 
     border:1px solid #dbeafe;
 
@@ -5277,7 +5277,7 @@ RESOURCE LINKS
 
     text-decoration:none;
 
-    transition:.25s ease;
+    transition:all .25s ease;
 
 }
 
@@ -5292,14 +5292,14 @@ RESOURCE LINKS
 }
 
 /* =========================================
-MOBILE
+TABLET
 ========================================= */
 
-@media(max-width:960px){
+@media (max-width:960px){
 
     .pricing-hero{
 
-        padding:90px 0 70px;
+        padding:90px 0 60px;
 
     }
 
@@ -5317,11 +5317,15 @@ MOBILE
 
 }
 
-@media(max-width:640px){
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:640px){
 
     .pricing-hero{
 
-        padding:80px 0 60px;
+        padding:80px 0 50px;
 
     }
 
@@ -5341,117 +5345,13 @@ MOBILE
 
         flex-direction:column;
 
-        align-items:flex-start;
+        align-items:stretch;
 
     }
 
     .pricing-links a{
 
         width:100%;
-
-        justify-content:center;
-
-    }
-
-}
-
-/* =========================================
-RESOURCE LINKS
-========================================= */
-
-.pricing-links{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin-top:10px;
-
-}
-
-.pricing-links span{
-
-    font-size:15px;
-
-    font-weight:700;
-
-    color:#0f172a;
-
-}
-
-.pricing-links a{
-
-    padding:10px 18px;
-
-    border:1px solid #dbeafe;
-
-    border-radius:999px;
-
-    background:#f8fbff;
-
-    text-decoration:none;
-
-    transition:.25s ease;
-
-}
-
-.pricing-links a:hover{
-
-    background:#eff6ff;
-
-    border-color:#93c5fd;
-
-}
-
-/* =========================================
-MOBILE
-========================================= */
-
-@media(max-width:960px){
-
-    .pricing-hero{
-
-        padding:90px 0 70px;
-
-    }
-
-    .pricing-hero h1{
-
-        font-size:54px;
-
-    }
-
-    .pricing-hero .lead{
-
-        font-size:20px;
-
-    }
-
-}
-
-@media(max-width:640px){
-
-    .pricing-hero h1{
-
-        font-size:42px;
-
-    }
-
-    .pricing-hero .lead{
-
-        font-size:18px;
-
-    }
-
-    .pricing-links{
-
-        flex-direction:column;
-
-        align-items:flex-start;
 
     }
 
