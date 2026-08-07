@@ -800,7 +800,7 @@ LinkedIn
 
 <script src="/chatbot.js"></script>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("ai-checklist-form");
@@ -813,8 +813,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const button = form.querySelector("button[type='submit']");
 
+        const originalButtonText = button.innerHTML;
+
         button.disabled = true;
-        button.textContent = "Submitting...";
+        button.innerHTML = "Submitting...";
 
         const payload = {
             name: form.name.value.trim(),
@@ -842,12 +844,12 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             if (!response.ok) {
-                throw new Error("Webhook failed");
+                throw new Error("Webhook failed.");
             }
 
-            /* ===============================
-               GOOGLE ANALYTICS 4 EVENT
-            =============================== */
+            /* ===========================
+               GOOGLE ANALYTICS 4
+            =========================== */
 
             if (typeof gtag === "function") {
 
@@ -861,9 +863,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            /* ===============================
+            /* ===========================
                GOOGLE TAG MANAGER
-            =============================== */
+            =========================== */
 
             window.dataLayer = window.dataLayer || [];
 
@@ -874,7 +876,46 @@ document.addEventListener("DOMContentLoaded", () => {
                 page_location: window.location.href
             });
 
-            window.location.href = "/thank-you-checklist";
+            /* ===========================
+               SUCCESS UI
+            =========================== */
+
+            form.reset();
+
+            form.innerHTML = `
+                <div style="
+                    text-align:center;
+                    padding:48px 32px;
+                    border:1px solid #dbeafe;
+                    border-radius:20px;
+                    background:#eff6ff;
+                ">
+                    <div style="font-size:52px;margin-bottom:18px;">
+                        ✓
+                    </div>
+
+                    <h3 style="
+                        margin:0 0 14px;
+                        font-size:30px;
+                        color:#0f172a;
+                    ">
+                        You're subscribed!
+                    </h3>
+
+                    <p style="
+                        margin:0;
+                        font-size:18px;
+                        line-height:1.7;
+                        color:#475569;
+                    ">
+                        Thank you for subscribing to the
+                        <strong>GrowthForge Executive Brief.</strong>
+                        Watch your inbox for practical AI Search,
+                        SEO, GEO, automation, and growth strategy
+                        insights.
+                    </p>
+                </div>
+            `;
 
         }
 
@@ -882,17 +923,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.error(error);
 
-            alert("Something went wrong. Please try again.");
+            alert("Something went wrong while submitting the form. Please try again.");
 
             button.disabled = false;
-            button.textContent = "Download Executive Checklist →";
+            button.innerHTML = originalButtonText;
 
         }
 
     });
 
 });
-    
 </script>
 
 </body>
