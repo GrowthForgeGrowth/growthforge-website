@@ -5354,26 +5354,71 @@ MOBILE
 }
 
 /* =========================================
-PACKAGE
+PRICING CARD
 ========================================= */
 
-.pricing-package{
-
-    padding:100px 0;
-
+.pricing-card{
+    height:100%;
 }
 
-.package-card{
+.pricing-card-inner{
+
+    display:flex;
+    flex-direction:column;
+
+    height:100%;
+
+    padding:40px;
 
     background:#fff;
 
     border:1px solid #e2e8f0;
 
-    border-radius:30px;
+    border-radius:24px;
 
-    overflow:hidden;
+    box-shadow:0 20px 60px rgba(15,23,42,.06);
 
-    box-shadow:0 24px 70px rgba(15,23,42,.06);
+    transition:.3s ease;
+
+}
+
+.pricing-card-inner:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2563eb;
+
+    box-shadow:0 32px 70px rgba(37,99,235,.15);
+
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.pricing-icon{
+
+    width:72px;
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+}
+
+.pricing-icon svg{
+
+    width:34px;
+    height:34px;
 
 }
 
@@ -5381,61 +5426,27 @@ PACKAGE
 HEADER
 ========================================= */
 
-.package-header{
+.pricing-category{
 
-    display:flex;
+    display:block;
 
-    justify-content:space-between;
+    margin-bottom:8px;
 
-    align-items:flex-end;
+    font-size:14px;
 
-    gap:40px;
+    font-weight:800;
 
-    padding:55px 60px;
-
-    border-bottom:1px solid #edf2f7;
-
-}
-
-.package-type{
-
-    display:inline-block;
-
-    padding:8px 16px;
-
-    margin-bottom:18px;
-
-    border-radius:999px;
-
-    background:#eff6ff;
-
-    color:#2563eb;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    letter-spacing:.12em;
+    letter-spacing:.08em;
 
     text-transform:uppercase;
 
-}
-
-.package-header h2{
-
-    margin:0 0 12px;
-
-    font:800 56px Manrope,sans-serif;
-
-    line-height:1;
-
-    color:#0f172a;
+    color:#2563eb;
 
 }
 
-.package-subtitle{
+.pricing-plan{
 
-    margin:0;
+    margin:0 0 28px;
 
     font-size:18px;
 
@@ -5443,121 +5454,104 @@ HEADER
 
 }
 
-.package-price{
-
-    text-align:right;
-
-    flex-shrink:0;
-
-}
-
-.package-price .price{
-
-    display:block;
-
-    font:800 64px Manrope,sans-serif;
-
-    color:#0f172a;
-
-    line-height:1;
-
-}
-
-.package-price .billing{
-
-    display:block;
-
-    margin-top:12px;
-
-    font-size:17px;
-
-    color:#64748b;
-
-}
-
 /* =========================================
-SUMMARY
+PRICE
 ========================================= */
 
-.package-summary{
+.pricing-cost{
 
-    padding:55px 60px;
+    display:flex;
 
-    border-bottom:1px solid #edf2f7;
+    align-items:flex-start;
+
+    margin-bottom:28px;
 
 }
 
-.package-summary h3{
+.currency{
 
-    margin:0 0 18px;
+    margin-top:8px;
 
-    font:700 32px Manrope,sans-serif;
+    margin-right:4px;
+
+    font-size:30px;
+
+    font-weight:700;
 
     color:#0f172a;
 
 }
 
-.package-summary p{
+.amount{
 
-    max-width:850px;
+    font:800 72px Manrope,sans-serif;
 
-    margin:0;
+    line-height:.9;
 
-    font-size:19px;
-
-    line-height:1.9;
-
-    color:#64748b;
+    color:#0f172a;
 
 }
 
 /* =========================================
-BODY
+DIVIDER
 ========================================= */
 
-.package-body{
+.pricing-divider{
+
+    width:100%;
+    height:1px;
+
+    margin-bottom:28px;
+
+    background:#e2e8f0;
+
+}
+
+/* =========================================
+DESCRIPTION
+========================================= */
+
+.pricing-description{
+
+    margin:0 0 34px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+/* =========================================
+SECTION TITLE
+========================================= */
+
+.pricing-list-title{
+
+    margin:0 0 20px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:#2563eb;
+
+}
+
+/* =========================================
+FEATURES
+========================================= */
+
+.pricing-features{
 
     display:grid;
 
-    grid-template-columns:2fr 420px;
-
-    gap:50px;
-
-    padding:60px;
-
-}
-
-/* =========================================
-INCLUSIONS
-========================================= */
-
-.package-includes{
-
-    background:#f8fafc;
-
-    border-radius:24px;
-
-    padding:40px;
-
-}
-
-.package-includes h4{
-
-    margin:0 0 28px;
-
-    font:700 26px Manrope,sans-serif;
-
-    color:#0f172a;
-
-}
-
-.package-includes ul{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px 30px;
+    gap:14px;
 
     margin:0;
 
@@ -5567,21 +5561,21 @@ INCLUSIONS
 
 }
 
-.package-includes li{
+.pricing-features li{
 
     position:relative;
 
-    padding-left:30px;
+    padding-left:28px;
+
+    color:#334155;
 
     font-size:16px;
 
-    line-height:1.7;
-
-    color:#475569;
+    line-height:1.6;
 
 }
 
-.package-includes li::before{
+.pricing-features li::before{
 
     content:"✓";
 
@@ -5598,40 +5592,32 @@ INCLUSIONS
 }
 
 /* =========================================
-SIDEBAR
+BEST FOR
 ========================================= */
 
-.package-sidebar{
+.pricing-highlight{
 
-    display:flex;
+    margin-top:36px;
 
-    flex-direction:column;
+    padding:22px;
 
-    gap:24px;
+    border-radius:18px;
 
-}
-
-.sidebar-card{
-
-    padding:30px;
+    background:#f8fafc;
 
     border:1px solid #e2e8f0;
 
-    border-radius:22px;
-
-    background:#fff;
-
 }
 
-.sidebar-label{
+.highlight-title{
 
     display:block;
 
-    margin-bottom:14px;
+    margin-bottom:12px;
 
     font-size:12px;
 
-    font-weight:700;
+    font-weight:800;
 
     letter-spacing:.12em;
 
@@ -5641,43 +5627,45 @@ SIDEBAR
 
 }
 
-.sidebar-card p{
+.pricing-highlight p{
 
     margin:0;
 
-    font-size:16px;
+    color:#475569;
 
-    line-height:1.8;
+    font-size:15px;
 
-    color:#64748b;
+    line-height:1.7;
 
 }
 
-.package-btn{
+/* =========================================
+BUTTON
+========================================= */
 
-    margin-top:auto;
+.pricing-button{
 
     width:100%;
+
+    margin-top:32px;
 
     text-align:center;
 
 }
 
 /* =========================================
-HOVER
+GRID
 ========================================= */
 
-.package-card{
+.pricing-grid{
 
-    transition:.3s ease;
+    display:grid;
 
-}
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 
-.package-card:hover{
+    gap:30px;
 
-    transform:translateY(-6px);
-
-    box-shadow:0 35px 90px rgba(15,23,42,.10);
+    align-items:stretch;
 
 }
 
@@ -5685,101 +5673,23 @@ HOVER
 MOBILE
 ========================================= */
 
-@media(max-width:1100px){
+@media(max-width:768px){
 
-    .package-body{
+    .pricing-card-inner{
 
-        grid-template-columns:1fr;
-
-    }
-
-    .package-sidebar{
-
-        margin-top:10px;
+        padding:30px;
 
     }
 
-}
+    .amount{
 
-@media(max-width:900px){
-
-    .package-header{
-
-        flex-direction:column;
-
-        align-items:flex-start;
+        font-size:58px;
 
     }
 
-    .package-price{
-
-        text-align:left;
-
-    }
-
-    .package-header,
-
-    .package-summary,
-
-    .package-body{
-
-        padding:40px;
-
-    }
-
-    .package-header h2{
-
-        font-size:46px;
-
-    }
-
-    .package-price .price{
-
-        font-size:54px;
-
-    }
-
-    .package-includes ul{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media(max-width:640px){
-
-    .package-header,
-
-    .package-summary,
-
-    .package-body{
-
-        padding:28px;
-
-    }
-
-    .package-header h2{
-
-        font-size:36px;
-
-    }
-
-    .package-summary h3{
-
-        font-size:26px;
-
-    }
-
-    .package-summary p{
+    .pricing-description{
 
         font-size:17px;
-
-    }
-
-    .package-price .price{
-
-        font-size:46px;
 
     }
 
