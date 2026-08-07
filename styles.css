@@ -4585,3 +4585,245 @@ CONTACT HERO
     }
 
 }
+
+/* =========================================
+CONTACT OPTIONS
+========================================= */
+
+.contact-options{
+
+    padding:100px 0;
+
+}
+
+.contact-options .section-heading{
+
+    max-width:760px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.contact-options .section-heading h2{
+
+    margin:0 0 18px;
+
+    font:800 54px Manrope,sans-serif;
+
+    line-height:1.1;
+
+    color:#0f172a;
+
+}
+
+.contact-options .section-heading p{
+
+    margin:0;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+GRID
+========================================= */
+
+.contact-options-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:32px;
+
+    align-items:stretch;
+
+}
+
+/* =========================================
+CARD
+========================================= */
+
+.contact-option-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:42px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:24px;
+
+    box-shadow:0 20px 60px rgba(15,23,42,.06);
+
+    transition:.25s ease;
+
+}
+
+.contact-option-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:0 30px 80px rgba(15,23,42,.10);
+
+}
+
+/* =========================================
+ICON
+========================================= */
+
+.contact-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:24px;
+
+    border-radius:18px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+/* =========================================
+TEXT
+========================================= */
+
+.contact-option-card h3{
+
+    margin:0 0 16px;
+
+    font:700 28px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.contact-option-card p{
+
+    margin:0 0 28px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+LINK
+========================================= */
+
+.contact-link{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    transition:.2s;
+
+}
+
+.contact-link:hover{
+
+    color:#1d4ed8;
+
+}
+
+/* =========================================
+META
+========================================= */
+
+.contact-meta{
+
+    margin-top:auto;
+
+    font-size:14px;
+
+    color:#94a3b8;
+
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.contact-option-card .btn{
+
+    margin-top:auto;
+
+    width:fit-content;
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:960px){
+
+    .contact-options{
+
+        padding:80px 0;
+
+    }
+
+    .contact-options-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-options .section-heading h2{
+
+        font-size:42px;
+
+    }
+
+    .contact-options .section-heading p{
+
+        font-size:18px;
+
+    }
+
+    .contact-option-card{
+
+        padding:34px;
+
+    }
+
+}
