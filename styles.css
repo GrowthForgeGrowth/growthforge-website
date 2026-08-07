@@ -35,8 +35,8 @@ header .logo{flex-shrink:0}
 .hero{
 
     display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:80px;
+    grid-template-columns:minmax(700px,760px) 1fr;
+    gap:100px;
     align-items:center;
 
     min-height:90vh;
@@ -44,7 +44,7 @@ header .logo{flex-shrink:0}
     padding:120px 0;
 
     background:
-        radial-gradient(circle at 75% 35%, rgba(37,99,235,.18), transparent 40%),
+        radial-gradient(circle at 78% 40%, rgba(37,99,235,.20), transparent 42%),
         linear-gradient(180deg,#08111f 0%,#0f172a 100%);
 
     color:#fff;
@@ -60,36 +60,41 @@ header .logo{flex-shrink:0}
 
 .hero-content{
 
-    max-width:680px;
+    width:100%;
+    max-width:760px;
+
     position:relative;
     z-index:2;
 
 }
 
-.eyebrow{
+.hero .eyebrow{
 
     display:inline-block;
 
     margin-bottom:24px;
 
-    font-size:.9rem;
-    font-weight:600;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-
     color:#93c5fd;
+
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
 
 }
 
 .hero h1{
 
-    font-size:clamp(3.5rem,7vw,5.5rem);
+    max-width:760px;
 
-    line-height:1.05;
+    font-family:Manrope,sans-serif;
+    font-size:84px;
+    font-weight:800;
 
-    letter-spacing:-.04em;
+    line-height:1.02;
+    letter-spacing:-.05em;
 
-    margin:0 0 28px;
+    margin:0 0 32px;
 
     color:#fff;
 
@@ -97,22 +102,22 @@ header .logo{flex-shrink:0}
 
 .hero .lead{
 
-    max-width:600px;
+    max-width:640px;
 
-    font-size:1.2rem;
-
-    line-height:1.8;
+    font-size:24px;
+    line-height:1.65;
 
     color:rgba(255,255,255,.78);
 
-    margin-bottom:40px;
+    margin-bottom:42px;
 
 }
 
 .cta{
 
     display:flex;
-    gap:18px;
+    align-items:center;
+    gap:22px;
     flex-wrap:wrap;
 
 }
@@ -125,7 +130,7 @@ header .logo{flex-shrink:0}
 
     position:relative;
 
-    height:560px;
+    height:620px;
 
     display:flex;
     align-items:center;
@@ -139,17 +144,18 @@ header .logo{flex-shrink:0}
 
     position:absolute;
 
-    width:520px;
-    height:520px;
+    width:540px;
+    height:540px;
 
     border-radius:50%;
 
-    background:radial-gradient(circle,
-        rgba(37,99,235,.45) 0%,
-        rgba(37,99,235,.12) 45%,
-        transparent 75%);
+    background:
+        radial-gradient(circle,
+            rgba(37,99,235,.45) 0%,
+            rgba(37,99,235,.15) 45%,
+            transparent 75%);
 
-    filter:blur(40px);
+    filter:blur(45px);
 
 }
 
@@ -158,45 +164,64 @@ header .logo{flex-shrink:0}
 .hero-grid{
 
     position:absolute;
-
     inset:0;
 
     background-image:
-
         linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-
         linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
 
     background-size:48px 48px;
 
-    mask-image:radial-gradient(circle, #000 35%, transparent 90%);
+    opacity:.25;
 
-    opacity:.35;
+    mask-image:radial-gradient(circle,#000 35%,transparent 90%);
 
 }
 
-/* Flowing Lines */
+/* Rings */
 
 .hero-lines{
 
     position:absolute;
 
-    width:460px;
-    height:460px;
+    width:480px;
+    height:480px;
 
     border-radius:50%;
 
-    border:1px solid rgba(96,165,250,.18);
+    border:1px solid rgba(96,165,250,.20);
 
     box-shadow:
-
-        0 0 0 40px rgba(96,165,250,.08),
-
-        0 0 0 90px rgba(96,165,250,.05),
-
-        0 0 0 150px rgba(96,165,250,.03);
+        0 0 0 45px rgba(96,165,250,.08),
+        0 0 0 95px rgba(96,165,250,.05),
+        0 0 0 155px rgba(96,165,250,.03);
 
     transform:rotate(-18deg);
+
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h2{
+
+    font:800 48px Manrope,sans-serif;
+    margin:30px 0;
+
+}
+
+h3{
+
+    font:700 24px Manrope,sans-serif;
+    margin:15px 0;
+
+}
+
+h4{
+
+    font:700 18px Manrope,sans-serif;
+    margin:10px 0;
 
 }
 
@@ -210,7 +235,7 @@ header .logo{flex-shrink:0}
 
         grid-template-columns:1fr;
 
-        gap:60px;
+        gap:70px;
 
         padding:90px 0;
 
@@ -222,11 +247,22 @@ header .logo{flex-shrink:0}
 
     .hero-content{
 
+        max-width:100%;
         margin:0 auto;
 
     }
 
+    .hero h1{
+
+        font-size:56px;
+
+        max-width:100%;
+
+    }
+
     .hero .lead{
+
+        font-size:20px;
 
         margin-left:auto;
         margin-right:auto;
@@ -241,7 +277,7 @@ header .logo{flex-shrink:0}
 
     .hero-visual{
 
-        height:380px;
+        height:360px;
 
     }
 
@@ -259,50 +295,6 @@ header .logo{flex-shrink:0}
 
     }
 
-}
-
-/* =========================================
-   TYPOGRAPHY
-========================================= */
-
-h1{
-    font:800 60px Manrope,sans-serif;
-    line-height:1.05;
-    margin:10px 0;
-}
-
-h2{
-    font:800 48px Manrope,sans-serif;
-    margin:30px 0;
-}
-
-h3{
-    font:700 24px Manrope,sans-serif;
-    margin:15px 0;
-}
-
-h4{
-    font:700 18px Manrope,sans-serif;
-    margin:10px 0;
-}
-
-.lead{
-    font-size:20px;
-    color:#475569;
-}
-
-.eyebrow{
-    color:#2563eb;
-    font-weight:700;
-    text-transform:uppercase;
-    font-size:14px;
-}
-
-.cta{
-    display:flex;
-    gap:15px;
-    margin-top:30px;
-    flex-wrap:wrap;
 }
 
 /* =======================================
