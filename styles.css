@@ -6784,10 +6784,10 @@ MOBILE
 }
 
 /* =========================================
-AI SEO / GEO OVERVIEW
+AI SEO / GEO CONCEPTS
 ========================================= */
 
-.ai-overview{
+.ai-concepts{
 
     padding:110px 0;
 
@@ -6796,20 +6796,20 @@ AI SEO / GEO OVERVIEW
 }
 
 /* =========================================
-HEADER
+SECTION HEADER
 ========================================= */
 
-.ai-overview-header{
+.ai-concepts .section-header{
 
     max-width:900px;
 
-    margin:0 auto 80px;
+    margin:0 auto 70px;
 
     text-align:center;
 
 }
 
-.ai-overview-header .eyebrow{
+.ai-concepts .section-label{
 
     display:inline-flex;
 
@@ -6839,9 +6839,9 @@ HEADER
 
 }
 
-.ai-overview-header h2{
+.ai-concepts .section-header h2{
 
-    margin:0 0 24px;
+    margin:0 0 22px;
 
     font:800 56px Manrope,sans-serif;
 
@@ -6853,85 +6853,117 @@ HEADER
 
 }
 
-.ai-overview-header p{
+.ai-concepts .section-header p{
 
     max-width:760px;
 
     margin:0 auto;
 
-    font-size:22px;
+    font-size:21px;
 
-    line-height:1.75;
+    line-height:1.8;
 
     color:#64748b;
 
 }
 
 /* =========================================
-CONTENT
+CONCEPT GRID
 ========================================= */
 
-.ai-overview-content{
+.concept-grid{
 
-    max-width:980px;
+    display:grid;
 
-    margin:0 auto;
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
-}
-
-.ai-section{
-
-    margin-bottom:70px;
+    gap:36px;
 
 }
 
-.ai-section:last-child{
+.concept-card{
 
-    margin-bottom:0;
+    padding:42px;
 
-}
+    background:#fff;
 
-.ai-section h3{
+    border:1px solid #e2e8f0;
 
-    margin:0 0 22px;
+    border-radius:24px;
 
-    font:700 38px Manrope,sans-serif;
+    box-shadow:0 18px 45px rgba(15,23,42,.05);
 
-    color:#0f172a;
-
-}
-
-.ai-section h4{
-
-    margin:40px 0 18px;
-
-    font:700 26px Manrope,sans-serif;
-
-    color:#0f172a;
+    transition:.3s ease;
 
 }
 
-.ai-section p{
+.concept-card:hover{
 
-    margin:0 0 22px;
+    transform:translateY(-6px);
 
-    font-size:19px;
+    border-color:#bfdbfe;
 
-    line-height:1.9;
-
-    color:#475569;
+    box-shadow:0 28px 60px rgba(15,23,42,.08);
 
 }
 
-.ai-section .link{
+.concept-tag{
 
     display:inline-flex;
 
     align-items:center;
 
-    gap:8px;
+    justify-content:center;
 
-    margin-top:4px;
+    padding:8px 18px;
+
+    margin-bottom:22px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+}
+
+.concept-card h3{
+
+    margin:0 0 18px;
+
+    font:700 34px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.concept-card p{
+
+    margin:0;
+
+    font-size:18px;
+
+    line-height:1.85;
+
+    color:#475569;
+
+}
+
+.article-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    margin-top:30px;
 
     font-size:17px;
 
@@ -6945,7 +6977,7 @@ CONTENT
 
 }
 
-.ai-section .link:hover{
+.article-link:hover{
 
     color:#1d4ed8;
 
@@ -6954,46 +6986,72 @@ CONTENT
 }
 
 /* =========================================
-COMPARISON GRID
+COMPARISON
 ========================================= */
 
-.ai-comparison{
+.comparison-card{
 
-    display:grid;
+    margin-top:90px;
 
-    grid-template-columns:repeat(2,minmax(0,1fr));
-
-    gap:32px;
-
-    margin-top:40px;
-
-}
-
-.ai-card{
-
-    padding:36px;
+    padding:60px;
 
     background:#fff;
 
     border:1px solid #e2e8f0;
 
-    border-radius:22px;
+    border-radius:28px;
 
-    box-shadow:0 12px 35px rgba(15,23,42,.05);
+    box-shadow:0 20px 60px rgba(15,23,42,.05);
 
 }
 
-.ai-card h4{
+.comparison-card h2{
 
-    margin:0 0 22px;
+    margin:0 0 50px;
 
-    font:700 24px Manrope,sans-serif;
+    text-align:center;
+
+    font:800 48px Manrope,sans-serif;
+
+    line-height:1.1;
 
     color:#0f172a;
 
 }
 
-.ai-card ul{
+.comparison-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:50px;
+
+}
+
+.comparison-grid>div{
+
+    padding:36px;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:22px;
+
+    background:#f8fafc;
+
+}
+
+.comparison-grid h3{
+
+    margin:0 0 24px;
+
+    font:700 28px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.comparison-grid ul{
 
     margin:0;
 
@@ -7003,25 +7061,25 @@ COMPARISON GRID
 
     display:grid;
 
-    gap:16px;
+    gap:18px;
 
 }
 
-.ai-card li{
+.comparison-grid li{
 
     position:relative;
 
-    padding-left:28px;
+    padding-left:30px;
 
     font-size:17px;
 
-    line-height:1.7;
+    line-height:1.75;
 
     color:#475569;
 
 }
 
-.ai-card li::before{
+.comparison-grid li::before{
 
     content:"✓";
 
@@ -7043,39 +7101,47 @@ TABLET
 
 @media (max-width:960px){
 
-    .ai-overview{
+    .ai-concepts{
 
         padding:90px 0;
 
     }
 
-    .ai-overview-header{
+    .ai-concepts .section-header h2{
 
-        margin-bottom:60px;
-
-    }
-
-    .ai-overview-header h2{
-
-        font-size:44px;
+        font-size:46px;
 
     }
 
-    .ai-overview-header p{
+    .ai-concepts .section-header p{
 
         font-size:19px;
 
     }
 
-    .ai-section h3{
+    .concept-grid{
 
-        font-size:32px;
+        grid-template-columns:1fr;
 
     }
 
-    .ai-comparison{
+    .comparison-card{
+
+        padding:42px;
+
+    }
+
+    .comparison-card h2{
+
+        font-size:40px;
+
+    }
+
+    .comparison-grid{
 
         grid-template-columns:1fr;
+
+        gap:30px;
 
     }
 
@@ -7087,51 +7153,79 @@ MOBILE
 
 @media (max-width:640px){
 
-    .ai-overview{
+    .ai-concepts{
 
         padding:70px 0;
 
     }
 
-    .ai-overview-header h2{
-
-        font-size:34px;
-
-    }
-
-    .ai-overview-header p{
-
-        font-size:17px;
-
-    }
-
-    .ai-section{
+    .ai-concepts .section-header{
 
         margin-bottom:50px;
 
     }
 
-    .ai-section h3{
+    .ai-concepts .section-header h2{
 
-        font-size:28px;
-
-    }
-
-    .ai-section h4{
-
-        font-size:22px;
+        font-size:34px;
 
     }
 
-    .ai-section p{
+    .ai-concepts .section-header p{
 
         font-size:17px;
 
     }
 
-    .ai-card{
+    .concept-card{
 
-        padding:28px;
+        padding:30px;
+
+    }
+
+    .concept-card h3{
+
+        font-size:28px;
+
+    }
+
+    .concept-card p{
+
+        font-size:17px;
+
+    }
+
+    .comparison-card{
+
+        margin-top:60px;
+
+        padding:30px;
+
+    }
+
+    .comparison-card h2{
+
+        font-size:30px;
+
+        margin-bottom:36px;
+
+    }
+
+    .comparison-grid>div{
+
+        padding:24px;
+
+    }
+
+    .comparison-grid h3{
+
+        font-size:24px;
+
+    }
+
+    .comparison-grid li{
+
+        font-size:16px;
 
     }
 
