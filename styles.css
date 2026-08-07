@@ -2066,10 +2066,8 @@ EXECUTIVE GROWTH AUDIT
 
 .audit-preview-body{
     display:grid;
-
-    grid-template-columns:110px 1fr;
-
-    min-height:640px;
+    grid-template-columns:140px 1fr;
+    min-height:900px;
 }
 
 .preview-sidebar{
@@ -2107,6 +2105,7 @@ EXECUTIVE GROWTH AUDIT
 }
 
 .preview-main{
+
     position:relative;
 
     display:flex;
@@ -2115,17 +2114,47 @@ EXECUTIVE GROWTH AUDIT
 
     align-items:center;
 
-    padding:30px;
+    padding:10px;
 
-    background:#fff;
+    min-height:900px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbff,
+            #edf4fb
+        );
 }
 
 .preview-main img{
-    width:100%;
-    max-width:700px;
-    border-radius:10px;
-    box-shadow:0 25px 60px rgba(15,23,42,.18);
-    transition:.35s ease;
+
+    width:95%;
+
+    height:auto;
+
+    max-width:850px;
+
+    max-height:820px;
+
+    object-fit:contain;
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    padding:12px;
+
+    box-shadow:
+        0 40px 100px rgba(15,23,42,.20),
+        0 8px 25px rgba(15,23,42,.08);
+
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
+
+    transform:scale(.98);
+
+    filter:blur(3px);
 }
 
 .preview-arrow{
@@ -2190,3 +2219,4 @@ EXECUTIVE GROWTH AUDIT
 
     background:#2563eb;
 }
+
