@@ -5352,3 +5352,435 @@ MOBILE
     }
 
 }
+
+/* =========================================
+PACKAGE
+========================================= */
+
+.pricing-package{
+
+    padding:100px 0;
+
+}
+
+.package-card{
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 24px 70px rgba(15,23,42,.06);
+
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.package-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:40px;
+
+    padding:55px 60px;
+
+    border-bottom:1px solid #edf2f7;
+
+}
+
+.package-type{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    margin-bottom:18px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+}
+
+.package-header h2{
+
+    margin:0 0 12px;
+
+    font:800 56px Manrope,sans-serif;
+
+    line-height:1;
+
+    color:#0f172a;
+
+}
+
+.package-subtitle{
+
+    margin:0;
+
+    font-size:18px;
+
+    color:#64748b;
+
+}
+
+.package-price{
+
+    text-align:right;
+
+    flex-shrink:0;
+
+}
+
+.package-price .price{
+
+    display:block;
+
+    font:800 64px Manrope,sans-serif;
+
+    color:#0f172a;
+
+    line-height:1;
+
+}
+
+.package-price .billing{
+
+    display:block;
+
+    margin-top:12px;
+
+    font-size:17px;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+SUMMARY
+========================================= */
+
+.package-summary{
+
+    padding:55px 60px;
+
+    border-bottom:1px solid #edf2f7;
+
+}
+
+.package-summary h3{
+
+    margin:0 0 18px;
+
+    font:700 32px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.package-summary p{
+
+    max-width:850px;
+
+    margin:0;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+BODY
+========================================= */
+
+.package-body{
+
+    display:grid;
+
+    grid-template-columns:2fr 420px;
+
+    gap:50px;
+
+    padding:60px;
+
+}
+
+/* =========================================
+INCLUSIONS
+========================================= */
+
+.package-includes{
+
+    background:#f8fafc;
+
+    border-radius:24px;
+
+    padding:40px;
+
+}
+
+.package-includes h4{
+
+    margin:0 0 28px;
+
+    font:700 26px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.package-includes ul{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px 30px;
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+.package-includes li{
+
+    position:relative;
+
+    padding-left:30px;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+.package-includes li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+/* =========================================
+SIDEBAR
+========================================= */
+
+.package-sidebar{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.sidebar-card{
+
+    padding:30px;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:22px;
+
+    background:#fff;
+
+}
+
+.sidebar-label{
+
+    display:block;
+
+    margin-bottom:14px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:#2563eb;
+
+}
+
+.sidebar-card p{
+
+    margin:0;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+.package-btn{
+
+    margin-top:auto;
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+/* =========================================
+HOVER
+========================================= */
+
+.package-card{
+
+    transition:.3s ease;
+
+}
+
+.package-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 35px 90px rgba(15,23,42,.10);
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:1100px){
+
+    .package-body{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .package-sidebar{
+
+        margin-top:10px;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .package-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .package-price{
+
+        text-align:left;
+
+    }
+
+    .package-header,
+
+    .package-summary,
+
+    .package-body{
+
+        padding:40px;
+
+    }
+
+    .package-header h2{
+
+        font-size:46px;
+
+    }
+
+    .package-price .price{
+
+        font-size:54px;
+
+    }
+
+    .package-includes ul{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:640px){
+
+    .package-header,
+
+    .package-summary,
+
+    .package-body{
+
+        padding:28px;
+
+    }
+
+    .package-header h2{
+
+        font-size:36px;
+
+    }
+
+    .package-summary h3{
+
+        font-size:26px;
+
+    }
+
+    .package-summary p{
+
+        font-size:17px;
+
+    }
+
+    .package-price .price{
+
+        font-size:46px;
+
+    }
+
+}
