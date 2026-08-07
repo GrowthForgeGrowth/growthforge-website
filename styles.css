@@ -7370,6 +7370,184 @@ CHECKLIST CARD
 }
 
 /* =========================================
+KNOWLEDGE HUB
+========================================= */
+
+.knowledge-hub{
+
+    padding:120px 0;
+
+    background:#f8fafc;
+
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.knowledge-header{
+
+    max-width:860px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.knowledge-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+}
+
+.knowledge-header h2{
+
+    margin:0 0 24px;
+
+    font:800 58px Manrope,sans-serif;
+
+    line-height:1.08;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+}
+
+.knowledge-header p{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+LAYOUT
+========================================= */
+
+.knowledge-layout{
+
+    display:grid;
+
+    grid-template-columns:minmax(0,2fr) 360px;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+/* =========================================
+CHECKLIST CARD
+========================================= */
+
+.checklist-card{
+
+    padding:50px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:28px;
+
+    box-shadow:0 20px 60px rgba(15,23,42,.06);
+
+}
+
+.checklist-header{
+
+    margin-bottom:36px;
+
+    padding-bottom:28px;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+.mini-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 16px;
+
+    margin-bottom:18px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+}
+
+.checklist-header h3{
+
+    margin:0 0 14px;
+
+    font:700 34px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.checklist-header p{
+
+    margin:0;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
 CHECKLIST
 ========================================= */
 
@@ -7379,7 +7557,7 @@ CHECKLIST
 
     grid-template-columns:repeat(2,minmax(0,1fr));
 
-    gap:22px 40px;
+    gap:22px 36px;
 
     margin:0;
 
@@ -7395,11 +7573,11 @@ CHECKLIST
 
     padding-left:34px;
 
+    color:#475569;
+
     font-size:17px;
 
     line-height:1.8;
-
-    color:#475569;
 
 }
 
@@ -7436,16 +7614,94 @@ CHECKLIST
 }
 
 /* =========================================
-FOOTER
+SIDEBAR
 ========================================= */
 
-.checklist-footer{
+.library-card{
 
-    margin-top:45px;
+    position:sticky;
 
-    padding-top:35px;
+    top:120px;
 
-    border-top:1px solid #e2e8f0;
+    padding:36px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:24px;
+
+    box-shadow:0 18px 50px rgba(15,23,42,.05);
+
+}
+
+.sidebar-label{
+
+    display:inline-block;
+
+    margin-bottom:16px;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+}
+
+.library-card h3{
+
+    margin:0 0 16px;
+
+    font:700 30px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.library-card p{
+
+    margin:0 0 28px;
+
+    color:#64748b;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+/* =========================================
+LIBRARY LINKS
+========================================= */
+
+.library-links{
+
+    margin:0 0 30px;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+.library-links li{
+
+    border-bottom:1px solid #edf2f7;
+
+}
+
+.library-links li:last-child{
+
+    border-bottom:none;
+
+}
+
+.library-links a{
 
     display:flex;
 
@@ -7453,63 +7709,79 @@ FOOTER
 
     align-items:center;
 
-    gap:40px;
+    padding:16px 0;
+
+    color:#334155;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.25s ease;
 
 }
 
-.checklist-footer p{
+.library-links a:hover{
 
-    flex:1;
+    color:#2563eb;
 
-    margin:0;
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    color:#64748b;
+    padding-left:6px;
 
 }
 
-.checklist-footer .btn{
+.library-card .btn{
 
-    flex-shrink:0;
+    width:100%;
+
+    text-align:center;
 
 }
 
 /* =========================================
-TABLET
+RESPONSIVE
 ========================================= */
 
-@media (max-width:960px){
+@media (max-width:1100px){
 
-    .ai-checklist{
+    .knowledge-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .library-card{
+
+        position:static;
+
+    }
+
+}
+
+@media (max-width:900px){
+
+    .knowledge-hub{
 
         padding:90px 0;
 
     }
 
-    .ai-checklist .section-header{
+    .knowledge-header{
 
         margin-bottom:50px;
 
     }
 
-    .ai-checklist .section-header h2{
+    .knowledge-header h2{
 
         font-size:46px;
 
     }
 
-    .ai-checklist .section-header p{
+    .knowledge-header p{
 
-        font-size:19px;
-
-    }
-
-    .checklist-card{
-
-        padding:40px;
+        font-size:18px;
 
     }
 
@@ -7519,41 +7791,29 @@ TABLET
 
     }
 
-    .checklist-footer{
+    .checklist-card{
 
-        flex-direction:column;
-
-        align-items:flex-start;
+        padding:40px;
 
     }
 
 }
 
-/* =========================================
-MOBILE
-========================================= */
-
 @media (max-width:640px){
 
-    .ai-checklist{
+    .knowledge-hub{
 
         padding:70px 0;
 
     }
 
-    .ai-checklist .section-header{
+    .knowledge-header h2{
 
-        margin-bottom:40px;
-
-    }
-
-    .ai-checklist .section-header h2{
-
-        font-size:34px;
+        font-size:36px;
 
     }
 
-    .ai-checklist .section-header p{
+    .knowledge-header p{
 
         font-size:17px;
 
@@ -7573,13 +7833,27 @@ MOBILE
 
     }
 
-    .checklist-header p,
-
-    .checklist li,
-
-    .checklist-footer p{
+    .checklist-header p{
 
         font-size:16px;
+
+    }
+
+    .checklist li{
+
+        font-size:16px;
+
+    }
+
+    .library-card{
+
+        padding:28px;
+
+    }
+
+    .library-card h3{
+
+        font-size:26px;
 
     }
 
