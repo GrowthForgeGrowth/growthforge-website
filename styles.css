@@ -2748,7 +2748,7 @@ EXECUTIVE GROWTH AUDIT
 
 .founder-section{
 
-    padding:110px 0;
+    padding:120px 0;
 
 }
 
@@ -2756,53 +2756,68 @@ EXECUTIVE GROWTH AUDIT
 
     display:grid;
 
-    grid-template-columns:420px 1fr;
+    grid-template-columns:520px minmax(0,1fr);
 
-    gap:80px;
+    gap:100px;
 
     align-items:center;
 
 }
 
+.founder-image{
+
+    position:relative;
+
+}
+
 .founder-image img{
-
-    width:100%;
-
-    border-radius:24px;
 
     display:block;
 
-    box-shadow:0 30px 70px rgba(15,23,42,.12);
+    width:100%;
+
+    max-width:520px;
+
+    height:680px;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 30px 80px rgba(15,23,42,.15);
 
 }
 
 .founder-content{
 
-    max-width:720px;
+    max-width:760px;
 
 }
 
 .founder-title{
 
-    font-size:20px;
+    margin:0 0 30px;
+
+    font-size:22px;
 
     font-weight:600;
 
     color:#2563eb;
 
-    margin:0 0 28px;
-
 }
 
 .founder-intro{
 
-    font-size:20px;
+    margin:0 0 42px;
 
-    line-height:1.85;
+    font-size:21px;
+
+    line-height:1.9;
 
     color:#475569;
-
-    margin-bottom:40px;
 
 }
 
@@ -2810,33 +2825,48 @@ EXECUTIVE GROWTH AUDIT
 
     display:grid;
 
-    gap:22px;
+    gap:24px;
 
 }
 
 .highlight{
 
-    padding:24px 28px;
+    padding:28px 32px;
+
+    background:#fff;
 
     border:1px solid #e2e8f0;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    background:#fff;
+    transition:.25s ease;
+
+}
+
+.highlight:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 45px rgba(15,23,42,.08);
 
 }
 
 .highlight h3{
 
-    margin:0 0 10px;
+    margin:0 0 12px;
 
-    font-size:20px;
+    font:700 22px Manrope,sans-serif;
+
+    color:#0f172a;
 
 }
 
 .highlight p{
 
     margin:0;
+
+    font-size:16px;
 
     line-height:1.8;
 
@@ -2850,7 +2880,31 @@ EXECUTIVE GROWTH AUDIT
 
         grid-template-columns:1fr;
 
-        gap:50px;
+        gap:60px;
+
+    }
+
+    .founder-image{
+
+        display:flex;
+
+        justify-content:center;
+
+    }
+
+    .founder-image img{
+
+        width:100%;
+
+        max-width:420px;
+
+        height:560px;
+
+    }
+
+    .founder-content{
+
+        max-width:100%;
 
     }
 
