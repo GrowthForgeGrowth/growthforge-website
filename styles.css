@@ -4471,3 +4471,117 @@ EXECUTIVE AUDIT OVERVIEW
     background:#dbe4f0;
 
 }
+
+/* =========================================
+CONTACT HERO
+========================================= */
+
+.contact-hero{
+
+    padding:120px 0 90px;
+
+    background:#fff;
+
+}
+
+.contact-hero .hero-content{
+
+    max-width:880px;
+
+}
+
+.contact-hero .eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:22px;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+}
+
+.contact-hero h1{
+
+    margin:0 0 28px;
+
+    font:800 72px Manrope,sans-serif;
+
+    line-height:1.05;
+
+    letter-spacing:-.04em;
+
+    color:#0f172a;
+
+}
+
+.contact-hero .lead{
+
+    max-width:760px;
+
+    margin-bottom:28px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+.contact-hero .byline{
+
+    max-width:760px;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+@media(max-width:960px){
+
+    .contact-hero{
+
+        padding:90px 0 70px;
+
+    }
+
+    .contact-hero h1{
+
+        font-size:54px;
+
+    }
+
+    .contact-hero .lead{
+
+        font-size:20px;
+
+    }
+
+}
+
+@media(max-width:640px){
+
+    .contact-hero h1{
+
+        font-size:42px;
+
+    }
+
+    .contact-hero .lead{
+
+        font-size:18px;
+
+    }
+
+}
