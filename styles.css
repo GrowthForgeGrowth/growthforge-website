@@ -5694,3 +5694,55 @@ MOBILE
     }
 
 }
+
+/* =========================================
+FEATURED PLAN
+========================================= */
+
+.featured-plan .pricing-card-inner{
+
+    position:relative;
+
+    border:2px solid #2563eb;
+
+}
+
+.featured-badge{
+
+    position:absolute;
+
+    top:24px;
+
+    right:24px;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+/* =========================================
+PRICE FREQUENCY
+========================================= */
+
+.pricing-frequency{
+
+    margin:-18px 0 24px;
+
+    color:#64748b;
+
+    font-size:16px;
+
+}
