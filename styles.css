@@ -3963,3 +3963,200 @@ EXECUTIVE GROWTH AUDIT
     }
 
 }
+
+<section class="audit-form-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Start Your Executive Growth Audit</h2>
+
+            <p>
+                Complete the Executive Growth Audit application below. After submission, you'll proceed to secure payment. Once payment is confirmed, we'll begin your Executive Growth Audit and contact you within 24 hours to schedule your Executive Strategy Session.
+            </p>
+
+        </div>
+
+        <div class="audit-form-card">
+
+            <form id="discovery-form" class="audit-form">
+
+                <div class="form-group">
+                    <label>Company Name *</label>
+                    <input type="text" name="company" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Website</label>
+                    <input type="url" name="website">
+                </div>
+
+                <div class="form-group">
+                    <label>Industry *</label>
+                    <input
+                        type="text"
+                        name="industry"
+                        required
+                        placeholder="e.g., SaaS, Healthcare, E-commerce, Professional Services">
+                </div>
+
+                <div class="form-group">
+                    <label>Number of Employees *</label>
+
+                    <select name="employees" required>
+                        <option value="">Select...</option>
+                        <option value="1-5">1-5</option>
+                        <option value="6-20">6-20</option>
+                        <option value="21-50">21-50</option>
+                        <option value="51-100">51-100</option>
+                        <option value="101-250">101-250</option>
+                        <option value="250+">250+</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Annual Revenue (Optional)</label>
+
+                    <select name="revenue">
+
+                        <option value="">Prefer not to say</option>
+                        <option value="<1M">&lt;$1M</option>
+                        <option value="1-5M">$1-5M</option>
+                        <option value="5-10M">$5-10M</option>
+                        <option value="10-50M">$10-50M</option>
+                        <option value="50M+">$50M+</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Primary Growth Challenge *</label>
+
+                    <textarea
+                        name="challenge"
+                        required
+                        placeholder="What's your biggest growth challenge right now? What's blocking your growth?"></textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Services of Interest *</label>
+
+                    <div class="checkbox-grid">
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="services" value="ai-seo">
+                            <span>AI SEO (Generative Engine Optimization)</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="services" value="google-ads">
+                            <span>Google Ads</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="services" value="meta-ads">
+                            <span>Meta Ads (Facebook & Instagram)</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="services" value="cro">
+                            <span>Conversion Rate Optimization (CRO)</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="services" value="automation">
+                            <span>Marketing Automation & AI</span>
+                        </label>
+
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="services" value="consulting">
+                            <span>Executive Consulting</span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Monthly Marketing Budget *</label>
+
+                    <select name="budget" required>
+
+                        <option value="">Select...</option>
+                        <option value="<1500">Under $1,500</option>
+                        <option value="1500-3000">$1,500–3,000</option>
+                        <option value="3000-5000">$3,000–5,000</option>
+                        <option value="5000+">$5,000+</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Expected Start Date *</label>
+
+                    <select name="start-date" required>
+
+                        <option value="">Select...</option>
+                        <option value="immediately">Immediately</option>
+                        <option value="30-days">Within 30 Days</option>
+                        <option value="90-days">Within 90 Days</option>
+                        <option value="exploring">Just Exploring</option>
+
+                    </select>
+
+                </div>
+
+                <p class="required-note">
+                    * Required fields
+                </p>
+
+                <button
+                    type="submit"
+                    class="btn audit-purchase-btn">
+
+                    Purchase Executive Growth Audit →
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <p class="audit-note">
+            We'll respond within 24 hours with available time slots. You can book directly on our calendar.
+        </p>
+
+        <div class="privacy-card">
+
+            <p>
+
+                <strong>Data Privacy & Security:</strong>
+
+                Your business data is treated as a critical asset. Information shared for your Executive Growth Audit, including analytics, advertising performance, and growth data, is used solely to analyze opportunities, identify revenue improvements, and prepare strategic recommendations. GrowthForge does not sell, share, or use your business data for purposes unrelated to delivering your requested services.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
