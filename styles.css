@@ -2122,13 +2122,10 @@ EXECUTIVE GROWTH AUDIT
 
 .preview-main img{
     width:100%;
-
     max-width:700px;
-
     border-radius:10px;
-
-    box-shadow:
-        0 25px 60px rgba(15,23,42,.18);
+    box-shadow:0 25px 60px rgba(15,23,42,.18);
+    transition:.35s ease;
 }
 
 .preview-arrow{
