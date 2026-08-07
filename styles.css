@@ -2655,3 +2655,89 @@ EXECUTIVE GROWTH AUDIT
     }
 
 }
+
+/* =========================================
+   PRINCIPLES
+========================================= */
+
+.principles{
+
+    padding:100px 0;
+
+    background:#f8fafc;
+
+}
+
+.principles .section-header{
+
+    max-width:760px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.principles-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.principle-card{
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:22px;
+
+    padding:36px;
+
+    transition:.25s ease;
+
+}
+
+.principle-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 50px rgba(15,23,42,.08);
+
+}
+
+.principle-card h3{
+
+    margin:0 0 14px;
+
+    font:700 24px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.principle-card p{
+
+    margin:0;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+@media(max-width:960px){
+
+    .principles-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
