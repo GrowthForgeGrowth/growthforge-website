@@ -238,9 +238,10 @@
 
 <!-- AI Search Checklist Popup -->
 <div id="welcome-popup" class="popup-overlay">
-<div class="popup-modal">
-  
-        <button class="popup-close">&times;</button>
+
+    <div class="popup-modal">
+
+        <button class="popup-close" type="button">&times;</button>
 
         <h2>Is Your Business Ready for AI Search?</h2>
 
@@ -252,7 +253,10 @@
 
             <input
                 type="email"
+                id="popup-email"
+                name="email"
                 placeholder="Enter your work email"
+                autocomplete="email"
                 required>
 
             <button type="submit">
@@ -262,6 +266,7 @@
         </form>
 
     </div>
+
 </div>
 
 
