@@ -1232,6 +1232,104 @@ if (response.ok) {
 
 });
 </script>
+
+  <script>
+
+const pages = [
+
+"/images/audit/page1-preview.webp",
+"/images/audit/page2-preview.webp",
+"/images/audit/page3-preview.webp",
+"/images/audit/page4-preview.webp",
+"/images/audit/page5-preview.webp"
+
+];
+
+let current = 0;
+
+const image = document.getElementById("auditPreviewImage");
+
+const thumbs = document.querySelectorAll(".preview-thumb");
+
+const pageCounter = document.querySelector(".audit-preview-header span:last-child");
+
+const progress = document.querySelector(".preview-progress-fill");
+
+function updateViewer(){
+
+    image.style.opacity = 0;
+
+    setTimeout(()=>{
+
+        image.src = pages[current];
+
+        image.style.opacity = 1;
+
+    },200);
+
+    thumbs.forEach(t=>t.classList.remove("active"));
+
+    thumbs[current].classList.add("active");
+
+    pageCounter.textContent =
+    `Page ${current+1} of ${pages.length}`;
+
+    progress.style.width =
+    `${((current+1)/pages.length)*100}%`;
+
+}
+
+function nextPage(){
+
+    current++;
+
+    if(current>=pages.length){
+
+        current=0;
+
+    }
+
+    updateViewer();
+
+}
+
+function prevPage(){
+
+    current--;
+
+    if(current<0){
+
+        current=pages.length-1;
+
+    }
+
+    updateViewer();
+
+}
+
+document.getElementById("nextPage")
+.addEventListener("click",nextPage);
+
+document.getElementById("prevPage")
+.addEventListener("click",prevPage);
+
+thumbs.forEach((thumb,index)=>{
+
+    thumb.addEventListener("click",()=>{
+
+        current=index;
+
+        updateViewer();
+
+    });
+
+});
+
+setInterval(nextPage,4000);
+
+updateViewer();
+
+</script>
     
 </body>
 </html>
