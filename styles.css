@@ -3765,3 +3765,201 @@ EXECUTIVE GROWTH AUDIT
     }
 
 }
+
+/* =========================================
+   EXECUTIVE GROWTH AUDIT HERO
+========================================= */
+
+.audit-hero{
+
+    padding:120px 0 90px;
+
+    text-align:center;
+
+}
+
+.audit-hero .hero-content{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.audit-hero .eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
+
+    margin-bottom:28px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+}
+
+.audit-hero h1{
+
+    margin:0 0 30px;
+
+    font:800 72px Manrope,sans-serif;
+
+    line-height:1.05;
+
+    letter-spacing:-.04em;
+
+    color:#0f172a;
+
+}
+
+.audit-hero .lead{
+
+    max-width:760px;
+
+    margin:0 auto 55px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+
+/* =========================================
+   AUDIT META
+========================================= */
+
+.audit-meta{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin-top:30px;
+
+}
+
+.audit-meta-item{
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:20px;
+
+    padding:28px 24px;
+
+    transition:.25s ease;
+
+}
+
+.audit-meta-item:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+
+}
+
+.audit-meta-item strong{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font:800 30px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.audit-meta-item span{
+
+    display:block;
+
+    font-size:15px;
+
+    color:#64748b;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:960px){
+
+    .audit-hero{
+
+        padding:80px 0 60px;
+
+    }
+
+    .audit-hero h1{
+
+        font-size:52px;
+
+    }
+
+    .audit-hero .lead{
+
+        font-size:19px;
+
+    }
+
+    .audit-meta{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:640px){
+
+    .audit-meta{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .audit-hero h1{
+
+        font-size:42px;
+
+    }
+
+    .audit-hero .lead{
+
+        font-size:18px;
+
+    }
+
+}
