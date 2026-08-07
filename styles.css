@@ -7230,3 +7230,357 @@ MOBILE
     }
 
 }
+
+/* =========================================
+AI SEARCH CHECKLIST
+========================================= */
+
+.ai-checklist{
+
+    padding:110px 0;
+
+    background:#f8fafc;
+
+}
+
+/* =========================================
+SECTION HEADER
+========================================= */
+
+.ai-checklist .section-header{
+
+    max-width:860px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.ai-checklist .section-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+}
+
+.ai-checklist .section-header h2{
+
+    margin:0 0 22px;
+
+    font:800 56px Manrope,sans-serif;
+
+    line-height:1.08;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+}
+
+.ai-checklist .section-header p{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+CHECKLIST CARD
+========================================= */
+
+.checklist-card{
+
+    max-width:980px;
+
+    margin:0 auto;
+
+    padding:50px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:28px;
+
+    box-shadow:0 24px 70px rgba(15,23,42,.06);
+
+}
+
+.checklist-header{
+
+    margin-bottom:36px;
+
+    padding-bottom:30px;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+.checklist-header h3{
+
+    margin:0 0 14px;
+
+    font:700 34px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.checklist-header p{
+
+    margin:0;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+CHECKLIST
+========================================= */
+
+.checklist{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:22px 40px;
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+.checklist li{
+
+    position:relative;
+
+    padding-left:34px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+.checklist li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:2px;
+
+    width:22px;
+
+    height:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.checklist-footer{
+
+    margin-top:45px;
+
+    padding-top:35px;
+
+    border-top:1px solid #e2e8f0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+.checklist-footer p{
+
+    flex:1;
+
+    margin:0;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+.checklist-footer .btn{
+
+    flex-shrink:0;
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width:960px){
+
+    .ai-checklist{
+
+        padding:90px 0;
+
+    }
+
+    .ai-checklist .section-header{
+
+        margin-bottom:50px;
+
+    }
+
+    .ai-checklist .section-header h2{
+
+        font-size:46px;
+
+    }
+
+    .ai-checklist .section-header p{
+
+        font-size:19px;
+
+    }
+
+    .checklist-card{
+
+        padding:40px;
+
+    }
+
+    .checklist{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .checklist-footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:640px){
+
+    .ai-checklist{
+
+        padding:70px 0;
+
+    }
+
+    .ai-checklist .section-header{
+
+        margin-bottom:40px;
+
+    }
+
+    .ai-checklist .section-header h2{
+
+        font-size:34px;
+
+    }
+
+    .ai-checklist .section-header p{
+
+        font-size:17px;
+
+    }
+
+    .checklist-card{
+
+        padding:28px;
+
+        border-radius:22px;
+
+    }
+
+    .checklist-header h3{
+
+        font-size:28px;
+
+    }
+
+    .checklist-header p,
+
+    .checklist li,
+
+    .checklist-footer p{
+
+        font-size:16px;
+
+    }
+
+}
