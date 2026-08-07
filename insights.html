@@ -848,7 +848,7 @@ LinkedIn
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    const form = document.getElementById("ai-checklist-form");
+    const form = document.getElementById("newsletter-form");
 
     if (!form) {
         console.error("Newsletter form not found.");
@@ -863,14 +863,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const originalButtonText = button.innerHTML;
 
         button.disabled = true;
-        button.innerHTML = "Submitting...";
+        button.innerHTML = "Subscribing...";
 
         const payload = {
-            name: form.name?.value.trim() || "",
-            email: form.email?.value.trim() || "",
-            company: form.company?.value.trim() || "",
-            website: form.website?.value.trim() || "",
-            source: "AI Search Authority Checklist",
+            email: form.email.value.trim(),
+            source: "GrowthForge Executive Brief",
             page: window.location.pathname,
             url: window.location.href,
             referrer: document.referrer,
@@ -904,12 +901,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (typeof gtag === "function") {
 
-                gtag("event", "generate_lead", {
-                    lead_type: "newsletter",
-                    form_name: "AI Search Authority Checklist",
+                gtag("event", "sign_up", {
+                    method: "newsletter",
+                    newsletter_name: "GrowthForge Executive Brief",
                     page_location: window.location.href,
-                    page_title: document.title,
-                    method: "website"
+                    page_title: document.title
                 });
 
             }
@@ -922,8 +918,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             window.dataLayer.push({
                 event: "newsletter_signup",
-                form_name: "AI Search Authority Checklist",
-                lead_type: "newsletter",
+                newsletter_name: "GrowthForge Executive Brief",
                 page_location: window.location.href
             });
 
@@ -931,8 +926,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             alert(
                 "🎉 You're subscribed!\n\n" +
-                "Thank you for joining the GrowthForge Executive Brief.\n\n" +
-                "Watch your inbox for AI Search, SEO, GEO, automation, and growth strategy insights."
+                "Welcome to the GrowthForge Executive Brief.\n\n" +
+                "Your next executive insight will arrive in your inbox soon."
             );
 
         }
@@ -941,7 +936,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.error(error);
 
-            alert("Something went wrong. Please try again.");
+            alert("Something went wrong while subscribing. Please try again.");
 
         }
 
