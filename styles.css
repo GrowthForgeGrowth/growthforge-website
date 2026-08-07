@@ -2535,3 +2535,123 @@ EXECUTIVE GROWTH AUDIT
     }
 
 }
+
+/* =========================================
+   TRUST SECTION
+========================================= */
+
+.trust-section{
+
+    padding:90px 0;
+
+}
+
+.section-header{
+
+    max-width:760px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.section-header p{
+
+    font-size:18px;
+
+    color:#64748b;
+
+}
+
+.trust-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
+
+}
+
+.trust-card{
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:20px;
+
+    padding:32px;
+
+    transition:.25s ease;
+
+}
+
+.trust-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+
+}
+
+.trust-icon{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:800;
+
+    margin-bottom:22px;
+
+}
+
+.trust-card h3{
+
+    margin:0 0 14px;
+
+    font-size:22px;
+
+}
+
+.trust-card p{
+
+    margin:0;
+
+    color:#64748b;
+
+    line-height:1.75;
+
+}
+
+.trust-cta{
+
+    margin-top:50px;
+
+    text-align:center;
+
+}
+
+@media (max-width:960px){
+
+    .trust-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
