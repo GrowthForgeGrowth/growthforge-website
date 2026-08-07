@@ -5458,19 +5458,32 @@ MOBILE
 }
 
 /* =========================================
-PRICING CARD
+PRICING GRID
 ========================================= */
 
-.pricing-card{
-    height:100%;
+.pricing-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,minmax(280px,1fr));
+
+    gap:24px;
+
+    align-items:stretch;
+
 }
+
+/* =========================================
+CARD
+========================================= */
 
 .pricing-card-inner{
 
-    display:flex;
-    flex-direction:column;
+    position:relative;
 
-    height:100%;
+    display:flex;
+
+    flex-direction:column;
 
     padding:40px;
 
@@ -5484,6 +5497,8 @@ PRICING CARD
 
     transition:.3s ease;
 
+    min-height:100%;
+
 }
 
 .pricing-card-inner:hover{
@@ -5492,7 +5507,7 @@ PRICING CARD
 
     border-color:#2563eb;
 
-    box-shadow:0 32px 70px rgba(37,99,235,.15);
+    box-shadow:0 30px 70px rgba(37,99,235,.15);
 
 }
 
@@ -5503,10 +5518,13 @@ ICON
 .pricing-icon{
 
     width:72px;
+
     height:72px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     margin-bottom:28px;
@@ -5522,6 +5540,7 @@ ICON
 .pricing-icon svg{
 
     width:34px;
+
     height:34px;
 
 }
@@ -5568,17 +5587,17 @@ PRICE
 
     align-items:flex-start;
 
-    margin-bottom:28px;
+    margin-bottom:10px;
 
 }
 
 .currency{
 
-    margin-top:8px;
+    margin-top:10px;
 
     margin-right:4px;
 
-    font-size:30px;
+    font-size:28px;
 
     font-weight:700;
 
@@ -5588,9 +5607,29 @@ PRICE
 
 .amount{
 
-    font:800 72px Manrope,sans-serif;
+    font:800 68px Manrope,sans-serif;
 
     line-height:.9;
+
+    color:#0f172a;
+
+}
+
+.pricing-frequency{
+
+    margin:0 0 26px;
+
+    color:#64748b;
+
+    font-size:16px;
+
+}
+
+.pricing-custom{
+
+    margin-bottom:24px;
+
+    font:800 48px Manrope,sans-serif;
 
     color:#0f172a;
 
@@ -5603,6 +5642,7 @@ DIVIDER
 .pricing-divider{
 
     width:100%;
+
     height:1px;
 
     margin-bottom:28px;
@@ -5617,18 +5657,18 @@ DESCRIPTION
 
 .pricing-description{
 
-    margin:0 0 34px;
+    margin:0 0 32px;
 
     font-size:18px;
 
-    line-height:1.8;
+    line-height:1.7;
 
     color:#475569;
 
 }
 
 /* =========================================
-SECTION TITLE
+LIST
 ========================================= */
 
 .pricing-list-title{
@@ -5647,21 +5687,17 @@ SECTION TITLE
 
 }
 
-/* =========================================
-FEATURES
-========================================= */
-
 .pricing-features{
 
-    display:grid;
-
-    gap:14px;
+    list-style:none;
 
     margin:0;
 
     padding:0;
 
-    list-style:none;
+    display:grid;
+
+    gap:14px;
 
 }
 
@@ -5672,8 +5708,6 @@ FEATURES
     padding-left:28px;
 
     color:#334155;
-
-    font-size:16px;
 
     line-height:1.6;
 
@@ -5687,8 +5721,6 @@ FEATURES
 
     left:0;
 
-    top:0;
-
     color:#2563eb;
 
     font-weight:700;
@@ -5701,15 +5733,17 @@ BEST FOR
 
 .pricing-highlight{
 
-    margin-top:36px;
+    margin-top:auto;
+
+    margin-bottom:28px;
 
     padding:22px;
+
+    border:1px solid #e2e8f0;
 
     border-radius:18px;
 
     background:#f8fafc;
-
-    border:1px solid #e2e8f0;
 
 }
 
@@ -5717,7 +5751,7 @@ BEST FOR
 
     display:block;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
     font-size:12px;
 
@@ -5737,9 +5771,9 @@ BEST FOR
 
     color:#475569;
 
-    font-size:15px;
-
     line-height:1.7;
+
+    font-size:15px;
 
 }
 
@@ -5751,67 +5785,21 @@ BUTTON
 
     width:100%;
 
-    margin-top:32px;
+    margin-top:auto;
 
     text-align:center;
 
 }
 
 /* =========================================
-GRID
+FEATURED
 ========================================= */
 
-.pricing-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,minmax(0,1fr));
-
-    gap:32px;
-
-    align-items:stretch;
-
-}
-
-.pricing-card{
-
-    display:flex;
-
-}
-
-.pricing-card-inner{
-
-    width:100%;
-
-    height:100%;
-
-}
-
-/* =========================================
-MOBILE
-========================================= */
-
-@media (max-width:900px){
-
-    .pricing-grid{
-
-        grid-template-columns:1fr;
-
-        gap:24px;
-
-    }
-
-}
-
-/* =========================================
-FEATURED PLAN
-========================================= */
-
-.featured-plan .pricing-card-inner{
-
-    position:relative;
+.featured-plan{
 
     border:2px solid #2563eb;
+
+    box-shadow:0 28px 80px rgba(37,99,235,.18);
 
 }
 
@@ -5819,9 +5807,9 @@ FEATURED PLAN
 
     position:absolute;
 
-    top:24px;
+    top:18px;
 
-    right:24px;
+    right:18px;
 
     padding:8px 16px;
 
@@ -5835,38 +5823,50 @@ FEATURED PLAN
 
     font-weight:700;
 
-    letter-spacing:.08em;
-
     text-transform:uppercase;
 
 }
 
 /* =========================================
-PRICE FREQUENCY
+RESPONSIVE
 ========================================= */
 
-.pricing-frequency{
+@media (max-width:1600px){
 
-    margin:-18px 0 24px;
+    .pricing-grid{
 
-    color:#64748b;
+        grid-template-columns:repeat(4,minmax(280px,1fr));
 
-    font-size:16px;
+    }
 
 }
 
-/* =========================================
-CUSTOM PRICE
-========================================= */
+@media (max-width:1280px){
 
-.pricing-custom{
+    .pricing-grid{
 
-    margin-bottom:30px;
+        grid-template-columns:repeat(3,minmax(280px,1fr));
 
-    font:800 52px Manrope,sans-serif;
+    }
 
-    line-height:1;
+}
 
-    color:#0f172a;
+@media (max-width:992px){
+
+    .pricing-grid{
+
+        grid-template-columns:repeat(2,minmax(280px,1fr));
+
+    }
+
+}
+
+@media (max-width:640px){
+
+    .pricing-grid{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
