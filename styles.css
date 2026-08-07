@@ -669,65 +669,63 @@ nav{flex-direction:column;gap:15px;width:100%}
 }
     
     
-/* AI Search Checklist Popup */
+/* AI Search Popup */
 
-#welcome-popup{
+#welcome-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
 
-    position:fixed;
+    width: 100vw;
+    height: 100vh;
 
-    inset:0;
+    background: rgba(15,23,42,0.65);
 
-    width:100vw;
-    height:100vh;
+    display: none;
 
-    background:rgba(15,23,42,.65);
+    align-items: center;
+    justify-content: center;
 
-    display:none;
+    z-index: 999999;
+}
 
-    align-items:center;
-    justify-content:center;
 
-    z-index:999999999;
+.popup-box {
+
+    background: white;
+
+    width: 90%;
+    max-width: 520px;
+
+    padding: 40px;
+
+    border-radius: 24px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,.3);
+
+    position: relative;
 
 }
 
 
-#welcome-popup .popup-box{
+.popup-close {
 
-    background:#fff;
+    position:absolute;
 
-    width:90%;
-    max-width:520px;
+    top:15px;
+    right:20px;
 
-    padding:40px;
-
-    border-radius:24px;
-
-    box-shadow:
-    0 30px 100px rgba(0,0,0,.35);
-
-    position:relative;
-
-}
-
-
-#welcome-popup h2{
+    background:none;
+    border:none;
 
     font-size:32px;
-    margin-bottom:20px;
+
+    cursor:pointer;
 
 }
 
 
-#welcome-popup p{
-
-    color:#475569;
-    line-height:1.6;
-
-}
-
-
-#welcome-popup input{
+.popup-box input {
 
     width:100%;
 
@@ -735,14 +733,10 @@ nav{flex-direction:column;gap:15px;width:100%}
 
     margin:20px 0;
 
-    border:1px solid #e5e7eb;
-
-    border-radius:10px;
-
 }
 
 
-#welcome-popup form button{
+.popup-box button[type="submit"] {
 
     width:100%;
 
@@ -755,73 +749,5 @@ nav{flex-direction:column;gap:15px;width:100%}
     border:none;
 
     border-radius:10px;
-
-    font-weight:600;
-
-}
-
-
-.popup-close{
-
-    position:absolute;
-
-    top:15px;
-    right:20px;
-
-    background:none;
-
-    border:none;
-
-    font-size:32px;
-
-    cursor:pointer;
-
-}
-
-    
-    #welcome-popup {
-
-    position: fixed !important;
-
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100vw !important;
-    height: 100vh !important;
-
-    background: rgba(15,23,42,0.65) !important;
-
-    display: none;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    z-index: 999999999 !important;
-
-}
-
-
-#welcome-popup[style*="display: flex"] {
-
-    display: flex !important;
-
-}
-
-
-#welcome-popup .popup-box {
-
-    background: #ffffff !important;
-
-    width: 90% !important;
-
-    max-width: 520px !important;
-
-    padding: 40px !important;
-
-    border-radius: 24px !important;
-
-    position: relative !important;
-
-    box-shadow: 0 30px 100px rgba(0,0,0,.35) !important;
 
 }
