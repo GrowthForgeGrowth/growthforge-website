@@ -5746,3 +5746,19 @@ PRICE FREQUENCY
     font-size:16px;
 
 }
+
+/* =========================================
+CUSTOM PRICE
+========================================= */
+
+.pricing-custom{
+
+    margin-bottom:30px;
+
+    font:800 52px Manrope,sans-serif;
+
+    line-height:1;
+
+    color:#0f172a;
+
+}
