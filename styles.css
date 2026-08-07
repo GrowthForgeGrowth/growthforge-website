@@ -3780,7 +3780,7 @@ EXECUTIVE GROWTH AUDIT
 
 .audit-hero .hero-content{
 
-    max-width:900px;
+    max-width:960px;
 
     margin:0 auto;
 
@@ -3818,7 +3818,9 @@ EXECUTIVE GROWTH AUDIT
 
 .audit-hero h1{
 
-    margin:0 0 30px;
+    max-width:900px;
+
+    margin:0 auto 30px;
 
     font:800 72px Manrope,sans-serif;
 
@@ -3844,6 +3846,131 @@ EXECUTIVE GROWTH AUDIT
 
 }
 
+/* =========================================
+   EXECUTIVE AUDIT OVERVIEW
+========================================= */
+
+.audit-overview{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-top:20px;
+
+}
+
+.overview-item{
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:22px;
+
+    padding:28px 24px;
+
+    box-shadow:0 20px 45px rgba(15,23,42,.06);
+
+    transition:.25s ease;
+
+}
+
+.overview-item:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:0 28px 65px rgba(15,23,42,.10);
+
+}
+
+.overview-label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.10em;
+
+    text-transform:uppercase;
+
+    color:#64748b;
+
+}
+
+.overview-item strong{
+
+    display:block;
+
+    font:800 24px Manrope,sans-serif;
+
+    line-height:1.35;
+
+    color:#0f172a;
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:960px){
+
+    .audit-hero{
+
+        padding:90px 0 70px;
+
+    }
+
+    .audit-hero h1{
+
+        font-size:54px;
+
+    }
+
+    .audit-hero .lead{
+
+        font-size:20px;
+
+    }
+
+    .audit-overview{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:640px){
+
+    .audit-hero h1{
+
+        font-size:42px;
+
+    }
+
+    .audit-hero .lead{
+
+        font-size:18px;
+
+    }
+
+    .audit-overview{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
 
 /* =========================================
    EXECUTIVE GROWTH AUDIT FORM
