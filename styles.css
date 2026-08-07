@@ -34,23 +34,34 @@ header .logo{flex-shrink:0}
 
 .hero{
 
-    display:grid;
-    grid-template-columns:minmax(700px,760px) 1fr;
-    gap:100px;
-    align-items:center;
-
-    min-height:90vh;
-
-    padding:120px 0;
+    position:relative;
+    overflow:hidden;
 
     background:
-        radial-gradient(circle at 78% 40%, rgba(37,99,235,.20), transparent 42%),
+        radial-gradient(circle at 82% 45%, rgba(37,99,235,.18), transparent 42%),
         linear-gradient(180deg,#08111f 0%,#0f172a 100%);
 
     color:#fff;
 
-    overflow:hidden;
-    position:relative;
+}
+
+.hero-inner{
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:120px 80px;
+
+    display:grid;
+
+    grid-template-columns:680px 1fr;
+
+    gap:120px;
+
+    align-items:center;
+
+    min-height:90vh;
 
 }
 
@@ -60,11 +71,7 @@ header .logo{flex-shrink:0}
 
 .hero-content{
 
-    width:100%;
-    max-width:760px;
-
-    position:relative;
-    z-index:2;
+    width:680px;
 
 }
 
@@ -72,29 +79,33 @@ header .logo{flex-shrink:0}
 
     display:inline-block;
 
-    margin-bottom:24px;
+    margin-bottom:22px;
 
     color:#93c5fd;
 
     font-size:14px;
+
     font-weight:700;
+
     letter-spacing:.18em;
+
     text-transform:uppercase;
 
 }
 
 .hero h1{
 
-    max-width:760px;
+    margin:0 0 32px;
 
     font-family:Manrope,sans-serif;
-    font-size:84px;
+
+    font-size:88px;
+
     font-weight:800;
 
-    line-height:1.02;
-    letter-spacing:-.05em;
+    line-height:.98;
 
-    margin:0 0 32px;
+    letter-spacing:-.055em;
 
     color:#fff;
 
@@ -102,28 +113,32 @@ header .logo{flex-shrink:0}
 
 .hero .lead{
 
-    max-width:640px;
+    width:620px;
+
+    margin-bottom:42px;
 
     font-size:24px;
+
     line-height:1.65;
 
     color:rgba(255,255,255,.78);
-
-    margin-bottom:42px;
 
 }
 
 .cta{
 
     display:flex;
+
     align-items:center;
+
     gap:22px;
+
     flex-wrap:wrap;
 
 }
 
 /* =========================================
-   RIGHT VISUAL
+   RIGHT
 ========================================= */
 
 .hero-visual{
@@ -132,26 +147,27 @@ header .logo{flex-shrink:0}
 
     height:620px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
 }
-
-/* Blue Glow */
 
 .hero-glow{
 
     position:absolute;
 
-    width:540px;
-    height:540px;
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:520px;
+
+    height:520px;
 
     border-radius:50%;
 
     background:
         radial-gradient(circle,
-            rgba(37,99,235,.45) 0%,
+            rgba(37,99,235,.45),
             rgba(37,99,235,.15) 45%,
             transparent 75%);
 
@@ -159,16 +175,15 @@ header .logo{flex-shrink:0}
 
 }
 
-/* Grid */
-
 .hero-grid{
 
     position:absolute;
+
     inset:0;
 
     background-image:
-        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
 
     background-size:48px 48px;
 
@@ -178,13 +193,18 @@ header .logo{flex-shrink:0}
 
 }
 
-/* Rings */
-
 .hero-lines{
 
     position:absolute;
 
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%) rotate(-18deg);
+
     width:480px;
+
     height:480px;
 
     border-radius:50%;
@@ -196,33 +216,6 @@ header .logo{flex-shrink:0}
         0 0 0 95px rgba(96,165,250,.05),
         0 0 0 155px rgba(96,165,250,.03);
 
-    transform:rotate(-18deg);
-
-}
-
-/* =========================================
-   TYPOGRAPHY
-========================================= */
-
-h2{
-
-    font:800 48px Manrope,sans-serif;
-    margin:30px 0;
-
-}
-
-h3{
-
-    font:700 24px Manrope,sans-serif;
-    margin:15px 0;
-
-}
-
-h4{
-
-    font:700 18px Manrope,sans-serif;
-    margin:10px 0;
-
 }
 
 /* =========================================
@@ -231,24 +224,23 @@ h4{
 
 @media (max-width:960px){
 
-    .hero{
+    .hero-inner{
 
         grid-template-columns:1fr;
 
-        gap:70px;
+        gap:60px;
 
-        padding:90px 0;
-
-        min-height:auto;
+        padding:90px 24px;
 
         text-align:center;
+
+        min-height:auto;
 
     }
 
     .hero-content{
 
-        max-width:100%;
-        margin:0 auto;
+        width:100%;
 
     }
 
@@ -256,15 +248,16 @@ h4{
 
         font-size:56px;
 
-        max-width:100%;
-
     }
 
     .hero .lead{
 
+        width:100%;
+
         font-size:20px;
 
         margin-left:auto;
+
         margin-right:auto;
 
     }
@@ -277,13 +270,14 @@ h4{
 
     .hero-visual{
 
-        height:360px;
+        height:340px;
 
     }
 
     .hero-glow{
 
         width:340px;
+
         height:340px;
 
     }
@@ -291,6 +285,7 @@ h4{
     .hero-lines{
 
         width:300px;
+
         height:300px;
 
     }
