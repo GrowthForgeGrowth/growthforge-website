@@ -742,41 +742,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log("Status:", response.status);
 
-            if (response.ok) {
+if (response.ok) {
 
-                console.log("Webhook success");
+    console.log("Webhook success");
 
-                alert("Thank you! Your AI Search Checklist is on its way.");
+    // Google Tag Manager / GA4 Event
+    window.dataLayer = window.dataLayer || [];
 
-                form.reset();
-
-                closePopup();
-
-            } else {
-
-                const error = await response.text();
-
-                console.error(error);
-
-                alert(
-                    "Webhook returned " +
-                    response.status +
-                    ". Check the browser console."
-                );
-
-            }
-
-        } catch (err) {
-
-            console.error(err);
-
-            alert(
-                "Network error. Open F12 → Console and copy the red error message."
-            );
-
-        }
-
+    window.dataLayer.push({
+        event: "popup_form_submit",
+        form_name: "AI Search Checklist Popup",
+        form_location: "Homepage Popup",
+        lead_source: "Website Popup"
     });
+
+    alert("Thank you! Your AI Search Checklist is on its way.");
+
+    form.reset();
+
+    closePopup();
+
+} else {
+
+    const error = await response.text();
+
+    console.error(error);
+
+    alert(
+        "Webhook returned " +
+        response.status +
+        ". Check the browser console."
+    );
+
+}
+
+} catch (err) {
+
+    console.error(err);
+
+    alert(
+        "Network error. Please try again."
+    );
+
+}
+
+});
 
 });
 </script>
