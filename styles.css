@@ -5958,3 +5958,265 @@ MOBILE
     }
 
 }
+
+/* =========================================
+NEWSLETTER
+========================================= */
+
+.newsletter{
+
+    padding:120px 0;
+
+}
+
+.newsletter-card{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:80px;
+
+    text-align:center;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:30px;
+
+    box-shadow:0 24px 70px rgba(15,23,42,.06);
+
+}
+
+.newsletter-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 20px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+}
+
+.newsletter-card h2{
+
+    max-width:720px;
+
+    margin:0 auto 24px;
+
+    font:800 56px Manrope,sans-serif;
+
+    line-height:1.08;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+}
+
+.newsletter-description{
+
+    max-width:700px;
+
+    margin:0 auto 44px;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.newsletter-form{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:16px;
+
+    max-width:700px;
+
+    margin:0 auto;
+
+}
+
+.newsletter-form input{
+
+    flex:1;
+
+    height:60px;
+
+    padding:0 24px;
+
+    border:1px solid #dbe4f0;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    font:500 16px Inter,sans-serif;
+
+    color:#0f172a;
+
+    transition:.25s ease;
+
+}
+
+.newsletter-form input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    background:#fff;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.08);
+
+}
+
+.newsletter-form .btn{
+
+    height:60px;
+
+    padding:0 34px;
+
+    flex-shrink:0;
+
+}
+
+.newsletter-note{
+
+    margin-top:22px;
+
+    font-size:14px;
+
+    color:#94a3b8;
+
+}
+
+/* =========================================
+HOVER
+========================================= */
+
+.newsletter-card{
+
+    transition:.3s ease;
+
+}
+
+.newsletter-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 34px 90px rgba(15,23,42,.08);
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width:960px){
+
+    .newsletter{
+
+        padding:90px 0;
+
+    }
+
+    .newsletter-card{
+
+        padding:60px 50px;
+
+    }
+
+    .newsletter-card h2{
+
+        font-size:46px;
+
+    }
+
+    .newsletter-description{
+
+        font-size:18px;
+
+    }
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:640px){
+
+    .newsletter{
+
+        padding:70px 0;
+
+    }
+
+    .newsletter-card{
+
+        padding:40px 28px;
+
+        border-radius:22px;
+
+    }
+
+    .newsletter-card h2{
+
+        font-size:34px;
+
+    }
+
+    .newsletter-description{
+
+        font-size:17px;
+
+    }
+
+    .newsletter-form{
+
+        flex-direction:column;
+
+    }
+
+    .newsletter-form input,
+
+    .newsletter-form .btn{
+
+        width:100%;
+
+    }
+
+}
