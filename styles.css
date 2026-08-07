@@ -5165,7 +5165,7 @@ PRICING HERO
 
 .pricing-hero{
 
-    padding:110px 0 70px;
+    padding:110px 0 80px;
 
     background:#fff;
 
@@ -5173,7 +5173,11 @@ PRICING HERO
 
 .pricing-hero .hero-content{
 
-    max-width:760px;
+    max-width:980px;
+
+    margin:0 auto;
+
+    text-align:center;
 
 }
 
@@ -5209,11 +5213,11 @@ PRICING HERO
 
 .pricing-hero h1{
 
-    margin:0 0 22px;
+    margin:0 auto 24px;
 
-    max-width:760px;
+    max-width:900px;
 
-    font:800 64px Manrope,sans-serif;
+    font:800 68px Manrope,sans-serif;
 
     line-height:1.05;
 
@@ -5225,11 +5229,11 @@ PRICING HERO
 
 .pricing-hero .lead{
 
-    max-width:680px;
+    max-width:760px;
 
-    margin:0;
+    margin:0 auto;
 
-    font-size:21px;
+    font-size:22px;
 
     line-height:1.75;
 
@@ -5245,11 +5249,13 @@ RESOURCE LINKS
 
     display:flex;
 
+    justify-content:center;
+
     flex-wrap:wrap;
 
     gap:14px;
 
-    margin-top:36px;
+    margin-top:40px;
 
 }
 
@@ -5299,7 +5305,7 @@ TABLET
 
     .pricing-hero{
 
-        padding:90px 0 60px;
+        padding:90px 0 70px;
 
     }
 
@@ -5307,9 +5313,13 @@ TABLET
 
         font-size:52px;
 
+        max-width:700px;
+
     }
 
     .pricing-hero .lead{
+
+        max-width:640px;
 
         font-size:19px;
 
@@ -5325,7 +5335,7 @@ MOBILE
 
     .pricing-hero{
 
-        padding:80px 0 50px;
+        padding:80px 0 60px;
 
     }
 
@@ -5345,13 +5355,15 @@ MOBILE
 
         flex-direction:column;
 
-        align-items:stretch;
+        align-items:center;
 
     }
 
     .pricing-links a{
 
         width:100%;
+
+        max-width:340px;
 
     }
 
