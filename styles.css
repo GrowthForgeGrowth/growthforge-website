@@ -2459,3 +2459,79 @@ EXECUTIVE GROWTH AUDIT
     color:rgba(255,255,255,.55);
 
 }
+
+/* =========================================
+   WHY GROWTHFORGE EXISTS
+========================================= */
+
+.why-growth{
+
+    padding:100px 0;
+
+}
+
+.why-growth .container{
+
+    max-width:920px;
+
+}
+
+.why-growth h2{
+
+    font-family:Manrope,sans-serif;
+
+    font-size:56px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+    margin:0 0 28px;
+
+}
+
+.why-growth p{
+
+    margin:0 0 28px;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+.why-growth p:last-child{
+
+    margin-bottom:0;
+
+}
+
+@media (max-width:768px){
+
+    .why-growth{
+
+        padding:70px 0;
+
+    }
+
+    .why-growth h2{
+
+        font-size:40px;
+
+    }
+
+    .why-growth p{
+
+        font-size:18px;
+
+        line-height:1.8;
+
+    }
+
+}
