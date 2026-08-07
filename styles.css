@@ -6782,3 +6782,357 @@ MOBILE
     }
 
 }
+
+/* =========================================
+AI SEO / GEO OVERVIEW
+========================================= */
+
+.ai-overview{
+
+    padding:110px 0;
+
+    background:#fff;
+
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.ai-overview-header{
+
+    max-width:900px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+.ai-overview-header .eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+}
+
+.ai-overview-header h2{
+
+    margin:0 0 24px;
+
+    font:800 56px Manrope,sans-serif;
+
+    line-height:1.08;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+}
+
+.ai-overview-header p{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    font-size:22px;
+
+    line-height:1.75;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+CONTENT
+========================================= */
+
+.ai-overview-content{
+
+    max-width:980px;
+
+    margin:0 auto;
+
+}
+
+.ai-section{
+
+    margin-bottom:70px;
+
+}
+
+.ai-section:last-child{
+
+    margin-bottom:0;
+
+}
+
+.ai-section h3{
+
+    margin:0 0 22px;
+
+    font:700 38px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.ai-section h4{
+
+    margin:40px 0 18px;
+
+    font:700 26px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.ai-section p{
+
+    margin:0 0 22px;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+.ai-section .link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:4px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    transition:.25s ease;
+
+}
+
+.ai-section .link:hover{
+
+    color:#1d4ed8;
+
+    transform:translateX(4px);
+
+}
+
+/* =========================================
+COMPARISON GRID
+========================================= */
+
+.ai-comparison{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:32px;
+
+    margin-top:40px;
+
+}
+
+.ai-card{
+
+    padding:36px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:22px;
+
+    box-shadow:0 12px 35px rgba(15,23,42,.05);
+
+}
+
+.ai-card h4{
+
+    margin:0 0 22px;
+
+    font:700 24px Manrope,sans-serif;
+
+    color:#0f172a;
+
+}
+
+.ai-card ul{
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+    display:grid;
+
+    gap:16px;
+
+}
+
+.ai-card li{
+
+    position:relative;
+
+    padding-left:28px;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+.ai-card li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width:960px){
+
+    .ai-overview{
+
+        padding:90px 0;
+
+    }
+
+    .ai-overview-header{
+
+        margin-bottom:60px;
+
+    }
+
+    .ai-overview-header h2{
+
+        font-size:44px;
+
+    }
+
+    .ai-overview-header p{
+
+        font-size:19px;
+
+    }
+
+    .ai-section h3{
+
+        font-size:32px;
+
+    }
+
+    .ai-comparison{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:640px){
+
+    .ai-overview{
+
+        padding:70px 0;
+
+    }
+
+    .ai-overview-header h2{
+
+        font-size:34px;
+
+    }
+
+    .ai-overview-header p{
+
+        font-size:17px;
+
+    }
+
+    .ai-section{
+
+        margin-bottom:50px;
+
+    }
+
+    .ai-section h3{
+
+        font-size:28px;
+
+    }
+
+    .ai-section h4{
+
+        font-size:22px;
+
+    }
+
+    .ai-section p{
+
+        font-size:17px;
+
+    }
+
+    .ai-card{
+
+        padding:28px;
+
+    }
+
+}
