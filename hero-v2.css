@@ -1,0 +1,36 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#eef4fb;color:#0f172a}
+.hero-v2{position:relative;padding:90px 0 60px;overflow:hidden;background:linear-gradient(180deg,#f8fbff,#eef4fb)}
+.hero-bg{position:absolute;inset:0;background:
+radial-gradient(circle at 80% 20%,rgba(37,99,235,.18),transparent 30%),
+radial-gradient(circle at 20% 80%,rgba(59,130,246,.12),transparent 30%);
+}
+.container{width:min(1200px,92%);margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;position:relative}
+.hero-meta{display:flex;gap:12px;align-items:center;margin-bottom:20px}
+.pill{background:#2563eb;color:#fff;padding:8px 16px;border-radius:999px;font-weight:700;font-size:13px}
+.edition{font-weight:600;color:#475569}
+h1{font-size:clamp(4rem,8vw,6rem);line-height:.9;margin-bottom:24px}
+.lead{font-size:1.3rem;line-height:1.8;color:#475569;max-width:650px}
+.actions{display:flex;gap:16px;margin:36px 0}
+.btn{text-decoration:none;padding:16px 26px;border-radius:14px;font-weight:700}
+.primary{background:#2563eb;color:#fff}
+.secondary{background:#fff;border:1px solid #dbe4ef;color:#0f172a}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips span{background:#fff;padding:10px 16px;border-radius:999px;border:1px solid #dbe4ef;font-size:.9rem}
+.panel{background:rgba(255,255,255,.75);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.8);border-radius:28px;padding:36px;box-shadow:0 30px 80px rgba(15,23,42,.12)}
+.panel small{letter-spacing:.15em;color:#2563eb;font-weight:700}
+.panel h3{margin:16px 0 24px;font-size:2rem}
+.item{display:flex;gap:16px;padding:14px 0;border-top:1px solid #eef2f7}
+.item strong{color:#2563eb;width:40px}
+.metrics{width:min(1200px,92%);margin:50px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.metrics>div{background:#fff;padding:28px;border-radius:20px;text-align:center;box-shadow:0 10px 30px rgba(15,23,42,.08)}
+.metrics h2{font-size:2.6rem}
+.metrics p{color:#64748b;margin-top:8px}
+@media(max-width:900px){
+.container{grid-template-columns:1fr}
+.metrics{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+.actions{flex-direction:column}
+.metrics{grid-template-columns:1fr}
+}
