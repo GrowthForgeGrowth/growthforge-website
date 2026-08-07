@@ -27,38 +27,186 @@ header .logo{flex-shrink:0}
 .ghost:hover{color:#1d4ed8}
 .link{color:#2563eb;text-decoration:none;font-weight:600}
 .link:hover{text-decoration:underline}
+
+/* =========================================
+   HERO
+========================================= */
+
 .hero{
 
     display:grid;
 
-    grid-template-columns:1.25fr .75fr;
+    grid-template-columns:1.3fr .7fr;
 
-    gap:70px;
+    gap:80px;
 
     align-items:center;
 
-    padding:100px 0;
+    padding:110px 0;
 
 }
+
+/* -------------------------------------- */
 
 .hero-content{
-    ...
+
+    max-width:760px;
+
 }
+
+/* -------------------------------------- */
 
 .hero-panel{
-    ...
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:30px;
+
+    padding:42px;
+
+    box-shadow:
+        0 20px 60px rgba(37,99,235,.10);
+
 }
 
-.hero-panel-badge{
-    ...
+/* -------------------------------------- */
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
 }
 
-.hero-feature{
-    ...
+/* -------------------------------------- */
+
+.hero-panel h3{
+
+    font-size:2rem;
+
+    line-height:1.2;
+
+    margin:0 0 30px;
+
+    color:#0f172a;
+
 }
 
-.hero-number{
-    ...
+/* -------------------------------------- */
+
+.hero-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* -------------------------------------- */
+
+.hero-item{
+
+    display:grid;
+
+    grid-template-columns:52px 1fr;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+    padding:18px 0;
+
+    border-top:1px solid #edf2f7;
+
+}
+
+.hero-item:first-child{
+
+    border-top:none;
+
+    padding-top:0;
+
+}
+
+/* -------------------------------------- */
+
+.hero-item span{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:15px;
+
+    font-weight:800;
+
+}
+
+/* -------------------------------------- */
+
+.hero-item p{
+
+    margin:0;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    line-height:1.55;
+
+    color:#0f172a;
+
+}
+
+/* -------------------------------------- */
+
+@media(max-width:960px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+        padding:80px 0;
+
+    }
+
 }
     
 h1{font:800 60px Manrope,sans-serif;line-height:1.05;margin:10px 0}
