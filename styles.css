@@ -1129,155 +1129,6 @@ nav{flex-direction:column;gap:15px;width:100%}
 .gf-chatbot[data-state="open"] .gf-chatbot-panel{
     display:flex !important;
 }
-<section class="executive-resource">
-
-    <div class="container">
-
-        <div id="download-checklist" class="resource-card">
-
-            <div class="resource-content">
-
-                <span class="resource-badge">
-                    Executive Resource
-                </span>
-
-                <h2>
-                    AI Search Authority Checklist
-                </h2>
-
-                <p class="resource-intro">
-                    Evaluate how prepared your organization is for AI-powered search, Google AI Overviews, ChatGPT, Gemini, and other generative discovery platforms.
-                </p>
-
-                <p class="resource-description">
-                    This executive framework outlines the foundational signals that influence AI visibility, entity authority, buyer confidence, and commercial discoverability. Use it to identify strategic gaps before investing further in AI SEO, Generative Engine Optimization (GEO), or large-scale content initiatives.
-                </p>
-
-                <div class="resource-highlights">
-
-                    <div class="resource-item">
-
-                        <strong>Entity Authority</strong>
-
-                        <span>Evaluate how clearly your business, expertise, and authorship are understood.</span>
-
-                    </div>
-
-                    <div class="resource-item">
-
-                        <strong>AI Search Readiness</strong>
-
-                        <span>Assess technical, structural, and content signals used by modern AI search platforms.</span>
-
-                    </div>
-
-                    <div class="resource-item">
-
-                        <strong>Commercial Trust Signals</strong>
-
-                        <span>Review the credibility elements that strengthen buyer confidence and AI citations.</span>
-
-                    </div>
-
-                    <div class="resource-item">
-
-                        <strong>Executive Action Plan</strong>
-
-                        <span>Prioritize the highest-impact improvements before scaling AI search investment.</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <form id="ai-checklist-form" class="resource-form">
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Full Name
-                        </label>
-
-                        <input
-                            id="name"
-                            type="text"
-                            name="name"
-                            placeholder="John Smith"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Business Email
-                        </label>
-
-                        <input
-                            id="email"
-                            type="email"
-                            name="email"
-                            placeholder="john@company.com"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="company">
-                            Company
-                        </label>
-
-                        <input
-                            id="company"
-                            type="text"
-                            name="company"
-                            placeholder="Acme Inc."
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="website">
-                            Website
-                        </label>
-
-                        <input
-                            id="website"
-                            type="url"
-                            name="website"
-                            placeholder="https://company.com"
-                        >
-
-                    </div>
-
-                </div>
-
-                <button class="btn download-button" type="submit">
-
-                    Download Executive Checklist
-
-                </button>
-
-                <p class="resource-disclaimer">
-
-                    Complimentary PDF • Instant delivery • No commitment required
-
-                </p>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
 
 /* Messages */
 
@@ -7938,6 +7789,338 @@ RESPONSIVE
     .library-card h3{
 
         font-size:26px;
+
+    }
+
+}
+
+/* =========================================
+EXECUTIVE RESOURCE
+========================================= */
+
+.download-resource{
+
+    padding:120px 0;
+
+    background:#f8fafc;
+
+}
+
+/* =========================================
+CARD
+========================================= */
+
+.resource-card{
+
+    max-width:920px;
+
+    margin:0 auto;
+
+    padding:64px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:28px;
+
+    box-shadow:0 30px 80px rgba(15,23,42,.08);
+
+}
+
+.resource-content{
+
+    text-align:center;
+
+    margin-bottom:48px;
+
+}
+
+.resource-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 22px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+}
+
+.resource-content h2{
+
+    margin:0 0 22px;
+
+    font:800 52px Manrope,sans-serif;
+
+    line-height:1.08;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+}
+
+.resource-description{
+
+    max-width:720px;
+
+    margin:0 auto;
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+/* =========================================
+HIGHLIGHTS
+========================================= */
+
+.resource-highlights{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:18px;
+
+    margin:42px auto 0;
+
+    max-width:760px;
+
+}
+
+.resource-item{
+
+    padding:18px 22px;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#334155;
+
+    text-align:left;
+
+}
+
+/* =========================================
+FORM
+========================================= */
+
+.resource-form{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:20px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#334155;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    height:58px;
+
+    padding:0 18px;
+
+    border:1px solid #dbe4f0;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    font-size:16px;
+
+    color:#0f172a;
+
+    transition:.25s ease;
+
+}
+
+.form-group input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.form-group input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.08);
+
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.download-button{
+
+    width:100%;
+
+    margin-top:30px;
+
+}
+
+.resource-disclaimer{
+
+    margin-top:18px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:#94a3b8;
+
+}
+
+/* =========================================
+HOVER
+========================================= */
+
+.resource-card{
+
+    transition:.3s ease;
+
+}
+
+.resource-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 40px 90px rgba(15,23,42,.10);
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width:960px){
+
+    .download-resource{
+
+        padding:90px 0;
+
+    }
+
+    .resource-card{
+
+        padding:48px;
+
+    }
+
+    .resource-content h2{
+
+        font-size:42px;
+
+    }
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:640px){
+
+    .download-resource{
+
+        padding:70px 0;
+
+    }
+
+    .resource-card{
+
+        padding:32px 24px;
+
+        border-radius:22px;
+
+    }
+
+    .resource-content h2{
+
+        font-size:34px;
+
+    }
+
+    .resource-description{
+
+        font-size:17px;
+
+    }
+
+    .resource-highlights{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
 
     }
 
