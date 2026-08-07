@@ -805,30 +805,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("ai-checklist-form");
 
-    if (!form) return;
+    if (!form) {
+        console.error("Newsletter form not found.");
+        return;
+    }
 
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", async (e) => {
 
         e.preventDefault();
 
         const button = form.querySelector("button[type='submit']");
-
         const originalButtonText = button.innerHTML;
 
         button.disabled = true;
         button.innerHTML = "Submitting...";
 
         const payload = {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            company: form.company.value.trim(),
-            website: form.website.value.trim(),
+            name: form.name?.value.trim() || "",
+            email: form.email?.value.trim() || "",
+            company: form.company?.value.trim() || "",
+            website: form.website?.value.trim() || "",
             source: "AI Search Authority Checklist",
             page: window.location.pathname,
             url: window.location.href,
             referrer: document.referrer,
             timestamp: new Date().toISOString()
         };
+
+        console.log("Submitting payload:", payload);
 
         try {
 
@@ -842,6 +846,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: JSON.stringify(payload)
                 }
             );
+
+            console.log("Webhook status:", response.status);
 
             if (!response.ok) {
                 throw new Error("Webhook failed.");
@@ -876,46 +882,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 page_location: window.location.href
             });
 
-            /* ===========================
-               SUCCESS UI
-            =========================== */
-
             form.reset();
 
-            form.innerHTML = `
-                <div style="
-                    text-align:center;
-                    padding:48px 32px;
-                    border:1px solid #dbeafe;
-                    border-radius:20px;
-                    background:#eff6ff;
-                ">
-                    <div style="font-size:52px;margin-bottom:18px;">
-                        ✓
-                    </div>
-
-                    <h3 style="
-                        margin:0 0 14px;
-                        font-size:30px;
-                        color:#0f172a;
-                    ">
-                        You're subscribed!
-                    </h3>
-
-                    <p style="
-                        margin:0;
-                        font-size:18px;
-                        line-height:1.7;
-                        color:#475569;
-                    ">
-                        Thank you for subscribing to the
-                        <strong>GrowthForge Executive Brief.</strong>
-                        Watch your inbox for practical AI Search,
-                        SEO, GEO, automation, and growth strategy
-                        insights.
-                    </p>
-                </div>
-            `;
+            alert(
+                "🎉 You're subscribed!\n\n" +
+                "Thank you for joining the GrowthForge Executive Brief.\n\n" +
+                "Watch your inbox for AI Search, SEO, GEO, automation, and growth strategy insights."
+            );
 
         }
 
@@ -923,7 +896,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.error(error);
 
-            alert("Something went wrong while submitting the form. Please try again.");
+            alert("Something went wrong. Please try again.");
+
+        }
+
+        finally {
 
             button.disabled = false;
             button.innerHTML = originalButtonText;
@@ -934,6 +911,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
-
+  
 </body>
 </html>
