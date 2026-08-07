@@ -35,10 +35,236 @@ h4{font:700 18px Manrope,sans-serif;margin:10px 0}
 .lead{font-size:20px;color:#475569}
 .eyebrow{color:#2563eb;font-weight:700;text-transform:uppercase;font-size:14px}
 .cta{display:flex;gap:15px;margin-top:30px;flex-wrap:wrap}
-.card,.service{background:#f8fafc;border:1px solid #e5e7eb;padding:24px;border-radius:18px}
-.card h3,.service h3{margin-top:0}
-.card ul{margin:10px 0;padding-left:20px;line-height:1.8}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+
+/* =======================================
+   SERVICES LAYOUT
+======================================= */
+
+.services-layout{
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    gap:28px;
+
+    margin-top:60px;
+
+}
+
+/* ------------------------------------ */
+
+.service{
+
+    grid-column:span 4;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:28px;
+
+    padding:38px;
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,.08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ------------------------------------ */
+
+.service:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+        0 30px 70px rgba(37,99,235,.16);
+
+}
+
+/* ------------------------------------ */
+
+.feature-card{
+
+    grid-column:span 6;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8fbff
+        );
+
+}
+
+.wide-card{
+
+    grid-column:span 6;
+
+}
+
+/* ------------------------------------ */
+
+.service::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #60a5fa
+        );
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.service:hover::before{
+
+    opacity:1;
+
+}
+
+/* ------------------------------------ */
+
+.service-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 16px;
+
+    margin-bottom:22px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+
+}
+
+/* ------------------------------------ */
+
+.service h3{
+
+    font-size:2rem;
+
+    line-height:1.15;
+
+    margin-bottom:20px;
+
+    color:#0f172a;
+
+}
+
+/* ------------------------------------ */
+
+.service p{
+
+    font-size:1.08rem;
+
+    line-height:1.9;
+
+    color:#475569;
+
+    margin-bottom:32px;
+
+}
+
+/* ------------------------------------ */
+
+.service-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.service-link:hover{
+
+    gap:14px;
+
+    color:#1d4ed8;
+
+}
+
+/* ------------------------------------ */
+
+@media(max-width:1100px){
+
+    .feature-card,
+    .wide-card,
+    .service{
+
+        grid-column:span 6;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .services-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .feature-card,
+    .wide-card,
+    .service{
+
+        grid-column:auto;
+
+    }
+
+}
+
 section{padding:60px 0}
 .alt{background:transparent;}
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center;align-items:start}
