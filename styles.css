@@ -2741,3 +2741,117 @@ EXECUTIVE GROWTH AUDIT
     }
 
 }
+
+/* =========================================
+   FOUNDER
+========================================= */
+
+.founder-section{
+
+    padding:110px 0;
+
+}
+
+.founder-grid{
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.founder-image img{
+
+    width:100%;
+
+    border-radius:24px;
+
+    display:block;
+
+    box-shadow:0 30px 70px rgba(15,23,42,.12);
+
+}
+
+.founder-content{
+
+    max-width:720px;
+
+}
+
+.founder-title{
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#2563eb;
+
+    margin:0 0 28px;
+
+}
+
+.founder-intro{
+
+    font-size:20px;
+
+    line-height:1.85;
+
+    color:#475569;
+
+    margin-bottom:40px;
+
+}
+
+.founder-highlights{
+
+    display:grid;
+
+    gap:22px;
+
+}
+
+.highlight{
+
+    padding:24px 28px;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:18px;
+
+    background:#fff;
+
+}
+
+.highlight h3{
+
+    margin:0 0 10px;
+
+    font-size:20px;
+
+}
+
+.highlight p{
+
+    margin:0;
+
+    line-height:1.8;
+
+    color:#64748b;
+
+}
+
+@media(max-width:960px){
+
+    .founder-grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+}
