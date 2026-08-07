@@ -2368,3 +2368,94 @@ EXECUTIVE GROWTH AUDIT
     }
 
 }
+
+/* =========================================
+   ABOUT HERO
+========================================= */
+
+.about-hero{
+
+    background:#0f172a;
+    color:#fff;
+
+    padding:120px 0 110px;
+
+}
+
+.about-hero .container{
+
+    max-width:1180px;
+
+}
+
+.about-hero-content{
+
+    max-width:900px;
+
+}
+
+.about-hero .eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:22px;
+
+    color:#93c5fd;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+}
+
+.about-hero h1{
+
+    margin:0 0 28px;
+
+    font-family:Manrope,sans-serif;
+
+    font-size:72px;
+
+    font-weight:800;
+
+    line-height:1.05;
+
+    letter-spacing:-.04em;
+
+    color:#fff;
+
+    max-width:900px;
+
+}
+
+.about-hero .lead{
+
+    margin:0;
+
+    margin-bottom:30px;
+
+    max-width:760px;
+
+    font-size:24px;
+
+    line-height:1.7;
+
+    color:rgba(255,255,255,.82);
+
+}
+
+.about-hero .byline{
+
+    max-width:760px;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.55);
+
+}
