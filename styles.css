@@ -5765,11 +5765,25 @@ GRID
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
-    gap:30px;
+    gap:32px;
 
     align-items:stretch;
+
+}
+
+.pricing-card{
+
+    display:flex;
+
+}
+
+.pricing-card-inner{
+
+    width:100%;
+
+    height:100%;
 
 }
 
@@ -5777,23 +5791,13 @@ GRID
 MOBILE
 ========================================= */
 
-@media(max-width:768px){
+@media (max-width:900px){
 
-    .pricing-card-inner{
+    .pricing-grid{
 
-        padding:30px;
+        grid-template-columns:1fr;
 
-    }
-
-    .amount{
-
-        font-size:58px;
-
-    }
-
-    .pricing-description{
-
-        font-size:17px;
+        gap:24px;
 
     }
 
