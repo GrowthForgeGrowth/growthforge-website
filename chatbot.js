@@ -658,6 +658,4 @@ function addBotMessage(messages, answer) {
         messages.scrollTop = messages.scrollHeight;
     }
 
-}
-
 })();
