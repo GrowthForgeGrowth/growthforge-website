@@ -10646,3 +10646,430 @@ SECTION: RESPONSIVE
     }
 
 }
+
+/* ==========================================================
+ARTICLE: STATE OF AI GROWTH 2026
+PAGE: /state-of-ai-growth-2026
+SECTION: HERO
+========================================================== */
+
+.article-hero{
+
+    padding:110px 0;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(37,99,235,.18),
+            transparent 40%),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #0f172a 45%,
+            #172554 100%
+        );
+
+}
+
+.article-hero .container{
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:0 32px;
+
+}
+
+.article-hero-layout{
+
+    display:grid;
+
+    grid-template-columns:minmax(0,1fr) 380px;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.article-hero-content{
+
+    max-width:820px;
+
+}
+
+.article-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 20px;
+
+    margin-bottom:28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.16);
+
+    color:#dbeafe;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.article-title{
+
+    margin:0 0 30px;
+
+    font-size:clamp(56px,6vw,82px);
+
+    line-height:1.03;
+
+    letter-spacing:-.04em;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+}
+
+.article-lead{
+
+    margin:0 0 34px;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    color:#cbd5e1;
+
+}
+
+.article-byline{
+
+    margin:0;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    color:#94a3b8;
+
+}
+
+.article-byline strong{
+
+    color:#ffffff;
+
+}
+
+.article-byline a{
+
+    color:#93c5fd;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.article-byline a:hover{
+
+    color:#ffffff;
+
+}
+
+.article-cta{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:42px;
+
+    flex-wrap:wrap;
+
+}
+
+.article-cta .btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:18px 34px;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        color .25s ease;
+
+}
+
+.article-cta .btn:first-child{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    box-shadow:
+        0 20px 45px rgba(37,99,235,.30);
+
+}
+
+.article-cta .btn:first-child:hover{
+
+    transform:translateY(-4px);
+
+    background:#1d4ed8;
+
+}
+
+.btn-outline{
+
+    background:transparent;
+
+    color:#ffffff;
+
+    border:2px solid rgba(255,255,255,.25);
+
+}
+
+.btn-outline:hover{
+
+    background:#ffffff;
+
+    color:#0f172a;
+
+    border-color:#ffffff;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================================
+ARTICLE: STATE OF AI GROWTH 2026
+PAGE: /state-of-ai-growth-2026
+SECTION: REPORT SNAPSHOT
+========================================================== */
+
+.article-report-card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    padding:38px;
+
+    box-shadow:
+        0 30px 80px rgba(2,6,23,.35);
+
+}
+
+.report-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 18px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.article-report-card h3{
+
+    margin:0 0 28px;
+
+    font-size:34px;
+
+    line-height:1.15;
+
+    color:#ffffff;
+
+    font-weight:800;
+
+}
+
+.report-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.report-list li{
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.report-list li:last-child{
+
+    border-bottom:none;
+
+    padding-bottom:0;
+
+}
+
+.report-list strong{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:#60a5fa;
+
+}
+
+.report-list span{
+
+    display:block;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+ARTICLE: STATE OF AI GROWTH 2026
+PAGE: /state-of-ai-growth-2026
+SECTION: RESPONSIVE
+========================================================== */
+
+@media (max-width:1100px){
+
+    .article-hero-layout{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+    .article-report-card{
+
+        max-width:700px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .article-hero{
+
+        padding:80px 0;
+
+    }
+
+    .article-hero .container{
+
+        padding:0 24px;
+
+    }
+
+    .article-title{
+
+        font-size:46px;
+
+    }
+
+    .article-lead{
+
+        font-size:18px;
+
+        line-height:1.8;
+
+    }
+
+    .article-byline{
+
+        font-size:15px;
+
+    }
+
+    .article-cta{
+
+        flex-direction:column;
+
+    }
+
+    .article-cta .btn{
+
+        width:100%;
+
+    }
+
+    .article-report-card{
+
+        padding:28px;
+
+    }
+
+    .article-report-card h3{
+
+        font-size:28px;
+
+    }
+
+}
