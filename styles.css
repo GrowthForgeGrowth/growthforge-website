@@ -1501,17 +1501,26 @@ EXECUTIVE GROWTH AUDIT
 }
 
 .audit-icon{
-    width:54px;
-    height:54px;
+    width:64px;
+    height:64px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:50%;
-    background:#eff6ff;
-    color:#2563eb;
-    font-weight:800;
-    font-size:18px;
-    margin-bottom:26px;
+
+    margin-bottom:24px;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#2563eb 0%,#4f46e5 100%);
+
+    color:#ffffff;
+
+    font-size:30px;
+
+    box-shadow:0 16px 36px rgba(37,99,235,.22);
+
+    flex-shrink:0;
 }
 
 .audit-card h3{
