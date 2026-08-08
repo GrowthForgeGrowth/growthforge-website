@@ -13741,3 +13741,313 @@ SECTION: RESPONSIVE
     }
 
 }
+
+/* ==========================================================
+ARTICLE: AI FUNNEL DIAGNOSTICS PLAYBOOK
+PAGE: /ai-funnel-diagnostics-playbook
+SECTION: FREQUENTLY ASKED QUESTIONS
+========================================================== */
+
+.faq-section{
+
+    padding:100px 0;
+
+    background:#f8fbff;
+
+}
+
+.faq-section .container{
+
+    max-width:1320px;
+
+    margin:0 auto;
+
+}
+
+.faq-header{
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.faq-header h2{
+
+    margin:0 0 24px;
+
+    font-size:clamp(42px,5vw,60px);
+
+    line-height:1.1;
+
+    letter-spacing:-.03em;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+.faq-header p{
+
+    margin:0;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#64748b;
+
+}
+
+/* ==========================================================
+FAQ GRID
+========================================================== */
+
+.faq-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:32px;
+
+}
+
+/* ==========================================================
+FAQ CARD
+========================================================== */
+
+.faq-card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:28px;
+
+    padding:42px;
+
+    transition:
+        transform .30s ease,
+        border-color .30s ease,
+        box-shadow .30s ease;
+
+    box-shadow:
+        0 18px 50px rgba(15,23,42,.05);
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+        0 35px 90px rgba(37,99,235,.14);
+
+}
+
+.faq-card::before{
+
+    content:"Q";
+
+    position:absolute;
+
+    top:28px;
+
+    right:28px;
+
+    width:44px;
+
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:18px;
+
+    font-weight:800;
+
+}
+
+.faq-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    border-radius:28px 28px 0 0;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+}
+
+.faq-card h3{
+
+    margin:0 0 20px;
+
+    padding-right:60px;
+
+    font-size:28px;
+
+    line-height:1.25;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+.faq-card p{
+
+    margin:0;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+.faq-card a{
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:color .25s ease;
+
+}
+
+.faq-card a:hover{
+
+    color:#1d4ed8;
+
+}
+
+/* ==========================================================
+OPTIONAL EMPHASIS BLOCKS
+========================================================== */
+
+.faq-card strong{
+
+    color:#0f172a;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+ARTICLE: AI FUNNEL DIAGNOSTICS PLAYBOOK
+SECTION: RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .faq-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .faq-section{
+
+        padding:70px 0;
+
+    }
+
+    .faq-header{
+
+        text-align:left;
+
+        margin-bottom:50px;
+
+    }
+
+    .faq-header h2{
+
+        font-size:36px;
+
+    }
+
+    .faq-header p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .faq-card{
+
+        padding:30px;
+
+    }
+
+    .faq-card::before{
+
+        width:38px;
+
+        height:38px;
+
+        top:22px;
+
+        right:22px;
+
+        font-size:16px;
+
+    }
+
+    .faq-card h3{
+
+        padding-right:48px;
+
+        font-size:24px;
+
+    }
+
+    .faq-card p{
+
+        font-size:16px;
+
+        line-height:1.8;
+
+    }
+
+}
