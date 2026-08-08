@@ -658,4 +658,196 @@ function addBotMessage(messages, answer) {
         messages.scrollTop = messages.scrollHeight;
     }
 
+}
+
+function boot() {
+
+    var root = document.createElement('div');
+
+    root.className = 'gf-chatbot';
+
+    root.innerHTML = `
+        <button type="button" class="gf-chatbot-launcher" aria-label="Open Executive Growth Advisor" aria-expanded="false" aria-controls="gf-chatbot-panel">
+            <span class="gf-chatbot-launcher-label">Executive Growth Advisor</span>
+            <span class="gf-chatbot-launcher-hint">Free AI-powered growth assessment</span>
+        </button>
+
+        <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="Executive Growth Advisor" hidden>
+
+            <header class="gf-chatbot-header">
+
+                <strong>Executive Growth Advisor</strong>
+
+                <span>
+                    Get an AI-powered assessment of your growth strategy, website and revenue opportunities.
+                </span>
+
+                <div class="gf-chatbot-header-actions">
+
+                    <button
+                        type="button"
+                        class="gf-chatbot-minimize"
+                        aria-label="Close chat assistant">
+
+                        <span class="gf-chatbot-minimize-icon">−</span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            <div class="gf-chatbot-messages" aria-live="polite"></div>
+
+            <div class="gf-chatbot-quick-actions"></div>
+
+            <form class="gf-chatbot-form">
+
+                <input
+                    id="gf-chatbot-input"
+                    type="text"
+                    placeholder="Enter your website or ask an executive growth question..."
+                    autocomplete="off">
+
+                <button type="submit">Get Advice</button>
+
+            </form>
+
+        </section>
+    `;
+
+    document.body.appendChild(root);
+
+    var launcher = root.querySelector('.gf-chatbot-launcher');
+    var launcherHint = root.querySelector('.gf-chatbot-launcher-hint');
+    var panel = root.querySelector('.gf-chatbot-panel');
+    var minimizeButton = root.querySelector('.gf-chatbot-minimize');
+    var messages = root.querySelector('.gf-chatbot-messages');
+    var quickActionsContainer = root.querySelector('.gf-chatbot-quick-actions');
+    var form = root.querySelector('.gf-chatbot-form');
+    var input = root.querySelector('#gf-chatbot-input');
+
+    addBotMessage(messages, welcomeMessage);
+
+    quickActions.forEach(function (action) {
+
+        var button = document.createElement('button');
+
+        button.type = 'button';
+        button.className = 'gf-chatbot-quick-action';
+        button.textContent = action.label;
+
+        button.addEventListener('click', function () {
+
+            addUserMessage(messages, action.label);
+            addBotMessage(messages, getAnswer(action.query));
+
+        });
+
+        quickActionsContainer.appendChild(button);
+
+    });
+
+    function setChatState(isOpen) {
+
+        root.setAttribute(
+            'data-state',
+            isOpen ? 'open' : 'minimized'
+        );
+
+        launcher.setAttribute(
+            'aria-expanded',
+            isOpen
+        );
+
+        launcherHint.textContent =
+            isOpen
+                ? 'Executive Advisor Open'
+                : 'Open Executive Advisor';
+
+    }
+
+    function openPanel() {
+
+        panel.hidden = false;
+
+        setChatState(true);
+
+        input.focus();
+
+    }
+
+    function closePanel() {
+
+        panel.hidden = true;
+
+        setChatState(false);
+
+        launcher.focus();
+
+    }
+
+    launcher.addEventListener('click', function () {
+
+        if (panel.hidden) {
+            openPanel();
+        } else {
+            input.focus();
+        }
+
+    });
+
+    minimizeButton.addEventListener(
+        'click',
+        closePanel
+    );
+
+    form.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        var question = input.value.trim();
+
+        if (!question) {
+            return;
+        }
+
+        addUserMessage(messages, question);
+
+        addBotMessage(
+            messages,
+            getAnswer(question)
+        );
+
+        input.value = '';
+
+        input.focus();
+
+    });
+
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === 'Escape' && !panel.hidden) {
+            closePanel();
+        }
+
+    });
+
+    setChatState(false);
+
+}
+
+if (document.readyState === 'loading') {
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        boot
+    );
+
+} else {
+
+    boot();
+
+}
+
 })();
