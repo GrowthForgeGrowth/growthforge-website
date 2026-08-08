@@ -513,12 +513,12 @@
     root.className = 'gf-chatbot';
     root.innerHTML = `
       <button type="button" class="gf-chatbot-launcher" aria-label="Open GrowthForge chat assistant" aria-expanded="false" aria-controls="gf-chatbot-panel">
-        <span class="gf-chatbot-launcher-label">
+<span class="gf-chatbot-launcher-label">
     Executive Growth Advisor
 </span>
 
 <span class="gf-chatbot-launcher-hint">
-    Free AI Assessment
+    Free AI-powered growth assessment
 </span>
       </button>
       <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="GrowthForge chat assistant" hidden>
