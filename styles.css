@@ -15473,129 +15473,178 @@ SECTION: RESPONSIVE
    ========================================== */
 
 .hero{
-    display:grid;
-    grid-template-columns:minmax(0,900px);
-    justify-content:center;
-    padding:100px 0;
+
+    width:100%;
+
+    padding:110px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #1e3a8a 45%,
+            #2563eb 100%
+        );
+
 }
 
 .hero > div{
+
+    max-width:1000px;
+
+    margin:0 auto;
+
+    padding:0 24px;
+
     text-align:center;
+
 }
 
-/* Eyebrow */
+/* ==========================================
+   Eyebrow
+   ========================================== */
 
 .hero .eyebrow{
+
     display:inline-flex;
     align-items:center;
     gap:10px;
 
-    margin:0 0 22px;
+    margin:0 0 24px;
 
     padding:10px 18px;
 
     border-radius:999px;
 
-    background:#eff6ff;
-    border:1px solid #bfdbfe;
+    background:rgba(255,255,255,.08);
 
-    color:#2563eb;
+    border:1px solid rgba(255,255,255,.15);
+
+    color:#bfdbfe;
 
     font-size:14px;
     font-weight:700;
     letter-spacing:.08em;
     text-transform:uppercase;
+
 }
 
 .hero .eyebrow::before{
+
     content:"";
+
     width:8px;
     height:8px;
+
     border-radius:50%;
-    background:#2563eb;
+
+    background:#60a5fa;
+
 }
 
-/* Heading */
+/* ==========================================
+   Heading
+   ========================================== */
 
 .hero h1{
 
     margin:0 auto 30px;
 
-    max-width:1000px;
+    max-width:980px;
 
     font-size:clamp(52px,6vw,74px);
+
     line-height:1.05;
+
     letter-spacing:-.04em;
 
     font-weight:800;
 
-    color:#0f172a;
+    color:#ffffff;
+
+    text-shadow:
+        0 3px 18px rgba(0,0,0,.30);
 
 }
 
-/* Lead */
+/* ==========================================
+   Lead
+   ========================================== */
 
 .hero .lead{
 
     max-width:860px;
 
-    margin:0 auto 34px;
+    margin:0 auto 38px;
 
     font-size:22px;
+
     line-height:1.9;
 
-    color:#475569;
+    color:rgba(255,255,255,.88);
 
 }
 
-/* Byline */
+/* ==========================================
+   Byline
+   ========================================== */
 
 .hero .byline{
 
-    max-width:900px;
+    max-width:920px;
 
     margin:0 auto;
 
-    padding:28px 34px;
+    padding:30px 36px;
 
     border-radius:22px;
 
-    background:#f8fbff;
+    background:rgba(255,255,255,.08);
 
-    border:1px solid #dbeafe;
+    border:1px solid rgba(255,255,255,.15);
 
-    color:#64748b;
+    backdrop-filter:blur(12px);
+
+    color:rgba(255,255,255,.82);
 
     font-size:16px;
+
     line-height:1.9;
 
 }
 
 .hero .byline strong{
 
-    color:#0f172a;
+    color:#ffffff;
+
     font-weight:700;
 
 }
 
-/* CTA */
+/* ==========================================
+   CTA
+   ========================================== */
 
 .hero .cta{
 
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
 
     gap:18px;
 
-    margin-top:42px;
+    margin-top:46px;
 
 }
 
 .hero .btn{
 
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
 
     min-height:60px;
@@ -15604,12 +15653,14 @@ SECTION: RESPONSIVE
 
     border-radius:14px;
 
-    background:#2563eb;
-    color:#ffffff;
+    background:#ffffff;
+
+    color:#1d4ed8;
 
     text-decoration:none;
 
     font-size:16px;
+
     font-weight:700;
 
     transition:
@@ -15618,27 +15669,25 @@ SECTION: RESPONSIVE
         background .25s ease;
 
     box-shadow:
-        0 15px 40px rgba(37,99,235,.25);
+        0 18px 45px rgba(0,0,0,.18);
 
 }
 
 .hero .btn:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
-    background:#1d4ed8;
-
-    box-shadow:
-        0 24px 60px rgba(37,99,235,.35);
+    background:#f8fafc;
 
 }
 
 .hero .btn:last-child{
 
-    background:#ffffff;
-    color:#2563eb;
+    background:transparent;
 
-    border:2px solid #2563eb;
+    color:#ffffff;
+
+    border:2px solid rgba(255,255,255,.25);
 
     box-shadow:none;
 
@@ -15646,24 +15695,34 @@ SECTION: RESPONSIVE
 
 .hero .btn:last-child:hover{
 
-    background:#eff6ff;
+    background:rgba(255,255,255,.08);
+
+    border-color:rgba(255,255,255,.45);
 
 }
 
-/* Responsive */
+/* ==========================================
+   Responsive
+   ========================================== */
 
 @media (max-width:992px){
 
     .hero{
-        padding:80px 0;
+
+        padding:90px 0;
+
     }
 
     .hero h1{
-        font-size:48px;
+
+        font-size:50px;
+
     }
 
     .hero .lead{
+
         font-size:20px;
+
     }
 
 }
@@ -15672,7 +15731,13 @@ SECTION: RESPONSIVE
 
     .hero{
 
-        padding:60px 0;
+        padding:70px 0;
+
+    }
+
+    .hero > div{
+
+        padding:0 20px;
 
     }
 
@@ -15685,6 +15750,7 @@ SECTION: RESPONSIVE
     .hero .lead{
 
         font-size:18px;
+
         line-height:1.8;
 
     }
@@ -15692,6 +15758,8 @@ SECTION: RESPONSIVE
     .hero .byline{
 
         padding:24px;
+
+        font-size:15px;
 
     }
 
