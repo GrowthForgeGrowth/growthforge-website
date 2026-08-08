@@ -1894,7 +1894,7 @@ EXECUTIVE GROWTH AUDIT
 }
 
 /* ==========================================
-   PDF PREVIEW
+PDF PREVIEW
 ========================================== */
 
 .audit-document-preview{
@@ -1937,9 +1937,9 @@ EXECUTIVE GROWTH AUDIT
 
     display:grid;
 
-    grid-template-columns:120px 1fr;
+    grid-template-columns:120px minmax(0,1fr);
 
-    min-height:760px;
+    height:820px;
 
 }
 
@@ -1997,39 +1997,41 @@ EXECUTIVE GROWTH AUDIT
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    padding:50px;
+    align-items:center;
+
+    flex:1;
+
+    padding:40px 70px;
 
     overflow:hidden;
 
-    background:
-        radial-gradient(circle at top,#ffffff,#edf4fb);
+    background:radial-gradient(circle at top,#ffffff,#edf4fb);
 
 }
 
 .preview-document{
 
-    width:82%;
+    width:100%;
 
-    max-width:900px;
+    height:100%;
 
-    transform:
-        perspective(1800px)
-        rotateX(4deg);
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     transition:.35s ease;
+
+    transform:perspective(1800px) rotateX(3deg);
 
 }
 
 .preview-document:hover{
 
-    transform:
-        perspective(1800px)
-        rotateX(2deg)
-        translateY(-6px);
+    transform:perspective(1800px) rotateX(1deg) translateY(-6px);
 
 }
 
@@ -2039,11 +2041,17 @@ EXECUTIVE GROWTH AUDIT
 
     width:100%;
 
-    height:auto;
+    height:100%;
 
-    border-radius:18px;
+    max-width:none;
+
+    max-height:none;
+
+    object-fit:contain;
 
     background:#fff;
+
+    border-radius:18px;
 
     padding:14px;
 
@@ -2078,9 +2086,9 @@ EXECUTIVE GROWTH AUDIT
 
     font-size:28px;
 
-    transition:.25s ease;
+    z-index:100;
 
-    z-index:50;
+    transition:.25s ease;
 
 }
 
@@ -2092,13 +2100,13 @@ EXECUTIVE GROWTH AUDIT
 
 .preview-arrow.left{
 
-    left:30px;
+    left:40px;
 
 }
 
 .preview-arrow.right{
 
-    right:30px;
+    right:40px;
 
 }
 
@@ -2192,6 +2200,12 @@ EXECUTIVE GROWTH AUDIT
 
     }
 
+    .audit-preview-stage{
+
+        height:700px;
+
+    }
+
 }
 
 @media (max-width:768px){
@@ -2207,6 +2221,8 @@ EXECUTIVE GROWTH AUDIT
     .audit-preview-stage{
 
         grid-template-columns:1fr;
+
+        height:auto;
 
     }
 
@@ -2227,6 +2243,16 @@ EXECUTIVE GROWTH AUDIT
     .preview-document{
 
         width:100%;
+
+        height:auto;
+
+    }
+
+    .preview-document img{
+
+        width:100%;
+
+        height:auto;
 
     }
 
