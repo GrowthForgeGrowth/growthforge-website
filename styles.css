@@ -9179,3 +9179,294 @@ SECTION: RESPONSIVE
     }
 
 }
+
+/* ==========================================================
+ARTICLE: GROWTH CONSULTANCY VS MARKETING AGENCY
+PAGE: /growth-consultancy-vs-marketing-agency
+SECTION: WHEN TO CHOOSE A GROWTH CONSULTANCY
+========================================================== */
+
+.decision-section{
+
+    padding:100px 0;
+
+    background:#f8fafc;
+
+}
+
+.decision-section .container{
+
+    max-width:1300px;
+
+    margin:0 auto;
+
+}
+
+.decision-header{
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.decision-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 20px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.decision-header h2{
+
+    margin:0 0 24px;
+
+    font-size:clamp(42px,5vw,60px);
+
+    line-height:1.1;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+}
+
+.decision-header p{
+
+    margin:0;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#64748b;
+
+}
+
+.decision-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:32px;
+
+    align-items:stretch;
+
+}
+
+.decision-card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:26px;
+
+    padding:42px;
+
+    transition:
+        transform .30s ease,
+        border-color .30s ease,
+        box-shadow .30s ease;
+
+    box-shadow:
+        0 18px 50px rgba(15,23,42,.06);
+
+}
+
+.decision-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+        0 35px 80px rgba(37,99,235,.14);
+
+}
+
+.decision-number{
+
+    width:64px;
+
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:22px;
+
+    font-weight:800;
+
+}
+
+.decision-card h3{
+
+    margin:0 0 20px;
+
+    font-size:32px;
+
+    line-height:1.2;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+}
+
+.decision-card p{
+
+    margin:0;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+.decision-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+    border-radius:26px 26px 0 0;
+
+}
+
+/* ==========================================================
+ARTICLE: GROWTH CONSULTANCY VS MARKETING AGENCY
+PAGE: /growth-consultancy-vs-marketing-agency
+SECTION: RESPONSIVE
+========================================================== */
+
+@media (max-width:1100px){
+
+    .decision-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .decision-section{
+
+        padding:70px 0;
+
+    }
+
+    .decision-header{
+
+        margin-bottom:50px;
+
+        text-align:left;
+
+    }
+
+    .decision-header h2{
+
+        font-size:36px;
+
+    }
+
+    .decision-header p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .decision-card{
+
+        padding:30px;
+
+    }
+
+    .decision-number{
+
+        width:56px;
+
+        height:56px;
+
+        font-size:20px;
+
+        margin-bottom:22px;
+
+    }
+
+    .decision-card h3{
+
+        font-size:26px;
+
+    }
+
+    .decision-card p{
+
+        font-size:16px;
+
+    }
+
+}
