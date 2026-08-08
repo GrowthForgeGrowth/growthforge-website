@@ -503,7 +503,11 @@ var fallbackAnswer = {
 
     }
 
-},
+}
+
+];
+
+function getAnswer(query) {
 
   function getAnswer(query) {
     var normalized = query.toLowerCase();
