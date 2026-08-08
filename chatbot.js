@@ -343,8 +343,7 @@ var fallbackAnswer = {
         text:
             'The Executive Growth Audit is the starting point for every GrowthForge engagement. Rather than making assumptions, we conduct a comprehensive evaluation of your AI visibility, SEO, paid media, website performance, conversion funnel, analytics, automation, competitive positioning, and overall growth strategy.\n\n' +
 
-            'You'll receive an executive-level assessment, prioritized recommendations, and a strategic 90-day roadmap focused on the initiatives with the greatest potential business impact.',
-
+            'You\'ll receive an executive-level assessment, prioritized recommendations, and a strategic 90-day roadmap focused on the initiatives with the greatest potential business impact.',
         links:[
 
             {
