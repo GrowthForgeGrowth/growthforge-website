@@ -2029,6 +2029,7 @@ PDF PREVIEW
 
 }
 
+
 .preview-document:hover{
 
     transform:perspective(1800px) rotateX(1deg) translateY(-6px);
@@ -2059,6 +2060,10 @@ PDF PREVIEW
         0 50px 120px rgba(15,23,42,.20),
         0 12px 30px rgba(15,23,42,.10);
 
+}
+
+.blur-preview{
+    filter:blur(10px);
 }
 
 .preview-arrow{
