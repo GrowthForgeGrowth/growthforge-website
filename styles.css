@@ -873,66 +873,261 @@ nav{flex-direction:column;gap:15px;width:100%}
 .grid{grid-template-columns:1fr}
 }
 
-/* ================================= */
-/* GrowthForge AI Advisor Chatbot */
-/* ================================= */
+/* ==========================================================
+COMPONENT: GROWTHFORGE EXECUTIVE GROWTH ADVISOR
+SECTION: LAUNCHER
+========================================================== */
 
 :root{
+
     --gf-chatbot-z-index:1000;
+
+    --gf-primary:#2563eb;
+    --gf-primary-dark:#1d4ed8;
+
+    --gf-navy:#0f172a;
+
+    --gf-shadow:
+        0 20px 60px rgba(15,23,42,.18);
+
 }
+
+/* ==========================================================
+CHATBOT CONTAINER
+========================================================== */
 
 .gf-chatbot{
+
     position:fixed;
-    right:24px;
-    bottom:24px;
+
+    right:32px;
+
+    bottom:32px;
+
     z-index:var(--gf-chatbot-z-index);
+
     font-family:Inter,sans-serif;
+
 }
 
-
-/* Launcher */
+/* ==========================================================
+LAUNCHER
+========================================================== */
 
 .gf-chatbot-launcher{
-    width:64px;
-    height:64px;
-    border-radius:50%;
-    border:none;
-    cursor:pointer;
-
-    background:linear-gradient(135deg,#2563eb,#1e40af);
-    color:white;
 
     display:flex;
+
     align-items:center;
-    justify-content:center;
 
-    box-shadow:
-    0 15px 40px rgba(37,99,235,.35);
+    gap:16px;
 
-    transition:.25s ease;
+    min-width:300px;
+
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    background:#ffffff;
+
+    color:#0f172a;
+
+    box-shadow:var(--gf-shadow);
+
+    border:1px solid #dbe4ef;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
 }
 
 .gf-chatbot-launcher:hover{
-    transform:translateY(-4px);
+
+    transform:translateY(-5px);
+
+    border-color:#93c5fd;
+
     box-shadow:
-    0 20px 50px rgba(37,99,235,.45);
+        0 30px 80px rgba(37,99,235,.20);
+
 }
 
+/* ==========================================================
+AI ICON
+========================================================== */
+
+.gf-chatbot-launcher::before{
+
+    content:"✦";
+
+    flex-shrink:0;
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 12px 28px rgba(37,99,235,.35);
+
+}
+
+/* ==========================================================
+TEXT
+========================================================== */
 
 .gf-chatbot-launcher-label{
-    display:none;
+
+    display:block;
+
+    margin:0;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+    text-align:left;
+
+    line-height:1.2;
+
 }
 
 .gf-chatbot-launcher-hint{
-    font-size:0;
+
+    display:block;
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:#64748b;
+
+    text-align:left;
+
+    line-height:1.5;
+
 }
 
-.gf-chatbot-launcher-hint:before{
-    content:"GF";
-    font-size:18px;
-    font-weight:800;
+.gf-chatbot-launcher-hint::before{
+
+    content:none;
+
 }
 
+/* ==========================================================
+ATTENTION BADGE
+========================================================== */
+
+.gf-chatbot-launcher::after{
+
+    content:"FREE";
+
+    position:absolute;
+
+    top:-10px;
+
+    right:16px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:#10b981;
+
+    color:#ffffff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    box-shadow:
+        0 10px 25px rgba(16,185,129,.30);
+
+}
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .gf-chatbot{
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+    .gf-chatbot-launcher{
+
+        min-width:auto;
+
+        width:68px;
+
+        height:68px;
+
+        padding:0;
+
+        justify-content:center;
+
+        border-radius:50%;
+
+    }
+
+    .gf-chatbot-launcher::before{
+
+        width:68px;
+
+        height:68px;
+
+        margin:0;
+
+    }
+
+    .gf-chatbot-launcher-label,
+
+    .gf-chatbot-launcher-hint,
+
+    .gf-chatbot-launcher::after{
+
+        display:none;
+
+    }
+
+}
 
 /* Panel */
 
