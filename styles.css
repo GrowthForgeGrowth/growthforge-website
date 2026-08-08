@@ -1886,7 +1886,7 @@ EXECUTIVE GROWTH AUDIT
    PDF PREVIEW
 ========================================== */
 
-.audit-preview{
+.audit-document-preview{
 
     background:#fff;
 
@@ -1963,6 +1963,7 @@ EXECUTIVE GROWTH AUDIT
 .preview-thumb img{
 
     width:100%;
+
     display:block;
 
 }
@@ -1986,6 +1987,8 @@ EXECUTIVE GROWTH AUDIT
 }
 
 .preview-main img{
+
+    display:block;
 
     width:98%;
 
@@ -2094,60 +2097,6 @@ EXECUTIVE GROWTH AUDIT
     background:#2563eb;
 
 }
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media (max-width:1400px){
-
-    .audit-product{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .audit-product{
-
-        padding:30px;
-
-        gap:40px;
-
-    }
-
-    .audit-preview-body{
-
-        grid-template-columns:1fr;
-
-        min-height:700px;
-
-    }
-
-    .preview-sidebar{
-
-        display:none;
-
-    }
-
-    .preview-main{
-
-        min-height:700px;
-
-        padding:20px;
-
-    }
-
-    .preview-main img{
-
-        width:100%;
-
-        max-height:650px;
-
-    }
 
 }
 
