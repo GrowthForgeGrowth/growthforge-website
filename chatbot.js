@@ -1,34 +1,74 @@
 (function () {
 
-  var quickActions = [
-    { 
-        label: 'AI SEO & GEO', 
-        query: 'Tell me about AI SEO and GEO' 
+ var quickActions = [
+
+    {
+        label: 'Find Revenue Leaks',
+        query: 'How do I identify revenue leaks?'
     },
-    { 
-        label: 'Growth Audit', 
-        query: 'What is included in the Executive Growth Audit?' 
+
+    {
+        label: 'Executive Growth Audit',
+        query: 'Tell me about the Executive Growth Audit'
     },
-    { 
-        label: 'Services', 
-        query: 'What services does GrowthForge provide?' 
+
+    {
+        label: 'Analyze My Website',
+        query: 'I want a website assessment'
     },
-    { 
-        label: 'Pricing', 
-        query: 'What are GrowthForge pricing options?' 
+
+    {
+        label: 'Growth Strategy',
+        query: 'How can GrowthForge help grow my business?'
     }
+
 ];
-
+  
   var fallbackAnswer = {
-    text: 'I can help with AI SEO/GEO, paid media, CRO, automation, consulting, pricing, and next steps. For the quickest path, choose one of these:',
-    links: [
-      { href: '/discovery', label: 'Book Discovery' },
-      { href: '/pricing', label: 'View Pricing' },
-      { href: '/contact', label: 'Contact GrowthForge' }
-    ]
-  };
 
-  var welcomeMessage = 'Hi! I\'m your GrowthForge assistant. I can help with AI SEO/GEO, Google Ads, Meta Ads, CRO, automation, consulting, pricing, and booking a discovery session.';
+    text:
+        'Every business has one growth constraint that limits revenue.\n\n' +
+
+        'Tell me:\n\n' +
+
+        '• Your website\n' +
+
+        '• Your industry\n' +
+
+        '• Your biggest growth challenge\n\n' +
+
+        'I'll recommend the best next step.',
+
+    links:[
+
+        {
+
+            href:'/discovery',
+
+            label:'Book Executive Growth Audit'
+
+        }
+
+    ]
+
+};
+
+ var welcomeMessage =
+'Welcome to GrowthForge.\n\n' +
+
+'I\'m your Executive Growth Advisor.\n\n' +
+
+'I help founders, CEOs, and marketing leaders identify growth constraints before they invest more in marketing.\n\n' +
+
+'You can:\n\n' +
+
+'• Learn about the Executive Growth Audit\n' +
+
+'• Ask about AI SEO, GEO, Paid Media, CRO, or Automation\n' +
+
+'• Find the biggest growth opportunity in your business\n\n' +
+
+'Or simply tell me your website to begin.';
   var minAutoScrollThreshold = 24;
   var autoScrollThresholdRatio = 0.08;
   var intents = [
@@ -40,65 +80,344 @@
       }
     },
     {
-      keywords: ['google ads', 'ppc', 'paid search', 'search ads'],
-      answer: {
-        text: 'For Google Ads, GrowthForge focuses on strategy, campaign architecture, conversion quality, and efficiency so spend turns into qualified pipeline instead of vanity clicks.',
-        links: [{ href: '/pricing', label: 'View partnership options' }]
-      }
-    },
-    {
-      keywords: ['meta ads', 'facebook ads', 'instagram ads', 'paid social'],
-      answer: {
-        text: 'GrowthForge manages Meta Ads with full-funnel creative/testing strategy, audience design, and CRO alignment so paid social supports profitable growth.',
-        links: [{ href: '/pricing', label: 'Explore pricing' }]
-      }
-    },
-    {
-      keywords: ['cro', 'conversion', 'landing page', 'funnel'],
-      answer: {
-        text: 'CRO is built into every engagement: funnel diagnosis, landing page improvements, offer/message testing, and analytics so more visitors become qualified leads.',
-        links: [{ href: '/pricing', label: 'See CRO-focused plans' }]
-      }
-    },
-    {
-      keywords: ['automation', 'marketing automation', 'ai automation', 'crm automation', 'workflow'],
-      answer: {
-        text: 'GrowthForge designs automation systems across CRM, lead routing, nurturing, and reporting to reduce manual work and speed up revenue execution.',
-        links: [{ href: '/pricing', label: 'Review Growth Accelerators' }]
-      }
-    },
-    {
-      keywords: ['executive consulting', 'leadership', 'advisory', 'consulting'],
-      answer: {
-        text: 'Executive consulting gives founders and operators strategic guidance on growth priorities, resource allocation, and AI-era go-to-market decisions.',
-        links: [{ href: '/about', label: 'Learn about GrowthForge' }]
-      }
-    },
-    {
-      keywords: ['pricing', 'cost', 'plan', 'tier', 'growth audit', 'audit'],
-      answer: {
-        text: 'You can start with a Growth Audit ($750) or choose monthly partnerships based on execution depth and growth goals.',
-        links: [{ href: '/pricing', label: 'See full pricing' }]
-      }
-    },
-    {
-      keywords: ['discovery', 'book', 'schedule', 'meeting', 'call'],
-      answer: {
-        text: 'The best next step is a complimentary 20-minute Growth Discovery Session to assess fit and priorities.',
-        links: [{ href: '/discovery', label: 'Book discovery now' }]
-      }
-    },
-    {
-      keywords: ['contact', 'email', 'response time', 'reply', 'charlie'],
-      answer: {
-        text: 'You can reach GrowthForge at charlie@growthforge-ai.com. Typical response time is within 24 hours on business days.',
-        links: [
-          { href: 'mailto:charlie@growthforge-ai.com', label: 'Email GrowthForge' },
-          { href: '/contact', label: 'Open contact page' }
+    keywords: ['google ads', 'ppc', 'paid search', 'search ads'],
+    answer: {
+
+        text:
+            'Google Ads should generate profitable revenue—not just clicks. GrowthForge designs and optimizes paid search strategies that improve lead quality, conversion performance, customer acquisition efficiency, and return on advertising investment.\n\n' +
+
+            'Every engagement begins with an Executive Growth Audit, where we evaluate your advertising strategy, campaign structure, conversion tracking, landing pages, attribution, and budget allocation before delivering executive recommendations and a prioritized 90-day growth roadmap.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/google-ads-management',
+                label:'Learn More About Google Ads'
+            }
+
         ]
-      }
+
     }
-  ];
+
+},
+    {
+    keywords: ['meta ads', 'facebook ads', 'instagram ads', 'paid social'],
+    answer: {
+
+        text:
+            'Successful Meta Ads campaigns do more than generate impressions—they create qualified demand and profitable customer acquisition. GrowthForge develops paid social strategies that combine audience targeting, creative testing, landing page optimization, and conversion measurement to maximize return on advertising investment.\n\n' +
+
+            'Every engagement begins with an Executive Growth Audit, where we evaluate your advertising strategy, creative performance, audience segmentation, funnel effectiveness, attribution, and budget allocation before delivering executive recommendations and a prioritized 90-day growth roadmap.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/meta-ads-management',
+                label:'Learn More About Meta Ads'
+            }
+
+        ]
+
+    }
+
+},
+
+    {
+        href:'/ai-seo-for-b2b-saas',
+        label:'Learn More About AI SEO'
+    }
+
+]
+
+      }
+
+},   
+    
+{
+    keywords: ['cro', 'conversion', 'landing page', 'funnel'],
+    answer: {
+
+        text:
+            'Increasing traffic is only valuable if more visitors become qualified customers. GrowthForge improves conversion performance by identifying friction across your landing pages, messaging, offers, user experience, and conversion funnel to maximize the value of every visitor.\n\n' +
+
+            'Every engagement begins with an Executive Growth Audit, where we diagnose the highest-impact conversion constraints, prioritize opportunities based on business impact, and deliver an executive assessment with strategic recommendations and a 90-day roadmap.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/conversion-rate-optimization',
+                label:'Learn More About CRO'
+            }
+
+        ]
+
+    }
+
+},
+    {
+    keywords: ['automation', 'marketing automation', 'ai automation', 'crm automation', 'workflow'],
+    answer: {
+
+        text:
+            'As businesses grow, manual processes become a barrier to scalability. GrowthForge designs AI-powered marketing automation systems that streamline lead capture, qualification, CRM workflows, nurturing, reporting, and operational processes—allowing teams to scale more efficiently while improving speed, consistency, and customer experience.\n\n' +
+
+            'Every engagement begins with an Executive Growth Audit, where we identify automation opportunities, operational bottlenecks, and workflow inefficiencies before delivering executive recommendations and a prioritized 90-day roadmap aligned with your growth objectives.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/marketing-automation',
+                label:'Learn More About Marketing Automation'
+            }
+
+        ]
+
+    }
+
+},
+    {
+    keywords: [
+       'executive consulting',
+'consulting',
+'advisory',
+'business strategy',
+'growth strategy',
+'strategy',
+'strategic planning',
+'go to market',
+'gtm',
+'revenue strategy',
+'marketing strategy',
+'growth consultant',
+'business consultant',
+'advisor'
+    ],
+
+    answer: {
+
+        text:
+            'Sustainable business growth requires more than marketing execution—it requires executive-level strategy. GrowthForge partners with founders, CEOs, and executive teams to identify commercial growth opportunities, prioritize strategic initiatives, optimize marketing investments, and build scalable growth systems that support long-term revenue growth.\n\n' +
+
+            'Every engagement begins with an Executive Growth Audit, where we evaluate your business strategy, market positioning, growth opportunities, AI readiness, marketing performance, and operational constraints before delivering executive recommendations and a prioritized 90-day growth roadmap.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/about',
+                label:'Learn About GrowthForge'
+            }
+
+        ]
+
+    }
+
+},
+    {
+    keywords: [
+        'pricing',
+        'price',
+        'cost',
+        'plans',
+        'plan',
+        'fees',
+        'investment',
+        'quote',
+        'proposal',
+        'growth audit',
+        'audit'
+    ],
+
+    answer: {
+
+        text:
+            'GrowthForge is designed as a long-term growth partner rather than a traditional marketing agency. Every engagement begins with an Executive Growth Audit—the foundation for identifying your highest-impact growth opportunities before recommending any ongoing partnership.\n\n' +
+
+            'The Executive Growth Audit is a one-time investment of $750 and includes an executive assessment of your AI visibility, SEO, paid media, website performance, conversion funnel, analytics, automation, competitive positioning, prioritized recommendations, and a strategic 90-day growth roadmap. Based on the findings, we recommend the partnership that best aligns with your business objectives.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/pricing',
+                label:'View Pricing'
+            }
+
+        ]
+
+    }
+
+},
+   {
+    keywords: [
+        'executive growth audit',
+        'growth audit',
+        'audit',
+        'assessment',
+        'analysis',
+        'review',
+        'evaluate',
+        'website audit',
+        'marketing audit',
+        'growth assessment'
+    ],
+
+    answer: {
+
+        text:
+            'The Executive Growth Audit is the starting point for every GrowthForge engagement. Rather than making assumptions, we conduct a comprehensive evaluation of your AI visibility, SEO, paid media, website performance, conversion funnel, analytics, automation, competitive positioning, and overall growth strategy.\n\n' +
+
+            'You'll receive an executive-level assessment, prioritized recommendations, and a strategic 90-day roadmap focused on the initiatives with the greatest potential business impact.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/pricing',
+                label:'View Pricing'
+            }
+
+        ]
+
+    }
+
+},
+    {
+    keywords: [
+        'contact',
+        'email',
+        'charlie',
+        'reach',
+        'message',
+        'support',
+        'question',
+        'help'
+    ],
+
+    answer: {
+
+        text:
+            'You can contact GrowthForge directly at charlie@growthforge-ai.com for general enquiries, partnership opportunities, or questions about our services.\n\n' +
+
+            'If you're exploring how GrowthForge can help accelerate your business growth, the recommended starting point is the Executive Growth Audit. It provides a comprehensive executive assessment, strategic recommendations, and a prioritized 90-day roadmap tailored to your business.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'mailto:charlie@growthforge-ai.com',
+                label:'Email GrowthForge'
+            }
+
+        ]
+
+    }
+
+},
+{
+    keywords: [
+
+        'revenue',
+        'grow revenue',
+        'increase revenue',
+        'business growth',
+        'growth',
+        'sales growth',
+        'pipeline',
+        'qualified leads'
+
+    ],
+
+    answer: {
+
+        text:
+            'Sustainable revenue growth comes from improving the entire growth system—not optimizing individual marketing channels in isolation. GrowthForge evaluates your AI visibility, SEO, paid media, website, conversion funnel, analytics, automation, and growth strategy to identify the commercial constraints limiting business performance.\n\n' +
+
+            'Every engagement begins with an Executive Growth Audit, where we deliver an executive assessment, prioritized recommendations, and a strategic 90-day roadmap focused on measurable business outcomes.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/growth-consultancy-vs-marketing-agency',
+                label:'Why a Growth Consultancy?'
+            }
+
+        ]
+
+    }
+
+},
+{
+    keywords:[
+
+        'low conversion',
+        'conversion rate',
+        'website conversion',
+        'not converting',
+        'landing page'
+
+    ],
+
+    answer:{
+
+        text:
+            'Traffic only creates business value when visitors become customers. GrowthForge identifies the conversion bottlenecks across messaging, user experience, offers, trust signals, and funnel design before prioritizing the highest-impact improvements.\n\n' +
+
+            'The Executive Growth Audit delivers an executive assessment and a 90-day roadmap focused on increasing conversion efficiency and revenue growth.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            }
+
+        ]
+
+    }
+
+},
 
   function getAnswer(query) {
     var normalized = query.toLowerCase();
@@ -194,15 +513,23 @@
     root.className = 'gf-chatbot';
     root.innerHTML = `
       <button type="button" class="gf-chatbot-launcher" aria-label="Open GrowthForge chat assistant" aria-expanded="false" aria-controls="gf-chatbot-panel">
-        <span class="gf-chatbot-launcher-label">Chat with GrowthForge</span>
-        <span class="gf-chatbot-launcher-hint">Open assistant</span>
+        <span class="gf-chatbot-launcher-label">
+    Executive Growth Advisor
+</span>
+
+<span class="gf-chatbot-launcher-hint">
+    Free AI Assessment
+</span>
       </button>
       <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="GrowthForge chat assistant" hidden>
         <header class="gf-chatbot-header">
-<p>
-<strong>GrowthForge Assistant</strong>
-<span>Ask about services, pricing, or next steps.</span>
-</p>          
+<strong>
+    Executive Growth Advisor
+</strong>
+
+<span>
+    Get an AI-powered assessment of your growth strategy, website, and revenue opportunities.
+</span>     
 <div class="gf-chatbot-header-actions">
             <button type="button" class="gf-chatbot-minimize" aria-label="Close chat assistant" aria-controls="gf-chatbot-panel" title="Close">
     <span class="gf-chatbot-minimize-icon" aria-hidden="true">−</span>
@@ -213,7 +540,7 @@
         <div class="gf-chatbot-quick-actions" aria-label="Quick actions"></div>
         <form class="gf-chatbot-form" aria-label="Send a message">
           <label for="gf-chatbot-input" class="gf-chatbot-visually-hidden">Type your question</label>
-          <input id="gf-chatbot-input" name="question" type="text" placeholder="Ask about pricing, ads, CRO..." autocomplete="off">
+          <input id="gf-chatbot-input" name="question" type="text" placeholder="placeholder="Enter your website or ask an executive growth question..."" autocomplete="off">
           <button type="submit">Send</button>
         </form>
       </section>`;
