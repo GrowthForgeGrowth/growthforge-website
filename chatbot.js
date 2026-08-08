@@ -509,7 +509,6 @@ var fallbackAnswer = {
 
 function getAnswer(query) {
 
-  function getAnswer(query) {
     var normalized = query.toLowerCase();
     var bestMatch = null;
     var bestScore = 0;
@@ -517,212 +516,147 @@ function getAnswer(query) {
     var bestIntentIndex = Number.MAX_SAFE_INTEGER;
 
     for (var i = 0; i < intents.length; i += 1) {
-      var intent = intents[i];
-      var score = 0;
-      var longestKeyword = 0;
 
-      for (var j = 0; j < intent.keywords.length; j += 1) {
-        var keyword = intent.keywords[j];
-        if (normalized.indexOf(keyword) !== -1) {
-          score += 1;
-          if (keyword.length > longestKeyword) {
-            longestKeyword = keyword.length;
-          }
+        var intent = intents[i];
+        var score = 0;
+        var longestKeyword = 0;
+
+        for (var j = 0; j < intent.keywords.length; j += 1) {
+
+            var keyword = intent.keywords[j];
+
+            if (normalized.indexOf(keyword) !== -1) {
+
+                score++;
+
+                if (keyword.length > longestKeyword) {
+                    longestKeyword = keyword.length;
+                }
+
+            }
+
         }
-      }
 
-      if (
-        score > bestScore ||
-        (score === bestScore && longestKeyword > bestKeywordLength) ||
-        (score === bestScore && longestKeyword === bestKeywordLength && i < bestIntentIndex)
-      ) {
-        bestScore = score;
-        bestKeywordLength = longestKeyword;
-        bestMatch = intent;
-        bestIntentIndex = i;
-      }
+        if (
+            score > bestScore ||
+            (score === bestScore && longestKeyword > bestKeywordLength) ||
+            (score === bestScore &&
+                longestKeyword === bestKeywordLength &&
+                i < bestIntentIndex)
+        ) {
+
+            bestScore = score;
+            bestKeywordLength = longestKeyword;
+            bestMatch = intent;
+            bestIntentIndex = i;
+
+        }
+
     }
 
-    if (bestMatch) {
-      return bestMatch.answer;
-    }
+    return bestMatch ? bestMatch.answer : fallbackAnswer;
 
-    return fallbackAnswer;
-    }
+}
 
-  function createMessage(type, contentNode) {
+function createMessage(type, contentNode) {
+
     var message = document.createElement('div');
-    message.className = 'gf-chatbot-message gf-chatbot-message-' + type;
+
+    message.className =
+        'gf-chatbot-message gf-chatbot-message-' + type;
+
     message.appendChild(contentNode);
+
     return message;
-  }
 
-  function addUserMessage(messages, text) {
+}
+
+function addUserMessage(messages, text) {
+
     var content = document.createElement('p');
+
     content.textContent = text.trim();
-    messages.appendChild(createMessage('user', content));
-  }
 
-  function createBotContent(answer) {
+    messages.appendChild(
+        createMessage('user', content)
+    );
+
+}
+
+function createBotContent(answer) {
+
     var content = document.createElement('p');
+
     if (typeof answer === 'string') {
-      content.textContent = answer;
-      return content;
+
+        content.textContent = answer;
+
+        return content;
+
     }
 
     content.textContent = answer.text;
+
     if (answer.links && answer.links.length) {
-      content.appendChild(document.createTextNode(' '));
-      for (var i = 0; i < answer.links.length; i += 1) {
-        var link = answer.links[i];
-        if (i > 0) {
-          content.appendChild(document.createTextNode(i === answer.links.length - 1 ? ' or ' : ', '));
+
+        content.appendChild(document.createTextNode(' '));
+
+        for (var i = 0; i < answer.links.length; i += 1) {
+
+            var link = answer.links[i];
+
+            if (i > 0) {
+
+                content.appendChild(
+                    document.createTextNode(
+                        i === answer.links.length - 1
+                            ? ' or '
+                            : ', '
+                    )
+                );
+
+            }
+
+            var anchor = document.createElement('a');
+
+            anchor.href = link.href;
+            anchor.textContent = link.label;
+
+            content.appendChild(anchor);
+
         }
-        var anchor = document.createElement('a');
-        anchor.href = link.href;
-        anchor.textContent = link.label;
-        content.appendChild(anchor);
-      }
-      content.appendChild(document.createTextNode('.'));
+
+        content.appendChild(document.createTextNode('.'));
+
     }
 
     return content;
-  }
 
-  function addBotMessage(messages, answer) {
-    var autoScrollThreshold = Math.max(minAutoScrollThreshold, messages.clientHeight * autoScrollThresholdRatio);
-    var nearBottom = messages.scrollHeight - messages.scrollTop - messages.clientHeight < autoScrollThreshold;
-    messages.appendChild(createMessage('bot', createBotContent(answer)));
+}
+
+function addBotMessage(messages, answer) {
+
+    var autoScrollThreshold = Math.max(
+        minAutoScrollThreshold,
+        messages.clientHeight * autoScrollThresholdRatio
+    );
+
+    var nearBottom =
+        messages.scrollHeight -
+        messages.scrollTop -
+        messages.clientHeight <
+        autoScrollThreshold;
+
+    messages.appendChild(
+        createMessage(
+            'bot',
+            createBotContent(answer)
+        )
+    );
+
     if (nearBottom) {
-      messages.scrollTop = messages.scrollHeight;
+        messages.scrollTop = messages.scrollHeight;
     }
-  }
-
-  function boot() {
-    var root = document.createElement('div');
-    root.className = 'gf-chatbot';
-    root.innerHTML = `
-      <button type="button" class="gf-chatbot-launcher" aria-label="Open Executive Growth Advisor" aria-expanded="false" aria-controls="gf-chatbot-panel">
-<span class="gf-chatbot-launcher-label">
-    Executive Growth Advisor
-</span>
-
-<span class="gf-chatbot-launcher-hint">
-    Free AI-powered growth assessment
-</span>
-      </button>
-      <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="Executive Growth Advisor" hidden>
-        <header class="gf-chatbot-header">
-<strong>
-    Executive Growth Advisor
-</strong>
-
-<span>
-    Get an AI-powered assessment of your growth strategy, website, and revenue opportunities.
-</span>     
-<div class="gf-chatbot-header-actions">
-            <button type="button" class="gf-chatbot-minimize" aria-label="Close chat assistant" aria-controls="gf-chatbot-panel" title="Close">
-    <span class="gf-chatbot-minimize-icon" aria-hidden="true">−</span>
-            </button>
-          </div>
-        </header>
-        <div class="gf-chatbot-messages" aria-live="polite"></div>
-        <div class="gf-chatbot-quick-actions" aria-label="Quick actions"></div>
-        <form class="gf-chatbot-form" aria-label="Send a message">
-          <label for="gf-chatbot-input" class="gf-chatbot-visually-hidden">Type your question</label>
-<input
-    id="gf-chatbot-input"
-    name="question"
-    type="text"
-    placeholder="Enter your website or ask an executive growth question..."
-    autocomplete="off">
-          <button type="submit">Get Advice</button>
-        </form>
-      </section>`;
-
-    document.body.appendChild(root);
-
-    var launcher = root.querySelector('.gf-chatbot-launcher');
-    var launcherHint = root.querySelector('.gf-chatbot-launcher-hint');
-    var panel = root.querySelector('.gf-chatbot-panel');
-    var minimizeButton = root.querySelector('.gf-chatbot-minimize');
-    var messages = root.querySelector('.gf-chatbot-messages');
-    var quickActionsContainer = root.querySelector('.gf-chatbot-quick-actions');
-    var form = root.querySelector('.gf-chatbot-form');
-    var input = root.querySelector('#gf-chatbot-input');
-
-    addBotMessage(messages, welcomeMessage);
-
-    quickActions.forEach(function (action) {
-      var button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'gf-chatbot-quick-action';
-      button.textContent = action.label;
-      button.addEventListener('click', function () {
-        addUserMessage(messages, action.label);
-        addBotMessage(messages, getAnswer(action.query));
-      });
-      quickActionsContainer.appendChild(button);
-    });
-
-    function setChatState(isOpen) {
-      root.setAttribute('data-state', isOpen ? 'open' : 'minimized');
-      launcher.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      launcher.setAttribute('aria-label', isOpen ? 'Executive Growth Advisor is open' : 'Open Executive Growth Advisor');
-      launcherHint.textContent = isOpen ? 'Executive Advisor Open' : 'Open Executive Advisor';
-    }
-
-    function openPanel() {
-      panel.hidden = false;
-      setChatState(true);
-      input.focus();
-    }
-
-    function closePanel() {
-      panel.hidden = true;
-      setChatState(false);
-      launcher.focus();
-    }
-
-    launcher.addEventListener('click', function () {
-      if (panel.hidden) {
-        openPanel();
-      } else {
-        input.focus();
-      }
-    });
-
-    minimizeButton.addEventListener('click', closePanel);
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      var question = input.value.trim();
-      if (!question) {
-        return;
-      }
-
-      addUserMessage(messages, question);
-      addBotMessage(messages, getAnswer(question));
-      input.value = '';
-      input.focus();
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && !panel.hidden) {
-        closePanel();
-      }
-    });
-
-    setChatState(false);
-  }
-
-  if (document.readyState === 'loading') {
-
-    document.addEventListener('DOMContentLoaded', boot);
-
-} else {
-
-    boot();
 
 }
 
