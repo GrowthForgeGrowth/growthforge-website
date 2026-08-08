@@ -1137,76 +1137,226 @@ nav{flex-direction:column;gap:15px;width:100%}
 }
 
 
-/* ================================= */
-/* Executive Growth Audit Preview */
-/* ================================= */
+/* ==========================================
+   EXECUTIVE GROWTH AUDIT
+========================================== */
 
 .audit-preview{
-    padding:50px 0;
+    padding:100px 0;
 }
 
-.audit-preview-container{
+.audit-preview .section-heading{
+    max-width:900px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.audit-preview .section-heading h2{
+    margin:20px 0;
+    font-size:clamp(42px,5vw,64px);
+    line-height:1.05;
+    color:#0f172a;
+}
+
+.audit-preview .section-heading p{
+    margin:0;
+    font-size:20px;
+    line-height:1.8;
+    color:#64748b;
+}
+
+.audit-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:28px;
+}
+
+.audit-card{
+
+    display:flex;
+    flex-direction:column;
+
+    padding:36px;
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+    border-radius:24px;
+
+    box-shadow:0 20px 50px rgba(15,23,42,.06);
+
+    transition:.3s ease;
+
+}
+
+.audit-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2563eb;
+
+    box-shadow:0 28px 60px rgba(37,99,235,.14);
+
+}
+
+.audit-icon{
+
+    width:58px;
+    height:58px;
+
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:60px;
-}
-
-.audit-preview-text{
-    flex:1;
-}
-
-.audit-preview-text h2{
-    margin-top:15px;
-}
-
-.audit-preview-text p{
-    color:#475569;
-    font-size:18px;
-    line-height:1.8;
-}
-
-.audit-preview-text ul{
-    margin:25px 0;
-    padding-left:20px;
-    color:#475569;
-    line-height:1.9;
-}
-
-.audit-preview-image{
-    flex:0.8;
-    display:flex;
     justify-content:center;
-    max-height:520px;
-    overflow:hidden;
+
+    margin-bottom:24px;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+    color:#ffffff;
+
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.05em;
+
+    box-shadow:0 14px 32px rgba(37,99,235,.18);
+
+    transition:.3s ease;
+
 }
 
-.audit-preview-image img{
-    width:100%;
-    max-width:420px;
-    height:auto;
-    border-radius:18px;
-    box-shadow:0 25px 60px rgba(15,23,42,.22);
+.audit-card:hover .audit-icon{
+
+    transform:scale(1.06);
+
 }
 
+.audit-card h3{
 
-@media(max-width:800px){
+    margin:0 0 16px;
 
-.audit-preview{
-    padding:40px 0;
+    font-size:24px;
+
+    line-height:1.25;
+
+    color:#0f172a;
+
 }
 
-.audit-preview-container{
-    flex-direction:column;
-    gap:40px;
+.audit-card p{
+
+    margin:0;
+
+    color:#64748b;
+
+    font-size:17px;
+
+    line-height:1.8;
+
 }
 
-.audit-preview-image{
-    max-height:none;
+.audit-highlight{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    border:none;
+
 }
 
-.audit-preview-image img{
-    max-width:320px;
+.audit-highlight h3,
+.audit-highlight p{
+
+    color:#ffffff;
+
+}
+
+.audit-highlight .audit-icon{
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:none;
+
+}
+
+.audit-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    margin-top:24px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    transition:.25s ease;
+
+}
+
+.audit-link:hover{
+
+    transform:translateX(4px);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .audit-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .audit-preview{
+
+        padding:80px 0;
+
+    }
+
+    .audit-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .audit-preview .section-heading{
+
+        margin-bottom:50px;
+
+    }
+
+    .audit-preview .section-heading h2{
+
+        font-size:42px;
+
+    }
+
+    .audit-preview .section-heading p{
+
+        font-size:18px;
+
+    }
+
+    .audit-card{
+
+        padding:30px;
+
+    }
+
 }
     
     /* ================================= */
