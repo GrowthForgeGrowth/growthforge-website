@@ -15473,178 +15473,129 @@ SECTION: RESPONSIVE
    ========================================== */
 
 .hero{
-
-    width:100%;
-
-    padding:110px 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0f172a 0%,
-            #1e3a8a 45%,
-            #2563eb 100%
-        );
-
+    display:grid;
+    grid-template-columns:minmax(0,900px);
+    justify-content:center;
+    padding:100px 0;
 }
 
 .hero > div{
-
-    max-width:1000px;
-
-    margin:0 auto;
-
-    padding:0 24px;
-
     text-align:center;
-
 }
 
-/* ==========================================
-   Eyebrow
-   ========================================== */
+/* Eyebrow */
 
 .hero .eyebrow{
-
     display:inline-flex;
     align-items:center;
     gap:10px;
 
-    margin:0 0 24px;
+    margin:0 0 22px;
 
     padding:10px 18px;
 
     border-radius:999px;
 
-    background:rgba(255,255,255,.08);
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
 
-    border:1px solid rgba(255,255,255,.15);
-
-    color:#bfdbfe;
+    color:#2563eb;
 
     font-size:14px;
     font-weight:700;
     letter-spacing:.08em;
     text-transform:uppercase;
-
 }
 
 .hero .eyebrow::before{
-
     content:"";
-
     width:8px;
     height:8px;
-
     border-radius:50%;
-
-    background:#60a5fa;
-
+    background:#2563eb;
 }
 
-/* ==========================================
-   Heading
-   ========================================== */
+/* Heading */
 
 .hero h1{
 
     margin:0 auto 30px;
 
-    max-width:980px;
+    max-width:1000px;
 
     font-size:clamp(52px,6vw,74px);
-
     line-height:1.05;
-
     letter-spacing:-.04em;
 
     font-weight:800;
 
-    color:#ffffff;
-
-    text-shadow:
-        0 3px 18px rgba(0,0,0,.30);
+    color:#0f172a;
 
 }
 
-/* ==========================================
-   Lead
-   ========================================== */
+/* Lead */
 
 .hero .lead{
 
     max-width:860px;
 
-    margin:0 auto 38px;
+    margin:0 auto 34px;
 
     font-size:22px;
-
     line-height:1.9;
 
-    color:rgba(255,255,255,.88);
+    color:#475569;
 
 }
 
-/* ==========================================
-   Byline
-   ========================================== */
+/* Byline */
 
 .hero .byline{
 
-    max-width:920px;
+    max-width:900px;
 
     margin:0 auto;
 
-    padding:30px 36px;
+    padding:28px 34px;
 
     border-radius:22px;
 
-    background:rgba(255,255,255,.08);
+    background:#f8fbff;
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid #dbeafe;
 
-    backdrop-filter:blur(12px);
-
-    color:rgba(255,255,255,.82);
+    color:#64748b;
 
     font-size:16px;
-
     line-height:1.9;
 
 }
 
 .hero .byline strong{
 
-    color:#ffffff;
-
+    color:#0f172a;
     font-weight:700;
 
 }
 
-/* ==========================================
-   CTA
-   ========================================== */
+/* CTA */
 
 .hero .cta{
 
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
 
     gap:18px;
 
-    margin-top:46px;
+    margin-top:42px;
 
 }
 
 .hero .btn{
 
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
 
     min-height:60px;
@@ -15653,14 +15604,12 @@ SECTION: RESPONSIVE
 
     border-radius:14px;
 
-    background:#ffffff;
-
-    color:#1d4ed8;
+    background:#2563eb;
+    color:#ffffff;
 
     text-decoration:none;
 
     font-size:16px;
-
     font-weight:700;
 
     transition:
@@ -15669,25 +15618,27 @@ SECTION: RESPONSIVE
         background .25s ease;
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.18);
+        0 15px 40px rgba(37,99,235,.25);
 
 }
 
 .hero .btn:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
-    background:#f8fafc;
+    background:#1d4ed8;
+
+    box-shadow:
+        0 24px 60px rgba(37,99,235,.35);
 
 }
 
 .hero .btn:last-child{
 
-    background:transparent;
+    background:#ffffff;
+    color:#2563eb;
 
-    color:#ffffff;
-
-    border:2px solid rgba(255,255,255,.25);
+    border:2px solid #2563eb;
 
     box-shadow:none;
 
@@ -15695,34 +15646,24 @@ SECTION: RESPONSIVE
 
 .hero .btn:last-child:hover{
 
-    background:rgba(255,255,255,.08);
-
-    border-color:rgba(255,255,255,.45);
+    background:#eff6ff;
 
 }
 
-/* ==========================================
-   Responsive
-   ========================================== */
+/* Responsive */
 
 @media (max-width:992px){
 
     .hero{
-
-        padding:90px 0;
-
+        padding:80px 0;
     }
 
     .hero h1{
-
-        font-size:50px;
-
+        font-size:48px;
     }
 
     .hero .lead{
-
         font-size:20px;
-
     }
 
 }
@@ -15731,13 +15672,7 @@ SECTION: RESPONSIVE
 
     .hero{
 
-        padding:70px 0;
-
-    }
-
-    .hero > div{
-
-        padding:0 20px;
+        padding:60px 0;
 
     }
 
@@ -15750,7 +15685,6 @@ SECTION: RESPONSIVE
     .hero .lead{
 
         font-size:18px;
-
         line-height:1.8;
 
     }
@@ -15758,8 +15692,6 @@ SECTION: RESPONSIVE
     .hero .byline{
 
         padding:24px;
-
-        font-size:15px;
 
     }
 
