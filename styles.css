@@ -1923,21 +1923,23 @@ EXECUTIVE GROWTH AUDIT
 
     align-items:center;
 
-    padding:20px 28px;
+    padding:22px 28px;
 
     border-bottom:1px solid #eef2f7;
 
-    font-weight:600;
+    font-weight:700;
+
+    color:#0f172a;
 
 }
 
-.audit-preview-body{
+.audit-preview-stage{
 
     display:grid;
 
-    grid-template-columns:110px 1fr;
+    grid-template-columns:120px 1fr;
 
-    height:760px;
+    min-height:760px;
 
 }
 
@@ -1957,7 +1959,7 @@ EXECUTIVE GROWTH AUDIT
 
     margin-bottom:14px;
 
-    border-radius:10px;
+    border-radius:12px;
 
     overflow:hidden;
 
@@ -1966,6 +1968,12 @@ EXECUTIVE GROWTH AUDIT
     cursor:pointer;
 
     transition:.25s ease;
+
+}
+
+.preview-thumb:hover{
+
+    transform:translateY(-2px);
 
 }
 
@@ -1983,47 +1991,65 @@ EXECUTIVE GROWTH AUDIT
 
 }
 
-.preview-main{
+.preview-canvas{
 
     position:relative;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    padding:16px;
+    justify-content:center;
+
+    padding:50px;
 
     overflow:hidden;
 
-    background:linear-gradient(180deg,#f8fbff,#edf4fb);
+    background:
+        radial-gradient(circle at top,#ffffff,#edf4fb);
 
 }
 
-.preview-main img{
+.preview-document{
+
+    width:82%;
+
+    max-width:900px;
+
+    transform:
+        perspective(1800px)
+        rotateX(4deg);
+
+    transition:.35s ease;
+
+}
+
+.preview-document:hover{
+
+    transform:
+        perspective(1800px)
+        rotateX(2deg)
+        translateY(-6px);
+
+}
+
+.preview-document img{
 
     display:block;
 
     width:100%;
 
-    max-width:1400px;
-
     height:auto;
-
-    max-height:720px;
-
-    object-fit:contain;
-
-    background:#fff;
 
     border-radius:18px;
 
-    padding:8px;
+    background:#fff;
+
+    padding:14px;
 
     box-shadow:
-        0 40px 100px rgba(15,23,42,.18),
-        0 10px 30px rgba(15,23,42,.08);
+        0 50px 120px rgba(15,23,42,.20),
+        0 12px 30px rgba(15,23,42,.10);
 
 }
 
@@ -2035,9 +2061,9 @@ EXECUTIVE GROWTH AUDIT
 
     transform:translateY(-50%);
 
-    width:58px;
+    width:64px;
 
-    height:58px;
+    height:64px;
 
     border:none;
 
@@ -2045,15 +2071,16 @@ EXECUTIVE GROWTH AUDIT
 
     background:#fff;
 
-    box-shadow:0 12px 30px rgba(15,23,42,.15);
+    box-shadow:
+        0 16px 40px rgba(15,23,42,.18);
 
     cursor:pointer;
 
-    font-size:24px;
+    font-size:28px;
 
-    z-index:10;
+    transition:.25s ease;
 
-    transition:.2s ease;
+    z-index:50;
 
 }
 
@@ -2065,13 +2092,13 @@ EXECUTIVE GROWTH AUDIT
 
 .preview-arrow.left{
 
-    left:20px;
+    left:30px;
 
 }
 
 .preview-arrow.right{
 
-    right:20px;
+    right:30px;
 
 }
 
@@ -2082,6 +2109,8 @@ EXECUTIVE GROWTH AUDIT
     justify-content:space-between;
 
     align-items:center;
+
+    gap:24px;
 
     padding:20px 28px;
 
@@ -2095,43 +2124,71 @@ EXECUTIVE GROWTH AUDIT
 
     height:6px;
 
-    margin-right:20px;
-
-    background:#e2e8f0;
-
     border-radius:999px;
 
     overflow:hidden;
+
+    background:#e2e8f0;
 
 }
 
 .preview-progress-fill{
 
-    width:25%;
+    width:20%;
 
     height:100%;
 
-    background:#2563eb;
+    background:linear-gradient(90deg,#2563eb,#60a5fa);
 
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+.preview-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+.preview-controls button{
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+.preview-controls button:hover{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
 
 @media (max-width:1400px){
 
     .audit-product{
 
         grid-template-columns:1fr;
-
-    }
-
-    .audit-preview-body{
-
-        grid-template-columns:100px 1fr;
-
-        height:650px;
 
     }
 
@@ -2147,11 +2204,9 @@ EXECUTIVE GROWTH AUDIT
 
     }
 
-    .audit-preview-body{
+    .audit-preview-stage{
 
         grid-template-columns:1fr;
-
-        height:auto;
 
     }
 
@@ -2161,15 +2216,17 @@ EXECUTIVE GROWTH AUDIT
 
     }
 
-    .preview-main{
+    .preview-canvas{
 
         min-height:500px;
 
+        padding:24px;
+
     }
 
-    .preview-main img{
+    .preview-document{
 
-        max-height:520px;
+        width:100%;
 
     }
 
