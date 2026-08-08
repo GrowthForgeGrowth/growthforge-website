@@ -8447,7 +8447,13 @@ PAGE: /growth-consultancy-vs-marketing-agency
 SECTION: HERO
 ========================================================== */
 
-.hero{
+.article-hero{
+
+    padding:80px 0;
+
+}
+
+.article-hero .hero{
 
     display:grid;
 
@@ -8457,11 +8463,9 @@ SECTION: HERO
 
     text-align:center;
 
-    padding:80px 0;
-
 }
 
-.hero .eyebrow{
+.article-hero .eyebrow{
 
     display:inline-flex;
 
@@ -8481,9 +8485,9 @@ SECTION: HERO
 
     color:#2563eb;
 
-    font-size:13px;
+    font-size:13px !important;
 
-    font-weight:700;
+    font-weight:700 !important;
 
     letter-spacing:.08em;
 
@@ -8491,37 +8495,39 @@ SECTION: HERO
 
 }
 
-.hero h1{
+.article-hero h1{
 
-    margin:0 0 28px;
+    margin:0 0 28px !important;
 
-    font-size:clamp(52px,6vw,72px);
+    font-size:clamp(52px,6vw,72px) !important;
 
-    line-height:1.05;
+    line-height:1.05 !important;
 
     letter-spacing:-0.03em;
 
-    color:#0f172a;
+    color:#0f172a !important;
 
-    font-weight:800;
+    font-weight:800 !important;
+
+    max-width:1100px;
 
 }
 
-.hero .lead{
+.article-hero .lead{
 
     max-width:820px;
 
     margin:0 auto;
 
-    font-size:21px;
+    font-size:21px !important;
 
-    line-height:1.9;
+    line-height:1.9 !important;
 
-    color:#475569;
+    color:#475569 !important;
 
 }
 
-.hero .cta{
+.article-hero .cta{
 
     display:flex;
 
@@ -8537,7 +8543,7 @@ SECTION: HERO
 
 }
 
-.hero .btn{
+.article-hero .btn{
 
     display:inline-flex;
 
@@ -8551,9 +8557,9 @@ SECTION: HERO
 
     text-decoration:none;
 
-    font-size:16px;
+    font-size:16px !important;
 
-    font-weight:700;
+    font-weight:700 !important;
 
     transition:
         transform .25s ease,
@@ -8562,19 +8568,23 @@ SECTION: HERO
 
 }
 
-.hero .btn:first-child{
+.article-hero .btn:first-child{
 
     background:#2563eb;
 
     color:#ffffff;
 
+    border:none;
+
     box-shadow:0 18px 40px rgba(37,99,235,.25);
 
 }
 
-.hero .btn:first-child:hover{
+.article-hero .btn:first-child:hover{
 
     background:#1d4ed8;
+
+    color:#ffffff;
 
     transform:translateY(-3px);
 
@@ -8582,7 +8592,7 @@ SECTION: HERO
 
 }
 
-.hero .btn:last-child{
+.article-hero .btn:last-child{
 
     background:#ffffff;
 
@@ -8592,7 +8602,7 @@ SECTION: HERO
 
 }
 
-.hero .btn:last-child:hover{
+.article-hero .btn:last-child:hover{
 
     background:#2563eb;
 
@@ -8610,37 +8620,41 @@ SECTION: RESPONSIVE
 
 @media (max-width:768px){
 
-    .hero{
+    .article-hero{
 
         padding:60px 0;
+
+    }
+
+    .article-hero .hero{
 
         text-align:left;
 
     }
 
-    .hero .eyebrow{
+    .article-hero .eyebrow{
 
         margin:0 0 20px;
 
     }
 
-    .hero h1{
+    .article-hero h1{
 
-        font-size:42px;
+        font-size:42px !important;
 
     }
 
-    .hero .lead{
+    .article-hero .lead{
 
         max-width:100%;
 
-        font-size:18px;
+        font-size:18px !important;
 
-        line-height:1.7;
+        line-height:1.7 !important;
 
     }
 
-    .hero .cta{
+    .article-hero .cta{
 
         flex-direction:column;
 
@@ -8648,7 +8662,7 @@ SECTION: RESPONSIVE
 
     }
 
-    .hero .btn{
+    .article-hero .btn{
 
         width:100%;
 
