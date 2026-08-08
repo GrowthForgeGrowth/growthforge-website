@@ -11785,3 +11785,402 @@ SECTION: PLAYBOOK ACCENTS
         );
 
 }
+
+/* ==========================================================
+ARTICLE: AI FUNNEL DIAGNOSTICS PLAYBOOK
+PAGE: /ai-funnel-diagnostics-playbook
+SECTION: THE DIAGNOSTIC SEQUENCE
+========================================================== */
+
+.diagnostic-section{
+
+    padding:100px 0;
+
+    background:#f8fbff;
+
+}
+
+.diagnostic-section .container{
+
+    max-width:1320px;
+
+    margin:0 auto;
+
+}
+
+.diagnostic-header{
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.diagnostic-header h2{
+
+    margin:0 0 24px;
+
+    font-size:clamp(42px,5vw,60px);
+
+    line-height:1.1;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+}
+
+.diagnostic-header p{
+
+    margin:0;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#64748b;
+
+}
+
+.diagnostic-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,minmax(0,1fr));
+
+    gap:28px;
+
+    margin-bottom:70px;
+
+}
+
+.diagnostic-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:28px;
+
+    padding:36px;
+
+    transition:
+        transform .30s ease,
+        border-color .30s ease,
+        box-shadow .30s ease;
+
+    box-shadow:
+        0 18px 50px rgba(15,23,42,.05);
+
+}
+
+.diagnostic-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+        0 35px 80px rgba(37,99,235,.14);
+
+}
+
+.diagnostic-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    border-radius:28px 28px 0 0;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+}
+
+.diagnostic-card.featured{
+
+    border:2px solid #2563eb;
+
+    transform:scale(1.03);
+
+    box-shadow:
+        0 40px 90px rgba(37,99,235,.18);
+
+}
+
+.diagnostic-card.featured::after{
+
+    content:"Critical Step";
+
+    position:absolute;
+
+    top:-16px;
+
+    right:26px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.diagnostic-number{
+
+    width:64px;
+
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:22px;
+
+    font-weight:800;
+
+}
+
+.diagnostic-card h3{
+
+    margin:0 0 18px;
+
+    font-size:28px;
+
+    line-height:1.2;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+}
+
+.diagnostic-card p{
+
+    margin:0;
+
+    font-size:16px;
+
+    line-height:1.85;
+
+    color:#475569;
+
+    flex:1;
+
+}
+
+.diagnostic-summary{
+
+    max-width:1000px;
+
+    margin:0 auto;
+
+    padding:55px;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 20px 60px rgba(37,99,235,.08);
+
+}
+
+.diagnostic-summary h3{
+
+    margin:0 0 20px;
+
+    font-size:38px;
+
+    line-height:1.15;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+}
+
+.diagnostic-summary p{
+
+    max-width:820px;
+
+    margin:0 auto;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+/* ==========================================================
+ARTICLE: AI FUNNEL DIAGNOSTICS PLAYBOOK
+PAGE: /ai-funnel-diagnostics-playbook
+SECTION: RESPONSIVE
+========================================================== */
+
+@media (max-width:1400px){
+
+    .diagnostic-grid{
+
+        grid-template-columns:repeat(3,minmax(0,1fr));
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .diagnostic-grid{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .diagnostic-section{
+
+        padding:70px 0;
+
+    }
+
+    .diagnostic-header{
+
+        text-align:left;
+
+        margin-bottom:50px;
+
+    }
+
+    .diagnostic-header h2{
+
+        font-size:36px;
+
+    }
+
+    .diagnostic-header p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .diagnostic-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .diagnostic-card{
+
+        padding:30px;
+
+    }
+
+    .diagnostic-card.featured{
+
+        transform:none;
+
+    }
+
+    .diagnostic-number{
+
+        width:56px;
+
+        height:56px;
+
+        font-size:20px;
+
+        margin-bottom:22px;
+
+    }
+
+    .diagnostic-card h3{
+
+        font-size:24px;
+
+    }
+
+    .diagnostic-card p{
+
+        font-size:16px;
+
+    }
+
+    .diagnostic-summary{
+
+        padding:36px 28px;
+
+        text-align:left;
+
+    }
+
+    .diagnostic-summary h3{
+
+        font-size:30px;
+
+    }
+
+    .diagnostic-summary p{
+
+        font-size:16px;
+
+    }
+
+}
