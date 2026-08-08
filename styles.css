@@ -8826,3 +8826,356 @@ SECTION: RESPONSIVE
     }
 
 }
+
+/* ==========================================================
+ARTICLE: GROWTH CONSULTANCY VS MARKETING AGENCY
+PAGE: /growth-consultancy-vs-marketing-agency
+SECTION: SIDE-BY-SIDE COMPARISON
+========================================================== */
+
+.comparison-section{
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+.comparison-section .container{
+
+    max-width:1300px;
+
+    margin:0 auto;
+
+}
+
+.comparison-header{
+
+    max-width:850px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.comparison-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 20px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.comparison-header h2{
+
+    margin:0 0 24px;
+
+    font-size:clamp(42px,5vw,60px);
+
+    line-height:1.1;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+}
+
+.comparison-header p{
+
+    margin:0;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#64748b;
+
+}
+
+.comparison-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:36px;
+
+    align-items:stretch;
+
+}
+
+.comparison-card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:28px;
+
+    padding:42px;
+
+    box-shadow:
+        0 20px 60px rgba(15,23,42,.06);
+
+    transition:
+        transform .30s ease,
+        box-shadow .30s ease,
+        border-color .30s ease;
+
+}
+
+.comparison-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+        0 35px 80px rgba(37,99,235,.12);
+
+}
+
+.comparison-card.featured{
+
+    border:2px solid #2563eb;
+
+    box-shadow:
+        0 35px 90px rgba(37,99,235,.16);
+
+}
+
+.comparison-card.featured::before{
+
+    content:"Recommended";
+
+    position:absolute;
+
+    top:-15px;
+
+    right:30px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.comparison-card-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:32px;
+
+}
+
+.comparison-icon{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:24px;
+
+    font-weight:800;
+
+    flex-shrink:0;
+
+}
+
+.comparison-card h3{
+
+    margin:0;
+
+    font-size:34px;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+.comparison-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.comparison-list li{
+
+    position:relative;
+
+    padding-left:34px;
+
+    margin-bottom:22px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+.comparison-list li:last-child{
+
+    margin-bottom:0;
+
+}
+
+.comparison-list li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:2px;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+.comparison-card:not(.featured) .comparison-list li::before{
+
+    content:"•";
+
+    font-size:28px;
+
+    line-height:1;
+
+    top:-1px;
+
+    color:#94a3b8;
+
+}
+
+/* ==========================================================
+ARTICLE: GROWTH CONSULTANCY VS MARKETING AGENCY
+SECTION: RESPONSIVE
+========================================================== */
+
+@media (max-width:1100px){
+
+    .comparison-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .comparison-section{
+
+        padding:70px 0;
+
+    }
+
+    .comparison-header{
+
+        margin-bottom:50px;
+
+        text-align:left;
+
+    }
+
+    .comparison-header h2{
+
+        font-size:36px;
+
+    }
+
+    .comparison-header p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .comparison-card{
+
+        padding:30px;
+
+    }
+
+    .comparison-card h3{
+
+        font-size:28px;
+
+    }
+
+    .comparison-list li{
+
+        font-size:16px;
+
+    }
+
+}
