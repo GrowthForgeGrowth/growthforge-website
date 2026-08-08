@@ -15708,3 +15708,200 @@ SECTION: RESPONSIVE
     }
 
 }
+
+/* ==========================================
+   AI SEO SECTION
+   ========================================== */
+
+.alt{
+    background:#f8fafc;
+    border-top:1px solid #e2e8f0;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.alt .container{
+    max-width:1120px;
+    margin:0 auto;
+}
+
+/* Heading */
+
+.alt h2{
+
+    max-width:900px;
+
+    margin:0 0 32px;
+
+    color:#0f172a;
+
+    font-size:clamp(34px,4vw,48px);
+    line-height:1.15;
+    letter-spacing:-.03em;
+    font-weight:800;
+
+}
+
+/* Paragraphs */
+
+.alt p{
+
+    max-width:900px;
+
+    margin:0 0 28px;
+
+    color:#475569;
+
+    font-size:19px;
+    line-height:1.9;
+
+}
+
+/* Links */
+
+.alt .link,
+.alt a{
+
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+
+    transition:.25s ease;
+
+}
+
+.alt .link:hover,
+.alt a:hover{
+
+    color:#1d4ed8;
+    text-decoration:underline;
+
+}
+
+/* Feature List */
+
+.alt ul{
+
+    margin:42px 0 0;
+    padding:0;
+
+    list-style:none;
+
+    display:grid;
+    gap:22px;
+
+}
+
+.alt li{
+
+    position:relative;
+
+    padding:26px 28px 26px 72px;
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+    border-radius:18px;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.05);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+.alt li:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:
+        0 20px 45px rgba(37,99,235,.10);
+
+}
+
+/* Check Icon */
+
+.alt li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:26px;
+    top:28px;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:15px;
+    font-weight:800;
+
+}
+
+/* Feature Title */
+
+.alt li strong{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#0f172a;
+
+    font-size:18px;
+    font-weight:700;
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .alt .container{
+
+        padding:50px 24px !important;
+
+    }
+
+    .alt h2{
+
+        font-size:34px;
+
+    }
+
+    .alt p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .alt li{
+
+        padding:22px 22px 22px 64px;
+
+    }
+
+    .alt li::before{
+
+        left:22px;
+        top:24px;
+
+    }
+
+}
