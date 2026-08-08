@@ -1962,9 +1962,9 @@ EXECUTIVE GROWTH AUDIT
 
 .preview-thumb img{
 
-    width:100%;
-
     display:block;
+
+    width:100%;
 
 }
 
@@ -1992,17 +1992,17 @@ EXECUTIVE GROWTH AUDIT
 
     width:98%;
 
+    height:auto;
+
     max-width:none;
 
     max-height:1320px;
 
-    height:auto;
-
     object-fit:contain;
 
-    border-radius:18px;
-
     background:#fff;
+
+    border-radius:18px;
 
     padding:10px;
 
@@ -2019,6 +2019,10 @@ EXECUTIVE GROWTH AUDIT
 .preview-arrow{
 
     position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
 
     width:64px;
 
@@ -2038,11 +2042,13 @@ EXECUTIVE GROWTH AUDIT
 
     transition:.2s ease;
 
+    z-index:10;
+
 }
 
 .preview-arrow:hover{
 
-    transform:scale(1.08);
+    transform:translateY(-50%) scale(1.08);
 
 }
 
@@ -2060,29 +2066,29 @@ EXECUTIVE GROWTH AUDIT
 
 .audit-preview-footer{
 
-    padding:20px 28px;
-
-    border-top:1px solid #eef2f7;
-
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
 
+    padding:20px 28px;
+
+    border-top:1px solid #eef2f7;
+
 }
 
 .preview-progress{
 
-    width:100%;
+    flex:1;
 
     height:6px;
 
     margin-right:20px;
 
-    border-radius:999px;
-
     background:#e2e8f0;
+
+    border-radius:999px;
 
     overflow:hidden;
 
