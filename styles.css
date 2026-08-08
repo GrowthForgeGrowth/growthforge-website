@@ -16083,3 +16083,245 @@ SECTION: RESPONSIVE
 }
 
 }
+
+/* ==========================================
+   COMMERCIAL GROWTH CHALLENGES
+   ========================================== */
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+
+    margin-top:40px;
+
+}
+
+/* Card */
+
+.service{
+
+    position:relative;
+
+    padding:34px 32px;
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+    border-radius:20px;
+
+    box-shadow:
+        0 12px 32px rgba(15,23,42,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+    overflow:hidden;
+
+}
+
+/* Top Accent */
+
+.service::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #3b82f6
+        );
+
+}
+
+/* Hover */
+
+.service:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:
+        0 24px 60px rgba(37,99,235,.12);
+
+}
+
+/* Icon */
+
+.service h3::before{
+
+    content:"↗";
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:42px;
+    height:42px;
+
+    margin-bottom:18px;
+
+    border-radius:12px;
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    font-size:20px;
+    font-weight:700;
+
+}
+
+/* Heading */
+
+.service h3{
+
+    display:flex;
+    flex-direction:column;
+
+    margin:0 0 18px;
+
+    color:#0f172a;
+
+    font-size:24px;
+    line-height:1.3;
+    font-weight:700;
+
+}
+
+/* Body */
+
+.service p{
+
+    margin:0;
+
+    color:#475569;
+
+    font-size:16px;
+    line-height:1.9;
+
+}
+
+/* Links */
+
+.service a{
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.2s ease;
+
+}
+
+.service a:hover{
+
+    color:#1d4ed8;
+
+    text-decoration:underline;
+
+}
+
+/* Section */
+
+.alt{
+
+    background:#f8fafc;
+
+    border-top:1px solid #e2e8f0;
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+.alt h2{
+
+    margin:0 0 24px;
+
+    color:#0f172a;
+
+    font-size:clamp(36px,4vw,50px);
+
+    line-height:1.15;
+
+    letter-spacing:-.03em;
+
+    font-weight:800;
+
+}
+
+.alt > .container > p{
+
+    max-width:900px;
+
+    margin-bottom:42px !important;
+
+    color:#475569 !important;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+    .service{
+
+        padding:28px 24px;
+
+    }
+
+    .service h3{
+
+        font-size:21px;
+
+    }
+
+    .service p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .alt h2{
+
+        font-size:34px;
+
+    }
+
+    .alt > .container > p{
+
+        font-size:17px;
+
+    }
+
+}
