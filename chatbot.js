@@ -544,7 +544,13 @@ var fallbackAnswer = {
     }
 
     return fallbackAnswer;
-  }
+    }
+
+}
+
+];
+
+function getAnswer(query) {
 
   function createMessage(type, contentNode) {
     var message = document.createElement('div');
