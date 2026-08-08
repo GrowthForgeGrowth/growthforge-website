@@ -13,16 +13,15 @@
     },
 
     {
-        label: 'Analyze My Website',
-        query: 'I want a website assessment'
-    },
+    label: 'Analyze My Website',
+    query: 'Analyze my website and identify my biggest growth opportunities'
+},
+
 
     {
-        label: 'Growth Strategy',
-        query: 'How can GrowthForge help grow my business?'
-    }
-
-];
+    label: 'Analyze My Website',
+    query: 'Analyze my website and identify my biggest growth opportunities'
+},
   
   var fallbackAnswer = {
 
@@ -80,7 +79,14 @@
       }
     },
     {
-    keywords: ['google ads', 'ppc', 'paid search', 'search ads'],
+    keywords: ['google ads',
+'ppc',
+'search ads',
+'paid search',
+'google advertising',
+'cost per click',
+'cpc',
+'paid traffic'],
     answer: {
 
         text:
@@ -106,7 +112,12 @@
 
 },
     {
-    keywords: ['meta ads', 'facebook ads', 'instagram ads', 'paid social'],
+    keywords: ['facebook ads',
+'instagram ads',
+'meta ads',
+'paid social',
+'facebook marketing',
+'instagram marketing'],
     answer: {
 
         text:
@@ -133,15 +144,46 @@
 },
 
     {
-        href:'/ai-seo-for-b2b-saas',
-        label:'Learn More About AI SEO'
+{
+    keywords: [
+        'ai seo',
+'geo',
+'generative engine optimization',
+'generative search',
+'ai search',
+'ai visibility',
+'llm seo',
+'chatgpt seo',
+'perplexity',
+'google ai overview',
+'ai ranking',
+'entity seo'
+    ],
+
+    answer: {
+
+        text:
+            'AI Search is changing how buyers discover businesses. GrowthForge helps organizations improve visibility across Google Search and AI assistants through AI SEO, Generative Engine Optimization (GEO), technical SEO, entity optimization, citation-ready content, and authority building.\n\n' +
+
+            'The Executive Growth Audit identifies your biggest AI Search opportunities and prioritizes the initiatives with the greatest commercial impact.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/ai-seo-for-b2b-saas',
+                label:'Learn More About AI SEO'
+            }
+
+        ]
+
     }
 
-]
-
-      }
-
-},   
+},
     
 {
     keywords: ['cro', 'conversion', 'landing page', 'funnel'],
@@ -170,7 +212,15 @@
 
 },
     {
-    keywords: ['automation', 'marketing automation', 'ai automation', 'crm automation', 'workflow'],
+    keywords: ['automation',
+'ai automation',
+'crm',
+'crm automation',
+'workflow',
+'n8n',
+'zapier',
+'hubspot',
+'salesforce'],
     answer: {
 
         text:
@@ -248,8 +298,6 @@
         'investment',
         'quote',
         'proposal',
-        'growth audit',
-        'audit'
     ],
 
     answer: {
@@ -419,6 +467,98 @@
 
 },
 
+   {
+    keywords: [
+        'website',
+        'website assessment',
+        'website audit',
+        'analyze website',
+        'analyze my website',
+        'website review',
+        'review my website',
+        'growth opportunities',
+        'website analysis'
+    ],
+
+    answer: {
+
+        text:
+            'Your website is often the biggest driver—or constraint—of business growth. GrowthForge evaluates your AI visibility, SEO, website performance, messaging, conversion funnel, user experience, analytics, automation, and competitive positioning to identify the highest-impact opportunities for growth.\n\n' +
+
+            'The Executive Growth Audit provides an executive-level assessment, prioritized recommendations, and a strategic 90-day roadmap designed to improve qualified pipeline, conversion performance, and sustainable revenue growth.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/pricing',
+                label:'View Pricing'
+            }
+
+        ]
+
+    }
+
+},
+   {
+    keywords: [
+        'website',
+        'website assessment',
+        'website audit',
+        'analyze website',
+        'analyze my website',
+        'website review',
+        'review my website',
+        'growth opportunities',
+        'website analysis'
+    ],
+
+    answer: {
+
+        text:
+            'Your website is often the biggest driver—or constraint—of business growth. GrowthForge evaluates your AI visibility, SEO, website performance, messaging, conversion funnel, user experience, analytics, automation, and competitive positioning to identify the highest-impact opportunities for growth.\n\n' +
+
+            'The Executive Growth Audit provides an executive-level assessment, prioritized recommendations, and a strategic 90-day roadmap designed to improve qualified pipeline, conversion performance, and sustainable revenue growth.',
+
+        links:[
+
+            {
+                href:'/discovery',
+                label:'Start Executive Growth Audit'
+            },
+
+            {
+                href:'/pricing',
+                label:'View Pricing'
+            }
+
+        ]
+
+    }
+
+},
+   keywords: [
+
+    'revenue',
+    'revenue leak',
+    'revenue leaks',
+    'leaking revenue',
+    'lost revenue',
+    'revenue growth',
+    'increase revenue',
+    'grow revenue',
+    'business growth',
+    'growth constraints',
+    'growth bottlenecks',
+    'pipeline',
+    'qualified leads'
+
+],
+
   function getAnswer(query) {
     var normalized = query.toLowerCase();
     var bestMatch = null;
@@ -512,7 +652,7 @@
     var root = document.createElement('div');
     root.className = 'gf-chatbot';
     root.innerHTML = `
-      <button type="button" class="gf-chatbot-launcher" aria-label="Open GrowthForge chat assistant" aria-expanded="false" aria-controls="gf-chatbot-panel">
+      <button type="button" class="gf-chatbot-launcher" aria-label="Open Executive Growth Advisor" aria-expanded="false" aria-controls="gf-chatbot-panel">
 <span class="gf-chatbot-launcher-label">
     Executive Growth Advisor
 </span>
@@ -521,7 +661,7 @@
     Free AI-powered growth assessment
 </span>
       </button>
-      <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="GrowthForge chat assistant" hidden>
+      <section id="gf-chatbot-panel" class="gf-chatbot-panel" role="dialog" aria-label="Executive Growth Advisor" hidden>
         <header class="gf-chatbot-header">
 <strong>
     Executive Growth Advisor
@@ -540,8 +680,13 @@
         <div class="gf-chatbot-quick-actions" aria-label="Quick actions"></div>
         <form class="gf-chatbot-form" aria-label="Send a message">
           <label for="gf-chatbot-input" class="gf-chatbot-visually-hidden">Type your question</label>
-          <input id="gf-chatbot-input" name="question" type="text" placeholder="placeholder="Enter your website or ask an executive growth question..."" autocomplete="off">
-          <button type="submit">Send</button>
+<input
+    id="gf-chatbot-input"
+    name="question"
+    type="text"
+    placeholder="Enter your website or ask an executive growth question..."
+    autocomplete="off">
+          <button type="submit">Get Advice</button>
         </form>
       </section>`;
 
@@ -573,8 +718,8 @@
     function setChatState(isOpen) {
       root.setAttribute('data-state', isOpen ? 'open' : 'minimized');
       launcher.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      launcher.setAttribute('aria-label', isOpen ? 'GrowthForge chat assistant is open' : 'Open GrowthForge chat assistant');
-      launcherHint.textContent = isOpen ? 'Assistant open' : 'Reopen assistant';
+      launcher.setAttribute('aria-label', isOpen ? 'Executive Growth Advisor is open' : 'Open Executive Growth Advisor');
+      launcherHint.textContent = isOpen ? 'Executive Advisor Open' : 'Open Executive Advisor';
     }
 
     function openPanel() {
