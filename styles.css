@@ -1388,8 +1388,6 @@ nav{flex-direction:column;gap:15px;width:100%}
     background:linear-gradient(135deg,#1d4ed8,#1e40af);
     box-shadow:0 25px 50px rgba(37,99,235,.45);
 }
-
-}
     
     
 /* ================================= */
@@ -1576,7 +1574,6 @@ nav{flex-direction:column;gap:15px;width:100%}
     background:#1d4ed8;
 
     transform:translateY(-2px);
-}
 }
 
 /* ==========================================
