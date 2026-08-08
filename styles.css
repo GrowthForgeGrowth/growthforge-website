@@ -1731,10 +1731,10 @@ EXECUTIVE GROWTH AUDIT
 .audit-product{
 
     display:grid;
-    grid-template-columns:380px minmax(0,1fr);
-    gap:64px;
+    grid-template-columns:320px minmax(900px,1fr);
+    gap:72px;
 
-    align-items:center;
+    align-items:start;
 
     background:#fff;
 
@@ -1830,7 +1830,6 @@ EXECUTIVE GROWTH AUDIT
 .audit-subtitle{
 
     font-size:20px;
-
     font-weight:600;
 
     margin-bottom:20px;
@@ -1842,7 +1841,6 @@ EXECUTIVE GROWTH AUDIT
 .audit-description{
 
     font-size:17px;
-
     line-height:1.8;
 
     color:#475569;
@@ -1854,9 +1852,7 @@ EXECUTIVE GROWTH AUDIT
 .audit-list{
 
     list-style:none;
-
     padding:0;
-
     margin:0 0 36px;
 
 }
@@ -1864,7 +1860,6 @@ EXECUTIVE GROWTH AUDIT
 .audit-list li{
 
     display:flex;
-
     align-items:center;
 
     gap:12px;
@@ -1925,9 +1920,9 @@ EXECUTIVE GROWTH AUDIT
 
     display:grid;
 
-    grid-template-columns:170px 1fr;
+    grid-template-columns:180px 1fr;
 
-    min-height:1150px;
+    min-height:1400px;
 
 }
 
@@ -1968,7 +1963,6 @@ EXECUTIVE GROWTH AUDIT
 .preview-thumb img{
 
     width:100%;
-
     display:block;
 
 }
@@ -1983,9 +1977,9 @@ EXECUTIVE GROWTH AUDIT
 
     align-items:center;
 
-    padding:28px;
+    padding:24px;
 
-    min-height:1150px;
+    min-height:1400px;
 
     background:linear-gradient(180deg,#f8fbff,#edf4fb);
 
@@ -1993,11 +1987,11 @@ EXECUTIVE GROWTH AUDIT
 
 .preview-main img{
 
-    width:100%;
+    width:98%;
 
-    max-width:1050px;
+    max-width:none;
 
-    max-height:1080px;
+    max-height:1320px;
 
     height:auto;
 
@@ -2007,7 +2001,7 @@ EXECUTIVE GROWTH AUDIT
 
     background:#fff;
 
-    padding:18px;
+    padding:10px;
 
     box-shadow:
         0 40px 100px rgba(15,23,42,.18),
@@ -2023,9 +2017,9 @@ EXECUTIVE GROWTH AUDIT
 
     position:absolute;
 
-    width:60px;
+    width:64px;
 
-    height:60px;
+    height:64px;
 
     border:none;
 
@@ -2037,7 +2031,7 @@ EXECUTIVE GROWTH AUDIT
 
     cursor:pointer;
 
-    font-size:24px;
+    font-size:26px;
 
     transition:.2s ease;
 
@@ -2105,33 +2099,11 @@ EXECUTIVE GROWTH AUDIT
    RESPONSIVE
 ========================================== */
 
-@media (max-width:1200px){
+@media (max-width:1400px){
 
     .audit-product{
 
         grid-template-columns:1fr;
-
-    }
-
-    .audit-preview-body{
-
-        grid-template-columns:120px 1fr;
-
-        min-height:900px;
-
-    }
-
-    .preview-main{
-
-        min-height:900px;
-
-    }
-
-    .preview-main img{
-
-        max-width:800px;
-
-        max-height:840px;
 
     }
 
@@ -2151,6 +2123,8 @@ EXECUTIVE GROWTH AUDIT
 
         grid-template-columns:1fr;
 
+        min-height:700px;
+
     }
 
     .preview-sidebar{
@@ -2161,15 +2135,17 @@ EXECUTIVE GROWTH AUDIT
 
     .preview-main{
 
-        min-height:650px;
+        min-height:700px;
+
+        padding:20px;
 
     }
 
     .preview-main img{
 
-        max-width:100%;
+        width:100%;
 
-        max-height:600px;
+        max-height:650px;
 
     }
 
