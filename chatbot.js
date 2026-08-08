@@ -546,8 +546,6 @@ var fallbackAnswer = {
     return fallbackAnswer;
     }
 
-}
-
 ];
 
 function getAnswer(query) {
