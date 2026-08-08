@@ -37,7 +37,7 @@ var fallbackAnswer = {
 
         '• Your biggest growth challenge\n\n' +
 
-        "I'll recommend the best next step.",
+        'I\'ll recommend the best next step.',
 
     links:[
 
