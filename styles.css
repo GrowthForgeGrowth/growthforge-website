@@ -13134,3 +13134,610 @@ SECTION: RESPONSIVE
     }
 
 }
+
+/* ==========================================================
+ARTICLE: AI FUNNEL DIAGNOSTICS PLAYBOOK
+PAGE: /ai-funnel-diagnostics-playbook
+SECTION: FROM DIAGNOSIS TO EXECUTION
+========================================================== */
+
+.execution-section{
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+.execution-section .container{
+
+    max-width:1320px;
+
+    margin:0 auto;
+
+}
+
+.execution-header{
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.execution-header h2{
+
+    margin:0 0 24px;
+
+    font-size:clamp(42px,5vw,60px);
+
+    line-height:1.1;
+
+    letter-spacing:-.03em;
+
+    color:#0f172a;
+
+    font-weight:800;
+
+}
+
+.execution-header p{
+
+    margin:0;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#64748b;
+
+}
+
+/* ==========================================================
+EXECUTION FRAMEWORK
+========================================================== */
+
+.execution-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,minmax(0,1fr));
+
+    gap:28px;
+
+    margin-bottom:70px;
+
+}
+
+.execution-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:28px;
+
+    padding:36px;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+    box-shadow:
+        0 18px 50px rgba(15,23,42,.05);
+
+}
+
+.execution-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+        0 35px 90px rgba(37,99,235,.15);
+
+}
+
+.execution-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    border-radius:28px 28px 0 0;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+
+}
+
+.execution-card.featured{
+
+    border:2px solid #2563eb;
+
+    transform:scale(1.03);
+
+    box-shadow:
+        0 40px 100px rgba(37,99,235,.18);
+
+}
+
+.execution-card.featured::after{
+
+    content:"Critical Decision";
+
+    position:absolute;
+
+    top:-16px;
+
+    right:24px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.execution-number{
+
+    width:64px;
+
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#2563eb;
+
+    font-size:22px;
+
+    font-weight:800;
+
+}
+
+.execution-card h3{
+
+    margin:0 0 18px;
+
+    font-size:28px;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+.execution-card p{
+
+    margin:0;
+
+    flex:1;
+
+    font-size:16px;
+
+    line-height:1.85;
+
+    color:#475569;
+
+}
+
+.execution-card a{
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+.execution-card a:hover{
+
+    color:#1d4ed8;
+
+}
+
+/* ==========================================================
+EXECUTIVE CHECKLIST
+========================================================== */
+
+.execution-framework{
+
+    margin-bottom:50px;
+
+    padding:50px;
+
+    background:#f8fbff;
+
+    border:1px solid #dbe4ef;
+
+    border-radius:30px;
+
+}
+
+.execution-framework h3{
+
+    margin:0 0 30px;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+.execution-checklist{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:22px 40px;
+
+}
+
+.execution-checklist li{
+
+    position:relative;
+
+    padding-left:34px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+.execution-checklist li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:22px;
+
+    height:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+/* ==========================================================
+CASE STUDIES
+========================================================== */
+
+.execution-case-study{
+
+    text-align:center;
+
+    padding:55px;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #f8fbff
+    );
+
+    border:1px solid #dbe4ef;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 20px 60px rgba(37,99,235,.08);
+
+}
+
+.execution-case-study h3{
+
+    margin:0 0 20px;
+
+    font-size:38px;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+.execution-case-study p{
+
+    max-width:760px;
+
+    margin:0 auto 36px;
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#475569;
+
+}
+
+.execution-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.execution-links a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:18px 30px;
+
+    border-radius:14px;
+
+    border:2px solid #2563eb;
+
+    background:#ffffff;
+
+    color:#2563eb;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+
+}
+
+.execution-links a:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================================
+ARTICLE: AI FUNNEL DIAGNOSTICS PLAYBOOK
+SECTION: RESPONSIVE
+========================================================== */
+
+@media (max-width:1400px){
+
+    .execution-grid{
+
+        grid-template-columns:repeat(3,minmax(0,1fr));
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .execution-grid{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .execution-section{
+
+        padding:70px 0;
+
+    }
+
+    .execution-header{
+
+        text-align:left;
+
+        margin-bottom:50px;
+
+    }
+
+    .execution-header h2{
+
+        font-size:36px;
+
+    }
+
+    .execution-header p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .execution-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .execution-card{
+
+        padding:30px;
+
+    }
+
+    .execution-card.featured{
+
+        transform:none;
+
+    }
+
+    .execution-card.featured::after{
+
+        right:20px;
+
+    }
+
+    .execution-number{
+
+        width:56px;
+
+        height:56px;
+
+        font-size:20px;
+
+        margin-bottom:22px;
+
+    }
+
+    .execution-card h3{
+
+        font-size:24px;
+
+    }
+
+    .execution-framework{
+
+        padding:32px 28px;
+
+    }
+
+    .execution-framework h3{
+
+        font-size:30px;
+
+    }
+
+    .execution-checklist{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+    .execution-checklist li{
+
+        font-size:16px;
+
+    }
+
+    .execution-case-study{
+
+        padding:36px 28px;
+
+        text-align:left;
+
+    }
+
+    .execution-case-study h3{
+
+        font-size:30px;
+
+    }
+
+    .execution-case-study p{
+
+        font-size:16px;
+
+        line-height:1.8;
+
+    }
+
+    .execution-links{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .execution-links a{
+
+        width:100%;
+
+    }
+
+}
