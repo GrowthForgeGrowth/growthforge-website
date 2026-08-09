@@ -15240,3 +15240,69 @@ MOBILE
     }
 
 }
+
+/* ==========================================
+HOME FAQ SECTION ONLY
+========================================== */
+
+#faq .faq-list{
+    max-width:900px;
+    margin:60px auto 0;
+}
+
+#faq .faq-item{
+    border-bottom:1px solid #e2e8f0;
+}
+
+#faq .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    position:relative;
+
+    padding:26px 42px 26px 0;
+
+    font-size:21px;
+    font-weight:600;
+    line-height:1.45;
+    color:#0f172a;
+
+    transition:.25s ease;
+}
+
+#faq .faq-item summary::-webkit-details-marker{
+    display:none;
+}
+
+#faq .faq-item summary::after{
+    content:"+";
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:28px;
+    font-weight:300;
+    color:#2563eb;
+    transition:.25s ease;
+}
+
+#faq .faq-item[open] summary::after{
+    content:"−";
+}
+
+#faq .faq-item p{
+    margin:0;
+    padding:0 0 24px;
+
+    font-size:17px;
+    line-height:1.8;
+
+    color:#64748b;
+}
+
+#faq .faq-item summary:hover{
+    color:#2563eb;
+}
+
+#faq .faq-item:last-child{
+    border-bottom:none;
+}
