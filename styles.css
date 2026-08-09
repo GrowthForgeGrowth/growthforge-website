@@ -15245,13 +15245,28 @@ MOBILE
 HOME FAQ SECTION ONLY
 ========================================== */
 
+#faq{
+    padding:120px 0;
+}
+
+#faq .section-heading{
+    max-width:700px;
+    margin:0 0 56px;
+    text-align:left;
+}
+
 #faq .faq-list{
-    max-width:900px;
-    margin:60px auto 0;
+    width:100%;
+    max-width:700px;
+    margin:0;
 }
 
 #faq .faq-item{
     border-bottom:1px solid #e2e8f0;
+}
+
+#faq .faq-item:last-child{
+    border-bottom:none;
 }
 
 #faq .faq-item summary{
@@ -15259,11 +15274,12 @@ HOME FAQ SECTION ONLY
     cursor:pointer;
     position:relative;
 
-    padding:26px 42px 26px 0;
+    padding:28px 54px 28px 0;
 
-    font-size:21px;
-    font-weight:600;
+    font-size:22px;
+    font-weight:700;
     line-height:1.45;
+
     color:#0f172a;
 
     transition:.25s ease;
@@ -15279,9 +15295,11 @@ HOME FAQ SECTION ONLY
     right:0;
     top:50%;
     transform:translateY(-50%);
-    font-size:28px;
+
+    font-size:32px;
     font-weight:300;
     color:#2563eb;
+
     transition:.25s ease;
 }
 
@@ -15289,20 +15307,79 @@ HOME FAQ SECTION ONLY
     content:"−";
 }
 
-#faq .faq-item p{
-    margin:0;
-    padding:0 0 24px;
-
-    font-size:17px;
-    line-height:1.8;
-
-    color:#64748b;
-}
-
 #faq .faq-item summary:hover{
     color:#2563eb;
 }
 
-#faq .faq-item:last-child{
-    border-bottom:none;
+#faq .faq-item p{
+    margin:0;
+    padding:0 54px 28px 0;
+
+    font-size:17px;
+    line-height:1.85;
+
+    color:#64748b;
+}
+
+/* Layout */
+
+#faq .faq-layout{
+    display:grid;
+    grid-template-columns:700px 1fr;
+    gap:120px;
+    align-items:start;
+}
+
+#faq .faq-left{
+    width:100%;
+}
+
+#faq .faq-right{
+    min-height:1px;
+}
+
+/* Responsive */
+
+@media (max-width:1024px){
+
+    #faq .faq-layout{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    #faq .faq-right{
+        display:none;
+    }
+
+    #faq .section-heading,
+    #faq .faq-list{
+        max-width:100%;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #faq{
+        padding:80px 0;
+    }
+
+    #faq .section-heading{
+        margin-bottom:40px;
+    }
+
+    #faq .faq-item summary{
+        font-size:19px;
+        padding:22px 42px 22px 0;
+    }
+
+    #faq .faq-item summary::after{
+        font-size:26px;
+    }
+
+    #faq .faq-item p{
+        font-size:16px;
+        padding:0 0 22px;
+    }
+
 }
