@@ -584,42 +584,6 @@
 
     </div>
 
-</div>
-            </div>
-
-            <div class="preview-canvas">
-
-                <button
-                    id="prevPage"
-                    class="preview-arrow left"
-                    type="button">
-
-                    ←
-
-                </button>
-
-                <div class="preview-document">
-
-       <img
-    id="auditPreviewImage"
-    src="/images/audit/page1-preview.webp"
-    alt="Executive Growth Audit Preview">
-
-                </div>
-
-                <button
-                    id="nextPage"
-                    class="preview-arrow right"
-                    type="button">
-
-                    →
-
-                </button>
-
-            </div>
-
-        </div>
-
         <div class="audit-preview-footer">
 
             <div class="preview-progress">
@@ -1195,11 +1159,8 @@ function prevPage(){
 
 }
 
-document.getElementById("nextPage")
-.addEventListener("click",nextPage);
-
-document.getElementById("prevPage")
-.addEventListener("click",prevPage);
+document.getElementById("nextPreview").addEventListener("click", nextPage);
+document.getElementById("prevPreview").addEventListener("click", prevPage);
 
 thumbs.forEach((thumb,index)=>{
 
