@@ -18019,3 +18019,287 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI MEASUREMENT FRAMEWORK
+   Scoped to .ai-measurement
+========================================== */
+
+.ai-measurement{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.ai-measurement .container{
+    max-width:1280px;
+}
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.ai-measurement .section-heading{
+    max-width:920px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.ai-measurement .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 22px;
+    margin-bottom:24px;
+    border-radius:999px;
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.ai-measurement h2{
+    margin:0 0 24px;
+    color:#0f172a;
+    font:800 clamp(40px,5vw,58px) Manrope,sans-serif;
+    line-height:1.08;
+    letter-spacing:-.04em;
+}
+
+.ai-measurement .section-heading p{
+    margin:0;
+    color:#64748b;
+    font-size:20px;
+    line-height:1.9;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.ai-measurement .measurement-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:32px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.ai-measurement .measurement-card{
+    position:relative;
+    padding:38px;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius:24px;
+    box-shadow:0 18px 45px rgba(15,23,42,.05);
+    transition:all .3s ease;
+    overflow:hidden;
+}
+
+.ai-measurement .measurement-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #60a5fa
+    );
+}
+
+.ai-measurement .measurement-card:hover{
+    transform:translateY(-8px);
+    border-color:#93c5fd;
+    box-shadow:0 30px 70px rgba(37,99,235,.12);
+}
+
+/* ==========================================
+   NUMBER
+========================================== */
+
+.ai-measurement .measurement-number{
+    width:64px;
+    height:64px;
+    margin-bottom:28px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#dbeafe;
+    color:#2563eb;
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-.03em;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+.ai-measurement .measurement-card h3{
+    margin:0 0 18px;
+    color:#0f172a;
+    font-size:28px;
+    font-weight:800;
+    line-height:1.3;
+    letter-spacing:-.02em;
+}
+
+.ai-measurement .measurement-card p{
+    margin:0 0 24px;
+    color:#64748b;
+    font-size:17px;
+    line-height:1.85;
+}
+
+.ai-measurement .measurement-card ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:14px;
+}
+
+.ai-measurement .measurement-card li{
+    position:relative;
+    padding-left:28px;
+    color:#475569;
+    font-size:16px;
+    line-height:1.75;
+}
+
+.ai-measurement .measurement-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:1px;
+    color:#2563eb;
+    font-weight:700;
+}
+
+.ai-measurement .measurement-card a{
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.ai-measurement .measurement-card a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================================
+   HIGHLIGHT
+========================================== */
+
+.ai-measurement .measurement-highlight{
+    margin-top:80px;
+    padding:60px;
+    background:#08111f;
+    border-radius:28px;
+    text-align:center;
+    box-shadow:0 30px 80px rgba(15,23,42,.18);
+}
+
+.ai-measurement .measurement-highlight h3{
+    margin:0 0 22px;
+    color:#ffffff;
+    font-size:40px;
+    font-weight:800;
+    line-height:1.2;
+    letter-spacing:-.03em;
+}
+
+.ai-measurement .measurement-highlight p{
+    max-width:840px;
+    margin:0 auto;
+    color:#cbd5e1;
+    font-size:18px;
+    line-height:1.9;
+}
+
+.ai-measurement .measurement-highlight .btn{
+    margin-top:38px;
+    min-width:300px;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .ai-measurement .measurement-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:768px){
+
+    .ai-measurement{
+        padding:70px 0;
+    }
+
+    .ai-measurement .section-heading{
+        margin-bottom:50px;
+    }
+
+    .ai-measurement h2{
+        font-size:36px;
+    }
+
+    .ai-measurement .section-heading p{
+        font-size:18px;
+    }
+
+    .ai-measurement .measurement-grid{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .ai-measurement .measurement-card{
+        padding:28px;
+    }
+
+    .ai-measurement .measurement-number{
+        width:54px;
+        height:54px;
+        font-size:22px;
+        margin-bottom:22px;
+    }
+
+    .ai-measurement .measurement-card h3{
+        font-size:24px;
+    }
+
+    .ai-measurement .measurement-card p,
+    .ai-measurement .measurement-card li{
+        font-size:16px;
+    }
+
+    .ai-measurement .measurement-highlight{
+        margin-top:60px;
+        padding:40px 28px;
+    }
+
+    .ai-measurement .measurement-highlight h3{
+        font-size:30px;
+    }
+
+    .ai-measurement .measurement-highlight p{
+        font-size:17px;
+    }
+
+    .ai-measurement .measurement-highlight .btn{
+        width:100%;
+        min-width:unset;
+    }
+
+}
