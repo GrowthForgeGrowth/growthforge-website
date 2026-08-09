@@ -18972,3 +18972,268 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   GOOGLE ADS — MARKET TRENDS / IMPORTANCE
+   Dedicated to .google-ads-importance only
+========================================== */
+
+.google-ads-importance{
+    position:relative;
+    padding:100px 0;
+    background:#f8fafc;
+    overflow:hidden;
+}
+
+.google-ads-importance .container{
+    width:min(1180px,92%);
+    margin:0 auto;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.google-ads-importance .section-heading{
+    max-width:850px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.google-ads-importance .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:20px;
+    padding:8px 16px;
+
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius:999px;
+
+    color:#2563eb;
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    line-height:1;
+    text-transform:uppercase;
+}
+
+.google-ads-importance .section-heading h2{
+    margin:0 0 22px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:clamp(2.25rem,4vw,3.5rem);
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-.035em;
+}
+
+.google-ads-importance .section-heading p{
+    margin:0;
+
+    color:#475569;
+
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ==========================================
+   MAIN CONTENT LAYOUT
+========================================== */
+
+.google-ads-importance .importance-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.7fr) minmax(320px,.9fr);
+    gap:50px;
+    align-items:start;
+}
+
+/* ==========================================
+   ARTICLE CONTENT
+========================================== */
+
+.google-ads-importance .importance-content{
+    min-width:0;
+}
+
+.google-ads-importance .importance-content p{
+    margin:0 0 26px;
+
+    color:#475569;
+
+    font-size:17px;
+    line-height:1.9;
+}
+
+.google-ads-importance .importance-content p:last-child{
+    margin-bottom:0;
+}
+
+.google-ads-importance .importance-content strong{
+    color:#0f172a;
+    font-weight:700;
+}
+
+/* ==========================================
+   EXECUTIVE SUMMARY
+========================================== */
+
+.google-ads-importance .importance-summary{
+    position:relative;
+
+    padding:34px;
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+    border-top:4px solid #2563eb;
+    border-radius:18px;
+
+    box-shadow:0 20px 50px rgba(15,23,42,.07);
+}
+
+.google-ads-importance .importance-summary h3{
+    margin:0 0 24px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:24px;
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:-.02em;
+}
+
+.google-ads-importance .importance-summary ul{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+.google-ads-importance .importance-summary li{
+    position:relative;
+
+    margin:0;
+    padding-left:28px;
+
+    color:#475569;
+
+    font-size:15px;
+    line-height:1.7;
+}
+
+.google-ads-importance .importance-summary li::before{
+    content:"";
+
+    position:absolute;
+    top:.65em;
+    left:0;
+
+    width:8px;
+    height:8px;
+
+    background:#2563eb;
+    border-radius:50%;
+}
+
+.google-ads-importance .importance-summary li strong{
+    color:#0f172a;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:900px){
+
+    .google-ads-importance{
+        padding:80px 0;
+    }
+
+    .google-ads-importance .importance-layout{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .google-ads-importance .importance-summary{
+        max-width:none;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .google-ads-importance{
+        padding:70px 0;
+    }
+
+    .google-ads-importance .container{
+        width:min(92%,680px);
+    }
+
+    .google-ads-importance .section-heading{
+        margin-bottom:42px;
+        text-align:left;
+    }
+
+    .google-ads-importance .section-heading h2{
+        font-size:2.25rem;
+    }
+
+    .google-ads-importance .section-heading p{
+        font-size:17px;
+    }
+
+    .google-ads-importance .importance-content p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .google-ads-importance .importance-summary{
+        padding:26px;
+        border-radius:14px;
+    }
+
+    .google-ads-importance .importance-summary h3{
+        font-size:21px;
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .google-ads-importance{
+        padding:60px 0;
+    }
+
+    .google-ads-importance .section-badge{
+        font-size:11px;
+    }
+
+    .google-ads-importance .section-heading h2{
+        font-size:2rem;
+    }
+
+    .google-ads-importance .importance-summary{
+        padding:22px;
+    }
+
+}
