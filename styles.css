@@ -21643,3 +21643,459 @@ Home Page FINAL CTA
 
 }
 
+/* ==========================================
+   GOOGLE ADS — BUDGET & BIDDING
+   Dedicated to .google-budget-bidding only
+========================================== */
+
+.google-budget-bidding{
+    position:relative;
+    padding:100px 0;
+    background:#f8fafc;
+    overflow:hidden;
+}
+
+.google-budget-bidding .container{
+    width:min(1180px,92%);
+    margin:0 auto;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.google-budget-bidding .section-heading{
+    max-width:850px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.google-budget-bidding .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:20px;
+    padding:8px 16px;
+
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius:999px;
+
+    color:#2563eb;
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    line-height:1;
+    text-transform:uppercase;
+}
+
+.google-budget-bidding .section-heading h2{
+    margin:0 0 22px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:clamp(2.25rem,4vw,3.5rem);
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-.035em;
+}
+
+.google-budget-bidding .section-heading p{
+    margin:0;
+
+    color:#475569;
+
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+.google-budget-bidding .budget-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.7fr) minmax(300px,.75fr);
+    gap:56px;
+    align-items:start;
+}
+
+.google-budget-bidding .budget-content{
+    min-width:0;
+}
+
+/* ==========================================
+   CONTENT TYPOGRAPHY
+========================================== */
+
+.google-budget-bidding .budget-content h3{
+    margin:48px 0 16px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:26px;
+    font-weight:800;
+    line-height:1.3;
+    letter-spacing:-.025em;
+}
+
+.google-budget-bidding .budget-content h3:first-child{
+    margin-top:0;
+}
+
+.google-budget-bidding .budget-content p{
+    margin:0 0 28px;
+
+    color:#475569;
+
+    font-size:17px;
+    line-height:1.9;
+}
+
+/* ==========================================
+   AI SIGNALS HIGHLIGHT
+========================================== */
+
+.google-budget-bidding .budget-highlight{
+    margin:32px 0 42px;
+    padding:28px 30px;
+
+    background:#ffffff;
+
+    border:1px solid #dbeafe;
+    border-left:4px solid #2563eb;
+    border-radius:0 16px 16px 0;
+
+    box-shadow:0 12px 35px rgba(15,23,42,.05);
+}
+
+.google-budget-bidding .budget-highlight h4{
+    margin:0 0 20px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.3;
+}
+
+.google-budget-bidding .budget-highlight ul{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px 24px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+.google-budget-bidding .budget-highlight li{
+    position:relative;
+
+    padding-left:24px;
+
+    color:#475569;
+
+    font-size:15px;
+    line-height:1.6;
+}
+
+.google-budget-bidding .budget-highlight li::before{
+    content:"✓";
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    color:#2563eb;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+/* ==========================================
+   BIDDING TABLE
+========================================== */
+
+.google-budget-bidding .bidding-table{
+    width:100%;
+    margin:34px 0 48px;
+
+    border-collapse:separate;
+    border-spacing:0;
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+
+    box-shadow:0 12px 35px rgba(15,23,42,.05);
+
+    overflow:hidden;
+}
+
+.google-budget-bidding .bidding-table th{
+    padding:16px 18px;
+
+    background:#f1f5f9;
+
+    border-bottom:1px solid #e2e8f0;
+
+    color:#0f172a;
+
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.03em;
+    text-align:left;
+}
+
+.google-budget-bidding .bidding-table td{
+    padding:17px 18px;
+
+    border-bottom:1px solid #e2e8f0;
+
+    color:#475569;
+
+    font-size:14px;
+    line-height:1.6;
+    vertical-align:top;
+}
+
+.google-budget-bidding .bidding-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+.google-budget-bidding .bidding-table tbody tr:hover td{
+    background:#f8fbff;
+}
+
+.google-budget-bidding .bidding-table td:first-child{
+    color:#2563eb;
+    font-weight:800;
+}
+
+/* ==========================================
+   EXECUTIVE SUMMARY
+========================================== */
+
+.google-budget-bidding .budget-summary{
+    position:sticky;
+    top:30px;
+
+    padding:32px;
+
+    background:#ffffff;
+
+    border:1px solid #dbeafe;
+    border-top:4px solid #2563eb;
+    border-radius:18px;
+
+    box-shadow:0 20px 50px rgba(15,23,42,.07);
+}
+
+.google-budget-bidding .budget-summary h3{
+    margin:0 0 22px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:22px;
+    font-weight:800;
+    line-height:1.3;
+}
+
+.google-budget-bidding .budget-summary ul{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+.google-budget-bidding .budget-summary li{
+    position:relative;
+
+    padding-left:27px;
+
+    color:#475569;
+
+    font-size:15px;
+    line-height:1.7;
+}
+
+.google-budget-bidding .budget-summary li::before{
+    content:"✓";
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    color:#2563eb;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+/* ==========================================
+   GROWTHFORGE FRAMEWORK
+========================================== */
+
+.google-budget-bidding .budget-framework{
+    margin-top:48px;
+    padding:32px 36px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff 0%,
+            #f8fbff 100%
+        );
+
+    border:1px solid #bfdbfe;
+    border-left:4px solid #2563eb;
+    border-radius:0 18px 18px 0;
+}
+
+.google-budget-bidding .budget-framework h3{
+    margin:0 0 12px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:22px;
+    font-weight:800;
+    line-height:1.3;
+}
+
+.google-budget-bidding .budget-framework p{
+    margin:0;
+
+    color:#475569;
+
+    font-size:16px;
+    line-height:1.85;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1000px){
+
+    .google-budget-bidding{
+        padding:80px 0;
+    }
+
+    .google-budget-bidding .budget-layout{
+        grid-template-columns:1fr;
+        gap:42px;
+    }
+
+    .google-budget-bidding .budget-summary{
+        position:relative;
+        top:auto;
+    }
+
+    .google-budget-bidding .bidding-table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .google-budget-bidding{
+        padding:70px 0;
+    }
+
+    .google-budget-bidding .container{
+        width:min(92%,680px);
+    }
+
+    .google-budget-bidding .section-heading{
+        margin-bottom:42px;
+        text-align:left;
+    }
+
+    .google-budget-bidding .section-heading h2{
+        font-size:2.25rem;
+    }
+
+    .google-budget-bidding .section-heading p{
+        font-size:17px;
+    }
+
+    .google-budget-bidding .budget-content h3{
+        font-size:23px;
+    }
+
+    .google-budget-bidding .budget-content p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .google-budget-bidding .budget-highlight{
+        padding:24px;
+    }
+
+    .google-budget-bidding .budget-highlight ul{
+        grid-template-columns:1fr;
+    }
+
+    .google-budget-bidding .budget-summary{
+        padding:26px;
+    }
+
+    .google-budget-bidding .budget-framework{
+        margin-top:36px;
+        padding:26px;
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .google-budget-bidding{
+        padding:60px 0;
+    }
+
+    .google-budget-bidding .section-badge{
+        font-size:11px;
+    }
+
+    .google-budget-bidding .section-heading h2{
+        font-size:2rem;
+    }
+
+    .google-budget-bidding .budget-highlight{
+        padding:22px;
+    }
+
+    .google-budget-bidding .budget-summary{
+        padding:22px;
+    }
+
+    .google-budget-bidding .budget-framework{
+        padding:22px;
+    }
+
+}
