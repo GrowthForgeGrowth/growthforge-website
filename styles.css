@@ -16725,3 +16725,247 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI SEO REFERENCES
+   Scoped to .ai-seo-reference-section
+========================================== */
+
+.ai-seo-reference-section{
+    padding:0 0 100px;
+    background:#ffffff;
+}
+
+.ai-seo-reference-section .container{
+    max-width:1280px;
+}
+
+/* ==========================================
+   TRUST BLOCK
+========================================== */
+
+.ai-seo-reference-section .expert-attribution{
+    padding:56px;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius:24px;
+    box-shadow:0 18px 45px rgba(15,23,42,.05);
+}
+
+.ai-seo-reference-section .expert-attribution .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 22px;
+    margin-bottom:24px;
+    border-radius:999px;
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.ai-seo-reference-section .expert-attribution h2{
+    margin:0 0 22px;
+    color:#0f172a;
+    font:800 clamp(38px,4vw,52px) Manrope,sans-serif;
+    line-height:1.1;
+    letter-spacing:-.03em;
+}
+
+.ai-seo-reference-section .expert-attribution p{
+    margin:0;
+    color:#64748b;
+    font-size:18px;
+    line-height:1.9;
+}
+
+.ai-seo-reference-section .expert-attribution strong{
+    color:#0f172a;
+}
+
+/* ==========================================
+   QUICK LINKS
+========================================== */
+
+.ai-seo-reference-section .expert-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:32px;
+}
+
+.ai-seo-reference-section .expert-links a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 18px;
+    border-radius:999px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    color:#2563eb;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    transition:.25s ease;
+}
+
+.ai-seo-reference-section .expert-links a:hover{
+    background:#2563eb;
+    color:#ffffff;
+    border-color:#2563eb;
+}
+
+/* ==========================================
+   RESOURCE BLOCK
+========================================== */
+
+.ai-seo-reference-section .reference-block{
+    margin-top:36px;
+    padding:56px;
+    border-radius:28px;
+    background:#08111f;
+    box-shadow:0 24px 70px rgba(15,23,42,.18);
+}
+
+.ai-seo-reference-section .reference-block .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 22px;
+    margin-bottom:24px;
+    border-radius:999px;
+    background:rgba(37,99,235,.15);
+    border:1px solid rgba(96,165,250,.25);
+    color:#93c5fd;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.ai-seo-reference-section .reference-block h2{
+    margin:0 0 18px;
+    color:#ffffff;
+    font:800 clamp(38px,4vw,52px) Manrope,sans-serif;
+    line-height:1.1;
+    letter-spacing:-.03em;
+}
+
+.ai-seo-reference-section .reference-block>p{
+    max-width:760px;
+    margin:0 0 42px;
+    color:#94a3b8;
+    font-size:18px;
+    line-height:1.85;
+}
+
+/* ==========================================
+   RESOURCE GRID
+========================================== */
+
+.ai-seo-reference-section .reference-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:24px;
+}
+
+/* ==========================================
+   RESOURCE CARD
+========================================== */
+
+.ai-seo-reference-section .reference-item{
+    padding:32px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    transition:.3s ease;
+}
+
+.ai-seo-reference-section .reference-item:hover{
+    transform:translateY(-6px);
+    border-color:rgba(96,165,250,.35);
+    background:rgba(255,255,255,.06);
+}
+
+.ai-seo-reference-section .reference-item h3{
+    margin:0 0 16px;
+    font-size:24px;
+    line-height:1.3;
+}
+
+.ai-seo-reference-section .reference-item a{
+    color:#ffffff;
+    text-decoration:none;
+    transition:.25s ease;
+}
+
+.ai-seo-reference-section .reference-item a:hover{
+    color:#60a5fa;
+}
+
+.ai-seo-reference-section .reference-item p{
+    margin:0;
+    color:#94a3b8;
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .ai-seo-reference-section .reference-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:768px){
+
+    .ai-seo-reference-section{
+        padding:0 0 70px;
+    }
+
+    .ai-seo-reference-section .expert-attribution,
+    .ai-seo-reference-section .reference-block{
+        padding:32px;
+    }
+
+    .ai-seo-reference-section .expert-attribution h2,
+    .ai-seo-reference-section .reference-block h2{
+        font-size:34px;
+    }
+
+    .ai-seo-reference-section .expert-attribution p,
+    .ai-seo-reference-section .reference-block>p{
+        font-size:17px;
+    }
+
+    .ai-seo-reference-section .reference-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ai-seo-reference-section .reference-item{
+        padding:28px;
+    }
+
+    .ai-seo-reference-section .reference-item h3{
+        font-size:22px;
+    }
+
+    .ai-seo-reference-section .expert-links{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .ai-seo-reference-section .expert-links a{
+        justify-content:center;
+    }
+
+}
