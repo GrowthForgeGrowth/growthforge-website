@@ -15845,3 +15845,125 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI SEO OVERVIEW
+   (Scoped - No Global Styles)
+========================================== */
+
+.ai-seo-overview{
+    padding:100px 0;
+    background:#ffffff;
+}
+
+.ai-seo-overview .container{
+    max-width:1100px;
+}
+
+.ai-seo-overview h2{
+    margin:0 0 32px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(38px,4vw,52px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.03em;
+}
+
+.ai-seo-overview p{
+    margin:0 0 28px;
+    color:#475569;
+    font-size:18px;
+    line-height:1.9;
+}
+
+.ai-seo-overview p strong{
+    color:#0f172a;
+    font-weight:700;
+}
+
+.ai-seo-overview ul{
+    margin:48px 0 0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:24px;
+}
+
+.ai-seo-overview li{
+    position:relative;
+    padding:28px 30px 28px 72px;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius:20px;
+    box-shadow:0 12px 35px rgba(15,23,42,.04);
+    transition:.25s ease;
+}
+
+.ai-seo-overview li:hover{
+    transform:translateY(-4px);
+    border-color:#bfdbfe;
+    box-shadow:0 22px 55px rgba(37,99,235,.08);
+}
+
+.ai-seo-overview li::before{
+    content:"✓";
+    position:absolute;
+    left:28px;
+    top:28px;
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#2563eb;
+    color:#ffffff;
+    font-size:15px;
+    font-weight:700;
+}
+
+.ai-seo-overview li strong{
+    display:block;
+    margin-bottom:8px;
+    color:#0f172a;
+    font-size:18px;
+    font-weight:700;
+}
+
+.ai-seo-overview code{
+    padding:2px 8px;
+    border-radius:6px;
+    background:#eff6ff;
+    color:#2563eb;
+    font-size:.9em;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .ai-seo-overview{
+        padding:70px 0;
+    }
+
+    .ai-seo-overview h2{
+        font-size:34px;
+    }
+
+    .ai-seo-overview p{
+        font-size:17px;
+    }
+
+    .ai-seo-overview li{
+        padding:22px 22px 22px 62px;
+    }
+
+    .ai-seo-overview li::before{
+        left:22px;
+        top:22px;
+    }
+
+}
