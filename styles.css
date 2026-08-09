@@ -15383,3 +15383,182 @@ HOME FAQ SECTION ONLY
     }
 
 }
+
+/* ==========================================
+FOOTER
+========================================== */
+
+footer{
+    padding:80px 0 40px;
+    background:#08111f;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer .container{
+    max-width:1280px;
+}
+
+/* ==========================================
+TOP
+========================================== */
+
+.footer-top{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:100px;
+    align-items:flex-start;
+}
+
+.footer-brand{
+    max-width:520px;
+}
+
+.footer-logo{
+    width:220px;
+    height:auto;
+    margin-bottom:28px;
+}
+
+.footer-brand p{
+    margin:0;
+    color:#94a3b8;
+    font-size:17px;
+    line-height:1.9;
+}
+
+/* ==========================================
+LINKS
+========================================== */
+
+.footer-links{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:48px;
+}
+
+.footer-column h4{
+    margin:0 0 20px;
+    color:#ffffff;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.footer-column a{
+    display:block;
+    margin-bottom:14px;
+
+    color:#94a3b8;
+    text-decoration:none;
+
+    font-size:15px;
+    line-height:1.6;
+
+    transition:.25s ease;
+}
+
+.footer-column a:hover{
+    color:#60a5fa;
+    transform:translateX(3px);
+}
+
+/* ==========================================
+BOTTOM
+========================================== */
+
+.footer-bottom{
+    margin-top:60px;
+    padding-top:28px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+    flex-wrap:wrap;
+}
+
+.footer-social{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.footer-social a{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    color:#94a3b8;
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.25s ease;
+}
+
+.footer-social a svg{
+    width:18px;
+    height:18px;
+}
+
+.footer-social a:hover{
+    color:#60a5fa;
+}
+
+.footer-copyright{
+    margin:0;
+    color:#64748b;
+    font-size:14px;
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media (max-width:1100px){
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+
+    .footer-links{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media (max-width:768px){
+
+    footer{
+        padding:70px 0 35px;
+    }
+
+    .footer-logo{
+        width:180px;
+    }
+
+    .footer-brand p{
+        font-size:16px;
+    }
+
+    .footer-links{
+        grid-template-columns:1fr;
+        gap:36px;
+    }
+
+    .footer-column h4{
+        margin-bottom:16px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+}
