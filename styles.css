@@ -19970,3 +19970,458 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   GOOGLE ADS — KEYWORD STRATEGY
+   Dedicated to .google-keyword-strategy only
+========================================== */
+
+.google-keyword-strategy{
+    position:relative;
+    padding:100px 0;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+.google-keyword-strategy .container{
+    width:min(1180px,92%);
+    margin:0 auto;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.google-keyword-strategy .section-heading{
+    max-width:850px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.google-keyword-strategy .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:20px;
+    padding:8px 16px;
+
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    border-radius:999px;
+
+    color:#2563eb;
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    line-height:1;
+    text-transform:uppercase;
+}
+
+.google-keyword-strategy .section-heading h2{
+    margin:0 0 22px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:clamp(2.25rem,4vw,3.5rem);
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-.035em;
+}
+
+.google-keyword-strategy .section-heading p{
+    margin:0;
+
+    color:#475569;
+
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+.google-keyword-strategy .keyword-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.7fr) minmax(300px,.75fr);
+    gap:56px;
+    align-items:start;
+}
+
+.google-keyword-strategy .keyword-content{
+    min-width:0;
+}
+
+/* ==========================================
+   CONTENT TYPOGRAPHY
+========================================== */
+
+.google-keyword-strategy .keyword-content h3{
+    margin:48px 0 16px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:26px;
+    font-weight:800;
+    line-height:1.3;
+    letter-spacing:-.025em;
+}
+
+.google-keyword-strategy .keyword-content h3:first-child{
+    margin-top:0;
+}
+
+.google-keyword-strategy .keyword-content p{
+    margin:0 0 28px;
+
+    color:#475569;
+
+    font-size:17px;
+    line-height:1.9;
+}
+
+.google-keyword-strategy .keyword-content strong{
+    color:#0f172a;
+    font-weight:700;
+}
+
+/* ==========================================
+   HIGH-INTENT HIGHLIGHT
+========================================== */
+
+.google-keyword-strategy .keyword-highlight{
+    margin:32px 0 42px;
+    padding:28px 30px;
+
+    background:#f8fbff;
+
+    border:1px solid #dbeafe;
+    border-left:4px solid #2563eb;
+    border-radius:0 16px 16px 0;
+}
+
+.google-keyword-strategy .keyword-highlight h4{
+    margin:0 0 18px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:18px;
+    font-weight:800;
+}
+
+.google-keyword-strategy .keyword-highlight ul{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px 24px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+.google-keyword-strategy .keyword-highlight li{
+    position:relative;
+
+    padding-left:22px;
+
+    color:#475569;
+
+    font-size:15px;
+    line-height:1.6;
+}
+
+.google-keyword-strategy .keyword-highlight li::before{
+    content:"";
+
+    position:absolute;
+    top:.65em;
+    left:0;
+
+    width:7px;
+    height:7px;
+
+    background:#2563eb;
+    border-radius:50%;
+}
+
+/* ==========================================
+   KEYWORD TABLE
+========================================== */
+
+.google-keyword-strategy .keyword-table{
+    width:100%;
+    margin:34px 0 48px;
+
+    border-collapse:separate;
+    border-spacing:0;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+
+    box-shadow:0 12px 35px rgba(15,23,42,.05);
+}
+
+.google-keyword-strategy .keyword-table th{
+    padding:16px 18px;
+
+    background:#f8fafc;
+
+    border-bottom:1px solid #e2e8f0;
+
+    color:#0f172a;
+
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.03em;
+    text-align:left;
+}
+
+.google-keyword-strategy .keyword-table td{
+    padding:17px 18px;
+
+    border-bottom:1px solid #e2e8f0;
+
+    color:#475569;
+
+    font-size:14px;
+    line-height:1.6;
+    vertical-align:top;
+}
+
+.google-keyword-strategy .keyword-table tbody tr:last-child td{
+    border-bottom:none;
+}
+
+.google-keyword-strategy .keyword-table tbody tr:hover td{
+    background:#f8fbff;
+}
+
+.google-keyword-strategy .keyword-table td:first-child{
+    color:#2563eb;
+    font-weight:800;
+}
+
+/* ==========================================
+   MATCH TYPE GRID
+========================================== */
+
+.google-keyword-strategy .keyword-match-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+
+    margin:32px 0 48px;
+}
+
+.google-keyword-strategy .keyword-match-grid > div{
+    padding:24px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+}
+
+.google-keyword-strategy .keyword-match-grid h4{
+    margin:0 0 10px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:18px;
+    font-weight:800;
+}
+
+.google-keyword-strategy .keyword-match-grid p{
+    margin:0;
+
+    color:#64748b;
+
+    font-size:14px;
+    line-height:1.75;
+}
+
+/* ==========================================
+   EXECUTIVE SUMMARY
+========================================== */
+
+.google-keyword-strategy .keyword-summary{
+    position:sticky;
+    top:30px;
+
+    padding:32px;
+
+    background:#f8fbff;
+
+    border:1px solid #dbeafe;
+    border-top:4px solid #2563eb;
+    border-radius:18px;
+
+    box-shadow:0 20px 50px rgba(15,23,42,.07);
+}
+
+.google-keyword-strategy .keyword-summary h3{
+    margin:0 0 22px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+    font-size:22px;
+    font-weight:800;
+    line-height:1.3;
+}
+
+.google-keyword-strategy .keyword-summary ul{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+.google-keyword-strategy .keyword-summary li{
+    position:relative;
+
+    padding-left:27px;
+
+    color:#475569;
+
+    font-size:15px;
+    line-height:1.7;
+}
+
+.google-keyword-strategy .keyword-summary li::before{
+    content:"✓";
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    color:#2563eb;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1000px){
+
+    .google-keyword-strategy{
+        padding:80px 0;
+    }
+
+    .google-keyword-strategy .keyword-layout{
+        grid-template-columns:1fr;
+        gap:42px;
+    }
+
+    .google-keyword-strategy .keyword-summary{
+        position:relative;
+        top:auto;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .google-keyword-strategy{
+        padding:70px 0;
+    }
+
+    .google-keyword-strategy .container{
+        width:min(92%,680px);
+    }
+
+    .google-keyword-strategy .section-heading{
+        margin-bottom:42px;
+        text-align:left;
+    }
+
+    .google-keyword-strategy .section-heading h2{
+        font-size:2.25rem;
+    }
+
+    .google-keyword-strategy .section-heading p{
+        font-size:17px;
+    }
+
+    .google-keyword-strategy .keyword-content h3{
+        font-size:23px;
+    }
+
+    .google-keyword-strategy .keyword-content p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .google-keyword-strategy .keyword-highlight{
+        padding:24px;
+    }
+
+    .google-keyword-strategy .keyword-highlight ul{
+        grid-template-columns:1fr;
+    }
+
+    .google-keyword-strategy .keyword-table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .google-keyword-strategy .keyword-match-grid{
+        grid-template-columns:1fr;
+    }
+
+    .google-keyword-strategy .keyword-summary{
+        padding:26px;
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .google-keyword-strategy{
+        padding:60px 0;
+    }
+
+    .google-keyword-strategy .section-badge{
+        font-size:11px;
+    }
+
+    .google-keyword-strategy .section-heading h2{
+        font-size:2rem;
+    }
+
+    .google-keyword-strategy .keyword-highlight{
+        padding:22px;
+    }
+
+    .google-keyword-strategy .keyword-summary{
+        padding:22px;
+    }
+
+}
