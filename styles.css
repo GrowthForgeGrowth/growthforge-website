@@ -16329,3 +16329,220 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI SEO DELIVERABLES
+   Scoped to .ai-seo-deliverables
+========================================== */
+
+.ai-seo-deliverables{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.ai-seo-deliverables .container{
+    max-width:1280px;
+}
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.ai-seo-deliverables .section-heading{
+    max-width:820px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.ai-seo-deliverables .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 22px;
+    margin-bottom:24px;
+    border-radius:999px;
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.ai-seo-deliverables h2{
+    margin:0 0 24px;
+    color:#0f172a;
+    font:800 clamp(40px,5vw,58px) Manrope,sans-serif;
+    line-height:1.08;
+    letter-spacing:-.04em;
+}
+
+.ai-seo-deliverables .section-heading p{
+    margin:0;
+    color:#64748b;
+    font-size:20px;
+    line-height:1.85;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.ai-seo-deliverables .deliverables-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:28px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.ai-seo-deliverables .deliverable-card{
+    position:relative;
+    padding:38px;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius:24px;
+    box-shadow:0 18px 45px rgba(15,23,42,.05);
+    transition:all .3s ease;
+    overflow:hidden;
+}
+
+.ai-seo-deliverables .deliverable-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,#2563eb,#60a5fa);
+}
+
+.ai-seo-deliverables .deliverable-card:hover{
+    transform:translateY(-8px);
+    border-color:#93c5fd;
+    box-shadow:0 30px 70px rgba(37,99,235,.12);
+}
+
+.ai-seo-deliverables .deliverable-card h3{
+    margin:0 0 26px;
+    color:#0f172a;
+    font-size:28px;
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:-.02em;
+    transition:.25s ease;
+}
+
+.ai-seo-deliverables .deliverable-card:hover h3{
+    color:#2563eb;
+}
+
+/* ==========================================
+   LIST
+========================================== */
+
+.ai-seo-deliverables .deliverable-card ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:14px;
+}
+
+.ai-seo-deliverables .deliverable-card li{
+    position:relative;
+    padding-left:30px;
+    color:#475569;
+    font-size:16px;
+    line-height:1.75;
+}
+
+.ai-seo-deliverables .deliverable-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:0;
+    color:#2563eb;
+    font-weight:800;
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.ai-seo-deliverables .deliverables-cta{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    margin-top:60px;
+    flex-wrap:wrap;
+}
+
+.ai-seo-deliverables .deliverables-cta .btn{
+    min-width:280px;
+}
+
+.ai-seo-deliverables .deliverables-cta .btn.secondary{
+    background:#ffffff;
+    color:#2563eb;
+    border:2px solid #2563eb;
+}
+
+.ai-seo-deliverables .deliverables-cta .btn.secondary:hover{
+    background:#2563eb;
+    color:#ffffff;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1100px){
+
+    .ai-seo-deliverables .deliverables-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .ai-seo-deliverables{
+        padding:70px 0;
+    }
+
+    .ai-seo-deliverables .section-heading{
+        margin-bottom:50px;
+    }
+
+    .ai-seo-deliverables h2{
+        font-size:36px;
+    }
+
+    .ai-seo-deliverables .section-heading p{
+        font-size:18px;
+    }
+
+    .ai-seo-deliverables .deliverable-card{
+        padding:28px;
+    }
+
+    .ai-seo-deliverables .deliverable-card h3{
+        font-size:24px;
+    }
+
+    .ai-seo-deliverables .deliverables-cta{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .ai-seo-deliverables .deliverables-cta .btn{
+        width:100%;
+        min-width:unset;
+    }
+
+}
