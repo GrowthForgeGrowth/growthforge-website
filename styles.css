@@ -17234,3 +17234,131 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI OVERVIEW HERO
+   Scoped to .ai-overview-hero
+========================================== */
+
+.ai-overview-hero{
+    padding:110px 0 100px;
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+    );
+}
+
+.ai-overview-hero .container{
+    max-width:920px;
+}
+
+.ai-overview-hero .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 20px;
+    margin-bottom:26px;
+    border-radius:999px;
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.ai-overview-hero h1{
+    margin:0 0 28px;
+    color:#0f172a;
+    font:800 clamp(46px,6vw,72px) Manrope,sans-serif;
+    line-height:1.05;
+    letter-spacing:-.05em;
+}
+
+.ai-overview-hero .lead{
+    margin:0 0 32px;
+    color:#475569;
+    font-size:22px;
+    line-height:1.8;
+}
+
+.ai-overview-hero .byline{
+    margin:0;
+    max-width:760px;
+    color:#64748b;
+    font-size:17px;
+    line-height:1.85;
+}
+
+.ai-overview-hero .byline strong{
+    color:#0f172a;
+}
+
+.ai-overview-hero .byline a{
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.ai-overview-hero .byline a:hover{
+    text-decoration:underline;
+}
+
+.ai-overview-hero .cta{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-top:42px;
+    flex-wrap:wrap;
+}
+
+.ai-overview-hero .cta .btn{
+    min-width:260px;
+}
+
+.ai-overview-hero .cta .btn.secondary{
+    background:#ffffff;
+    color:#2563eb;
+    border:2px solid #2563eb;
+}
+
+.ai-overview-hero .cta .btn.secondary:hover{
+    background:#2563eb;
+    color:#ffffff;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .ai-overview-hero{
+        padding:80px 0;
+    }
+
+    .ai-overview-hero h1{
+        font-size:42px;
+    }
+
+    .ai-overview-hero .lead{
+        font-size:19px;
+    }
+
+    .ai-overview-hero .byline{
+        font-size:16px;
+    }
+
+    .ai-overview-hero .cta{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .ai-overview-hero .cta .btn{
+        width:100%;
+        min-width:unset;
+    }
+
+}
