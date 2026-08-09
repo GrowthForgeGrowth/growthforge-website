@@ -1474,7 +1474,6 @@ MOBILE
 
 }
 
-
 /* ==========================================
    EXECUTIVE GROWTH AUDIT
 ========================================== */
@@ -1514,8 +1513,8 @@ MOBILE
 
 .audit-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
 }
 
 /* ==========================================
@@ -1525,12 +1524,12 @@ MOBILE
 .audit-card{
     display:flex;
     align-items:flex-start;
-    gap:24px;
+    gap:20px;
 
-    padding:34px 38px;
+    padding:30px 34px;
+    min-height:165px;
 
-    background:#ffffff;
-
+    background:#fff;
     border:1px solid #e2e8f0;
     border-radius:18px;
 
@@ -1539,11 +1538,8 @@ MOBILE
 
 .audit-card:hover{
     transform:translateY(-4px);
-
     border-color:#bfdbfe;
-
-    box-shadow:
-        0 20px 50px rgba(37,99,235,.08);
+    box-shadow:0 18px 40px rgba(37,99,235,.08);
 }
 
 /* ==========================================
@@ -1551,11 +1547,10 @@ MOBILE
 ========================================== */
 
 .audit-icon{
+    flex-shrink:0;
 
-    flex:0 0 42px;
-
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
 
     display:flex;
     align-items:center;
@@ -1564,13 +1559,11 @@ MOBILE
     border-radius:10px;
 
     background:#eff6ff;
+    border:1px solid #bfdbfe;
 
     color:#2563eb;
-
     font-size:15px;
     font-weight:800;
-
-    border:1px solid #bfdbfe;
 }
 
 /* ==========================================
@@ -1582,11 +1575,10 @@ MOBILE
 }
 
 .audit-card h3{
-    margin:0 0 12px;
+    margin:0 0 10px;
 
-    font-size:28px;
+    font-size:26px;
     line-height:1.15;
-
     font-weight:700;
 
     color:#0f172a;
@@ -1595,46 +1587,39 @@ MOBILE
 .audit-card p{
     margin:0;
 
+    max-width:440px;
+
     font-size:17px;
-    line-height:1.75;
+    line-height:1.7;
 
     color:#64748b;
 }
 
 /* ==========================================
-   MORE CARD
+   FOOTER
 ========================================== */
 
-.audit-more{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+.audit-footer{
+    margin-top:50px;
+    padding-top:34px;
+
+    border-top:1px solid #e2e8f0;
+
+    text-align:center;
 }
 
-.audit-more h3{
-    margin:0 0 18px;
-    font-size:30px;
+.audit-footer p{
+    max-width:820px;
+    margin:0 auto 18px;
+
+    font-size:17px;
+    line-height:1.8;
+
+    color:#64748b;
 }
 
-.audit-more ul{
-    margin:0;
-    padding:0;
-    list-style:none;
-}
-
-.audit-more li{
-    position:relative;
-    padding-left:22px;
-    margin-bottom:12px;
-
-    color:#475569;
-}
-
-.audit-more li::before{
-    content:"✓";
-    position:absolute;
-    left:0;
-    color:#2563eb;
+.audit-footer strong{
+    color:#0f172a;
     font-weight:700;
 }
 
@@ -1642,45 +1627,68 @@ MOBILE
     display:inline-flex;
     align-items:center;
 
-    margin-top:18px;
-
     color:#2563eb;
     text-decoration:none;
     font-weight:700;
+
+    transition:.25s;
 }
 
 .audit-link:hover{
     color:#1d4ed8;
+    transform:translateX(4px);
 }
 
 /* ==========================================
    RESPONSIVE
 ========================================== */
 
-@media(max-width:1024px){
+@media (max-width:1024px){
 
     .audit-grid{
         grid-template-columns:1fr;
     }
 
+    .audit-card{
+        min-height:auto;
+    }
+
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
 
     .audit-preview{
         padding:80px 0;
     }
 
+    .audit-preview .section-heading{
+        margin-bottom:50px;
+    }
+
+    .audit-preview .section-heading h2{
+        font-size:42px;
+    }
+
+    .audit-preview .section-heading p{
+        font-size:18px;
+    }
+
     .audit-card{
-        padding:28px;
+        padding:26px;
+        gap:18px;
     }
 
     .audit-card h3{
-        font-size:24px;
+        font-size:22px;
     }
 
     .audit-card p{
         font-size:16px;
+    }
+
+    .audit-footer{
+        margin-top:40px;
+        padding-top:28px;
     }
 
 }
