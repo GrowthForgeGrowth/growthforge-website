@@ -1481,17 +1481,22 @@ MOBILE
 
 .audit-preview{
     padding:110px 0;
+    background:#f8fafc;
+}
+
+.audit-preview .container{
+    max-width:1280px;
 }
 
 .audit-preview .section-heading{
-    max-width:820px;
-    margin:0 auto 64px;
+    max-width:760px;
+    margin:0 auto 70px;
     text-align:center;
 }
 
 .audit-preview .section-heading h2{
-    margin:20px 0;
-    font-size:clamp(42px,5vw,64px);
+    margin:18px 0;
+    font-size:clamp(42px,5vw,60px);
     line-height:1.05;
     color:#0f172a;
 }
@@ -1509,9 +1514,8 @@ MOBILE
 
 .audit-grid{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:22px;
-    align-items:stretch;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
 }
 
 /* ==========================================
@@ -1521,26 +1525,25 @@ MOBILE
 .audit-card{
     display:flex;
     align-items:flex-start;
-    gap:22px;
+    gap:24px;
 
-    padding:28px 30px;
+    padding:34px 38px;
 
     background:#ffffff;
+
     border:1px solid #e2e8f0;
-    border-radius:20px;
+    border-radius:18px;
 
     transition:.25s ease;
-
-    box-shadow:
-        0 10px 30px rgba(15,23,42,.05);
 }
 
 .audit-card:hover{
     transform:translateY(-4px);
-    border-color:#93c5fd;
+
+    border-color:#bfdbfe;
 
     box-shadow:
-        0 20px 45px rgba(37,99,235,.10);
+        0 20px 50px rgba(37,99,235,.08);
 }
 
 /* ==========================================
@@ -1548,26 +1551,26 @@ MOBILE
 ========================================== */
 
 .audit-icon{
-    flex-shrink:0;
 
-    width:56px;
-    height:56px;
+    flex:0 0 42px;
+
+    width:42px;
+    height:42px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    border-radius:16px;
+    border-radius:10px;
 
-    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    background:#eff6ff;
 
-    color:#fff;
+    color:#2563eb;
 
-    font-size:22px;
+    font-size:15px;
     font-weight:800;
 
-    box-shadow:
-        0 12px 28px rgba(37,99,235,.18);
+    border:1px solid #bfdbfe;
 }
 
 /* ==========================================
@@ -1579,10 +1582,12 @@ MOBILE
 }
 
 .audit-card h3{
-    margin:0 0 10px;
+    margin:0 0 12px;
 
     font-size:28px;
     line-height:1.15;
+
+    font-weight:700;
 
     color:#0f172a;
 }
@@ -1597,51 +1602,40 @@ MOBILE
 }
 
 /* ==========================================
-   EVERYTHING ELSE CARD
+   MORE CARD
 ========================================== */
 
 .audit-more{
-    display:block;
-
-    padding:34px;
-
-    background:#f8fbff;
-
-    border:1px solid #dbeafe;
-
-    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .audit-more h3{
-    margin:0 0 20px;
-    font-size:32px;
+    margin:0 0 18px;
+    font-size:30px;
 }
 
 .audit-more ul{
-    list-style:none;
     margin:0;
     padding:0;
+    list-style:none;
 }
 
 .audit-more li{
     position:relative;
-
-    padding-left:26px;
-    margin-bottom:14px;
+    padding-left:22px;
+    margin-bottom:12px;
 
     color:#475569;
-
-    font-size:17px;
 }
 
 .audit-more li::before{
     content:"✓";
-
     position:absolute;
     left:0;
-
     color:#2563eb;
-    font-weight:800;
+    font-weight:700;
 }
 
 .audit-link{
@@ -1651,14 +1645,11 @@ MOBILE
     margin-top:18px;
 
     color:#2563eb;
-    font-weight:700;
     text-decoration:none;
-
-    transition:.2s;
+    font-weight:700;
 }
 
 .audit-link:hover{
-    transform:translateX(4px);
     color:#1d4ed8;
 }
 
@@ -1666,7 +1657,7 @@ MOBILE
    RESPONSIVE
 ========================================== */
 
-@media (max-width:1100px){
+@media(max-width:1024px){
 
     .audit-grid{
         grid-template-columns:1fr;
@@ -1674,45 +1665,22 @@ MOBILE
 
 }
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     .audit-preview{
         padding:80px 0;
     }
 
-    .audit-preview .section-heading{
-        margin-bottom:44px;
-    }
-
-    .audit-preview .section-heading h2{
-        font-size:42px;
-    }
-
-    .audit-preview .section-heading p{
-        font-size:18px;
-    }
-
     .audit-card{
-        flex-direction:column;
-        gap:18px;
-        padding:26px;
+        padding:28px;
     }
 
     .audit-card h3{
         font-size:24px;
     }
 
-    .audit-card p,
-    .audit-more li{
+    .audit-card p{
         font-size:16px;
-    }
-
-    .audit-more{
-        padding:28px;
-    }
-
-    .audit-more h3{
-        font-size:28px;
     }
 
 }
