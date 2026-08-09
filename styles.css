@@ -1475,59 +1475,96 @@ MOBILE
 }
 
 /* ==========================================
-EXECUTIVE GROWTH AUDIT
+   EXECUTIVE GROWTH AUDIT
 ========================================== */
 
 .audit-preview{
-    padding:110px 0;
+    padding:120px 0;
     background:#f8fafc;
 }
 
 .audit-preview .container{
     max-width:1320px;
+    margin:0 auto;
+    padding:0 32px;
 }
 
+/* ==========================================
+   HEADING
+========================================== */
+
 .audit-preview .section-heading{
-    max-width:760px;
-    margin:0 auto 60px;
+    max-width:820px;
+    margin:0 auto 70px;
     text-align:center;
 }
 
-.audit-preview .section-heading h2{
-    margin:18px 0;
-    font-size:clamp(42px,5vw,60px);
+.audit-preview .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:#e8f0ff;
+
+    color:#2563eb;
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.audit-preview h2{
+    margin:24px 0 20px;
+
+    font-family:Manrope,sans-serif;
+    font-size:clamp(42px,5vw,62px);
+    font-weight:800;
     line-height:1.05;
+
     color:#0f172a;
 }
 
 .audit-preview .section-heading p{
     margin:0;
+
     font-size:20px;
     line-height:1.8;
+
     color:#64748b;
 }
 
 /* ==========================================
-GRID
+   TWO COLUMN LAYOUT
 ========================================== */
 
-.audit-grid{
+.audit-list{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:24px;
+    gap:26px;
+}
+
+.audit-column{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
 /* ==========================================
-SERVICE ROW
+   ROW
 ========================================== */
 
-.audit-card{
+.audit-row{
 
     display:flex;
     align-items:flex-start;
-    gap:22px;
+    gap:18px;
 
-    padding:34px 36px;
+    padding:28px 30px;
 
     background:#ffffff;
 
@@ -1537,77 +1574,88 @@ SERVICE ROW
     transition:.25s ease;
 }
 
-.audit-card:hover{
+.audit-row:hover{
 
-    transform:translateY(-4px);
+    border-color:#bfdbfe;
 
-    border-color:#cbd5e1;
+    transform:translateY(-3px);
 
     box-shadow:
-    0 18px 40px rgba(15,23,42,.06);
+        0 12px 30px rgba(15,23,42,.06);
 
 }
 
 /* ==========================================
-ICON
+   ICON
 ========================================== */
 
 .audit-icon{
 
-    width:46px;
-    height:46px;
+    width:52px;
+    height:52px;
 
-    flex:0 0 46px;
+    flex:0 0 52px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    color:#4f46e5;
+    border-radius:14px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
 
     font-size:22px;
 
-    margin-top:2px;
+    border:1px solid #dbeafe;
+}
+
+.audit-icon i{
+    line-height:1;
 }
 
 /* ==========================================
-CONTENT
+   CONTENT
 ========================================== */
 
 .audit-content{
     flex:1;
 }
 
-.audit-card h3{
+.audit-content h3{
 
-    margin:0 0 10px;
+    margin:2px 0 10px;
 
-    font-size:30px;
-    line-height:1.15;
+    font-family:Manrope,sans-serif;
+    font-size:24px;
     font-weight:700;
+    line-height:1.2;
 
-    color:#111827;
-
+    color:#0f172a;
 }
 
-.audit-card p{
+.audit-content p{
 
     margin:0;
 
-    font-size:18px;
-    line-height:1.75;
+    font-size:16px;
+    line-height:1.7;
 
-    color:#6b7280;
-
+    color:#64748b;
 }
 
 /* ==========================================
-FOOTER
+   FOOTER
 ========================================== */
 
 .audit-footer{
 
     margin-top:60px;
+
+    padding-top:36px;
+
+    border-top:1px solid #e2e8f0;
 
     text-align:center;
 }
@@ -1625,19 +1673,20 @@ FOOTER
 }
 
 .audit-footer strong{
-    color:#111827;
+    color:#0f172a;
 }
 
 .audit-link{
 
     display:inline-flex;
     align-items:center;
-    gap:8px;
 
     color:#2563eb;
-    font-weight:700;
 
     text-decoration:none;
+
+    font-size:17px;
+    font-weight:700;
 
     transition:.25s;
 }
@@ -1647,64 +1696,61 @@ FOOTER
     color:#1d4ed8;
 
     transform:translateX(4px);
+
 }
 
 /* ==========================================
-RESPONSIVE
+   TABLET
 ========================================== */
 
 @media (max-width:1024px){
 
-.audit-grid{
-    grid-template-columns:1fr;
-}
+    .audit-list{
+        grid-template-columns:1fr;
+    }
 
 }
+
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media (max-width:768px){
 
-.audit-preview{
-    padding:80px 0;
-}
+    .audit-preview{
+        padding:80px 0;
+    }
 
-.audit-preview .section-heading{
-    margin-bottom:40px;
-}
+    .audit-preview .container{
+        padding:0 24px;
+    }
 
-.audit-preview .section-heading h2{
-    font-size:42px;
-}
+    .audit-preview h2{
+        font-size:42px;
+    }
 
-.audit-preview .section-heading p{
-    font-size:18px;
-}
+    .audit-preview .section-heading p{
+        font-size:18px;
+    }
 
-.audit-card{
+    .audit-row{
+        padding:24px;
+    }
 
-    padding:26px;
+    .audit-icon{
+        width:46px;
+        height:46px;
+        flex:0 0 46px;
+        font-size:20px;
+    }
 
-    gap:18px;
-}
+    .audit-content h3{
+        font-size:22px;
+    }
 
-.audit-icon{
-
-    width:40px;
-    height:40px;
-
-    flex:0 0 40px;
-
-    font-size:18px;
-}
-
-.audit-card h3{
-
-    font-size:24px;
-}
-
-.audit-card p{
-
-    font-size:16px;
-}
+    .audit-content p{
+        font-size:15px;
+    }
 
 }
     
