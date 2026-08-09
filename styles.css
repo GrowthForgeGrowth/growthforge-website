@@ -15675,3 +15675,173 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI SEO HERO
+========================================== */
+
+.ai-seo-hero{
+    position:relative;
+    overflow:hidden;
+    padding:150px 0 120px;
+    background:
+        radial-gradient(circle at top,#1d4ed81f 0%,transparent 55%),
+        linear-gradient(180deg,#08111f 0%,#0f172a 100%);
+}
+
+.ai-seo-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:40px 40px;
+    opacity:.35;
+    pointer-events:none;
+}
+
+.ai-seo-hero .container{
+    position:relative;
+    z-index:2;
+    max-width:980px;
+    text-align:center;
+}
+
+/* ==========================================
+   EYEBROW
+========================================== */
+
+.ai-seo-hero .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 24px;
+    margin-bottom:28px;
+    border-radius:999px;
+    border:1px solid rgba(96,165,250,.25);
+    background:rgba(37,99,235,.12);
+    color:#93c5fd;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.ai-seo-hero h1{
+    margin:0 auto 28px;
+    max-width:900px;
+    color:#ffffff;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(48px,6vw,76px);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-.05em;
+}
+
+/* ==========================================
+   LEAD
+========================================== */
+
+.ai-seo-hero .lead{
+    max-width:860px;
+    margin:0 auto 32px;
+    color:#cbd5e1;
+    font-size:22px;
+    line-height:1.85;
+}
+
+/* ==========================================
+   BYLINE
+========================================== */
+
+.ai-seo-hero .byline{
+    max-width:900px;
+    margin:0 auto;
+    color:#94a3b8;
+    font-size:17px;
+    line-height:1.9;
+}
+
+.ai-seo-hero .byline strong{
+    color:#ffffff;
+    font-weight:700;
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.ai-seo-hero .cta{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-top:48px;
+}
+
+.ai-seo-hero .btn{
+    min-width:260px;
+}
+
+.ai-seo-hero .btn.secondary{
+    background:transparent;
+    color:#ffffff;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.ai-seo-hero .btn.secondary:hover{
+    background:rgba(255,255,255,.08);
+    border-color:#60a5fa;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1024px){
+
+    .ai-seo-hero{
+        padding:130px 0 100px;
+    }
+
+    .ai-seo-hero .lead{
+        font-size:20px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .ai-seo-hero{
+        padding:110px 0 80px;
+    }
+
+    .ai-seo-hero h1{
+        font-size:42px;
+    }
+
+    .ai-seo-hero .lead{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+    .ai-seo-hero .byline{
+        font-size:16px;
+    }
+
+    .ai-seo-hero .cta{
+        flex-direction:column;
+    }
+
+    .ai-seo-hero .btn{
+        width:100%;
+        max-width:360px;
+    }
+
+}
