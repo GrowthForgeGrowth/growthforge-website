@@ -16969,3 +16969,268 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI MARKETING GLOSSARY
+   Scoped to .ai-glossary
+========================================== */
+
+.ai-glossary{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.ai-glossary .container{
+    max-width:1280px;
+}
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.ai-glossary .section-heading{
+    max-width:840px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.ai-glossary .section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 22px;
+    margin-bottom:24px;
+    border-radius:999px;
+    background:#eff6ff;
+    border:1px solid #bfdbfe;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.ai-glossary h2{
+    margin:0 0 22px;
+    color:#0f172a;
+    font:800 clamp(40px,5vw,58px) Manrope,sans-serif;
+    line-height:1.08;
+    letter-spacing:-.04em;
+}
+
+.ai-glossary .section-heading p{
+    margin:0;
+    color:#64748b;
+    font-size:20px;
+    line-height:1.85;
+}
+
+/* ==========================================
+   GLOSSARY GRID
+========================================== */
+
+.ai-glossary .glossary-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:28px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.ai-glossary .glossary-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    padding:34px;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius:24px;
+    box-shadow:0 18px 45px rgba(15,23,42,.05);
+    transition:all .3s ease;
+    overflow:hidden;
+}
+
+.ai-glossary .glossary-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,#2563eb,#60a5fa);
+}
+
+.ai-glossary .glossary-card:hover{
+    transform:translateY(-8px);
+    border-color:#93c5fd;
+    box-shadow:0 30px 70px rgba(37,99,235,.12);
+}
+
+.ai-glossary .glossary-card h3{
+    margin:0 0 18px;
+    color:#0f172a;
+    font-size:28px;
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:-.02em;
+    transition:.25s ease;
+}
+
+.ai-glossary .glossary-card:hover h3{
+    color:#2563eb;
+}
+
+.ai-glossary .glossary-card p{
+    margin:0;
+    color:#64748b;
+    font-size:16px;
+    line-height:1.85;
+    flex:1;
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.ai-glossary .glossary-card .link{
+    display:inline-flex;
+    align-items:center;
+    margin-top:24px;
+    color:#2563eb;
+    font-size:15px;
+    font-weight:700;
+    text-decoration:none;
+    transition:.25s ease;
+}
+
+.ai-glossary .glossary-card .link:hover{
+    color:#1d4ed8;
+    transform:translateX(4px);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.ai-glossary .glossary-footer{
+    margin-top:80px;
+    padding:60px;
+    text-align:center;
+    background:#08111f;
+    border-radius:28px;
+    box-shadow:0 30px 80px rgba(15,23,42,.18);
+}
+
+.ai-glossary .glossary-footer h2{
+    margin:0 0 22px;
+    color:#ffffff;
+    font:800 clamp(38px,4vw,52px) Manrope,sans-serif;
+    line-height:1.1;
+    letter-spacing:-.03em;
+}
+
+.ai-glossary .glossary-footer p{
+    max-width:760px;
+    margin:0 auto;
+    color:#94a3b8;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.ai-glossary .glossary-cta{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.ai-glossary .glossary-cta .btn{
+    min-width:250px;
+}
+
+.ai-glossary .glossary-cta .btn.secondary{
+    background:transparent;
+    color:#ffffff;
+    border:2px solid rgba(255,255,255,.18);
+}
+
+.ai-glossary .glossary-cta .btn.secondary:hover{
+    background:#ffffff;
+    color:#08111f;
+    border-color:#ffffff;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .ai-glossary .glossary-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:768px){
+
+    .ai-glossary{
+        padding:70px 0;
+    }
+
+    .ai-glossary .section-heading{
+        margin-bottom:50px;
+    }
+
+    .ai-glossary h2{
+        font-size:36px;
+    }
+
+    .ai-glossary .section-heading p{
+        font-size:18px;
+    }
+
+    .ai-glossary .glossary-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ai-glossary .glossary-card{
+        padding:28px;
+    }
+
+    .ai-glossary .glossary-card h3{
+        font-size:24px;
+    }
+
+    .ai-glossary .glossary-footer{
+        margin-top:60px;
+        padding:40px 28px;
+    }
+
+    .ai-glossary .glossary-footer h2{
+        font-size:34px;
+    }
+
+    .ai-glossary .glossary-footer p{
+        font-size:17px;
+    }
+
+    .ai-glossary .glossary-cta{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .ai-glossary .glossary-cta .btn{
+        width:100%;
+        min-width:unset;
+    }
+
+}
