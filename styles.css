@@ -29,269 +29,224 @@ header .logo{flex-shrink:0}
 .link:hover{text-decoration:underline}
 
 /* =========================================
-   HERO
+HOME HERO
 ========================================= */
 
 .hero{
-
     position:relative;
     overflow:hidden;
-
     background:
-        radial-gradient(circle at 82% 45%, rgba(37,99,235,.18), transparent 42%),
+        radial-gradient(circle at 82% 45%,rgba(37,99,235,.18),transparent 42%),
         linear-gradient(180deg,#08111f 0%,#0f172a 100%);
-
     color:#fff;
-
 }
 
 .hero-inner{
-
     max-width:1400px;
-
     margin:0 auto;
-
     padding:120px 80px;
-
     display:grid;
-
     grid-template-columns:680px 1fr;
-
-    gap:120px;
-
+    gap:100px;
     align-items:center;
-
     min-height:90vh;
-
 }
 
 /* =========================================
-   LEFT
+CONTENT
 ========================================= */
 
 .hero-content{
-
+    position:relative;
+    z-index:5;
     width:680px;
-
 }
 
 .hero .eyebrow{
-
     display:inline-block;
-
     margin-bottom:22px;
-
-    color:#93c5fd;
-
+    color:#4f7cff;
     font-size:14px;
-
     font-weight:700;
-
     letter-spacing:.18em;
-
     text-transform:uppercase;
-
 }
 
 .hero h1{
-
-    margin:0 0 32px;
-
+    margin:0 0 30px;
     font-family:Manrope,sans-serif;
-
-    font-size:88px;
-
+    font-size:78px;
     font-weight:800;
-
-    line-height:.98;
-
-    letter-spacing:-.055em;
-
+    line-height:1.02;
+    letter-spacing:-.05em;
     color:#fff;
-
 }
 
 .hero .lead{
-
-    width:620px;
-
-    margin-bottom:42px;
-
-    font-size:24px;
-
-    line-height:1.65;
-
+    max-width:620px;
+    margin:0 0 42px;
+    font-size:22px;
+    line-height:1.7;
     color:rgba(255,255,255,.78);
-
-}
-
-.cta{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:22px;
-
-    flex-wrap:wrap;
-
 }
 
 /* =========================================
-   RIGHT
+CTA
+========================================= */
+
+.hero .cta{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    flex-wrap:wrap;
+}
+
+.hero .ghost{
+    color:#4f7cff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.25s;
+}
+
+.hero .ghost:hover{
+    color:#fff;
+}
+
+/* =========================================
+VISUAL
 ========================================= */
 
 .hero-visual{
-
     position:relative;
-
-    height:620px;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:720px;
 }
 
-.hero-glow{
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:520px;
-
-    height:520px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(circle,
-            rgba(37,99,235,.45),
-            rgba(37,99,235,.15) 45%,
-            transparent 75%);
-
-    filter:blur(45px);
-
-}
-
-.hero-grid{
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-        linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
-
-    background-size:48px 48px;
-
-    opacity:.25;
-
-    mask-image:radial-gradient(circle,#000 35%,transparent 90%);
-
-}
-
-.hero-lines{
-
-    position:absolute;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%) rotate(-18deg);
-
-    width:480px;
-
-    height:480px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(96,165,250,.20);
-
-    box-shadow:
-        0 0 0 45px rgba(96,165,250,.08),
-        0 0 0 95px rgba(96,165,250,.05),
-        0 0 0 155px rgba(96,165,250,.03);
-
+.hero-pdf{
+    position:relative;
+    z-index:5;
+    width:100%;
+    max-width:760px;
+    height:auto;
+    filter:drop-shadow(0 45px 90px rgba(0,0,0,.45));
 }
 
 /* =========================================
-   MOBILE
+BACKGROUND EFFECTS
 ========================================= */
 
-@media (max-width:960px){
+.hero-glow{
+    position:absolute;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,
+        rgba(37,99,235,.18) 0%,
+        rgba(37,99,235,.08) 35%,
+        transparent 72%);
+    filter:blur(40px);
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:48px 48px;
+    opacity:.18;
+    mask-image:radial-gradient(circle,#000 40%,transparent 90%);
+    -webkit-mask-image:radial-gradient(circle,#000 40%,transparent 90%);
+}
+
+.hero-lines{
+    position:absolute;
+    width:780px;
+    height:780px;
+    border-radius:50%;
+    border:1px solid rgba(79,124,255,.14);
+    box-shadow:
+        0 0 0 90px rgba(79,124,255,.08),
+        0 0 0 180px rgba(79,124,255,.05);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width:1200px){
 
     .hero-inner{
-
         grid-template-columns:1fr;
-
-        gap:60px;
-
-        padding:90px 24px;
-
+        gap:70px;
         text-align:center;
-
+        padding:100px 40px;
         min-height:auto;
-
     }
 
     .hero-content{
-
         width:100%;
-
+        max-width:700px;
+        margin:0 auto;
     }
 
     .hero h1{
-
-        font-size:56px;
-
+        font-size:64px;
     }
 
     .hero .lead{
-
-        width:100%;
-
-        font-size:20px;
-
+        max-width:100%;
         margin-left:auto;
-
         margin-right:auto;
-
     }
 
-    .cta{
-
+    .hero .cta{
         justify-content:center;
-
     }
 
     .hero-visual{
-
-        height:340px;
-
+        min-height:auto;
     }
 
-    .hero-glow{
-
-        width:340px;
-
-        height:340px;
-
-    }
-
-    .hero-lines{
-
-        width:300px;
-
-        height:300px;
-
+    .hero-pdf{
+        max-width:620px;
     }
 
 }
 
+@media (max-width:768px){
+
+    .hero-inner{
+        padding:80px 24px;
+    }
+
+    .hero h1{
+        font-size:46px;
+        line-height:1.08;
+    }
+
+    .hero .lead{
+        font-size:18px;
+    }
+
+    .hero .cta{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .hero-pdf{
+        max-width:100%;
+    }
+
+    .hero-lines{
+        width:420px;
+        height:420px;
+    }
+
+}
 /* =======================================
    METHODOLOGY
 ======================================= */
