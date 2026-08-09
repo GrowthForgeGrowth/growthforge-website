@@ -455,30 +455,55 @@ METHODOLOGY
 }
 
 /* =========================================
-   PRICING CARDS
+   PRICING PACKAGE
 ========================================= */
 
 .pricing-package{
     padding:90px 0 100px;
 }
 
+.pricing-package .container{
+    width:min(1500px,96%);
+    max-width:1500px;
+    margin:0 auto;
+}
+
+
+/* =========================================
+   PRICING GRID
+========================================= */
+
 .pricing-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:28px;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:24px;
     align-items:stretch;
 }
 
+
+/* =========================================
+   CARD
+========================================= */
+
 .pricing-card-inner{
+    position:relative;
     display:flex;
     flex-direction:column;
+    height:100%;
+    min-width:0;
+
     padding:28px;
-    background:#fff;
+
+    background:#ffffff;
     border:1px solid #e2e8f0;
     border-radius:24px;
+
     box-shadow:0 18px 45px rgba(15,23,42,.06);
-    transition:.3s ease;
-    height:100%;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 }
 
 .pricing-card-inner:hover{
@@ -488,13 +513,11 @@ METHODOLOGY
 }
 
 
-
 /* =========================================
    FEATURED CARD
 ========================================= */
 
 .featured-plan{
-    position:relative;
     border:2px solid #dc2626;
     box-shadow:0 28px 70px rgba(220,38,38,.18);
 }
@@ -503,16 +526,19 @@ METHODOLOGY
     position:absolute;
     top:18px;
     right:18px;
+
     padding:8px 16px;
+
     border-radius:999px;
+
     background:#dc2626;
-    color:#fff;
+    color:#ffffff;
+
     font-size:11px;
     font-weight:700;
     letter-spacing:.08em;
     text-transform:uppercase;
 }
-
 
 
 /* =========================================
@@ -522,15 +548,24 @@ METHODOLOGY
 .pricing-icon{
     width:58px;
     height:58px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     margin-bottom:18px;
+
     border-radius:16px;
+
     background:linear-gradient(135deg,#eff6ff,#dbeafe);
+
     color:#2563eb;
 }
 
+.pricing-icon svg{
+    width:28px;
+    height:28px;
+}
 
 
 /* =========================================
@@ -540,26 +575,32 @@ METHODOLOGY
 .pricing-category{
     display:block;
     margin-bottom:8px;
+
+    color:#2563eb;
+
     font-size:13px;
     font-weight:700;
-    text-transform:uppercase;
     letter-spacing:.08em;
-    color:#2563eb;
+    text-transform:uppercase;
 }
 
 .pricing-plan{
     margin:0 0 18px;
-    font-size:15px;
+
     color:#64748b;
+
+    font-size:15px;
+    line-height:1.45;
 }
 
 .pricing-description{
     margin:0 0 20px;
+
     color:#475569;
+
     font-size:15px;
     line-height:1.65;
 }
-
 
 
 /* =========================================
@@ -569,33 +610,43 @@ METHODOLOGY
 .pricing-cost{
     display:flex;
     align-items:flex-start;
+
     margin-bottom:6px;
 }
 
 .currency{
     margin-top:8px;
     margin-right:4px;
+
     font-size:22px;
     font-weight:700;
+
+    color:#0f172a;
 }
 
 .amount{
     font:800 54px Manrope,sans-serif;
     line-height:.9;
     letter-spacing:-.04em;
+
+    color:#0f172a;
 }
 
 .pricing-frequency{
     margin:0 0 18px;
+
     color:#64748b;
+
     font-size:15px;
 }
 
 .pricing-custom{
     margin-bottom:18px;
-    font:800 42px Manrope,sans-serif;
-}
 
+    font:800 42px Manrope,sans-serif;
+
+    color:#0f172a;
+}
 
 
 /* =========================================
@@ -603,11 +654,13 @@ METHODOLOGY
 ========================================= */
 
 .pricing-divider{
+    width:100%;
     height:1px;
-    background:#e5e7eb;
-    margin:22px 0;
-}
 
+    margin:22px 0;
+
+    background:#e5e7eb;
+}
 
 
 /* =========================================
@@ -616,37 +669,46 @@ METHODOLOGY
 
 .pricing-list-title{
     margin:0 0 14px;
+
+    color:#2563eb;
+
     font-size:12px;
     font-weight:800;
     letter-spacing:.12em;
     text-transform:uppercase;
-    color:#2563eb;
 }
 
 .pricing-features{
     list-style:none;
+
     margin:0;
     padding:0;
+
     display:grid;
     gap:10px;
 }
 
 .pricing-features li{
     position:relative;
+
     padding-left:24px;
-    font-size:15px;
+
     color:#334155;
+
+    font-size:15px;
     line-height:1.45;
 }
 
 .pricing-features li::before{
     content:"✓";
+
     position:absolute;
     left:0;
+
     color:#2563eb;
+
     font-weight:700;
 }
-
 
 
 /* =========================================
@@ -656,29 +718,36 @@ METHODOLOGY
 .pricing-highlight{
     margin-top:24px;
     margin-bottom:22px;
+
     padding:18px;
+
     background:#f8fafc;
+
     border:1px solid #e2e8f0;
     border-radius:16px;
 }
 
 .highlight-title{
     display:block;
+
     margin-bottom:8px;
+
+    color:#2563eb;
+
     font-size:11px;
     font-weight:800;
     letter-spacing:.12em;
     text-transform:uppercase;
-    color:#2563eb;
 }
 
 .pricing-highlight p{
     margin:0;
+
     color:#475569;
+
     font-size:14px;
     line-height:1.55;
 }
-
 
 
 /* =========================================
@@ -686,23 +755,49 @@ METHODOLOGY
 ========================================= */
 
 .pricing-button{
-    width:100%;
-    margin-top:auto;
-}
-
-.pricing-button.btn,
-.pricing-button{
     display:block;
+
+    width:100%;
+
+    margin-top:auto;
+
     text-align:center;
 }
-
 
 
 /* =========================================
    RESPONSIVE
 ========================================= */
 
-@media (max-width:1280px){
+@media (max-width:1600px){
+
+    .pricing-package .container{
+        width:min(1450px,96%);
+    }
+
+    .pricing-grid{
+        grid-template-columns:repeat(5,minmax(220px,1fr));
+    }
+
+}
+
+@media (max-width:1400px){
+
+    .pricing-package .container{
+        width:min(1280px,95%);
+    }
+
+    .pricing-grid{
+        grid-template-columns:repeat(3,minmax(280px,1fr));
+    }
+
+}
+
+@media (max-width:992px){
+
+    .pricing-package .container{
+        width:min(1000px,94%);
+    }
 
     .pricing-grid{
         grid-template-columns:repeat(2,minmax(280px,1fr));
@@ -711,6 +806,14 @@ METHODOLOGY
 }
 
 @media (max-width:768px){
+
+    .pricing-package{
+        padding:70px 0 80px;
+    }
+
+    .pricing-package .container{
+        width:min(92%,560px);
+    }
 
     .pricing-grid{
         grid-template-columns:1fr;
