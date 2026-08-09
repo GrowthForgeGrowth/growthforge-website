@@ -15047,3 +15047,126 @@ SECTION: RESPONSIVE
     }
 
 }
+
+/* =========================================
+LOGO MARQUEE
+========================================= */
+
+.logo-marquee{
+    position:relative;
+    overflow:hidden;
+    padding:34px 0;
+    background:#08111f;
+    border-top:1px solid rgba(255,255,255,.06);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+/* Fade edges */
+
+.logo-marquee::before,
+.logo-marquee::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:180px;
+    height:100%;
+    z-index:10;
+    pointer-events:none;
+}
+
+.logo-marquee::before{
+    left:0;
+    background:linear-gradient(to right,#08111f 0%,rgba(8,17,31,0) 100%);
+}
+
+.logo-marquee::after{
+    right:0;
+    background:linear-gradient(to left,#08111f 0%,rgba(8,17,31,0) 100%);
+}
+
+/* Track */
+
+.logo-track{
+    display:flex;
+    align-items:center;
+    gap:90px;
+    width:max-content;
+    animation:logoScroll 40s linear infinite;
+}
+
+.logo-marquee:hover .logo-track{
+    animation-play-state:paused;
+}
+
+/* Logos */
+
+.logo-track img{
+    height:34px;
+    width:auto;
+    flex-shrink:0;
+    opacity:.65;
+    transition:all .3s ease;
+    filter:grayscale(100%) brightness(0) invert(1);
+}
+
+.logo-track img:hover{
+    opacity:1;
+    transform:scale(1.08);
+}
+
+/* Animation */
+
+@keyframes logoScroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (max-width:992px){
+
+    .logo-track{
+        gap:70px;
+        animation-duration:32s;
+    }
+
+    .logo-track img{
+        height:28px;
+    }
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:768px){
+
+    .logo-marquee{
+        padding:26px 0;
+    }
+
+    .logo-track{
+        gap:50px;
+        animation-duration:26s;
+    }
+
+    .logo-track img{
+        height:24px;
+    }
+
+    .logo-marquee::before,
+    .logo-marquee::after{
+        width:70px;
+    }
+
+}
