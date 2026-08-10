@@ -25319,15 +25319,16 @@ Home Page FINAL CTA
     max-width:1280px;
     margin:0 auto;
     padding:80px 0 90px !important;
+    box-sizing:border-box;
 }
 
 .hero.container > div{
-    max-width:900px;
+    max-width:920px;
 }
 
 
 /* ==========================================
-   EYEBROW
+   GEO EYEBROW
    ========================================== */
 
 .hero.container .eyebrow{
@@ -25344,7 +25345,7 @@ Home Page FINAL CTA
 
 
 /* ==========================================
-   HEADLINE
+   GEO HEADLINE
    ========================================== */
 
 .hero.container h1{
@@ -25360,11 +25361,11 @@ Home Page FINAL CTA
 
 
 /* ==========================================
-   LEAD
+   GEO LEAD
    ========================================== */
 
 .hero.container .lead{
-    max-width:820px;
+    max-width:850px;
     margin:0 0 24px;
     color:#475569;
     font-family:Manrope,sans-serif;
@@ -25375,17 +25376,17 @@ Home Page FINAL CTA
 
 
 /* ==========================================
-   BYLINE / AUTHORITY STATEMENT
+   GEO AUTHORITY STATEMENT
    ========================================== */
 
 .hero.container .byline{
-    max-width:780px;
+    max-width:820px;
     margin:0 0 34px;
     color:#64748b;
     font-family:Manrope,sans-serif;
-    font-size:14px;
+    font-size:15px;
     font-weight:500;
-    line-height:1.7;
+    line-height:1.75;
 }
 
 .hero.container .byline strong{
@@ -25416,12 +25417,18 @@ Home Page FINAL CTA
     font-weight:700;
     line-height:1;
     text-decoration:none;
+    box-sizing:border-box;
     transition:
         transform .25s ease,
         box-shadow .25s ease,
         background .25s ease,
         border-color .25s ease;
 }
+
+
+/* ==========================================
+   PRIMARY CTA
+   ========================================== */
 
 .hero.container .cta .btn:first-child{
     background:#2563eb;
@@ -25437,6 +25444,11 @@ Home Page FINAL CTA
     transform:translateY(-1px);
 }
 
+
+/* ==========================================
+   SECONDARY CTA
+   ========================================== */
+
 .hero.container .cta .btn:nth-child(2){
     background:#f1f5f9 !important;
     border:2px solid #2563eb !important;
@@ -25445,6 +25457,8 @@ Home Page FINAL CTA
 
 .hero.container .cta .btn:nth-child(2):hover{
     background:#ffffff !important;
+    border-color:#1d4ed8 !important;
+    color:#1d4ed8 !important;
     box-shadow:0 8px 20px rgba(37,99,235,.10);
     transform:translateY(-1px);
 }
@@ -25483,6 +25497,7 @@ Home Page FINAL CTA
 
     .hero.container h1{
         font-size:clamp(40px,10vw,52px);
+        line-height:1.06;
         letter-spacing:-.045em;
     }
 
@@ -25493,6 +25508,7 @@ Home Page FINAL CTA
 
     .hero.container .byline{
         font-size:14px;
+        line-height:1.7;
     }
 
     .hero.container .cta{
@@ -25523,6 +25539,10 @@ Home Page FINAL CTA
 
     .hero.container .lead{
         font-size:17px;
+    }
+
+    .hero.container .byline{
+        font-size:13px;
     }
 
 }
