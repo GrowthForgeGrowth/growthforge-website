@@ -24636,3 +24636,201 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI GROWTH EXPERIMENTATION OS
+   EXPERIMENT REVIEW CHECKLIST
+   PAGE-SPECIFIC ONLY
+   ========================================== */
+
+.growth-os-checklist{
+    padding:90px 0;
+    background:#f8fafc;
+}
+
+.growth-os-checklist .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+.growth-os-checklist__heading{
+    max-width:760px;
+    margin:0 0 48px;
+}
+
+.growth-os-checklist__eyebrow{
+    display:inline-block;
+    margin-bottom:16px;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    line-height:1.4;
+    text-transform:uppercase;
+}
+
+.growth-os-checklist__heading h2{
+    margin:0 0 18px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(38px,4vw,52px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
+}
+
+.growth-os-checklist__heading p{
+    margin:0;
+    color:#475569;
+    font-size:18px;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   CHECKLIST
+   ========================================== */
+
+.growth-os-checklist__content{
+    max-width:900px;
+}
+
+.growth-os-checklist__list{
+    margin:0;
+    padding:0;
+    list-style:none;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
+}
+
+.growth-os-checklist__list li{
+    position:relative;
+    margin:0;
+    padding:22px 28px 22px 62px;
+    color:#334155;
+    font-size:16px;
+    line-height:1.65;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.growth-os-checklist__list li:last-child{
+    border-bottom:none;
+}
+
+.growth-os-checklist__list li::before{
+    content:"✓";
+    position:absolute;
+    left:27px;
+    top:21px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:22px;
+    height:22px;
+    border:1px solid #bfdbfe;
+    border-radius:50%;
+    color:#2563eb;
+    font-size:12px;
+    font-weight:800;
+}
+
+
+/* ==========================================
+   NOTE
+   ========================================== */
+
+.growth-os-checklist__note{
+    margin-top:28px;
+    padding:24px 28px;
+    border-left:3px solid #2563eb;
+    background:#fff;
+    border-radius:0 10px 10px 0;
+}
+
+.growth-os-checklist__note p{
+    margin:0;
+    color:#64748b;
+    font-size:15px;
+    line-height:1.75;
+}
+
+.growth-os-checklist__link{
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.growth-os-checklist__link:hover{
+    text-decoration:underline;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width:1050px){
+
+    .growth-os-checklist{
+        padding:75px 28px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .growth-os-checklist{
+        padding:65px 24px;
+    }
+
+    .growth-os-checklist__heading{
+        margin-bottom:38px;
+    }
+
+    .growth-os-checklist__heading h2{
+        font-size:38px;
+    }
+
+    .growth-os-checklist__heading p{
+        font-size:17px;
+    }
+
+    .growth-os-checklist__list li{
+        padding:20px 22px 20px 56px;
+    }
+
+    .growth-os-checklist__list li::before{
+        left:22px;
+        top:19px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .growth-os-checklist{
+        padding:55px 20px;
+    }
+
+    .growth-os-checklist__heading h2{
+        font-size:34px;
+    }
+
+    .growth-os-checklist__list li{
+        padding:19px 18px 19px 50px;
+        font-size:15px;
+    }
+
+    .growth-os-checklist__list li::before{
+        left:18px;
+        top:18px;
+    }
+
+    .growth-os-checklist__note{
+        padding:20px;
+    }
+
+}
