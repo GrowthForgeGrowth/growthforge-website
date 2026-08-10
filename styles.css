@@ -24086,3 +24086,169 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI GROWTH EXPERIMENTATION OS
+   NECESSITY SECTION
+   ========================================== */
+
+.growth-os-necessity{
+    padding:90px 0;
+    background:#f8fafc;
+}
+
+.growth-os-necessity .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+.growth-os-necessity__heading{
+    max-width:760px;
+    margin:0 0 50px;
+}
+
+.growth-os-necessity__eyebrow{
+    display:inline-block;
+    margin-bottom:16px;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    line-height:1.4;
+    text-transform:uppercase;
+}
+
+.growth-os-necessity__heading h2{
+    margin:0 0 18px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(36px,4vw,52px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
+}
+
+.growth-os-necessity__heading p{
+    max-width:680px;
+    margin:0;
+    color:#475569;
+    font-size:18px;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   CARDS
+   ========================================== */
+
+.growth-os-necessity__grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:24px;
+}
+
+.growth-os-necessity__card{
+    padding:34px;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.growth-os-necessity__card:hover{
+    transform:translateY(-3px);
+    border-color:#cbd5e1;
+    box-shadow:0 16px 38px rgba(15,23,42,.08);
+}
+
+.growth-os-necessity__number{
+    display:block;
+    margin-bottom:24px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.growth-os-necessity__card h3{
+    margin:0 0 14px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:21px;
+    font-weight:700;
+    line-height:1.35;
+    letter-spacing:-.02em;
+}
+
+.growth-os-necessity__card p{
+    margin:0;
+    color:#64748b;
+    font-size:16px;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width:1050px){
+
+    .growth-os-necessity{
+        padding:75px 28px;
+    }
+
+    .growth-os-necessity__grid{
+        grid-template-columns:1fr;
+    }
+
+    .growth-os-necessity__card{
+        max-width:760px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .growth-os-necessity{
+        padding:65px 24px;
+    }
+
+    .growth-os-necessity__heading{
+        margin-bottom:38px;
+    }
+
+    .growth-os-necessity__heading h2{
+        font-size:38px;
+    }
+
+    .growth-os-necessity__heading p{
+        font-size:17px;
+    }
+
+    .growth-os-necessity__card{
+        padding:28px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .growth-os-necessity{
+        padding:55px 20px;
+    }
+
+    .growth-os-necessity__heading h2{
+        font-size:34px;
+    }
+
+    .growth-os-necessity__card{
+        padding:24px;
+    }
+
+}
