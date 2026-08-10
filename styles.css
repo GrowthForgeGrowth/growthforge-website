@@ -23606,25 +23606,30 @@ Home Page FINAL CTA
    LOGO
 ========================================== */
 
-.header-logo{
-    display:flex;
-    align-items:center;
-    flex-shrink:0;
-    text-decoration:none;
-}
-
-.header-logo picture{
-    display:flex;
-    align-items:center;
-}
-
 .header-logo-image{
     display:block;
-    width:220px;
+    width:160px;
     height:auto;
     max-width:100%;
 }
 
+@media (max-width:1050px){
+    .header-logo-image{
+        width:150px;
+    }
+}
+
+@media (max-width:768px){
+    .header-logo-image{
+        width:135px;
+    }
+}
+
+@media (max-width:480px){
+    .header-logo-image{
+        width:125px;
+    }
+}
 
 /* ==========================================
    NAVIGATION
