@@ -25963,3 +25963,304 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   GEO vs. TRADITIONAL SEO
+   PAGE-SCOPED
+   ========================================== */
+
+.geo-comparison{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.geo-comparison > .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+   ========================================== */
+
+.geo-comparison__heading{
+    max-width:820px;
+    margin:0 0 52px;
+}
+
+.geo-comparison__eyebrow{
+    display:inline-block;
+    margin:0 0 16px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.4;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.geo-comparison__heading h2{
+    max-width:820px;
+    margin:0 0 18px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(38px,4vw,52px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
+}
+
+.geo-comparison__heading p{
+    max-width:760px;
+    margin:0;
+    color:#475569;
+    font-family:Manrope,sans-serif;
+    font-size:18px;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   COMPARISON GRID
+   ========================================== */
+
+.geo-comparison__grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+}
+
+
+/* ==========================================
+   COMPARISON CARDS
+   ========================================== */
+
+.geo-comparison__card{
+    padding:38px;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(15,23,42,.045);
+}
+
+.geo-comparison__card--geo{
+    border-color:#bfdbfe;
+    box-shadow:0 12px 32px rgba(37,99,235,.08);
+}
+
+
+/* ==========================================
+   CARD LABEL
+   ========================================== */
+
+.geo-comparison__label{
+    display:inline-block;
+    margin:0 0 14px;
+    color:#64748b;
+    font-family:Manrope,sans-serif;
+    font-size:12px;
+    font-weight:800;
+    line-height:1.4;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+
+.geo-comparison__card--geo .geo-comparison__label{
+    color:#2563eb;
+}
+
+
+/* ==========================================
+   CARD TITLE
+   ========================================== */
+
+.geo-comparison__card h3{
+    margin:0 0 26px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:26px;
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:-.03em;
+}
+
+
+/* ==========================================
+   COMPARISON LIST
+   ========================================== */
+
+.geo-comparison__card ul{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.geo-comparison__card li{
+    position:relative;
+    padding-left:27px;
+    color:#475569;
+    font-family:Manrope,sans-serif;
+    font-size:15px;
+    line-height:1.7;
+}
+
+.geo-comparison__card li::before{
+    content:"";
+    position:absolute;
+    top:.65em;
+    left:0;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#cbd5e1;
+}
+
+.geo-comparison__card--geo li::before{
+    background:#2563eb;
+}
+
+
+/* ==========================================
+   CONCLUSION
+   ========================================== */
+
+.geo-comparison__conclusion{
+    max-width:900px;
+    margin:42px auto 0;
+    padding:28px 32px;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-left:4px solid #2563eb;
+    border-radius:10px;
+}
+
+.geo-comparison__conclusion strong{
+    display:block;
+    margin:0 0 8px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:18px;
+    font-weight:800;
+    line-height:1.4;
+}
+
+.geo-comparison__conclusion p{
+    margin:0;
+    color:#475569;
+    font-family:Manrope,sans-serif;
+    font-size:15px;
+    line-height:1.75;
+}
+
+.geo-comparison__conclusion .link{
+    color:#2563eb;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.geo-comparison__conclusion .link:hover{
+    color:#1d4ed8;
+    text-decoration:underline;
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width:1100px){
+
+    .geo-comparison{
+        padding:80px 28px;
+    }
+
+    .geo-comparison__grid{
+        gap:20px;
+    }
+
+    .geo-comparison__card{
+        padding:32px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width:768px){
+
+    .geo-comparison{
+        padding:65px 24px;
+    }
+
+    .geo-comparison__heading{
+        margin-bottom:40px;
+    }
+
+    .geo-comparison__heading h2{
+        font-size:38px;
+    }
+
+    .geo-comparison__heading p{
+        font-size:17px;
+    }
+
+    .geo-comparison__grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .geo-comparison__card{
+        padding:28px;
+    }
+
+    .geo-comparison__card h3{
+        font-size:23px;
+    }
+
+    .geo-comparison__conclusion{
+        margin-top:28px;
+        padding:24px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width:480px){
+
+    .geo-comparison{
+        padding:55px 20px;
+    }
+
+    .geo-comparison__heading h2{
+        font-size:34px;
+    }
+
+    .geo-comparison__card{
+        padding:24px;
+    }
+
+    .geo-comparison__card h3{
+        font-size:21px;
+    }
+
+    .geo-comparison__card li{
+        font-size:14px;
+    }
+
+    .geo-comparison__conclusion{
+        padding:20px;
+    }
+
+}
