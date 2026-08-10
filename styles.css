@@ -24837,19 +24837,24 @@ Home Page FINAL CTA
 
 /* ==========================================
    AI GROWTH EXPERIMENTATION OS
-   30-DAY IMPLEMENTATION
-   PAGE-SPECIFIC ONLY
+   30-DAY IMPLEMENTATION SEQUENCE
+   PAGE-SCOPED
    ========================================== */
 
 .growth-os-implementation{
     padding:100px 0;
-    background:#fff;
+    background:#ffffff;
 }
 
-.growth-os-implementation .container{
+.growth-os-implementation > .container{
     max-width:1280px;
     margin:0 auto;
 }
+
+
+/* ==========================================
+   SECTION HEADING
+   ========================================== */
 
 .growth-os-implementation__heading{
     max-width:760px;
@@ -24858,8 +24863,9 @@ Home Page FINAL CTA
 
 .growth-os-implementation__eyebrow{
     display:inline-block;
-    margin-bottom:16px;
+    margin:0 0 16px;
     color:#2563eb;
+    font-family:Manrope,sans-serif;
     font-size:13px;
     font-weight:700;
     letter-spacing:.12em;
@@ -24878,15 +24884,18 @@ Home Page FINAL CTA
 }
 
 .growth-os-implementation__heading p{
+    max-width:680px;
     margin:0;
     color:#475569;
+    font-family:Manrope,sans-serif;
     font-size:18px;
+    font-weight:400;
     line-height:1.75;
 }
 
 
 /* ==========================================
-   IMPLEMENTATION CARDS
+   FOUR-WEEK GRID
    ========================================== */
 
 .growth-os-implementation__grid{
@@ -24895,18 +24904,23 @@ Home Page FINAL CTA
     gap:22px;
 }
 
+
+/* ==========================================
+   IMPLEMENTATION CARDS
+   ========================================== */
+
 .growth-os-implementation__card{
     position:relative;
-    min-height:250px;
+    min-height:260px;
     padding:32px;
-    background:#fff;
+    background:#ffffff;
     border:1px solid #e2e8f0;
     border-radius:14px;
-    box-shadow:0 10px 30px rgba(15,23,42,.05);
+    box-shadow:0 8px 25px rgba(15,23,42,.045);
     transition:
         transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
 .growth-os-implementation__card:hover{
@@ -24915,45 +24929,70 @@ Home Page FINAL CTA
     box-shadow:0 16px 38px rgba(15,23,42,.08);
 }
 
+
+/* ==========================================
+   CARD NUMBER
+   ========================================== */
+
 .growth-os-implementation__number{
-    margin-bottom:28px;
+    margin:0 0 26px;
     color:#2563eb;
     font-family:Manrope,sans-serif;
     font-size:13px;
     font-weight:800;
-    letter-spacing:.1em;
+    letter-spacing:.12em;
+    line-height:1;
 }
+
+
+/* ==========================================
+   WEEK LABEL
+   ========================================== */
 
 .growth-os-implementation__week{
     display:block;
-    margin-bottom:10px;
+    margin:0 0 10px;
     color:#64748b;
-    font-size:13px;
+    font-family:Manrope,sans-serif;
+    font-size:12px;
     font-weight:700;
-    letter-spacing:.04em;
+    letter-spacing:.08em;
+    line-height:1.4;
     text-transform:uppercase;
 }
+
+
+/* ==========================================
+   CARD TITLE
+   ========================================== */
 
 .growth-os-implementation__card h3{
     margin:0 0 14px;
     color:#0f172a;
     font-family:Manrope,sans-serif;
-    font-size:21px;
+    font-size:20px;
     font-weight:700;
     line-height:1.35;
     letter-spacing:-.02em;
 }
 
+
+/* ==========================================
+   CARD DESCRIPTION
+   ========================================== */
+
 .growth-os-implementation__card p{
     margin:0;
     color:#64748b;
-    font-size:16px;
+    font-family:Manrope,sans-serif;
+    font-size:15px;
+    font-weight:400;
     line-height:1.75;
 }
 
 
 /* ==========================================
-   RESPONSIVE
+   TABLET
    ========================================== */
 
 @media (max-width:1100px){
@@ -24964,9 +25003,15 @@ Home Page FINAL CTA
 
     .growth-os-implementation__grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:20px;
     }
 
 }
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
 
 @media (max-width:768px){
 
@@ -24988,6 +25033,7 @@ Home Page FINAL CTA
 
     .growth-os-implementation__grid{
         grid-template-columns:1fr;
+        gap:16px;
     }
 
     .growth-os-implementation__card{
@@ -24996,6 +25042,11 @@ Home Page FINAL CTA
     }
 
 }
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
 
 @media (max-width:480px){
 
@@ -25009,6 +25060,14 @@ Home Page FINAL CTA
 
     .growth-os-implementation__card{
         padding:24px;
+    }
+
+    .growth-os-implementation__card h3{
+        font-size:19px;
+    }
+
+    .growth-os-implementation__card p{
+        font-size:15px;
     }
 
 }
