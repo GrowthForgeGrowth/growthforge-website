@@ -25309,3 +25309,220 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   GEO HERO
+   PAGE-SCOPED
+   ========================================== */
+
+.hero.container{
+    max-width:1280px;
+    margin:0 auto;
+    padding:80px 0 90px !important;
+}
+
+.hero.container > div{
+    max-width:900px;
+}
+
+
+/* ==========================================
+   EYEBROW
+   ========================================== */
+
+.hero.container .eyebrow{
+    display:inline-block;
+    margin:0 0 18px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.4;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+
+/* ==========================================
+   HEADLINE
+   ========================================== */
+
+.hero.container h1{
+    max-width:900px;
+    margin:0 0 24px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(46px,5.5vw,72px);
+    font-weight:800;
+    line-height:1.04;
+    letter-spacing:-.055em;
+}
+
+
+/* ==========================================
+   LEAD
+   ========================================== */
+
+.hero.container .lead{
+    max-width:820px;
+    margin:0 0 24px;
+    color:#475569;
+    font-family:Manrope,sans-serif;
+    font-size:20px;
+    font-weight:400;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   BYLINE / AUTHORITY STATEMENT
+   ========================================== */
+
+.hero.container .byline{
+    max-width:780px;
+    margin:0 0 34px;
+    color:#64748b;
+    font-family:Manrope,sans-serif;
+    font-size:14px;
+    font-weight:500;
+    line-height:1.7;
+}
+
+.hero.container .byline strong{
+    color:#334155;
+}
+
+
+/* ==========================================
+   CTA GROUP
+   ========================================== */
+
+.hero.container .cta{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.hero.container .cta .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:52px;
+    padding:0 24px;
+    border-radius:9px;
+    font-family:Manrope,sans-serif;
+    font-size:14px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.hero.container .cta .btn:first-child{
+    background:#2563eb;
+    border:1px solid #2563eb;
+    color:#ffffff;
+    box-shadow:0 8px 22px rgba(37,99,235,.16);
+}
+
+.hero.container .cta .btn:first-child:hover{
+    background:#1d4ed8;
+    border-color:#1d4ed8;
+    box-shadow:0 12px 28px rgba(37,99,235,.22);
+    transform:translateY(-1px);
+}
+
+.hero.container .cta .btn:nth-child(2){
+    background:#f1f5f9 !important;
+    border:2px solid #2563eb !important;
+    color:#2563eb !important;
+}
+
+.hero.container .cta .btn:nth-child(2):hover{
+    background:#ffffff !important;
+    box-shadow:0 8px 20px rgba(37,99,235,.10);
+    transform:translateY(-1px);
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width:1100px){
+
+    .hero.container{
+        padding:70px 28px 80px !important;
+    }
+
+    .hero.container > div{
+        max-width:850px;
+    }
+
+    .hero.container h1{
+        font-size:clamp(44px,6vw,64px);
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width:768px){
+
+    .hero.container{
+        padding:60px 24px 70px !important;
+    }
+
+    .hero.container h1{
+        font-size:clamp(40px,10vw,52px);
+        letter-spacing:-.045em;
+    }
+
+    .hero.container .lead{
+        font-size:18px;
+        line-height:1.7;
+    }
+
+    .hero.container .byline{
+        font-size:14px;
+    }
+
+    .hero.container .cta{
+        align-items:stretch;
+        flex-direction:column;
+    }
+
+    .hero.container .cta .btn{
+        width:100%;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width:480px){
+
+    .hero.container{
+        padding:52px 20px 60px !important;
+    }
+
+    .hero.container h1{
+        font-size:38px;
+    }
+
+    .hero.container .lead{
+        font-size:17px;
+    }
+
+}
