@@ -23585,7 +23585,7 @@ Home Page FINAL CTA
     position:relative;
     z-index:1000;
     width:100%;
-    background:rgba(255,255,255,.97);
+    background:#ffffff;
     border-bottom:1px solid #e2e8f0;
 }
 
@@ -23593,11 +23593,6 @@ Home Page FINAL CTA
     max-width:1280px;
     margin:0 auto;
 }
-
-
-/* ==========================================
-   HEADER INNER
-========================================== */
 
 .header-inner{
     min-height:82px;
@@ -23608,37 +23603,36 @@ Home Page FINAL CTA
 
 
 /* ==========================================
-   LOGO
+   GROWTHFORGE WORDMARK
 ========================================== */
 
 .header-logo{
-    display:flex;
+    display:inline-flex;
     align-items:center;
     flex-shrink:0;
+
     margin:0;
     padding:0;
-    background:transparent;
+
+    font-family:Manrope,sans-serif;
+    font-size:30px;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-.045em;
+
+    color:#0f172a;
     text-decoration:none;
+
+    transition:opacity .25s ease;
 }
 
-.header-logo picture{
-    display:flex;
-    align-items:center;
-    margin:0;
-    padding:0;
-    background:transparent;
+.header-logo strong{
+    color:#2563eb;
+    font-weight:800;
 }
 
-.header-logo-image{
-    display:block;
-    width:82px;
-    height:auto;
-    max-width:100%;
-    margin:0;
-    padding:0;
-    background:transparent;
-    border:0;
-    object-fit:contain;
+.header-logo:hover{
+    opacity:.9;
 }
 
 
@@ -23650,31 +23644,40 @@ Home Page FINAL CTA
     display:flex;
     align-items:center;
     justify-content:center;
+
     gap:36px;
     margin-left:auto;
 }
 
 .header-nav a{
     position:relative;
+
     color:#334155;
     text-decoration:none;
+
     font-family:Manrope,sans-serif;
     font-size:15px;
     font-weight:600;
     line-height:1;
+
     transition:color .25s ease;
 }
 
 .header-nav a::after{
     content:"";
+
     position:absolute;
     left:0;
     bottom:-10px;
+
     width:100%;
     height:1px;
+
     background:#2563eb;
+
     transform:scaleX(0);
     transform-origin:center;
+
     transition:transform .25s ease;
 }
 
@@ -23695,8 +23698,8 @@ Home Page FINAL CTA
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
 
+    gap:10px;
     flex-shrink:0;
 
     min-height:48px;
@@ -23713,13 +23716,11 @@ Home Page FINAL CTA
     font-family:Manrope,sans-serif;
     font-size:14px;
     font-weight:700;
-    letter-spacing:-.01em;
 
     box-shadow:0 8px 20px rgba(37,99,235,.16);
 
     transition:
         background .25s ease,
-        border-color .25s ease,
         box-shadow .25s ease,
         transform .25s ease;
 }
@@ -23733,7 +23734,7 @@ Home Page FINAL CTA
 .header-cta:hover{
     background:#1d4ed8;
     border-color:#1d4ed8;
-    box-shadow:0 12px 28px rgba(37,99,235,.24);
+    box-shadow:0 12px 28px rgba(37,99,235,.22);
     transform:translateY(-1px);
 }
 
@@ -23757,8 +23758,8 @@ Home Page FINAL CTA
         gap:24px;
     }
 
-    .header-logo-image{
-        width:76px;
+    .header-logo{
+        font-size:28px;
     }
 
     .header-nav{
@@ -23783,8 +23784,8 @@ Home Page FINAL CTA
         min-height:74px;
     }
 
-    .header-logo-image{
-        width:68px;
+    .header-logo{
+        font-size:25px;
     }
 
     .header-nav{
@@ -23819,8 +23820,8 @@ Home Page FINAL CTA
         gap:14px;
     }
 
-    .header-logo-image{
-        width:60px;
+    .header-logo{
+        font-size:22px;
     }
 
     .header-cta{
