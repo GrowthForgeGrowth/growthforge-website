@@ -23496,288 +23496,64 @@ Home Page FINAL CTA
 }
 
 /* ==========================================
-   GROWTH RESEARCH
+   RESEARCH TEASER
 ========================================== */
 
-.growth-research{
-    padding:100px 0;
-    background:#ffffff;
+.growth-research-teaser{
+    padding:90px 0;
+    background:#f8fafc;
+    border-top:1px solid #e2e8f0;
+    border-bottom:1px solid #e2e8f0;
 }
 
-.growth-research .container{
-    max-width:1180px;
+.growth-research-teaser .container{
+    max-width:1280px;
 }
 
-
-/* ==========================================
-   HEADING
-========================================== */
-
-.growth-research .section-heading{
-    max-width:780px;
-    margin:0 0 55px;
+.research-teaser-content{
+    max-width:820px;
+    margin:0 auto;
+    text-align:center;
 }
 
-.growth-research .section-badge{
+.research-teaser-content .section-badge{
     display:inline-flex;
     align-items:center;
-    padding:7px 14px;
-    margin-bottom:20px;
+    justify-content:center;
+    padding:9px 17px;
+    margin-bottom:24px;
     border-radius:999px;
     background:#eff6ff;
     border:1px solid #dbeafe;
     color:#2563eb;
     font-size:12px;
     font-weight:700;
-    letter-spacing:.08em;
+    letter-spacing:.1em;
     text-transform:uppercase;
 }
 
-.growth-research .section-heading h2{
-    margin:0 0 18px;
+.research-teaser-content h2{
+    margin:0 0 20px;
     font-family:Manrope,sans-serif;
     font-size:clamp(36px,4vw,52px);
-    line-height:1.08;
-    letter-spacing:-.035em;
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
     color:#0f172a;
 }
 
-.growth-research .section-heading p{
-    margin:0;
+.research-teaser-content p{
+    max-width:700px;
+    margin:0 auto 32px;
     font-size:18px;
     line-height:1.8;
     color:#64748b;
 }
 
-
-/* ==========================================
-   RESEARCH PANEL
-========================================== */
-
-.research-panel{
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:55px;
-    padding:42px 0;
-    border-top:1px solid #e2e8f0;
-    border-bottom:1px solid #e2e8f0;
-}
-
-
-/* ==========================================
-   PRIMARY STAT
-========================================== */
-
-.research-primary{
-    padding-right:45px;
-    border-right:1px solid #e2e8f0;
-}
-
-.research-primary .research-source{
-    display:block;
-    margin-bottom:18px;
-    color:#64748b;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.07em;
-    text-transform:uppercase;
-}
-
-.research-primary .research-number{
-    display:block;
-    margin-bottom:8px;
-    font-family:Manrope,sans-serif;
-    font-size:58px;
-    font-weight:800;
-    line-height:1;
-    letter-spacing:-.05em;
-    color:#0f172a;
-}
-
-.research-primary h3{
-    margin:0 0 14px;
-    font-size:19px;
-    line-height:1.35;
-    color:#0f172a;
-}
-
-.research-primary p{
-    margin:0;
-    font-size:14px;
-    line-height:1.7;
-    color:#64748b;
-}
-
-
-/* ==========================================
-   RESEARCH FINDINGS
-========================================== */
-
-.research-findings{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:0;
-}
-
-.research-finding{
-    padding:0 30px 30px 0;
-}
-
-.research-finding:nth-child(2n){
-    padding-left:30px;
-    padding-right:0;
-    border-left:1px solid #e2e8f0;
-}
-
-.research-finding:nth-child(n+3){
-    padding-top:30px;
-    border-top:1px solid #e2e8f0;
-}
-
-.research-finding .finding-number{
-    display:block;
-    margin-bottom:7px;
-    font-family:Manrope,sans-serif;
-    font-size:30px;
-    font-weight:800;
-    line-height:1.1;
-    letter-spacing:-.03em;
-    color:#2563eb;
-}
-
-.research-finding h3{
-    margin:0 0 8px;
-    font-size:17px;
-    font-weight:700;
-    line-height:1.4;
-    color:#0f172a;
-}
-
-.research-finding p{
-    margin:0;
-    font-size:15px;
-    line-height:1.7;
-    color:#64748b;
-}
-
-
-/* ==========================================
-   RESEARCH INTERPRETATION
-========================================== */
-
-.research-interpretation{
-    display:flex;
-    align-items:flex-start;
-    gap:20px;
-    margin-top:35px;
-    padding:25px 28px;
-    background:#f8fafc;
-    border-left:3px solid #2563eb;
-}
-
-.research-interpretation h3{
-    flex:0 0 auto;
-    margin:0;
-    font-size:15px;
-    font-weight:800;
-    color:#0f172a;
-}
-
-.research-interpretation p{
-    margin:0;
-    font-size:15px;
-    line-height:1.75;
-    color:#475569;
-}
-
-
-/* ==========================================
-   GROWTHFORGE CONNECTION
-========================================== */
-
-.research-growthforge{
-    display:flex;
-    justify-content:space-between;
+.research-teaser-content .btn{
+    display:inline-flex;
     align-items:center;
-    gap:40px;
-    margin-top:45px;
-}
-
-.research-growthforge-content{
-    max-width:760px;
-}
-
-.research-growthforge h3{
-    margin:0 0 12px;
-    font-family:Manrope,sans-serif;
-    font-size:25px;
-    line-height:1.3;
-    color:#0f172a;
-}
-
-.research-growthforge p{
-    margin:0;
-    font-size:16px;
-    line-height:1.8;
-    color:#64748b;
-}
-
-.research-growthforge .btn{
-    flex:0 0 auto;
-}
-
-
-/* ==========================================
-   SOURCES
-========================================== */
-
-.research-sources{
-    margin-top:28px;
-    padding-top:20px;
-    border-top:1px solid #f1f5f9;
-}
-
-.research-sources p{
-    margin:0;
-    font-size:12px;
-    line-height:1.7;
-    color:#94a3b8;
-}
-
-.research-sources a{
-    color:#64748b;
-    text-decoration:underline;
-    text-underline-offset:3px;
-}
-
-.research-sources a:hover{
-    color:#2563eb;
-}
-
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width:900px){
-
-    .research-panel{
-        grid-template-columns:1fr;
-        gap:35px;
-    }
-
-    .research-primary{
-        padding-right:0;
-        padding-bottom:30px;
-        border-right:none;
-        border-bottom:1px solid #e2e8f0;
-    }
-
-    .research-growthforge{
-        align-items:flex-start;
-        flex-direction:column;
-    }
-
+    justify-content:center;
 }
 
 
@@ -23785,66 +23561,18 @@ Home Page FINAL CTA
    MOBILE
 ========================================== */
 
-@media (max-width:700px){
+@media (max-width:768px){
 
-    .growth-research{
-        padding:80px 0;
+    .growth-research-teaser{
+        padding:75px 24px;
     }
 
-    .growth-research .section-heading{
-        margin-bottom:40px;
-    }
-
-    .growth-research .section-heading h2{
+    .research-teaser-content h2{
         font-size:36px;
     }
 
-    .growth-research .section-heading p{
+    .research-teaser-content p{
         font-size:17px;
-    }
-
-    .research-panel{
-        padding:32px 0;
-    }
-
-    .research-primary .research-number{
-        font-size:50px;
-    }
-
-    .research-findings{
-        grid-template-columns:1fr;
-    }
-
-    .research-finding,
-    .research-finding:nth-child(2n){
-        padding:24px 0;
-        border-left:none;
-    }
-
-    .research-finding:first-child{
-        padding-top:0;
-    }
-
-    .research-finding:nth-child(n+3){
-        border-top:1px solid #e2e8f0;
-    }
-
-    .research-interpretation{
-        display:block;
-        padding:22px;
-    }
-
-    .research-interpretation h3{
-        margin-bottom:8px;
-    }
-
-    .research-growthforge{
-        margin-top:35px;
-    }
-
-    .research-growthforge .btn{
-        width:100%;
-        text-align:center;
     }
 
 }
