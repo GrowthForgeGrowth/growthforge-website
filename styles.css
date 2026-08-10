@@ -23578,7 +23578,32 @@ Home Page FINAL CTA
 }
 
 /* ==========================================
-   HEADER LOGO
+   PREMIUM HEADER
+========================================== */
+
+.site-header{
+    position:relative;
+    z-index:1000;
+    width:100%;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid #e2e8f0;
+}
+
+.site-header .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+.header-inner{
+    min-height:88px;
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+
+/* ==========================================
+   LOGO
 ========================================== */
 
 .header-logo{
@@ -23602,13 +23627,178 @@ Home Page FINAL CTA
 
 
 /* ==========================================
-   MOBILE LOGO
+   NAVIGATION
+========================================== */
+
+.header-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:38px;
+    margin-left:auto;
+}
+
+.header-nav a{
+    position:relative;
+    color:#334155;
+    text-decoration:none;
+    font-family:Manrope,sans-serif;
+    font-size:15px;
+    font-weight:600;
+    line-height:1;
+    transition:color .25s ease;
+}
+
+.header-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:100%;
+    height:1px;
+    background:#2563eb;
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:transform .25s ease;
+}
+
+.header-nav a:hover{
+    color:#2563eb;
+}
+
+.header-nav a:hover::after{
+    transform:scaleX(1);
+}
+
+
+/* ==========================================
+   HEADER CTA
+========================================== */
+
+.header-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    flex-shrink:0;
+    min-height:50px;
+    padding:0 21px;
+    border-radius:9px;
+    background:#2563eb;
+    border:1px solid #2563eb;
+    color:#ffffff;
+    text-decoration:none;
+    font-family:Manrope,sans-serif;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:-.01em;
+    box-shadow:0 8px 20px rgba(37,99,235,.16);
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+.header-cta span{
+    font-size:18px;
+    line-height:1;
+    transition:transform .25s ease;
+}
+
+.header-cta:hover{
+    background:#1d4ed8;
+    border-color:#1d4ed8;
+    box-shadow:0 12px 28px rgba(37,99,235,.24);
+    transform:translateY(-1px);
+}
+
+.header-cta:hover span{
+    transform:translateX(3px);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1050px){
+
+    .site-header .container{
+        padding-left:28px;
+        padding-right:28px;
+    }
+
+    .header-inner{
+        gap:25px;
+    }
+
+    .header-logo-image{
+        width:200px;
+    }
+
+    .header-nav{
+        gap:25px;
+    }
+
+    .header-cta{
+        padding:0 17px;
+        font-size:13px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
 ========================================== */
 
 @media (max-width:768px){
 
+    .header-inner{
+        min-height:76px;
+    }
+
     .header-logo-image{
         width:180px;
+    }
+
+    .header-nav{
+        display:none;
+    }
+
+    .header-cta{
+        min-height:46px;
+        padding:0 15px;
+        font-size:13px;
+    }
+
+    .header-cta span{
+        display:none;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .site-header .container{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .header-inner{
+        gap:15px;
+    }
+
+    .header-logo-image{
+        width:155px;
+    }
+
+    .header-cta{
+        min-height:43px;
+        padding:0 12px;
+        font-size:12px;
     }
 
 }
