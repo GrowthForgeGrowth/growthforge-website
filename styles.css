@@ -25707,3 +25707,259 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   GEO PROCESS
+   PAGE-SCOPED
+   ========================================== */
+
+.geo-process{
+    padding:100px 0;
+    background:#ffffff;
+}
+
+.geo-process > .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+   ========================================== */
+
+.geo-process__heading{
+    max-width:820px;
+    margin:0 0 52px;
+}
+
+.geo-process__eyebrow{
+    display:inline-block;
+    margin:0 0 16px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.4;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.geo-process__heading h2{
+    max-width:800px;
+    margin:0 0 18px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(38px,4vw,52px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
+}
+
+.geo-process__heading p{
+    max-width:760px;
+    margin:0;
+    color:#475569;
+    font-family:Manrope,sans-serif;
+    font-size:18px;
+    font-weight:400;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   PROCESS GRID
+   ========================================== */
+
+.geo-process__steps{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:0;
+    border-top:1px solid #e2e8f0;
+    border-bottom:1px solid #e2e8f0;
+}
+
+
+/* ==========================================
+   PROCESS STEP
+   ========================================== */
+
+.geo-process__step{
+    position:relative;
+    min-width:0;
+    min-height:300px;
+    padding:32px 28px;
+    border-right:1px solid #e2e8f0;
+}
+
+.geo-process__step:first-child{
+    padding-left:0;
+}
+
+.geo-process__step:last-child{
+    padding-right:0;
+    border-right:none;
+}
+
+
+/* ==========================================
+   STEP NUMBER
+   ========================================== */
+
+.geo-process__number{
+    margin:0 0 28px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:.12em;
+}
+
+
+/* ==========================================
+   STEP TITLE
+   ========================================== */
+
+.geo-process__step h3{
+    margin:0 0 14px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:20px;
+    font-weight:700;
+    line-height:1.35;
+    letter-spacing:-.02em;
+}
+
+
+/* ==========================================
+   STEP DESCRIPTION
+   ========================================== */
+
+.geo-process__step p{
+    margin:0;
+    color:#64748b;
+    font-family:Manrope,sans-serif;
+    font-size:15px;
+    font-weight:400;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   SUBTLE HOVER
+   ========================================== */
+
+.geo-process__step{
+    transition:background .25s ease;
+}
+
+.geo-process__step:hover{
+    background:#f8fafc;
+}
+
+.geo-process__step:first-child:hover{
+    padding-left:0;
+}
+
+
+/* ==========================================
+   LARGE TABLET
+   ========================================== */
+
+@media (max-width:1200px){
+
+    .geo-process{
+        padding:85px 28px;
+    }
+
+    .geo-process__steps{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        border-bottom:none;
+    }
+
+    .geo-process__step,
+    .geo-process__step:first-child,
+    .geo-process__step:last-child{
+        padding:30px;
+        border-right:1px solid #e2e8f0;
+        border-bottom:1px solid #e2e8f0;
+    }
+
+    .geo-process__step:nth-child(3n){
+        border-right:none;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width:768px){
+
+    .geo-process{
+        padding:65px 24px;
+    }
+
+    .geo-process__heading{
+        margin-bottom:40px;
+    }
+
+    .geo-process__heading h2{
+        font-size:38px;
+    }
+
+    .geo-process__heading p{
+        font-size:17px;
+    }
+
+    .geo-process__steps{
+        grid-template-columns:1fr;
+        border-bottom:1px solid #e2e8f0;
+    }
+
+    .geo-process__step,
+    .geo-process__step:first-child,
+    .geo-process__step:last-child{
+        min-height:0;
+        padding:28px 0;
+        border-right:none;
+        border-bottom:1px solid #e2e8f0;
+    }
+
+    .geo-process__step:last-child{
+        border-bottom:none;
+    }
+
+    .geo-process__step:hover{
+        background:transparent;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width:480px){
+
+    .geo-process{
+        padding:55px 20px;
+    }
+
+    .geo-process__heading h2{
+        font-size:34px;
+    }
+
+    .geo-process__step h3{
+        font-size:19px;
+    }
+
+    .geo-process__step p{
+        font-size:15px;
+    }
+
+}
