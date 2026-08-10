@@ -25071,3 +25071,241 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI GROWTH EXPERIMENTATION OS
+   RELATED FRAMEWORKS & CASE STUDIES
+   PAGE-SCOPED
+   ========================================== */
+
+.growth-os-references{
+    padding:0 0 100px;
+    background:#ffffff;
+}
+
+.growth-os-references > .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+   ========================================== */
+
+.growth-os-references__heading{
+    max-width:760px;
+    margin:0 0 52px;
+}
+
+.growth-os-references__eyebrow{
+    display:inline-block;
+    margin:0 0 16px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    line-height:1.4;
+    text-transform:uppercase;
+}
+
+.growth-os-references__heading h2{
+    margin:0 0 18px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(38px,4vw,52px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
+}
+
+.growth-os-references__heading p{
+    max-width:700px;
+    margin:0;
+    color:#475569;
+    font-family:Manrope,sans-serif;
+    font-size:18px;
+    font-weight:400;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   REFERENCE GRID
+   ========================================== */
+
+.growth-os-references__grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-top:1px solid #e2e8f0;
+}
+
+
+/* ==========================================
+   REFERENCE ITEMS
+   ========================================== */
+
+.growth-os-references__item{
+    position:relative;
+    min-width:0;
+    padding:34px 42px 34px 0;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.growth-os-references__item:nth-child(even){
+    padding-left:42px;
+    padding-right:0;
+    border-left:1px solid #e2e8f0;
+}
+
+.growth-os-references__number{
+    display:block;
+    margin:0 0 20px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.12em;
+    line-height:1;
+}
+
+.growth-os-references__item h3{
+    margin:0 0 12px;
+    font-family:Manrope,sans-serif;
+    font-size:21px;
+    font-weight:700;
+    line-height:1.35;
+    letter-spacing:-.02em;
+}
+
+.growth-os-references__item h3 a{
+    color:#0f172a;
+    text-decoration:none;
+    transition:color .2s ease;
+}
+
+.growth-os-references__item h3 a:hover{
+    color:#2563eb;
+}
+
+.growth-os-references__item p{
+    max-width:540px;
+    margin:0;
+    color:#64748b;
+    font-family:Manrope,sans-serif;
+    font-size:15px;
+    font-weight:400;
+    line-height:1.75;
+}
+
+
+/* ==========================================
+   SUBTLE INTERACTION
+   ========================================== */
+
+.growth-os-references__item h3 a::after{
+    content:" →";
+    display:inline-block;
+    margin-left:2px;
+    color:#2563eb;
+    opacity:0;
+    transform:translateX(-4px);
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+.growth-os-references__item h3 a:hover::after{
+    opacity:1;
+    transform:translateX(2px);
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width:1100px){
+
+    .growth-os-references{
+        padding:0 28px 80px;
+    }
+
+    .growth-os-references__grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .growth-os-references__item{
+        padding-right:30px;
+    }
+
+    .growth-os-references__item:nth-child(even){
+        padding-left:30px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width:768px){
+
+    .growth-os-references{
+        padding:0 24px 65px;
+    }
+
+    .growth-os-references__heading{
+        margin-bottom:40px;
+    }
+
+    .growth-os-references__heading h2{
+        font-size:38px;
+    }
+
+    .growth-os-references__heading p{
+        font-size:17px;
+    }
+
+    .growth-os-references__grid{
+        grid-template-columns:1fr;
+    }
+
+    .growth-os-references__item,
+    .growth-os-references__item:nth-child(even){
+        padding:28px 0;
+        border-left:none;
+    }
+
+    .growth-os-references__item:first-child{
+        padding-top:30px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width:480px){
+
+    .growth-os-references{
+        padding:0 20px 55px;
+    }
+
+    .growth-os-references__heading h2{
+        font-size:34px;
+    }
+
+    .growth-os-references__item h3{
+        font-size:19px;
+    }
+
+    .growth-os-references__item p{
+        font-size:15px;
+    }
+
+}
