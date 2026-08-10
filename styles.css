@@ -23831,3 +23831,258 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   AI GROWTH EXPERIMENTATION OS
+   PAGE-SPECIFIC HERO
+   ========================================== */
+
+.growth-os-hero{
+    padding:80px 0;
+}
+
+.growth-os-hero .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+.growth-os-hero__layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);
+    gap:80px;
+    align-items:center;
+}
+
+.growth-os-hero__content{
+    max-width:780px;
+}
+
+.growth-os-hero__eyebrow{
+    margin:0 0 20px;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.12em;
+    line-height:1.4;
+    text-transform:uppercase;
+}
+
+.growth-os-hero__title{
+    margin:0 0 24px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(42px,5vw,64px);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-.045em;
+}
+
+.growth-os-hero__lead{
+    max-width:720px;
+    margin:0 0 24px;
+    color:#475569;
+    font-size:20px;
+    line-height:1.75;
+}
+
+.growth-os-hero__byline{
+    max-width:720px;
+    margin:0;
+    color:#64748b;
+    font-size:14px;
+    line-height:1.75;
+}
+
+.growth-os-hero__link{
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.growth-os-hero__link:hover{
+    text-decoration:underline;
+}
+
+
+/* ==========================================
+   ACTIONS
+   ========================================== */
+
+.growth-os-hero__actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:36px;
+}
+
+.growth-os-hero__button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:50px;
+    padding:0 22px;
+    border-radius:9px;
+    font-family:Manrope,sans-serif;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.2;
+    text-decoration:none;
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+.growth-os-hero__button--primary{
+    background:#2563eb;
+    border:1px solid #2563eb;
+    color:#fff;
+    box-shadow:0 8px 20px rgba(37,99,235,.14);
+}
+
+.growth-os-hero__button--primary:hover{
+    background:#1d4ed8;
+    border-color:#1d4ed8;
+    box-shadow:0 12px 28px rgba(37,99,235,.20);
+    transform:translateY(-1px);
+}
+
+.growth-os-hero__button--secondary{
+    background:#f1f5f9;
+    border:1px solid #2563eb;
+    color:#2563eb;
+}
+
+.growth-os-hero__button--secondary:hover{
+    background:#e2e8f0;
+    border-color:#1d4ed8;
+    color:#1d4ed8;
+    transform:translateY(-1px);
+}
+
+
+/* ==========================================
+   FRAMEWORK CARD
+   ========================================== */
+
+.growth-os-hero__card{
+    padding:34px;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    box-shadow:0 18px 45px rgba(15,23,42,.08);
+}
+
+.growth-os-hero__card-title{
+    margin:0 0 24px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:22px;
+    font-weight:700;
+    line-height:1.35;
+}
+
+.growth-os-hero__checklist{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.growth-os-hero__checklist li{
+    position:relative;
+    margin:0;
+    padding:0 0 18px 28px;
+    color:#475569;
+    font-size:16px;
+    line-height:1.7;
+}
+
+.growth-os-hero__checklist li:last-child{
+    padding-bottom:0;
+}
+
+.growth-os-hero__checklist li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:1px;
+    color:#2563eb;
+    font-size:16px;
+    font-weight:800;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width:1050px){
+
+    .growth-os-hero{
+        padding:70px 28px;
+    }
+
+    .growth-os-hero__layout{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .growth-os-hero__content{
+        max-width:820px;
+    }
+
+    .growth-os-hero__card{
+        max-width:760px;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .growth-os-hero{
+        padding:60px 24px;
+    }
+
+    .growth-os-hero__title{
+        font-size:42px;
+    }
+
+    .growth-os-hero__lead{
+        font-size:18px;
+        line-height:1.7;
+    }
+
+    .growth-os-hero__actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .growth-os-hero__button{
+        width:100%;
+    }
+
+    .growth-os-hero__card{
+        padding:28px;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .growth-os-hero{
+        padding:50px 20px;
+    }
+
+    .growth-os-hero__title{
+        font-size:36px;
+    }
+
+    .growth-os-hero__card{
+        padding:24px;
+    }
+
+}
