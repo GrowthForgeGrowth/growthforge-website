@@ -25526,3 +25526,164 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   GEO FUNDAMENTALS
+   PAGE-SCOPED
+   ========================================== */
+
+.alt .container{
+    max-width:1280px;
+    margin:0 auto;
+}
+
+/* GEO eyebrow */
+.alt .container > .eyebrow{
+    display:inline-block;
+    margin:0 0 16px;
+    color:#2563eb;
+    font-family:Manrope,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.4;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+/* Section heading */
+.alt .container > h2{
+    max-width:820px;
+    margin:0 0 22px;
+    color:#0f172a;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(38px,4vw,52px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
+}
+
+/* Body copy */
+.alt .container > p{
+    max-width:850px;
+    margin:0 0 20px;
+    color:#475569;
+    font-family:Manrope,sans-serif;
+    font-size:17px;
+    font-weight:400;
+    line-height:1.8;
+}
+
+.alt .container > p:last-of-type{
+    margin-bottom:0;
+}
+
+/* Inline links */
+.alt .container > p .link{
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+    transition:color .2s ease;
+}
+
+.alt .container > p .link:hover{
+    color:#1d4ed8;
+    text-decoration:underline;
+}
+
+
+/* ==========================================
+   KEY GEO DEFINITION CALLOUT
+   ========================================== */
+
+.alt .container > div[style*="border-left"]{
+    max-width:850px;
+    margin:32px 0 0 !important;
+    padding:22px 26px !important;
+    background:#eff6ff !important;
+    border:1px solid #dbeafe;
+    border-left:4px solid #2563eb !important;
+    border-radius:10px !important;
+    color:#334155;
+    font-family:Manrope,sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    box-sizing:border-box;
+}
+
+.alt .container > div[style*="border-left"] strong{
+    display:block;
+    margin-bottom:5px;
+    color:#0f172a;
+    font-weight:800;
+}
+
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width:1100px){
+
+    .alt .container{
+        padding-left:28px !important;
+        padding-right:28px !important;
+    }
+
+    .alt .container > h2{
+        font-size:44px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width:768px){
+
+    .alt .container{
+        padding-top:55px !important;
+        padding-bottom:55px !important;
+        padding-left:24px !important;
+        padding-right:24px !important;
+    }
+
+    .alt .container > h2{
+        font-size:38px;
+        letter-spacing:-.035em;
+    }
+
+    .alt .container > p{
+        font-size:16px;
+        line-height:1.75;
+    }
+
+    .alt .container > div[style*="border-left"]{
+        padding:20px 22px !important;
+        font-size:15px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width:480px){
+
+    .alt .container{
+        padding-left:20px !important;
+        padding-right:20px !important;
+    }
+
+    .alt .container > h2{
+        font-size:34px;
+    }
+
+    .alt .container > div[style*="border-left"]{
+        padding:18px 18px !important;
+    }
+
+}
