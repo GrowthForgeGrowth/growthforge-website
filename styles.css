@@ -23496,410 +23496,355 @@ Home Page FINAL CTA
 }
 
 /* ==========================================
-   GROWTH RESEARCH / 2026 BENCHMARKS
+   GROWTH RESEARCH
 ========================================== */
 
 .growth-research{
-    position:relative;
-    padding:120px 0;
-    background:#f8fafc;
-    overflow:hidden;
+    padding:100px 0;
+    background:#ffffff;
 }
 
 .growth-research .container{
-    max-width:1280px;
-    margin:0 auto;
+    max-width:1180px;
 }
 
 
 /* ==========================================
-   SECTION HEADING
+   HEADING
 ========================================== */
 
 .growth-research .section-heading{
-    max-width:820px;
-    margin:0 auto 64px;
-    text-align:center;
+    max-width:780px;
+    margin:0 0 55px;
 }
 
-.growth-research .section-heading .section-badge{
+.growth-research .section-badge{
     display:inline-flex;
     align-items:center;
-    justify-content:center;
-    padding:9px 18px;
-    margin-bottom:24px;
+    padding:7px 14px;
+    margin-bottom:20px;
     border-radius:999px;
     background:#eff6ff;
-    border:1px solid #bfdbfe;
+    border:1px solid #dbeafe;
     color:#2563eb;
-    font-size:13px;
+    font-size:12px;
     font-weight:700;
-    letter-spacing:.1em;
+    letter-spacing:.08em;
     text-transform:uppercase;
 }
 
 .growth-research .section-heading h2{
-    margin:0 0 24px;
+    margin:0 0 18px;
     font-family:Manrope,sans-serif;
-    font-size:clamp(38px,4.5vw,58px);
-    font-weight:800;
+    font-size:clamp(36px,4vw,52px);
     line-height:1.08;
-    letter-spacing:-.04em;
+    letter-spacing:-.035em;
     color:#0f172a;
 }
 
 .growth-research .section-heading p{
     margin:0;
-    font-size:19px;
+    font-size:18px;
     line-height:1.8;
     color:#64748b;
 }
 
 
 /* ==========================================
-   RESEARCH CARDS
+   RESEARCH PANEL
 ========================================== */
 
-.research-grid{
+.research-panel{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-    margin-bottom:64px;
-}
-
-.research-card{
-    display:flex;
-    flex-direction:column;
-    min-height:330px;
-    padding:36px;
-    background:#ffffff;
-    border:1px solid #e2e8f0;
-    border-radius:20px;
-    box-shadow:0 15px 45px rgba(15,23,42,.05);
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-}
-
-.research-card:hover{
-    transform:translateY(-5px);
-    border-color:#bfdbfe;
-    box-shadow:0 25px 60px rgba(15,23,42,.09);
-}
-
-.research-card.featured{
-    border:1px solid #93c5fd;
-    box-shadow:0 20px 55px rgba(37,99,235,.09);
+    grid-template-columns:280px 1fr;
+    gap:55px;
+    padding:42px 0;
+    border-top:1px solid #e2e8f0;
+    border-bottom:1px solid #e2e8f0;
 }
 
 
 /* ==========================================
-   SOURCE LABEL
+   PRIMARY STAT
 ========================================== */
 
-.research-source{
-    display:inline-flex;
-    align-self:flex-start;
-    margin-bottom:28px;
-    padding:7px 12px;
-    border-radius:8px;
-    background:#eff6ff;
-    color:#2563eb;
+.research-primary{
+    padding-right:45px;
+    border-right:1px solid #e2e8f0;
+}
+
+.research-primary .research-source{
+    display:block;
+    margin-bottom:18px;
+    color:#64748b;
     font-size:12px;
     font-weight:700;
-    letter-spacing:.06em;
+    letter-spacing:.07em;
     text-transform:uppercase;
 }
 
-
-/* ==========================================
-   BIG STAT
-========================================== */
-
-.research-number{
+.research-primary .research-number{
     display:block;
-    margin-bottom:12px;
+    margin-bottom:8px;
     font-family:Manrope,sans-serif;
-    font-size:clamp(42px,4vw,58px);
+    font-size:58px;
     font-weight:800;
     line-height:1;
-    letter-spacing:-.04em;
+    letter-spacing:-.05em;
     color:#0f172a;
 }
 
-.research-card h3{
-    margin:0 0 16px;
+.research-primary h3{
+    margin:0 0 14px;
+    font-size:19px;
+    line-height:1.35;
+    color:#0f172a;
+}
+
+.research-primary p{
+    margin:0;
+    font-size:14px;
+    line-height:1.7;
+    color:#64748b;
+}
+
+
+/* ==========================================
+   RESEARCH FINDINGS
+========================================== */
+
+.research-findings{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0;
+}
+
+.research-finding{
+    padding:0 30px 30px 0;
+}
+
+.research-finding:nth-child(2n){
+    padding-left:30px;
+    padding-right:0;
+    border-left:1px solid #e2e8f0;
+}
+
+.research-finding:nth-child(n+3){
+    padding-top:30px;
+    border-top:1px solid #e2e8f0;
+}
+
+.research-finding .finding-number{
+    display:block;
+    margin-bottom:7px;
     font-family:Manrope,sans-serif;
-    font-size:22px;
+    font-size:30px;
     font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.03em;
+    color:#2563eb;
+}
+
+.research-finding h3{
+    margin:0 0 8px;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.4;
+    color:#0f172a;
+}
+
+.research-finding p{
+    margin:0;
+    font-size:15px;
+    line-height:1.7;
+    color:#64748b;
+}
+
+
+/* ==========================================
+   RESEARCH INTERPRETATION
+========================================== */
+
+.research-interpretation{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:35px;
+    padding:25px 28px;
+    background:#f8fafc;
+    border-left:3px solid #2563eb;
+}
+
+.research-interpretation h3{
+    flex:0 0 auto;
+    margin:0;
+    font-size:15px;
+    font-weight:800;
+    color:#0f172a;
+}
+
+.research-interpretation p{
+    margin:0;
+    font-size:15px;
+    line-height:1.75;
+    color:#475569;
+}
+
+
+/* ==========================================
+   GROWTHFORGE CONNECTION
+========================================== */
+
+.research-growthforge{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    margin-top:45px;
+}
+
+.research-growthforge-content{
+    max-width:760px;
+}
+
+.research-growthforge h3{
+    margin:0 0 12px;
+    font-family:Manrope,sans-serif;
+    font-size:25px;
     line-height:1.3;
     color:#0f172a;
 }
 
-.research-card p{
+.research-growthforge p{
     margin:0;
     font-size:16px;
     line-height:1.8;
     color:#64748b;
 }
 
-.research-note{
-    display:block;
-    margin-top:auto;
-    padding-top:24px;
-    font-size:13px;
-    font-weight:600;
-    color:#94a3b8;
+.research-growthforge .btn{
+    flex:0 0 auto;
 }
 
 
 /* ==========================================
-   GROWTHFORGE INSIGHT
+   SOURCES
 ========================================== */
 
-.research-insight{
-    position:relative;
-    padding:64px 72px;
-    border-radius:24px;
-    background:
-        radial-gradient(
-            circle at top right,
-            rgba(59,130,246,.18),
-            transparent 38%
-        ),
-        linear-gradient(
-            135deg,
-            #08111f 0%,
-            #0f172a 100%
-        );
-    overflow:hidden;
-}
-
-.research-insight::before{
-    content:"";
-    position:absolute;
-    top:-180px;
-    right:-100px;
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    background:rgba(59,130,246,.12);
-    filter:blur(70px);
-    pointer-events:none;
-}
-
-.research-insight-content{
-    position:relative;
-    z-index:2;
-    max-width:850px;
-}
-
-.research-insight .section-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:9px 17px;
-    margin-bottom:24px;
-    border-radius:999px;
-    background:rgba(59,130,246,.12);
-    border:1px solid rgba(96,165,250,.25);
-    color:#93c5fd;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-}
-
-.research-insight h3{
-    margin:0 0 24px;
-    font-family:Manrope,sans-serif;
-    font-size:clamp(32px,4vw,48px);
-    font-weight:800;
-    line-height:1.1;
-    letter-spacing:-.035em;
-    color:#ffffff;
-}
-
-.research-insight p{
-    margin:0 0 20px;
-    max-width:820px;
-    font-size:18px;
-    line-height:1.85;
-    color:rgba(255,255,255,.72);
-}
-
-.research-insight p:last-of-type{
-    margin-bottom:36px;
-}
-
-
-/* ==========================================
-   CTA
-========================================== */
-
-.research-insight .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:52px;
-    padding:14px 26px;
-    border-radius:10px;
-    background:#2563eb;
-    border:1px solid #2563eb;
-    color:#ffffff;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:700;
-    transition:.25s ease;
-}
-
-.research-insight .btn:hover{
-    background:#1d4ed8;
-    border-color:#1d4ed8;
-    transform:translateY(-2px);
-}
-
-
-/* ==========================================
-   SOURCE LINE
-========================================== */
-
-.research-source-line{
+.research-sources{
     margin-top:28px;
-    text-align:center;
+    padding-top:20px;
+    border-top:1px solid #f1f5f9;
 }
 
-.research-source-line p{
+.research-sources p{
     margin:0;
-    font-size:13px;
+    font-size:12px;
     line-height:1.7;
     color:#94a3b8;
 }
 
-.research-source-line a{
+.research-sources a{
     color:#64748b;
     text-decoration:underline;
-    text-decoration-color:#cbd5e1;
     text-underline-offset:3px;
-    transition:.25s ease;
 }
 
-.research-source-line a:hover{
+.research-sources a:hover{
     color:#2563eb;
-    text-decoration-color:#2563eb;
 }
 
 
 /* ==========================================
-   RESPONSIVE
+   TABLET
 ========================================== */
 
-@media (max-width:1100px){
+@media (max-width:900px){
 
-    .growth-research{
-        padding:100px 0;
-    }
-
-    .research-grid{
+    .research-panel{
         grid-template-columns:1fr;
-        max-width:760px;
-        margin-left:auto;
-        margin-right:auto;
+        gap:35px;
     }
 
-    .research-card{
-        min-height:auto;
+    .research-primary{
+        padding-right:0;
+        padding-bottom:30px;
+        border-right:none;
+        border-bottom:1px solid #e2e8f0;
     }
 
-    .research-insight{
-        padding:56px;
+    .research-growthforge{
+        align-items:flex-start;
+        flex-direction:column;
     }
 
 }
 
 
-@media (max-width:768px){
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:700px){
 
     .growth-research{
-        padding:80px 24px;
+        padding:80px 0;
     }
 
     .growth-research .section-heading{
-        margin-bottom:46px;
+        margin-bottom:40px;
     }
 
     .growth-research .section-heading h2{
-        font-size:38px;
+        font-size:36px;
     }
 
     .growth-research .section-heading p{
         font-size:17px;
     }
 
-    .research-grid{
-        gap:18px;
-        margin-bottom:40px;
+    .research-panel{
+        padding:32px 0;
     }
 
-    .research-card{
-        padding:28px;
-        border-radius:18px;
+    .research-primary .research-number{
+        font-size:50px;
     }
 
-    .research-number{
-        font-size:46px;
+    .research-findings{
+        grid-template-columns:1fr;
     }
 
-    .research-insight{
-        padding:40px 28px;
-        border-radius:20px;
+    .research-finding,
+    .research-finding:nth-child(2n){
+        padding:24px 0;
+        border-left:none;
     }
 
-    .research-insight h3{
-        font-size:34px;
+    .research-finding:first-child{
+        padding-top:0;
     }
 
-    .research-insight p{
-        font-size:17px;
+    .research-finding:nth-child(n+3){
+        border-top:1px solid #e2e8f0;
     }
 
-    .research-insight .btn{
+    .research-interpretation{
+        display:block;
+        padding:22px;
+    }
+
+    .research-interpretation h3{
+        margin-bottom:8px;
+    }
+
+    .research-growthforge{
+        margin-top:35px;
+    }
+
+    .research-growthforge .btn{
         width:100%;
         text-align:center;
-    }
-
-    .research-source-line{
-        text-align:left;
-    }
-
-}
-
-
-@media (max-width:480px){
-
-    .growth-research{
-        padding:70px 20px;
-    }
-
-    .growth-research .section-heading h2{
-        font-size:34px;
-    }
-
-    .research-card{
-        padding:24px;
-    }
-
-    .research-number{
-        font-size:42px;
-    }
-
-    .research-insight{
-        padding:34px 24px;
-    }
-
-    .research-insight h3{
-        font-size:30px;
     }
 
 }
