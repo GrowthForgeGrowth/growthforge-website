@@ -23576,3 +23576,39 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================
+   HEADER LOGO
+========================================== */
+
+.header-logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+    text-decoration:none;
+}
+
+.header-logo picture{
+    display:flex;
+    align-items:center;
+}
+
+.header-logo-image{
+    display:block;
+    width:220px;
+    height:auto;
+    max-width:100%;
+}
+
+
+/* ==========================================
+   MOBILE LOGO
+========================================== */
+
+@media (max-width:768px){
+
+    .header-logo-image{
+        width:180px;
+    }
+
+}
