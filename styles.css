@@ -27887,14 +27887,14 @@ Home Page FINAL CTA
 }
 
 /* =========================================================
-   GROWTHFORGE — EXECUTIVE CONSULTING VISUAL
+   GROWTHFORGE — EXECUTIVE CONSULTING VISUAL + WHO WE CATER TO
    HOMEPAGE ONLY — PAGE-SCOPED
    ========================================================= */
 
 .executive-visual {
     width: 100%;
     margin: 0;
-    padding: 0 0 100px;
+    padding: 0 0 90px;
     background: #ffffff;
     box-sizing: border-box;
 }
@@ -27907,14 +27907,118 @@ Home Page FINAL CTA
     box-sizing: border-box;
 }
 
-.executive-visual img {
+
+/* =========================================================
+   TWO-COLUMN LAYOUT
+   ========================================================= */
+
+.executive-visual__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+    align-items: center;
+    gap: 70px;
+    width: 100%;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.executive-visual__image {
+    width: 100%;
+    min-width: 0;
+}
+
+.executive-visual__image img {
     display: block;
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    height: 390px;
+    margin: 0;
     object-fit: cover;
+    object-position: center 45%;
     border-radius: 14px;
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   RIGHT-SIDE CONTENT
+   ========================================================= */
+
+.executive-visual__content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.executive-visual__content .section-badge {
+    display: inline-block;
+    margin: 0 0 16px;
+    color: #2563eb;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.executive-visual__content h2 {
+    max-width: 500px;
+    margin: 0 0 18px;
+    color: #0f172a;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(34px, 3.5vw, 48px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.04em;
+}
+
+.executive-visual__content > p {
+    max-width: 500px;
+    margin: 0 0 26px;
+    color: #64748b;
+    font-family: Manrope, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   CLIENT LIST
+   ========================================================= */
+
+.executive-visual__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.executive-visual__list li {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 22px;
+    color: #334155;
+    font-family: Manrope, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.executive-visual__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2563eb;
 }
 
 
@@ -27925,10 +28029,19 @@ Home Page FINAL CTA
 @media (max-width: 1100px) {
 
     .executive-visual {
-        padding: 0 28px 85px;
+        padding: 0 28px 75px;
     }
 
-    .executive-visual .container {
+    .executive-visual__grid {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+        gap: 45px;
+    }
+
+    .executive-visual__image img {
+        height: 350px;
+    }
+
+    .executive-visual__content {
         max-width: 100%;
     }
 
@@ -27942,11 +28055,32 @@ Home Page FINAL CTA
 @media (max-width: 768px) {
 
     .executive-visual {
-        padding: 0 24px 70px;
+        padding: 0 24px 65px;
     }
 
-    .executive-visual img {
+    .executive-visual__grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .executive-visual__image img {
+        width: 100%;
+        height: 280px;
         border-radius: 12px;
+    }
+
+    .executive-visual__content {
+        max-width: 100%;
+    }
+
+    .executive-visual__content h2 {
+        max-width: 100%;
+        font-size: clamp(34px, 9vw, 44px);
+    }
+
+    .executive-visual__content > p {
+        max-width: 100%;
+        font-size: 16px;
     }
 
 }
@@ -27959,11 +28093,34 @@ Home Page FINAL CTA
 @media (max-width: 480px) {
 
     .executive-visual {
-        padding: 0 20px 60px;
+        padding: 0 20px 55px;
     }
 
-    .executive-visual img {
+    .executive-visual__grid {
+        gap: 30px;
+    }
+
+    .executive-visual__image img {
+        height: 230px;
         border-radius: 10px;
+    }
+
+    .executive-visual__content .section-badge {
+        font-size: 11px;
+    }
+
+    .executive-visual__content h2 {
+        font-size: 34px;
+    }
+
+    .executive-visual__content > p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .executive-visual__list {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
 }
@@ -27975,7 +28132,7 @@ Home Page FINAL CTA
 
 @media (prefers-reduced-motion: reduce) {
 
-    .executive-visual img {
+    .executive-visual__image img {
         transition: none;
     }
 
