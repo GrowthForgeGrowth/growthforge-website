@@ -27013,3 +27013,359 @@ Home Page FINAL CTA
     }
 
 }
+
+/* =========================================================
+   GROWTHFORGE — REVENUE COST SECTION
+   PAGE-SCOPED ONLY
+   ========================================================= */
+
+.revenue-cost {
+    width: 100%;
+    margin: 0;
+    padding: 100px 0 110px;
+    background: #f8fafc;
+    box-sizing: border-box;
+}
+
+.revenue-cost .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.revenue-cost .section-heading {
+    max-width: 820px;
+    margin: 0 0 52px;
+}
+
+.revenue-cost .section-badge {
+    display: inline-block;
+    margin: 0 0 16px;
+    color: #2563eb;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.revenue-cost .section-heading h2 {
+    max-width: 820px;
+    margin: 0 0 20px;
+    color: #0f172a;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.045em;
+}
+
+.revenue-cost .section-heading p {
+    max-width: 760px;
+    margin: 0;
+    color: #64748b;
+    font-family: Manrope, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* =========================================================
+   REVENUE COST CARDS
+   ========================================================= */
+
+.revenue-cost-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: 0;
+}
+
+.revenue-cost-card {
+    position: relative;
+    min-height: 250px;
+    padding: 32px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, .04);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.revenue-cost-card:hover {
+    transform: translateY(-3px);
+    border-color: #cbd5e1;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, .08);
+}
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.revenue-cost-number {
+    display: block;
+    margin: 0 0 28px;
+    color: #2563eb;
+    font-family: Manrope, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: .08em;
+}
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.revenue-cost-card h3 {
+    margin: 0 0 14px;
+    color: #0f172a;
+    font-family: Manrope, sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -.025em;
+}
+
+.revenue-cost-card p {
+    margin: 0;
+    color: #64748b;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* =========================================================
+   CONCLUSION / COMMERCIAL BRIDGE
+   ========================================================= */
+
+.revenue-cost-conclusion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 28px;
+    padding: 32px 36px;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.revenue-cost-conclusion > div {
+    max-width: 760px;
+}
+
+.revenue-cost-conclusion strong {
+    display: block;
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-family: Manrope, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.revenue-cost-conclusion p {
+    margin: 0;
+    color: #cbd5e1;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.revenue-cost-conclusion .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-height: 50px;
+    padding: 0 22px;
+    background: #2563eb;
+    border: 1px solid #2563eb;
+    border-radius: 9px;
+    color: #ffffff;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, .22);
+    transition:
+        transform .25s ease,
+        background-color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.revenue-cost-conclusion .btn:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, .30);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .revenue-cost {
+        padding: 85px 28px 95px;
+    }
+
+    .revenue-cost-grid {
+        gap: 18px;
+    }
+
+    .revenue-cost-card {
+        padding: 28px;
+    }
+
+    .revenue-cost-conclusion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .revenue-cost {
+        padding: 70px 24px 80px;
+    }
+
+    .revenue-cost .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .revenue-cost .section-heading h2 {
+        font-size: clamp(34px, 9vw, 46px);
+        line-height: 1.08;
+        letter-spacing: -.04em;
+    }
+
+    .revenue-cost .section-heading p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .revenue-cost-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .revenue-cost-card {
+        min-height: auto;
+        padding: 26px;
+    }
+
+    .revenue-cost-number {
+        margin-bottom: 22px;
+    }
+
+    .revenue-cost-card h3 {
+        font-size: 21px;
+    }
+
+    .revenue-cost-card p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .revenue-cost-conclusion {
+        margin-top: 18px;
+        padding: 28px 24px;
+        gap: 24px;
+    }
+
+    .revenue-cost-conclusion strong {
+        font-size: 19px;
+    }
+
+    .revenue-cost-conclusion p {
+        font-size: 15px;
+    }
+
+    .revenue-cost-conclusion .btn {
+        width: 100%;
+        min-height: 52px;
+        white-space: normal;
+        text-align: center;
+    }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .revenue-cost {
+        padding: 60px 20px 70px;
+    }
+
+    .revenue-cost .section-badge {
+        font-size: 11px;
+    }
+
+    .revenue-cost .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .revenue-cost .section-heading p {
+        font-size: 16px;
+    }
+
+    .revenue-cost-card {
+        padding: 24px;
+    }
+
+    .revenue-cost-conclusion {
+        padding: 24px 20px;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .revenue-cost-card,
+    .revenue-cost-conclusion .btn {
+        transition: none;
+    }
+
+    .revenue-cost-card:hover,
+    .revenue-cost-conclusion .btn:hover {
+        transform: none;
+    }
+
+}
