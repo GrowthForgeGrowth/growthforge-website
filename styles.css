@@ -27885,3 +27885,98 @@ Home Page FINAL CTA
     }
 
 }
+
+/* =========================================================
+   GROWTHFORGE — EXECUTIVE CONSULTING VISUAL
+   HOMEPAGE ONLY — PAGE-SCOPED
+   ========================================================= */
+
+.executive-visual {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 100px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.executive-visual .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.executive-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .executive-visual {
+        padding: 0 28px 85px;
+    }
+
+    .executive-visual .container {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .executive-visual {
+        padding: 0 24px 70px;
+    }
+
+    .executive-visual img {
+        border-radius: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .executive-visual {
+        padding: 0 20px 60px;
+    }
+
+    .executive-visual img {
+        border-radius: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .executive-visual img {
+        transition: none;
+    }
+
+}
