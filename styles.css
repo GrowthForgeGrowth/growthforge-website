@@ -28709,3 +28709,136 @@ Home Page FINAL CTA
         font-size:17px;
     }
 }
+
+/* =========================================================
+   META ADS 2026 ARTICLE — INTRODUCTION
+   SCOPED ONLY TO THIS ARTICLE
+   ========================================================= */
+
+.meta-ads-2026-article .meta-ads-2026-content{
+    position:relative;
+    padding:110px 0;
+    background:#ffffff;
+}
+
+.meta-ads-2026-article .meta-ads-2026-content .container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 32px;
+}
+
+.meta-ads-2026-article .meta-ads-2026-content-inner{
+    max-width:820px;
+    margin:0 auto;
+}
+
+.meta-ads-2026-article .meta-ads-2026-kicker{
+    margin:0 0 22px;
+    color:#2563eb;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.12em;
+    line-height:1.4;
+    text-transform:uppercase;
+}
+
+.meta-ads-2026-article .meta-ads-2026-content h2{
+    margin:0 0 30px;
+    color:#0f172a;
+    font-size:clamp(36px,4.2vw,56px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-.04em;
+}
+
+.meta-ads-2026-article .meta-ads-2026-content p{
+    margin:0 0 24px;
+    color:#475569;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.meta-ads-2026-article .meta-ads-2026-content p strong{
+    color:#0f172a;
+    font-weight:700;
+}
+
+.meta-ads-2026-article .meta-ads-2026-highlight{
+    margin:42px 0;
+    padding:30px 34px;
+    background:#f8fafc;
+    border-left:4px solid #2563eb;
+    border-radius:0 12px 12px 0;
+}
+
+.meta-ads-2026-article .meta-ads-2026-highlight-label{
+    display:block;
+    margin-bottom:12px;
+    color:#0f172a;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.08em;
+    line-height:1.4;
+    text-transform:uppercase;
+}
+
+.meta-ads-2026-article .meta-ads-2026-highlight p{
+    margin:0;
+    color:#334155;
+    font-size:19px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width:768px){
+
+    .meta-ads-2026-article .meta-ads-2026-content{
+        padding:80px 0;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-content .container{
+        padding:0 22px;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-content h2{
+        font-size:38px;
+        line-height:1.1;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-content p{
+        font-size:17px;
+        line-height:1.75;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-highlight{
+        margin:34px 0;
+        padding:26px 24px;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-highlight p{
+        font-size:18px;
+    }
+}
+
+@media (max-width:480px){
+
+    .meta-ads-2026-article .meta-ads-2026-content{
+        padding:68px 0;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-content h2{
+        font-size:34px;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-content p{
+        font-size:16px;
+    }
+
+    .meta-ads-2026-article .meta-ads-2026-highlight{
+        padding:24px 20px;
+    }
+}
