@@ -5398,7 +5398,8 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-form input,
-.audit-form textarea{
+.audit-form textarea,
+.audit-form select{
     width:100%;
     padding:16px 18px;
     border:1px solid #dbe4ee;
@@ -5407,6 +5408,7 @@ EXECUTIVE AUDIT OVERVIEW
     font:400 15px Inter,sans-serif;
     color:#0f172a;
     transition:.25s ease;
+    appearance:none;
 }
 
 .audit-form textarea{
@@ -5420,55 +5422,38 @@ EXECUTIVE AUDIT OVERVIEW
 }
 
 .audit-form input:focus,
-.audit-form textarea:focus{
+.audit-form textarea:focus,
+.audit-form select:focus{
     outline:none;
     border-color:#2563eb;
     box-shadow:
         0 0 0 4px rgba(37,99,235,.12);
 }
 
+
 /* =========================================
-   SERVICES OF INTEREST
+   SERVICES OF INTEREST ONLY
    MULTI-SELECT
 ========================================= */
 
-.audit-form select[multiple]{
-    width:100%;
+.audit-form #services[multiple]{
     min-height:180px;
     padding:8px;
-    border:1px solid #dbe4ee;
-    border-radius:14px;
-    background:#fff;
-    font:400 15px Inter,sans-serif;
-    color:#0f172a;
-    transition:.25s ease;
-
-    /* Preserve native multi-select behavior */
     appearance:auto;
     -webkit-appearance:auto;
-
     cursor:pointer;
     overflow-y:auto;
 }
 
-.audit-form select[multiple] option{
+.audit-form #services[multiple] option{
     padding:11px 12px;
-    color:#334155;
-    background:#fff;
 }
 
-.audit-form select[multiple] option:checked{
+.audit-form #services[multiple] option:checked{
     background:#2563eb;
     color:#fff;
-    font-weight:600;
 }
 
-.audit-form select[multiple]:focus{
-    outline:none;
-    border-color:#2563eb;
-    box-shadow:
-        0 0 0 4px rgba(37,99,235,.12);
-}
 
 /* =========================================
    CHECKBOXES
@@ -5492,12 +5477,7 @@ EXECUTIVE AUDIT OVERVIEW
     transition:.25s ease;
 }
 
-.checkbox-item:hover{
-    border-color:#cbd5e1;
-    background:#f8fafc;
-}
-
-.checkbox-item input{
+.checkbox-item:hover .checkbox-item input{
     width:18px;
     height:18px;
     margin-top:3px;
@@ -5603,10 +5583,70 @@ EXECUTIVE AUDIT OVERVIEW
     .audit-form-section .section-heading p{
         font-size:17px;
     }
+}
 
-    .audit-form select[multiple]{
-        min-height:190px;
-    }
+/* =========================================
+   CONTACT CTA CARD
+========================================= */
+
+.contact-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:24px;
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.08);
+    transition:.25s ease;
+}
+
+.contact-card:hover{
+    transform:translateY(-6px);
+    box-shadow:
+        0 30px 70px rgba(15,23,42,.12);
+}
+
+.contact-card h3{
+    margin-bottom:10px;
+}
+
+.contact-card .price{
+    margin:0 0 18px;
+    font-size:15px;
+    font-weight:700;
+    color:#2563eb;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+.contact-card strong{
+    display:block;
+    margin-bottom:16px;
+    font-size:20px;
+    color:#0f172a;
+}
+
+.contact-card p{
+    line-height:1.8;
+}
+
+.contact-card .btn{
+    width:100%;
+    margin-top:30px;
+}
+
+.audit-divider{
+    padding:70px 0 20px;
+}
+
+.divider-line{
+    width:120px;
+    height:1px;
+    margin:0 auto;
+    background:#dbe4f0;
 }
 
 /* =========================================
