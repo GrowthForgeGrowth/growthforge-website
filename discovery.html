@@ -392,40 +392,101 @@
         Services of Interest *
     </label>
 
-    <select
-        id="services"
-        name="services[]"
-        multiple
-        required
-    >
-        <option value="ai-seo">
-            AI SEO (Generative Engine Optimization)
-        </option>
+    <div class="services-multiselect">
 
-        <option value="google-ads">
-            Google Ads
-        </option>
+        <button
+            type="button"
+            class="services-select-trigger"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+        >
+            <span class="services-select-text">
+                Select services...
+            </span>
 
-        <option value="meta-ads">
-            Meta Ads (Facebook &amp; Instagram)
-        </option>
+            <span class="services-select-arrow">
+                ▾
+            </span>
+        </button>
 
-        <option value="cro">
-            Conversion Rate Optimization (CRO)
-        </option>
+        <div
+            class="services-select-menu"
+            role="listbox"
+            aria-multiselectable="true"
+        >
 
-        <option value="automation">
-            Marketing Automation &amp; AI
-        </option>
+            <label class="services-option">
+                <input
+                    type="checkbox"
+                    name="services[]"
+                    value="ai-seo"
+                >
+                <span>
+                    AI SEO (Generative Engine Optimization)
+                </span>
+            </label>
 
-        <option value="consulting">
-            Executive Consulting
-        </option>
+            <label class="services-option">
+                <input
+                    type="checkbox"
+                    name="services[]"
+                    value="google-ads"
+                >
+                <span>
+                    Google Ads
+                </span>
+            </label>
 
-    </select>
+            <label class="services-option">
+                <input
+                    type="checkbox"
+                    name="services[]"
+                    value="meta-ads"
+                >
+                <span>
+                    Meta Ads (Facebook &amp; Instagram)
+                </span>
+            </label>
+
+            <label class="services-option">
+                <input
+                    type="checkbox"
+                    name="services[]"
+                    value="cro"
+                >
+                <span>
+                    Conversion Rate Optimization (CRO)
+                </span>
+            </label>
+
+            <label class="services-option">
+                <input
+                    type="checkbox"
+                    name="services[]"
+                    value="automation"
+                >
+                <span>
+                    Marketing Automation &amp; AI
+                </span>
+            </label>
+
+            <label class="services-option">
+                <input
+                    type="checkbox"
+                    name="services[]"
+                    value="consulting"
+                >
+                <span>
+                    Executive Consulting
+                </span>
+            </label>
+
+        </div>
+
+    </div>
 
 </div>
-                <div class="form-group">
+              <div class="form-group">
                     <label>Monthly Marketing Budget *</label>
 
                     <select name="budget" required>
