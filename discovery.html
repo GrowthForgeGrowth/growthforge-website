@@ -392,67 +392,39 @@
         Services of Interest *
     </label>
 
-    <div class="services-dropdown">
+    <select
+        id="services"
+        name="services[]"
+        multiple
+        required
+    >
+        <option value="ai-seo">
+            AI SEO (Generative Engine Optimization)
+        </option>
 
-        <button
-            type="button"
-            class="services-dropdown-trigger"
-            aria-expanded="false"
-        >
-            <span class="services-dropdown-label">
-                Select services...
-            </span>
-            <span class="services-dropdown-arrow">▾</span>
-        </button>
+        <option value="google-ads">
+            Google Ads
+        </option>
 
-        <div class="services-dropdown-menu">
+        <option value="meta-ads">
+            Meta Ads (Facebook &amp; Instagram)
+        </option>
 
-            <button type="button" data-value="ai-seo">
-                AI SEO (Generative Engine Optimization)
-            </button>
+        <option value="cro">
+            Conversion Rate Optimization (CRO)
+        </option>
 
-            <button type="button" data-value="google-ads">
-                Google Ads
-            </button>
+        <option value="automation">
+            Marketing Automation &amp; AI
+        </option>
 
-            <button type="button" data-value="meta-ads">
-                Meta Ads (Facebook &amp; Instagram)
-            </button>
+        <option value="consulting">
+            Executive Consulting
+        </option>
 
-            <button type="button" data-value="cro">
-                Conversion Rate Optimization (CRO)
-            </button>
-
-            <button type="button" data-value="automation">
-                Marketing Automation &amp; AI
-            </button>
-
-            <button type="button" data-value="consulting">
-                Executive Consulting
-            </button>
-
-        </div>
-
-        <!-- Hidden fields submitted to n8n -->
-        <div class="services-values"></div>
-
-    </div>
+    </select>
 
 </div>
-              <div class="form-group">
-                    <label>Monthly Marketing Budget *</label>
-
-                    <select name="budget" required>
-
-                        <option value="">Select...</option>
-                        <option value="<1500">Under $1,500</option>
-                        <option value="1500-3000">$1,500–3,000</option>
-                        <option value="3000-5000">$3,000–5,000</option>
-                        <option value="5000+">$5,000+</option>
-
-                    </select>
-
-                </div>
 
                 <div class="form-group">
                     <label>Expected Start Date *</label>
