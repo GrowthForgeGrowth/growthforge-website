@@ -392,96 +392,49 @@
         Services of Interest *
     </label>
 
-    <div class="services-multiselect">
+    <div class="services-dropdown">
 
         <button
             type="button"
-            class="services-select-trigger"
-            aria-haspopup="listbox"
+            class="services-dropdown-trigger"
             aria-expanded="false"
         >
-            <span class="services-select-text">
+            <span class="services-dropdown-label">
                 Select services...
             </span>
-
-            <span class="services-select-arrow">
-                ▾
-            </span>
+            <span class="services-dropdown-arrow">▾</span>
         </button>
 
-        <div
-            class="services-select-menu"
-            role="listbox"
-            aria-multiselectable="true"
-        >
+        <div class="services-dropdown-menu">
 
-            <label class="services-option">
-                <input
-                    type="checkbox"
-                    name="services[]"
-                    value="ai-seo"
-                >
-                <span>
-                    AI SEO (Generative Engine Optimization)
-                </span>
-            </label>
+            <button type="button" data-value="ai-seo">
+                AI SEO (Generative Engine Optimization)
+            </button>
 
-            <label class="services-option">
-                <input
-                    type="checkbox"
-                    name="services[]"
-                    value="google-ads"
-                >
-                <span>
-                    Google Ads
-                </span>
-            </label>
+            <button type="button" data-value="google-ads">
+                Google Ads
+            </button>
 
-            <label class="services-option">
-                <input
-                    type="checkbox"
-                    name="services[]"
-                    value="meta-ads"
-                >
-                <span>
-                    Meta Ads (Facebook &amp; Instagram)
-                </span>
-            </label>
+            <button type="button" data-value="meta-ads">
+                Meta Ads (Facebook &amp; Instagram)
+            </button>
 
-            <label class="services-option">
-                <input
-                    type="checkbox"
-                    name="services[]"
-                    value="cro"
-                >
-                <span>
-                    Conversion Rate Optimization (CRO)
-                </span>
-            </label>
+            <button type="button" data-value="cro">
+                Conversion Rate Optimization (CRO)
+            </button>
 
-            <label class="services-option">
-                <input
-                    type="checkbox"
-                    name="services[]"
-                    value="automation"
-                >
-                <span>
-                    Marketing Automation &amp; AI
-                </span>
-            </label>
+            <button type="button" data-value="automation">
+                Marketing Automation &amp; AI
+            </button>
 
-            <label class="services-option">
-                <input
-                    type="checkbox"
-                    name="services[]"
-                    value="consulting"
-                >
-                <span>
-                    Executive Consulting
-                </span>
-            </label>
+            <button type="button" data-value="consulting">
+                Executive Consulting
+            </button>
 
         </div>
+
+        <!-- Hidden fields submitted to n8n -->
+        <div class="services-values"></div>
 
     </div>
 
