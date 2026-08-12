@@ -29488,3 +29488,277 @@ Home Page FINAL CTA
     }
 
 }
+
+/* =========================================================
+   META ADS 2026 ARTICLE — EXECUTIVE GROWTH AUDIT
+   ========================================================= */
+
+.meta-ads-2026-executive-audit {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 110px 40px 120px;
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+/* KICKER */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-kicker {
+    margin: 0 0 22px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+/* MAIN HEADING */
+
+.meta-ads-2026-executive-audit h2 {
+    max-width: 900px;
+    margin: 0 0 34px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: #0f172a;
+}
+
+/* BODY COPY */
+
+.meta-ads-2026-executive-audit > p {
+    max-width: 820px;
+    margin: 0 0 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #475569;
+}
+
+/* STRONG TEXT */
+
+.meta-ads-2026-executive-audit p strong {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* HIGHLIGHT CARD */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-highlight {
+    max-width: 900px;
+    margin: 52px 0;
+    padding: 34px 38px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0f172a;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* HIGHLIGHT LABEL */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-highlight-label {
+    display: block;
+    margin: 0 0 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+/* HIGHLIGHT COPY */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-highlight p {
+    max-width: none;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    color: #0f172a;
+}
+
+/* SUBHEADINGS */
+
+.meta-ads-2026-executive-audit h3 {
+    max-width: 820px;
+    margin: 64px 0 24px;
+    font-family: "Manrope", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: #0f172a;
+}
+
+/* CTA AREA */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-audit-cta {
+    max-width: 900px;
+    margin-top: 64px;
+    padding: 42px 44px;
+    background: #0f172a;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/* CTA BUTTON */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-audit-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    color: #0f172a;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* CTA BUTTON HOVER */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-audit-cta .btn:hover {
+    transform: translateY(-2px);
+    background: #f1f5f9;
+}
+
+/* CTA DESCRIPTION */
+
+.meta-ads-2026-executive-audit .meta-ads-2026-audit-cta p {
+    max-width: 620px;
+    margin: 18px 0 0;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #cbd5e1;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .meta-ads-2026-executive-audit {
+        padding: 90px 32px 100px;
+    }
+
+    .meta-ads-2026-executive-audit h2 {
+        font-size: clamp(36px, 6vw, 50px);
+    }
+
+    .meta-ads-2026-executive-audit > p {
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+    .meta-ads-2026-executive-audit h3 {
+        font-size: 28px;
+        margin-top: 56px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-highlight {
+        margin: 44px 0;
+        padding: 30px 32px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-highlight p {
+        font-size: 20px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-audit-cta {
+        margin-top: 56px;
+        padding: 36px 34px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .meta-ads-2026-executive-audit {
+        padding: 72px 22px 80px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-kicker {
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+    }
+
+    .meta-ads-2026-executive-audit h2 {
+        margin-bottom: 26px;
+        font-size: 34px;
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+    }
+
+    .meta-ads-2026-executive-audit > p {
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 21px;
+    }
+
+    .meta-ads-2026-executive-audit h3 {
+        margin-top: 48px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        line-height: 1.25;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-highlight {
+        margin: 38px 0;
+        padding: 26px 24px;
+        border-radius: 8px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-highlight-label {
+        margin-bottom: 12px;
+        font-size: 10px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-highlight p {
+        font-size: 19px;
+        line-height: 1.5;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-audit-cta {
+        margin-top: 48px;
+        padding: 30px 24px;
+        border-radius: 9px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-audit-cta .btn {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+
+    .meta-ads-2026-executive-audit .meta-ads-2026-audit-cta p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+}
