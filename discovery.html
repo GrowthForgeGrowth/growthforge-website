@@ -394,11 +394,10 @@
 
     <select
         id="services"
-        name="services"
+        name="services[]"
+        multiple
         required
     >
-        <option value="">Select a service...</option>
-
         <option value="ai-seo">
             AI SEO (Generative Engine Optimization)
         </option>
@@ -426,7 +425,6 @@
     </select>
 
 </div>
-
                 <div class="form-group">
                     <label>Monthly Marketing Budget *</label>
 
