@@ -29762,3 +29762,229 @@ Home Page FINAL CTA
     }
 
 }
+
+/* =========================================================
+   META ADS 2026 ARTICLE — CLOSING REMARK
+   ========================================================= */
+
+.meta-ads-2026-closing {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 110px 40px 120px;
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+/* KICKER */
+
+.meta-ads-2026-closing .meta-ads-2026-kicker {
+    margin: 0 0 22px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+/* MAIN HEADING */
+
+.meta-ads-2026-closing h2 {
+    max-width: 900px;
+    margin: 0 0 36px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+    color: #0f172a;
+}
+
+/* BODY COPY */
+
+.meta-ads-2026-closing > p {
+    max-width: 820px;
+    margin: 0 0 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #475569;
+}
+
+/* STRONG TEXT */
+
+.meta-ads-2026-closing p strong {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* CLOSING HIGHLIGHT */
+
+.meta-ads-2026-closing .meta-ads-2026-highlight {
+    max-width: 900px;
+    margin: 54px 0;
+    padding: 36px 40px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0f172a;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* HIGHLIGHT LABEL */
+
+.meta-ads-2026-closing .meta-ads-2026-highlight-label {
+    display: block;
+    margin: 0 0 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+/* HIGHLIGHT COPY */
+
+.meta-ads-2026-closing .meta-ads-2026-highlight p {
+    max-width: none;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+}
+
+/* FINAL CTA */
+
+.meta-ads-2026-closing .meta-ads-2026-closing-cta {
+    margin-top: 56px;
+}
+
+/* CTA BUTTON */
+
+.meta-ads-2026-closing .meta-ads-2026-closing-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 26px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    color: #ffffff;
+    background: #0f172a;
+    border: 1px solid #0f172a;
+    border-radius: 7px;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* CTA HOVER */
+
+.meta-ads-2026-closing .meta-ads-2026-closing-cta .btn:hover {
+    transform: translateY(-2px);
+    background: #1e293b;
+    border-color: #1e293b;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .meta-ads-2026-closing {
+        padding: 90px 32px 100px;
+    }
+
+    .meta-ads-2026-closing h2 {
+        font-size: clamp(38px, 6vw, 52px);
+    }
+
+    .meta-ads-2026-closing > p {
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-highlight {
+        margin: 46px 0;
+        padding: 32px 34px;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-highlight p {
+        font-size: 21px;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-closing-cta {
+        margin-top: 50px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .meta-ads-2026-closing {
+        padding: 72px 22px 82px;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-kicker {
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+    }
+
+    .meta-ads-2026-closing h2 {
+        margin-bottom: 28px;
+        font-size: 35px;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+    }
+
+    .meta-ads-2026-closing > p {
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 21px;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-highlight {
+        margin: 40px 0;
+        padding: 27px 24px;
+        border-radius: 8px;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-highlight-label {
+        margin-bottom: 12px;
+        font-size: 10px;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-highlight p {
+        font-size: 19px;
+        line-height: 1.5;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-closing-cta {
+        margin-top: 44px;
+    }
+
+    .meta-ads-2026-closing .meta-ads-2026-closing-cta .btn {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+
+}
