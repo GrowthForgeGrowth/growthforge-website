@@ -5330,9 +5330,7 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-form-section{
-
     padding:100px 0 120px;
-
 }
 
 /* =========================================
@@ -5340,37 +5338,23 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-form-section .section-heading{
-
     max-width:760px;
-
     margin:0 auto 60px;
-
     text-align:center;
-
 }
 
 .audit-form-section .section-heading h2{
-
     margin:0 0 18px;
-
     font:800 54px Manrope,sans-serif;
-
     line-height:1.1;
-
     color:#0f172a;
-
 }
 
 .audit-form-section .section-heading p{
-
     margin:0;
-
     font-size:19px;
-
     line-height:1.8;
-
     color:#64748b;
-
 }
 
 /* =========================================
@@ -5378,23 +5362,14 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-form-card{
-
     max-width:820px;
-
     margin:0 auto;
-
     padding:48px;
-
     background:#fff;
-
     border:1px solid #e2e8f0;
-
     border-radius:26px;
-
     box-shadow:
-
         0 30px 80px rgba(15,23,42,.08);
-
 }
 
 /* =========================================
@@ -5402,31 +5377,20 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-form{
-
     display:grid;
-
     gap:28px;
-
 }
 
 .form-group{
-
     display:flex;
-
     flex-direction:column;
-
 }
 
 .form-group label{
-
     margin-bottom:10px;
-
     font-size:15px;
-
     font-weight:700;
-
     color:#0f172a;
-
 }
 
 /* =========================================
@@ -5434,61 +5398,76 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-form input,
-
-.audit-form textarea,
-
-.audit-form select{
-
+.audit-form textarea{
     width:100%;
-
     padding:16px 18px;
-
     border:1px solid #dbe4ee;
-
     border-radius:14px;
-
     background:#fff;
-
     font:400 15px Inter,sans-serif;
-
     color:#0f172a;
-
     transition:.25s ease;
-
-    appearance:none;
-
 }
 
 .audit-form textarea{
-
     min-height:150px;
-
     resize:vertical;
-
 }
 
 .audit-form input::placeholder,
-
 .audit-form textarea::placeholder{
-
     color:#94a3b8;
-
 }
 
 .audit-form input:focus,
-
-.audit-form textarea:focus,
-
-.audit-form select:focus{
-
+.audit-form textarea:focus{
     outline:none;
-
     border-color:#2563eb;
-
     box-shadow:
-
         0 0 0 4px rgba(37,99,235,.12);
+}
 
+/* =========================================
+   SERVICES OF INTEREST
+   MULTI-SELECT
+========================================= */
+
+.audit-form select[multiple]{
+    width:100%;
+    min-height:180px;
+    padding:8px;
+    border:1px solid #dbe4ee;
+    border-radius:14px;
+    background:#fff;
+    font:400 15px Inter,sans-serif;
+    color:#0f172a;
+    transition:.25s ease;
+
+    /* Preserve native multi-select behavior */
+    appearance:auto;
+    -webkit-appearance:auto;
+
+    cursor:pointer;
+    overflow-y:auto;
+}
+
+.audit-form select[multiple] option{
+    padding:11px 12px;
+    color:#334155;
+    background:#fff;
+}
+
+.audit-form select[multiple] option:checked{
+    background:#2563eb;
+    color:#fff;
+    font-weight:600;
+}
+
+.audit-form select[multiple]:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.12);
 }
 
 /* =========================================
@@ -5496,65 +5475,39 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .checkbox-grid{
-
     display:grid;
-
     gap:14px;
-
     margin-top:8px;
-
 }
 
 .checkbox-item{
-
     display:flex;
-
     align-items:flex-start;
-
     gap:14px;
-
     padding:16px 18px;
-
     background:#fff;
-
     border:1px solid #e2e8f0;
-
     border-radius:14px;
-
     cursor:pointer;
-
     transition:.25s ease;
-
 }
 
 .checkbox-item:hover{
-
-    border-color:#bfdbfe;
-
-    background:#f8fbff;
-
+    border-color:#cbd5e1;
+    background:#f8fafc;
 }
 
 .checkbox-item input{
-
     width:18px;
-
     height:18px;
-
     margin-top:3px;
-
     flex-shrink:0;
-
 }
 
 .checkbox-item span{
-
     font-size:15px;
-
     line-height:1.65;
-
     color:#334155;
-
 }
 
 /* =========================================
@@ -5562,13 +5515,9 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .required-note{
-
     margin:-8px 0 0;
-
     color:#64748b;
-
     font-size:14px;
-
 }
 
 /* =========================================
@@ -5576,19 +5525,12 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-purchase-btn{
-
     width:100%;
-
     padding:18px;
-
     margin-top:8px;
-
     font-size:17px;
-
     font-weight:700;
-
     border-radius:14px;
-
 }
 
 /* =========================================
@@ -5596,19 +5538,12 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .audit-note{
-
     max-width:760px;
-
     margin:34px auto 0;
-
     text-align:center;
-
     color:#64748b;
-
     font-size:15px;
-
     line-height:1.7;
-
 }
 
 /* =========================================
@@ -5616,37 +5551,23 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .privacy-card{
-
     max-width:820px;
-
     margin:30px auto 0;
-
     padding:28px 32px;
-
     background:#fff;
-
     border:1px solid #e2e8f0;
-
     border-radius:20px;
-
 }
 
 .privacy-card p{
-
     margin:0;
-
     font-size:15px;
-
     line-height:1.8;
-
     color:#475569;
-
 }
 
 .privacy-card strong{
-
     color:#0f172a;
-
 }
 
 /* =========================================
@@ -5656,47 +5577,36 @@ EXECUTIVE AUDIT OVERVIEW
 @media (max-width:960px){
 
     .audit-form-section{
-
         padding:80px 0;
-
     }
 
     .audit-form-card{
-
         padding:34px;
-
     }
 
     .audit-form-section .section-heading h2{
-
         font-size:42px;
-
     }
-
 }
 
 @media (max-width:640px){
 
     .audit-form-card{
-
         padding:24px;
-
         border-radius:20px;
-
     }
 
     .audit-form-section .section-heading h2{
-
         font-size:34px;
-
     }
 
     .audit-form-section .section-heading p{
-
         font-size:17px;
-
     }
 
+    .audit-form select[multiple]{
+        min-height:190px;
+    }
 }
 
 /* =========================================
@@ -5704,103 +5614,63 @@ EXECUTIVE AUDIT OVERVIEW
 ========================================= */
 
 .contact-card{
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     text-align:center;
-
     padding:40px;
-
     background:#fff;
-
     border:1px solid #e2e8f0;
-
     border-radius:24px;
-
     box-shadow:
         0 20px 50px rgba(15,23,42,.08);
-
     transition:.25s ease;
-
 }
 
 .contact-card:hover{
-
     transform:translateY(-6px);
-
     box-shadow:
         0 30px 70px rgba(15,23,42,.12);
-
 }
 
 .contact-card h3{
-
     margin-bottom:10px;
-
 }
 
 .contact-card .price{
-
     margin:0 0 18px;
-
     font-size:15px;
-
     font-weight:700;
-
     color:#2563eb;
-
     text-transform:uppercase;
-
     letter-spacing:.08em;
-
 }
 
 .contact-card strong{
-
     display:block;
-
     margin-bottom:16px;
-
     font-size:20px;
-
     color:#0f172a;
-
 }
 
 .contact-card p{
-
     line-height:1.8;
-
 }
 
 .contact-card .btn{
-
     width:100%;
-
     margin-top:30px;
-
 }
 
 .audit-divider{
-
     padding:70px 0 20px;
-
 }
 
 .divider-line{
-
     width:120px;
-
     height:1px;
-
     margin:0 auto;
-
     background:#dbe4f0;
-
 }
 
 /* =========================================
