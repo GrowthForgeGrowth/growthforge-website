@@ -5430,10 +5430,9 @@ EXECUTIVE AUDIT OVERVIEW
         0 0 0 4px rgba(37,99,235,.12);
 }
 
-
 /* =========================================
-   SERVICES OF INTEREST ONLY
-   MULTI-SELECT
+   SERVICES OF INTEREST
+   MULTI-SELECT ONLY
 ========================================= */
 
 .audit-form #services[multiple]{
@@ -5453,7 +5452,6 @@ EXECUTIVE AUDIT OVERVIEW
     background:#2563eb;
     color:#fff;
 }
-
 
 /* =========================================
    CHECKBOXES
