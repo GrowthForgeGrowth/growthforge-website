@@ -30,43 +30,90 @@ header .logo{flex-shrink:0}
 
 /* =========================================================
    GROWTHFORGE — HOMEPAGE HERO
-   UPDATED RESULTS DASHBOARD
-   PAGE-SCOPED TO .hero
+   TARGET DESIGN:
+   DARK NAVY → BLUE → PURPLE GRADIENT
+   PREMIUM EXECUTIVE GROWTH HERO
    ========================================================= */
 
 .hero {
     width: 100%;
     margin: 0;
     padding: 105px 0 90px;
-    background:
-        radial-gradient(
-            circle at 72% 50%,
-            rgba(37, 99, 235, .12),
-            transparent 34%
-        ),
-        linear-gradient(
-            135deg,
-            #020617 0%,
-            #050b1c 48%,
-            #020617 100%
-        );
     color: #ffffff;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
+
+    /* MAIN BACKGROUND */
+    background:
+        radial-gradient(
+            700px 700px at 91% 35%,
+            rgba(91, 39, 255, 0.78) 0%,
+            rgba(60, 43, 210, 0.48) 28%,
+            rgba(20, 45, 130, 0.20) 55%,
+            transparent 76%
+        ),
+        radial-gradient(
+            600px 600px at 72% 85%,
+            rgba(24, 82, 220, 0.28),
+            transparent 70%
+        ),
+        linear-gradient(
+            115deg,
+            #020617 0%,
+            #030a20 32%,
+            #07133c 57%,
+            #17207b 76%,
+            #4816a8 100%
+        );
 }
+
+
+/* =========================================================
+   SUBTLE HERO LIGHT
+   ========================================================= */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            500px 500px at 82% 42%,
+            rgba(59, 130, 246, 0.14),
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
 
 .hero .container {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     box-sizing: border-box;
+    position: relative;
+    z-index: 2;
 }
+
+
+/* =========================================================
+   HERO GRID
+   ========================================================= */
 
 .hero-inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(500px, .88fr);
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(560px, .98fr);
+
     align-items: center;
-    gap: 72px;
+    gap: 65px;
 }
 
 
@@ -83,7 +130,9 @@ header .logo{flex-shrink:0}
 .hero .eyebrow {
     display: inline-block;
     margin: 0 0 22px;
+
     color: #60a5fa;
+
     font-family: Manrope, sans-serif;
     font-size: 12px;
     font-weight: 800;
@@ -95,7 +144,9 @@ header .logo{flex-shrink:0}
 .hero h1 {
     max-width: 720px;
     margin: 0 0 26px;
+
     color: #ffffff !important;
+
     font-family: Manrope, sans-serif;
     font-size: clamp(48px, 5.2vw, 72px);
     font-weight: 800;
@@ -106,7 +157,9 @@ header .logo{flex-shrink:0}
 .hero .lead {
     max-width: 650px;
     margin: 0 0 32px;
+
     color: #cbd5e1 !important;
+
     font-family: Manrope, sans-serif;
     font-size: 19px;
     font-weight: 400;
@@ -131,16 +184,20 @@ header .logo{flex-shrink:0}
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     min-height: 52px;
     padding: 0 23px;
+
     border-radius: 9px;
     box-sizing: border-box;
+
     font-family: Manrope, sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
+
     transition:
         transform .25s ease,
         background-color .25s ease,
@@ -151,60 +208,69 @@ header .logo{flex-shrink:0}
 
 .hero .cta .btn {
     background: #2563eb;
-    border: 1px solid #2563eb;
+    border: 1px solid #3b82f6;
     color: #ffffff !important;
-    box-shadow: 0 9px 25px rgba(37, 99, 235, .28);
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, .35);
 }
 
 .hero .cta .btn:hover {
-    background: #1d4ed8;
-    border-color: #1d4ed8;
-    color: #ffffff !important;
-    box-shadow: 0 13px 30px rgba(37, 99, 235, .36);
+    background: #3b82f6;
+    border-color: #60a5fa;
     transform: translateY(-1px);
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, .45);
 }
 
 .hero .cta .ghost {
-    background: transparent;
-    border: 1px solid #334155;
-    color: #e2e8f0 !important;
+    background: rgba(2, 6, 23, .18);
+    border: 1px solid rgba(148, 163, 184, .40);
+    color: #f1f5f9 !important;
+
+    backdrop-filter: blur(8px);
 }
 
 .hero .cta .ghost:hover {
-    background: #0f172a;
-    border-color: #475569;
-    color: #ffffff !important;
+    background: rgba(15, 23, 42, .55);
+    border-color: rgba(148, 163, 184, .70);
     transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   HERO PROOF METRICS
+   PROOF METRICS
    ========================================================= */
 
 .hero-benefits {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     width: 100%;
     max-width: 680px;
-    margin: 48px 0 0;
+
+    margin: 34px 0 0;
     padding: 0;
-    border-top: 1px solid #1e293b;
+
+    border-top: 1px solid rgba(148, 163, 184, .18);
 }
 
 .hero-benefit {
     min-width: 0;
-    padding: 24px 20px 0 0;
+    padding: 22px 20px 0 0;
 }
 
 .hero-benefit + .hero-benefit {
     padding-left: 20px;
-    border-left: 1px solid #1e293b;
+    border-left: 1px solid rgba(148, 163, 184, .18);
 }
 
 .hero-benefit h4 {
     margin: 0 0 8px;
+
     color: #ffffff;
+
     font-family: Manrope, sans-serif;
     font-size: 27px;
     font-weight: 800;
@@ -215,7 +281,9 @@ header .logo{flex-shrink:0}
 .hero-benefit p {
     max-width: 170px;
     margin: 0;
-    color: #94a3b8;
+
+    color: #a8b4c7;
+
     font-family: Manrope, sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -224,17 +292,19 @@ header .logo{flex-shrink:0}
 
 
 /* =========================================================
-   TRUST / INDUSTRIES
+   TRUST
    ========================================================= */
 
 .hero-trust {
-    margin-top: 34px;
+    margin-top: 30px;
 }
 
 .hero-trust > span {
     display: block;
     margin: 0 0 13px;
-    color: #64748b;
+
+    color: #71809a;
+
     font-family: Manrope, sans-serif;
     font-size: 10px;
     font-weight: 800;
@@ -252,16 +322,22 @@ header .logo{flex-shrink:0}
 .hero-industries span {
     display: inline-flex;
     align-items: center;
+
     min-height: 28px;
     padding: 0 11px;
-    border: 1px solid #1e293b;
+
+    border: 1px solid rgba(148, 163, 184, .18);
     border-radius: 999px;
-    background: #0f172a;
-    color: #94a3b8;
+
+    background: rgba(15, 23, 42, .35);
+    color: #9aa8bd;
+
     font-family: Manrope, sans-serif;
     font-size: 11px;
     font-weight: 600;
     line-height: 1;
+
+    backdrop-filter: blur(6px);
 }
 
 
@@ -271,82 +347,138 @@ header .logo{flex-shrink:0}
 
 .hero-visual {
     position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     min-width: 0;
-    min-height: 560px;
+    min-height: 620px;
 }
+
+
+/* =========================================================
+   BLUE / PURPLE GLOW
+   ========================================================= */
 
 .hero-glow {
     position: absolute;
-    width: 500px;
-    height: 500px;
-    top: 50%;
-    left: 50%;
+
+    width: 620px;
+    height: 620px;
+
+    top: 48%;
+    left: 56%;
+
     border-radius: 50%;
-    background: rgba(37, 99, 235, .13);
-    filter: blur(85px);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(70, 70, 255, .35) 0%,
+            rgba(76, 29, 149, .22) 38%,
+            transparent 72%
+        );
+
+    filter: blur(45px);
+
     transform: translate(-50%, -50%);
-    pointer-events: none;
-}
 
-.hero-grid {
-    position: absolute;
-    inset: -100px;
-    background-image:
-        linear-gradient(rgba(59, 130, 246, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59, 130, 246, .045) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: radial-gradient(
-        circle at center,
-        black 20%,
-        transparent 72%
-    );
-    -webkit-mask-image: radial-gradient(
-        circle at center,
-        black 20%,
-        transparent 72%
-    );
-    pointer-events: none;
-}
-
-.hero-lines {
-    position: absolute;
-    width: 520px;
-    height: 520px;
-    border: 1px solid rgba(59, 130, 246, .08);
-    border-radius: 50%;
-    box-shadow:
-        0 0 0 55px rgba(59, 130, 246, .025),
-        0 0 0 110px rgba(59, 130, 246, .018);
     pointer-events: none;
 }
 
 
 /* =========================================================
-   AUDIT DASHBOARD
+   GRID
+   ========================================================= */
+
+.hero-grid {
+    position: absolute;
+    inset: -100px;
+
+    background-image:
+        linear-gradient(
+            rgba(96, 165, 250, .045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(96, 165, 250, .045) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black 15%,
+            transparent 72%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle at center,
+            black 15%,
+            transparent 72%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CIRCULAR LIGHT LINES
+   ========================================================= */
+
+.hero-lines {
+    position: absolute;
+
+    width: 560px;
+    height: 560px;
+
+    border: 1px solid rgba(96, 165, 250, .09);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 60px rgba(96, 165, 250, .025),
+        0 0 0 120px rgba(96, 165, 250, .015);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DASHBOARD
    ========================================================= */
 
 .audit-dashboard {
     position: relative;
     z-index: 3;
+
     width: 100%;
-    max-width: 560px;
-    padding: 28px;
+    max-width: 700px;
+
+    padding: 34px;
+
     background:
         linear-gradient(
             145deg,
-            rgba(15, 23, 42, .98),
-            rgba(8, 15, 31, .98)
+            rgba(15, 23, 42, .90),
+            rgba(5, 13, 32, .92)
         );
-    border: 1px solid #263449;
-    border-radius: 18px;
+
+    border: 1px solid rgba(148, 163, 184, .28);
+    border-radius: 20px;
+
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, .42),
-        0 0 0 1px rgba(255, 255, 255, .02) inset;
+        0 35px 90px rgba(0, 0, 0, .48),
+        0 0 70px rgba(37, 99, 235, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .04);
+
     box-sizing: border-box;
-    backdrop-filter: blur(12px);
+
+    backdrop-filter: blur(18px);
 }
 
 
@@ -358,17 +490,23 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 18px;
-    padding-bottom: 22px;
-    border-bottom: 1px solid #1e293b;
+
+    gap: 20px;
+
+    padding-bottom: 24px;
+
+    border-bottom: 1px solid rgba(148, 163, 184, .16);
 }
 
 .audit-dashboard__eyebrow {
     display: block;
+
     margin: 0 0 7px;
+
     color: #60a5fa;
+
     font-family: Manrope, sans-serif;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 800;
     line-height: 1.4;
     letter-spacing: .12em;
@@ -376,9 +514,11 @@ header .logo{flex-shrink:0}
 
 .audit-dashboard__header h3 {
     margin: 0;
+
     color: #f8fafc;
+
     font-family: Manrope, sans-serif;
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: -.025em;
@@ -387,90 +527,150 @@ header .logo{flex-shrink:0}
 .audit-dashboard__status {
     display: inline-flex;
     align-items: center;
-    min-height: 27px;
-    padding: 0 9px;
-    border: 1px solid rgba(34, 197, 94, .25);
+
+    min-height: 29px;
+    padding: 0 11px;
+
+    border: 1px solid rgba(34, 197, 94, .30);
     border-radius: 999px;
+
     background: rgba(34, 197, 94, .08);
+
     color: #86efac;
+
     font-family: Manrope, sans-serif;
     font-size: 8px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: .08em;
+
     white-space: nowrap;
 }
 
 
 /* =========================================================
-   FOUR KPI CARDS
+   KPI METRICS — FOUR COLUMNS
    ========================================================= */
 
 .audit-dashboard__metrics {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin: 22px 0 24px;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin: 24px 0 25px;
 }
 
 .audit-metric {
-    position: relative;
     min-width: 0;
-    min-height: 112px;
-    padding: 15px;
-    border: 1px solid rgba(51, 65, 85, .72);
-    border-radius: 11px;
+
+    padding: 18px 12px 17px;
+
+    text-align: center;
+
+    border: 1px solid rgba(96, 165, 250, .14);
+    border-radius: 12px;
+
     background:
         linear-gradient(
             145deg,
-            rgba(15, 23, 42, .92),
-            rgba(9, 17, 32, .92)
+            rgba(15, 23, 42, .78),
+            rgba(8, 15, 31, .62)
         );
+
     box-sizing: border-box;
+
     transition:
-        border-color .25s ease,
         transform .25s ease,
-        background-color .25s ease;
+        border-color .25s ease;
 }
 
 .audit-metric:hover {
-    border-color: rgba(59, 130, 246, .45);
     transform: translateY(-2px);
+    border-color: rgba(96, 165, 250, .38);
 }
+
+
+/* =========================================================
+   METRIC ICON
+   ========================================================= */
 
 .audit-metric__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 27px;
-    height: 27px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(59, 130, 246, .25);
-    border-radius: 7px;
+
+    width: 46px;
+    height: 46px;
+
+    margin: 0 auto 13px;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
     background: rgba(37, 99, 235, .10);
+    border: 1px solid rgba(59, 130, 246, .40);
+
     color: #60a5fa;
-    font-family: Manrope, sans-serif;
-    font-size: 13px;
-    font-weight: 800;
+
+    box-shadow:
+        0 0 20px rgba(37, 99, 235, .20);
 }
+
+.audit-metric:nth-child(2) .audit-metric__icon {
+    color: #a855f7;
+    border-color: rgba(168, 85, 247, .45);
+    background: rgba(168, 85, 247, .10);
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, .20);
+}
+
+.audit-metric:nth-child(3) .audit-metric__icon {
+    color: #22d3ee;
+    border-color: rgba(34, 211, 238, .45);
+    background: rgba(34, 211, 238, .08);
+    box-shadow:
+        0 0 20px rgba(34, 211, 238, .18);
+}
+
+.audit-metric:nth-child(4) .audit-metric__icon {
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, .45);
+    background: rgba(74, 222, 128, .08);
+    box-shadow:
+        0 0 20px rgba(74, 222, 128, .18);
+}
+
+
+/* =========================================================
+   METRIC VALUE
+   ========================================================= */
 
 .audit-metric__value {
     display: block;
-    margin: 0 0 5px;
+
+    margin: 0 0 7px;
+
     color: #f8fafc;
+
     font-family: Manrope, sans-serif;
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 800;
     line-height: 1;
+
     letter-spacing: -.04em;
 }
 
 .audit-metric__label {
     display: block;
-    max-width: 170px;
-    color: #64748b;
+
+    color: #a7b2c5;
+
     font-family: Manrope, sans-serif;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 600;
     line-height: 1.4;
 }
@@ -482,30 +682,39 @@ header .logo{flex-shrink:0}
 
 .audit-dashboard__findings {
     margin: 0;
-    padding-top: 3px;
 }
 
 .audit-dashboard__findings-header {
     display: flex;
     justify-content: space-between;
-    margin: 0 0 9px;
-    padding-bottom: 9px;
-    border-bottom: 1px solid #1e293b;
-    color: #475569;
+
+    margin: 0 0 8px;
+    padding-bottom: 8px;
+
+    color: #64748b;
+
     font-family: Manrope, sans-serif;
     font-size: 8px;
     font-weight: 800;
     line-height: 1.4;
+
     letter-spacing: .1em;
 }
 
 .audit-finding {
     display: grid;
-    grid-template-columns: minmax(150px, .9fr) minmax(100px, 1fr);
+
+    grid-template-columns:
+        minmax(180px, .8fr)
+        minmax(160px, 1.2fr);
+
     align-items: center;
-    gap: 18px;
+
+    gap: 20px;
+
     min-height: 48px;
-    border-bottom: 1px solid rgba(30, 41, 59, .75);
+
+    border-bottom: 1px solid rgba(30, 41, 59, .55);
 }
 
 .audit-finding:last-child {
@@ -515,110 +724,214 @@ header .logo{flex-shrink:0}
 .audit-finding__label {
     display: flex;
     align-items: center;
+
+    gap: 10px;
+
     min-width: 0;
-    gap: 9px;
 }
 
 .audit-finding__dot {
     flex: 0 0 6px;
+
     width: 6px;
     height: 6px;
+
     border-radius: 50%;
+
     background: #3b82f6;
-    box-shadow: 0 0 9px rgba(59, 130, 246, .55);
+
+    box-shadow:
+        0 0 9px rgba(59, 130, 246, .65);
+}
+
+.audit-finding:nth-child(3) .audit-finding__dot {
+    background: #a855f7;
+    box-shadow:
+        0 0 9px rgba(168, 85, 247, .65);
+}
+
+.audit-finding:nth-child(4) .audit-finding__dot {
+    background: #22d3ee;
+    box-shadow:
+        0 0 9px rgba(34, 211, 238, .65);
+}
+
+.audit-finding:nth-child(5) .audit-finding__dot {
+    background: #4ade80;
+    box-shadow:
+        0 0 9px rgba(74, 222, 128, .65);
 }
 
 .audit-finding__label > span:not(.audit-finding__dot) {
-    color: #cbd5e1;
+    color: #d1d9e6;
+
     font-family: Manrope, sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     line-height: 1.4;
 }
 
+
+/* =========================================================
+   FINDING DATA / PROGRESS BAR
+   ========================================================= */
+
 .audit-finding__data {
     display: grid;
-    grid-template-columns: 1fr auto;
+
+    grid-template-columns:
+        1fr auto;
+
     align-items: center;
-    gap: 10px;
+
+    gap: 12px;
 }
 
 .audit-finding__bar {
     width: 100%;
     height: 5px;
+
     overflow: hidden;
+
     border-radius: 999px;
-    background: #1e293b;
+
+    background: rgba(30, 41, 59, .90);
 }
 
 .audit-finding__bar span {
     display: block;
+
     height: 100%;
+
     border-radius: inherit;
+
     background:
         linear-gradient(
             90deg,
             #2563eb,
-            #60a5fa
+            #3b82f6
         );
-    box-shadow: 0 0 10px rgba(37, 99, 235, .22);
+
+    box-shadow:
+        0 0 10px rgba(37, 99, 235, .35);
+}
+
+.audit-finding:nth-child(3)
+.audit-finding__bar span {
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #a855f7
+        );
+}
+
+.audit-finding:nth-child(4)
+.audit-finding__bar span {
+    background:
+        linear-gradient(
+            90deg,
+            #06b6d4,
+            #22d3ee
+        );
+}
+
+.audit-finding:nth-child(5)
+.audit-finding__bar span {
+    background:
+        linear-gradient(
+            90deg,
+            #22c55e,
+            #4ade80
+        );
 }
 
 .audit-finding__data strong {
-    min-width: 39px;
+    min-width: 38px;
+
     color: #60a5fa;
+
     font-family: Manrope, sans-serif;
     font-size: 10px;
     font-weight: 800;
-    line-height: 1.4;
+
     text-align: right;
+}
+
+.audit-finding:nth-child(3)
+.audit-finding__data strong {
+    color: #a855f7;
+}
+
+.audit-finding:nth-child(4)
+.audit-finding__data strong {
+    color: #22d3ee;
+}
+
+.audit-finding:nth-child(5)
+.audit-finding__data strong {
+    color: #4ade80;
 }
 
 
 /* =========================================================
-   DASHBOARD FOOTER
+   FOOTER
    ========================================================= */
 
 .audit-dashboard__footer {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+
+    grid-template-columns:
+        auto 1fr auto;
+
     align-items: center;
+
     gap: 12px;
-    margin-top: 20px;
+
+    margin-top: 21px;
     padding-top: 17px;
-    border-top: 1px solid #1e293b;
+
+    border-top: 1px solid rgba(148, 163, 184, .13);
 }
 
 .audit-dashboard__footer > span {
     color: #64748b;
+
     font-family: Manrope, sans-serif;
     font-size: 8px;
     font-weight: 800;
+
     line-height: 1.4;
     letter-spacing: .08em;
 }
 
 .audit-dashboard__footer > strong {
     color: #60a5fa;
+
     font-family: Manrope, sans-serif;
     font-size: 9px;
     font-weight: 800;
-    line-height: 1.4;
 }
 
 .audit-progress {
     width: 100%;
     height: 4px;
+
     overflow: hidden;
+
     border-radius: 999px;
-    background: #1e293b;
+
+    background: rgba(30, 41, 59, .85);
 }
 
 .audit-progress span {
     display: block;
+
     width: 88%;
     height: 100%;
+
     border-radius: inherit;
+
     background:
         linear-gradient(
             90deg,
@@ -639,7 +952,10 @@ header .logo{flex-shrink:0}
     }
 
     .hero-inner {
-        grid-template-columns: minmax(0, 1fr) minmax(430px, .9fr);
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(480px, .9fr);
+
         gap: 45px;
     }
 
@@ -648,11 +964,20 @@ header .logo{flex-shrink:0}
     }
 
     .hero-visual {
-        min-height: 500px;
+        min-height: 540px;
     }
 
     .audit-dashboard {
-        padding: 24px;
+        padding: 25px;
+    }
+
+    .audit-dashboard__metrics {
+        gap: 8px;
+    }
+
+    .audit-metric {
+        padding-left: 8px;
+        padding-right: 8px;
     }
 
 }
@@ -687,7 +1012,6 @@ header .logo{flex-shrink:0}
     .hero .lead {
         max-width: 100%;
         font-size: 18px;
-        line-height: 1.7;
     }
 
     .hero-visual {
@@ -695,18 +1019,22 @@ header .logo{flex-shrink:0}
         padding: 10px 0;
     }
 
-    .hero-lines {
-        width: 400px;
-        height: 400px;
+    .hero-glow {
+        width: 420px;
+        height: 420px;
     }
 
-    .hero-glow {
-        width: 360px;
-        height: 360px;
+    .hero-lines {
+        width: 420px;
+        height: 420px;
     }
 
     .audit-dashboard {
         max-width: 100%;
+    }
+
+    .audit-dashboard__metrics {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -720,10 +1048,6 @@ header .logo{flex-shrink:0}
 
     .hero {
         padding: 58px 20px 60px;
-    }
-
-    .hero .eyebrow {
-        font-size: 11px;
     }
 
     .hero h1 {
@@ -748,35 +1072,22 @@ header .logo{flex-shrink:0}
 
     .hero-benefits {
         grid-template-columns: 1fr;
-        gap: 0;
     }
 
     .hero-benefit,
     .hero-benefit + .hero-benefit {
         padding: 18px 0;
         border-left: 0;
-        border-bottom: 1px solid #1e293b;
+        border-bottom: 1px solid rgba(148, 163, 184, .15);
     }
 
     .hero-benefit:last-child {
         border-bottom: 0;
     }
 
-    .hero-benefit h4 {
-        font-size: 25px;
-    }
-
-    .hero-industries {
-        gap: 6px;
-    }
-
-    .hero-industries span {
-        font-size: 10px;
-    }
-
     .audit-dashboard {
         padding: 18px;
-        border-radius: 13px;
+        border-radius: 14px;
     }
 
     .audit-dashboard__header {
@@ -792,23 +1103,19 @@ header .logo{flex-shrink:0}
         padding: 0 7px;
     }
 
-    /* 2 x 2 KPI cards become a single column on very small screens */
-
     .audit-dashboard__metrics {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
 
     .audit-metric {
-        min-height: 105px;
-        padding: 12px;
+        padding: 13px 8px;
     }
 
     .audit-metric__icon {
-        width: 24px;
-        height: 24px;
-        margin-bottom: 9px;
-        font-size: 11px;
+        width: 38px;
+        height: 38px;
+        margin-bottom: 10px;
     }
 
     .audit-metric__value {
@@ -826,12 +1133,7 @@ header .logo{flex-shrink:0}
     }
 
     .audit-finding__data {
-        grid-template-columns: 1fr auto;
-        padding-left: 15px;
-    }
-
-    .audit-finding__label > span:not(.audit-finding__dot) {
-        font-size: 9px;
+        padding-left: 16px;
     }
 
     .audit-dashboard__footer {
