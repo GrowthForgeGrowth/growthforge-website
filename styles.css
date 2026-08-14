@@ -30807,3 +30807,142 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================================
+   CRO ARTICLE — DATA SECTION
+   ========================================================== */
+
+.gf-cro-article-data {
+    width: 100%;
+    padding: 90px 24px;
+
+    background: #ffffff;
+}
+
+.gf-cro-article-data-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.gf-cro-article-data-header {
+    max-width: 780px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.gf-cro-article-data-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+}
+
+.gf-cro-article-data-header > p:last-child {
+    margin: 24px auto 0;
+
+    color: #64748b;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.gf-cro-article-data-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(15, 23, 42, .07);
+}
+
+.gf-cro-article-stat {
+    padding: 38px 28px;
+
+    background: #f8fafc;
+
+    text-align: center;
+}
+
+.gf-cro-article-stat + .gf-cro-article-stat {
+    border-left: 1px solid #e2e8f0;
+}
+
+.gf-cro-article-stat strong {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+.gf-cro-article-stat span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #475569;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.gf-cro-article-data-source {
+    margin: 18px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .gf-cro-article-data {
+        padding: 70px 20px;
+    }
+
+    .gf-cro-article-data-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gf-cro-article-stat:nth-child(3) {
+        border-top: 1px solid #e2e8f0;
+        border-left: 0;
+    }
+
+    .gf-cro-article-stat:nth-child(4) {
+        border-top: 1px solid #e2e8f0;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .gf-cro-article-data {
+        padding: 60px 18px;
+    }
+
+    .gf-cro-article-data-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gf-cro-article-stat + .gf-cro-article-stat {
+        border-left: 0;
+        border-top: 1px solid #e2e8f0;
+    }
+
+}
