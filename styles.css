@@ -30579,3 +30579,231 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================================
+   GROWTHFORGE — CRO ARTICLE HERO
+   Scoped exclusively to the CRO article
+   ========================================================== */
+
+.gf-cro-article-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    padding: 110px 24px 90px;
+
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(37, 99, 235, 0.16),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #eef5ff 50%,
+            #ffffff 100%
+        );
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.gf-cro-article-hero-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.gf-cro-article-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   EYEBROW
+   ========================================================== */
+
+.gf-cro-article-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    margin: 0 0 22px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+
+    background: rgba(239, 246, 255, 0.85);
+
+    color: #1d4ed8;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   TITLE
+   ========================================================== */
+
+.gf-cro-article-hero-content h1 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    font-weight: 800;
+
+    letter-spacing: -0.045em;
+
+    line-height: 1.04;
+}
+
+
+/* ==========================================================
+   LEAD
+   ========================================================== */
+
+.gf-cro-article-hero-lead {
+    max-width: 760px;
+
+    margin: 28px auto 0;
+
+    color: #475569;
+
+    font-size: clamp(17px, 2vw, 20px);
+
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   META
+   ========================================================== */
+
+.gf-cro-article-meta {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px 18px;
+
+    margin-top: 32px;
+
+    color: #64748b;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.gf-cro-article-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.gf-cro-article-meta span + span::before {
+    content: "";
+
+    width: 4px;
+    height: 4px;
+
+    margin-right: 18px;
+
+    border-radius: 50%;
+
+    background: #94a3b8;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .gf-cro-article-hero {
+        padding: 80px 20px 70px;
+    }
+
+    .gf-cro-article-hero-content {
+        max-width: 100%;
+    }
+
+    .gf-cro-article-hero-content h1 {
+        font-size: clamp(38px, 10vw, 54px);
+        letter-spacing: -0.04em;
+    }
+
+    .gf-cro-article-hero-lead {
+        margin-top: 22px;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+    }
+
+    .gf-cro-article-meta {
+        margin-top: 26px;
+
+        gap: 8px 14px;
+    }
+
+    .gf-cro-article-meta span + span::before {
+        margin-right: 14px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .gf-cro-article-hero {
+        padding: 65px 18px 58px;
+    }
+
+    .gf-cro-article-eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.1em;
+    }
+
+    .gf-cro-article-hero-content h1 {
+        font-size: 38px;
+        line-height: 1.08;
+    }
+
+    .gf-cro-article-hero-lead {
+        font-size: 15px;
+    }
+
+    .gf-cro-article-meta {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .gf-cro-article-meta span + span::before {
+        display: none;
+    }
+
+}
