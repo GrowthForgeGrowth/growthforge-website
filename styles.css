@@ -31730,3 +31730,145 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================================
+   CRO ARTICLE — AUDIT FRAMEWORK
+   ========================================================== */
+
+.gf-cro-article-framework {
+    width: 100%;
+    padding: 100px 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #ffffff 100%
+        );
+}
+
+.gf-cro-article-framework-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.gf-cro-article-framework-header {
+    max-width: 820px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.gf-cro-article-framework-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+}
+
+.gf-cro-article-framework-header > p:last-child {
+    max-width: 740px;
+
+    margin: 24px auto 0;
+
+    color: #64748b;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.gf-cro-article-framework-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.gf-cro-article-framework-card {
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 40px rgba(15, 23, 42, .05);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.gf-cro-article-framework-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, .08);
+}
+
+.gf-cro-article-framework-card > span {
+    display: block;
+
+    margin-bottom: 28px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .12em;
+}
+
+.gf-cro-article-framework-card h3 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    line-height: 1.25;
+}
+
+.gf-cro-article-framework-card p {
+    margin: 12px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+
+    .gf-cro-article-framework-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .gf-cro-article-framework {
+        padding: 70px 20px;
+    }
+
+    .gf-cro-article-framework-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gf-cro-article-framework-card {
+        padding: 28px 24px;
+    }
+
+}
