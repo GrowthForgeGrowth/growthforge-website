@@ -31513,3 +31513,220 @@ Home Page FINAL CTA
     }
 
 }
+
+/* ==========================================================
+   CRO ARTICLE — SEO + GEO + CRO SECTION
+   ========================================================== */
+
+.gf-cro-article-search {
+    width: 100%;
+    padding: 100px 24px;
+
+    background: #ffffff;
+}
+
+.gf-cro-article-search-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.gf-cro-article-search-header {
+    max-width: 820px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.gf-cro-article-search-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+}
+
+.gf-cro-article-search-header > p:last-child {
+    max-width: 740px;
+
+    margin: 24px auto 0;
+
+    color: #64748b;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.gf-cro-article-search-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr
+        auto
+        1fr;
+
+    align-items: stretch;
+
+    gap: 16px;
+}
+
+.gf-cro-article-search-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 32px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+}
+
+.gf-cro-article-search-card-highlight {
+    background:
+        linear-gradient(
+            145deg,
+            #eff6ff,
+            #ffffff
+        );
+
+    border-color: #bfdbfe;
+}
+
+.gf-cro-article-search-label {
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .12em;
+}
+
+.gf-cro-article-search-card h3 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    line-height: 1.25;
+}
+
+.gf-cro-article-search-card p {
+    margin: 12px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.gf-cro-article-search-result {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+.gf-cro-article-search-result span {
+    color: #94a3b8;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .1em;
+}
+
+.gf-cro-article-search-result strong {
+    color: #1e3a8a;
+
+    font-size: 14px;
+}
+
+.gf-cro-article-search-connector {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #94a3b8;
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.gf-cro-article-search-callout {
+    max-width: 900px;
+
+    margin: 50px auto 0;
+
+    padding: 28px 32px;
+
+    background: #0f172a;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.gf-cro-article-search-callout strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.gf-cro-article-search-callout p {
+    margin: 10px 0 0;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+
+    .gf-cro-article-search-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gf-cro-article-search-connector {
+        transform: rotate(90deg);
+        min-height: 30px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .gf-cro-article-search {
+        padding: 70px 20px;
+    }
+
+    .gf-cro-article-search-card {
+        padding: 28px 24px;
+    }
+
+    .gf-cro-article-search-callout {
+        padding: 24px;
+    }
+
+}
