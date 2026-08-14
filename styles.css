@@ -1924,7 +1924,7 @@ header .logo{flex-shrink:0}
 
 /* ==========================================================
 COMPONENT: GROWTHFORGE EXECUTIVE GROWTH ADVISOR
-SECTION: LAUNCHER
+SECTION: LAUNCHER + EXPANDABLE PANEL
 ========================================================== */
 
 :root{
@@ -1941,6 +1941,7 @@ SECTION: LAUNCHER
 
 }
 
+
 /* ==========================================================
 CHATBOT CONTAINER
 ========================================================== */
@@ -1950,20 +1951,25 @@ CHATBOT CONTAINER
     position:fixed;
 
     right:32px;
-
     bottom:32px;
 
     z-index:var(--gf-chatbot-z-index);
 
     font-family:Inter,sans-serif;
 
+    width:auto;
+    height:auto;
+
 }
+
 
 /* ==========================================================
 LAUNCHER
 ========================================================== */
 
 .gf-chatbot-launcher{
+
+    position:relative;
 
     display:flex;
 
@@ -2007,6 +2013,7 @@ LAUNCHER
 
 }
 
+
 /* ==========================================================
 AI ICON
 ========================================================== */
@@ -2018,13 +2025,11 @@ AI ICON
     flex-shrink:0;
 
     width:52px;
-
     height:52px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border-radius:50%;
@@ -2039,13 +2044,13 @@ AI ICON
     color:#ffffff;
 
     font-size:22px;
-
     font-weight:800;
 
     box-shadow:
         0 12px 28px rgba(37,99,235,.35);
 
 }
+
 
 /* ==========================================================
 TEXT
@@ -2085,11 +2090,6 @@ TEXT
 
 }
 
-.gf-chatbot-launcher-hint::before{
-
-    content:none;
-
-}
 
 /* ==========================================================
 ATTENTION BADGE
@@ -2102,7 +2102,6 @@ ATTENTION BADGE
     position:absolute;
 
     top:-10px;
-
     right:16px;
 
     padding:6px 12px;
@@ -2126,165 +2125,305 @@ ATTENTION BADGE
 
 }
 
+
 /* ==========================================================
-MOBILE
+PANEL
+IMPORTANT:
+Hidden by default.
+Does NOT occupy page space.
+Only appears when chatbot is open.
 ========================================================== */
 
-@media (max-width:768px){
-
-    .gf-chatbot{
-
-        right:18px;
-
-        bottom:18px;
-
-    }
-
-    .gf-chatbot-launcher{
-
-        min-width:auto;
-
-        width:68px;
-
-        height:68px;
-
-        padding:0;
-
-        justify-content:center;
-
-        border-radius:50%;
-
-    }
-
-    .gf-chatbot-launcher::before{
-
-        width:68px;
-
-        height:68px;
-
-        margin:0;
-
-    }
-
-    .gf-chatbot-launcher-label,
-
-    .gf-chatbot-launcher-hint,
-
-    .gf-chatbot-launcher::after{
-
-        display:none;
-
-    }
-
-}
-
-/* Panel */
-
 .gf-chatbot-panel{
-    position:absolute;
-    right:0;
-    bottom:80px;
 
-    width:min(390px,calc(100vw - 30px));
+    position:absolute;
+
+    right:0;
+    bottom:calc(100% + 16px);
+
+    width:390px;
+    max-width:calc(100vw - 32px);
+
+    height:auto;
     max-height:600px;
 
-    background:white;
+    background:#ffffff;
 
     border-radius:24px;
+
     overflow:hidden;
 
     box-shadow:
-    0 30px 80px rgba(15,23,42,.25);
+        0 30px 80px rgba(15,23,42,.25);
 
     border:1px solid #e2e8f0;
 
-    display:flex;
+    display:none;
+
     flex-direction:column;
+
+    box-sizing:border-box;
+
 }
 
 
-/* Header */
+/* ==========================================================
+OPEN STATE
+========================================================== */
+
+.gf-chatbot[data-state="open"] .gf-chatbot-panel{
+
+    display:flex;
+
+}
+
+
+/* ==========================================================
+HIDDEN STATE
+========================================================== */
+
+.gf-chatbot-panel[hidden]{
+
+    display:none !important;
+
+}
+
+
+/* ==========================================================
+MINIMIZED STATE
+========================================================== */
+
+.gf-chatbot[data-state="minimized"] .gf-chatbot-panel{
+
+    display:none !important;
+
+}
+
+
+/* ==========================================================
+HEADER
+========================================================== */
 
 .gf-chatbot-header{
+
+    position:relative;
+
     background:
-    linear-gradient(135deg,#0f172a,#1e3a8a);
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a
+        );
 
     padding:22px;
 
-    color:white;
+    padding-right:55px;
+
+    color:#ffffff;
+
 }
 
-.gf-chatbot-header p{
+
+/* Header title */
+
+.gf-chatbot-header strong{
+
+    display:block;
+
+    margin:0 0 6px;
+
+    color:#ffffff;
+
     font-size:16px;
-    font-weight:700;
+
+    font-weight:800;
+
+    line-height:1.3;
+
 }
 
-.gf-chatbot-header span{
+
+/* Header description */
+
+.gf-chatbot-header > span{
+
+    display:block;
+
     color:#bfdbfe;
+
     font-size:13px;
+
+    line-height:1.5;
+
 }
 
 
-/* Messages */
+/* ==========================================================
+HEADER ACTIONS
+TOP RIGHT
+========================================================== */
+
+.gf-chatbot-header-actions{
+
+    position:absolute;
+
+    top:14px;
+    right:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    z-index:10;
+
+}
+
+
+/* ==========================================================
+MINIMIZE BUTTON
+========================================================== */
+
+.gf-chatbot-minimize{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:32px;
+    height:32px;
+
+    padding:0;
+    margin:0;
+
+    border:0;
+    border-radius:8px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+.gf-chatbot-minimize:hover{
+
+    background:rgba(255,255,255,.18);
+
+    transform:scale(1.05);
+
+}
+
+.gf-chatbot-minimize-icon{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+    height:100%;
+
+    font-size:20px;
+
+    line-height:1;
+
+}
+
+
+/* ==========================================================
+MESSAGES
+========================================================== */
 
 .gf-chatbot-messages{
+
+    flex:1;
+
+    min-height:180px;
+    max-height:360px;
+
     padding:18px;
 
     background:#f8fafc;
 
     display:grid;
+
     gap:12px;
 
-    overflow:auto;
+    overflow-y:auto;
+
 }
 
 
+/* ==========================================================
+MESSAGE
+========================================================== */
+
 .gf-chatbot-message{
+
     max-width:88%;
+
     padding:14px 16px;
 
     border-radius:18px;
 
     font-size:14px;
+
     line-height:1.6;
+
 }
 
-
 .gf-chatbot-message-user{
+
     justify-self:end;
 
     background:#2563eb;
-    color:white;
+
+    color:#ffffff;
 
     border-bottom-right-radius:5px;
+
 }
 
-
 .gf-chatbot-message-bot{
+
     justify-self:start;
 
-    background:white;
+    background:#ffffff;
 
     border:1px solid #e2e8f0;
 
     color:#0f172a;
 
     border-bottom-left-radius:5px;
+
 }
 
 
-/* Quick Actions */
+/* ==========================================================
+QUICK ACTIONS
+========================================================== */
 
 .gf-chatbot-quick-actions{
 
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
     padding:14px;
 
-    background:white;
+    background:#ffffff;
 
     border-top:1px solid #e2e8f0;
 
 }
-
 
 .gf-chatbot-quick-action{
 
@@ -2300,30 +2439,46 @@ MOBILE
 
     font-size:13px;
 
-    transition:.2s;
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+
 }
 
 .gf-chatbot-quick-action:hover{
 
     background:#dbeafe;
 
+    border-color:#93c5fd;
+
 }
 
 
-/* Input */
+/* ==========================================================
+INPUT
+========================================================== */
 
 .gf-chatbot-form{
 
+    display:flex;
+
+    gap:8px;
+
     padding:16px;
 
-    background:white;
+    background:#ffffff;
 
     border-top:1px solid #e2e8f0;
 
 }
 
-
 .gf-chatbot-form input{
+
+    flex:1;
+
+    min-width:0;
 
     height:46px;
 
@@ -2333,50 +2488,124 @@ MOBILE
 
     padding:0 14px;
 
+    box-sizing:border-box;
+
+    outline:none;
+
 }
 
+.gf-chatbot-form input:focus{
+
+    border-color:#60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,.10);
+
+}
 
 .gf-chatbot-form button{
 
+    height:46px;
+
     background:#2563eb;
+
+    color:#ffffff;
+
+    border:0;
 
     border-radius:12px;
 
     padding:0 18px;
 
+    cursor:pointer;
+
 }
 
 
-/* Mobile */
+/* ==========================================================
+MOBILE
+========================================================== */
 
-@media(max-width:800px){
+@media(max-width:768px){
 
-.gf-chatbot{
-    right:16px;
-    bottom:16px;
+    .gf-chatbot{
+
+        right:18px;
+        bottom:18px;
+
+    }
+
+    .gf-chatbot-launcher{
+
+        min-width:auto;
+
+        width:68px;
+        height:68px;
+
+        padding:0;
+
+        justify-content:center;
+
+        border-radius:50%;
+
+    }
+
+    .gf-chatbot-launcher::before{
+
+        width:68px;
+        height:68px;
+
+        margin:0;
+
+    }
+
+    .gf-chatbot-launcher-label,
+    .gf-chatbot-launcher-hint,
+    .gf-chatbot-launcher::after{
+
+        display:none;
+
+    }
+
+    .gf-chatbot-panel{
+
+        right:0;
+
+        bottom:calc(100% + 14px);
+
+        width:calc(100vw - 32px);
+
+        max-width:calc(100vw - 32px);
+
+        max-height:calc(100vh - 110px);
+
+    }
+
 }
 
-.gf-chatbot-panel{
-    width:calc(100vw - 32px);
-}
 
-}/* ===== Chatbot State Fix ===== */
+/* ==========================================================
+SMALL MOBILE
+========================================================== */
 
-.gf-chatbot-panel[hidden]{
-    display:none !important;
-}
+@media(max-width:480px){
 
-.gf-chatbot[data-state="minimized"] .gf-chatbot-panel{
-    display:none !important;
-}
+    .gf-chatbot{
 
-.gf-chatbot[data-state="open"] .gf-chatbot-panel{
-    display:flex !important;
-}
+        right:16px;
+        bottom:16px;
 
-/* Messages */
+    }
 
-.gf-chatbot-messages{
+    .gf-chatbot-panel{
+
+        width:calc(100vw - 32px);
+
+        max-height:calc(100vh - 100px);
+
+        border-radius:20px;
+
+    }
 
 }
 
