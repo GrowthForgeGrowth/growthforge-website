@@ -32569,3 +32569,95 @@ Home Page FINAL CTA
   display: inline;
   font-weight: 800;
 }
+
+/* =========================================
+   ECOMMERCE GROWTH OUTCOMES
+   ========================================= */
+
+.ecommerce-outcomes {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.ecommerce-outcomes-inner {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.ecommerce-outcomes-inner h2 {
+  margin: 0 0 40px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.ecommerce-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ecommerce-outcome-card {
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ecommerce-outcome-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.ecommerce-outcome-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ecommerce-outcome-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .ecommerce-outcomes {
+    padding: 48px 0;
+  }
+
+  .ecommerce-outcomes-inner {
+    width: min(100% - 40px, 680px);
+  }
+
+  .ecommerce-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .ecommerce-outcomes {
+    padding: 40px 0;
+  }
+
+  .ecommerce-outcomes-inner {
+    width: calc(100% - 32px);
+  }
+
+  .ecommerce-outcome-card {
+    padding: 24px;
+  }
+
+  .ecommerce-outcome-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .ecommerce-outcome-card p {
+    font-size: 0.95rem;
+  }
+}
