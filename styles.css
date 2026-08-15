@@ -33289,3 +33289,100 @@ Home Page FINAL CTA
     font-size: 1rem;
   }
 }
+
+/* =========================================
+   PRIVACY POLICY CONTENT
+   ========================================= */
+
+.privacy-content {
+  width: 100%;
+  padding: 20px 0 80px;
+}
+
+.privacy-content-inner {
+  width: min(100% - 48px, 900px);
+  margin: 0 auto;
+}
+
+.privacy-content-inner h2 {
+  margin: 48px 0 18px;
+  font-size: 1.45rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.privacy-content-inner h2:first-child {
+  margin-top: 0;
+}
+
+.privacy-content-inner p {
+  margin: 0 0 18px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.privacy-content-inner ul {
+  margin: 0 0 24px;
+  padding-left: 24px;
+}
+
+.privacy-content-inner li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.privacy-content-inner strong {
+  font-weight: 700;
+}
+
+.privacy-content-inner a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-content-inner a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .privacy-content {
+    padding: 16px 0 64px;
+  }
+
+  .privacy-content-inner {
+    width: min(100% - 40px, 680px);
+  }
+
+  .privacy-content-inner h2 {
+    margin-top: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .privacy-content {
+    padding: 12px 0 48px;
+  }
+
+  .privacy-content-inner {
+    width: calc(100% - 32px);
+  }
+
+  .privacy-content-inner h2 {
+    margin-top: 36px;
+    font-size: 1.3rem;
+  }
+
+  .privacy-content-inner p,
+  .privacy-content-inner li {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .privacy-content-inner ul {
+    padding-left: 20px;
+  }
+}
