@@ -32661,3 +32661,91 @@ Home Page FINAL CTA
     font-size: 0.95rem;
   }
 }
+/* =========================================
+   ECOMMERCE PROBLEM SECTION
+   ========================================= */
+
+.ecommerce-problem {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.ecommerce-problem-inner {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.ecommerce-problem-inner h2 {
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.ecommerce-problem-intro {
+  max-width: 900px;
+  margin: 0 0 32px;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.ecommerce-problem-list {
+  max-width: 950px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ecommerce-problem-list li {
+  padding: 20px 0;
+  border-top: 1px solid #e5e7eb;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.ecommerce-problem-list li:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ecommerce-problem-list strong {
+  font-weight: 800;
+}
+
+.ecommerce-problem-conclusion {
+  max-width: 900px;
+  margin: 32px 0 0;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  font-weight: 700;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .ecommerce-problem {
+    padding: 48px 0;
+  }
+
+  .ecommerce-problem-inner {
+    width: min(100% - 40px, 680px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .ecommerce-problem {
+    padding: 40px 0;
+  }
+
+  .ecommerce-problem-inner {
+    width: calc(100% - 32px);
+  }
+
+  .ecommerce-problem-intro,
+  .ecommerce-problem-conclusion {
+    font-size: 1rem;
+  }
+
+  .ecommerce-problem-list li {
+    font-size: 0.95rem;
+  }
+}
