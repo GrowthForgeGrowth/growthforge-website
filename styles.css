@@ -32946,3 +32946,101 @@ Home Page FINAL CTA
     font-size: 0.95rem;
   }
 }
+
+/* =========================================
+   ECOMMERCE — WHY THE CHANGES WORKED
+   ========================================= */
+
+.ecommerce-why-it-worked {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.ecommerce-why-it-worked-inner {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.ecommerce-why-it-worked-inner h2 {
+  margin: 0 0 40px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.ecommerce-why-it-worked-list {
+  max-width: 1000px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ecommerce-why-it-worked-list li {
+  padding: 22px 0;
+  border-top: 1px solid #e5e7eb;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.ecommerce-why-it-worked-list li:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ecommerce-why-it-worked-list strong {
+  font-weight: 800;
+}
+
+.ecommerce-why-it-worked-conclusion {
+  max-width: 950px;
+  margin: 32px 0 0;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  font-weight: 700;
+}
+
+.ecommerce-why-it-worked-reference {
+  max-width: 950px;
+  margin: 24px 0 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.ecommerce-why-it-worked .link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .ecommerce-why-it-worked {
+    padding: 48px 0;
+  }
+
+  .ecommerce-why-it-worked-inner {
+    width: min(100% - 40px, 680px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .ecommerce-why-it-worked {
+    padding: 40px 0;
+  }
+
+  .ecommerce-why-it-worked-inner {
+    width: calc(100% - 32px);
+  }
+
+  .ecommerce-why-it-worked-list li {
+    font-size: 0.95rem;
+  }
+
+  .ecommerce-why-it-worked-conclusion {
+    font-size: 1rem;
+  }
+
+  .ecommerce-why-it-worked-reference {
+    font-size: 0.95rem;
+  }
+}
