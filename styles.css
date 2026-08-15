@@ -32523,3 +32523,49 @@ Home Page FINAL CTA
     padding: 24px;
   }
 }
+
+/* Ecommerce Engagement Profile Card */
+
+.ecommerce-case-study-hero .card {
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.ecommerce-case-study-hero .card h3 {
+  margin: 0 0 24px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ecommerce-case-study-hero .checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ecommerce-case-study-hero .checklist li {
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.ecommerce-case-study-hero .checklist li:first-child {
+  padding-top: 0;
+}
+
+.ecommerce-case-study-hero .checklist li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.ecommerce-case-study-hero .checklist strong {
+  display: inline;
+  font-weight: 800;
+}
