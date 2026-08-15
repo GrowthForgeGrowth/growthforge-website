@@ -33220,3 +33220,72 @@ Home Page FINAL CTA
     font-size: 0.95rem;
   }
 }
+
+/* =========================================
+   PRIVACY POLICY HERO
+   ========================================= */
+
+.privacy-hero {
+  width: 100%;
+  padding: 72px 0 64px;
+}
+
+.privacy-hero-inner {
+  width: min(100% - 48px, 900px);
+  margin: 0 auto;
+}
+
+.privacy-hero .section-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.privacy-hero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.privacy-hero p {
+  max-width: 800px;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.privacy-hero-meta {
+  margin-top: 24px !important;
+  font-size: 0.9rem !important;
+  opacity: 0.7;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .privacy-hero {
+    padding: 56px 0 48px;
+  }
+
+  .privacy-hero-inner {
+    width: min(100% - 40px, 680px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .privacy-hero {
+    padding: 44px 0 40px;
+  }
+
+  .privacy-hero-inner {
+    width: calc(100% - 32px);
+  }
+
+  .privacy-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .privacy-hero p {
+    font-size: 1rem;
+  }
+}
