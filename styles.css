@@ -32395,3 +32395,131 @@ Home Page FINAL CTA
     }
 
 }
+
+/* =========================================
+   ECOMMERCE CASE STUDY HERO
+   ========================================= */
+
+.ecommerce-case-study-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+  gap: 60px;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.ecommerce-case-study-hero > div:first-child {
+  max-width: 780px;
+}
+
+.ecommerce-case-study-hero .eyebrow {
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ecommerce-case-study-hero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.ecommerce-case-study-hero .lead {
+  margin: 0 0 22px;
+  max-width: 720px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.ecommerce-case-study-hero .byline {
+  margin: 0 0 30px;
+  max-width: 720px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+.ecommerce-case-study-hero .cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ecommerce-case-study-hero .card {
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.ecommerce-case-study-hero .card h3 {
+  margin: 0 0 20px;
+  font-size: 1.15rem;
+}
+
+.ecommerce-case-study-hero .checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ecommerce-case-study-hero .checklist li {
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ecommerce-case-study-hero .checklist li:first-child {
+  padding-top: 0;
+}
+
+.ecommerce-case-study-hero .checklist li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .ecommerce-case-study-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ecommerce-case-study-hero > div:first-child {
+    max-width: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ecommerce-case-study-hero {
+    padding: 40px 0;
+    gap: 30px;
+  }
+
+  .ecommerce-case-study-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .ecommerce-case-study-hero .lead {
+    font-size: 1.05rem;
+  }
+
+  .ecommerce-case-study-hero .cta {
+    flex-direction: column;
+  }
+
+  .ecommerce-case-study-hero .cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ecommerce-case-study-hero .card {
+    padding: 24px;
+  }
+}
