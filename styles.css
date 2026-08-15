@@ -32749,3 +32749,105 @@ Home Page FINAL CTA
     font-size: 0.95rem;
   }
 }
+
+/* =========================================
+   ECOMMERCE APPROACH
+   ========================================= */
+
+.ecommerce-approach {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.ecommerce-approach-inner {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.ecommerce-approach-inner h2 {
+  margin: 0 0 40px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.ecommerce-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ecommerce-approach-card {
+  position: relative;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.ecommerce-approach-number {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #2563eb;
+}
+
+.ecommerce-approach-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ecommerce-approach-card p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.ecommerce-approach-card .link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .ecommerce-approach {
+    padding: 48px 0;
+  }
+
+  .ecommerce-approach-inner {
+    width: min(100% - 40px, 680px);
+  }
+
+  .ecommerce-approach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .ecommerce-approach {
+    padding: 40px 0;
+  }
+
+  .ecommerce-approach-inner {
+    width: calc(100% - 32px);
+  }
+
+  .ecommerce-approach-card {
+    padding: 24px;
+  }
+
+  .ecommerce-approach-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .ecommerce-approach-card p {
+    font-size: 0.95rem;
+  }
+}
