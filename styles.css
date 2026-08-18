@@ -36421,3 +36421,471 @@ File: goalstation-bottleneck.css
   }
 
 }
+
+/* =========================================================
+   GOAL STATION — EXECUTIVE TAKEAWAY
+   GrowthForge Case Study
+   ========================================================= */
+
+.goalstation-takeaway {
+  position: relative;
+
+  padding: 125px 0;
+
+  background: #020617;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+.goalstation-takeaway::before {
+  content: "";
+
+  position: absolute;
+
+  top: -260px;
+  right: -180px;
+
+  width: 620px;
+  height: 620px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(96, 165, 250, .10),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+.goalstation-takeaway::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -320px;
+  left: -220px;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168, 85, 247, .08),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+.goalstation-takeaway-container {
+  position: relative;
+  z-index: 1;
+
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.goalstation-takeaway-header {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 70px;
+
+  margin-bottom: 75px;
+}
+
+
+.goalstation-takeaway-eyebrow {
+  display: inline-block;
+
+  padding-top: 9px;
+
+  color: #60a5fa;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+
+.goalstation-takeaway-heading h2 {
+  max-width: 900px;
+
+  margin: 0;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(40px, 4.8vw, 64px);
+  font-weight: 800;
+
+  line-height: 1.03;
+  letter-spacing: -.058em;
+}
+
+
+.goalstation-takeaway-heading h2 span {
+  display: block;
+
+  color: #64748b;
+}
+
+
+.goalstation-takeaway-heading p {
+  max-width: 780px;
+
+  margin: 27px 0 0;
+
+  color: #94a3b8;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   MAIN TAKEAWAY
+   ========================================================= */
+
+.goalstation-takeaway-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+  gap: 80px;
+
+  align-items: start;
+
+  padding: 52px 0;
+
+  border-top: 1px solid rgba(148, 163, 184, .14);
+  border-bottom: 1px solid rgba(148, 163, 184, .14);
+}
+
+
+/* =========================================================
+   STATEMENT
+   ========================================================= */
+
+.goalstation-takeaway-statement {
+  max-width: 720px;
+}
+
+
+.goalstation-takeaway-label {
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  color: #a78bfa;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+
+.goalstation-takeaway-statement blockquote {
+  position: relative;
+
+  margin: 0;
+  padding: 0 0 0 30px;
+
+  border-left: 2px solid #7c3aed;
+
+  color: #f8fafc;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(28px, 3.1vw, 43px);
+  font-weight: 750;
+
+  line-height: 1.25;
+  letter-spacing: -.045em;
+}
+
+
+/* =========================================================
+   TAKEAWAY POINTS
+   ========================================================= */
+
+.goalstation-takeaway-points {
+  display: grid;
+  gap: 0;
+}
+
+
+.goalstation-takeaway-point {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 18px;
+
+  padding: 25px 0;
+
+  border-bottom: 1px solid rgba(148, 163, 184, .12);
+}
+
+
+.goalstation-takeaway-point:first-child {
+  padding-top: 0;
+}
+
+
+.goalstation-takeaway-point:last-child {
+  padding-bottom: 0;
+
+  border-bottom: 0;
+}
+
+
+.goalstation-takeaway-point-number {
+  padding-top: 3px;
+
+  color: #60a5fa;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+}
+
+
+.goalstation-takeaway-point strong {
+  display: block;
+
+  color: #f8fafc;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+
+.goalstation-takeaway-point p {
+  max-width: 520px;
+
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   EXECUTIVE CONCLUSION
+   ========================================================= */
+
+.goalstation-takeaway-bottom {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 25px;
+
+  align-items: center;
+
+  margin-top: 28px;
+  padding: 35px 40px;
+
+  border: 1px solid rgba(96, 165, 250, .20);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(37, 99, 235, .10),
+      rgba(124, 58, 237, .13)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+
+
+.goalstation-takeaway-bottom-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  border: 1px solid rgba(96, 165, 250, .30);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, .18),
+      rgba(124, 58, 237, .20)
+    );
+
+  color: #dbeafe;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: -.03em;
+}
+
+
+.goalstation-takeaway-bottom-copy > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #60a5fa;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+}
+
+
+.goalstation-takeaway-bottom-copy h3 {
+  margin: 0;
+
+  color: #f8fafc;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 750;
+
+  line-height: 1.25;
+  letter-spacing: -.04em;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .goalstation-takeaway {
+    padding: 90px 0;
+  }
+
+
+  .goalstation-takeaway-header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+
+    margin-bottom: 60px;
+  }
+
+
+  .goalstation-takeaway-main {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+
+  .goalstation-takeaway-statement {
+    max-width: 850px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .goalstation-takeaway {
+    padding: 70px 0;
+  }
+
+
+  .goalstation-takeaway-container {
+    width: min(100% - 30px, 1240px);
+  }
+
+
+  .goalstation-takeaway-heading h2 {
+    font-size: 39px;
+  }
+
+
+  .goalstation-takeaway-heading p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+
+  .goalstation-takeaway-main {
+    gap: 42px;
+
+    padding: 38px 0;
+  }
+
+
+  .goalstation-takeaway-statement blockquote {
+    padding-left: 22px;
+
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+
+  .goalstation-takeaway-point {
+    grid-template-columns: 32px 1fr;
+    gap: 14px;
+
+    padding: 22px 0;
+  }
+
+
+  .goalstation-takeaway-point strong {
+    font-size: 15px;
+  }
+
+
+  .goalstation-takeaway-point p {
+    font-size: 13px;
+  }
+
+
+  .goalstation-takeaway-bottom {
+    grid-template-columns: 1fr;
+    gap: 18px;
+
+    padding: 28px;
+
+    border-radius: 16px;
+  }
+
+
+  .goalstation-takeaway-bottom-mark {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .goalstation-takeaway-bottom-copy h3 {
+    font-size: 25px;
+  }
+
+}
