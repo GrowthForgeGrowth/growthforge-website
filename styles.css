@@ -34943,3 +34943,412 @@ File: goalstation-bottleneck.css
   }
 
 }
+
+/* =========================================================
+   GOAL STATION — AUDIT FINDINGS
+   GrowthForge Case Study
+   ========================================================= */
+
+.goalstation-audit-findings {
+  position: relative;
+  padding: 125px 0;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.goalstation-audit-findings-container {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.goalstation-audit-findings-header {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 70px;
+  margin-bottom: 70px;
+}
+
+.goalstation-audit-findings-eyebrow {
+  padding-top: 9px;
+
+  color: #2563eb;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.goalstation-audit-findings-header h2 {
+  max-width: 900px;
+  margin: 0;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(38px, 4.6vw, 62px);
+  font-weight: 800;
+
+  line-height: 1.04;
+  letter-spacing: -.055em;
+}
+
+.goalstation-audit-findings-header h2 span {
+  display: block;
+  color: #64748b;
+}
+
+.goalstation-audit-findings-header p {
+  max-width: 760px;
+  margin: 26px 0 0;
+
+  color: #64748b;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FINDINGS LIST
+   ========================================================= */
+
+.goalstation-findings-list {
+  display: grid;
+  gap: 0;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+
+/* =========================================================
+   INDIVIDUAL FINDING
+   ========================================================= */
+
+.goalstation-finding {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 45px;
+
+  padding: 42px 0;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.goalstation-finding-number {
+  padding-top: 4px;
+
+  color: #94a3b8;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+}
+
+.goalstation-finding-content {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FINDING HEADING
+   ========================================================= */
+
+.goalstation-finding-heading {
+  max-width: 900px;
+}
+
+.goalstation-finding-category {
+  display: inline-block;
+
+  margin-bottom: 13px;
+
+  color: #2563eb;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.goalstation-finding-heading h3 {
+  max-width: 850px;
+  margin: 0;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(25px, 2.5vw, 34px);
+  font-weight: 750;
+
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+
+.goalstation-finding-content > p {
+  max-width: 820px;
+  margin: 18px 0 0;
+
+  color: #64748b;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   OPPORTUNITY
+   ========================================================= */
+
+.goalstation-finding-opportunity {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 28px;
+  align-items: center;
+
+  max-width: 900px;
+
+  margin-top: 28px;
+  padding: 19px 22px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #f8fbff,
+      #faf9ff
+    );
+}
+
+.goalstation-finding-opportunity > span {
+  color: #2563eb;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .13em;
+}
+
+.goalstation-finding-opportunity strong {
+  color: #0f172a;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 750;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CRITICAL FINDING
+   ========================================================= */
+
+.goalstation-finding-critical {
+  border-bottom-color: #ddd6fe;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(124, 58, 237, .025),
+      transparent 65%
+    );
+}
+
+.goalstation-finding-critical .goalstation-finding-number {
+  color: #7c3aed;
+}
+
+.goalstation-finding-critical .goalstation-finding-category {
+  color: #7c3aed;
+}
+
+.goalstation-finding-critical .goalstation-finding-opportunity {
+  border-color: rgba(168, 85, 247, .20);
+
+  background:
+    linear-gradient(
+      100deg,
+      #faf7ff,
+      #f8faff
+    );
+}
+
+.goalstation-finding-critical .goalstation-finding-opportunity > span {
+  color: #7c3aed;
+}
+
+
+/* =========================================================
+   EXECUTIVE INTERPRETATION
+   ========================================================= */
+
+.goalstation-findings-bottom {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 70px;
+  align-items: start;
+
+  margin-top: 28px;
+  padding: 38px 42px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      110deg,
+      #eff6ff 0%,
+      #f8faff 52%,
+      #f5f3ff 100%
+    );
+}
+
+.goalstation-findings-bottom-label {
+  display: inline-block;
+
+  padding-top: 4px;
+
+  color: #2563eb;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.goalstation-findings-bottom blockquote {
+  max-width: 850px;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  color: #0f172a;
+
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(22px, 2.5vw, 31px);
+  font-weight: 750;
+
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .goalstation-audit-findings {
+    padding: 90px 0;
+  }
+
+  .goalstation-audit-findings-header {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 55px;
+  }
+
+  .goalstation-finding {
+    grid-template-columns: 60px 1fr;
+    gap: 30px;
+    padding: 36px 0;
+  }
+
+  .goalstation-finding-opportunity {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .goalstation-findings-bottom {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .goalstation-audit-findings {
+    padding: 70px 0;
+  }
+
+  .goalstation-audit-findings-container {
+    width: min(100% - 30px, 1240px);
+  }
+
+  .goalstation-audit-findings-header h2 {
+    font-size: 38px;
+  }
+
+  .goalstation-audit-findings-header p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .goalstation-finding {
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+    padding: 32px 0;
+  }
+
+  .goalstation-finding-number {
+    font-size: 11px;
+  }
+
+  .goalstation-finding-heading h3 {
+    font-size: 23px;
+    line-height: 1.2;
+  }
+
+  .goalstation-finding-content > p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .goalstation-finding-opportunity {
+    margin-top: 22px;
+    padding: 17px 18px;
+  }
+
+  .goalstation-finding-opportunity strong {
+    font-size: 13px;
+  }
+
+  .goalstation-findings-bottom {
+    margin-top: 20px;
+    padding: 28px;
+    border-radius: 16px;
+  }
+
+  .goalstation-findings-bottom blockquote {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+}
