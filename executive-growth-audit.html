@@ -741,25 +741,56 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
         }
 
         const result = await response.json();
-      
-      // GA4 Conversion Tracking
-if (typeof gtag === "function") {
-    gtag("event", "executive_growth_audit_submit", {
-        form_id: "discovery-form",
-        form_name: "Executive Growth Audit",
-        page_location: window.location.href
-    });
-}
+
         const lead = Array.isArray(result) ? result[0] : result;
 
-        if (!lead.property_payment_url) {
+        if (!lead || !lead.property_payment_url) {
             throw new Error("Payment URL was not returned.");
         }
 
-        window.location.href = lead.property_payment_url;
+        /*
+         * GA4 Conversion Tracking
+         *
+         * Track the Executive Growth Audit submission
+         * before redirecting the user to the payment page.
+         */
+        if (typeof gtag === "function") {
+
+            let redirected = false;
+
+            const redirectToPayment = function () {
+                if (redirected) return;
+
+                redirected = true;
+                window.location.href = lead.property_payment_url;
+            };
+
+            gtag("event", "executive_growth_audit_submit", {
+                form_id: "discovery-form",
+                form_name: "Executive Growth Audit",
+                page_location: window.location.href,
+                value: 750.00,
+                currency: "USD",
+                event_callback: redirectToPayment
+            });
+
+            /*
+             * Fallback in case GA4 does not fire the callback.
+             * Prevents the user from getting stuck on the page.
+             */
+            setTimeout(redirectToPayment, 1000);
+
+        } else {
+
+            /*
+             * GA4 is unavailable, so redirect normally.
+             */
+            window.location.href = lead.property_payment_url;
+        }
 
     } catch (error) {
         console.error(error);
+
         alert(error.message);
 
         submitButton.disabled = false;
@@ -767,3 +798,6 @@ if (typeof gtag === "function") {
     }
 });
 </script>
+
+  </body>
+</html>
