@@ -44,7 +44,6 @@ header .logo{flex-shrink:0}
     overflow: hidden;
     position: relative;
 
-    /* MAIN BACKGROUND */
     background:
         radial-gradient(
             700px 700px at 91% 35%,
@@ -108,6 +107,7 @@ header .logo{flex-shrink:0}
 
 .hero-inner {
     display: grid;
+
     grid-template-columns:
         minmax(0, 1fr)
         minmax(560px, .98fr);
@@ -459,7 +459,11 @@ header .logo{flex-shrink:0}
     width: 100%;
     max-width: 700px;
 
-    padding: 34px;
+    /*
+     * ONLY SPACING ADJUSTMENT:
+     * slightly tighter outer breathing room
+     */
+    padding: 30px;
 
     background:
         linear-gradient(
@@ -493,7 +497,11 @@ header .logo{flex-shrink:0}
 
     gap: 20px;
 
-    padding-bottom: 24px;
+    /*
+     * Slightly more breathing room than the original
+     * without increasing the overall dashboard size.
+     */
+    padding-bottom: 20px;
 
     border-bottom: 1px solid rgba(148, 163, 184, .16);
 }
@@ -501,7 +509,7 @@ header .logo{flex-shrink:0}
 .audit-dashboard__eyebrow {
     display: block;
 
-    margin: 0 0 7px;
+    margin: 0 0 8px;
 
     color: #60a5fa;
 
@@ -535,7 +543,6 @@ header .logo{flex-shrink:0}
     border-radius: 999px;
 
     background: rgba(34, 197, 94, .08);
-
     color: #86efac;
 
     font-family: Manrope, sans-serif;
@@ -560,13 +567,17 @@ header .logo{flex-shrink:0}
 
     gap: 12px;
 
-    margin: 24px 0 25px;
+    /*
+     * Preserve visual breathing room while avoiding
+     * unnecessary vertical expansion.
+     */
+    margin: 20px 0 21px;
 }
 
 .audit-metric {
     min-width: 0;
 
-    padding: 18px 12px 17px;
+    padding: 16px 12px 15px;
 
     text-align: center;
 
@@ -605,7 +616,7 @@ header .logo{flex-shrink:0}
     width: 46px;
     height: 46px;
 
-    margin: 0 auto 13px;
+    margin: 0 auto 11px;
 
     border-radius: 50%;
 
@@ -624,6 +635,7 @@ header .logo{flex-shrink:0}
     color: #a855f7;
     border-color: rgba(168, 85, 247, .45);
     background: rgba(168, 85, 247, .10);
+
     box-shadow:
         0 0 20px rgba(168, 85, 247, .20);
 }
@@ -632,6 +644,7 @@ header .logo{flex-shrink:0}
     color: #22d3ee;
     border-color: rgba(34, 211, 238, .45);
     background: rgba(34, 211, 238, .08);
+
     box-shadow:
         0 0 20px rgba(34, 211, 238, .18);
 }
@@ -640,6 +653,7 @@ header .logo{flex-shrink:0}
     color: #4ade80;
     border-color: rgba(74, 222, 128, .45);
     background: rgba(74, 222, 128, .08);
+
     box-shadow:
         0 0 20px rgba(74, 222, 128, .18);
 }
@@ -652,7 +666,7 @@ header .logo{flex-shrink:0}
 .audit-metric__value {
     display: block;
 
-    margin: 0 0 7px;
+    margin: 0 0 6px;
 
     color: #f8fafc;
 
@@ -688,8 +702,8 @@ header .logo{flex-shrink:0}
     display: flex;
     justify-content: space-between;
 
-    margin: 0 0 8px;
-    padding-bottom: 8px;
+    margin: 0 0 7px;
+    padding-bottom: 7px;
 
     color: #64748b;
 
@@ -712,7 +726,11 @@ header .logo{flex-shrink:0}
 
     gap: 20px;
 
-    min-height: 48px;
+    /*
+     * Slightly more breathing room between findings
+     * while keeping the dashboard compact.
+     */
+    min-height: 46px;
 
     border-bottom: 1px solid rgba(30, 41, 59, .55);
 }
@@ -746,18 +764,21 @@ header .logo{flex-shrink:0}
 
 .audit-finding:nth-child(3) .audit-finding__dot {
     background: #a855f7;
+
     box-shadow:
         0 0 9px rgba(168, 85, 247, .65);
 }
 
 .audit-finding:nth-child(4) .audit-finding__dot {
     background: #22d3ee;
+
     box-shadow:
         0 0 9px rgba(34, 211, 238, .65);
 }
 
 .audit-finding:nth-child(5) .audit-finding__dot {
     background: #4ade80;
+
     box-shadow:
         0 0 9px rgba(74, 222, 128, .65);
 }
@@ -888,8 +909,8 @@ header .logo{flex-shrink:0}
 
     gap: 12px;
 
-    margin-top: 21px;
-    padding-top: 17px;
+    margin-top: 18px;
+    padding-top: 15px;
 
     border-top: 1px solid rgba(148, 163, 184, .13);
 }
