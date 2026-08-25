@@ -37410,3 +37410,360 @@ File: goalstation-bottleneck.css
     }
 
 }
+
+/* =========================================
+   GROWTHFORGE — EXECUTIVE GROWTH AUDIT PREVIEW
+   Scoped exclusively to .growthforge-audit-preview-*
+   ========================================= */
+
+.growthforge-audit-preview-section {
+  width: 100%;
+  padding: 90px 24px 100px;
+  background: #f8fbff;
+  box-sizing: border-box;
+}
+
+.growthforge-audit-preview-container {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.growthforge-audit-preview-header {
+  max-width: 820px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.growthforge-audit-preview-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 15px;
+
+  border: 1px solid #b9d5ff;
+  border-radius: 999px;
+
+  background: #f4f8ff;
+  color: #2166e5;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.growthforge-audit-preview-header h2 {
+  margin: 18px 0 12px;
+
+  color: #101a33;
+
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.growthforge-audit-preview-header p {
+  max-width: 720px;
+  margin: 0 auto;
+
+  color: #61708a;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   AUDIT CARD GRID
+   ========================================= */
+
+.growthforge-audit-preview-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+
+/* =========================================
+   AUDIT CARD
+   ========================================= */
+
+.growthforge-audit-preview-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dce5f2;
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 35px rgba(32, 66, 120, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.growthforge-audit-preview-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 45px rgba(32, 66, 120, 0.13);
+}
+
+
+/* =========================================
+   AUDIT IMAGE
+   ========================================= */
+
+.growthforge-audit-preview-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #0d172b;
+}
+
+.growthforge-audit-preview-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.35s ease;
+}
+
+.growthforge-audit-preview-card:hover
+.growthforge-audit-preview-image img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   CARD CONTENT
+   ========================================= */
+
+.growthforge-audit-preview-card-content {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 22px 24px 25px;
+
+  box-sizing: border-box;
+}
+
+.growthforge-audit-preview-number {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #2675e8;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+
+.growthforge-audit-preview-card-content h3 {
+  margin: 0 0 8px;
+
+  color: #111a31;
+
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.growthforge-audit-preview-card-content p {
+  margin: 0;
+
+  color: #687791;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   BOTTOM INFORMATION BAR
+   ========================================= */
+
+.growthforge-audit-preview-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 35px;
+  padding: 25px 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce5f2;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(32, 66, 120, 0.05);
+
+  box-sizing: border-box;
+}
+
+.growthforge-audit-preview-footer-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.growthforge-audit-preview-footer-text strong {
+  color: #111a31;
+
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.growthforge-audit-preview-footer-text span {
+  color: #687791;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.growthforge-audit-preview-footer-badge {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: #eef6ff;
+  color: #2166e5;
+
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 950px) {
+
+  .growthforge-audit-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 640px) {
+
+  .growthforge-audit-preview-section {
+    padding: 65px 18px 75px;
+  }
+
+  .growthforge-audit-preview-header {
+    margin-bottom: 32px;
+  }
+
+  .growthforge-audit-preview-header h2 {
+    font-size: 34px;
+  }
+
+  .growthforge-audit-preview-header p {
+    font-size: 15px;
+  }
+
+  .growthforge-audit-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .growthforge-audit-preview-card-content {
+    padding: 20px 21px 23px;
+  }
+
+  .growthforge-audit-preview-footer {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 22px 23px;
+  }
+
+  .growthforge-audit-preview-footer-badge {
+    align-self: flex-start;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 420px) {
+
+  .growthforge-audit-preview-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .growthforge-audit-preview-header h2 {
+    font-size: 30px;
+  }
+
+  .growthforge-audit-preview-header p {
+    font-size: 14px;
+  }
+
+}
