@@ -37872,7 +37872,7 @@ File: goalstation-bottleneck.css
 }
 
 /* =========================================================
-   SAMPLE EXECUTIVE GROWTH AUDIT PDF POPUP
+   GROWTHFORGE — EXECUTIVE GROWTH AUDIT SLIDE POPUP
    ========================================================= */
 
 .audit-pdf-popup {
@@ -37881,42 +37881,43 @@ File: goalstation-bottleneck.css
     top: 50%;
     left: 50%;
 
+    width: 94vw;
+    max-width: 1500px;
+
+    height: 92vh;
+
     transform: translate(-50%, -50%) scale(0.96);
 
-    width: 92vw;
-    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
 
-    height: 90vh;
+    box-sizing: border-box;
+
+    padding: 28px;
 
     background: #ffffff;
 
     border-radius: 16px;
 
-    padding: 28px;
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.40);
 
-    box-sizing: border-box;
-
-    z-index: 100001;
+    z-index: 999999;
 
     opacity: 0;
     visibility: hidden;
-
     pointer-events: none;
 
     transition:
-        opacity 0.2s ease,
-        transform 0.2s ease,
-        visibility 0.2s ease;
-
-    box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.35);
-
-    display: flex;
-    flex-direction: column;
+        opacity 0.22s ease,
+        visibility 0.22s ease,
+        transform 0.22s ease;
 }
 
 
-/* OPEN STATE */
+/* =========================================================
+   ACTIVE / OPEN STATE
+   ========================================================= */
 
 .audit-pdf-popup.active {
     opacity: 1;
@@ -37931,7 +37932,9 @@ File: goalstation-bottleneck.css
 }
 
 
-/* DARK BACKGROUND */
+/* =========================================================
+   DARK OVERLAY
+   ========================================================= */
 
 .audit-pdf-popup::before {
     content: "";
@@ -37946,78 +37949,134 @@ File: goalstation-bottleneck.css
 
     transform: translate(-50%, -50%);
 
-    background: rgba(7, 15, 30, 0.82);
+    background: rgba(8, 17, 34, 0.86);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
 
     z-index: -1;
-
-    backdrop-filter: blur(6px);
 }
 
 
-/* TITLE */
-
-.audit-pdf-popup h2 {
-    margin: 0 0 18px 0;
-
-    color: #111827;
-
-    font-size: 24px;
-    line-height: 1.2;
-
-    font-weight: 700;
-
-    flex-shrink: 0;
-}
-
-
-/* CLOSE BUTTON */
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
 
 .audit-pdf-popup-close {
     position: absolute;
 
-    top: 16px;
-    right: 18px;
+    top: 14px;
+    right: 14px;
 
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
 
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    padding: 0;
+
+    border: 1px solid #dbe4ef;
     border-radius: 50%;
 
-    background: #f1f5f9;
+    background: #ffffff;
 
-    color: #334155;
+    color: #344054;
 
-    font-size: 28px;
+    font-size: 27px;
+    font-weight: 400;
 
     line-height: 1;
 
     cursor: pointer;
 
-    z-index: 5;
+    z-index: 20;
 
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+    box-shadow:
+        0 4px 15px rgba(15, 30, 55, 0.10);
 
     transition:
         background 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .audit-pdf-popup-close:hover {
-    background: #e2e8f0;
+    background: #f1f6fc;
 
-    color: #0f172a;
+    color: #101a33;
+
+    transform: rotate(90deg);
 }
 
 
-/* PDF CONTAINER */
+/* =========================================================
+   POPUP CONTENT
+   ========================================================= */
 
-.audit-pdf-popup-viewer {
-    position: relative;
+.audit-pdf-popup-content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.audit-pdf-popup-title {
+    flex-shrink: 0;
+
+    padding: 2px 55px 20px 4px;
+}
+
+.audit-pdf-popup-title span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #2166e5;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.10em;
+
+    text-transform: uppercase;
+}
+
+.audit-pdf-popup-title h2 {
+    margin: 0;
+
+    color: #111a31;
+
+    font-size: 26px;
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   SLIDE VIEWER
+   ========================================================= */
+
+.audit-pdf-slides {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
 
     flex: 1;
 
@@ -38025,48 +38084,158 @@ File: goalstation-bottleneck.css
 
     width: 100%;
 
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 
-    border-radius: 10px;
+    padding: 4px 4px 18px;
 
-    background: #525b68;
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+    scrollbar-color: #b9c9dd #edf2f7;
 }
 
 
-/* PDF */
+/* =========================================================
+   SLIDE
+   ========================================================= */
 
-.audit-pdf-popup-viewer iframe {
+.audit-pdf-slides img {
     display: block;
 
-    width: 100%;
+    flex: 0 0 auto;
+
+    width: auto;
+
     height: 100%;
 
-    border: none;
+    max-width: none;
+
+    object-fit: contain;
 
     background: #ffffff;
+
+    border: 1px solid #dce5ef;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(22, 45, 80, 0.13);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.audit-pdf-slides img:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(22, 45, 80, 0.18);
 }
 
 
-/* MOBILE */
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
 
-@media (max-width: 768px) {
+.audit-pdf-slides::-webkit-scrollbar {
+    height: 8px;
+}
+
+.audit-pdf-slides::-webkit-scrollbar-track {
+    background: #edf2f7;
+
+    border-radius: 10px;
+}
+
+.audit-pdf-slides::-webkit-scrollbar-thumb {
+    background: #b9c9dd;
+
+    border-radius: 10px;
+}
+
+.audit-pdf-slides::-webkit-scrollbar-thumb:hover {
+    background: #91a8c4;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
 
     .audit-pdf-popup {
         width: 96vw;
 
-        height: 92vh;
+        height: 90vh;
 
         padding: 20px;
 
-        border-radius: 12px;
+        border-radius: 13px;
     }
 
-    .audit-pdf-popup h2 {
+    .audit-pdf-popup-title {
+        padding-bottom: 15px;
+    }
+
+    .audit-pdf-popup-title h2 {
+        font-size: 22px;
+    }
+
+    .audit-pdf-slides {
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .audit-pdf-popup {
+        width: 100vw;
+        height: 100vh;
+
+        padding: 18px 14px 14px;
+
+        border-radius: 0;
+    }
+
+    .audit-pdf-popup-close {
+        top: 10px;
+        right: 10px;
+
+        width: 36px;
+        height: 36px;
+    }
+
+    .audit-pdf-popup-title {
+        padding-right: 45px;
+    }
+
+    .audit-pdf-popup-title span {
+        font-size: 9px;
+    }
+
+    .audit-pdf-popup-title h2 {
         font-size: 20px;
+    }
 
-        padding-right: 40px;
+    .audit-pdf-slides {
+        gap: 10px;
 
-        margin-bottom: 14px;
+        padding-bottom: 12px;
+    }
+
+    .audit-pdf-slides img {
+        height: 100%;
     }
 
 }
