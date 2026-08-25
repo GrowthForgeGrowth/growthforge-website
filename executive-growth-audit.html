@@ -700,14 +700,13 @@ Complete the Executive Growth Audit application below. We work with a limited nu
       </div>
 
 
-      <a
-  href="#"
-  class="growthforge-audit-preview-callout-button"
-  id="growthforge-open-audit-pdf"
-  aria-label="View full sample Executive Growth Audit"
+    <a
+    href="#"
+    class="growthforge-audit-preview-callout-button"
+    id="view-audit-pdf"
 >
-  View Full Sample Report
-  <span aria-hidden="true">→</span>
+    View Full Sample Report
+    <span>→</span>
 </a>
 
     </div>
@@ -716,64 +715,27 @@ Complete the Executive Growth Audit application below. We work with a limited nu
 
 </section>
 
-  <!-- =========================================================
-     EXECUTIVE GROWTH AUDIT — PDF VIEWER MODAL
-     ========================================================= -->
+<!-- SAMPLE AUDIT PDF POPUP -->
+<div class="audit-pdf-popup">
 
-<div
-  class="growthforge-audit-pdf-modal"
-  id="growthforge-audit-pdf-modal"
-  aria-hidden="true"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Sample Executive Growth Audit"
->
-
-  <div class="growthforge-audit-pdf-backdrop"></div>
-
-  <div class="growthforge-audit-pdf-window">
-
-    <!-- Modal Header -->
-    <div class="growthforge-audit-pdf-header">
-
-      <div class="growthforge-audit-pdf-title">
-
-        <span class="growthforge-audit-pdf-label">
-          EXECUTIVE GROWTH AUDIT
-        </span>
-
-        <strong>
-          Sample Audit Report
-        </strong>
-
-      </div>
-
-      <button
+    <button
+        class="audit-pdf-popup-close"
         type="button"
-        class="growthforge-audit-pdf-close"
-        id="growthforge-close-audit-pdf"
-        aria-label="Close sample report"
-      >
-        <span></span>
-        <span></span>
-      </button>
+        aria-label="Close sample audit"
+    >
+        &times;
+    </button>
+
+    <h2>Sample Executive Growth Audit</h2>
+
+    <div class="audit-pdf-popup-viewer">
+
+        <iframe
+            src=""
+            title="Sample Executive Growth Audit PDF"
+        ></iframe>
 
     </div>
-
-
-    <!-- PDF -->
-    <div class="growthforge-audit-pdf-viewer">
-
-      <iframe
-        id="growthforge-audit-pdf-frame"
-        src=""
-        title="Sample Executive Growth Audit PDF"
-        loading="lazy"
-      ></iframe>
-
-    </div>
-
-  </div>
 
 </div>
 
