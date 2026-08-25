@@ -37872,262 +37872,201 @@ File: goalstation-bottleneck.css
 }
 
 /* =========================================================
-   GROWTHFORGE — FULL SAMPLE PDF MODAL
-   Completely isolated namespace
+   SAMPLE EXECUTIVE GROWTH AUDIT PDF POPUP
    ========================================================= */
 
-.growthforge-audit-pdf-modal {
-  position: fixed;
+.audit-pdf-popup {
+    position: fixed;
 
-  inset: 0;
+    top: 50%;
+    left: 50%;
 
-  z-index: 999999;
+    transform: translate(-50%, -50%) scale(0.96);
 
-  display: flex;
+    width: 92vw;
+    max-width: 1400px;
 
-  align-items: center;
-  justify-content: center;
+    height: 90vh;
 
-  padding: 28px;
+    background: #ffffff;
 
-  box-sizing: border-box;
+    border-radius: 16px;
 
-  opacity: 0;
-  visibility: hidden;
+    padding: 28px;
 
-  pointer-events: none;
+    box-sizing: border-box;
 
-  transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
+    z-index: 100001;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    flex-direction: column;
 }
 
 
-/* =========================================================
-   OPEN STATE
-   ========================================================= */
+/* OPEN STATE */
 
-.growthforge-audit-pdf-modal.is-open {
-  opacity: 1;
-  visibility: visible;
+.audit-pdf-popup.active {
+    opacity: 1;
 
-  pointer-events: auto;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
 }
 
 
-/* =========================================================
-   DARK BACKDROP
-   ========================================================= */
+/* DARK BACKGROUND */
 
-.growthforge-audit-pdf-backdrop {
-  position: absolute;
+.audit-pdf-popup::before {
+    content: "";
 
-  inset: 0;
+    position: fixed;
 
-  background: rgba(7, 15, 30, 0.88);
+    top: 50%;
+    left: 50%;
 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-
-/* =========================================================
-   PDF WINDOW
-   ========================================================= */
-
-.growthforge-audit-pdf-window {
-  position: relative;
-
-  z-index: 2;
-
-  display: flex;
-  flex-direction: column;
-
-  width: min(1380px, 96vw);
-
-  height: min(92vh, 1000px);
-
-  overflow: hidden;
-
-  background: #ffffff;
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 30px 100px rgba(0, 0, 0, 0.45);
-
-  transform: translateY(18px) scale(0.97);
-
-  transition:
-    transform 0.3s ease;
-}
-
-.growthforge-audit-pdf-modal.is-open
-.growthforge-audit-pdf-window {
-  transform: translateY(0) scale(1);
-}
-
-
-/* =========================================================
-   MODAL HEADER
-   ========================================================= */
-
-.growthforge-audit-pdf-header {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  flex-shrink: 0;
-
-  height: 64px;
-
-  padding: 0 22px;
-
-  box-sizing: border-box;
-
-  background: #0c172c;
-
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
-.growthforge-audit-pdf-title {
-  display: flex;
-  flex-direction: column;
-
-  gap: 3px;
-}
-
-.growthforge-audit-pdf-label {
-  color: #2bb6f6;
-
-  font-size: 9px;
-  font-weight: 800;
-
-  letter-spacing: 0.09em;
-}
-
-.growthforge-audit-pdf-title strong {
-  color: #ffffff;
-
-  font-size: 15px;
-  font-weight: 700;
-
-  line-height: 1.2;
-}
-
-
-/* =========================================================
-   CLOSE BUTTON
-   ========================================================= */
-
-.growthforge-audit-pdf-close {
-  position: relative;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 38px;
-  height: 38px;
-
-  padding: 0;
-
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-
-  background: rgba(255,255,255,0.05);
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.growthforge-audit-pdf-close:hover {
-  background: rgba(255,255,255,0.12);
-
-  border-color: rgba(255,255,255,0.3);
-}
-
-.growthforge-audit-pdf-close span {
-  position: absolute;
-
-  width: 17px;
-  height: 1.5px;
-
-  background: #ffffff;
-
-  border-radius: 2px;
-}
-
-.growthforge-audit-pdf-close span:first-child {
-  transform: rotate(45deg);
-}
-
-.growthforge-audit-pdf-close span:last-child {
-  transform: rotate(-45deg);
-}
-
-
-/* =========================================================
-   PDF VIEWER
-   ========================================================= */
-
-.growthforge-audit-pdf-viewer {
-  position: relative;
-
-  flex: 1;
-
-  min-height: 0;
-
-  background: #525a66;
-}
-
-.growthforge-audit-pdf-viewer iframe {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  border: 0;
-
-  background: #ffffff;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  .growthforge-audit-pdf-modal {
-    padding: 0;
-  }
-
-  .growthforge-audit-pdf-window {
     width: 100vw;
     height: 100vh;
 
-    border-radius: 0;
-  }
+    transform: translate(-50%, -50%);
 
-  .growthforge-audit-pdf-header {
-    height: 58px;
+    background: rgba(7, 15, 30, 0.82);
 
-    padding: 0 15px;
-  }
+    z-index: -1;
 
-  .growthforge-audit-pdf-title strong {
-    font-size: 14px;
-  }
+    backdrop-filter: blur(6px);
+}
+
+
+/* TITLE */
+
+.audit-pdf-popup h2 {
+    margin: 0 0 18px 0;
+
+    color: #111827;
+
+    font-size: 24px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+
+/* CLOSE BUTTON */
+
+.audit-pdf-popup-close {
+    position: absolute;
+
+    top: 16px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: #334155;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.audit-pdf-popup-close:hover {
+    background: #e2e8f0;
+
+    color: #0f172a;
+}
+
+
+/* PDF CONTAINER */
+
+.audit-pdf-popup-viewer {
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #525b68;
+}
+
+
+/* PDF */
+
+.audit-pdf-popup-viewer iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background: #ffffff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .audit-pdf-popup {
+        width: 96vw;
+
+        height: 92vh;
+
+        padding: 20px;
+
+        border-radius: 12px;
+    }
+
+    .audit-pdf-popup h2 {
+        font-size: 20px;
+
+        padding-right: 40px;
+
+        margin-bottom: 14px;
+    }
 
 }
