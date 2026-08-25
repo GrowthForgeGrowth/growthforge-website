@@ -715,8 +715,9 @@ Complete the Executive Growth Audit application below. We work with a limited nu
 
 </section>
 
-<!-- SAMPLE AUDIT PDF POPUP -->
-<div class="audit-pdf-popup">
+<!-- SAMPLE EXECUTIVE GROWTH AUDIT POPUP -->
+
+<div class="audit-pdf-popup" id="audit-pdf-popup">
 
     <button
         class="audit-pdf-popup-close"
@@ -726,14 +727,41 @@ Complete the Executive Growth Audit application below. We work with a limited nu
         &times;
     </button>
 
-    <h2>Sample Executive Growth Audit</h2>
+    <div class="audit-pdf-popup-content">
 
-    <div class="audit-pdf-popup-viewer">
+        <div class="audit-pdf-popup-title">
+            <span>EXECUTIVE GROWTH AUDIT</span>
+            <h2>Sample Executive Growth Audit</h2>
+        </div>
 
-        <iframe
-            src=""
-            title="Sample Executive Growth Audit PDF"
-        ></iframe>
+        <div class="audit-pdf-slides">
+
+            <img
+                src="/images/audit/goal-station-cover.webp"
+                alt="Sample Executive Growth Audit — Executive Summary"
+            >
+
+            <img
+                src="/images/audit/goal-station-ai-readiness-assessment.webp"
+                alt="Sample Executive Growth Audit — AI Readiness Assessment"
+            >
+
+            <img
+                src="/images/audit/goal-station-priority-growth-issues.webp"
+                alt="Sample Executive Growth Audit — Priority Growth Issues"
+            >
+
+            <img
+                src="/images/audit/goal-station-90-day-roadmap.webp"
+                alt="Sample Executive Growth Audit — 90-Day Implementation Roadmap"
+            >
+
+            <img
+                src="/images/audit/goal-station-cro.webp"
+                alt="Sample Executive Growth Audit — Conversion Optimization Audit"
+            >
+
+        </div>
 
     </div>
 
@@ -1051,6 +1079,91 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
         submitButton.disabled = false;
         submitButton.textContent = "Continue to Payment";
     }
+});
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const openButton = document.getElementById("view-audit-pdf");
+    const popup = document.getElementById("audit-pdf-popup");
+    const closeButton = document.querySelector(".audit-pdf-popup-close");
+
+    if (!openButton || !popup || !closeButton) {
+        console.error("GrowthForge audit popup: required elements not found.");
+        return;
+    }
+
+
+    /* =========================================
+       OPEN POPUP
+       ========================================= */
+
+    openButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        popup.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+
+    /* =========================================
+       CLOSE POPUP
+       ========================================= */
+
+    function closeAuditPopup() {
+
+        popup.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    /* CLOSE BUTTON */
+
+    closeButton.addEventListener("click", function () {
+
+        closeAuditPopup();
+
+    });
+
+
+    /* =========================================
+       CLICK OUTSIDE CONTENT
+       ========================================= */
+
+    popup.addEventListener("click", function (event) {
+
+        if (event.target === popup) {
+
+            closeAuditPopup();
+
+        }
+
+    });
+
+
+    /* =========================================
+       ESCAPE KEY
+       ========================================= */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            popup.classList.contains("active")
+        ) {
+
+            closeAuditPopup();
+
+        }
+
+    });
+
 });
 </script>
 
