@@ -15947,48 +15947,79 @@ SECTION: RESPONSIVE
 }
 
 /* =========================================
-LOGO MARQUEE
-========================================= */
+   LOGO MARQUEE — COMPACT HERO BLEND
+   ========================================= */
 
 .logo-marquee{
     position:relative;
     overflow:hidden;
-    padding:34px 0;
-    background:#08111f;
-    border-top:1px solid rgba(255,255,255,.06);
-    border-bottom:1px solid rgba(255,255,255,.06);
+
+    /* Compact */
+    padding:18px 0;
+
+    /* Blend directly into hero */
+    background:linear-gradient(
+        90deg,
+        #020817 0%,
+        #07112f 45%,
+        #1e1b70 100%
+    );
+
+    border-top:1px solid rgba(255,255,255,.04);
+    border-bottom:1px solid rgba(255,255,255,.04);
 }
 
-/* Fade edges */
+
+/* =========================================
+   FADE EDGES
+   ========================================= */
 
 .logo-marquee::before,
 .logo-marquee::after{
     content:"";
     position:absolute;
     top:0;
-    width:180px;
+
+    width:120px;
     height:100%;
+
     z-index:10;
     pointer-events:none;
 }
 
 .logo-marquee::before{
     left:0;
-    background:linear-gradient(to right,#08111f 0%,rgba(8,17,31,0) 100%);
+
+    background:linear-gradient(
+        to right,
+        #020817 0%,
+        rgba(2,8,23,0) 100%
+    );
 }
 
 .logo-marquee::after{
     right:0;
-    background:linear-gradient(to left,#08111f 0%,rgba(8,17,31,0) 100%);
+
+    background:linear-gradient(
+        to left,
+        #1e1b70 0%,
+        rgba(30,27,112,0) 100%
+    );
 }
 
-/* Track */
+
+/* =========================================
+   TRACK
+   ========================================= */
 
 .logo-track{
     display:flex;
     align-items:center;
-    gap:90px;
+
+    gap:70px;
+
     width:max-content;
+
     animation:logoScroll 40s linear infinite;
 }
 
@@ -15996,23 +16027,38 @@ LOGO MARQUEE
     animation-play-state:paused;
 }
 
-/* Logos */
+
+/* =========================================
+   LOGOS
+   ========================================= */
 
 .logo-track img{
-    height:34px;
+    height:27px;
     width:auto;
+
     flex-shrink:0;
-    opacity:.65;
-    transition:all .3s ease;
-    filter:grayscale(100%) brightness(0) invert(1);
+
+    opacity:.55;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    filter:
+        grayscale(100%)
+        brightness(0)
+        invert(1);
 }
 
 .logo-track img:hover{
-    opacity:1;
-    transform:scale(1.08);
+    opacity:.9;
+    transform:scale(1.05);
 }
 
-/* Animation */
+
+/* =========================================
+   ANIMATION
+   ========================================= */
 
 @keyframes logoScroll{
 
@@ -16026,36 +16072,20 @@ LOGO MARQUEE
 
 }
 
+
 /* =========================================
-TABLET
-========================================= */
+   TABLET
+   ========================================= */
 
 @media (max-width:992px){
 
-    .logo-track{
-        gap:70px;
-        animation-duration:32s;
-    }
-
-    .logo-track img{
-        height:28px;
-    }
-
-}
-
-/* =========================================
-MOBILE
-========================================= */
-
-@media (max-width:768px){
-
     .logo-marquee{
-        padding:26px 0;
+        padding:16px 0;
     }
 
     .logo-track{
-        gap:50px;
-        animation-duration:26s;
+        gap:55px;
+        animation-duration:32s;
     }
 
     .logo-track img{
@@ -16064,7 +16094,34 @@ MOBILE
 
     .logo-marquee::before,
     .logo-marquee::after{
-        width:70px;
+        width:90px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width:768px){
+
+    .logo-marquee{
+        padding:14px 0;
+    }
+
+    .logo-track{
+        gap:40px;
+        animation-duration:26s;
+    }
+
+    .logo-track img{
+        height:21px;
+    }
+
+    .logo-marquee::before,
+    .logo-marquee::after{
+        width:60px;
     }
 
 }
