@@ -38248,6 +38248,11 @@ File: goalstation-bottleneck.css
    Fully isolated component styles
    ========================================================= */
 
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
 .growth-system-score-section {
     width: 100%;
     position: relative;
@@ -38267,204 +38272,323 @@ File: goalstation-bottleneck.css
     overflow: hidden;
 }
 
+
+/* =========================================================
+   DEDICATED COMPONENT CONTAINER
+   ========================================================= */
+
 .growth-system-score-container {
     width: 100%;
     max-width: 1180px;
+    min-height: 520px;
     margin: 0 auto;
     padding: 64px 72px;
+
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(320px, 0.75fr);
+
     align-items: center;
     gap: 80px;
+
     position: relative;
+
     background: #ffffff;
+
     border: 1px solid rgba(226, 232, 240, 0.95);
     border-radius: 28px;
+
     box-shadow:
         0 20px 60px rgba(15, 23, 42, 0.08),
         0 4px 14px rgba(15, 23, 42, 0.04);
 }
 
-/* ---------------------------------------------------------
-   CONTENT
-   --------------------------------------------------------- */
 
-.growth-system-score-content {
+/* =========================================================
+   INPUT / RESULT CONTENT AREA
+   ========================================================= */
+
+.growth-system-score-content,
+.growth-system-score-result {
     min-width: 0;
 }
 
-.growth-system-score-badge {
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.growth-system-score-badge,
+.growth-system-score-result-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     padding: 8px 14px;
     margin-bottom: 22px;
+
     border-radius: 999px;
+
     background: rgba(37, 99, 235, 0.08);
     border: 1px solid rgba(37, 99, 235, 0.14);
+
     color: #2563eb;
+
     font-family: "Inter", sans-serif;
     font-size: 11px;
     font-weight: 800;
+
     letter-spacing: 0.11em;
     line-height: 1;
+
     text-transform: uppercase;
 }
 
-.growth-system-score-title {
-    margin: 0;
+
+/* =========================================================
+   MAIN TITLE
+   ========================================================= */
+
+.growth-system-score-title,
+.growth-system-score-result-title {
     max-width: 720px;
+
+    margin: 0;
+
     color: #0f172a;
+
     font-family: "Manrope", sans-serif;
-    font-size: clamp(36px, 4vw, 54px);
+    font-size: clamp(38px, 4vw, 56px);
     font-weight: 800;
+
     letter-spacing: -0.045em;
-    line-height: 1.08;
+    line-height: 1.06;
 }
 
-.growth-system-score-description {
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.growth-system-score-description,
+.growth-system-score-result-description {
     max-width: 620px;
+
     margin: 22px 0 0;
+
     color: #64748b;
+
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-weight: 400;
+
     line-height: 1.7;
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    FORM
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .growth-system-score-form {
     width: 100%;
     margin-top: 34px;
 }
 
+
+/* =========================================================
+   WEBSITE INPUT WRAPPER
+   ========================================================= */
+
 .growth-system-score-input-wrapper {
     width: 100%;
+
     display: flex;
     align-items: stretch;
+
     padding: 6px;
+
     background: #ffffff;
+
     border: 1px solid #cbd5e1;
     border-radius: 14px;
+
     box-shadow:
         0 8px 24px rgba(15, 23, 42, 0.06),
         0 1px 3px rgba(15, 23, 42, 0.04);
+
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
+
 .growth-system-score-input-wrapper:focus-within {
     border-color: #2563eb;
+
     box-shadow:
         0 0 0 4px rgba(37, 99, 235, 0.10),
         0 8px 24px rgba(15, 23, 42, 0.07);
 }
 
+
+/* =========================================================
+   WEBSITE INPUT
+   ========================================================= */
+
 .growth-system-score-input {
     min-width: 0;
     flex: 1;
+
     height: 54px;
+
     padding: 0 18px;
+
     border: 0;
     outline: 0;
+
     background: transparent;
+
     color: #0f172a;
+
     font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 500;
 }
 
+
 .growth-system-score-input::placeholder {
     color: #94a3b8;
 }
+
 
 .growth-system-score-input:focus {
     outline: none;
 }
 
+
+/* =========================================================
+   GET MY SCORE BUTTON
+   ========================================================= */
+
 .growth-system-score-submit {
     flex-shrink: 0;
+
     min-height: 54px;
+
     padding: 0 24px;
+
     border: 0;
     border-radius: 10px;
+
     background: #2563eb;
+
     color: #ffffff;
+
     cursor: pointer;
+
     font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 700;
+
     letter-spacing: -0.01em;
     white-space: nowrap;
+
     box-shadow:
         0 6px 16px rgba(37, 99, 235, 0.22);
+
     transition:
         background 0.2s ease,
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
+
 .growth-system-score-submit:hover {
     background: #1d4ed8;
+
     transform: translateY(-1px);
+
     box-shadow:
         0 9px 20px rgba(37, 99, 235, 0.28);
 }
 
+
 .growth-system-score-submit:active {
     transform: translateY(0);
 }
+
+
+.growth-system-score-submit:disabled {
+    cursor: wait;
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+   ========================================================= */
 
 .growth-system-score-submit:focus-visible {
     outline: 3px solid rgba(37, 99, 235, 0.25);
     outline-offset: 3px;
 }
 
-/* ---------------------------------------------------------
-   ERROR STATE
-   --------------------------------------------------------- */
+
+/* =========================================================
+   ERROR
+   ========================================================= */
 
 .growth-system-score-error {
     margin-top: 12px;
+
     color: #dc2626;
+
     font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 500;
+
     line-height: 1.5;
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    META
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .growth-system-score-meta {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 9px;
+
     margin-top: 17px;
+
     color: #94a3b8;
+
     font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 500;
 }
 
-/* ---------------------------------------------------------
-   SCORE VISUAL
-   --------------------------------------------------------- */
+
+/* =========================================================
+   SCORE VISUAL PANEL
+   ========================================================= */
 
 .growth-system-score-visual {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     min-height: 330px;
+
     padding: 32px;
+
     border-radius: 24px;
+
     background:
         radial-gradient(
             circle at 50% 38%,
@@ -38477,21 +38601,27 @@ File: goalstation-bottleneck.css
             #f8fafc 55%,
             #f5f3ff 100%
         );
+
     border: 1px solid rgba(191, 219, 254, 0.7);
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    SCORE CIRCLE
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .growth-system-score-circle {
     width: 220px;
     height: 220px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
+
     border-radius: 50%;
+
     background:
         conic-gradient(
             #2563eb 0deg,
@@ -38499,74 +38629,186 @@ File: goalstation-bottleneck.css
             #dbeafe 220deg,
             #dbeafe 360deg
         );
+
     box-shadow:
         0 18px 40px rgba(37, 99, 235, 0.14);
+
+    transition:
+        background 0.8s ease,
+        transform 0.4s ease;
 }
+
+
+/* =========================================================
+   INNER CIRCLE
+   ========================================================= */
 
 .growth-system-score-circle::before {
     content: "";
+
     position: absolute;
+
     inset: 9px;
+
     border-radius: 50%;
+
     background: #ffffff;
 }
+
+
+/* =========================================================
+   SCORE VALUE
+   ========================================================= */
 
 .growth-system-score-circle-inner {
     position: relative;
     z-index: 1;
+
     display: flex;
     align-items: baseline;
     justify-content: center;
 }
 
+
 .growth-system-score-number {
     color: #0f172a;
+
     font-family: "Manrope", sans-serif;
     font-size: 68px;
     font-weight: 800;
+
     letter-spacing: -0.06em;
     line-height: 1;
 }
 
+
 .growth-system-score-denominator {
     margin-left: 4px;
+
     color: #94a3b8;
+
     font-family: "Inter", sans-serif;
     font-size: 17px;
     font-weight: 600;
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    SCORE LABEL
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .growth-system-score-label {
     margin-top: 24px;
+
     color: #475569;
+
     font-family: "Inter", sans-serif;
     font-size: 11px;
     font-weight: 800;
+
     letter-spacing: 0.12em;
     line-height: 1;
+
     text-transform: uppercase;
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    RESULT STATE
-   These styles will be used when JS replaces
-   the initial form state with the actual score.
-   --------------------------------------------------------- */
+   ========================================================= */
+
+.growth-system-score-result {
+    min-width: 0;
+}
+
+
+.growth-system-score-result-title {
+    max-width: 650px;
+}
+
+
+.growth-system-score-result-description {
+    max-width: 600px;
+}
+
+
+/* =========================================================
+   EXECUTIVE GROWTH AUDIT CTA
+   ========================================================= */
+
+.growth-system-score-audit-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 30px;
+    padding: 15px 22px;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.22);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.growth-system-score-audit-link:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 11px 24px rgba(37, 99, 235, 0.28);
+}
+
+
+.growth-system-score-audit-link:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 3px;
+}
+
+
+.growth-system-score-audit-price {
+    display: block;
+
+    margin-top: 11px;
+
+    color: #94a3b8;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESULT STATE — SCORE CIRCLE
+   ========================================================= */
 
 .growth-system-score-section.is-result
     .growth-system-score-circle {
-    background:
-        conic-gradient(
-            #2563eb 0deg,
-            #2563eb 245deg,
-            #dbeafe 245deg,
-            #dbeafe 360deg
-        );
+    transform: scale(1.02);
 }
+
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
 
 .growth-system-score-section.is-loading
     .growth-system-score-submit {
@@ -38574,9 +38816,363 @@ File: goalstation-bottleneck.css
     opacity: 0.7;
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
+   EXECUTIVE GROWTH AUDIT MODAL
+   ========================================================= */
+
+.growth-audit-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.growth-audit-modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.58);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+
+/* =========================================================
+   MODAL CONTAINER
+   ========================================================= */
+
+.growth-audit-modal-container {
+    width: 100%;
+    max-width: 560px;
+
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(226, 232, 240, 0.95);
+
+    box-shadow:
+        0 30px 80px rgba(15, 23, 42, 0.22),
+        0 8px 30px rgba(15, 23, 42, 0.12);
+
+    animation:
+        growth-audit-modal-enter 0.25s ease-out;
+}
+
+
+@keyframes growth-audit-modal-enter {
+
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+   ========================================================= */
+
+.growth-audit-modal-content {
+    padding: 48px;
+}
+
+
+.growth-audit-modal-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(37, 99, 235, 0.08);
+
+    border: 1px solid rgba(37, 99, 235, 0.14);
+
+    color: #2563eb;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.11em;
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.growth-audit-modal-title {
+    margin: 22px 0 0;
+
+    color: #0f172a;
+
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+
+.growth-audit-modal-description {
+    margin: 18px 0 0;
+
+    color: #64748b;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MODAL FEATURES
+   ========================================================= */
+
+.growth-audit-modal-features {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin-top: 27px;
+}
+
+
+.growth-audit-modal-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+
+    color: #334155;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+.growth-audit-modal-feature > span:first-child {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    margin-top: 1px;
+
+    border-radius: 50%;
+
+    background: rgba(37, 99, 235, 0.10);
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.growth-audit-modal-actions {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 32px;
+}
+
+
+.growth-audit-modal-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 54px;
+
+    padding: 0 22px;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.22);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.growth-audit-modal-primary:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 11px 24px rgba(37, 99, 235, 0.28);
+}
+
+
+.growth-audit-modal-primary:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 3px;
+}
+
+
+.growth-audit-modal-secondary {
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.growth-audit-modal-secondary:hover {
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   MODAL PRICE
+   ========================================================= */
+
+.growth-audit-modal-price {
+    margin-top: 14px;
+
+    color: #94a3b8;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MODAL CLOSE BUTTON
+   ========================================================= */
+
+.growth-audit-modal-close {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.growth-audit-modal-close:hover {
+    color: #0f172a;
+
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+}
+
+
+.growth-audit-modal-close:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
    RESPONSIVE — TABLET
-   --------------------------------------------------------- */
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -38584,39 +39180,63 @@ File: goalstation-bottleneck.css
         padding: 80px 20px;
     }
 
+
     .growth-system-score-container {
         grid-template-columns: 1fr;
+
         gap: 50px;
+
         padding: 52px 44px;
     }
 
-    .growth-system-score-content {
+
+    .growth-system-score-content,
+    .growth-system-score-result {
         text-align: center;
     }
 
-    .growth-system-score-description {
+
+    .growth-system-score-description,
+    .growth-system-score-result-description {
         margin-left: auto;
         margin-right: auto;
     }
 
+
     .growth-system-score-form {
         max-width: 680px;
+
         margin-left: auto;
         margin-right: auto;
     }
+
 
     .growth-system-score-meta {
         justify-content: center;
     }
 
+
     .growth-system-score-visual {
         min-height: 300px;
     }
+
+
+    .growth-system-score-audit-link {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .growth-system-score-audit-price {
+        text-align: center;
+    }
+
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    RESPONSIVE — MOBILE
-   --------------------------------------------------------- */
+   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -38624,89 +39244,202 @@ File: goalstation-bottleneck.css
         padding: 60px 16px;
     }
 
+
     .growth-system-score-container {
         gap: 38px;
+
+        min-height: 0;
+
         padding: 38px 22px;
+
         border-radius: 22px;
     }
 
-    .growth-system-score-badge {
+
+    .growth-system-score-badge,
+    .growth-system-score-result-badge {
         margin-bottom: 18px;
+
         font-size: 10px;
     }
 
-    .growth-system-score-title {
+
+    .growth-system-score-title,
+    .growth-system-score-result-title {
         font-size: 34px;
+
         letter-spacing: -0.04em;
     }
 
-    .growth-system-score-description {
+
+    .growth-system-score-description,
+    .growth-system-score-result-description {
         margin-top: 17px;
+
         font-size: 16px;
+
         line-height: 1.6;
     }
+
 
     .growth-system-score-form {
         margin-top: 26px;
     }
 
+
     .growth-system-score-input-wrapper {
         flex-direction: column;
+
         padding: 6px;
     }
 
+
     .growth-system-score-input {
         width: 100%;
+
         height: 52px;
     }
 
+
     .growth-system-score-submit {
         width: 100%;
+
         min-height: 52px;
     }
 
+
     .growth-system-score-meta {
         justify-content: center;
+
         font-size: 11px;
     }
 
+
     .growth-system-score-visual {
         min-height: 270px;
+
         padding: 25px 15px;
+
         border-radius: 20px;
     }
+
 
     .growth-system-score-circle {
         width: 185px;
         height: 185px;
     }
 
+
     .growth-system-score-number {
         font-size: 58px;
     }
+
 
     .growth-system-score-denominator {
         font-size: 15px;
     }
 
+
     .growth-system-score-label {
         margin-top: 20px;
+
         font-size: 10px;
     }
+
+
+    .growth-system-score-audit-link {
+        width: 100%;
+
+        margin-top: 26px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    /* ---------------------------------------------
+       MODAL MOBILE
+       --------------------------------------------- */
+
+    .growth-audit-modal {
+        padding: 16px;
+    }
+
+
+    .growth-audit-modal-container {
+        max-height: calc(100vh - 32px);
+
+        overflow-y: auto;
+
+        border-radius: 20px;
+    }
+
+
+    .growth-audit-modal-content {
+        padding: 38px 24px 30px;
+    }
+
+
+    .growth-audit-modal-title {
+        padding-right: 20px;
+
+        font-size: 30px;
+    }
+
+
+    .growth-audit-modal-description {
+        font-size: 15px;
+    }
+
+
+    .growth-audit-modal-feature {
+        font-size: 13px;
+    }
+
+
+    .growth-audit-modal-primary {
+        min-height: 52px;
+
+        font-size: 13px;
+    }
+
+
+    .growth-audit-modal-close {
+        top: 13px;
+        right: 13px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 21px;
+    }
+
 }
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    ACCESSIBILITY
-   --------------------------------------------------------- */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     .growth-system-score-input-wrapper,
-    .growth-system-score-submit {
+    .growth-system-score-submit,
+    .growth-system-score-circle,
+    .growth-system-score-audit-link,
+    .growth-audit-modal-container,
+    .growth-audit-modal-primary,
+    .growth-audit-modal-secondary,
+    .growth-audit-modal-close {
         transition: none;
+        animation: none;
     }
 
-    .growth-system-score-submit:hover {
+
+    .growth-system-score-submit:hover,
+    .growth-system-score-audit-link:hover,
+    .growth-audit-modal-primary:hover {
         transform: none;
     }
+
 }
