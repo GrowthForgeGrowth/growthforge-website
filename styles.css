@@ -15947,26 +15947,21 @@ SECTION: RESPONSIVE
 }
 
 /* =========================================
-   LOGO MARQUEE — COMPACT HERO BLEND
+   LOGO MARQUEE — SEAMLESS HERO CONTINUATION
    ========================================= */
 
 .logo-marquee{
     position:relative;
     overflow:hidden;
 
-    /* Compact */
-    padding:18px 0;
+    /* Very compact */
+    padding:14px 0;
 
-    /* Blend directly into hero */
-    background:linear-gradient(
-        90deg,
-        #020817 0%,
-        #07112f 45%,
-        #1e1b70 100%
-    );
+    /* Same visual family as the hero */
+    background:#020817;
 
-    border-top:1px solid rgba(255,255,255,.04);
-    border-bottom:1px solid rgba(255,255,255,.04);
+    border-top:1px solid rgba(255,255,255,.035);
+    border-bottom:1px solid rgba(255,255,255,.035);
 }
 
 
@@ -15980,7 +15975,7 @@ SECTION: RESPONSIVE
     position:absolute;
     top:0;
 
-    width:120px;
+    width:100px;
     height:100%;
 
     z-index:10;
@@ -16002,8 +15997,8 @@ SECTION: RESPONSIVE
 
     background:linear-gradient(
         to left,
-        #1e1b70 0%,
-        rgba(30,27,112,0) 100%
+        #020817 0%,
+        rgba(2,8,23,0) 100%
     );
 }
 
@@ -16016,7 +16011,7 @@ SECTION: RESPONSIVE
     display:flex;
     align-items:center;
 
-    gap:70px;
+    gap:68px;
 
     width:max-content;
 
@@ -16033,12 +16028,12 @@ SECTION: RESPONSIVE
    ========================================= */
 
 .logo-track img{
-    height:27px;
+    height:25px;
     width:auto;
 
     flex-shrink:0;
 
-    opacity:.55;
+    opacity:.42;
 
     transition:
         opacity .3s ease,
@@ -16051,8 +16046,8 @@ SECTION: RESPONSIVE
 }
 
 .logo-track img:hover{
-    opacity:.9;
-    transform:scale(1.05);
+    opacity:.75;
+    transform:scale(1.04);
 }
 
 
@@ -16080,21 +16075,21 @@ SECTION: RESPONSIVE
 @media (max-width:992px){
 
     .logo-marquee{
-        padding:16px 0;
+        padding:13px 0;
     }
 
     .logo-track{
-        gap:55px;
+        gap:52px;
         animation-duration:32s;
     }
 
     .logo-track img{
-        height:24px;
+        height:23px;
     }
 
     .logo-marquee::before,
     .logo-marquee::after{
-        width:90px;
+        width:75px;
     }
 
 }
@@ -16107,21 +16102,21 @@ SECTION: RESPONSIVE
 @media (max-width:768px){
 
     .logo-marquee{
-        padding:14px 0;
+        padding:11px 0;
     }
 
     .logo-track{
-        gap:40px;
+        gap:38px;
         animation-duration:26s;
     }
 
     .logo-track img{
-        height:21px;
+        height:20px;
     }
 
     .logo-marquee::before,
     .logo-marquee::after{
-        width:60px;
+        width:55px;
     }
 
 }
