@@ -2422,6 +2422,408 @@ setInterval(nextPage,4000);
 updateViewer();
 
 </script>
+
+    <script>
+/* =========================================================
+   GROWTHFORGE — GROWTH SYSTEM SCORE
+   Frontend MVP
+   ---------------------------------------------------------
+   Current version:
+   - Validates website URL
+   - Generates a temporary local score
+   - Displays result
+   - Provides Executive Growth Audit CTA
+
+   Future version:
+   - Replace calculateGrowthScore() with n8n webhook
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const section = document.getElementById("growth-system-score");
+    const form = document.getElementById("growth-system-score-form");
+    const websiteInput = document.getElementById("growth-system-score-website");
+    const submitButton = document.getElementById("growth-system-score-submit");
+    const errorMessage = document.getElementById("growth-system-score-error");
+
+    const scoreNumber = document.querySelector(
+        ".growth-system-score-number"
+    );
+
+    if (!section || !form || !websiteInput || !submitButton) {
+        return;
+    }
+
+    /* -----------------------------------------------------
+       FORM SUBMISSION
+       ----------------------------------------------------- */
+
+    form.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        clearError();
+
+        const website = normalizeWebsite(
+            websiteInput.value.trim()
+        );
+
+        if (!website) {
+            showError("Please enter your website.");
+            websiteInput.focus();
+            return;
+        }
+
+        if (!isValidWebsite(website)) {
+            showError(
+                "Please enter a valid website address."
+            );
+            websiteInput.focus();
+            return;
+        }
+
+        setLoadingState(true);
+
+        try {
+
+            /*
+             * TEMPORARY MVP
+             *
+             * This currently generates a placeholder score.
+             *
+             * Later, this section will become:
+             *
+             * const result = await getScoreFromN8n(website);
+             */
+
+            const result = await calculateGrowthScore(website);
+
+            displayResult(result);
+
+        } catch (error) {
+
+            console.error(
+                "Growth System Score error:",
+                error
+            );
+
+            showError(
+                "Something went wrong. Please try again."
+            );
+
+        } finally {
+
+            setLoadingState(false);
+
+        }
+
+    });
+
+
+    /* -----------------------------------------------------
+       NORMALIZE WEBSITE
+       ----------------------------------------------------- */
+
+    function normalizeWebsite(value) {
+
+        if (!value) {
+            return "";
+        }
+
+        let website = value.trim();
+
+        /*
+         * Automatically add https:// if the user
+         * enters something like:
+         *
+         * example.com
+         */
+
+        if (
+            !website.startsWith("http://") &&
+            !website.startsWith("https://")
+        ) {
+            website = "https://" + website;
+        }
+
+        return website;
+
+    }
+
+
+    /* -----------------------------------------------------
+       VALIDATE WEBSITE
+       ----------------------------------------------------- */
+
+    function isValidWebsite(value) {
+
+        try {
+
+            const url = new URL(value);
+
+            return (
+                url.protocol === "http:" ||
+                url.protocol === "https:"
+            ) && url.hostname.includes(".");
+
+        } catch {
+
+            return false;
+
+        }
+
+    }
+
+
+    /* -----------------------------------------------------
+       TEMPORARY SCORE ENGINE
+       -----------------------------------------------------
+
+       IMPORTANT:
+       This is NOT the final GrowthForge scoring model.
+
+       It exists only so the frontend can be tested
+       before n8n is restored.
+
+       The real scoring engine should eventually live
+       outside the browser.
+       ----------------------------------------------------- */
+
+    async function calculateGrowthScore(website) {
+
+        /*
+         * Small delay so the interface behaves like
+         * an actual analysis rather than instantly
+         * flashing a number.
+         */
+
+        await delay(900);
+
+        /*
+         * Deterministic score based on the domain.
+         *
+         * This means the same website produces the
+         * same temporary score each time.
+         *
+         * It is ONLY for frontend testing.
+         */
+
+        const url = new URL(website);
+
+        const domain = url.hostname
+            .replace(/^www\./, "")
+            .toLowerCase();
+
+        let hash = 0;
+
+        for (let i = 0; i < domain.length; i++) {
+            hash =
+                ((hash << 5) - hash) +
+                domain.charCodeAt(i);
+
+            hash |= 0;
+        }
+
+        const score =
+            45 +
+            Math.abs(hash % 41);
+
+        return {
+            score: score,
+            website: website
+        };
+
+    }
+
+
+    /* -----------------------------------------------------
+       DISPLAY RESULT
+       ----------------------------------------------------- */
+
+    function displayResult(result) {
+
+        const score = Math.max(
+            0,
+            Math.min(100, Number(result.score))
+        );
+
+        /*
+         * Change the score number.
+         */
+
+        if (scoreNumber) {
+
+            scoreNumber.textContent = score;
+
+        }
+
+        /*
+         * Tell the CSS that the component is now
+         * in its result state.
+         */
+
+        section.classList.add("is-result");
+
+        /*
+         * Hide the form.
+         */
+
+        form.style.display = "none";
+
+        /*
+         * Change the visual progress ring.
+         */
+
+        updateScoreRing(score);
+
+        /*
+         * Update the supporting text.
+         */
+
+        updateResultContent(score);
+
+    }
+
+
+    /* -----------------------------------------------------
+       SCORE RING
+       ----------------------------------------------------- */
+
+    function updateScoreRing(score) {
+
+        const circle = document.querySelector(
+            ".growth-system-score-circle"
+        );
+
+        if (!circle) {
+            return;
+        }
+
+        const degrees = score * 3.6;
+
+        circle.style.background = `
+            conic-gradient(
+                #2563eb 0deg,
+                #2563eb ${degrees}deg,
+                #dbeafe ${degrees}deg,
+                #dbeafe 360deg
+            )
+        `;
+
+    }
+
+
+    /* -----------------------------------------------------
+       RESULT CONTENT
+       ----------------------------------------------------- */
+
+    function updateResultContent(score) {
+
+        const description =
+            document.querySelector(
+                ".growth-system-score-description"
+            );
+
+        const badge =
+            document.querySelector(
+                ".growth-system-score-badge"
+            );
+
+        if (badge) {
+
+            badge.textContent =
+                "YOUR GROWTH SYSTEM SCORE";
+
+        }
+
+        if (description) {
+
+            description.textContent =
+                "Your Growth System Score is ready. " +
+                "Get the complete Executive Growth Audit " +
+                "to understand what is driving your score.";
+
+        }
+
+    }
+
+
+    /* -----------------------------------------------------
+       LOADING STATE
+       ----------------------------------------------------- */
+
+    function setLoadingState(isLoading) {
+
+        section.classList.toggle(
+            "is-loading",
+            isLoading
+        );
+
+        submitButton.disabled = isLoading;
+
+        if (isLoading) {
+
+            submitButton.innerHTML =
+                'Analyzing <span aria-hidden="true">...</span>';
+
+            websiteInput.disabled = true;
+
+        } else {
+
+            submitButton.innerHTML =
+                'Get My Score <span aria-hidden="true">→</span>';
+
+            websiteInput.disabled = false;
+
+        }
+
+    }
+
+
+    /* -----------------------------------------------------
+       ERROR HANDLING
+       ----------------------------------------------------- */
+
+    function showError(message) {
+
+        if (!errorMessage) {
+            return;
+        }
+
+        errorMessage.textContent = message;
+        errorMessage.hidden = false;
+
+    }
+
+
+    function clearError() {
+
+        if (!errorMessage) {
+            return;
+        }
+
+        errorMessage.textContent = "";
+        errorMessage.hidden = true;
+
+    }
+
+
+    /* -----------------------------------------------------
+       UTILITY
+       ----------------------------------------------------- */
+
+    function delay(milliseconds) {
+
+        return new Promise(function (resolve) {
+
+            setTimeout(resolve, milliseconds);
+
+        });
+
+    }
+
+});
+</script>
     
 </body>
 </html>
