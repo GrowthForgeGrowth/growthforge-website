@@ -38,7 +38,10 @@ header .logo{flex-shrink:0}
 .hero {
     width: 100%;
     margin: 0;
-    padding: 105px 0 90px;
+
+    /* COMPRESSED VERTICAL FOOTPRINT */
+    padding: 68px 0 58px;
+
     color: #ffffff;
     box-sizing: border-box;
     overflow: hidden;
@@ -353,7 +356,9 @@ header .logo{flex-shrink:0}
     justify-content: center;
 
     min-width: 0;
-    min-height: 620px;
+
+    /* COMPRESSED FROM 620px */
+    min-height: 500px;
 }
 
 
@@ -459,10 +464,6 @@ header .logo{flex-shrink:0}
     width: 100%;
     max-width: 700px;
 
-    /*
-     * ONLY SPACING ADJUSTMENT:
-     * slightly tighter outer breathing room
-     */
     padding: 30px;
 
     background:
@@ -497,10 +498,6 @@ header .logo{flex-shrink:0}
 
     gap: 20px;
 
-    /*
-     * Slightly more breathing room than the original
-     * without increasing the overall dashboard size.
-     */
     padding-bottom: 20px;
 
     border-bottom: 1px solid rgba(148, 163, 184, .16);
@@ -567,10 +564,6 @@ header .logo{flex-shrink:0}
 
     gap: 12px;
 
-    /*
-     * Preserve visual breathing room while avoiding
-     * unnecessary vertical expansion.
-     */
     margin: 20px 0 21px;
 }
 
@@ -726,10 +719,6 @@ header .logo{flex-shrink:0}
 
     gap: 20px;
 
-    /*
-     * Slightly more breathing room between findings
-     * while keeping the dashboard compact.
-     */
     min-height: 46px;
 
     border-bottom: 1px solid rgba(30, 41, 59, .55);
@@ -969,7 +958,8 @@ header .logo{flex-shrink:0}
 @media (max-width: 1100px) {
 
     .hero {
-        padding: 85px 28px 80px;
+        /* COMPRESSED FROM 85px 28px 80px */
+        padding: 62px 28px 60px;
     }
 
     .hero-inner {
@@ -985,7 +975,8 @@ header .logo{flex-shrink:0}
     }
 
     .hero-visual {
-        min-height: 540px;
+        /* COMPRESSED FROM 540px */
+        min-height: 450px;
     }
 
     .audit-dashboard {
@@ -1011,12 +1002,15 @@ header .logo{flex-shrink:0}
 @media (max-width: 768px) {
 
     .hero {
-        padding: 70px 24px 70px;
+        /* COMPRESSED FROM 70px 24px 70px */
+        padding: 52px 24px 55px;
     }
 
     .hero-inner {
         grid-template-columns: 1fr;
-        gap: 55px;
+
+        /* COMPRESSED FROM 55px */
+        gap: 38px;
     }
 
     .hero-content {
@@ -1036,6 +1030,7 @@ header .logo{flex-shrink:0}
     }
 
     .hero-visual {
+        /* No forced height on mobile */
         min-height: auto;
         padding: 10px 0;
     }
@@ -1068,7 +1063,7 @@ header .logo{flex-shrink:0}
 @media (max-width: 480px) {
 
     .hero {
-        padding: 58px 20px 60px;
+        padding: 45px 20px 48px;
     }
 
     .hero h1 {
