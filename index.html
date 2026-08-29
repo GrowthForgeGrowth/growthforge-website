@@ -2586,106 +2586,217 @@ updateViewer();
 
 </script>
 
-    <script>
+<script>
 /* =========================================================
    GROWTHFORGE — GROWTH SYSTEM SCORE
    Frontend MVP
    ---------------------------------------------------------
-   Current version:
+   CURRENT:
    - Validates website URL
-   - Generates a temporary local score
-   - Displays result
-   - Provides Executive Growth Audit CTA
+   - Generates temporary local score
+   - Displays score
+   - Reveals Executive Growth Audit CTA
+   - Opens Executive Growth Audit modal after score
+   - Supports modal close / Maybe Later
 
-   Future version:
+   FUTURE:
    - Replace calculateGrowthScore() with n8n webhook
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const section = document.getElementById("growth-system-score");
-    const form = document.getElementById("growth-system-score-form");
-    const websiteInput = document.getElementById("growth-system-score-website");
-    const submitButton = document.getElementById("growth-system-score-submit");
-    const errorMessage = document.getElementById("growth-system-score-error");
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
 
-    const scoreNumber = document.querySelector(
-        ".growth-system-score-number"
-    );
+    const section =
+        document.getElementById("growth-system-score");
 
-    if (!section || !form || !websiteInput || !submitButton) {
+    const form =
+        document.getElementById("growth-system-score-form");
+
+    const websiteInput =
+        document.getElementById("growth-system-score-website");
+
+    const submitButton =
+        document.getElementById("growth-system-score-submit");
+
+    const errorMessage =
+        document.getElementById("growth-system-score-error");
+
+    const inputState =
+        document.getElementById(
+            "growth-system-score-input-state"
+        );
+
+    const resultState =
+        document.getElementById(
+            "growth-system-score-result-state"
+        );
+
+    const scoreNumber =
+        document.getElementById(
+            "growth-system-score-number"
+        );
+
+    const scoreCircle =
+        document.querySelector(
+            ".growth-system-score-circle"
+        );
+
+    const scoreLabel =
+        document.querySelector(
+            ".growth-system-score-label"
+        );
+
+    /* =====================================================
+       EXECUTIVE GROWTH AUDIT MODAL
+       ===================================================== */
+
+    const auditModal =
+        document.getElementById(
+            "growth-audit-modal"
+        );
+
+    const auditModalClose =
+        document.getElementById(
+            "growth-audit-modal-close"
+        );
+
+    const auditModalCloseElements =
+        document.querySelectorAll(
+            "[data-growth-audit-modal-close]"
+        );
+
+
+    /* =====================================================
+       SAFETY CHECK
+       ===================================================== */
+
+    if (
+        !section ||
+        !form ||
+        !websiteInput ||
+        !submitButton
+    ) {
         return;
     }
 
-    /* -----------------------------------------------------
+
+    /* =====================================================
        FORM SUBMISSION
-       ----------------------------------------------------- */
+       ===================================================== */
 
-    form.addEventListener("submit", async function (event) {
+    form.addEventListener(
+        "submit",
+        async function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        clearError();
+            clearError();
 
-        const website = normalizeWebsite(
-            websiteInput.value.trim()
-        );
+            const website =
+                normalizeWebsite(
+                    websiteInput.value.trim()
+                );
 
-        if (!website) {
-            showError("Please enter your website.");
-            websiteInput.focus();
-            return;
+
+            /* ---------------------------------------------
+               VALIDATION
+               --------------------------------------------- */
+
+            if (!website) {
+
+                showError(
+                    "Please enter your website."
+                );
+
+                websiteInput.focus();
+
+                return;
+            }
+
+
+            if (!isValidWebsite(website)) {
+
+                showError(
+                    "Please enter a valid website address."
+                );
+
+                websiteInput.focus();
+
+                return;
+            }
+
+
+            /* ---------------------------------------------
+               START LOADING
+               --------------------------------------------- */
+
+            setLoadingState(true);
+
+
+            try {
+
+                /*
+                 * TEMPORARY LOCAL SCORE
+                 *
+                 * Replace this later with:
+                 *
+                 * const result =
+                 *     await getScoreFromN8n(website);
+                 */
+
+                const result =
+                    await calculateGrowthScore(
+                        website
+                    );
+
+
+                /* -----------------------------------------
+                   DISPLAY SCORE
+                   ----------------------------------------- */
+
+                displayResult(result);
+
+
+                /*
+                 * Give the user a moment to see the score
+                 * before presenting the Audit modal.
+                 */
+
+                setTimeout(function () {
+
+                    openAuditModal();
+
+                }, 1200);
+
+
+            } catch (error) {
+
+                console.error(
+                    "Growth System Score error:",
+                    error
+                );
+
+                showError(
+                    "Something went wrong. Please try again."
+                );
+
+
+            } finally {
+
+                setLoadingState(false);
+
+            }
+
         }
-
-        if (!isValidWebsite(website)) {
-            showError(
-                "Please enter a valid website address."
-            );
-            websiteInput.focus();
-            return;
-        }
-
-        setLoadingState(true);
-
-        try {
-
-            /*
-             * TEMPORARY MVP
-             *
-             * This currently generates a placeholder score.
-             *
-             * Later, this section will become:
-             *
-             * const result = await getScoreFromN8n(website);
-             */
-
-            const result = await calculateGrowthScore(website);
-
-            displayResult(result);
-
-        } catch (error) {
-
-            console.error(
-                "Growth System Score error:",
-                error
-            );
-
-            showError(
-                "Something went wrong. Please try again."
-            );
-
-        } finally {
-
-            setLoadingState(false);
-
-        }
-
-    });
+    );
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        NORMALIZE WEBSITE
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function normalizeWebsite(value) {
 
@@ -2695,18 +2806,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let website = value.trim();
 
+
         /*
-         * Automatically add https:// if the user
-         * enters something like:
+         * Convert:
          *
          * example.com
+         *
+         * into:
+         *
+         * https://example.com
          */
 
         if (
             !website.startsWith("http://") &&
             !website.startsWith("https://")
         ) {
-            website = "https://" + website;
+
+            website =
+                "https://" + website;
+
         }
 
         return website;
@@ -2714,20 +2832,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        VALIDATE WEBSITE
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function isValidWebsite(value) {
 
         try {
 
-            const url = new URL(value);
+            const url =
+                new URL(value);
 
             return (
-                url.protocol === "http:" ||
-                url.protocol === "https:"
-            ) && url.hostname.includes(".");
+                (
+                    url.protocol === "http:" ||
+                    url.protocol === "https:"
+                ) &&
+                url.hostname.includes(".")
+            );
 
         } catch {
 
@@ -2738,109 +2860,171 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        TEMPORARY SCORE ENGINE
-       -----------------------------------------------------
+       =====================================================
 
-       IMPORTANT:
-       This is NOT the final GrowthForge scoring model.
+       This is ONLY a frontend testing mechanism.
 
-       It exists only so the frontend can be tested
-       before n8n is restored.
+       It does NOT analyze the actual website.
 
-       The real scoring engine should eventually live
-       outside the browser.
-       ----------------------------------------------------- */
+       The real Growth System Score should eventually
+       come from the n8n backend.
+
+       ===================================================== */
 
     async function calculateGrowthScore(website) {
 
         /*
-         * Small delay so the interface behaves like
-         * an actual analysis rather than instantly
-         * flashing a number.
+         * Simulate analysis time.
          */
 
-        await delay(900);
+        await delay(1200);
+
+
+        const url =
+            new URL(website);
+
+
+        const domain =
+            url.hostname
+                .replace(/^www\./, "")
+                .toLowerCase();
+
 
         /*
-         * Deterministic score based on the domain.
+         * Generate a deterministic temporary score.
          *
-         * This means the same website produces the
-         * same temporary score each time.
-         *
-         * It is ONLY for frontend testing.
+         * Same domain = same temporary score.
          */
-
-        const url = new URL(website);
-
-        const domain = url.hostname
-            .replace(/^www\./, "")
-            .toLowerCase();
 
         let hash = 0;
 
-        for (let i = 0; i < domain.length; i++) {
+
+        for (
+            let i = 0;
+            i < domain.length;
+            i++
+        ) {
+
             hash =
                 ((hash << 5) - hash) +
                 domain.charCodeAt(i);
 
             hash |= 0;
+
         }
+
+
+        /*
+         * Temporary score range:
+         *
+         * 45–85
+         */
 
         const score =
             45 +
             Math.abs(hash % 41);
 
+
         return {
+
             score: score,
+
             website: website
+
         };
 
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        DISPLAY RESULT
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function displayResult(result) {
 
-        const score = Math.max(
-            0,
-            Math.min(100, Number(result.score))
-        );
+        let score =
+            Number(result.score);
+
 
         /*
-         * Change the score number.
+         * Keep score between 0 and 100.
+         */
+
+        score =
+            Math.max(
+                0,
+                Math.min(100, score)
+            );
+
+
+        /*
+         * Update score number.
          */
 
         if (scoreNumber) {
 
-            scoreNumber.textContent = score;
+            animateScore(
+                scoreNumber,
+                score
+            );
 
         }
 
-        /*
-         * Tell the CSS that the component is now
-         * in its result state.
-         */
-
-        section.classList.add("is-result");
 
         /*
-         * Hide the form.
-         */
-
-        form.style.display = "none";
-
-        /*
-         * Change the visual progress ring.
+         * Update progress ring.
          */
 
         updateScoreRing(score);
 
+
         /*
-         * Update the supporting text.
+         * Hide the input state.
+         */
+
+        if (inputState) {
+
+            inputState.hidden = true;
+
+        }
+
+
+        /*
+         * Show the result state.
+         */
+
+        if (resultState) {
+
+            resultState.hidden = false;
+
+        }
+
+
+        /*
+         * Mark section as result state.
+         */
+
+        section.classList.add(
+            "is-result"
+        );
+
+
+        /*
+         * Update score label.
+         */
+
+        if (scoreLabel) {
+
+            scoreLabel.textContent =
+                "GROWTH SYSTEM SCORE";
+
+        }
+
+
+        /*
+         * Update result messaging.
          */
 
         updateResultContent(score);
@@ -2848,23 +3032,91 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
+       SCORE ANIMATION
+       ===================================================== */
+
+    function animateScore(element, targetScore) {
+
+        const duration = 900;
+
+        const startTime =
+            performance.now();
+
+
+        function update(currentTime) {
+
+            const elapsed =
+                currentTime - startTime;
+
+
+            const progress =
+                Math.min(
+                    elapsed / duration,
+                    1
+                );
+
+
+            /*
+             * Ease-out animation.
+             */
+
+            const easedProgress =
+                1 -
+                Math.pow(
+                    1 - progress,
+                    3
+                );
+
+
+            const currentScore =
+                Math.round(
+                    targetScore *
+                    easedProgress
+                );
+
+
+            element.textContent =
+                currentScore;
+
+
+            if (progress < 1) {
+
+                requestAnimationFrame(
+                    update
+                );
+
+            } else {
+
+                element.textContent =
+                    targetScore;
+
+            }
+
+        }
+
+
+        requestAnimationFrame(update);
+
+    }
+
+
+    /* =====================================================
        SCORE RING
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function updateScoreRing(score) {
 
-        const circle = document.querySelector(
-            ".growth-system-score-circle"
-        );
-
-        if (!circle) {
+        if (!scoreCircle) {
             return;
         }
 
-        const degrees = score * 3.6;
 
-        circle.style.background = `
+        const degrees =
+            score * 3.6;
+
+
+        scoreCircle.style.background = `
             conic-gradient(
                 #2563eb 0deg,
                 #2563eb ${degrees}deg,
@@ -2876,44 +3128,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        RESULT CONTENT
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function updateResultContent(score) {
 
-        const description =
+        const resultTitle =
             document.querySelector(
-                ".growth-system-score-description"
+                ".growth-system-score-result-title"
             );
 
-        const badge =
+        const resultDescription =
             document.querySelector(
-                ".growth-system-score-badge"
+                ".growth-system-score-result-description"
             );
 
-        if (badge) {
 
-            badge.textContent =
-                "YOUR GROWTH SYSTEM SCORE";
+        if (resultTitle) {
+
+            resultTitle.textContent =
+                "Your score is ready.";
 
         }
 
-        if (description) {
 
-            description.textContent =
-                "Your Growth System Score is ready. " +
-                "Get the complete Executive Growth Audit " +
-                "to understand what is driving your score.";
+        if (resultDescription) {
+
+            resultDescription.textContent =
+                "Your Growth System Score gives you a snapshot. " +
+                "The Executive Growth Audit gives you the complete " +
+                "picture of what's driving your growth and where " +
+                "your highest-impact opportunities lie.";
 
         }
 
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        LOADING STATE
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function setLoadingState(isLoading) {
 
@@ -2922,30 +3177,171 @@ document.addEventListener("DOMContentLoaded", function () {
             isLoading
         );
 
-        submitButton.disabled = isLoading;
+
+        submitButton.disabled =
+            isLoading;
+
 
         if (isLoading) {
 
             submitButton.innerHTML =
                 'Analyzing <span aria-hidden="true">...</span>';
 
-            websiteInput.disabled = true;
+            websiteInput.disabled =
+                true;
 
         } else {
 
             submitButton.innerHTML =
                 'Get My Score <span aria-hidden="true">→</span>';
 
-            websiteInput.disabled = false;
+            websiteInput.disabled =
+                false;
 
         }
 
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
+       EXECUTIVE GROWTH AUDIT MODAL
+       ===================================================== */
+
+    function openAuditModal() {
+
+        if (!auditModal) {
+            return;
+        }
+
+
+        auditModal.hidden =
+            false;
+
+
+        /*
+         * Prevent background page scrolling.
+         */
+
+        document.body.style.overflow =
+            "hidden";
+
+
+        /*
+         * Move keyboard focus to close button.
+         */
+
+        if (auditModalClose) {
+
+            setTimeout(function () {
+
+                auditModalClose.focus();
+
+            }, 50);
+
+        }
+
+    }
+
+
+    function closeAuditModal() {
+
+        if (!auditModal) {
+            return;
+        }
+
+
+        auditModal.hidden =
+            true;
+
+
+        /*
+         * Restore page scrolling.
+         */
+
+        document.body.style.overflow =
+            "";
+
+
+        /*
+         * Return focus to website input
+         * if appropriate.
+         */
+
+        if (
+            websiteInput &&
+            !inputState.hidden
+        ) {
+
+            websiteInput.focus();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MODAL CLOSE HANDLERS
+       ===================================================== */
+
+    auditModalCloseElements.forEach(
+        function (element) {
+
+            element.addEventListener(
+                "click",
+                function () {
+
+                    closeAuditModal();
+
+                }
+            );
+
+        }
+    );
+
+
+    /*
+     * Explicit close button.
+     */
+
+    if (auditModalClose) {
+
+        auditModalClose.addEventListener(
+            "click",
+            function () {
+
+                closeAuditModal();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESCAPE KEY
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                auditModal &&
+                !auditModal.hidden
+            ) {
+
+                closeAuditModal();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
        ERROR HANDLING
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function showError(message) {
 
@@ -2953,8 +3349,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        errorMessage.textContent = message;
-        errorMessage.hidden = false;
+
+        errorMessage.textContent =
+            message;
+
+
+        errorMessage.hidden =
+            false;
 
     }
 
@@ -2965,25 +3366,36 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        errorMessage.textContent = "";
-        errorMessage.hidden = true;
+
+        errorMessage.textContent =
+            "";
+
+
+        errorMessage.hidden =
+            true;
 
     }
 
 
-    /* -----------------------------------------------------
+    /* =====================================================
        UTILITY
-       ----------------------------------------------------- */
+       ===================================================== */
 
     function delay(milliseconds) {
 
-        return new Promise(function (resolve) {
+        return new Promise(
+            function (resolve) {
 
-            setTimeout(resolve, milliseconds);
+                setTimeout(
+                    resolve,
+                    milliseconds
+                );
 
-        });
+            }
+        );
 
     }
+
 
 });
 </script>
