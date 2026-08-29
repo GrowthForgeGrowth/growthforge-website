@@ -3,252 +3,30 @@
     box-sizing:border-box;
 }
 
-html{
-    margin:0;
-    padding:0;
-    width:100%;
-    min-height:100%;
-    overflow-x:hidden;
-    overflow-y:auto;
-}
-
 body{
     margin:0;
-    padding:0;
-    width:100%;
-    min-height:100%;
     font-family:Inter,sans-serif;
     color:#0f172a;
-
     background:#eef4fb;
     background-image:
         radial-gradient(circle at 15% 10%, rgba(37,99,235,.10), transparent 35%),
         radial-gradient(circle at 85% 30%, rgba(96,165,250,.08), transparent 35%),
         radial-gradient(circle at 45% 85%, rgba(37,99,235,.06), transparent 30%);
-
     background-attachment:fixed;
-
-    overflow-x:hidden;
-    overflow-y:auto;
 }
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-
-/* =========================================================
-   FIXED / OVERLAY HEADER
-   ========================================================= */
-
-header{
-    position:fixed !important;
-
-    top:0 !important;
-    left:0 !important;
-    right:0 !important;
-
-    width:100% !important;
-    height:auto !important;
-
-    margin:0 !important;
-    padding:0 !important;
-
-    z-index:99999 !important;
-
-    background:rgba(255,255,255,.95) !important;
-
-    backdrop-filter:blur(12px) !important;
-    -webkit-backdrop-filter:blur(12px) !important;
-
-    border-bottom:1px solid #eee !important;
-
-    transform:none !important;
-
-    /* IMPORTANT:
-       Header itself must never control page scrolling */
-    overflow:visible !important;
-}
-
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    width:min(1120px,92%);
-    margin:0 auto;
-
-    padding:18px 0;
-}
-
-nav{
-    display:flex;
-    gap:20px;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
-a{
-    text-decoration:none;
-    color:#0f172a;
-}
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
-
-.logo{
-    font:800 30px Manrope,sans-serif;
-}
-
-.logo span{
-    color:#2563eb;
-}
-
-header .logo{
-    flex-shrink:0;
-}
-
-
-/* =========================================================
-   FOOTER LOGO
-   ========================================================= */
-
-.footer-logo{
-    height:48px;
-    width:auto;
-    max-width:180px;
-    object-fit:contain;
-    margin-bottom:12px;
-}
-
-
-/* =========================================================
-   PRIMARY BUTTON
-   ========================================================= */
-
-.btn{
-    background:#2563eb;
-    color:#fff;
-    padding:12px 20px;
-    border-radius:10px;
-    display:inline-block;
-
-    transition:background 0.2s;
-}
-
-.btn:hover{
-    background:#1d4ed8;
-}
-
-
-/* =========================================================
-   GHOST BUTTON
-   ========================================================= */
-
-.ghost{
-    padding:12px 20px;
-    color:#2563eb;
-
-    transition:color 0.2s;
-}
-
-.ghost:hover{
-    color:#1d4ed8;
-}
-
-
-/* =========================================================
-   TEXT LINKS
-   ========================================================= */
-
-.link{
-    color:#2563eb;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.link:hover{
-    text-decoration:underline;
-}
-
-
-/* =========================================================
-   MOBILE HEADER
-   ========================================================= */
-
-@media (max-width:768px){
-
-    html,
-    body{
-        overflow-x:hidden;
-        overflow-y:auto;
-    }
-
-    header{
-        position:fixed !important;
-
-        top:0 !important;
-        left:0 !important;
-        right:0 !important;
-
-        width:100% !important;
-        height:auto !important;
-
-        z-index:99999 !important;
-
-        overflow:visible !important;
-    }
-
-    .nav{
-        width:min(1120px,92%);
-        padding:14px 0;
-    }
-
-    .logo{
-        font-size:26px;
-    }
-
-    nav{
-        gap:10px;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width:480px){
-
-    html,
-    body{
-        overflow-x:hidden;
-        overflow-y:auto;
-    }
-
-    .nav{
-        width:calc(100% - 32px);
-        padding:13px 0;
-    }
-
-    .logo{
-        font-size:24px;
-    }
-
-    nav{
-        gap:8px;
-    }
-
-}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(8px);border-bottom:1px solid #eee;}.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+a{text-decoration:none;color:#0f172a}
+.logo{font:800 30px Manrope,sans-serif}.logo span{color:#2563eb}
+header .logo{flex-shrink:0}
+.footer-logo{height:48px;width:auto;max-width:180px;object-fit:contain;margin-bottom:12px}
+.btn{background:#2563eb;color:#fff;padding:12px 20px;border-radius:10px;display:inline-block;transition:background 0.2s}
+.btn:hover{background:#1d4ed8}
+.ghost{padding:12px 20px;color:#2563eb;transition:color 0.2s}
+.ghost:hover{color:#1d4ed8}
+.link{color:#2563eb;text-decoration:none;font-weight:600}
+.link:hover{text-decoration:underline}
 
 /* =========================================================
    GROWTHFORGE — HOMEPAGE HERO
