@@ -38834,28 +38834,34 @@ File: goalstation-bottleneck.css
     z-index: 99999;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     width: 100%;
-    height: 100%;
+    height: 100dvh;
+    min-height: 100vh;
 
-    padding: 28px;
+    padding: 32px 24px;
 
-    opacity: 1;
+    box-sizing: border-box;
 
-    visibility: visible;
-
+    overflow-x: hidden;
     overflow-y: auto;
 
+    opacity: 1;
+    visibility: visible;
+
     isolation: isolate;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 
 /*
- * CRITICAL:
- * The modal remains completely hidden until JavaScript
- * explicitly removes the HTML "hidden" attribute.
+ * CRITICAL HIDDEN STATE
+ * The modal must remain completely invisible on page load.
+ * JavaScript opens it only after the Growth System Score
+ * has been calculated and displayed.
  */
 
 .growth-audit-modal[hidden] {
@@ -38868,7 +38874,7 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-audit-modal-overlay {
-    position: absolute;
+    position: fixed;
     inset: 0;
 
     width: 100%;
@@ -38891,14 +38897,18 @@ File: goalstation-bottleneck.css
     position: relative;
     z-index: 1;
 
-    width: min(100%, 645px);
+    flex: 0 1 auto;
 
-    max-height: calc(100vh - 56px);
+    width: min(645px, 100%);
+
+    max-height: calc(100dvh - 64px);
 
     margin: auto;
 
-    overflow-y: auto;
+    box-sizing: border-box;
+
     overflow-x: hidden;
+    overflow-y: auto;
 
     background: #ffffff;
 
@@ -38911,11 +38921,28 @@ File: goalstation-bottleneck.css
         0 16px 40px rgba(15, 23, 42, 0.14);
 
     scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
 
     animation:
         growth-audit-modal-enter
         0.28s
         cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.growth-audit-modal-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.growth-audit-modal-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.growth-audit-modal-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
 }
 
 
@@ -38927,7 +38954,7 @@ File: goalstation-bottleneck.css
 
     0% {
         opacity: 0;
-        transform: translateY(20px) scale(0.97);
+        transform: translateY(12px) scale(0.985);
     }
 
     100% {
@@ -38945,7 +38972,9 @@ File: goalstation-bottleneck.css
 .growth-audit-modal-content {
     position: relative;
 
-    padding: 56px 56px 42px;
+    box-sizing: border-box;
+
+    padding: 52px 56px 42px;
 }
 
 
@@ -38963,7 +38992,6 @@ File: goalstation-bottleneck.css
     padding: 0 15px;
 
     border: 1px solid rgba(37, 99, 235, 0.16);
-
     border-radius: 999px;
 
     background:
@@ -38976,15 +39004,12 @@ File: goalstation-bottleneck.css
     color: #2563eb;
 
     font-family: "Inter", sans-serif;
-
     font-size: 10px;
     font-weight: 800;
-
     letter-spacing: 0.12em;
     line-height: 1;
 
     text-transform: uppercase;
-
     white-space: nowrap;
 }
 
@@ -39001,13 +39026,9 @@ File: goalstation-bottleneck.css
     color: #0f172a;
 
     font-family: "Manrope", sans-serif;
-
     font-size: clamp(34px, 4vw, 48px);
-
     font-weight: 800;
-
     letter-spacing: -0.048em;
-
     line-height: 1.06;
 }
 
@@ -39024,12 +39045,9 @@ File: goalstation-bottleneck.css
     color: #64748b;
 
     font-family: "Inter", sans-serif;
-
     font-size: 16px;
     font-weight: 400;
-
     letter-spacing: -0.01em;
-
     line-height: 1.7;
 }
 
@@ -39041,11 +39059,9 @@ File: goalstation-bottleneck.css
 .growth-audit-modal-features {
     display: flex;
     flex-direction: column;
-
     gap: 15px;
 
     margin: 30px 0 0;
-
     padding: 0;
 
     list-style: none;
@@ -39059,7 +39075,6 @@ File: goalstation-bottleneck.css
 .growth-audit-modal-feature {
     display: flex;
     align-items: center;
-
     gap: 12px;
 
     min-height: 25px;
@@ -39070,10 +39085,8 @@ File: goalstation-bottleneck.css
     color: #334155;
 
     font-family: "Inter", sans-serif;
-
     font-size: 14px;
     font-weight: 500;
-
     line-height: 1.5;
 }
 
@@ -39096,16 +39109,13 @@ File: goalstation-bottleneck.css
 
     border-radius: 50%;
 
-    background:
-        rgba(37, 99, 235, 0.10);
+    background: rgba(37, 99, 235, 0.10);
 
     color: #2563eb;
 
     font-family: Arial, sans-serif;
-
     font-size: 12px;
     font-weight: 800;
-
     line-height: 1;
 }
 
@@ -39126,10 +39136,9 @@ File: goalstation-bottleneck.css
 .growth-audit-modal-actions {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 
     width: 100%;
-
-    gap: 8px;
 
     margin-top: 32px;
 }
@@ -39147,13 +39156,11 @@ File: goalstation-bottleneck.css
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 11px;
 
     padding: 0 26px;
 
     border: 0;
-
     border-radius: 11px;
 
     background:
@@ -39166,12 +39173,9 @@ File: goalstation-bottleneck.css
     color: #ffffff;
 
     font-family: "Inter", sans-serif;
-
     font-size: 15px;
     font-weight: 700;
-
     letter-spacing: -0.01em;
-
     line-height: 1;
 
     text-align: center;
@@ -39217,11 +39221,9 @@ File: goalstation-bottleneck.css
     display: inline-flex;
 
     font-size: 18px;
-
     line-height: 1;
 
-    transition:
-        transform 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 
@@ -39248,16 +39250,13 @@ File: goalstation-bottleneck.css
     cursor: pointer;
 
     font-family: "Inter", sans-serif;
-
     font-size: 13px;
     font-weight: 600;
-
     line-height: 1;
 
     text-align: center;
 
-    transition:
-        color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 
@@ -39276,10 +39275,8 @@ File: goalstation-bottleneck.css
     color: #94a3b8;
 
     font-family: "Inter", sans-serif;
-
     font-size: 12px;
     font-weight: 600;
-
     line-height: 1.4;
 
     text-align: center;
@@ -39292,11 +39289,10 @@ File: goalstation-bottleneck.css
 
 .growth-audit-modal-close {
     position: absolute;
-
     top: 20px;
     right: 20px;
 
-    z-index: 5;
+    z-index: 10;
 
     width: 44px;
     height: 44px;
@@ -39308,7 +39304,6 @@ File: goalstation-bottleneck.css
     padding: 0;
 
     border: 1px solid #e2e8f0;
-
     border-radius: 50%;
 
     background: rgba(255, 255, 255, 0.96);
@@ -39318,10 +39313,8 @@ File: goalstation-bottleneck.css
     cursor: pointer;
 
     font-family: Arial, sans-serif;
-
     font-size: 25px;
     font-weight: 400;
-
     line-height: 1;
 
     box-shadow:
@@ -39359,7 +39352,6 @@ File: goalstation-bottleneck.css
 .growth-audit-modal-secondary:focus-visible,
 .growth-audit-modal-close:focus-visible {
     outline: 3px solid rgba(37, 99, 235, 0.22);
-
     outline-offset: 3px;
 }
 
@@ -39378,7 +39370,7 @@ File: goalstation-bottleneck.css
     .growth-audit-modal-container {
         width: min(100%, 620px);
 
-        max-height: calc(100vh - 48px);
+        max-height: calc(100dvh - 48px);
 
         border-radius: 24px;
     }
@@ -39403,16 +39395,20 @@ File: goalstation-bottleneck.css
 @media (max-width: 600px) {
 
     .growth-audit-modal {
-        align-items: center;
+        align-items: flex-start;
 
         padding: 14px;
+
+        height: 100dvh;
     }
 
 
     .growth-audit-modal-container {
         width: 100%;
 
-        max-height: calc(100vh - 28px);
+        max-height: calc(100dvh - 28px);
+
+        margin: auto 0;
 
         border-radius: 21px;
     }
@@ -39451,7 +39447,6 @@ File: goalstation-bottleneck.css
         font-size: 31px;
 
         letter-spacing: -0.042em;
-
         line-height: 1.08;
     }
 
@@ -39529,7 +39524,7 @@ File: goalstation-bottleneck.css
 
 
     .growth-audit-modal-container {
-        max-height: calc(100vh - 20px);
+        max-height: calc(100dvh - 20px);
 
         border-radius: 19px;
     }
