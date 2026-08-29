@@ -5804,11 +5804,11 @@ EXECUTIVE AUDIT OVERVIEW
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(4,minmax(0,1fr));
 
     gap:28px;
 
-    max-width:900px;
+    max-width:1200px;
 
     margin:60px auto 0;
 
@@ -5821,6 +5821,8 @@ EXECUTIVE AUDIT OVERVIEW
     display:flex;
 
     flex-direction:column;
+
+    justify-content:center;
 
     padding:36px;
 
@@ -5876,21 +5878,13 @@ EXECUTIVE AUDIT OVERVIEW
 
 }
 
-@media(max-width:768px){
+@media(max-width:1280px){
 
     .audit-overview{
 
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
 
-        margin-top:40px;
-
-    }
-
-    .overview-item{
-
-        text-align:center;
-
-        padding:30px;
+        max-width:900px;
 
     }
 
@@ -5900,7 +5894,7 @@ EXECUTIVE AUDIT OVERVIEW
    MOBILE
 ========================================= */
 
-@media (max-width:960px){
+@media(max-width:960px){
 
     .audit-hero{
 
@@ -5928,7 +5922,7 @@ EXECUTIVE AUDIT OVERVIEW
 
 }
 
-@media (max-width:640px){
+@media(max-width:640px){
 
     .audit-hero h1{
 
@@ -5945,6 +5939,16 @@ EXECUTIVE AUDIT OVERVIEW
     .audit-overview{
 
         grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .overview-item{
+
+        text-align:center;
+
+        padding:30px;
 
     }
 
