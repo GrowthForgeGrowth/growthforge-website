@@ -30,18 +30,14 @@ header .logo{flex-shrink:0}
 
 /* =========================================================
    GROWTHFORGE — HOMEPAGE HERO
-   TARGET DESIGN:
-   DARK NAVY → BLUE → PURPLE GRADIENT
-   PREMIUM EXECUTIVE GROWTH HERO
+   COMPACT DESKTOP VERSION
+   MARQUEE CSS NOT INCLUDED
    ========================================================= */
 
 .hero {
     width: 100%;
     margin: 0;
-
-    /* COMPRESSED VERTICAL FOOTPRINT */
-    padding: 68px 0 58px;
-
+    padding: 58px 0 52px;
     color: #ffffff;
     box-sizing: border-box;
     overflow: hidden;
@@ -98,6 +94,7 @@ header .logo{flex-shrink:0}
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
@@ -113,10 +110,11 @@ header .logo{flex-shrink:0}
 
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(560px, .98fr);
+        minmax(520px, .98fr);
 
     align-items: center;
-    gap: 65px;
+
+    gap: 48px;
 }
 
 
@@ -127,46 +125,67 @@ header .logo{flex-shrink:0}
 .hero-content {
     position: relative;
     z-index: 5;
-    max-width: 720px;
+    max-width: 680px;
 }
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
 
 .hero .eyebrow {
     display: inline-block;
-    margin: 0 0 22px;
+
+    margin: 0 0 16px;
 
     color: #60a5fa;
 
     font-family: Manrope, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
     line-height: 1.4;
+
     letter-spacing: .13em;
     text-transform: uppercase;
 }
 
+
+/* =========================================================
+   HEADLINE
+   ========================================================= */
+
 .hero h1 {
-    max-width: 720px;
-    margin: 0 0 26px;
+    max-width: 680px;
+
+    margin: 0 0 20px;
 
     color: #ffffff !important;
 
     font-family: Manrope, sans-serif;
-    font-size: clamp(48px, 5.2vw, 72px);
+    font-size: clamp(48px, 4.7vw, 66px);
     font-weight: 800;
-    line-height: 1.03;
+
+    line-height: 1.01;
     letter-spacing: -.055em;
 }
 
+
+/* =========================================================
+   LEAD
+   ========================================================= */
+
 .hero .lead {
-    max-width: 650px;
-    margin: 0 0 32px;
+    max-width: 610px;
+
+    margin: 0 0 24px;
 
     color: #cbd5e1 !important;
 
     font-family: Manrope, sans-serif;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 400;
-    line-height: 1.7;
+
+    line-height: 1.58;
 }
 
 
@@ -178,7 +197,9 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 13px;
+
+    gap: 11px;
+
     margin: 0;
 }
 
@@ -188,15 +209,18 @@ header .logo{flex-shrink:0}
     align-items: center;
     justify-content: center;
 
-    min-height: 52px;
-    padding: 0 23px;
+    min-height: 48px;
+
+    padding: 0 21px;
 
     border-radius: 9px;
+
     box-sizing: border-box;
 
     font-family: Manrope, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
+
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
@@ -211,25 +235,30 @@ header .logo{flex-shrink:0}
 
 .hero .cta .btn {
     background: #2563eb;
+
     border: 1px solid #3b82f6;
+
     color: #ffffff !important;
 
     box-shadow:
-        0 10px 30px rgba(37, 99, 235, .35);
+        0 8px 25px rgba(37, 99, 235, .30);
 }
 
 .hero .cta .btn:hover {
     background: #3b82f6;
     border-color: #60a5fa;
+
     transform: translateY(-1px);
 
     box-shadow:
-        0 15px 35px rgba(37, 99, 235, .45);
+        0 12px 30px rgba(37, 99, 235, .40);
 }
 
 .hero .cta .ghost {
     background: rgba(2, 6, 23, .18);
+
     border: 1px solid rgba(148, 163, 184, .40);
+
     color: #f1f5f9 !important;
 
     backdrop-filter: blur(8px);
@@ -238,6 +267,7 @@ header .logo{flex-shrink:0}
 .hero .cta .ghost:hover {
     background: rgba(15, 23, 42, .55);
     border-color: rgba(148, 163, 184, .70);
+
     transform: translateY(-1px);
 }
 
@@ -248,12 +278,14 @@ header .logo{flex-shrink:0}
 
 .hero-benefits {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     width: 100%;
-    max-width: 680px;
+    max-width: 620px;
 
-    margin: 34px 0 0;
+    margin: 25px 0 0;
     padding: 0;
 
     border-top: 1px solid rgba(148, 163, 184, .18);
@@ -261,36 +293,42 @@ header .logo{flex-shrink:0}
 
 .hero-benefit {
     min-width: 0;
-    padding: 22px 20px 0 0;
+
+    padding: 17px 17px 0 0;
 }
 
 .hero-benefit + .hero-benefit {
-    padding-left: 20px;
-    border-left: 1px solid rgba(148, 163, 184, .18);
+    padding-left: 17px;
+
+    border-left:
+        1px solid rgba(148, 163, 184, .18);
 }
 
 .hero-benefit h4 {
-    margin: 0 0 8px;
+    margin: 0 0 6px;
 
     color: #ffffff;
 
     font-family: Manrope, sans-serif;
-    font-size: 27px;
+    font-size: 24px;
     font-weight: 800;
+
     line-height: 1;
     letter-spacing: -.035em;
 }
 
 .hero-benefit p {
-    max-width: 170px;
+    max-width: 155px;
+
     margin: 0;
 
     color: #a8b4c7;
 
     font-family: Manrope, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
-    line-height: 1.5;
+
+    line-height: 1.4;
 }
 
 
@@ -299,18 +337,20 @@ header .logo{flex-shrink:0}
    ========================================================= */
 
 .hero-trust {
-    margin-top: 30px;
+    margin-top: 21px;
 }
 
 .hero-trust > span {
     display: block;
-    margin: 0 0 13px;
+
+    margin: 0 0 9px;
 
     color: #71809a;
 
     font-family: Manrope, sans-serif;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 800;
+
     letter-spacing: .12em;
     line-height: 1.4;
 }
@@ -319,25 +359,29 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+
+    gap: 6px;
 }
 
 .hero-industries span {
     display: inline-flex;
     align-items: center;
 
-    min-height: 28px;
-    padding: 0 11px;
+    min-height: 26px;
+
+    padding: 0 10px;
 
     border: 1px solid rgba(148, 163, 184, .18);
     border-radius: 999px;
 
     background: rgba(15, 23, 42, .35);
+
     color: #9aa8bd;
 
     font-family: Manrope, sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
+
     line-height: 1;
 
     backdrop-filter: blur(6px);
@@ -357,7 +401,10 @@ header .logo{flex-shrink:0}
 
     min-width: 0;
 
-    /* COMPRESSED FROM 620px */
+    /*
+     * Reduced from the previous 620px.
+     * This is one of the main causes of the oversized hero.
+     */
     min-height: 500px;
 }
 
@@ -369,8 +416,8 @@ header .logo{flex-shrink:0}
 .hero-glow {
     position: absolute;
 
-    width: 620px;
-    height: 620px;
+    width: 520px;
+    height: 520px;
 
     top: 48%;
     left: 56%;
@@ -385,9 +432,10 @@ header .logo{flex-shrink:0}
             transparent 72%
         );
 
-    filter: blur(45px);
+    filter: blur(40px);
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     pointer-events: none;
 }
@@ -399,7 +447,8 @@ header .logo{flex-shrink:0}
 
 .hero-grid {
     position: absolute;
-    inset: -100px;
+
+    inset: -80px;
 
     background-image:
         linear-gradient(
@@ -412,7 +461,7 @@ header .logo{flex-shrink:0}
             transparent 1px
         );
 
-    background-size: 42px 42px;
+    background-size: 38px 38px;
 
     mask-image:
         radial-gradient(
@@ -439,15 +488,17 @@ header .logo{flex-shrink:0}
 .hero-lines {
     position: absolute;
 
-    width: 560px;
-    height: 560px;
+    width: 480px;
+    height: 480px;
 
-    border: 1px solid rgba(96, 165, 250, .09);
+    border:
+        1px solid rgba(96, 165, 250, .09);
+
     border-radius: 50%;
 
     box-shadow:
-        0 0 0 60px rgba(96, 165, 250, .025),
-        0 0 0 120px rgba(96, 165, 250, .015);
+        0 0 0 50px rgba(96, 165, 250, .025),
+        0 0 0 100px rgba(96, 165, 250, .015);
 
     pointer-events: none;
 }
@@ -459,12 +510,13 @@ header .logo{flex-shrink:0}
 
 .audit-dashboard {
     position: relative;
+
     z-index: 3;
 
     width: 100%;
-    max-width: 700px;
+    max-width: 680px;
 
-    padding: 30px;
+    padding: 25px;
 
     background:
         linear-gradient(
@@ -473,12 +525,14 @@ header .logo{flex-shrink:0}
             rgba(5, 13, 32, .92)
         );
 
-    border: 1px solid rgba(148, 163, 184, .28);
-    border-radius: 20px;
+    border:
+        1px solid rgba(148, 163, 184, .28);
+
+    border-radius: 18px;
 
     box-shadow:
-        0 35px 90px rgba(0, 0, 0, .48),
-        0 0 70px rgba(37, 99, 235, .12),
+        0 30px 75px rgba(0, 0, 0, .46),
+        0 0 60px rgba(37, 99, 235, .11),
         inset 0 1px 0 rgba(255, 255, 255, .04);
 
     box-sizing: border-box;
@@ -493,26 +547,29 @@ header .logo{flex-shrink:0}
 
 .audit-dashboard__header {
     display: flex;
+
     align-items: flex-start;
     justify-content: space-between;
 
-    gap: 20px;
+    gap: 16px;
 
-    padding-bottom: 20px;
+    padding-bottom: 17px;
 
-    border-bottom: 1px solid rgba(148, 163, 184, .16);
+    border-bottom:
+        1px solid rgba(148, 163, 184, .16);
 }
 
 .audit-dashboard__eyebrow {
     display: block;
 
-    margin: 0 0 8px;
+    margin: 0 0 6px;
 
     color: #60a5fa;
 
     font-family: Manrope, sans-serif;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 800;
+
     line-height: 1.4;
     letter-spacing: .12em;
 }
@@ -523,8 +580,9 @@ header .logo{flex-shrink:0}
     color: #f8fafc;
 
     font-family: Manrope, sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
+
     line-height: 1.2;
     letter-spacing: -.025em;
 }
@@ -533,18 +591,24 @@ header .logo{flex-shrink:0}
     display: inline-flex;
     align-items: center;
 
-    min-height: 29px;
-    padding: 0 11px;
+    min-height: 27px;
 
-    border: 1px solid rgba(34, 197, 94, .30);
+    padding: 0 10px;
+
+    border:
+        1px solid rgba(34, 197, 94, .30);
+
     border-radius: 999px;
 
-    background: rgba(34, 197, 94, .08);
+    background:
+        rgba(34, 197, 94, .08);
+
     color: #86efac;
 
     font-family: Manrope, sans-serif;
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 800;
+
     line-height: 1;
     letter-spacing: .08em;
 
@@ -553,7 +617,7 @@ header .logo{flex-shrink:0}
 
 
 /* =========================================================
-   KPI METRICS — FOUR COLUMNS
+   KPI METRICS
    ========================================================= */
 
 .audit-dashboard__metrics {
@@ -562,20 +626,23 @@ header .logo{flex-shrink:0}
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
 
-    gap: 12px;
+    gap: 9px;
 
-    margin: 20px 0 21px;
+    margin: 17px 0 18px;
 }
+
 
 .audit-metric {
     min-width: 0;
 
-    padding: 16px 12px 15px;
+    padding: 14px 9px 13px;
 
     text-align: center;
 
-    border: 1px solid rgba(96, 165, 250, .14);
-    border-radius: 12px;
+    border:
+        1px solid rgba(96, 165, 250, .14);
+
+    border-radius: 11px;
 
     background:
         linear-gradient(
@@ -593,7 +660,9 @@ header .logo{flex-shrink:0}
 
 .audit-metric:hover {
     transform: translateY(-2px);
-    border-color: rgba(96, 165, 250, .38);
+
+    border-color:
+        rgba(96, 165, 250, .38);
 }
 
 
@@ -606,49 +675,64 @@ header .logo{flex-shrink:0}
     align-items: center;
     justify-content: center;
 
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    height: 42px;
 
-    margin: 0 auto 11px;
+    margin: 0 auto 9px;
 
     border-radius: 50%;
 
-    font-size: 18px;
+    font-size: 16px;
 
-    background: rgba(37, 99, 235, .10);
-    border: 1px solid rgba(59, 130, 246, .40);
+    background:
+        rgba(37, 99, 235, .10);
+
+    border:
+        1px solid rgba(59, 130, 246, .40);
 
     color: #60a5fa;
 
     box-shadow:
-        0 0 20px rgba(37, 99, 235, .20);
+        0 0 18px rgba(37, 99, 235, .20);
 }
 
 .audit-metric:nth-child(2) .audit-metric__icon {
     color: #a855f7;
-    border-color: rgba(168, 85, 247, .45);
-    background: rgba(168, 85, 247, .10);
+
+    border-color:
+        rgba(168, 85, 247, .45);
+
+    background:
+        rgba(168, 85, 247, .10);
 
     box-shadow:
-        0 0 20px rgba(168, 85, 247, .20);
+        0 0 18px rgba(168, 85, 247, .20);
 }
 
 .audit-metric:nth-child(3) .audit-metric__icon {
     color: #22d3ee;
-    border-color: rgba(34, 211, 238, .45);
-    background: rgba(34, 211, 238, .08);
+
+    border-color:
+        rgba(34, 211, 238, .45);
+
+    background:
+        rgba(34, 211, 238, .08);
 
     box-shadow:
-        0 0 20px rgba(34, 211, 238, .18);
+        0 0 18px rgba(34, 211, 238, .18);
 }
 
 .audit-metric:nth-child(4) .audit-metric__icon {
     color: #4ade80;
-    border-color: rgba(74, 222, 128, .45);
-    background: rgba(74, 222, 128, .08);
+
+    border-color:
+        rgba(74, 222, 128, .45);
+
+    background:
+        rgba(74, 222, 128, .08);
 
     box-shadow:
-        0 0 20px rgba(74, 222, 128, .18);
+        0 0 18px rgba(74, 222, 128, .18);
 }
 
 
@@ -659,13 +743,14 @@ header .logo{flex-shrink:0}
 .audit-metric__value {
     display: block;
 
-    margin: 0 0 6px;
+    margin: 0 0 5px;
 
     color: #f8fafc;
 
     font-family: Manrope, sans-serif;
-    font-size: 27px;
+    font-size: 24px;
     font-weight: 800;
+
     line-height: 1;
 
     letter-spacing: -.04em;
@@ -677,9 +762,10 @@ header .logo{flex-shrink:0}
     color: #a7b2c5;
 
     font-family: Manrope, sans-serif;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
-    line-height: 1.4;
+
+    line-height: 1.35;
 }
 
 
@@ -695,16 +781,16 @@ header .logo{flex-shrink:0}
     display: flex;
     justify-content: space-between;
 
-    margin: 0 0 7px;
-    padding-bottom: 7px;
+    margin: 0 0 5px;
+    padding-bottom: 5px;
 
     color: #64748b;
 
     font-family: Manrope, sans-serif;
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 800;
-    line-height: 1.4;
 
+    line-height: 1.4;
     letter-spacing: .1em;
 }
 
@@ -712,16 +798,17 @@ header .logo{flex-shrink:0}
     display: grid;
 
     grid-template-columns:
-        minmax(180px, .8fr)
-        minmax(160px, 1.2fr);
+        minmax(160px, .8fr)
+        minmax(140px, 1.2fr);
 
     align-items: center;
 
-    gap: 20px;
+    gap: 16px;
 
-    min-height: 46px;
+    min-height: 40px;
 
-    border-bottom: 1px solid rgba(30, 41, 59, .55);
+    border-bottom:
+        1px solid rgba(30, 41, 59, .55);
 }
 
 .audit-finding:last-child {
@@ -732,7 +819,7 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: center;
 
-    gap: 10px;
+    gap: 9px;
 
     min-width: 0;
 }
@@ -748,42 +835,43 @@ header .logo{flex-shrink:0}
     background: #3b82f6;
 
     box-shadow:
-        0 0 9px rgba(59, 130, 246, .65);
+        0 0 8px rgba(59, 130, 246, .65);
 }
 
 .audit-finding:nth-child(3) .audit-finding__dot {
     background: #a855f7;
 
     box-shadow:
-        0 0 9px rgba(168, 85, 247, .65);
+        0 0 8px rgba(168, 85, 247, .65);
 }
 
 .audit-finding:nth-child(4) .audit-finding__dot {
     background: #22d3ee;
 
     box-shadow:
-        0 0 9px rgba(34, 211, 238, .65);
+        0 0 8px rgba(34, 211, 238, .65);
 }
 
 .audit-finding:nth-child(5) .audit-finding__dot {
     background: #4ade80;
 
     box-shadow:
-        0 0 9px rgba(74, 222, 128, .65);
+        0 0 8px rgba(74, 222, 128, .65);
 }
 
 .audit-finding__label > span:not(.audit-finding__dot) {
     color: #d1d9e6;
 
     font-family: Manrope, sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
-    line-height: 1.4;
+
+    line-height: 1.35;
 }
 
 
 /* =========================================================
-   FINDING DATA / PROGRESS BAR
+   FINDING DATA
    ========================================================= */
 
 .audit-finding__data {
@@ -794,136 +882,10 @@ header .logo{flex-shrink:0}
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 }
 
 .audit-finding__bar {
-    width: 100%;
-    height: 5px;
-
-    overflow: hidden;
-
-    border-radius: 999px;
-
-    background: rgba(30, 41, 59, .90);
-}
-
-.audit-finding__bar span {
-    display: block;
-
-    height: 100%;
-
-    border-radius: inherit;
-
-    background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #3b82f6
-        );
-
-    box-shadow:
-        0 0 10px rgba(37, 99, 235, .35);
-}
-
-.audit-finding:nth-child(3)
-.audit-finding__bar span {
-    background:
-        linear-gradient(
-            90deg,
-            #7c3aed,
-            #a855f7
-        );
-}
-
-.audit-finding:nth-child(4)
-.audit-finding__bar span {
-    background:
-        linear-gradient(
-            90deg,
-            #06b6d4,
-            #22d3ee
-        );
-}
-
-.audit-finding:nth-child(5)
-.audit-finding__bar span {
-    background:
-        linear-gradient(
-            90deg,
-            #22c55e,
-            #4ade80
-        );
-}
-
-.audit-finding__data strong {
-    min-width: 38px;
-
-    color: #60a5fa;
-
-    font-family: Manrope, sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-
-    text-align: right;
-}
-
-.audit-finding:nth-child(3)
-.audit-finding__data strong {
-    color: #a855f7;
-}
-
-.audit-finding:nth-child(4)
-.audit-finding__data strong {
-    color: #22d3ee;
-}
-
-.audit-finding:nth-child(5)
-.audit-finding__data strong {
-    color: #4ade80;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.audit-dashboard__footer {
-    display: grid;
-
-    grid-template-columns:
-        auto 1fr auto;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin-top: 18px;
-    padding-top: 15px;
-
-    border-top: 1px solid rgba(148, 163, 184, .13);
-}
-
-.audit-dashboard__footer > span {
-    color: #64748b;
-
-    font-family: Manrope, sans-serif;
-    font-size: 8px;
-    font-weight: 800;
-
-    line-height: 1.4;
-    letter-spacing: .08em;
-}
-
-.audit-dashboard__footer > strong {
-    color: #60a5fa;
-
-    font-family: Manrope, sans-serif;
-    font-size: 9px;
-    font-weight: 800;
-}
-
-.audit-progress {
     width: 100%;
     height: 4px;
 
@@ -931,13 +893,13 @@ header .logo{flex-shrink:0}
 
     border-radius: 999px;
 
-    background: rgba(30, 41, 59, .85);
+    background:
+        rgba(30, 41, 59, .90);
 }
 
-.audit-progress span {
+.audit-finding__bar span {
     display: block;
 
-    width: 88%;
     height: 100%;
 
     border-radius: inherit;
@@ -952,35 +914,80 @@ header .logo{flex-shrink:0}
 
 
 /* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .hero {
+        padding: 64px 0 58px;
+    }
+
+    .hero-inner {
+        gap: 56px;
+    }
+
+    .hero h1 {
+        font-size: 68px;
+    }
+
+    .hero-visual {
+        min-height: 520px;
+    }
+
+    .audit-dashboard {
+        max-width: 700px;
+    }
+
+}
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 1100px) {
 
     .hero {
-        /* COMPRESSED FROM 85px 28px 80px */
-        padding: 62px 28px 60px;
+        padding: 52px 28px 55px;
+    }
+
+    .hero .container {
+        max-width: 100%;
     }
 
     .hero-inner {
         grid-template-columns:
             minmax(0, 1fr)
-            minmax(480px, .9fr);
+            minmax(440px, .9fr);
 
-        gap: 45px;
+        gap: 38px;
     }
 
     .hero h1 {
-        font-size: clamp(44px, 5.7vw, 64px);
+        font-size: clamp(44px, 5vw, 60px);
+    }
+
+    .hero .lead {
+        font-size: 16px;
     }
 
     .hero-visual {
-        /* COMPRESSED FROM 540px */
-        min-height: 450px;
+        min-height: 470px;
+    }
+
+    .hero-glow {
+        width: 480px;
+        height: 480px;
+    }
+
+    .hero-lines {
+        width: 440px;
+        height: 440px;
     }
 
     .audit-dashboard {
-        padding: 25px;
+        padding: 22px;
     }
 
     .audit-dashboard__metrics {
@@ -1002,14 +1009,12 @@ header .logo{flex-shrink:0}
 @media (max-width: 768px) {
 
     .hero {
-        /* COMPRESSED FROM 70px 24px 70px */
-        padding: 52px 24px 55px;
+        padding: 48px 24px 55px;
     }
 
     .hero-inner {
         grid-template-columns: 1fr;
 
-        /* COMPRESSED FROM 55px */
         gap: 38px;
     }
 
@@ -1019,20 +1024,25 @@ header .logo{flex-shrink:0}
 
     .hero h1 {
         max-width: 100%;
-        font-size: clamp(40px, 10vw, 54px);
-        line-height: 1.05;
+
+        font-size:
+            clamp(40px, 9vw, 52px);
+
+        line-height: 1.04;
         letter-spacing: -.045em;
     }
 
     .hero .lead {
         max-width: 100%;
-        font-size: 18px;
+
+        font-size: 17px;
+        line-height: 1.6;
     }
 
     .hero-visual {
-        /* No forced height on mobile */
         min-height: auto;
-        padding: 10px 0;
+
+        padding: 4px 0;
     }
 
     .hero-glow {
@@ -1041,8 +1051,8 @@ header .logo{flex-shrink:0}
     }
 
     .hero-lines {
-        width: 420px;
-        height: 420px;
+        width: 400px;
+        height: 400px;
     }
 
     .audit-dashboard {
@@ -1050,7 +1060,8 @@ header .logo{flex-shrink:0}
     }
 
     .audit-dashboard__metrics {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 }
@@ -1063,16 +1074,16 @@ header .logo{flex-shrink:0}
 @media (max-width: 480px) {
 
     .hero {
-        padding: 45px 20px 48px;
+        padding: 42px 20px 48px;
     }
 
     .hero h1 {
-        font-size: 38px;
-        line-height: 1.07;
+        font-size: 37px;
+        line-height: 1.06;
     }
 
     .hero .lead {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .hero .cta {
@@ -1092,9 +1103,12 @@ header .logo{flex-shrink:0}
 
     .hero-benefit,
     .hero-benefit + .hero-benefit {
-        padding: 18px 0;
+        padding: 14px 0;
+
         border-left: 0;
-        border-bottom: 1px solid rgba(148, 163, 184, .15);
+
+        border-bottom:
+            1px solid rgba(148, 163, 184, .15);
     }
 
     .hero-benefit:last-child {
@@ -1102,12 +1116,13 @@ header .logo{flex-shrink:0}
     }
 
     .audit-dashboard {
-        padding: 18px;
+        padding: 17px;
+
         border-radius: 14px;
     }
 
     .audit-dashboard__header {
-        gap: 10px;
+        gap: 9px;
     }
 
     .audit-dashboard__header h3 {
@@ -1120,41 +1135,25 @@ header .logo{flex-shrink:0}
     }
 
     .audit-dashboard__metrics {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 7px;
     }
 
     .audit-metric {
-        padding: 13px 8px;
+        padding: 12px 7px;
     }
 
     .audit-metric__icon {
-        width: 38px;
-        height: 38px;
-        margin-bottom: 10px;
+        width: 36px;
+        height: 36px;
+
+        margin-bottom: 8px;
     }
 
     .audit-metric__value {
-        font-size: 21px;
-    }
-
-    .audit-metric__label {
-        font-size: 8px;
-    }
-
-    .audit-finding {
-        grid-template-columns: 1fr;
-        gap: 7px;
-        padding: 10px 0;
-    }
-
-    .audit-finding__data {
-        padding-left: 16px;
-    }
-
-    .audit-dashboard__footer {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        font-size: 20px;
     }
 
 }
@@ -1170,12 +1169,6 @@ header .logo{flex-shrink:0}
     .hero .cta .ghost,
     .audit-metric {
         transition: none;
-    }
-
-    .hero .cta .btn:hover,
-    .hero .cta .ghost:hover,
-    .audit-metric:hover {
-        transform: none;
     }
 
 }
