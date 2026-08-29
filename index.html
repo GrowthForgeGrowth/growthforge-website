@@ -1031,7 +1031,7 @@
 </section>
 
 
-    <!-- =========================================================
+   <!-- =========================================================
      GROWTHFORGE — GROWTH SYSTEM SCORE
      Dedicated section container
      ========================================================= -->
@@ -1040,10 +1040,17 @@
 
     <div class="growth-system-score-container">
 
-        <div class="growth-system-score-content">
+        <!-- =================================================
+             SCORE INPUT STATE
+             ================================================= -->
+
+        <div
+            id="growth-system-score-input-state"
+            class="growth-system-score-content"
+        >
 
             <div class="growth-system-score-badge">
-                FREE GROWTH DIAGNOSIS
+                FREE GROWTH SYSTEM SCORE
             </div>
 
             <h2 class="growth-system-score-title">
@@ -1072,6 +1079,7 @@
                         autocomplete="url"
                         inputmode="url"
                         required
+                        aria-label="Your website"
                     >
 
                     <button
@@ -1105,16 +1113,24 @@
 
         </div>
 
+
+        <!-- =================================================
+             SCORE VISUAL
+             ================================================= -->
+
         <div
             class="growth-system-score-visual"
-            aria-hidden="true"
+            aria-label="Your Growth System Score will appear here"
         >
 
             <div class="growth-system-score-circle">
 
                 <div class="growth-system-score-circle-inner">
 
-                    <span class="growth-system-score-number">
+                    <span
+                        id="growth-system-score-number"
+                        class="growth-system-score-number"
+                    >
                         ?
                     </span>
 
@@ -1132,9 +1148,156 @@
 
         </div>
 
+
+        <!-- =================================================
+             SCORE RESULT STATE
+             ================================================= -->
+
+        <div
+            id="growth-system-score-result-state"
+            class="growth-system-score-result"
+            hidden
+        >
+
+            <div class="growth-system-score-result-badge">
+                YOUR GROWTH SYSTEM SCORE
+            </div>
+
+            <h3 class="growth-system-score-result-title">
+                Your score is ready.
+            </h3>
+
+            <p class="growth-system-score-result-description">
+                Get the complete Executive Growth Audit
+                to understand what is driving your score
+                and where your highest-impact opportunities lie.
+            </p>
+
+            <a
+                href="/executive-growth-audit"
+                class="growth-system-score-audit-link"
+            >
+                Get Your Executive Growth Audit
+                <span aria-hidden="true">→</span>
+            </a>
+
+            <span class="growth-system-score-audit-price">
+                $750 One-Time
+            </span>
+
+        </div>
+
     </div>
 
 </section>
+
+
+<!-- =========================================================
+     GROWTHFORGE — EXECUTIVE GROWTH AUDIT MODAL
+     Triggered after the Growth System Score is generated
+     ========================================================= -->
+
+<div
+    id="growth-audit-modal"
+    class="growth-audit-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="growth-audit-modal-title"
+    aria-describedby="growth-audit-modal-description"
+    hidden
+>
+
+    <div
+        class="growth-audit-modal-overlay"
+        data-growth-audit-modal-close
+    ></div>
+
+    <div class="growth-audit-modal-container">
+
+        <button
+            type="button"
+            class="growth-audit-modal-close"
+            id="growth-audit-modal-close"
+            aria-label="Close Executive Growth Audit"
+        >
+            <span aria-hidden="true">×</span>
+        </button>
+
+        <div class="growth-audit-modal-content">
+
+            <div class="growth-audit-modal-badge">
+                EXECUTIVE GROWTH AUDIT
+            </div>
+
+            <h2
+                id="growth-audit-modal-title"
+                class="growth-audit-modal-title"
+            >
+                Ready to Understand What's Driving Your Score?
+            </h2>
+
+            <p
+                id="growth-audit-modal-description"
+                class="growth-audit-modal-description"
+            >
+                Your Growth System Score gives you a snapshot.
+                The Executive Growth Audit gives you the complete
+                picture.
+            </p>
+
+            <div class="growth-audit-modal-features">
+
+                <div class="growth-audit-modal-feature">
+                    <span aria-hidden="true">✓</span>
+                    <span>Identify growth constraints</span>
+                </div>
+
+                <div class="growth-audit-modal-feature">
+                    <span aria-hidden="true">✓</span>
+                    <span>Find highest-impact opportunities</span>
+                </div>
+
+                <div class="growth-audit-modal-feature">
+                    <span aria-hidden="true">✓</span>
+                    <span>Prioritized 90-day growth roadmap</span>
+                </div>
+
+                <div class="growth-audit-modal-feature">
+                    <span aria-hidden="true">✓</span>
+                    <span>Executive-level growth recommendations</span>
+                </div>
+
+            </div>
+
+            <div class="growth-audit-modal-actions">
+
+                <a
+                    href="/executive-growth-audit"
+                    class="growth-audit-modal-primary"
+                >
+                    Get Your Executive Growth Audit
+                    <span aria-hidden="true">→</span>
+                </a>
+
+                <button
+                    type="button"
+                    class="growth-audit-modal-secondary"
+                    data-growth-audit-modal-close
+                >
+                    Maybe Later
+                </button>
+
+            </div>
+
+            <div class="growth-audit-modal-price">
+                $750 One-Time
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
   
 <section class="audit-preview">
 
