@@ -1304,6 +1304,10 @@
 
     <div class="container">
 
+        <!-- =====================================================
+             SECTION HEADER
+             ===================================================== -->
+
         <div class="section-heading">
 
             <span class="section-badge">
@@ -1316,7 +1320,8 @@
 
             <p>
                 A comprehensive executive assessment that uncovers hidden revenue opportunities,
-                identifies growth constraints, and delivers a prioritized roadmap for sustainable business growth.
+                identifies growth constraints, and delivers a prioritized roadmap for sustainable
+                business growth.
             </p>
 
         </div>
@@ -1333,72 +1338,72 @@
         >
 
             <button
-                class="audit-tab is-active"
                 type="button"
+                class="audit-tab is-active"
+                id="audit-tab-executive"
                 role="tab"
                 aria-selected="true"
                 aria-controls="audit-panel-executive"
-                id="audit-tab-executive"
                 data-audit-tab="executive"
             >
                 Executive
             </button>
 
             <button
-                class="audit-tab"
                 type="button"
+                class="audit-tab"
+                id="audit-tab-market"
                 role="tab"
                 aria-selected="false"
                 aria-controls="audit-panel-market"
-                id="audit-tab-market"
                 data-audit-tab="market"
             >
                 Market
             </button>
 
             <button
-                class="audit-tab"
                 type="button"
+                class="audit-tab"
+                id="audit-tab-ai"
                 role="tab"
                 aria-selected="false"
                 aria-controls="audit-panel-ai"
-                id="audit-tab-ai"
                 data-audit-tab="ai"
             >
                 AI Search
             </button>
 
             <button
-                class="audit-tab"
                 type="button"
+                class="audit-tab"
+                id="audit-tab-revenue"
                 role="tab"
                 aria-selected="false"
                 aria-controls="audit-panel-revenue"
-                id="audit-tab-revenue"
                 data-audit-tab="revenue"
             >
                 Revenue
             </button>
 
             <button
-                class="audit-tab"
                 type="button"
+                class="audit-tab"
+                id="audit-tab-marketing"
                 role="tab"
                 aria-selected="false"
                 aria-controls="audit-panel-marketing"
-                id="audit-tab-marketing"
                 data-audit-tab="marketing"
             >
                 Marketing
             </button>
 
             <button
-                class="audit-tab"
                 type="button"
+                class="audit-tab"
+                id="audit-tab-roadmap"
                 role="tab"
                 aria-selected="false"
                 aria-controls="audit-panel-roadmap"
-                id="audit-tab-roadmap"
                 data-audit-tab="roadmap"
             >
                 Roadmap
@@ -1408,14 +1413,14 @@
 
 
         <!-- =====================================================
-             TAB CONTENT
+             TAB PANELS
              ===================================================== -->
 
         <div class="audit-tab-panels">
 
 
             <!-- =================================================
-                 EXECUTIVE
+                 01 — EXECUTIVE
                  ================================================= -->
 
             <div
@@ -1499,7 +1504,7 @@
 
 
             <!-- =================================================
-                 MARKET
+                 02 — MARKET
                  ================================================= -->
 
             <div
@@ -1523,13 +1528,11 @@
                         <div class="audit-visual-body">
 
                             <div class="audit-visual-bars">
-
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
-
                             </div>
 
                             <div class="audit-visual-line"></div>
@@ -1579,7 +1582,7 @@
 
 
             <!-- =================================================
-                 AI SEARCH
+                 03 — AI SEARCH
                  ================================================= -->
 
             <div
@@ -1670,7 +1673,7 @@
 
 
             <!-- =================================================
-                 REVENUE
+                 04 — REVENUE
                  ================================================= -->
 
             <div
@@ -1753,7 +1756,7 @@
 
 
             <!-- =================================================
-                 MARKETING
+                 05 — MARKETING
                  ================================================= -->
 
             <div
@@ -1840,7 +1843,7 @@
 
 
             <!-- =================================================
-                 ROADMAP
+                 06 — ROADMAP
                  ================================================= -->
 
             <div
@@ -4320,6 +4323,218 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
+    /* =========================================================
+   GROWTHFORGE — EXECUTIVE GROWTH AUDIT TABS
+   Homepage
+   Scoped to .audit-preview
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const auditSection = document.querySelector(".audit-preview");
+
+    if (!auditSection) {
+        return;
+    }
+
+
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
+
+    const tabs = auditSection.querySelectorAll(
+        ".audit-tab[data-audit-tab]"
+    );
+
+    const panels = auditSection.querySelectorAll(
+        ".audit-tab-panel[data-audit-panel]"
+    );
+
+
+    if (!tabs.length || !panels.length) {
+        return;
+    }
+
+
+    /* =====================================================
+       ACTIVATE TAB
+       ===================================================== */
+
+    function activateAuditTab(tab) {
+
+        const target = tab.getAttribute("data-audit-tab");
+
+        if (!target) {
+            return;
+        }
+
+
+        /* ---------------------------------------------
+           UPDATE TABS
+           --------------------------------------------- */
+
+        tabs.forEach(function (currentTab) {
+
+            const isActive = currentTab === tab;
+
+            currentTab.classList.toggle(
+                "is-active",
+                isActive
+            );
+
+            currentTab.setAttribute(
+                "aria-selected",
+                isActive ? "true" : "false"
+            );
+
+            currentTab.setAttribute(
+                "tabindex",
+                isActive ? "0" : "-1"
+            );
+
+        });
+
+
+        /* ---------------------------------------------
+           UPDATE PANELS
+           --------------------------------------------- */
+
+        panels.forEach(function (panel) {
+
+            const panelTarget = panel.getAttribute(
+                "data-audit-panel"
+            );
+
+            const isActive = panelTarget === target;
+
+            panel.classList.toggle(
+                "is-active",
+                isActive
+            );
+
+            panel.hidden = !isActive;
+
+        });
+
+    }
+
+
+    /* =====================================================
+       CLICK HANDLERS
+       ===================================================== */
+
+    tabs.forEach(function (tab) {
+
+        tab.addEventListener("click", function () {
+
+            activateAuditTab(tab);
+
+        });
+
+    });
+
+
+    /* =====================================================
+       KEYBOARD NAVIGATION
+       ===================================================== */
+
+    tabs.forEach(function (tab, index) {
+
+        tab.addEventListener("keydown", function (event) {
+
+            let newIndex = null;
+
+
+            /* ---------------------------------------------
+               RIGHT / DOWN
+               --------------------------------------------- */
+
+            if (
+                event.key === "ArrowRight" ||
+                event.key === "ArrowDown"
+            ) {
+
+                newIndex = (index + 1) % tabs.length;
+
+            }
+
+
+            /* ---------------------------------------------
+               LEFT / UP
+               --------------------------------------------- */
+
+            else if (
+                event.key === "ArrowLeft" ||
+                event.key === "ArrowUp"
+            ) {
+
+                newIndex =
+                    (index - 1 + tabs.length) %
+                    tabs.length;
+
+            }
+
+
+            /* ---------------------------------------------
+               HOME
+               --------------------------------------------- */
+
+            else if (event.key === "Home") {
+
+                newIndex = 0;
+
+            }
+
+
+            /* ---------------------------------------------
+               END
+               --------------------------------------------- */
+
+            else if (event.key === "End") {
+
+                newIndex = tabs.length - 1;
+
+            }
+
+
+            /* ---------------------------------------------
+               ACTIVATE
+               --------------------------------------------- */
+
+            if (newIndex !== null) {
+
+                event.preventDefault();
+
+                const nextTab = tabs[newIndex];
+
+                nextTab.focus();
+
+                activateAuditTab(nextTab);
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       INITIAL STATE
+       ===================================================== */
+
+    let initialTab = auditSection.querySelector(
+        ".audit-tab.is-active[data-audit-tab]"
+    );
+
+    if (!initialTab) {
+        initialTab = tabs[0];
+    }
+
+
+    activateAuditTab(initialTab);
+
+});
     
 </body>
 </html>
