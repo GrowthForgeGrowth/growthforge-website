@@ -28918,8 +28918,21 @@ Home Page FINAL CTA
 /* =========================================================
    GROWTHFORGE — EXECUTIVE VISUAL
    HOMEPAGE
-   Matches supplied reference layout
-   Container: .executive-visual
+   WHO WE CATER TO / CATEGORY EXPERIENCE
+
+   HTML CONTAINER:
+   .executive-visual
+
+   Matches supplied reference layout:
+   - Category navigation across the top
+   - Large visual on the left
+   - Content on the right
+   - Blue CTA
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION
    ========================================================= */
 
 .executive-visual {
@@ -28940,16 +28953,124 @@ Home Page FINAL CTA
 
 
 /* =========================================================
-   MAIN TWO-COLUMN VISUAL
+   CATEGORY NAVIGATION
+   ========================================================= */
+
+.executive-visual__tabs {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: center;
+
+    width: 100%;
+    min-height: 72px;
+
+    margin: 0 0 80px;
+    padding: 4px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.06);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CATEGORY TAB
+   ========================================================= */
+
+.executive-visual__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+    height: 56px;
+
+    margin: 0;
+    padding: 0 18px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #241044;
+
+    font-family: Manrope, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ACTIVE TAB
+   ========================================================= */
+
+.executive-visual__tab.is-active {
+    background: #faf5ff;
+    border-color: #d8b4fe;
+    color: #241044;
+
+    box-shadow:
+        0 2px 8px rgba(168, 85, 247, 0.08);
+}
+
+
+/* =========================================================
+   TAB HOVER
+   ========================================================= */
+
+.executive-visual__tab:not(.is-active):hover {
+    background: #fafafa;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+   ========================================================= */
+
+.executive-visual__tab:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.22);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   MAIN TWO-COLUMN CONTENT
    ========================================================= */
 
 .executive-visual__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(380px, 0.92fr);
+
     align-items: center;
+
     gap: 68px;
+
     width: 100%;
     margin: 0;
+
+    box-sizing: border-box;
 }
 
 
@@ -28961,20 +29082,26 @@ Home Page FINAL CTA
     width: 100%;
     min-width: 0;
     position: relative;
+
+    box-sizing: border-box;
 }
+
 
 .executive-visual__image img {
     display: block;
+
     width: 100%;
     height: 382px;
+
     margin: 0;
+
     object-fit: cover;
     object-position: center center;
 
     border-radius: 14px;
 
     box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.07);
+        0 14px 35px rgba(15, 23, 42, 0.08);
 
     box-sizing: border-box;
 }
@@ -28987,33 +29114,8 @@ Home Page FINAL CTA
 .executive-visual__content {
     width: 100%;
     max-width: 560px;
+
     padding: 0;
-    box-sizing: border-box;
-}
-
-.executive-visual__content .section-badge {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 40px;
-
-    margin: 0 0 24px;
-    padding: 0 20px;
-
-    border: 1px solid #d8b4fe;
-    border-radius: 999px;
-
-    background: #faf5ff;
-
-    color: #2563eb;
-
-    font-family: Manrope, sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 1;
-
-    letter-spacing: .11em;
-    text-transform: uppercase;
 
     box-sizing: border-box;
 }
@@ -29029,7 +29131,7 @@ Home Page FINAL CTA
 
     margin: 0 0 24px;
 
-    color: #0f172a;
+    color: #241044;
 
     font-family: Manrope, sans-serif;
     font-size: clamp(40px, 4vw, 56px);
@@ -29051,7 +29153,7 @@ Home Page FINAL CTA
 
     margin: 0 0 30px;
 
-    color: #64748b;
+    color: #4b3d63;
 
     font-family: Manrope, sans-serif;
     font-size: 18px;
@@ -29064,9 +29166,11 @@ Home Page FINAL CTA
 
 /* =========================================================
    CTA
+   IMPORTANT:
+   HTML uses .executive-visual__cta
    ========================================================= */
 
-.executive-visual__link {
+.executive-visual__cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -29077,9 +29181,10 @@ Home Page FINAL CTA
 
     padding: 0 28px;
 
+    border: 0;
     border-radius: 10px;
 
-    background: #2563eb;
+    background: #a100ff;
     color: #ffffff;
 
     font-family: Manrope, sans-serif;
@@ -29090,7 +29195,7 @@ Home Page FINAL CTA
     text-decoration: none;
 
     box-shadow:
-        0 10px 24px rgba(37, 99, 235, 0.18);
+        0 10px 24px rgba(161, 0, 255, 0.18);
 
     transition:
         transform .2s ease,
@@ -29100,22 +29205,34 @@ Home Page FINAL CTA
     box-sizing: border-box;
 }
 
-.executive-visual__link span {
+
+/* =========================================================
+   CTA ARROW
+   ========================================================= */
+
+.executive-visual__cta span {
     display: inline-block;
 
-    transition: transform .2s ease;
+    transition:
+        transform .2s ease;
 }
 
-.executive-visual__link:hover {
-    background: #1d4ed8;
+
+/* =========================================================
+   CTA HOVER
+   ========================================================= */
+
+.executive-visual__cta:hover {
+    background: #8b00db;
 
     transform: translateY(-1px);
 
     box-shadow:
-        0 14px 28px rgba(37, 99, 235, 0.22);
+        0 14px 28px rgba(161, 0, 255, 0.24);
 }
 
-.executive-visual__link:hover span {
+
+.executive-visual__cta:hover span {
     transform: translateX(4px);
 }
 
@@ -29128,6 +29245,10 @@ Home Page FINAL CTA
 
     .executive-visual {
         padding-bottom: 120px;
+    }
+
+    .executive-visual__tabs {
+        margin-bottom: 80px;
     }
 
     .executive-visual__grid {
@@ -29155,6 +29276,21 @@ Home Page FINAL CTA
         max-width: 100%;
     }
 
+
+    /* Tabs */
+
+    .executive-visual__tabs {
+        margin-bottom: 60px;
+    }
+
+    .executive-visual__tab {
+        padding: 0 10px;
+        font-size: 15px;
+    }
+
+
+    /* Main layout */
+
     .executive-visual__grid {
         grid-template-columns:
             minmax(0, 1fr)
@@ -29163,9 +29299,15 @@ Home Page FINAL CTA
         gap: 48px;
     }
 
+
+    /* Image */
+
     .executive-visual__image img {
         height: 340px;
     }
+
+
+    /* Content */
 
     .executive-visual__content h2 {
         font-size: clamp(38px, 4.5vw, 50px);
@@ -29188,10 +29330,57 @@ Home Page FINAL CTA
         padding: 0 24px 75px;
     }
 
+
+    /* Tabs become horizontally scrollable */
+
+    .executive-visual__tabs {
+        display: flex;
+
+        width: 100%;
+
+        min-height: 62px;
+
+        margin-bottom: 48px;
+        padding: 4px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .executive-visual__tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .executive-visual__tab {
+        flex: 0 0 auto;
+
+        width: auto;
+        min-width: 110px;
+
+        height: 50px;
+
+        padding: 0 18px;
+
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+
+    /* Main layout */
+
     .executive-visual__grid {
         grid-template-columns: 1fr;
+
         gap: 38px;
     }
+
+
+    /* Image */
 
     .executive-visual__image {
         width: 100%;
@@ -29200,15 +29389,15 @@ Home Page FINAL CTA
     .executive-visual__image img {
         width: 100%;
         height: 300px;
+
         border-radius: 12px;
     }
 
+
+    /* Content */
+
     .executive-visual__content {
         max-width: 100%;
-    }
-
-    .executive-visual__content .section-badge {
-        margin-bottom: 20px;
     }
 
     .executive-visual__content h2 {
@@ -29230,9 +29419,14 @@ Home Page FINAL CTA
         line-height: 1.7;
     }
 
-    .executive-visual__link {
+
+    /* CTA */
+
+    .executive-visual__cta {
         min-height: 54px;
+
         padding: 0 24px;
+
         font-size: 15px;
     }
 
@@ -29249,22 +29443,41 @@ Home Page FINAL CTA
         padding: 0 20px 65px;
     }
 
+
+    /* Tabs */
+
+    .executive-visual__tabs {
+        margin-bottom: 38px;
+    }
+
+    .executive-visual__tab {
+        min-width: 100px;
+
+        height: 48px;
+
+        padding: 0 15px;
+
+        font-size: 13px;
+    }
+
+
+    /* Grid */
+
     .executive-visual__grid {
         gap: 32px;
     }
 
+
+    /* Image */
+
     .executive-visual__image img {
         height: 230px;
+
         border-radius: 10px;
     }
 
-    .executive-visual__content .section-badge {
-        min-height: 36px;
-        margin-bottom: 18px;
-        padding: 0 16px;
 
-        font-size: 11px;
-    }
+    /* Content */
 
     .executive-visual__content h2 {
         font-size: 34px;
@@ -29275,7 +29488,10 @@ Home Page FINAL CTA
         font-size: 16px;
     }
 
-    .executive-visual__link {
+
+    /* CTA */
+
+    .executive-visual__cta {
         width: 100%;
         min-height: 54px;
     }
@@ -29289,8 +29505,9 @@ Home Page FINAL CTA
 
 @media (prefers-reduced-motion: reduce) {
 
-    .executive-visual__link,
-    .executive-visual__link span {
+    .executive-visual__tab,
+    .executive-visual__cta,
+    .executive-visual__cta span {
         transition: none;
     }
 
