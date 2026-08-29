@@ -15947,18 +15947,35 @@ SECTION: RESPONSIVE
 }
 
 /* =========================================
-   LOGO MARQUEE — SEAMLESS HERO CONTINUATION
+   LOGO MARQUEE — SEAMLESS HERO BLEND
    ========================================= */
 
 .logo-marquee{
     position:relative;
     overflow:hidden;
 
-    /* Very compact */
+    /* Compact height */
     padding:14px 0;
 
-    /* Same visual family as the hero */
-    background:#020817;
+    /* EXACT HERO-STYLE BACKGROUND */
+    background:
+        radial-gradient(
+            circle at 78% 20%,
+            rgba(53,48,190,.75),
+            transparent 48%
+        ),
+        radial-gradient(
+            circle at 58% 80%,
+            rgba(25,55,150,.45),
+            transparent 52%
+        ),
+        linear-gradient(
+            90deg,
+            #020817 0%,
+            #06102c 38%,
+            #111c58 68%,
+            #3320a0 100%
+        );
 
     border-top:1px solid rgba(255,255,255,.035);
     border-bottom:1px solid rgba(255,255,255,.035);
@@ -15966,40 +15983,45 @@ SECTION: RESPONSIVE
 
 
 /* =========================================
-   FADE EDGES
+   SUBTLE HERO CONTINUITY
    ========================================= */
 
-.logo-marquee::before,
-.logo-marquee::after{
+.logo-marquee::before{
     content:"";
     position:absolute;
-    top:0;
+    inset:0;
 
-    width:100px;
-    height:100%;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(37,99,235,.12),
+            transparent 65%
+        );
 
-    z-index:10;
     pointer-events:none;
 }
 
-.logo-marquee::before{
-    left:0;
 
-    background:linear-gradient(
-        to right,
-        #020817 0%,
-        rgba(2,8,23,0) 100%
-    );
-}
+/* =========================================
+   EDGE FADES
+   ========================================= */
 
 .logo-marquee::after{
-    right:0;
+    content:"";
+    position:absolute;
+    inset:0;
 
-    background:linear-gradient(
-        to left,
-        #020817 0%,
-        rgba(2,8,23,0) 100%
-    );
+    z-index:5;
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2,8,23,.65) 0%,
+            transparent 12%,
+            transparent 88%,
+            rgba(35,25,125,.55) 100%
+        );
 }
 
 
@@ -16008,6 +16030,9 @@ SECTION: RESPONSIVE
    ========================================= */
 
 .logo-track{
+    position:relative;
+    z-index:6;
+
     display:flex;
     align-items:center;
 
@@ -16033,7 +16058,7 @@ SECTION: RESPONSIVE
 
     flex-shrink:0;
 
-    opacity:.42;
+    opacity:.48;
 
     transition:
         opacity .3s ease,
@@ -16046,8 +16071,8 @@ SECTION: RESPONSIVE
 }
 
 .logo-track img:hover{
-    opacity:.75;
-    transform:scale(1.04);
+    opacity:.8;
+    transform:scale(1.05);
 }
 
 
@@ -16087,11 +16112,6 @@ SECTION: RESPONSIVE
         height:23px;
     }
 
-    .logo-marquee::before,
-    .logo-marquee::after{
-        width:75px;
-    }
-
 }
 
 
@@ -16102,21 +16122,16 @@ SECTION: RESPONSIVE
 @media (max-width:768px){
 
     .logo-marquee{
-        padding:11px 0;
+        padding:12px 0;
     }
 
     .logo-track{
-        gap:38px;
+        gap:40px;
         animation-duration:26s;
     }
 
     .logo-track img{
         height:20px;
-    }
-
-    .logo-marquee::before,
-    .logo-marquee::after{
-        width:55px;
     }
 
 }
