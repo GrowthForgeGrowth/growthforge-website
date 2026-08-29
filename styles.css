@@ -15,7 +15,17 @@ body{
     background-attachment:fixed;
 }
 .container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(8px);border-bottom:1px solid #eee;}.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    z-index:9999;
+    background:#ffffffee;
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid #eee;
+}
 nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
 a{text-decoration:none;color:#0f172a}
 .logo{font:800 30px Manrope,sans-serif}.logo span{color:#2563eb}
