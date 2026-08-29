@@ -2591,16 +2591,20 @@ updateViewer();
    GROWTHFORGE — GROWTH SYSTEM SCORE
    Frontend MVP
    ---------------------------------------------------------
-   CURRENT:
-   - Validates website URL
-   - Generates temporary local score
-   - Displays score
-   - Reveals Executive Growth Audit CTA
-   - Opens Executive Growth Audit modal after score
-   - Supports modal close / Maybe Later
+   USER FLOW
+
+   1. User enters website
+   2. Score is generated
+   3. Score is displayed/animated
+   4. User gets time to see the score
+   5. Executive Growth Audit modal opens automatically
+   6. User can close the modal
+   7. Score remains visible
+   8. Audit CTA remains available
+   9. Audit CTA can reopen the modal
 
    FUTURE:
-   - Replace calculateGrowthScore() with n8n webhook
+   Replace calculateGrowthScore() with n8n webhook.
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -2613,16 +2617,24 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("growth-system-score");
 
     const form =
-        document.getElementById("growth-system-score-form");
+        document.getElementById(
+            "growth-system-score-form"
+        );
 
     const websiteInput =
-        document.getElementById("growth-system-score-website");
+        document.getElementById(
+            "growth-system-score-website"
+        );
 
     const submitButton =
-        document.getElementById("growth-system-score-submit");
+        document.getElementById(
+            "growth-system-score-submit"
+        );
 
     const errorMessage =
-        document.getElementById("growth-system-score-error");
+        document.getElementById(
+            "growth-system-score-error"
+        );
 
     const inputState =
         document.getElementById(
@@ -2649,6 +2661,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ".growth-system-score-label"
         );
 
+
     /* =====================================================
        EXECUTIVE GROWTH AUDIT MODAL
        ===================================================== */
@@ -2668,6 +2681,46 @@ document.addEventListener("DOMContentLoaded", function () {
             "[data-growth-audit-modal-close]"
         );
 
+    const auditModalPrimary =
+        auditModal
+            ? auditModal.querySelector(
+                ".growth-audit-modal-primary"
+            )
+            : null;
+
+    const auditModalOverlay =
+        auditModal
+            ? auditModal.querySelector(
+                ".growth-audit-modal-overlay"
+            )
+            : null;
+
+
+    /* =====================================================
+       STATE
+       ===================================================== */
+
+    let auditModalHasAutoOpened = false;
+
+    let auditModalTimer = null;
+
+    let currentWebsite = "";
+
+    let currentScore = null;
+
+
+    /*
+     * Number of milliseconds AFTER the score display
+     * begins before the automatic Audit modal opens.
+     *
+     * Score animation = approximately 900ms.
+     *
+     * Therefore the user gets roughly 3+ seconds to
+     * actually see the completed score before the modal.
+     */
+
+    const AUDIT_MODAL_DELAY = 4000;
+
 
     /* =====================================================
        SAFETY CHECK
@@ -2684,6 +2737,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
+       INITIAL MODAL STATE
+       ===================================================== */
+
+    /*
+     * Never allow the modal to appear simply because
+     * the page was loaded.
+     */
+
+    if (auditModal) {
+
+        auditModal.hidden = true;
+
+    }
+
+
+    /* =====================================================
        FORM SUBMISSION
        ===================================================== */
 
@@ -2694,6 +2763,21 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
             clearError();
+
+
+            /*
+             * Cancel any previous automatic modal timer.
+             */
+
+            cancelAuditModalTimer();
+
+
+            /*
+             * Reset automatic-popup state for a new score.
+             */
+
+            auditModalHasAutoOpened = false;
+
 
             const website =
                 normalizeWebsite(
@@ -2714,6 +2798,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 websiteInput.focus();
 
                 return;
+
             }
 
 
@@ -2726,7 +2811,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 websiteInput.focus();
 
                 return;
+
             }
+
+
+            currentWebsite = website;
 
 
             /* ---------------------------------------------
@@ -2753,23 +2842,29 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
+                currentScore =
+                    normalizeScore(
+                        result.score
+                    );
+
+
                 /* -----------------------------------------
                    DISPLAY SCORE
                    ----------------------------------------- */
 
-                displayResult(result);
+                displayResult({
+                    ...result,
+                    score: currentScore
+                });
 
 
                 /*
-                 * Give the user a moment to see the score
-                 * before presenting the Audit modal.
+                 * Wait before opening the Audit modal.
+                 *
+                 * The score is intentionally shown first.
                  */
 
-                setTimeout(function () {
-
-                    openAuditModal();
-
-                }, 1200);
+                scheduleAuditModal();
 
 
             } catch (error) {
@@ -2804,7 +2899,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return "";
         }
 
-        let website = value.trim();
+        let website =
+            value.trim();
 
 
         /*
@@ -2827,6 +2923,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         return website;
 
     }
@@ -2842,6 +2939,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const url =
                 new URL(value);
+
 
             return (
                 (
@@ -2864,12 +2962,12 @@ document.addEventListener("DOMContentLoaded", function () {
        TEMPORARY SCORE ENGINE
        =====================================================
 
-       This is ONLY a frontend testing mechanism.
+       IMPORTANT:
 
-       It does NOT analyze the actual website.
+       This does NOT analyze the actual website.
 
-       The real Growth System Score should eventually
-       come from the n8n backend.
+       It is only a deterministic frontend placeholder
+       until the n8n scoring backend is connected.
 
        ===================================================== */
 
@@ -2893,7 +2991,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Generate a deterministic temporary score.
+         * Deterministic temporary score.
          *
          * Same domain = same temporary score.
          */
@@ -2939,24 +3037,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
+       NORMALIZE SCORE
+       ===================================================== */
+
+    function normalizeScore(value) {
+
+        const numericScore =
+            Number(value);
+
+
+        if (
+            !Number.isFinite(
+                numericScore
+            )
+        ) {
+
+            return 0;
+
+        }
+
+
+        return Math.round(
+            Math.max(
+                0,
+                Math.min(
+                    100,
+                    numericScore
+                )
+            )
+        );
+
+    }
+
+
+    /* =====================================================
        DISPLAY RESULT
        ===================================================== */
 
     function displayResult(result) {
 
-        let score =
-            Number(result.score);
-
-
-        /*
-         * Keep score between 0 and 100.
-         */
-
-        score =
-            Math.max(
-                0,
-                Math.min(100, score)
+        const score =
+            normalizeScore(
+                result.score
             );
+
+
+        currentScore =
+            score;
 
 
         /*
@@ -2981,23 +3108,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Hide the input state.
+         * Hide input state.
          */
 
         if (inputState) {
 
-            inputState.hidden = true;
+            inputState.hidden =
+                true;
 
         }
 
 
         /*
-         * Show the result state.
+         * Show result state.
          */
 
         if (resultState) {
 
-            resultState.hidden = false;
+            resultState.hidden =
+                false;
 
         }
 
@@ -3027,7 +3156,17 @@ document.addEventListener("DOMContentLoaded", function () {
          * Update result messaging.
          */
 
-        updateResultContent(score);
+        updateResultContent(
+            score
+        );
+
+
+        /*
+         * Make sure the user has a way to reopen
+         * the Executive Growth Audit after closing it.
+         */
+
+        createPersistentAuditCTA();
 
     }
 
@@ -3036,7 +3175,10 @@ document.addEventListener("DOMContentLoaded", function () {
        SCORE ANIMATION
        ===================================================== */
 
-    function animateScore(element, targetScore) {
+    function animateScore(
+        element,
+        targetScore
+    ) {
 
         const duration = 900;
 
@@ -3047,7 +3189,8 @@ document.addEventListener("DOMContentLoaded", function () {
         function update(currentTime) {
 
             const elapsed =
-                currentTime - startTime;
+                currentTime -
+                startTime;
 
 
             const progress =
@@ -3080,7 +3223,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentScore;
 
 
-            if (progress < 1) {
+            if (
+                progress < 1
+            ) {
 
                 requestAnimationFrame(
                     update
@@ -3096,7 +3241,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        requestAnimationFrame(update);
+        requestAnimationFrame(
+            update
+        );
 
     }
 
@@ -3167,36 +3314,210 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       LOADING STATE
+       PERSISTENT AUDIT CTA
+       =====================================================
+
+       This CTA stays visible after the modal is closed.
+
+       If the result-state HTML already contains an element
+       with .growth-system-score-audit-cta, it is reused.
+
+       Otherwise JavaScript creates one automatically.
        ===================================================== */
 
-    function setLoadingState(isLoading) {
+    function createPersistentAuditCTA() {
 
-        section.classList.toggle(
-            "is-loading",
-            isLoading
+        if (!resultState) {
+            return;
+        }
+
+
+        let auditCTA =
+            resultState.querySelector(
+                ".growth-system-score-audit-cta"
+            );
+
+
+        /*
+         * If HTML already contains the CTA,
+         * simply connect it to the modal.
+         */
+
+        if (auditCTA) {
+
+            bindAuditCTA(
+                auditCTA
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Otherwise create the CTA.
+         */
+
+        auditCTA =
+            document.createElement(
+                "button"
+            );
+
+
+        auditCTA.type =
+            "button";
+
+
+        auditCTA.className =
+            "growth-system-score-audit-cta";
+
+
+        auditCTA.innerHTML =
+            `
+                Get Your Executive Growth Audit
+                <span aria-hidden="true">→</span>
+            `;
+
+
+        /*
+         * Place CTA at the end of the result state.
+         */
+
+        resultState.appendChild(
+            auditCTA
         );
 
 
-        submitButton.disabled =
-            isLoading;
+        bindAuditCTA(
+            auditCTA
+        );
+
+    }
 
 
-        if (isLoading) {
+    /* =====================================================
+       BIND PERSISTENT AUDIT CTA
+       ===================================================== */
 
-            submitButton.innerHTML =
-                'Analyzing <span aria-hidden="true">...</span>';
+    function bindAuditCTA(element) {
 
-            websiteInput.disabled =
-                true;
+        /*
+         * Prevent duplicate listeners.
+         */
 
-        } else {
+        if (
+            element.dataset.auditBound === "true"
+        ) {
 
-            submitButton.innerHTML =
-                'Get My Score <span aria-hidden="true">→</span>';
+            return;
 
-            websiteInput.disabled =
-                false;
+        }
+
+
+        element.dataset.auditBound =
+            "true";
+
+
+        element.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                openAuditModal();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SCHEDULE AUTOMATIC AUDIT MODAL
+       ===================================================== */
+
+    function scheduleAuditModal() {
+
+        /*
+         * Don't schedule if the modal doesn't exist.
+         */
+
+        if (!auditModal) {
+            return;
+        }
+
+
+        /*
+         * Prevent duplicate timers.
+         */
+
+        cancelAuditModalTimer();
+
+
+        /*
+         * Don't automatically reopen if it has already
+         * opened for this score.
+         */
+
+        if (auditModalHasAutoOpened) {
+            return;
+        }
+
+
+        auditModalTimer =
+            setTimeout(
+                function () {
+
+                    /*
+                     * Only open if the user is still
+                     * looking at the result.
+                     */
+
+                    if (
+                        resultState &&
+                        resultState.hidden
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    if (
+                        !auditModalHasAutoOpened
+                    ) {
+
+                        auditModalHasAutoOpened =
+                            true;
+
+                        openAuditModal();
+
+                    }
+
+                },
+                AUDIT_MODAL_DELAY
+            );
+
+    }
+
+
+    /* =====================================================
+       CANCEL AUDIT MODAL TIMER
+       ===================================================== */
+
+    function cancelAuditModalTimer() {
+
+        if (
+            auditModalTimer !== null
+        ) {
+
+            clearTimeout(
+                auditModalTimer
+            );
+
+
+            auditModalTimer =
+                null;
 
         }
 
@@ -3204,7 +3525,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       EXECUTIVE GROWTH AUDIT MODAL
+       OPEN EXECUTIVE GROWTH AUDIT MODAL
        ===================================================== */
 
     function openAuditModal() {
@@ -3213,6 +3534,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
+        /*
+         * Make absolutely sure the modal is visible.
+         */
 
         auditModal.hidden =
             false;
@@ -3227,21 +3552,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Move keyboard focus to close button.
+         * Focus the close button for keyboard users.
          */
 
         if (auditModalClose) {
 
-            setTimeout(function () {
+            setTimeout(
+                function () {
 
-                auditModalClose.focus();
+                    auditModalClose.focus();
 
-            }, 50);
+                },
+                50
+            );
 
         }
 
     }
 
+
+    /* =====================================================
+       CLOSE EXECUTIVE GROWTH AUDIT MODAL
+       ===================================================== */
 
     function closeAuditModal() {
 
@@ -3249,6 +3581,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
+        /*
+         * Hide modal.
+         */
 
         auditModal.hidden =
             true;
@@ -3263,16 +3599,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Return focus to website input
-         * if appropriate.
+         * IMPORTANT:
+         *
+         * Do NOT reset the score.
+         * Do NOT show the website form again.
+         * Do NOT restart the automatic popup.
+         *
+         * The user stays on the result state.
          */
 
-        if (
-            websiteInput &&
-            !inputState.hidden
-        ) {
 
-            websiteInput.focus();
+        /*
+         * Return focus to the persistent Audit CTA
+         * if one exists.
+         */
+
+        const persistentCTA =
+            resultState
+                ? resultState.querySelector(
+                    ".growth-system-score-audit-cta"
+                )
+                : null;
+
+
+        if (persistentCTA) {
+
+            setTimeout(
+                function () {
+
+                    persistentCTA.focus();
+
+                },
+                50
+            );
 
         }
 
@@ -3280,7 +3639,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       MODAL CLOSE HANDLERS
+       MODAL CLOSE BUTTONS
        ===================================================== */
 
     auditModalCloseElements.forEach(
@@ -3288,7 +3647,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             element.addEventListener(
                 "click",
-                function () {
+                function (event) {
+
+                    event.preventDefault();
 
                     closeAuditModal();
 
@@ -3301,11 +3662,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /*
      * Explicit close button.
+     *
+     * Only bind if it wasn't already handled
+     * through the data attribute above.
      */
 
     if (auditModalClose) {
 
         auditModalClose.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                closeAuditModal();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       BACKDROP CLICK
+       ===================================================== */
+
+    if (auditModalOverlay) {
+
+        auditModalOverlay.addEventListener(
             "click",
             function () {
 
@@ -3331,12 +3715,87 @@ document.addEventListener("DOMContentLoaded", function () {
                 !auditModal.hidden
             ) {
 
+                event.preventDefault();
+
                 closeAuditModal();
 
             }
 
         }
     );
+
+
+    /* =====================================================
+       AUDIT PRIMARY CTA
+       =====================================================
+
+       We intentionally DO NOT intercept the primary CTA
+       inside the modal.
+
+       That button should proceed to your actual
+       Executive Growth Audit purchase/intake destination.
+       ===================================================== */
+
+
+    if (auditModalPrimary) {
+
+        auditModalPrimary.addEventListener(
+            "click",
+            function () {
+
+                /*
+                 * The modal's primary CTA is allowed
+                 * to follow its normal href/action.
+                 *
+                 * This is where the $750 Audit conversion
+                 * should occur.
+                 */
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       LOADING STATE
+       ===================================================== */
+
+    function setLoadingState(
+        isLoading
+    ) {
+
+        section.classList.toggle(
+            "is-loading",
+            isLoading
+        );
+
+
+        submitButton.disabled =
+            isLoading;
+
+
+        if (isLoading) {
+
+            submitButton.innerHTML =
+                'Analyzing <span aria-hidden="true">...</span>';
+
+
+            websiteInput.disabled =
+                true;
+
+        } else {
+
+            submitButton.innerHTML =
+                'Get My Score <span aria-hidden="true">→</span>';
+
+
+            websiteInput.disabled =
+                false;
+
+        }
+
+    }
 
 
     /* =====================================================
@@ -3395,7 +3854,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
 });
 </script>
