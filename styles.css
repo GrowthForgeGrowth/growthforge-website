@@ -38818,35 +38818,68 @@ File: goalstation-bottleneck.css
 
 
 /* =========================================================
-   EXECUTIVE GROWTH AUDIT MODAL
+   GROWTHFORGE — EXECUTIVE GROWTH AUDIT MODAL
+   Dedicated modal component
+   ========================================================= */
+
+
+/* =========================================================
+   MODAL ROOT
    ========================================================= */
 
 .growth-audit-modal {
     position: fixed;
     inset: 0;
 
-    z-index: 9999;
+    z-index: 99999;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 24px;
+    width: 100%;
+    height: 100%;
+
+    padding: 28px;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    overflow-y: auto;
+
+    isolation: isolate;
+}
+
+
+/*
+ * CRITICAL:
+ * The modal remains completely hidden until JavaScript
+ * explicitly removes the HTML "hidden" attribute.
+ */
+
+.growth-audit-modal[hidden] {
+    display: none !important;
 }
 
 
 /* =========================================================
-   MODAL OVERLAY
+   BACKDROP
    ========================================================= */
 
 .growth-audit-modal-overlay {
     position: absolute;
     inset: 0;
 
-    background: rgba(15, 23, 42, 0.58);
+    width: 100%;
+    height: 100%;
 
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: rgba(15, 23, 42, 0.62);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    cursor: pointer;
 }
 
 
@@ -38855,37 +38888,49 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-audit-modal-container {
-    width: 100%;
-    max-width: 560px;
-
     position: relative;
     z-index: 1;
 
-    overflow: hidden;
+    width: min(100%, 645px);
 
-    border-radius: 24px;
+    max-height: calc(100vh - 56px);
+
+    margin: auto;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 
     background: #ffffff;
 
     border: 1px solid rgba(226, 232, 240, 0.95);
 
+    border-radius: 26px;
+
     box-shadow:
-        0 30px 80px rgba(15, 23, 42, 0.22),
-        0 8px 30px rgba(15, 23, 42, 0.12);
+        0 40px 100px rgba(15, 23, 42, 0.24),
+        0 16px 40px rgba(15, 23, 42, 0.14);
+
+    scrollbar-width: thin;
 
     animation:
-        growth-audit-modal-enter 0.25s ease-out;
+        growth-audit-modal-enter
+        0.28s
+        cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 
+/* =========================================================
+   MODAL ENTRANCE
+   ========================================================= */
+
 @keyframes growth-audit-modal-enter {
 
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(14px) scale(0.98);
+        transform: translateY(20px) scale(0.97);
     }
 
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
@@ -38898,84 +38943,134 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-audit-modal-content {
-    padding: 48px;
+    position: relative;
+
+    padding: 56px 56px 42px;
 }
 
+
+/* =========================================================
+   BADGE
+   ========================================================= */
 
 .growth-audit-modal-badge {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 
-    padding: 8px 14px;
+    min-height: 32px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(37, 99, 235, 0.16);
 
     border-radius: 999px;
 
-    background: rgba(37, 99, 235, 0.08);
-
-    border: 1px solid rgba(37, 99, 235, 0.14);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(239, 246, 255, 0.95),
+            rgba(239, 246, 255, 0.70)
+        );
 
     color: #2563eb;
 
     font-family: "Inter", sans-serif;
+
     font-size: 10px;
     font-weight: 800;
 
-    letter-spacing: 0.11em;
+    letter-spacing: 0.12em;
     line-height: 1;
 
     text-transform: uppercase;
+
+    white-space: nowrap;
 }
 
 
+/* =========================================================
+   TITLE
+   ========================================================= */
+
 .growth-audit-modal-title {
-    margin: 22px 0 0;
+    max-width: 540px;
+
+    margin: 24px 0 0;
 
     color: #0f172a;
 
     font-family: "Manrope", sans-serif;
-    font-size: clamp(30px, 4vw, 42px);
+
+    font-size: clamp(34px, 4vw, 48px);
+
     font-weight: 800;
 
-    letter-spacing: -0.04em;
-    line-height: 1.1;
+    letter-spacing: -0.048em;
+
+    line-height: 1.06;
 }
 
 
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
 .growth-audit-modal-description {
-    margin: 18px 0 0;
+    max-width: 540px;
+
+    margin: 24px 0 0;
 
     color: #64748b;
 
     font-family: "Inter", sans-serif;
+
     font-size: 16px;
     font-weight: 400;
+
+    letter-spacing: -0.01em;
 
     line-height: 1.7;
 }
 
 
 /* =========================================================
-   MODAL FEATURES
+   FEATURE LIST
    ========================================================= */
 
 .growth-audit-modal-features {
     display: flex;
     flex-direction: column;
 
-    gap: 13px;
+    gap: 15px;
 
-    margin-top: 27px;
+    margin: 30px 0 0;
+
+    padding: 0;
+
+    list-style: none;
 }
 
 
+/* =========================================================
+   FEATURE ITEM
+   ========================================================= */
+
 .growth-audit-modal-feature {
     display: flex;
-    align-items: flex-start;
-    gap: 11px;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 25px;
+
+    margin: 0;
+    padding: 0;
 
     color: #334155;
 
     font-family: "Inter", sans-serif;
+
     font-size: 14px;
     font-weight: 500;
 
@@ -38983,67 +39078,109 @@ File: goalstation-bottleneck.css
 }
 
 
+/* =========================================================
+   FEATURE CHECK CIRCLE
+   ========================================================= */
+
 .growth-audit-modal-feature > span:first-child {
-    flex-shrink: 0;
+    flex: 0 0 22px;
+
+    width: 22px;
+    height: 22px;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    width: 20px;
-    height: 20px;
-
-    margin-top: 1px;
+    margin: 0;
 
     border-radius: 50%;
 
-    background: rgba(37, 99, 235, 0.10);
+    background:
+        rgba(37, 99, 235, 0.10);
 
     color: #2563eb;
 
+    font-family: Arial, sans-serif;
+
     font-size: 12px;
     font-weight: 800;
+
+    line-height: 1;
 }
 
 
 /* =========================================================
-   MODAL ACTIONS
+   FEATURE TEXT
+   ========================================================= */
+
+.growth-audit-modal-feature > span:last-child {
+    flex: 1;
+}
+
+
+/* =========================================================
+   ACTION AREA
    ========================================================= */
 
 .growth-audit-modal-actions {
     display: flex;
     flex-direction: column;
 
-    gap: 10px;
+    width: 100%;
+
+    gap: 8px;
 
     margin-top: 32px;
 }
 
 
+/* =========================================================
+   PRIMARY CTA
+   ========================================================= */
+
 .growth-audit-modal-primary {
+    width: 100%;
+
+    min-height: 62px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
 
-    min-height: 54px;
+    gap: 11px;
 
-    padding: 0 22px;
+    padding: 0 26px;
 
-    border-radius: 10px;
+    border: 0;
 
-    background: #2563eb;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb 0%,
+            #2864e8 100%
+        );
 
     color: #ffffff;
 
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+
+    font-size: 15px;
     font-weight: 700;
 
+    letter-spacing: -0.01em;
+
+    line-height: 1;
+
+    text-align: center;
     text-decoration: none;
 
+    cursor: pointer;
+
     box-shadow:
-        0 8px 20px rgba(37, 99, 235, 0.22);
+        0 12px 28px rgba(37, 99, 235, 0.24);
 
     transition:
         background 0.2s ease,
@@ -39053,23 +39190,52 @@ File: goalstation-bottleneck.css
 
 
 .growth-audit-modal-primary:hover {
-    background: #1d4ed8;
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8 0%,
+            #2563eb 100%
+        );
 
     transform: translateY(-1px);
 
     box-shadow:
-        0 11px 24px rgba(37, 99, 235, 0.28);
+        0 15px 32px rgba(37, 99, 235, 0.30);
 }
 
 
-.growth-audit-modal-primary:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.25);
-    outline-offset: 3px;
+.growth-audit-modal-primary:active {
+    transform: translateY(0);
 }
 
+
+/* =========================================================
+   PRIMARY CTA ARROW
+   ========================================================= */
+
+.growth-audit-modal-primary span {
+    display: inline-flex;
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.growth-audit-modal-primary:hover span {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   SECONDARY CTA
+   ========================================================= */
 
 .growth-audit-modal-secondary {
-    min-height: 46px;
+    min-height: 48px;
 
     padding: 0 18px;
 
@@ -39082,8 +39248,13 @@ File: goalstation-bottleneck.css
     cursor: pointer;
 
     font-family: "Inter", sans-serif;
+
     font-size: 13px;
     font-weight: 600;
+
+    line-height: 1;
+
+    text-align: center;
 
     transition:
         color 0.2s ease;
@@ -39096,36 +39267,39 @@ File: goalstation-bottleneck.css
 
 
 /* =========================================================
-   MODAL PRICE
+   PRICE
    ========================================================= */
 
 .growth-audit-modal-price {
-    margin-top: 14px;
+    margin: 14px 0 0;
 
     color: #94a3b8;
 
     font-family: "Inter", sans-serif;
+
     font-size: 12px;
     font-weight: 600;
+
+    line-height: 1.4;
 
     text-align: center;
 }
 
 
 /* =========================================================
-   MODAL CLOSE BUTTON
+   CLOSE BUTTON
    ========================================================= */
 
 .growth-audit-modal-close {
     position: absolute;
 
-    top: 18px;
-    right: 18px;
+    top: 20px;
+    right: 20px;
 
-    z-index: 2;
+    z-index: 5;
 
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
 
     display: flex;
     align-items: center;
@@ -39134,24 +39308,30 @@ File: goalstation-bottleneck.css
     padding: 0;
 
     border: 1px solid #e2e8f0;
+
     border-radius: 50%;
 
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.96);
 
     color: #64748b;
 
     cursor: pointer;
 
     font-family: Arial, sans-serif;
-    font-size: 24px;
+
+    font-size: 25px;
     font-weight: 400;
 
     line-height: 1;
 
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.05);
+
     transition:
         color 0.2s ease,
         background 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
@@ -39161,246 +39341,85 @@ File: goalstation-bottleneck.css
     background: #f8fafc;
 
     border-color: #cbd5e1;
+
+    transform: rotate(3deg);
 }
 
 
+.growth-audit-modal-close:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   FOCUS STATES
+   ========================================================= */
+
+.growth-audit-modal-primary:focus-visible,
+.growth-audit-modal-secondary:focus-visible,
 .growth-audit-modal-close:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline: 3px solid rgba(37, 99, 235, 0.22);
+
     outline-offset: 3px;
 }
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
 
-    .growth-system-score-section {
-        padding: 80px 20px;
+    .growth-audit-modal {
+        padding: 24px;
     }
 
 
-    .growth-system-score-container {
-        grid-template-columns: 1fr;
+    .growth-audit-modal-container {
+        width: min(100%, 620px);
 
-        gap: 50px;
+        max-height: calc(100vh - 48px);
 
-        padding: 52px 44px;
+        border-radius: 24px;
     }
 
 
-    .growth-system-score-content,
-    .growth-system-score-result {
-        text-align: center;
+    .growth-audit-modal-content {
+        padding: 50px 46px 38px;
     }
 
 
-    .growth-system-score-description,
-    .growth-system-score-result-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-    .growth-system-score-form {
-        max-width: 680px;
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-    .growth-system-score-meta {
-        justify-content: center;
-    }
-
-
-    .growth-system-score-visual {
-        min-height: 300px;
-    }
-
-
-    .growth-system-score-audit-link {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-    .growth-system-score-audit-price {
-        text-align: center;
+    .growth-audit-modal-title {
+        font-size: 42px;
     }
 
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
 
-    .growth-system-score-section {
-        padding: 60px 16px;
-    }
-
-
-    .growth-system-score-container {
-        gap: 38px;
-
-        min-height: 0;
-
-        padding: 38px 22px;
-
-        border-radius: 22px;
-    }
-
-
-    .growth-system-score-badge,
-    .growth-system-score-result-badge {
-        margin-bottom: 18px;
-
-        font-size: 10px;
-    }
-
-
-    .growth-system-score-title,
-    .growth-system-score-result-title {
-        font-size: 34px;
-
-        letter-spacing: -0.04em;
-    }
-
-
-    .growth-system-score-description,
-    .growth-system-score-result-description {
-        margin-top: 17px;
-
-        font-size: 16px;
-
-        line-height: 1.6;
-    }
-
-
-    .growth-system-score-form {
-        margin-top: 26px;
-    }
-
-
-    .growth-system-score-input-wrapper {
-        flex-direction: column;
-
-        padding: 6px;
-    }
-
-
-    .growth-system-score-input {
-        width: 100%;
-
-        height: 52px;
-    }
-
-
-    .growth-system-score-submit {
-        width: 100%;
-
-        min-height: 52px;
-    }
-
-
-    .growth-system-score-meta {
-        justify-content: center;
-
-        font-size: 11px;
-    }
-
-
-    .growth-system-score-visual {
-        min-height: 270px;
-
-        padding: 25px 15px;
-
-        border-radius: 20px;
-    }
-
-
-    .growth-system-score-circle {
-        width: 185px;
-        height: 185px;
-    }
-
-
-    .growth-system-score-number {
-        font-size: 58px;
-    }
-
-
-    .growth-system-score-denominator {
-        font-size: 15px;
-    }
-
-
-    .growth-system-score-label {
-        margin-top: 20px;
-
-        font-size: 10px;
-    }
-
-
-    .growth-system-score-audit-link {
-        width: 100%;
-
-        margin-top: 26px;
-
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-
-    /* ---------------------------------------------
-       MODAL MOBILE
-       --------------------------------------------- */
-
     .growth-audit-modal {
-        padding: 16px;
+        align-items: center;
+
+        padding: 14px;
     }
 
 
     .growth-audit-modal-container {
-        max-height: calc(100vh - 32px);
+        width: 100%;
 
-        overflow-y: auto;
+        max-height: calc(100vh - 28px);
 
-        border-radius: 20px;
+        border-radius: 21px;
     }
 
 
     .growth-audit-modal-content {
-        padding: 38px 24px 30px;
-    }
-
-
-    .growth-audit-modal-title {
-        padding-right: 20px;
-
-        font-size: 30px;
-    }
-
-
-    .growth-audit-modal-description {
-        font-size: 15px;
-    }
-
-
-    .growth-audit-modal-feature {
-        font-size: 13px;
-    }
-
-
-    .growth-audit-modal-primary {
-        min-height: 52px;
-
-        font-size: 13px;
+        padding: 45px 24px 28px;
     }
 
 
@@ -39408,37 +39427,164 @@ File: goalstation-bottleneck.css
         top: 13px;
         right: 13px;
 
-        width: 34px;
-        height: 34px;
+        width: 38px;
+        height: 38px;
 
-        font-size: 21px;
+        font-size: 22px;
+    }
+
+
+    .growth-audit-modal-badge {
+        min-height: 30px;
+
+        padding: 0 13px;
+
+        font-size: 9px;
+    }
+
+
+    .growth-audit-modal-title {
+        margin-top: 20px;
+
+        padding-right: 8px;
+
+        font-size: 31px;
+
+        letter-spacing: -0.042em;
+
+        line-height: 1.08;
+    }
+
+
+    .growth-audit-modal-description {
+        margin-top: 18px;
+
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+
+    .growth-audit-modal-features {
+        gap: 13px;
+
+        margin-top: 25px;
+    }
+
+
+    .growth-audit-modal-feature {
+        gap: 10px;
+
+        font-size: 13px;
+    }
+
+
+    .growth-audit-modal-feature > span:first-child {
+        flex-basis: 21px;
+
+        width: 21px;
+        height: 21px;
+    }
+
+
+    .growth-audit-modal-actions {
+        margin-top: 28px;
+    }
+
+
+    .growth-audit-modal-primary {
+        min-height: 56px;
+
+        padding: 0 18px;
+
+        font-size: 14px;
+    }
+
+
+    .growth-audit-modal-secondary {
+        min-height: 44px;
+
+        font-size: 12px;
+    }
+
+
+    .growth-audit-modal-price {
+        margin-top: 11px;
+
+        font-size: 11px;
     }
 
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .growth-audit-modal {
+        padding: 10px;
+    }
+
+
+    .growth-audit-modal-container {
+        max-height: calc(100vh - 20px);
+
+        border-radius: 19px;
+    }
+
+
+    .growth-audit-modal-content {
+        padding: 42px 20px 24px;
+    }
+
+
+    .growth-audit-modal-title {
+        font-size: 28px;
+    }
+
+
+    .growth-audit-modal-description {
+        font-size: 13px;
+    }
+
+
+    .growth-audit-modal-feature {
+        font-size: 12.5px;
+    }
+
+
+    .growth-audit-modal-primary {
+        min-height: 53px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .growth-system-score-input-wrapper,
-    .growth-system-score-submit,
-    .growth-system-score-circle,
-    .growth-system-score-audit-link,
-    .growth-audit-modal-container,
-    .growth-audit-modal-primary,
-    .growth-audit-modal-secondary,
-    .growth-audit-modal-close {
-        transition: none;
+    .growth-audit-modal-container {
         animation: none;
     }
 
 
-    .growth-system-score-submit:hover,
-    .growth-system-score-audit-link:hover,
-    .growth-audit-modal-primary:hover {
+    .growth-audit-modal-primary,
+    .growth-audit-modal-primary span,
+    .growth-audit-modal-secondary,
+    .growth-audit-modal-close {
+        transition: none;
+    }
+
+
+    .growth-audit-modal-primary:hover,
+    .growth-audit-modal-close:hover {
         transform: none;
     }
 
