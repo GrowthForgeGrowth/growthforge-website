@@ -3331,13 +3331,13 @@ EXECUTIVE GROWTH AUDIT
 
     display:grid;
 
-    grid-template-columns:420px minmax(0,1fr);
+    grid-template-columns:480px minmax(0,1fr);
 
-    gap:48px;
+    gap:44px;
 
     align-items:start;
 
-    max-width:1700px;
+    max-width:1500px;
 
     margin:0 auto;
 
@@ -3347,28 +3347,43 @@ EXECUTIVE GROWTH AUDIT
 
     border:1px solid #dbe4ef;
 
-    border-radius:32px;
+    border-radius:28px;
 
-    padding:48px;
+    padding:38px;
 
-    box-shadow:0 25px 70px rgba(37,99,235,.08);
+    box-shadow:0 20px 60px rgba(37,99,235,.07);
 
 }
 
+
 /* ==========================================
-   LEFT
+   LEFT — PRODUCT INFORMATION
+========================================== */
+
+.audit-info{
+
+    width:100%;
+
+}
+
+
+/* ==========================================
+   BADGE
 ========================================== */
 
 .audit-badge{
 
     display:inline-flex;
+
     align-items:center;
 
-    padding:8px 18px;
+    padding:7px 18px;
+
+    margin-bottom:18px;
 
     border-radius:999px;
 
-    background:#eff6ff;
+    background:#f8fbff;
 
     border:1px solid #bfdbfe;
 
@@ -3376,93 +3391,162 @@ EXECUTIVE GROWTH AUDIT
 
     font-size:12px;
 
-    font-weight:700;
+    font-weight:800;
 
-    letter-spacing:.08em;
+    letter-spacing:.09em;
 
     text-transform:uppercase;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.audit-info h3{
+
+    max-width:450px;
+
+    margin:0 0 18px;
+
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    line-height:1.02;
+
+    letter-spacing:-.045em;
+
+}
+
+
+/* ==========================================
+   PRICE + POSITIONING
+========================================== */
+
+.audit-price{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
 
     margin-bottom:20px;
 
 }
 
-.audit-info h3{
-
-    font-size:52px;
-    line-height:1.05;
-
-    margin:0 0 24px;
-
-}
-
-.audit-price{
-
-    display:flex;
-    align-items:center;
-
-    gap:18px;
-
-    margin-bottom:24px;
-
-}
-
 .audit-price .amount{
 
-    font-size:72px;
+    color:#0f172a;
+
+    font-family:Manrope,sans-serif;
+
+    font-size:64px;
+
     font-weight:800;
 
-    color:#0f172a;
+    line-height:1;
+
+    letter-spacing:-.04em;
 
 }
 
 .price-tag{
 
     display:inline-flex;
+
     align-items:center;
+
+    min-height:62px;
 
     padding:10px 18px;
 
-    border-radius:999px;
+    border-radius:14px;
 
-    background:#eff6ff;
+    background:#f8fbff;
 
-    border:1px solid #bfdbfe;
+    border:1px solid #dbeafe;
 
     color:#2563eb;
 
-    font-weight:700;
+    font-family:Manrope,sans-serif;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    line-height:1.15;
 
 }
+
+
+/* ==========================================
+   SUBTITLE
+========================================== */
 
 .audit-subtitle{
 
-    font-size:20px;
-    font-weight:600;
-
-    margin-bottom:20px;
+    margin:0 0 16px;
 
     color:#0f172a;
 
+    font-family:Manrope,sans-serif;
+
+    font-size:19px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
 }
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
 
 .audit-description{
 
-    font-size:17px;
-    line-height:1.8;
+    max-width:450px;
+
+    margin:0 0 24px;
 
     color:#475569;
 
-    margin-bottom:30px;
+    font-family:Manrope,sans-serif;
+
+    font-size:16px;
+
+    font-weight:400;
+
+    line-height:1.65;
 
 }
 
+
+/* ==========================================
+   INCLUDED FEATURES
+========================================== */
+
 .audit-list{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:0;
 
     list-style:none;
 
     padding:0;
 
-    margin:0 0 36px;
+    margin:0 0 28px;
 
 }
 
@@ -3472,23 +3556,185 @@ EXECUTIVE GROWTH AUDIT
 
     align-items:center;
 
-    gap:12px;
+    gap:11px;
 
-    margin-bottom:16px;
+    margin:0;
 
-    font-size:17px;
+    padding:12px 0;
+
+    border-bottom:1px solid #e5edf7;
 
     color:#334155;
 
+    font-family:Manrope,sans-serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    line-height:1.35;
+
 }
+
+.audit-list li:last-child{
+
+    border-bottom:none;
+
+}
+
+
+/* ==========================================
+   ACTIONS
+========================================== */
 
 .audit-actions{
 
     display:flex;
 
-    gap:18px;
-
     align-items:center;
+
+    gap:14px;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1100px){
+
+    .audit-product{
+
+        grid-template-columns:400px minmax(0,1fr);
+
+        gap:32px;
+
+        padding:32px;
+
+    }
+
+    .audit-info h3{
+
+        font-size:46px;
+
+    }
+
+    .audit-price .amount{
+
+        font-size:58px;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+    .audit-product{
+
+        grid-template-columns:1fr;
+
+        gap:32px;
+
+        padding:24px;
+
+        border-radius:22px;
+
+    }
+
+    .audit-info h3{
+
+        max-width:none;
+
+        font-size:42px;
+
+        line-height:1.03;
+
+    }
+
+    .audit-price .amount{
+
+        font-size:54px;
+
+    }
+
+    .price-tag{
+
+        min-height:54px;
+
+        padding:8px 14px;
+
+        font-size:14px;
+
+    }
+
+    .audit-description{
+
+        max-width:none;
+
+        font-size:15px;
+
+        line-height:1.6;
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+    .audit-product{
+
+        padding:20px;
+
+    }
+
+    .audit-info h3{
+
+        font-size:36px;
+
+    }
+
+    .audit-price{
+
+        gap:12px;
+
+    }
+
+    .audit-price .amount{
+
+        font-size:48px;
+
+    }
+
+    .price-tag{
+
+        font-size:13px;
+
+    }
+
+    .audit-list li{
+
+        font-size:14px;
+
+    }
+
+    .audit-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
 
 }
 
