@@ -29018,7 +29018,7 @@ Home Page FINAL CTA
 .audit-preview {
     width: 100%;
     margin: 0;
-    padding: 110px 0 120px;
+    padding: 75px 0 80px;
     background: #ffffff;
     box-sizing: border-box;
 }
@@ -29039,7 +29039,7 @@ Home Page FINAL CTA
 .audit-preview .section-heading {
     width: 100%;
     max-width: 820px;
-    margin: 0 auto 64px;
+    margin: 0 auto 42px;
     text-align: center;
     box-sizing: border-box;
 }
@@ -29049,10 +29049,10 @@ Home Page FINAL CTA
     align-items: center;
     justify-content: center;
 
-    min-height: 40px;
+    min-height: 36px;
 
-    margin: 0 0 22px;
-    padding: 0 20px;
+    margin: 0 0 16px;
+    padding: 0 18px;
 
     border: 1px solid #bfdbfe;
     border-radius: 999px;
@@ -29061,7 +29061,7 @@ Home Page FINAL CTA
     color: #2563eb;
 
     font-family: Manrope, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
     line-height: 1;
 
@@ -29073,33 +29073,33 @@ Home Page FINAL CTA
 
 .audit-preview .section-heading h2 {
     width: 100%;
-    max-width: 820px;
+    max-width: 760px;
 
-    margin: 0 0 22px;
+    margin: 0 auto 16px;
 
     color: #0f172a;
 
     font-family: Manrope, sans-serif;
-    font-size: clamp(40px, 4.4vw, 58px);
+    font-size: clamp(36px, 3.8vw, 50px);
     font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -.05em;
+    line-height: 1.04;
+    letter-spacing: -.045em;
 
     box-sizing: border-box;
 }
 
 .audit-preview .section-heading p {
     width: 100%;
-    max-width: 760px;
+    max-width: 700px;
 
     margin: 0 auto;
 
     color: #64748b;
 
     font-family: Manrope, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.6;
 
     box-sizing: border-box;
 }
