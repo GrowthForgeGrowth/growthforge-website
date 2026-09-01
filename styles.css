@@ -1948,9 +1948,14 @@ COMPONENT: GROWTHFORGE EXECUTIVE GROWTH ADVISOR
 SECTION: LAUNCHER + EXPANDABLE PANEL
 ========================================================== */
 
+
+/* ==========================================================
+ROOT VARIABLES
+========================================================== */
+
 :root{
 
-    --gf-chatbot-z-index:1000;
+    --gf-chatbot-z-index:2147483647;
 
     --gf-primary:#2563eb;
     --gf-primary-dark:#1d4ed8;
@@ -1965,35 +1970,49 @@ SECTION: LAUNCHER + EXPANDABLE PANEL
 
 /* ==========================================================
 CHATBOT CONTAINER
+FORCE ABOVE HOMEPAGE CONTENT / OVERLAYS
 ========================================================== */
 
 .gf-chatbot{
 
-    position:fixed;
+    position:fixed !important;
 
-    right:32px;
-    bottom:32px;
+    right:32px !important;
+    bottom:32px !important;
 
-    z-index:var(--gf-chatbot-z-index);
+    z-index:2147483647 !important;
 
-    font-family:Inter,sans-serif;
+    display:block !important;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
 
     width:auto;
     height:auto;
+
+    margin:0;
+    padding:0;
+
+    font-family:Inter,sans-serif;
+
+    pointer-events:auto;
+
+    isolation:isolate;
 
 }
 
 
 /* ==========================================================
 LAUNCHER
-DEFAULT: ICON ONLY
+DEFAULT = ICON ONLY
 ========================================================== */
 
 .gf-chatbot-launcher{
 
     position:relative;
 
-    display:flex;
+    display:flex !important;
 
     align-items:center;
     justify-content:center;
@@ -2002,8 +2021,11 @@ DEFAULT: ICON ONLY
     height:68px;
 
     min-width:68px;
+    min-height:68px;
 
     padding:0;
+
+    margin:0;
 
     border:1px solid #dbe4ef;
 
@@ -2018,6 +2040,12 @@ DEFAULT: ICON ONLY
     box-shadow:var(--gf-shadow);
 
     box-sizing:border-box;
+
+    visibility:visible !important;
+
+    opacity:1 !important;
+
+    z-index:2147483647;
 
     transition:
         transform .3s ease,
@@ -2083,7 +2111,7 @@ AI ICON
 
 /* ==========================================================
 LAUNCHER TEXT
-HIDDEN WHILE CLOSED
+HIDDEN WHEN MINIMIZED
 ========================================================== */
 
 .gf-chatbot-launcher-label,
@@ -2095,7 +2123,8 @@ HIDDEN WHILE CLOSED
 
 
 /* ==========================================================
-OPEN STATE LAUNCHER
+OPEN STATE
+EXPAND LAUNCHER
 ========================================================== */
 
 .gf-chatbot[data-state="open"] .gf-chatbot-launcher{
@@ -2104,9 +2133,9 @@ OPEN STATE LAUNCHER
 
     min-width:300px;
 
-    height:auto;
-
     min-height:80px;
+
+    height:auto;
 
     padding:14px 18px;
 
@@ -2161,7 +2190,7 @@ OPEN STATE TEXT
 
 /* ==========================================================
 ATTENTION BADGE
-ONLY VISIBLE WHEN OPEN
+ONLY WHEN OPEN
 ========================================================== */
 
 .gf-chatbot-launcher::after{
@@ -2216,7 +2245,7 @@ VISITOR WELCOME POPOUT
 
     bottom:calc(100% + 14px);
 
-    z-index:20;
+    z-index:2147483647;
 
     display:block;
 
@@ -2225,6 +2254,8 @@ VISITOR WELCOME POPOUT
     max-width:280px;
 
     padding:13px 17px;
+
+    margin:0;
 
     box-sizing:border-box;
 
@@ -2293,7 +2324,7 @@ POPOUT SPEECH TAIL
 
 
 /* ==========================================================
-SHOW POPOUT WHEN VISITOR INTERACTS
+SHOW POPOUT ON CHATBOT HOVER
 ========================================================== */
 
 .gf-chatbot:hover .gf-chatbot-welcome{
@@ -2356,7 +2387,7 @@ HIDDEN BY DEFAULT
 
     bottom:calc(100% + 16px);
 
-    z-index:10;
+    z-index:2147483647 !important;
 
     width:390px;
 
@@ -2763,9 +2794,19 @@ MOBILE
 
     .gf-chatbot{
 
-        right:18px;
+        position:fixed !important;
 
-        bottom:18px;
+        right:18px !important;
+
+        bottom:18px !important;
+
+        z-index:2147483647 !important;
+
+        display:block !important;
+
+        visibility:visible !important;
+
+        opacity:1 !important;
 
     }
 
@@ -2831,6 +2872,8 @@ MOBILE
 
         max-height:calc(100vh - 110px);
 
+        z-index:2147483647 !important;
+
     }
 
 
@@ -2841,6 +2884,8 @@ MOBILE
         max-width:240px;
 
         font-size:13px;
+
+        z-index:2147483647;
 
     }
 
@@ -2855,9 +2900,13 @@ SMALL MOBILE
 
     .gf-chatbot{
 
-        right:16px;
+        position:fixed !important;
 
-        bottom:16px;
+        right:16px !important;
+
+        bottom:16px !important;
+
+        z-index:2147483647 !important;
 
     }
 
@@ -2880,6 +2929,7 @@ SMALL MOBILE
     }
 
 }
+```
 
 
 /* ==========================================
