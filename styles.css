@@ -1941,6 +1941,7 @@ header .logo{flex-shrink:0}
 
 }
 
+```css
 /* ==========================================================
 COMPONENT: GROWTHFORGE EXECUTIVE GROWTH ADVISOR
 SECTION: LAUNCHER + EXPANDABLE PANEL
@@ -1984,6 +1985,8 @@ CHATBOT CONTAINER
 
 /* ==========================================================
 LAUNCHER
+DEFAULT: ICON ONLY
+EXPANDS WHEN INTERACTED WITH
 ========================================================== */
 
 .gf-chatbot-launcher{
@@ -1993,16 +1996,16 @@ LAUNCHER
     display:flex;
 
     align-items:center;
+    justify-content:center;
 
-    gap:16px;
+    width:68px;
+    height:68px;
 
-    min-width:300px;
-
-    padding:14px 18px;
+    padding:0;
 
     border:none;
 
-    border-radius:999px;
+    border-radius:50%;
 
     cursor:pointer;
 
@@ -2015,11 +2018,44 @@ LAUNCHER
     border:1px solid #dbe4ef;
 
     transition:
+        width .3s ease,
+        height .3s ease,
+        padding .3s ease,
+        border-radius .3s ease,
         transform .3s ease,
         box-shadow .3s ease,
         border-color .3s ease;
 
 }
+
+
+/* ==========================================================
+EXPANDED LAUNCHER
+========================================================== */
+
+.gf-chatbot[data-state="expanded"] .gf-chatbot-launcher,
+.gf-chatbot[data-state="open"] .gf-chatbot-launcher{
+
+    width:auto;
+
+    min-width:300px;
+
+    height:auto;
+
+    padding:14px 18px;
+
+    justify-content:flex-start;
+
+    gap:16px;
+
+    border-radius:999px;
+
+}
+
+
+/* ==========================================================
+LAUNCHER HOVER
+========================================================== */
 
 .gf-chatbot-launcher:hover{
 
@@ -2072,12 +2108,44 @@ AI ICON
 
 
 /* ==========================================================
+ICON-ONLY SIZE
+========================================================== */
+
+.gf-chatbot-launcher:not(:hover)::before{
+
+    width:52px;
+    height:52px;
+
+}
+
+
+/* ==========================================================
 TEXT
+HIDDEN UNTIL INTERACTION / EXPANSION
+========================================================== */
+
+.gf-chatbot-launcher-label,
+.gf-chatbot-launcher-hint{
+
+    display:none;
+
+}
+
+.gf-chatbot[data-state="expanded"] .gf-chatbot-launcher-label,
+.gf-chatbot[data-state="expanded"] .gf-chatbot-launcher-hint,
+.gf-chatbot[data-state="open"] .gf-chatbot-launcher-label,
+.gf-chatbot[data-state="open"] .gf-chatbot-launcher-hint{
+
+    display:block;
+
+}
+
+
+/* ==========================================================
+LAUNCHER LABEL
 ========================================================== */
 
 .gf-chatbot-launcher-label{
-
-    display:block;
 
     margin:0;
 
@@ -2093,9 +2161,12 @@ TEXT
 
 }
 
-.gf-chatbot-launcher-hint{
 
-    display:block;
+/* ==========================================================
+LAUNCHER HINT
+========================================================== */
+
+.gf-chatbot-launcher-hint{
 
     margin-top:4px;
 
@@ -2112,6 +2183,7 @@ TEXT
 
 /* ==========================================================
 ATTENTION BADGE
+HIDDEN WHILE ICON IS COLLAPSED
 ========================================================== */
 
 .gf-chatbot-launcher::after{
@@ -2142,12 +2214,132 @@ ATTENTION BADGE
     box-shadow:
         0 10px 25px rgba(16,185,129,.30);
 
+    display:none;
+
+}
+
+.gf-chatbot[data-state="expanded"] .gf-chatbot-launcher::after,
+.gf-chatbot[data-state="open"] .gf-chatbot-launcher::after{
+
+    display:block;
+
+}
+
+
+/* ==========================================================
+VISITOR POP-OUT
+"HOW CAN I HELP YOU?"
+========================================================== */
+
+.gf-chatbot-welcome{
+
+    position:absolute;
+
+    right:0;
+
+    bottom:calc(100% + 14px);
+
+    width:max-content;
+
+    max-width:280px;
+
+    padding:13px 17px;
+
+    background:#ffffff;
+
+    color:#0f172a;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 18px 45px rgba(15,23,42,.16);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(8px)
+        scale(.96);
+
+    transform-origin:bottom right;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease,
+        transform .25s ease;
+
+    pointer-events:none;
+
+}
+
+
+/* Small speech-tail */
+
+.gf-chatbot-welcome::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:24px;
+
+    bottom:-7px;
+
+    width:13px;
+    height:13px;
+
+    background:#ffffff;
+
+    border-right:1px solid #e2e8f0;
+    border-bottom:1px solid #e2e8f0;
+
+    transform:rotate(45deg);
+
+}
+
+
+/* Show welcome message */
+
+.gf-chatbot:hover .gf-chatbot-welcome,
+.gf-chatbot:focus-within .gf-chatbot-welcome{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* Don't show pop-out once chatbot is open */
+
+.gf-chatbot[data-state="open"] .gf-chatbot-welcome{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(8px)
+        scale(.96);
+
 }
 
 
 /* ==========================================================
 PANEL
-IMPORTANT:
 Hidden by default.
 Does NOT occupy page space.
 Only appears when chatbot is open.
@@ -2556,10 +2748,10 @@ MOBILE
 
     .gf-chatbot-launcher{
 
-        min-width:auto;
-
         width:68px;
         height:68px;
+
+        min-width:68px;
 
         padding:0;
 
@@ -2578,11 +2770,44 @@ MOBILE
 
     }
 
+    .gf-chatbot[data-state="expanded"] .gf-chatbot-launcher,
+    .gf-chatbot[data-state="open"] .gf-chatbot-launcher{
+
+        width:auto;
+
+        min-width:300px;
+
+        height:auto;
+
+        padding:14px 18px;
+
+        justify-content:flex-start;
+
+        border-radius:999px;
+
+    }
+
     .gf-chatbot-launcher-label,
     .gf-chatbot-launcher-hint,
     .gf-chatbot-launcher::after{
 
         display:none;
+
+    }
+
+    .gf-chatbot[data-state="expanded"] .gf-chatbot-launcher-label,
+    .gf-chatbot[data-state="expanded"] .gf-chatbot-launcher-hint,
+    .gf-chatbot[data-state="open"] .gf-chatbot-launcher-label,
+    .gf-chatbot[data-state="open"] .gf-chatbot-launcher-hint{
+
+        display:block;
+
+    }
+
+    .gf-chatbot[data-state="expanded"] .gf-chatbot-launcher::after,
+    .gf-chatbot[data-state="open"] .gf-chatbot-launcher::after{
+
+        display:block;
 
     }
 
@@ -2597,6 +2822,16 @@ MOBILE
         max-width:calc(100vw - 32px);
 
         max-height:calc(100vh - 110px);
+
+    }
+
+    .gf-chatbot-welcome{
+
+        right:0;
+
+        max-width:240px;
+
+        font-size:13px;
 
     }
 
@@ -2627,6 +2862,8 @@ SMALL MOBILE
     }
 
 }
+```
+
 
 /* ==========================================
    EXECUTIVE GROWTH AUDIT
