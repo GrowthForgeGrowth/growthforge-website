@@ -41753,3 +41753,162 @@ File: goalstation-bottleneck.css
     line-height: 1.6;
   }
 }
+
+/* =========================================================
+   SECTION 02 — PROGRAMMATIC SEO DEFINITION
+   ========================================================= */
+
+.programmatic-seo-definition {
+  position: relative;
+  padding: 110px 24px;
+  background: #ffffff;
+  color: #111111;
+}
+
+.insight-section__container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.programmatic-seo-definition__grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: 90px;
+  align-items: start;
+}
+
+.insight-section__eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #777777;
+}
+
+.insight-section__title {
+  max-width: 520px;
+  margin: 0;
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.insight-section__lead {
+  max-width: 500px;
+  margin: 28px 0 0;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.programmatic-seo-definition__body {
+  max-width: 680px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444444;
+}
+
+.programmatic-seo-definition__body p {
+  margin: 0 0 24px;
+}
+
+.programmatic-seo-definition__body strong {
+  color: #111111;
+  font-weight: 650;
+}
+
+.programmatic-seo-definition__callout {
+  margin-top: 38px;
+  padding: 28px 30px;
+  border-left: 3px solid #111111;
+  background: #f6f6f6;
+}
+
+.programmatic-seo-definition__callout-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #777777;
+}
+
+.programmatic-seo-definition__callout p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #333333;
+}
+
+.programmatic-seo-definition__components {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 85px;
+  padding-top: 45px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.programmatic-seo-card {
+  padding: 30px;
+  border: 1px solid #e5e5e5;
+  background: #ffffff;
+}
+
+.programmatic-seo-card__number {
+  margin-bottom: 35px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #888888;
+}
+
+.programmatic-seo-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.programmatic-seo-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666666;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .programmatic-seo-definition {
+    padding: 80px 20px;
+  }
+
+  .programmatic-seo-definition__grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .insight-section__title {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .insight-section__lead {
+    font-size: 18px;
+  }
+
+  .programmatic-seo-definition__body {
+    font-size: 16px;
+  }
+
+  .programmatic-seo-definition__components {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+}
