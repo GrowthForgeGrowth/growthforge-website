@@ -41566,3 +41566,190 @@ File: goalstation-bottleneck.css
 
 }
 
+/* =========================================================
+   PROGRAMMATIC SEO — HERO
+   ========================================================= */
+
+.programmatic-seo-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 24px 100px;
+  background: #050505;
+  color: #ffffff;
+}
+
+.programmatic-seo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(255, 255, 255, 0.07),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 45%
+    );
+}
+
+.insight-hero__container {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.insight-hero__content {
+  max-width: 920px;
+}
+
+.insight-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 28px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.insight-hero__title {
+  max-width: 950px;
+  margin: 0;
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.insight-hero__title span {
+  display: block;
+}
+
+.insight-hero__lead {
+  max-width: 760px;
+  margin: 32px 0 0;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.insight-hero__description {
+  max-width: 780px;
+  margin: 22px 0 0;
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.insight-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.insight-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.insight-hero__button:hover {
+  transform: translateY(-2px);
+}
+
+.insight-hero__button--primary {
+  background: #ffffff;
+  color: #050505;
+}
+
+.insight-hero__button--primary:hover {
+  background: #eeeeee;
+}
+
+.insight-hero__button--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+}
+
+.insight-hero__button--secondary:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.insight-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 34px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .programmatic-seo-hero {
+    padding: 88px 20px 72px;
+  }
+
+  .insight-hero__eyebrow {
+    margin-bottom: 22px;
+  }
+
+  .insight-hero__title {
+    font-size: clamp(40px, 11vw, 58px);
+    line-height: 1.04;
+  }
+
+  .insight-hero__lead {
+    margin-top: 24px;
+    font-size: 20px;
+  }
+
+  .insight-hero__description {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .insight-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .insight-hero__button {
+    width: 100%;
+  }
+
+  .insight-hero__meta {
+    line-height: 1.6;
+  }
+}
