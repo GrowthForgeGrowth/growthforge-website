@@ -3300,314 +3300,359 @@ document.addEventListener("DOMContentLoaded", function () {
     removeResultPrice();
 
 
-    /* =====================================================
-       FORM SUBMISSION
-       ===================================================== */
+   /* =====================================================
+   FORM SUBMISSION
+   ===================================================== */
 
-    form.addEventListener(
-        "submit",
-        async function (event) {
+form.addEventListener(
+    "submit",
+    async function (event) {
 
-            event.preventDefault();
+        event.preventDefault();
 
-            clearError();
+        clearError();
 
-            cancelAuditModalTimer();
-
-
-            /*
-             * New submission = new score cycle.
-             */
-
-            auditModalHasAutoOpened = false;
-
-
-            const website =
-                normalizeWebsite(
-                    websiteInput.value.trim()
-                );
-
-
-            /* ---------------------------------------------
-               VALIDATION
-               --------------------------------------------- */
-
-            if (!website) {
-
-                showError(
-                    "Please enter your website."
-                );
-
-                websiteInput.focus();
-
-                return;
-
-            }
-
-
-            if (!isValidWebsite(website)) {
-
-                showError(
-                    "Please enter a valid website address."
-                );
-
-                websiteInput.focus();
-
-                return;
-
-            }
-
-
-            currentWebsite = website;
-
-
-            /* ---------------------------------------------
-               LOADING
-               --------------------------------------------- */
-
-            setLoadingState(true);
-
-
-            try {
-
-    const response = await fetch(
-        'https://growthforgegrowth.app.n8n.cloud/webhook/6fc33b00-0750-4d72-b76b-30179a30e384',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                website: website
-            })
-        }
-    );
-
-    if (!response.ok) {
-        throw new Error(
-            'Unable to calculate Growth System Score.'
-        );
-    }
-
-    const result = await response.json();
-
-    currentScore =
-        normalizeScore(
-            result.score
-        );
-
-
-                /* -----------------------------------------
-                   SHOW RESULT
-                   ----------------------------------------- */
-
-                displayResult({
-                    score: currentScore,
-                    website: website
-                });
-
-
-                /*
-                 * IMPORTANT:
-                 *
-                 * The score is now visible.
-                 *
-                 * We wait before opening the Audit modal
-                 * so the user can actually see their score.
-                 */
-
-                scheduleAuditModal();
-
-
-            } catch (error) {
-
-                console.error(
-                    "Growth System Score error:",
-                    error
-                );
-
-                showError(
-                    "Something went wrong. Please try again."
-                );
-
-
-            } finally {
-
-                setLoadingState(false);
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       NORMALIZE WEBSITE
-       ===================================================== */
-
-    function normalizeWebsite(value) {
-
-        if (!value) {
-            return "";
-        }
-
-
-        let website =
-            value.trim();
+        cancelAuditModalTimer();
 
 
         /*
-         * Automatically convert:
-         *
-         * example.com
-         *
-         * into:
-         *
-         * https://example.com
+         * New submission = new score cycle.
          */
 
-        if (
-            !website.startsWith("http://") &&
-            !website.startsWith("https://")
-        ) {
+        auditModalHasAutoOpened = false;
 
-            website =
-                "https://" + website;
+
+        const website =
+            normalizeWebsite(
+                websiteInput.value.trim()
+            );
+
+
+        /* ---------------------------------------------
+           VALIDATION
+           --------------------------------------------- */
+
+        if (!website) {
+
+            showError(
+                "Please enter your website."
+            );
+
+            websiteInput.focus();
+
+            return;
 
         }
 
 
-        return website;
+        if (!isValidWebsite(website)) {
 
-    }
+            showError(
+                "Please enter a valid website address."
+            );
+
+            websiteInput.focus();
+
+            return;
+
+        }
 
 
-    /* =====================================================
-       VALIDATE WEBSITE
-       ===================================================== */
+        currentWebsite = website;
 
-    function isValidWebsite(value) {
+
+        /* ---------------------------------------------
+           LOADING
+           --------------------------------------------- */
+
+        setLoadingState(true);
+
 
         try {
 
-            const url =
-                new URL(value);
+            /*
+             * Send the website to the GrowthForge
+             * n8n Growth System Score engine.
+             */
+
+            const response =
+                await fetch(
+                    "https://growthforgegrowth.app.n8n.cloud/webhook/6fc33b00-0750-4d72-b76b-30179a30e384",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            website: website
+                        })
+                    }
+                );
 
 
-            return (
-                (
-                    url.protocol === "http:" ||
-                    url.protocol === "https:"
-                ) &&
-                url.hostname.includes(".")
+            /* -----------------------------------------
+               READ RESPONSE
+               ----------------------------------------- */
+
+            const responseText =
+                await response.text();
+
+
+            /* -----------------------------------------
+               HTTP ERROR
+               ----------------------------------------- */
+
+            if (!response.ok) {
+
+                console.error(
+                    "Growth System Score server response:",
+                    responseText
+                );
+
+                throw new Error(
+                    `Growth System Score request failed: ${response.status}`
+                );
+
+            }
+
+
+            /* -----------------------------------------
+               PARSE JSON
+               ----------------------------------------- */
+
+            let result;
+
+            try {
+
+                result =
+                    JSON.parse(
+                        responseText
+                    );
+
+            } catch (parseError) {
+
+                console.error(
+                    "Invalid Growth System Score JSON:",
+                    responseText
+                );
+
+                throw new Error(
+                    "Growth System Score returned invalid JSON."
+                );
+
+            }
+
+
+            /* -----------------------------------------
+               VALIDATE RESPONSE
+               ----------------------------------------- */
+
+            const returnedScore =
+                result.score ??
+                result.overall_score;
+
+
+            if (
+                returnedScore === undefined ||
+                returnedScore === null ||
+                returnedScore === ""
+            ) {
+
+                console.error(
+                    "Growth System Score response:",
+                    result
+                );
+
+                throw new Error(
+                    "Growth System Score was not returned."
+                );
+
+            }
+
+
+            const numericScore =
+                Number(
+                    returnedScore
+                );
+
+
+            if (
+                !Number.isFinite(numericScore) ||
+                numericScore < 0 ||
+                numericScore > 100
+            ) {
+
+                console.error(
+                    "Invalid Growth System Score:",
+                    returnedScore
+                );
+
+                throw new Error(
+                    "Growth System Score returned an invalid value."
+                );
+
+            }
+
+
+            /* -----------------------------------------
+               SHOW RESULT
+               ----------------------------------------- */
+
+            /*
+             * Pass the COMPLETE n8n response into
+             * displayResult().
+             *
+             * displayResult() handles normalization,
+             * score storage, animation, ring progress,
+             * description, state switching and CTA.
+             */
+
+            displayResult(
+                result
             );
 
-        } catch {
 
-            return false;
+            /*
+             * IMPORTANT:
+             *
+             * The score is now visible.
+             *
+             * Wait before opening the Audit modal
+             * so the user can actually see the score.
+             */
+
+            scheduleAuditModal();
+
+
+        } catch (error) {
+
+            console.error(
+                "Growth System Score error:",
+                error
+            );
+
+            showError(
+                "Something went wrong. Please try again."
+            );
+
+
+        } finally {
+
+            setLoadingState(false);
 
         }
 
     }
+);
 
 
-    /* =====================================================
-       TEMPORARY SCORE ENGINE
-       ===================================================== */
+/* =====================================================
+   NORMALIZE WEBSITE
+   ===================================================== */
 
-    async function calculateGrowthScore(
-        website
+function normalizeWebsite(value) {
+
+    if (!value) {
+
+        return "";
+
+    }
+
+
+    let website =
+        value.trim();
+
+
+    /*
+     * Automatically convert:
+     *
+     * example.com
+     *
+     * into:
+     *
+     * https://example.com
+     */
+
+    if (
+        !website.startsWith("http://") &&
+        !website.startsWith("https://")
     ) {
 
-        /*
-         * Simulate analysis time.
-         */
+        website =
+            "https://" + website;
 
-        await delay(1200);
+    }
 
+
+    return website;
+
+}
+
+
+/* =====================================================
+   VALIDATE WEBSITE
+   ===================================================== */
+
+function isValidWebsite(value) {
+
+    try {
 
         const url =
-            new URL(website);
+            new URL(value);
 
 
-        const domain =
-            url.hostname
-                .replace(/^www\./, "")
-                .toLowerCase();
-
-
-        /*
-         * Deterministic temporary score.
-         *
-         * Same domain = same temporary score.
-         *
-         * This is ONLY for frontend testing.
-         */
-
-        let hash = 0;
-
-
-        for (
-            let i = 0;
-            i < domain.length;
-            i++
-        ) {
-
-            hash =
-                ((hash << 5) - hash) +
-                domain.charCodeAt(i);
-
-            hash |= 0;
-
-        }
-
-
-        const score =
-            45 +
-            Math.abs(hash % 41);
-
-
-        return {
-            score: score,
-            website: website
-        };
-
-    }
-
-
-    /* =====================================================
-       NORMALIZE SCORE
-       ===================================================== */
-
-    function normalizeScore(value) {
-
-        const number =
-            Number(value);
-
-
-        if (
-            !Number.isFinite(number)
-        ) {
-
-            return 0;
-
-        }
-
-
-        return Math.round(
-            Math.max(
-                0,
-                Math.min(
-                    100,
-                    number
-                )
-            )
+        return (
+            (
+                url.protocol === "http:" ||
+                url.protocol === "https:"
+            ) &&
+            url.hostname.includes(".")
         );
 
+    } catch {
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
+   NORMALIZE SCORE
+   ===================================================== */
+
+function normalizeScore(value) {
+
+    const number =
+        Number(value);
+
+
+    if (
+        !Number.isFinite(number)
+    ) {
+
+        return 0;
+
     }
 
 
- /* =====================================================
+    return Math.round(
+        Math.max(
+            0,
+            Math.min(
+                100,
+                number
+            )
+        )
+    );
+
+}
+
+
+/* =====================================================
    DISPLAY RESULT
    ===================================================== */
 
@@ -3616,9 +3661,13 @@ function displayResult(result) {
     /*
      * Get the overall Growth System Score.
      *
-     * n8n returns both:
-     *   result.score
-     *   result.overall_score
+     * n8n returns:
+     *
+     * {
+     *     score: 78,
+     *     overall_score: 78,
+     *     dimensions: {...}
+     * }
      *
      * Prefer "score" and fall back to
      * "overall_score" for compatibility.
@@ -3629,9 +3678,9 @@ function displayResult(result) {
         result.overall_score;
 
 
-    /*
-     * Validate the returned score before displaying it.
-     */
+    /* ---------------------------------------------
+       VALIDATE SCORE EXISTS
+       --------------------------------------------- */
 
     if (
         returnedScore === undefined ||
@@ -3651,17 +3700,19 @@ function displayResult(result) {
     }
 
 
-    /*
-     * Convert the returned value to a number.
-     */
+    /* ---------------------------------------------
+       CONVERT SCORE TO NUMBER
+       --------------------------------------------- */
 
     const numericScore =
-        Number(returnedScore);
+        Number(
+            returnedScore
+        );
 
 
-    /*
-     * Make sure the score is valid.
-     */
+    /* ---------------------------------------------
+       VALIDATE SCORE RANGE
+       --------------------------------------------- */
 
     if (
         !Number.isFinite(numericScore) ||
@@ -3681,10 +3732,9 @@ function displayResult(result) {
     }
 
 
-    /*
-     * Normalize the score to the site's
-     * expected 0–100 integer format.
-     */
+    /* ---------------------------------------------
+       NORMALIZE SCORE
+       --------------------------------------------- */
 
     const score =
         normalizeScore(
@@ -3692,17 +3742,17 @@ function displayResult(result) {
         );
 
 
-    /*
-     * Store the final score globally.
-     */
+    /* ---------------------------------------------
+       STORE FINAL SCORE
+       --------------------------------------------- */
 
     currentScore =
         score;
 
 
-    /*
-     * Update score number.
-     */
+    /* ---------------------------------------------
+       UPDATE SCORE NUMBER
+       --------------------------------------------- */
 
     if (scoreNumber) {
 
@@ -3714,18 +3764,18 @@ function displayResult(result) {
     }
 
 
-    /*
-     * Update circular progress.
-     */
+    /* ---------------------------------------------
+       UPDATE CIRCULAR PROGRESS
+       --------------------------------------------- */
 
     updateScoreRing(
         score
     );
 
 
-    /*
-     * Change badge.
-     */
+    /* ---------------------------------------------
+       CHANGE BADGE
+       --------------------------------------------- */
 
     if (badge) {
 
@@ -3734,73 +3784,80 @@ function displayResult(result) {
 
     }
 
-}
 
-        /*
-         * Update description.
-         *
-         * IMPORTANT:
-         * No price is mentioned here.
-         */
+    /* ---------------------------------------------
+       UPDATE DESCRIPTION
+       --------------------------------------------- */
 
-        if (description) {
+    /*
+     * IMPORTANT:
+     *
+     * No price is mentioned here.
+     */
 
-            description.textContent =
-                "Your Growth System Score gives you a snapshot. " +
-                "The Executive Growth Audit gives you the complete " +
-                "picture of what's driving your growth and where " +
-                "your highest-impact opportunities lie.";
+    if (description) {
 
-        }
-
-
-        /*
-         * Switch from input state to result state.
-         */
-
-        if (inputState) {
-
-            inputState.hidden =
-                true;
-
-        }
-
-
-        if (resultState) {
-
-            resultState.hidden =
-                false;
-
-        }
-
-
-        /*
-         * Mark section as result state.
-         */
-
-        section.classList.add(
-            "is-result"
-        );
-
-
-        /*
-         * Remove any price that may have existed
-         * in the result section.
-         */
-
-        removeResultPrice();
-
-
-        /*
-         * Make sure the EXISTING CTA is connected
-         * to the modal.
-         *
-         * We do NOT create another CTA.
-         */
-
-        bindExistingAuditCTA();
+        description.textContent =
+            "Your Growth System Score gives you a snapshot. " +
+            "The Executive Growth Audit gives you the complete " +
+            "picture of what's driving your growth and where " +
+            "your highest-impact opportunities lie.";
 
     }
+
+
+    /* ---------------------------------------------
+       SWITCH INPUT STATE → RESULT STATE
+       --------------------------------------------- */
+
+    if (inputState) {
+
+        inputState.hidden =
+            true;
+
+    }
+
+
+    if (resultState) {
+
+        resultState.hidden =
+            false;
+
+    }
+
+
+    /* ---------------------------------------------
+       MARK SECTION AS RESULT STATE
+       --------------------------------------------- */
+
+    section.classList.add(
+        "is-result"
+    );
+
+
+    /* ---------------------------------------------
+       REMOVE ANY RESULT PRICE
+       --------------------------------------------- */
+
+    removeResultPrice();
+
+
+    /* ---------------------------------------------
+       CONNECT EXISTING AUDIT CTA
+       --------------------------------------------- */
+
+    /*
+     * IMPORTANT:
+     *
+     * We do NOT create another CTA.
+     *
+     * We connect the existing CTA to the
+     * Executive Growth Audit modal.
+     */
+
+    bindExistingAuditCTA();
+
+}
 
 
     /* =====================================================
