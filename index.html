@@ -3127,7 +3127,6 @@ updateViewer();
    - Modal opens only after a score has been generated
    - No duplicate CTA is created
    - No price is added to the score result
-   - Replace calculateGrowthScore() with n8n later
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -3446,13 +3445,87 @@ form.addEventListener(
 
 
             /* -----------------------------------------
-               VALIDATE RESPONSE
+               NORMALIZE N8N RESPONSE
+               ----------------------------------------- */
+
+            /*
+             * n8n may return the validated item as:
+             *
+             * {
+             *     "score": 78,
+             *     "overall_score": 78,
+             *     "dimensions": {...}
+             * }
+             *
+             * OR as:
+             *
+             * [
+             *     {
+             *         "score": 78,
+             *         "overall_score": 78,
+             *         "dimensions": {...}
+             *     }
+             * ]
+             *
+             * Normalize either response into a single
+             * score object before continuing.
+             */
+
+            if (Array.isArray(result)) {
+
+                if (result.length === 0) {
+
+                    console.error(
+                        "Growth System Score returned an empty array."
+                    );
+
+                    throw new Error(
+                        "Growth System Score was not returned."
+                    );
+
+                }
+
+
+                result =
+                    result[0];
+
+            }
+
+
+            /* -----------------------------------------
+               VALIDATE RESPONSE OBJECT
+               ----------------------------------------- */
+
+            if (
+                !result ||
+                typeof result !== "object" ||
+                Array.isArray(result)
+            ) {
+
+                console.error(
+                    "Unexpected Growth System Score response:",
+                    result
+                );
+
+                throw new Error(
+                    "Growth System Score returned an invalid response."
+                );
+
+            }
+
+
+            /* -----------------------------------------
+               EXTRACT OVERALL SCORE
                ----------------------------------------- */
 
             const returnedScore =
                 result.score ??
                 result.overall_score;
 
+
+            /* -----------------------------------------
+               VALIDATE SCORE EXISTS
+               ----------------------------------------- */
 
             if (
                 returnedScore === undefined ||
@@ -3472,11 +3545,19 @@ form.addEventListener(
             }
 
 
+            /* -----------------------------------------
+               CONVERT SCORE TO NUMBER
+               ----------------------------------------- */
+
             const numericScore =
                 Number(
                     returnedScore
                 );
 
+
+            /* -----------------------------------------
+               VALIDATE SCORE RANGE
+               ----------------------------------------- */
 
             if (
                 !Number.isFinite(numericScore) ||
@@ -3664,9 +3745,9 @@ function displayResult(result) {
      * n8n returns:
      *
      * {
-     *     score: 78,
-     *     overall_score: 78,
-     *     dimensions: {...}
+     *     "score": 78,
+     *     "overall_score": 78,
+     *     "dimensions": {...}
      * }
      *
      * Prefer "score" and fall back to
@@ -3858,7 +3939,6 @@ function displayResult(result) {
     bindExistingAuditCTA();
 
 }
-
 
     /* =====================================================
        SCORE ANIMATION
