@@ -3370,25 +3370,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
             try {
 
-                /*
-                 * TEMPORARY FRONTEND SCORE.
-                 *
-                 * Later replace with:
-                 *
-                 * const result =
-                 *     await getScoreFromN8n(website);
-                 */
+    const response = await fetch(
+        'https://growthforgegrowth.app.n8n.cloud/webhook/6fc33b00-0750-4d72-b76b-30179a30e384',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                website: website
+            })
+        }
+    );
 
-                const result =
-                    await calculateGrowthScore(
-                        website
-                    );
+    if (!response.ok) {
+        throw new Error(
+            'Unable to calculate Growth System Score.'
+        );
+    }
 
+    const result = await response.json();
 
-                currentScore =
-                    normalizeScore(
-                        result.score
-                    );
+    currentScore =
+        normalizeScore(
+            result.score
+        );
 
 
                 /* -----------------------------------------
