@@ -3607,56 +3607,134 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       DISPLAY RESULT
-       ===================================================== */
+ /* =====================================================
+   DISPLAY RESULT
+   ===================================================== */
 
-    function displayResult(result) {
+function displayResult(result) {
 
-        const score =
-            normalizeScore(
-                result.score
-            );
+    /*
+     * Get the overall Growth System Score.
+     *
+     * n8n returns both:
+     *   result.score
+     *   result.overall_score
+     *
+     * Prefer "score" and fall back to
+     * "overall_score" for compatibility.
+     */
 
-
-        currentScore =
-            score;
-
-
-        /*
-         * Update score number.
-         */
-
-        if (scoreNumber) {
-
-            animateScore(
-                scoreNumber,
-                score
-            );
-
-        }
+    const returnedScore =
+        result.score ??
+        result.overall_score;
 
 
-        /*
-         * Update circular progress.
-         */
+    /*
+     * Validate the returned score before displaying it.
+     */
 
-        updateScoreRing(
-            score
+    if (
+        returnedScore === undefined ||
+        returnedScore === null ||
+        returnedScore === ""
+    ) {
+
+        console.error(
+            "Growth System Score missing from response:",
+            result
+        );
+
+        throw new Error(
+            "Growth System Score was not returned."
+        );
+
+    }
+
+
+    /*
+     * Convert the returned value to a number.
+     */
+
+    const numericScore =
+        Number(returnedScore);
+
+
+    /*
+     * Make sure the score is valid.
+     */
+
+    if (
+        !Number.isFinite(numericScore) ||
+        numericScore < 0 ||
+        numericScore > 100
+    ) {
+
+        console.error(
+            "Invalid Growth System Score:",
+            returnedScore
+        );
+
+        throw new Error(
+            "Growth System Score is invalid."
+        );
+
+    }
+
+
+    /*
+     * Normalize the score to the site's
+     * expected 0–100 integer format.
+     */
+
+    const score =
+        normalizeScore(
+            numericScore
         );
 
 
-        /*
-         * Change badge.
-         */
+    /*
+     * Store the final score globally.
+     */
 
-        if (badge) {
+    currentScore =
+        score;
 
-            badge.textContent =
-                "YOUR GROWTH SYSTEM SCORE";
 
-        }
+    /*
+     * Update score number.
+     */
 
+    if (scoreNumber) {
+
+        animateScore(
+            scoreNumber,
+            score
+        );
+
+    }
+
+
+    /*
+     * Update circular progress.
+     */
+
+    updateScoreRing(
+        score
+    );
+
+
+    /*
+     * Change badge.
+     */
+
+    if (badge) {
+
+        badge.textContent =
+            "YOUR GROWTH SYSTEM SCORE";
+
+    }
+
+}
 
         /*
          * Update description.
