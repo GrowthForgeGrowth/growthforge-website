@@ -585,21 +585,114 @@ a {
 
 
 /* =========================================================
-   PIPE-DELIMITED TABLE TEXT
+   GROWTH STAGE TABLE
    ========================================================= */
 
-/*
-   Your article currently contains table content as:
+.meta-ads-2026-content-inner .growth-table {
+    width: 100%;
+    margin: 35px 0 38px;
 
-   <p>| Growth stage | Core question | Primary outcome |</p>
-   <p>|---|---|---|</p>
-   <p>| Focus | ... | ... |</p>
+    border: 1px solid var(--gf-border);
+    border-radius: 14px;
 
-   Keep the existing HTML.
+    overflow: hidden;
 
-   The separator is visually reduced so the raw
-   "---|---|---" markup does not dominate the page.
-*/
+    background: var(--gf-white);
+
+    box-shadow:
+        0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+
+/* ---------------------------------------------------------
+   TABLE ROWS
+   --------------------------------------------------------- */
+
+.meta-ads-2026-content-inner .growth-table-row {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.7fr
+        1.25fr;
+
+    border-bottom: 1px solid var(--gf-border);
+}
+
+.meta-ads-2026-content-inner .growth-table-row:last-child {
+    border-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   TABLE CELLS
+   --------------------------------------------------------- */
+
+.meta-ads-2026-content-inner .growth-table-cell {
+    padding: 17px 18px;
+
+    color: var(--gf-text-soft);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    border-right: 1px solid var(--gf-border);
+}
+
+.meta-ads-2026-content-inner .growth-table-cell:last-child {
+    border-right: 0;
+}
+
+
+/* ---------------------------------------------------------
+   TABLE HEADER
+   --------------------------------------------------------- */
+
+.meta-ads-2026-content-inner .growth-table-header {
+    background: #f1f5f9;
+}
+
+.meta-ads-2026-content-inner .growth-table-header
+.growth-table-cell {
+    color: var(--gf-text);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   GROWTH STAGE COLUMN
+   --------------------------------------------------------- */
+
+.meta-ads-2026-content-inner
+.growth-table-row:not(.growth-table-header)
+.growth-table-cell:first-child {
+    color: var(--gf-text);
+
+    font-weight: 800;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER STATE
+   --------------------------------------------------------- */
+
+.meta-ads-2026-content-inner
+.growth-table-row:not(.growth-table-header):hover {
+    background: #f8fafc;
+}
+
+
+/* ---------------------------------------------------------
+   GENERAL PARAGRAPH WRAPPING
+   --------------------------------------------------------- */
 
 .meta-ads-2026-content-inner p {
     word-wrap: break-word;
@@ -607,28 +700,36 @@ a {
 }
 
 
-/*
-   Separator paragraph.
+/* =========================================================
+   RESPONSIVE TABLE
+   ========================================================= */
 
-   This targets the exact separator text without requiring
-   changes to the article HTML.
+@media (max-width: 700px) {
 
-   Modern browsers supporting :has() will hide the raw
-   Markdown separator visually.
-*/
+    .meta-ads-2026-content-inner .growth-table {
+        margin: 28px 0 32px;
 
-.meta-ads-2026-content-inner p:has(+ p) {
-    /* normal paragraph behavior remains intact */
-}
+        overflow-x: auto;
 
+        -webkit-overflow-scrolling: touch;
+    }
 
-/*
-   Specifically neutralize the Markdown separator
-   when the paragraph contains only pipe/dash markup.
-*/
+    .meta-ads-2026-content-inner .growth-table-row {
+        min-width: 680px;
+    }
 
-.meta-ads-2026-content-inner p {
-    white-space: normal;
+    .meta-ads-2026-content-inner .growth-table-cell {
+        padding: 14px 15px;
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+    .meta-ads-2026-content-inner .growth-table-header
+    .growth-table-cell {
+        font-size: 12px;
+    }
 }
 
 
@@ -1939,12 +2040,66 @@ button:focus-visible {
 <h2>The B2B growth framework: Focus, attract, convert, retain, expand</h2>
 <p>Use this five-part framework to turn disconnected marketing and sales activity into a measurable revenue system.</p>
 <p>| Growth stage | Core question | Primary outcome |</p>
-<p class="table-divider"></p>
-<p>| Focus | Who can you serve best, and why should they choose you? | Clear market position and ideal customer profile |</p>
-<p>| Attract | How will qualified buyers find and trust you? | Relevant demand and pipeline opportunities |</p>
-<p>| Convert | How will interest become a commercial conversation or purchase? | Improved conversion through the funnel |</p>
-<p>| Retain | How will customers reach value and keep renewing? | Stronger retention and product adoption |</p>
-<p>| Expand | How will existing customers buy more and refer others? | More revenue per account and advocacy |</p>
+<div class="growth-table">
+
+    <div class="growth-table-row growth-table-header">
+        <div class="growth-table-cell">Growth Stage</div>
+        <div class="growth-table-cell">Core Question</div>
+        <div class="growth-table-cell">Primary Outcome</div>
+    </div>
+
+    <div class="growth-table-row">
+        <div class="growth-table-cell">Focus</div>
+        <div class="growth-table-cell">
+            Who can you serve best, and why should they choose you?
+        </div>
+        <div class="growth-table-cell">
+            Clear market position and ideal customer profile
+        </div>
+    </div>
+
+    <div class="growth-table-row">
+        <div class="growth-table-cell">Attract</div>
+        <div class="growth-table-cell">
+            How will qualified buyers find and trust you?
+        </div>
+        <div class="growth-table-cell">
+            Relevant demand and pipeline opportunities
+        </div>
+    </div>
+
+    <div class="growth-table-row">
+        <div class="growth-table-cell">Convert</div>
+        <div class="growth-table-cell">
+            How will interest become a commercial conversation or purchase?
+        </div>
+        <div class="growth-table-cell">
+            Improved conversion through the funnel
+        </div>
+    </div>
+
+    <div class="growth-table-row">
+        <div class="growth-table-cell">Retain</div>
+        <div class="growth-table-cell">
+            How will customers reach value and keep renewing?
+        </div>
+        <div class="growth-table-cell">
+            Stronger retention and product adoption
+        </div>
+    </div>
+
+    <div class="growth-table-row">
+        <div class="growth-table-cell">Expand</div>
+        <div class="growth-table-cell">
+            How will existing customers buy more and refer others?
+        </div>
+        <div class="growth-table-cell">
+            More revenue per account and advocacy
+        </div>
+    </div>
+
+</div>
+                
 <p>The stages reinforce one another. Better positioning improves campaign performance. Better onboarding strengthens retention. Customer insights improve messaging, offers, content, and targeting.</p>
 <h2>1. Focus on the right market before adding channels</h2>
 <p>Many B2B companies underperform because they try to appeal to too many segments at once. Broad targeting creates vague messaging, low-quality leads, and a sales process that has to reinvent the pitch for every prospect.</p>
