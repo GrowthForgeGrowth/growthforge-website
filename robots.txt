@@ -4,7 +4,7 @@ Allow: /
 # AI content usage preference
 ai-train: yes
 
-# Block selected AI/extended crawlers
+# AI and extended crawlers
 User-agent: GPTBot
 Allow: /
 
