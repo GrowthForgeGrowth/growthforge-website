@@ -430,7 +430,7 @@ var quickActions = [
             answer: {
 
                 text:
-                    'You can contact GrowthForge directly at charlie@growthforge-ai.com for general enquiries, partnership opportunities, or questions about our services.\n\n' +
+                    'You can contact GrowthForge directly at hello@growthforge-ai.com for general enquiries, partnership opportunities, or questions about our services.\n\n' +
 
                     'If you want to understand what is limiting your business growth, the Executive Growth Audit is the recommended starting point. GrowthForge conducts a comprehensive executive assessment of your AI Search visibility, SEO, website performance, paid media, conversion funnel, analytics, automation, and growth strategy to identify your highest-impact opportunities. You\'ll receive executive recommendations and a prioritized 90-day growth roadmap focused on accelerating qualified pipeline, revenue growth, and long-term business performance.',
 
@@ -442,7 +442,7 @@ var quickActions = [
                     },
 
                     {
-                        href: 'mailto:charlie@growthforge-ai.com',
+                        href: 'mailto:hello@growthforge-ai.com',
                         label: 'Email GrowthForge'
                     }
 
