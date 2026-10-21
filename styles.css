@@ -41913,115 +41913,100 @@ File: goalstation-bottleneck.css
 
 }
 
-/* Black Friday 2026 campaign-only styles. All rules are scoped to .gf-bf-campaign. */
-.gf-bf-campaign{--blue:#2563eb;--ink:#0f172a;--muted:#64748b;--border:#e2e8f0;margin:0;color:var(--ink);background:#fff;font:16px/1.65 Inter,sans-serif;overflow:clip}
-.gf-bf-campaign *,.gf-bf-campaign *:before,.gf-bf-campaign *:after{box-sizing:border-box}
-.gf-bf-campaign h1,.gf-bf-campaign h2,.gf-bf-campaign h3,.gf-bf-campaign strong{font-family:Manrope,Inter,sans-serif}
-.gf-bf-campaign h1,.gf-bf-campaign h2,.gf-bf-campaign h3,.gf-bf-campaign p{margin-top:0}
-.gf-bf-campaign a{text-decoration:none}
-.gf-bf-campaign a:focus-visible,.gf-bf-campaign summary:focus-visible{outline:3px solid #93c5fd;outline-offset:4px}
-.gf-bf-campaign__wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}
-.gf-bf-campaign__announcement{background:#050b1d;color:#cbd5e1;font-size:12px}
-.gf-bf-campaign__announcement .gf-bf-campaign__wrap{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.gf-bf-campaign__announcement-note{color:#94a3b8}
-.gf-bf-campaign__header{position:relative;background:#fff;border-bottom:1px solid #e8edf5}
-.gf-bf-campaign__header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.gf-bf-campaign .gf-bf-campaign__wordmark{display:inline-flex;align-items:baseline;color:#0f172a;font:800 27px/1 Manrope,sans-serif;letter-spacing:-.07em}
-.gf-bf-campaign .gf-bf-campaign__wordmark strong{color:var(--blue);font-weight:800}
-.gf-bf-campaign__header-link{color:#334155;font-size:13px;font-weight:700}
-.gf-bf-campaign__header-link span{color:var(--blue);margin-left:6px}
-.gf-bf-campaign__hero{position:relative;isolation:isolate;color:#fff;padding:92px 0 86px;background:radial-gradient(650px 520px at 92% 36%,rgba(91,39,255,.54),transparent 72%),radial-gradient(540px 500px at 65% 100%,rgba(37,99,235,.25),transparent 72%),linear-gradient(115deg,#020617 0%,#07133c 57%,#24106b 100%)}
-.gf-bf-campaign__hero:before{content:"";position:absolute;z-index:-1;width:440px;height:440px;right:5%;top:8%;border-radius:50%;background:rgba(37,99,235,.15);filter:blur(90px)}
-.gf-bf-campaign__hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.85fr);align-items:center;gap:64px}
-.gf-bf-campaign__hero-copy{max-width:690px}
-.gf-bf-campaign__eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:18px;color:#93c5fd;font:800 11px/1.5 Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.gf-bf-campaign__eyebrow>span{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#60a5fa;box-shadow:0 0 14px #60a5fa99}
-.gf-bf-campaign__eyebrow--dark{color:#2563eb}
-.gf-bf-campaign__hero h1{max-width:730px;margin:0 0 23px;color:#fff;font-size:clamp(42px,5.2vw,66px);font-weight:800;line-height:1.04;letter-spacing:-.055em}
-.gf-bf-campaign__hero h1 em{color:#93c5fd;font-style:normal}
-.gf-bf-campaign__lead{max-width:650px;margin-bottom:29px;color:#cbd5e1;font-size:17px;line-height:1.75}
-.gf-bf-campaign__actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
-.gf-bf-campaign .gf-bf-campaign__button{display:inline-flex;min-height:51px;align-items:center;justify-content:center;gap:13px;padding:13px 19px;border:1px solid transparent;border-radius:9px;font:800 13px/1.35 Manrope,sans-serif;text-align:center;transition:transform .2s,background .2s,box-shadow .2s}
-.gf-bf-campaign .gf-bf-campaign__button:hover{transform:translateY(-2px)}
-.gf-bf-campaign .gf-bf-campaign__button--primary{color:#fff;background:var(--blue);border-color:#60a5fa;box-shadow:0 10px 28px #2563eb47}
-.gf-bf-campaign .gf-bf-campaign__button--primary:hover{background:#1d4ed8;box-shadow:0 14px 34px #2563eb59}
-.gf-bf-campaign .gf-bf-campaign__button--light{color:#0f172a;background:#fff;border-color:#fff}
-.gf-bf-campaign .gf-bf-campaign__button--light:hover{background:#eff6ff}
-.gf-bf-campaign__text-link{color:#e2e8f0;font-size:13px;font-weight:700}
-.gf-bf-campaign__text-link span{color:#93c5fd;margin-left:5px}
-.gf-bf-campaign__microcopy{margin:17px 0 0;color:#94a3b8;font-size:11px}
-.gf-bf-campaign__hero-panel{padding:27px;border:1px solid #94a3b847;border-radius:17px;background:linear-gradient(145deg,#0f172aeb,#050d20ed);box-shadow:0 30px 80px #0004;backdrop-filter:blur(14px)}
-.gf-bf-campaign__panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:19px;border-bottom:1px solid #94a3b82e}
-.gf-bf-campaign__panel-label{color:#93c5fd;font:800 9px/1.4 Manrope,sans-serif;letter-spacing:.13em}
-.gf-bf-campaign__panel-indicator{display:inline-flex;align-items:center;gap:7px;color:#cbd5e1;font-size:10px}
-.gf-bf-campaign__panel-indicator i{width:6px;height:6px;border-radius:50%;background:#4ade80}
-.gf-bf-campaign__hero-panel h2{margin:21px 0 9px;color:#f8fafc;font-size:24px;line-height:1.25;letter-spacing:-.035em}
-.gf-bf-campaign__priority-list{margin-top:18px}
-.gf-bf-campaign__priority{display:grid;grid-template-columns:35px 1fr;gap:13px;padding:15px 0;border-bottom:1px solid #94a3b821}
-.gf-bf-campaign__priority-number{display:grid;width:31px;height:31px;place-items:center;border:1px solid #60a5fa4d;border-radius:8px;color:#93c5fd;font:800 10px Manrope,sans-serif}
-.gf-bf-campaign__priority strong{color:#f1f5f9;font-size:13px}
-.gf-bf-campaign__priority p{margin:4px 0 0;color:#a8b4c7;font-size:11px;line-height:1.6}
-.gf-bf-campaign__panel-footer{display:flex;justify-content:space-between;gap:7px;padding-top:18px;color:#93c5fd;font:700 9px Manrope,sans-serif}
-.gf-bf-campaign__section{padding:88px 0;background:#fff}
-.gf-bf-campaign__section-heading{max-width:720px;margin:0 auto 43px;text-align:center}
-.gf-bf-campaign__section-heading .gf-bf-campaign__eyebrow{justify-content:center}
-.gf-bf-campaign__section-heading h2,.gf-bf-campaign__faq-grid h2{margin:0 0 16px;color:#0f172a;font-size:clamp(30px,3.5vw,43px);line-height:1.15;letter-spacing:-.045em}
-.gf-bf-campaign__section-heading>p:last-child{margin-bottom:0;color:#64748b;font-size:15px;line-height:1.8}
-.gf-bf-campaign__problem-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.gf-bf-campaign__problem-card{padding:26px;border:1px solid #e2e8f0;border-radius:13px;background:linear-gradient(150deg,#fff,#f8fafc)}
-.gf-bf-campaign__problem-card>span{display:inline-grid;width:34px;height:34px;place-items:center;margin-bottom:20px;border-radius:9px;color:#2563eb;background:#eff6ff;font:800 11px Manrope,sans-serif}
-.gf-bf-campaign__problem-card h3{margin:0 0 10px;font-size:18px;letter-spacing:-.025em}
-.gf-bf-campaign__problem-card p{margin:0;color:#64748b;font-size:13px;line-height:1.8}
-.gf-bf-campaign__approach{color:#fff;background:linear-gradient(120deg,#071329,#101d4b 65%,#2d176f)}
-.gf-bf-campaign__approach-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);align-items:center;gap:80px}
-.gf-bf-campaign__approach h2{max-width:520px;margin:0 0 20px;color:#fff;font-size:clamp(32px,3.7vw,45px);line-height:1.13;letter-spacing:-.045em}
-.gf-bf-campaign__approach-intro{margin-bottom:27px;color:#cbd5e1;font-size:15px;line-height:1.85}
-.gf-bf-campaign__approach-steps>div{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:19px 0;border-bottom:1px solid #94a3b833}
-.gf-bf-campaign__approach-steps>div:last-child{border:0}
-.gf-bf-campaign__approach-steps>div>span{display:grid;width:38px;height:38px;place-items:center;border:1px solid #93c5fd59;border-radius:10px;color:#93c5fd;font:800 11px Manrope,sans-serif}
-.gf-bf-campaign__approach-steps h3{margin:0 0 5px;color:#fff;font-size:17px}
-.gf-bf-campaign__approach-steps p{margin:0;color:#bdc9db;font-size:13px;line-height:1.8}
-.gf-bf-campaign__packages,.gf-bf-campaign__faq{background:#f5f8fc}
-.gf-bf-campaign__package-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;gap:15px}
-.gf-bf-campaign__package{position:relative;display:flex;flex-direction:column;padding:25px 21px;border:1px solid #dfe7f2;border-radius:14px;background:#fff}
-.gf-bf-campaign__package--featured{border:2px solid var(--blue);box-shadow:0 15px 38px #2563eb1a}
-.gf-bf-campaign__recommended{margin:-26px -22px 20px;padding:9px 12px;border-radius:11px 11px 0 0;color:#fff;background:var(--blue);text-align:center;font:800 9px Manrope,sans-serif;letter-spacing:.08em}
-.gf-bf-campaign__package-label{min-height:28px;margin-bottom:10px;color:#2563eb;font:800 9px/1.5 Manrope,sans-serif;letter-spacing:.09em}
-.gf-bf-campaign__package h3{min-height:52px;margin:0 0 12px;font-size:19px;line-height:1.3;letter-spacing:-.03em}
-.gf-bf-campaign__price{margin:0 0 14px;color:#0f172a;font:800 clamp(25px,2.3vw,31px)/1.15 Manrope,sans-serif;letter-spacing:-.05em}
-.gf-bf-campaign__price span{color:#64748b;font:500 11px Inter,sans-serif;letter-spacing:0;white-space:nowrap}
-.gf-bf-campaign__package-summary{min-height:69px;margin-bottom:18px;color:#64748b;font-size:12px;line-height:1.75}
-.gf-bf-campaign__package ul{display:grid;gap:12px;margin:0 0 25px;padding:0;list-style:none}
-.gf-bf-campaign__package li{position:relative;padding-left:19px;color:#334155;font-size:11px;line-height:1.65}
-.gf-bf-campaign__package li:before{content:"✓";position:absolute;left:0;color:#2563eb;font-weight:800}
-.gf-bf-campaign__package-link{display:inline-flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid #e2e8f0;color:#1d4ed8;font-size:11px;font-weight:800}
-.gf-bf-campaign__package-button{width:100%;margin-top:auto;padding-inline:12px!important;font-size:11px!important}
-.gf-bf-campaign__pricing-note{max-width:850px;margin:22px auto 0;color:#64748b;font-size:11px;line-height:1.8;text-align:center}
-.gf-bf-campaign__process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px}
-.gf-bf-campaign__process-grid article{padding-top:20px;border-top:2px solid #2563eb}
-.gf-bf-campaign__process-grid article>span{color:#2563eb;font:800 11px Manrope,sans-serif}
-.gf-bf-campaign__process-grid h3{margin:13px 0 8px;font-size:18px}
-.gf-bf-campaign__process-grid p{margin:0;color:#64748b;font-size:13px;line-height:1.8}
-.gf-bf-campaign__faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px;align-items:start}
-.gf-bf-campaign__faq-grid h2{max-width:350px}
-.gf-bf-campaign__faq-list details{padding:19px 0;border-bottom:1px solid #dbe4ef}
-.gf-bf-campaign__faq-list details:first-child{border-top:1px solid #dbe4ef}
-.gf-bf-campaign__faq-list summary{position:relative;padding-right:30px;color:#0f172a;cursor:pointer;list-style:none;font:700 14px/1.6 Manrope,sans-serif}
-.gf-bf-campaign__faq-list summary::-webkit-details-marker{display:none}
-.gf-bf-campaign__faq-list summary:after{content:"+";position:absolute;right:2px;top:-3px;color:#2563eb;font:600 22px Manrope,sans-serif}
-.gf-bf-campaign__faq-list details[open] summary:after{content:"−"}
-.gf-bf-campaign__faq-list details p{margin:12px 0 0;color:#64748b;font-size:13px;line-height:1.85}
-.gf-bf-campaign__final-cta{padding:75px 0;color:#fff;text-align:center;background:radial-gradient(500px 330px at 50% 0%,#5b27ff59,transparent 75%),linear-gradient(115deg,#020617,#101d4b 65%,#30106d)}
-.gf-bf-campaign__final-cta-inner{max-width:780px}
-.gf-bf-campaign__final-cta .gf-bf-campaign__eyebrow{justify-content:center}
-.gf-bf-campaign__final-cta h2{margin:0 0 14px;color:#fff;font-size:clamp(32px,4vw,47px);line-height:1.12;letter-spacing:-.045em}
-.gf-bf-campaign__final-cta p:not(.gf-bf-campaign__eyebrow){margin:0 auto 25px;color:#cbd5e1;font-size:15px;line-height:1.8}
-.gf-bf-campaign__footer{background:#020617;color:#94a3b8}
-.gf-bf-campaign__footer-inner{display:flex;min-height:90px;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding-block:20px}
-.gf-bf-campaign__footer .gf-bf-campaign__wordmark{color:#f8fafc;font-size:22px}
-.gf-bf-campaign__footer p{margin:0;font-size:11px}
-@media(max-width:1080px){.gf-bf-campaign__hero-grid{gap:35px;grid-template-columns:minmax(0,1fr) minmax(300px,.85fr)}.gf-bf-campaign__package-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gf-bf-campaign__package h3,.gf-bf-campaign__package-summary{min-height:0}.gf-bf-campaign__approach-grid,.gf-bf-campaign__faq-grid{gap:45px}}
-@media(max-width:760px){.gf-bf-campaign__wrap{width:min(100% - 36px,600px)}.gf-bf-campaign__announcement .gf-bf-campaign__wrap{justify-content:center;text-align:center;padding-block:9px}.gf-bf-campaign__announcement-note{display:none}.gf-bf-campaign__header-inner{min-height:66px}.gf-bf-campaign .gf-bf-campaign__wordmark{font-size:24px}.gf-bf-campaign__header-link{max-width:150px;font-size:11px;text-align:right}.gf-bf-campaign__hero{padding:64px 0 58px}.gf-bf-campaign__hero-grid,.gf-bf-campaign__approach-grid,.gf-bf-campaign__faq-grid{grid-template-columns:1fr;gap:36px}.gf-bf-campaign__hero h1{font-size:clamp(39px,10vw,55px)}.gf-bf-campaign__lead{font-size:15px}.gf-bf-campaign__hero-panel{padding:21px}.gf-bf-campaign__section{padding:64px 0}.gf-bf-campaign__section-heading{margin-bottom:30px}.gf-bf-campaign__problem-grid,.gf-bf-campaign__process-grid{grid-template-columns:1fr;gap:14px}.gf-bf-campaign__problem-card{padding:22px}.gf-bf-campaign__approach h2{font-size:35px}.gf-bf-campaign__package-grid{grid-template-columns:1fr;gap:16px}.gf-bf-campaign__package{padding:24px}.gf-bf-campaign__package--featured{margin-top:8px}.gf-bf-campaign__recommended{margin:-25px -25px 20px}.gf-bf-campaign__package h3,.gf-bf-campaign__package-summary{min-height:0}.gf-bf-campaign__package ul{gap:10px}.gf-bf-campaign__faq-grid h2{margin-bottom:0}.gf-bf-campaign__final-cta{padding:60px 0}.gf-bf-campaign__footer-inner{flex-direction:column;align-items:flex-start;gap:9px}}
-@media(max-width:420px){.gf-bf-campaign__wrap{width:calc(100% - 30px)}.gf-bf-campaign__actions{align-items:stretch;flex-direction:column}.gf-bf-campaign .gf-bf-campaign__button{width:100%}.gf-bf-campaign__panel-top{align-items:flex-start;flex-direction:column}.gf-bf-campaign__panel-footer{font-size:8px}}
-@media(prefers-reduced-motion:reduce){.gf-bf-campaign *,.gf-bf-campaign *:before,.gf-bf-campaign *:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+/*
+ * GROWTHFORGE — BLACK FRIDAY 2026 CAMPAIGN
+ * Dedicated stylesheet for black-friday-growth-strategy.html
+ * Static website: does not import or depend on the homepage styles.css.
+ * Campaign component rules are isolated under .gf-bf-campaign.
+ */
+
+/* =========================================================
+   BASE RESET & CAMPAIGN LAYOUT
+   ========================================================= */
+body.gf-bf-page {
+  margin: 0;
+  min-width: 320px;
+  background: #fff;
+  color: #0f172a;
+  font-family: Inter,Arial,sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.gf-bf-page #top {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.gf-bf-campaign {
+  --blue: #2563eb;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font: 16px/1.65 Inter,sans-serif;
+  overflow: clip;
+}
+
+.gf-bf-campaign *,
+.gf-bf-campaign *:before,
+.gf-bf-campaign *:after {
+  box-sizing: border-box;
+}
+
+.gf-bf-campaign h1,
+.gf-bf-campaign h2,
+.gf-bf-campaign h3,
+.gf-bf-campaign strong {
+  font-family: Manrope,Inter,sans-serif;
+}
+
+.gf-bf-campaign h1,
+.gf-bf-campaign h2,
+.gf-bf-campaign h3,
+.gf-bf-campaign p {
+  margin-top: 0;
+}
+
+.gf-bf-campaign a {
+  text-decoration: none;
+}
+
+.gf-bf-campaign a:focus-visible,
+.gf-bf-campaign summary:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 4px;
+}
+
+.gf-bf-campaign__wrap {
+  width: min(1160px,calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* =========================================================
+   ANNOUNCEMENT & HEADER
+   ========================================================= */
+.gf-bf-campaign__announcement {
+  background: #050b1d;
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.gf-bf-campaign__announcement .gf-bf-campaign__wrap {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.gf-bf-campaign__announcement-note {
+  color: #94a3b8;
+}
+
+.gf-bf-campaign__header {
 
