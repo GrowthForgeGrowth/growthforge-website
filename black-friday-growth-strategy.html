@@ -1,34 +1,74 @@
 <!doctype html>
 <html lang="en">
+  
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A focused growth strategy conversation for EU-based B2B SaaS companies planning or accelerating expansion into the US market.">
-  <meta name="robots" content="index,follow">
+
   <title>Black Friday Growth Strategy | GrowthForge</title>
-  <link rel="canonical" href="https://www.growthforge-ai.com/black-friday-growth-strategy">
+
+  <meta
+    name="description"
+    content="A focused growth strategy conversation for EU-based B2B SaaS companies planning or accelerating expansion into the US market."
+  >
+  <meta name="robots" content="index,follow">
+
+  <!-- This funnel's own canonical URL -->
+  <link
+    rel="canonical"
+    href="https://www.growthforge-ai.com/black-friday-growth-strategy"
+  >
+
+  <!-- Open Graph metadata for sharing this funnel -->
   <meta property="og:title" content="Black Friday Growth Strategy | GrowthForge">
-  <meta property="og:description" content="Build a measurable growth plan for your US expansion with GrowthForge.">
+  <meta
+    property="og:description"
+    content="Build a measurable growth plan for your US expansion with GrowthForge."
+  >
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.growthforge-ai.com/black-friday-growth-strategy">
+  <meta
+    property="og:url"
+    content="https://www.growthforge-ai.com/black-friday-growth-strategy"
+  >
+  <meta property="og:site_name" content="GrowthForge">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Dedicated stylesheet for this funnel only -->
   <link rel="stylesheet" href="/black-friday-growth-strategy.css">
+
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3XL6NG1M3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-V3XL6NG1M3');
-    document.addEventListener('click', function(e) {
-      const a = e.target.closest('a[data-campaign-cta]');
-      if (a && typeof gtag === 'function') gtag('event','campaign_cta_click',{
-        campaign_name:'black_friday_2026', cta_location:a.dataset.campaignCta, link_url:a.href
-      });
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-V3XL6NG1M3');
+
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('a[data-campaign-cta]');
+
+      if (link) {
+        gtag('event', 'campaign_cta_click', {
+          campaign_name: 'black_friday_2026',
+          cta_location: link.dataset.campaignCta,
+          link_url: link.href
+        });
+      }
     });
   </script>
 </head>
+  
 <body>
 <main class="gf-bf-campaign" id="top">
   <div class="gf-bf-campaign__announcement"><div class="gf-bf-campaign__wrap"><span>GrowthForge · Black Friday 2026</span><span class="gf-bf-campaign__announcement-note">For EU-based B2B SaaS teams planning US expansion</span></div></div>
