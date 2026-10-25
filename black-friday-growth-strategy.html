@@ -14,13 +14,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Black Friday 2026 | GrowthForge Growth Partnerships</title>
-  <meta name="description" content="Choose your GrowthForge growth partnership for 2027. Start with an Executive Growth Audit included in your six-month retainer and build a measurable growth roadmap for US expansion.">
+  <title>Black Friday 2026 | GrowthForge</title>
+  <meta name="description" content="Choose your GrowthForge growth partnership for 2027. Start with an Executive Growth Audit and one-hour strategic session included in your six-month retainer. Build your roadmap for US expansion.">
   <meta name="robots" content="index,follow">
-
   <link rel="canonical" href="https://www.growthforge-ai.com/black-friday-growth-strategy">
+
   <meta property="og:title" content="Black Friday 2026 | GrowthForge">
-  <meta property="og:description" content="Choose your growth partnership and start 2027 with a strategic foundation for US expansion.">
+  <meta property="og:description" content="Choose your growth partnership and build your 2027 US expansion roadmap with GrowthForge.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.growthforge-ai.com/black-friday-growth-strategy">
   <meta property="og:site_name" content="GrowthForge">
@@ -28,16 +28,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/styles.css">
 
   <style>
     :root {
-      --gf-navy: #102b50;
+      --gf-navy: #071a35;
+      --gf-navy-light: #102b50;
       --gf-blue: #246bdb;
-      --gf-ink: #182538;
+      --gf-cyan: #62c7ff;
+      --gf-ink: #17263b;
       --gf-muted: #637083;
       --gf-border: #dfe6ef;
       --gf-soft: #f5f8fc;
+      --gf-white: #ffffff;
     }
 
     html {
@@ -45,7 +49,7 @@
       scroll-padding-top: 90px;
     }
 
-    .gf-bf-page {
+    body.gf-bf-page {
       margin: 0;
       color: var(--gf-ink);
       background: #fff;
@@ -54,9 +58,8 @@
       line-height: 1.65;
     }
 
-    .gf-bf-page *,
-    .gf-bf-page *::before,
-    .gf-bf-page *::after {
+    .gf-bf-campaign,
+    .gf-bf-campaign * {
       box-sizing: border-box;
     }
 
@@ -70,35 +73,12 @@
     .gf-bf-campaign h3 {
       font-family: "Manrope", sans-serif;
       line-height: 1.2;
-      letter-spacing: -.025em;
+      letter-spacing: -.035em;
     }
 
-    .gf-bf-campaign h1 {
-      margin: 0 0 24px;
-      color: #142238;
-      font-size: clamp(3.5rem, 6.5vw, 5.6rem);
-      font-weight: 800;
-      line-height: 1.03;
-      letter-spacing: -.055em;
-    }
-
-    .gf-bf-campaign h1 em {
-      color: var(--gf-blue);
-      font-style: normal;
-    }
-
-    .gf-bf-campaign h2 {
-      margin: 0 0 1rem;
-      font-size: clamp(1.8rem, 3vw, 2.65rem);
-      font-weight: 800;
-    }
-
-    .gf-bf-campaign h3 {
-      margin: 0 0 .65rem;
-      font-size: 1.15rem;
-      font-weight: 800;
-    }
-
+    .gf-bf-campaign h1,
+    .gf-bf-campaign h2,
+    .gf-bf-campaign h3,
     .gf-bf-campaign p {
       margin-top: 0;
     }
@@ -108,11 +88,14 @@
       margin-inline: auto;
     }
 
-    /* Announcement */
+    /* Announcement bar */
 
     .gf-bf-campaign__announcement {
+      position: relative;
+      z-index: 5;
       color: #fff;
-      background: var(--gf-navy);
+      background: #06152b;
+      border-bottom: 1px solid rgba(255,255,255,.1);
       font-size: .82rem;
     }
 
@@ -125,16 +108,17 @@
     }
 
     .gf-bf-campaign__announcement-note {
-      color: #d6e4ff;
+      color: #c5d7f4;
     }
 
-    /* Navigation */
+    /* Header */
 
     .gf-bf-campaign__header {
       position: relative;
       z-index: 5;
-      background: #fff;
-      border-bottom: 1px solid var(--gf-border);
+      color: #fff;
+      background: #091d39;
+      border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
     .gf-bf-campaign__header-inner {
@@ -147,7 +131,7 @@
 
     .gf-bf-campaign__wordmark {
       display: inline-flex;
-      color: var(--gf-navy);
+      color: #fff;
       font-family: "Manrope", sans-serif;
       font-size: 1.65rem;
       font-weight: 600;
@@ -157,15 +141,19 @@
     }
 
     .gf-bf-campaign__wordmark strong {
-      color: var(--gf-blue);
+      color: #68b9ff;
       font-weight: 800;
     }
 
     .gf-bf-campaign__header-link {
-      color: var(--gf-navy);
+      color: #fff;
       font-size: .9rem;
       font-weight: 700;
       text-decoration: none;
+    }
+
+    .gf-bf-campaign__header-link:hover {
+      color: var(--gf-cyan);
     }
 
     /* Buttons */
@@ -194,13 +182,13 @@
 
     .gf-bf-campaign__button--primary {
       color: #fff;
-      background: var(--gf-blue);
-      box-shadow: 0 7px 18px rgba(36,107,219,.16);
+      background: linear-gradient(110deg, #246bdb, #1689f5);
+      box-shadow: 0 8px 24px rgba(36,107,219,.28);
     }
 
     .gf-bf-campaign__button--primary:hover {
       color: #fff;
-      background: #1856bd;
+      background: linear-gradient(110deg, #1856bd, #0873d9);
     }
 
     .gf-bf-campaign__button--light {
@@ -211,29 +199,63 @@
 
     .gf-bf-campaign__button--light:hover {
       color: var(--gf-navy);
-      background: #edf4ff;
+      background: #eaf3ff;
     }
 
     .gf-bf-campaign__text-link {
-      color: var(--gf-navy);
+      color: #8bcfff;
       font-size: .92rem;
-      font-weight: 750;
-      text-decoration: none;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
-    .gf-bf-campaign__text-link:hover,
-    .gf-bf-campaign__header-link:hover,
-    .gf-bf-campaign__package-link:hover {
-      color: var(--gf-blue);
+    .gf-bf-campaign__text-link:hover {
+      color: #fff;
     }
 
-    /* Hero: single column, no redundant right-hand panel */
+    /* ========================================
+       DARK CINEMATIC HERO
+       ======================================== */
 
     .gf-bf-campaign__hero {
-      padding: 76px 0 80px;
+      position: relative;
+      isolation: isolate;
+      padding: 76px 0 68px;
+      overflow: hidden;
+      color: #fff;
       background:
-        radial-gradient(ellipse at 85% 10%, rgba(36,107,219,.12), transparent 38%),
-        linear-gradient(180deg, #f4f8fe 0%, #fff 100%);
+        radial-gradient(ellipse at 50% 0%, rgba(36,107,219,.25), transparent 44%),
+        radial-gradient(ellipse at 100% 80%, rgba(17,105,224,.14), transparent 35%),
+        linear-gradient(135deg, #07172e 0%, #0b2142 55%, #06152b 100%);
+    }
+
+    .gf-bf-campaign__hero::before {
+      position: absolute;
+      z-index: -1;
+      right: -12%;
+      bottom: -52%;
+      width: 65%;
+      height: 95%;
+      border: 1px solid rgba(83,158,255,.13);
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(36,107,219,.16), transparent 68%);
+      content: "";
+      transform: rotate(-18deg);
+    }
+
+    .gf-bf-campaign__hero::after {
+      position: absolute;
+      z-index: -1;
+      left: -22%;
+      bottom: -75%;
+      width: 70%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(35deg, rgba(36,107,219,.2), transparent 65%);
+      content: "";
+      transform: rotate(12deg);
+      pointer-events: none;
     }
 
     .gf-bf-campaign__hero-grid {
@@ -245,16 +267,26 @@
     .gf-bf-campaign__hero-copy {
       width: 100%;
       max-width: 1000px;
-      margin: 0 auto;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .gf-bf-campaign__hero-panel {
+      display: none !important;
     }
 
     .gf-bf-campaign__eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 9px;
       margin-bottom: 24px;
-      color: #175cd3;
-      font-size: 1rem;
+      padding: 8px 14px;
+      border: 1px solid rgba(151,197,255,.2);
+      border-radius: 999px;
+      color: #c3e3ff;
+      background: rgba(255,255,255,.055);
+      font-size: .78rem;
       font-weight: 800;
       letter-spacing: .1em;
       line-height: 1.5;
@@ -262,96 +294,112 @@
     }
 
     .gf-bf-campaign__eyebrow-dot {
-      width: 10px;
-      height: 10px;
-      flex: 0 0 10px;
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
       border-radius: 50%;
-      background: var(--gf-blue);
+      background: #60c4ff;
+      box-shadow: 0 0 12px rgba(96,196,255,.8);
+    }
+
+    .gf-bf-campaign__hero h1 {
+      max-width: 940px;
+      margin: 0 auto 20px;
+      color: #fff;
+      font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -.055em;
+    }
+
+    .gf-bf-campaign__hero h1 em {
+      color: #65caff;
+      background: linear-gradient(100deg, #8be2ff, #318aff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-style: normal;
     }
 
     .gf-bf-campaign__lead {
-      max-width: 850px;
-      margin-bottom: 30px;
-      color: #4c5c70;
-      font-size: 1.15rem;
+      max-width: 760px;
+      margin: 0 auto 26px;
+      color: #c5d5eb;
+      font-size: 1.08rem;
       line-height: 1.75;
     }
 
-    .gf-bf-campaign__hero-panel {
-      display: none !important;
-    }
+    /* Hero benefit row */
 
-    .gf-bf-campaign__actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px 24px;
-      margin-top: 28px;
-    }
-
-    .gf-bf-campaign__microcopy {
-      margin: 14px 0 0;
-      color: var(--gf-muted);
-      font-size: .88rem;
-    }
-
-    /* Black Friday offer and countdown */
-
-    .gf-bf-campaign__offer {
+    .gf-bf-campaign__hero-benefits {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 30px auto 22px;
+      text-align: left;
+    }
+
+    .gf-bf-campaign__hero-benefit {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
       align-items: center;
-      gap: 32px;
-      width: 100%;
-      margin: 32px 0 28px;
-      padding: 32px;
-      border: 1px solid #b8d0f4;
-      border-radius: 18px;
-      background: rgba(255,255,255,.96);
-      box-shadow: 0 16px 42px rgba(16,43,80,.08);
+      gap: 12px;
     }
 
-    .gf-bf-campaign__offer-kicker {
-      margin: 0 0 12px;
-      color: #175cd3;
-      font-size: .9rem;
+    .gf-bf-campaign__hero-benefit-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(126,191,255,.22);
+      border-radius: 50%;
+      color: #9cdbff;
+      background: linear-gradient(145deg, rgba(36,107,219,.48), rgba(36,107,219,.14));
+      font-size: 1.05rem;
       font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
     }
 
-    .gf-bf-campaign__offer h2 {
-      margin: 0 0 12px;
-      color: var(--gf-navy);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -.035em;
+    .gf-bf-campaign__hero-benefit strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #fff;
+      font-size: .87rem;
+      font-weight: 750;
     }
 
-    .gf-bf-campaign__offer p:last-child {
-      margin-bottom: 0;
-      color: #46576c;
-      font-size: 1rem;
-      line-height: 1.7;
+    .gf-bf-campaign__hero-benefit p {
+      margin: 0;
+      color: #b8cbe5;
+      font-size: .78rem;
+      line-height: 1.5;
     }
+
+    /* Countdown */
 
     .gf-bf-campaign__countdown {
+      display: grid;
+      grid-template-columns: minmax(150px, .9fr) minmax(0, 1.4fr) minmax(170px, .9fr);
+      align-items: center;
+      gap: 20px;
       width: 100%;
-      padding: 24px 16px;
-      border-radius: 14px;
-      background: var(--gf-navy);
-      color: #fff;
-      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 13px;
+      color: var(--gf-navy);
+      background: #fff;
+      box-shadow: 0 15px 45px rgba(0,0,0,.17);
     }
 
     .gf-bf-campaign__countdown-label {
-      display: block;
-      margin-bottom: 18px;
-      color: #d6e4ff;
-      font-size: .82rem;
+      color: #31557f;
+      font-size: .73rem;
       font-weight: 800;
       letter-spacing: .06em;
+      line-height: 1.45;
+      text-align: left;
       text-transform: uppercase;
     }
 
@@ -359,31 +407,53 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 8px;
+      padding: 0 18px;
+      border-right: 1px solid #dce5f1;
+      border-left: 1px solid #dce5f1;
+      text-align: center;
     }
 
     .gf-bf-campaign__countdown-unit strong {
       display: block;
-      color: #fff;
+      color: var(--gf-navy);
       font-family: "Manrope", sans-serif;
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
       font-weight: 800;
       font-variant-numeric: tabular-nums;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .gf-bf-campaign__countdown-unit span {
       display: block;
-      margin-top: 6px;
-      color: #d6e4ff;
-      font-size: .65rem;
+      margin-top: 5px;
+      color: #657994;
+      font-size: .6rem;
+      font-weight: 700;
       text-transform: uppercase;
     }
 
     .gf-bf-campaign__countdown-note {
-      display: block;
-      margin-top: 16px;
-      color: #d6e4ff;
-      font-size: .75rem;
+      color: #526985;
+      font-size: .78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* Hero CTAs */
+
+    .gf-bf-campaign__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px 24px;
+      margin-top: 26px;
+    }
+
+    .gf-bf-campaign__microcopy {
+      margin: 16px 0 0;
+      color: #b6c8df;
+      font-size: .82rem;
     }
 
     /* Shared sections */
@@ -405,6 +475,8 @@
 
     .gf-bf-campaign__eyebrow--dark {
       color: var(--gf-blue);
+      background: #edf4ff;
+      border-color: #d9e8ff;
     }
 
     /* Challenges */
@@ -438,8 +510,8 @@
       place-items: center;
       margin-bottom: 1rem;
       border-radius: 50%;
-      background: #eaf2ff;
       color: var(--gf-blue);
+      background: #eaf2ff;
       font-weight: 800;
     }
 
@@ -495,8 +567,8 @@
       height: 42px;
       place-items: center;
       border-radius: 50%;
-      background: var(--gf-blue);
       color: #fff;
+      background: var(--gf-blue);
       font-weight: 800;
     }
 
@@ -509,7 +581,7 @@
       color: rgba(255,255,255,.75);
     }
 
-    /* Retainer plans */
+    /* Retainer packages */
 
     .gf-bf-campaign__packages {
       background: #f7f9fc;
@@ -582,8 +654,8 @@
       margin: .5rem 0 1rem;
       padding: .85rem;
       border-radius: 9px;
-      background: #eaf2ff;
       color: var(--gf-navy);
+      background: #eaf2ff;
       font-size: .86rem;
       line-height: 1.55;
     }
@@ -594,8 +666,8 @@
       margin-bottom: .85rem;
       padding: .35rem .6rem;
       border-radius: 5px;
-      background: #eaf2ff;
       color: var(--gf-blue);
+      background: #eaf2ff;
       font-size: .68rem;
       font-weight: 800;
       letter-spacing: .06em;
@@ -626,7 +698,6 @@
     }
 
     .gf-bf-campaign__process .gf-bf-campaign__actions {
-      justify-content: center;
       margin-top: 2rem;
     }
 
@@ -663,9 +734,14 @@
     /* Final CTA */
 
     .gf-bf-campaign__final-cta {
+      position: relative;
+      isolation: isolate;
       padding: 76px 0;
+      overflow: hidden;
       color: #fff;
-      background: var(--gf-navy);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(36,107,219,.24), transparent 50%),
+        linear-gradient(135deg, #07172e, #102b50);
       text-align: center;
     }
 
@@ -686,11 +762,17 @@
     }
 
     .gf-bf-campaign__final-cta .gf-bf-campaign__eyebrow {
-      color: #a9cbff;
+      color: #c3e3ff;
+      background: rgba(255,255,255,.06);
+      border-color: rgba(151,197,255,.2);
     }
 
     .gf-bf-campaign__final-cta .gf-bf-campaign__button {
       margin-top: 1rem;
+    }
+
+    .gf-bf-campaign__final-cta .gf-bf-campaign__text-link {
+      color: #b5ddff;
     }
 
     /* Footer */
@@ -698,7 +780,7 @@
     .gf-bf-campaign__footer {
       padding: 1.5rem 0;
       color: #d6e0ed;
-      background: #091a2e;
+      background: #06152b;
     }
 
     .gf-bf-campaign__footer-inner {
@@ -721,14 +803,21 @@
 
     /* Tablet */
 
-    @media (max-width: 1050px) {
-      .gf-bf-campaign__offer {
-        grid-template-columns: minmax(0, 1fr) 260px;
-        gap: 20px;
-      }
-
+    @media (max-width: 1000px) {
       .gf-bf-campaign__problem-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gf-bf-campaign__countdown {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+      }
+
+      .gf-bf-campaign__countdown-note {
+        grid-column: 1 / -1;
+      }
+
+      .gf-bf-campaign__countdown-units {
+        border-right: 0;
       }
     }
 
@@ -763,7 +852,7 @@
       }
 
       .gf-bf-campaign__hero {
-        padding: 48px 0 52px;
+        padding: 52px 0 48px;
       }
 
       .gf-bf-campaign__hero-grid {
@@ -771,45 +860,68 @@
       }
 
       .gf-bf-campaign__eyebrow {
-        gap: 8px;
-        margin-bottom: 18px;
-        font-size: .76rem;
-        letter-spacing: .07em;
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 7px 10px;
+        font-size: .65rem;
+        letter-spacing: .06em;
       }
 
       .gf-bf-campaign__hero h1 {
-        font-size: clamp(2.65rem, 10.5vw, 4rem);
-        line-height: 1.06;
+        font-size: clamp(2.4rem, 10.5vw, 3.8rem);
+        line-height: 1.08;
       }
 
       .gf-bf-campaign__lead {
-        font-size: 1rem;
+        font-size: .98rem;
         line-height: 1.7;
       }
 
-      .gf-bf-campaign__offer {
+      .gf-bf-campaign__hero-benefits {
         grid-template-columns: minmax(0, 1fr);
-        gap: 24px;
-        margin-top: 24px;
-        padding: 22px;
+        gap: 15px;
+        max-width: 380px;
+        margin: 28px auto 22px;
       }
 
-      .gf-bf-campaign__offer h2 {
-        font-size: 1.7rem;
+      .gf-bf-campaign__hero-benefit {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .gf-bf-campaign__hero-benefit-icon {
+        width: 38px;
+        height: 38px;
       }
 
       .gf-bf-campaign__countdown {
-        padding: 20px 12px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        padding: 18px 12px;
+      }
+
+      .gf-bf-campaign__countdown-label {
+        text-align: center;
+      }
+
+      .gf-bf-campaign__countdown-units {
+        padding: 12px 0;
+        border-top: 1px solid #e1e9f4;
+        border-bottom: 1px solid #e1e9f4;
       }
 
       .gf-bf-campaign__countdown-unit strong {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
+      }
+
+      .gf-bf-campaign__countdown-note {
+        grid-column: auto;
       }
 
       .gf-bf-campaign__actions {
         align-items: stretch;
         flex-direction: column;
-        gap: .9rem;
+        gap: 14px;
       }
 
       .gf-bf-campaign__actions .gf-bf-campaign__button {
@@ -818,6 +930,10 @@
 
       .gf-bf-campaign__text-link {
         text-align: center;
+      }
+
+      .gf-bf-campaign__microcopy {
+        font-size: .77rem;
       }
 
       .gf-bf-campaign__section {
@@ -907,84 +1023,98 @@
       </div>
     </header>
 
-    <!-- HERO -->
+    <!-- DARK CINEMATIC HERO -->
     <section class="gf-bf-campaign__hero">
       <div class="gf-bf-campaign__wrap gf-bf-campaign__hero-grid">
         <div class="gf-bf-campaign__hero-copy">
 
           <p class="gf-bf-campaign__eyebrow">
             <span class="gf-bf-campaign__eyebrow-dot"></span>
-            Black Friday 2026 · Build Your 2027 Growth Plan
+            Black Friday 2026 · November 27
           </p>
 
           <h1>
-            Choose Your Growth Partnership.
-            <em>Start 2027 With a Roadmap.</em>
+            Turn 2027 Into Your
+            <em>US Growth Breakthrough.</em>
           </h1>
 
           <p class="gf-bf-campaign__lead">
-            Planning your next stage of US expansion? Choose the level of
-            GrowthForge support that fits your business. Your Executive Growth
-            Audit is included in your monthly retainer, giving your partnership
-            a strategic foundation from the start.
+            Choose a six-month GrowthForge retainer and get your Executive
+            Growth Audit and one-hour strategic session included at no
+            additional fee.
           </p>
 
-          <!-- BLACK FRIDAY OFFER + COUNTDOWN -->
-          <div class="gf-bf-campaign__offer">
-            <div>
-              <p class="gf-bf-campaign__offer-kicker">
-                Black Friday 2026 · Your Growth Partnership
-              </p>
+          <!-- THREE BENEFITS -->
+          <div class="gf-bf-campaign__hero-benefits">
 
-              <h2>
-                One growth partnership. A clear strategic starting point.
-              </h2>
-
-              <p>
-                Choose a six-month retainer and begin with an Executive Growth
-                Audit, including a one-hour strategic session, to clarify your
-                priorities for 2027.
-              </p>
-            </div>
-
-            <div class="gf-bf-campaign__countdown"
-                 role="timer"
-                 aria-label="Countdown until Black Friday">
-
-              <span class="gf-bf-campaign__countdown-label"
-                    id="gf-bf-countdown-label">
-                Black Friday starts in
-              </span>
-
-              <div class="gf-bf-campaign__countdown-units">
-                <div class="gf-bf-campaign__countdown-unit">
-                  <strong id="gf-bf-days">--</strong>
-                  <span>Days</span>
-                </div>
-
-                <div class="gf-bf-campaign__countdown-unit">
-                  <strong id="gf-bf-hours">--</strong>
-                  <span>Hours</span>
-                </div>
-
-                <div class="gf-bf-campaign__countdown-unit">
-                  <strong id="gf-bf-minutes">--</strong>
-                  <span>Minutes</span>
-                </div>
-
-                <div class="gf-bf-campaign__countdown-unit">
-                  <strong id="gf-bf-seconds">--</strong>
-                  <span>Seconds</span>
-                </div>
+            <div class="gf-bf-campaign__hero-benefit">
+              <span class="gf-bf-campaign__hero-benefit-icon" aria-hidden="true">↗</span>
+              <div>
+                <strong>Choose your plan</strong>
+                <p>Find the right level of growth support.</p>
               </div>
-
-              <span class="gf-bf-campaign__countdown-note">
-                Friday, November 27, 2026 · CET
-              </span>
             </div>
+
+            <div class="gf-bf-campaign__hero-benefit">
+              <span class="gf-bf-campaign__hero-benefit-icon" aria-hidden="true">▤</span>
+              <div>
+                <strong>Start with strategy</strong>
+                <p>Executive Growth Audit included.</p>
+              </div>
+            </div>
+
+            <div class="gf-bf-campaign__hero-benefit">
+              <span class="gf-bf-campaign__hero-benefit-icon" aria-hidden="true">➤</span>
+              <div>
+                <strong>Build with confidence</strong>
+                <p>A clear roadmap for 2027.</p>
+              </div>
+            </div>
+
           </div>
 
+          <!-- COUNTDOWN -->
+          <div class="gf-bf-campaign__countdown"
+               role="timer"
+               aria-label="Countdown until Black Friday">
+
+            <span class="gf-bf-campaign__countdown-label"
+                  id="gf-bf-countdown-label">
+              Black Friday starts in
+            </span>
+
+            <div class="gf-bf-campaign__countdown-units">
+
+              <div class="gf-bf-campaign__countdown-unit">
+                <strong id="gf-bf-days">--</strong>
+                <span>Days</span>
+              </div>
+
+              <div class="gf-bf-campaign__countdown-unit">
+                <strong id="gf-bf-hours">--</strong>
+                <span>Hours</span>
+              </div>
+
+              <div class="gf-bf-campaign__countdown-unit">
+                <strong id="gf-bf-minutes">--</strong>
+                <span>Minutes</span>
+              </div>
+
+              <div class="gf-bf-campaign__countdown-unit">
+                <strong id="gf-bf-seconds">--</strong>
+                <span>Seconds</span>
+              </div>
+
+            </div>
+
+            <span class="gf-bf-campaign__countdown-note">
+              Friday, November 27, 2026 · CET
+            </span>
+          </div>
+
+          <!-- HERO CTAS -->
           <div class="gf-bf-campaign__actions">
+
             <a class="gf-bf-campaign__button gf-bf-campaign__button--primary"
                data-campaign-cta="hero"
                href="#packages">
@@ -994,12 +1124,13 @@
             <a class="gf-bf-campaign__text-link"
                data-campaign-cta="hero-call"
                href="https://cal.com/charlie-chan-j6zugj/10min-growth-strategy-call?utm_source=website&amp;utm_medium=landing_page&amp;utm_campaign=black_friday_2026">
-              Need help choosing? Book a 10-minute call
+              Not sure which plan? Book a 10-minute call <span aria-hidden="true">→</span>
             </a>
+
           </div>
 
           <p class="gf-bf-campaign__microcopy">
-            All monthly retainers have a six-month minimum. Monthly prices remain as listed.
+            Three growth plans · Six-month minimum · Executive Growth Audit included
           </p>
 
         </div>
@@ -1012,18 +1143,20 @@
 
         <div class="gf-bf-campaign__section-heading">
           <p class="gf-bf-campaign__eyebrow gf-bf-campaign__eyebrow--dark">
-            THE COMMERCIAL CHALLENGE
+            The commercial challenge
           </p>
 
           <h2>US expansion is too important to run on assumptions.</h2>
 
           <p>
             Growth requires more than launching campaigns. You need a clear
-            roadmap, a connected acquisition system, and the right level of execution support.
+            roadmap, a connected acquisition system, and the right level of
+            execution support.
           </p>
         </div>
 
         <div class="gf-bf-campaign__problem-grid">
+
           <article class="gf-bf-campaign__problem-card">
             <span>01</span>
             <h3>An unclear growth roadmap</h3>
@@ -1059,6 +1192,7 @@
               priorities can leave important growth work without ownership.
             </p>
           </article>
+
         </div>
       </div>
     </section>
@@ -1069,7 +1203,7 @@
 
         <div>
           <p class="gf-bf-campaign__eyebrow">
-            THE GROWTHFORGE APPROACH
+            The GrowthForge approach
           </p>
 
           <h2>Start with strategy. Build toward measurable execution.</h2>
@@ -1077,7 +1211,8 @@
           <p class="gf-bf-campaign__approach-intro">
             Your Executive Growth Audit establishes the strategic starting
             point for your partnership. From there, the selected retainer
-            determines the level of guidance and execution support for your growth priorities.
+            determines the level of guidance and execution support for your
+            growth priorities.
           </p>
 
           <a class="gf-bf-campaign__button gf-bf-campaign__button--light"
@@ -1088,6 +1223,7 @@
         </div>
 
         <div class="gf-bf-campaign__approach-steps">
+
           <div>
             <span>01</span>
             <section>
@@ -1120,8 +1256,8 @@
               </p>
             </section>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
@@ -1131,7 +1267,7 @@
 
         <div class="gf-bf-campaign__section-heading">
           <p class="gf-bf-campaign__eyebrow gf-bf-campaign__eyebrow--dark">
-            BLACK FRIDAY 2026 · CHOOSE YOUR PLAN
+            Black Friday 2026 · Choose your plan
           </p>
 
           <h2>Choose the growth partnership your business needs.</h2>
@@ -1147,7 +1283,8 @@
 
           <!-- GROWTH PARTNER -->
           <article class="gf-bf-campaign__package">
-            <p class="gf-bf-campaign__package-label">STRATEGY AND DIRECTION</p>
+
+            <p class="gf-bf-campaign__package-label">Strategy and direction</p>
             <h3>Growth Partner</h3>
 
             <p class="gf-bf-campaign__price">
@@ -1179,12 +1316,14 @@
                href="https://cal.com/charlie-chan-j6zugj/10min-growth-strategy-call?utm_source=website&amp;utm_medium=landing_page&amp;utm_campaign=black_friday_2026&amp;plan=growth_partner">
               Choose Growth Partner <span aria-hidden="true">→</span>
             </a>
+
           </article>
 
           <!-- GROWTH ACCELERATOR -->
           <article class="gf-bf-campaign__package gf-bf-campaign__package--featured">
-            <span class="gf-bf-campaign__package-badge">STRATEGY + EXECUTION</span>
-            <p class="gf-bf-campaign__package-label">ACCELERATE THE SYSTEM</p>
+
+            <span class="gf-bf-campaign__package-badge">Strategy + execution</span>
+            <p class="gf-bf-campaign__package-label">Accelerate the system</p>
             <h3>Growth Accelerator</h3>
 
             <p class="gf-bf-campaign__price">
@@ -1216,11 +1355,13 @@
                href="https://cal.com/charlie-chan-j6zugj/10min-growth-strategy-call?utm_source=website&amp;utm_medium=landing_page&amp;utm_campaign=black_friday_2026&amp;plan=growth_accelerator">
               Choose Growth Accelerator <span aria-hidden="true">→</span>
             </a>
+
           </article>
 
           <!-- GROWTH ENGINE -->
           <article class="gf-bf-campaign__package">
-            <p class="gf-bf-campaign__package-label">EXTENDED GROWTH LEADERSHIP</p>
+
+            <p class="gf-bf-campaign__package-label">Extended growth leadership</p>
             <h3>Growth Engine</h3>
 
             <p class="gf-bf-campaign__price">
@@ -1253,6 +1394,7 @@
                href="https://cal.com/charlie-chan-j6zugj/10min-growth-strategy-call?utm_source=website&amp;utm_medium=landing_page&amp;utm_campaign=black_friday_2026&amp;plan=growth_engine">
               Choose Growth Engine <span aria-hidden="true">→</span>
             </a>
+
           </article>
 
         </div>
@@ -1260,7 +1402,7 @@
         <p class="gf-bf-campaign__pricing-note">
           All prices are monthly and all three plans require a six-month minimum.
           The Executive Growth Audit is included rather than charged separately.
-          No additional retainer discount is advertised on this page.
+          No additional retainer discount is advertised in this version.
         </p>
 
       </div>
@@ -1272,18 +1414,19 @@
 
         <div class="gf-bf-campaign__section-heading">
           <p class="gf-bf-campaign__eyebrow gf-bf-campaign__eyebrow--dark">
-            WHAT HAPPENS NEXT
+            What happens next
           </p>
 
           <h2>Choose a plan. Align on priorities. Start with clarity.</h2>
 
           <p>
             The 10-minute Growth Strategy Call is an initial fit conversation,
-            not the paid audit or its one-hour strategic session.
+            not the audit or its one-hour strategic session.
           </p>
         </div>
 
         <div class="gf-bf-campaign__process-grid">
+
           <article class="gf-bf-campaign__process-card">
             <span>01</span>
             <h3>Select your plan</h3>
@@ -1308,9 +1451,10 @@
               to establish your roadmap.
             </p>
           </article>
+
         </div>
 
-        <div class="gf-bf-campaign__actions" style="justify-content:center">
+        <div class="gf-bf-campaign__actions">
           <a class="gf-bf-campaign__button gf-bf-campaign__button--primary"
              data-campaign-cta="process"
              href="https://cal.com/charlie-chan-j6zugj/10min-growth-strategy-call?utm_source=website&amp;utm_medium=landing_page&amp;utm_campaign=black_friday_2026">
@@ -1327,8 +1471,9 @@
 
         <div>
           <p class="gf-bf-campaign__eyebrow gf-bf-campaign__eyebrow--dark">
-            COMMON QUESTIONS
+            Common questions
           </p>
+
           <h2>Before you choose.</h2>
         </div>
 
@@ -1404,7 +1549,7 @@
       <div class="gf-bf-campaign__wrap gf-bf-campaign__final-cta-inner">
 
         <p class="gf-bf-campaign__eyebrow">
-          BLACK FRIDAY 2026 · PLAN FOR THE YEAR AHEAD
+          Black Friday 2026 · Plan for the year ahead
         </p>
 
         <h2>Make your 2027 growth plan a priority.</h2>
@@ -1421,9 +1566,9 @@
         </a>
 
         <p style="margin-top:1rem">
-          <a href="https://cal.com/charlie-chan-j6zugj/10min-growth-strategy-call?utm_source=website&amp;utm_medium=landing_page&amp;utm_campaign=black_friday_2026"
-             style="color:#d6e4ff;text-decoration:underline"
-             data-campaign-cta="final-call">
+          <a class="gf-bf-campaign__text-link"
+             data-campaign-cta="final-call"
+             href="https://cal.com/charlie-chan-j6zugj/10min-growth-strategy-call?utm_source=website&amp;utm_medium=landing_page&amp;utm_campaign=black_friday_2026">
             Or book your 10-minute Growth Strategy Call
           </a>
         </p>
@@ -1451,7 +1596,7 @@
     (function () {
       /*
        * Countdown target:
-       * Midnight at the start of Black Friday, November 27, 2026, CET.
+       * November 27, 2026, at 00:00 CET.
        */
       const target = new Date("2026-11-27T00:00:00+01:00").getTime();
 
@@ -1491,7 +1636,11 @@
       updateCountdown();
       window.setInterval(updateCountdown, 1000);
 
-      /* Push campaign CTA clicks into the existing GTM dataLayer. */
+      /*
+       * Send campaign CTA clicks to Google Tag Manager.
+       * Configure a GTM custom event trigger for campaign_cta_click
+       * if you want to use these events in analytics.
+       */
       document.addEventListener("click", function (event) {
         const link = event.target.closest("a[data-campaign-cta]");
         if (!link) return;
