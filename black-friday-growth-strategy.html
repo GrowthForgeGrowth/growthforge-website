@@ -1605,6 +1605,7 @@
    
 
 
+
 (function () {
   "use strict";
 
@@ -1698,7 +1699,68 @@
 
 
   /* ==========================================
-     3. CREATE BOOKING POPUP
+     3. TRACK SUCCESSFUL CAL.COM BOOKINGS
+     ========================================== */
+
+  let activeBookingMetadata = {};
+
+  Cal("on", {
+    action: "bookingSuccessful",
+
+    callback: function (event) {
+      const savedIds = getStoredClickIds();
+      const bookingData =
+        event && event.detail ? event.detail : {};
+
+      const bookingUid =
+        bookingData.uid ||
+        bookingData.data?.uid ||
+        bookingData.booking?.uid ||
+        "";
+
+      const bookingId =
+        bookingData.bookingId ||
+        bookingData.data?.bookingId ||
+        bookingData.booking?.id ||
+        "";
+
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+        event: "booking_completed",
+
+        campaign_name: "black_friday_2026",
+        conversion_type: "growth_strategy_call",
+
+        booking_uid: bookingUid,
+        booking_id: bookingId,
+
+        gclid: savedIds.gclid || null,
+        gbraid: savedIds.gbraid || null,
+        wbraid: savedIds.wbraid || null,
+
+        cta_location:
+          activeBookingMetadata.cta_location || "unknown",
+
+        utm_source: "website",
+        utm_medium: "landing_page",
+        utm_campaign: "black_friday_2026"
+      });
+
+      console.log(
+        "GrowthForge booking_completed event pushed to GTM",
+        {
+          bookingUid: bookingUid,
+          bookingId: bookingId,
+          clickIds: savedIds
+        }
+      );
+    }
+  });
+
+
+  /* ==========================================
+     4. CREATE BOOKING POPUP
      ========================================== */
 
   const modalStyle = document.createElement("style");
@@ -1782,25 +1844,39 @@
   modal.id = "gf-cal-modal";
 
   modal.innerHTML = `
-    <div class="gf-cal-modal-panel" role="dialog"
-         aria-modal="true" aria-label="Book a Growth Strategy Call">
-      <button type="button" class="gf-cal-modal-close"
-              aria-label="Close booking window">&times;</button>
-      <div class="gf-cal-modal-content" id="gf-cal-modal-content"></div>
+    <div class="gf-cal-modal-panel"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Book a Growth Strategy Call">
+
+      <button type="button"
+              class="gf-cal-modal-close"
+              aria-label="Close booking window">
+        &times;
+      </button>
+
+      <div class="gf-cal-modal-content"
+           id="gf-cal-modal-content"></div>
     </div>
   `;
 
   document.body.appendChild(modal);
 
-  const modalContent = document.getElementById("gf-cal-modal-content");
-  const closeButton = modal.querySelector(".gf-cal-modal-close");
+  const modalContent =
+    document.getElementById("gf-cal-modal-content");
+
+  const closeButton =
+    modal.querySelector(".gf-cal-modal-close");
 
   function closeBookingModal() {
     modal.classList.remove("gf-cal-modal-open");
     document.body.style.overflow = "";
   }
 
-  closeButton.addEventListener("click", closeBookingModal);
+  closeButton.addEventListener(
+    "click",
+    closeBookingModal
+  );
 
   modal.addEventListener("click", function (event) {
     if (event.target === modal) {
@@ -1816,49 +1892,61 @@
 
 
   /* ==========================================
-     4. OPEN CAL.COM WITH BOOKING METADATA
+     5. OPEN CAL.COM WITH BOOKING METADATA
      ========================================== */
 
   function openCalBooking(link) {
     const savedIds = getStoredClickIds();
-    const originalUrl = new URL(link.href, window.location.href);
+    const originalUrl = new URL(
+      link.href,
+      window.location.href
+    );
 
     const metadata = {
-      "metadata[campaign_name]": "black_friday_2026",
-      "metadata[cta_location]": link.dataset.campaignCta || "unknown",
-      "metadata[utm_source]": "website",
-      "metadata[utm_medium]": "landing_page",
-      "metadata[utm_campaign]": "black_friday_2026"
+      campaign_name: "black_friday_2026",
+      cta_location:
+        link.dataset.campaignCta || "unknown",
+      utm_source: "website",
+      utm_medium: "landing_page",
+      utm_campaign: "black_friday_2026"
     };
 
-    // Pass all available Google Ads click identifiers.
     CLICK_ID_KEYS.forEach(function (key) {
       if (savedIds[key]) {
-        metadata["metadata[" + key + "]"] = savedIds[key];
+        metadata[key] = savedIds[key];
       }
     });
 
-    // Preserve the selected package when a package CTA is clicked.
-    const selectedPlan = originalUrl.searchParams.get("plan");
+    const selectedPlan =
+      originalUrl.searchParams.get("plan");
 
     if (selectedPlan) {
-      metadata["metadata[plan]"] = selectedPlan;
+      metadata.plan = selectedPlan;
     }
 
-    // Preserve the original UTM values if present.
-    ["utm_source", "utm_medium", "utm_campaign",
-     "utm_content", "utm_term"].forEach(function (key) {
+    [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "utm_term"
+    ].forEach(function (key) {
       const value = originalUrl.searchParams.get(key);
+
       if (value) {
-        metadata["metadata[" + key + "]"] = value;
+        metadata[key] = value;
       }
     });
 
-    // Recreate the embed container for each booking attempt.
+    activeBookingMetadata = metadata;
+
     modalContent.innerHTML = "";
 
     const embedContainer = document.createElement("div");
-    embedContainer.id = "gf-cal-inline-" + Date.now();
+
+    embedContainer.id =
+      "gf-cal-inline-" + Date.now();
+
     embedContainer.style.width = "100%";
     embedContainer.style.minHeight = "720px";
 
@@ -1867,25 +1955,26 @@
     modal.classList.add("gf-cal-modal-open");
     document.body.style.overflow = "hidden";
 
-    // Pass metadata directly through Cal.com's Embed SDK.
     Cal.ns.growthforge("inline", {
       elementOrSelector: "#" + embedContainer.id,
-      calLink: "charlie-chan-j6zugj/10min-growth-strategy-call",
-      config: Object.assign(
-        {
-          layout: "month_view"
-        },
-        metadata
-      )
+
+      calLink:
+        "charlie-chan-j6zugj/10min-growth-strategy-call",
+
+      config: {
+        layout: "month_view",
+        metadata: metadata
+      }
     });
 
-    // Record CTA interaction in Google Tag Manager.
     window.dataLayer = window.dataLayer || [];
 
     window.dataLayer.push({
       event: "campaign_cta_click",
       campaign_name: "black_friday_2026",
-      cta_location: link.dataset.campaignCta || "unknown",
+      cta_location:
+        link.dataset.campaignCta || "unknown",
+
       gclid: savedIds.gclid || null,
       gbraid: savedIds.gbraid || null,
       wbraid: savedIds.wbraid || null
@@ -1894,15 +1983,24 @@
 
 
   /* ==========================================
-     5. INTERCEPT EXISTING BOOKING CTA BUTTONS
+     6. INTERCEPT EXISTING BOOKING CTA BUTTONS
      ========================================== */
 
   document.addEventListener("click", function (event) {
-    const link = event.target.closest("a[data-campaign-cta]");
+    const target = event.target;
+
+    if (!target || typeof target.closest !== "function") {
+      return;
+    }
+
+    const link = target.closest("a[data-campaign-cta]");
 
     if (!link) return;
 
-    const destination = new URL(link.href, window.location.href);
+    const destination = new URL(
+      link.href,
+      window.location.href
+    );
 
     const isCalLink =
       destination.hostname === "cal.com" ||
@@ -1911,12 +2009,13 @@
     if (!isCalLink) return;
 
     event.preventDefault();
+
     openCalBooking(link);
   });
 
 
   /* ==========================================
-     6. BLACK FRIDAY COUNTDOWN
+     7. BLACK FRIDAY COUNTDOWN
      ========================================== */
 
   const target = new Date(
@@ -1942,8 +2041,14 @@
       return;
     }
 
-    const remaining = Math.max(0, target - Date.now());
-    const totalSeconds = Math.floor(remaining / 1000);
+    const remaining = Math.max(
+      0,
+      target - Date.now()
+    );
+
+    const totalSeconds = Math.floor(
+      remaining / 1000
+    );
 
     elements.days.textContent = String(
       Math.floor(totalSeconds / 86400)
@@ -1962,7 +2067,8 @@
     ).padStart(2, "0");
 
     if (remaining === 0) {
-      elements.label.textContent = "Black Friday is here";
+      elements.label.textContent =
+        "Black Friday is here";
     }
   }
 
