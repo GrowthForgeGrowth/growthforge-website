@@ -1606,6 +1606,7 @@
 
 
 
+
 (function () {
   "use strict";
 
@@ -1703,26 +1704,37 @@
      ========================================== */
 
   let activeBookingMetadata = {};
+  let lastTrackedBookingUid = null;
 
-  Cal("on", {
-    action: "bookingSuccessful",
+  // IMPORTANT: Register the callback on the SAME
+  // namespace used to initialize and open the embed.
+
+  Cal.ns.growthforge("on", {
+    action: "bookingSuccessfulV2",
 
     callback: function (event) {
-      const savedIds = getStoredClickIds();
-      const bookingData =
+      const detail =
         event && event.detail ? event.detail : {};
+
+      const bookingData = detail.data || detail;
+      const savedIds = getStoredClickIds();
 
       const bookingUid =
         bookingData.uid ||
-        bookingData.data?.uid ||
-        bookingData.booking?.uid ||
+        bookingData.bookingUid ||
         "";
 
-      const bookingId =
-        bookingData.bookingId ||
-        bookingData.data?.bookingId ||
-        bookingData.booking?.id ||
-        "";
+      // Prevent duplicate event pushes for the same booking.
+      if (
+        bookingUid &&
+        bookingUid === lastTrackedBookingUid
+      ) {
+        return;
+      }
+
+      if (bookingUid) {
+        lastTrackedBookingUid = bookingUid;
+      }
 
       window.dataLayer = window.dataLayer || [];
 
@@ -1733,7 +1745,10 @@
         conversion_type: "growth_strategy_call",
 
         booking_uid: bookingUid,
-        booking_id: bookingId,
+        booking_title: bookingData.title || "",
+        booking_status: bookingData.status || "",
+
+        event_type_id: bookingData.eventTypeId || null,
 
         gclid: savedIds.gclid || null,
         gbraid: savedIds.gbraid || null,
@@ -1742,16 +1757,22 @@
         cta_location:
           activeBookingMetadata.cta_location || "unknown",
 
-        utm_source: "website",
-        utm_medium: "landing_page",
-        utm_campaign: "black_friday_2026"
+        utm_source:
+          activeBookingMetadata.utm_source || "website",
+
+        utm_medium:
+          activeBookingMetadata.utm_medium || "landing_page",
+
+        utm_campaign:
+          activeBookingMetadata.utm_campaign ||
+          "black_friday_2026"
       });
 
       console.log(
-        "GrowthForge booking_completed event pushed to GTM",
+        "GrowthForge: booking_completed sent to GTM",
         {
           bookingUid: bookingUid,
-          bookingId: bookingId,
+          bookingData: bookingData,
           clickIds: savedIds
         }
       );
@@ -1897,6 +1918,7 @@
 
   function openCalBooking(link) {
     const savedIds = getStoredClickIds();
+
     const originalUrl = new URL(
       link.href,
       window.location.href
@@ -1904,19 +1926,23 @@
 
     const metadata = {
       campaign_name: "black_friday_2026",
+
       cta_location:
         link.dataset.campaignCta || "unknown",
+
       utm_source: "website",
       utm_medium: "landing_page",
       utm_campaign: "black_friday_2026"
     };
 
+    // Pass all available Google Ads click identifiers.
     CLICK_ID_KEYS.forEach(function (key) {
       if (savedIds[key]) {
         metadata[key] = savedIds[key];
       }
     });
 
+    // Preserve selected plan.
     const selectedPlan =
       originalUrl.searchParams.get("plan");
 
@@ -1924,6 +1950,7 @@
       metadata.plan = selectedPlan;
     }
 
+    // Preserve existing UTM parameters.
     [
       "utm_source",
       "utm_medium",
@@ -1955,6 +1982,7 @@
     modal.classList.add("gf-cal-modal-open");
     document.body.style.overflow = "hidden";
 
+    // Use the same namespace as the registered callback.
     Cal.ns.growthforge("inline", {
       elementOrSelector: "#" + embedContainer.id,
 
@@ -1967,11 +1995,14 @@
       }
     });
 
+    // Track CTA click in GTM.
     window.dataLayer = window.dataLayer || [];
 
     window.dataLayer.push({
       event: "campaign_cta_click",
+
       campaign_name: "black_friday_2026",
+
       cta_location:
         link.dataset.campaignCta || "unknown",
 
@@ -2076,6 +2107,7 @@
   window.setInterval(updateCountdown, 1000);
 
 })();
+
 
   </script>
 
