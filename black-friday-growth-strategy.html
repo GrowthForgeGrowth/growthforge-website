@@ -1602,66 +1602,188 @@
   </main>
 
   <script>
-    (function () {
-      /*
-       * Countdown target:
-       * November 27, 2026, at 00:00 CET.
-       */
-      const target = new Date("2026-11-27T00:00:00+01:00").getTime();
+   
+(function () {
+  "use strict";
 
-      const elements = {
-        days: document.getElementById("gf-bf-days"),
-        hours: document.getElementById("gf-bf-hours"),
-        minutes: document.getElementById("gf-bf-minutes"),
-        seconds: document.getElementById("gf-bf-seconds"),
-        label: document.getElementById("gf-bf-countdown-label")
-      };
+  /* =========================================
+     GROWTHFORGE GOOGLE ADS CLICK ID CAPTURE
+     ========================================= */
 
-      function updateCountdown() {
-        const remaining = Math.max(0, target - Date.now());
-        const totalSeconds = Math.floor(remaining / 1000);
+  const CLICK_ID_KEYS = ["gclid", "gbraid", "wbraid"];
+  const STORAGE_KEY = "growthforge_google_ads_click_ids";
 
-        elements.days.textContent = String(
-          Math.floor(totalSeconds / 86400)
-        ).padStart(2, "0");
+  function readStoredClickIds() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    } catch (error) {
+      return {};
+    }
+  }
 
-        elements.hours.textContent = String(
-          Math.floor((totalSeconds % 86400) / 3600)
-        ).padStart(2, "0");
+  function saveClickIds(ids) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+    } catch (error) {
+      // Continue using the in-memory values.
+    }
+  }
 
-        elements.minutes.textContent = String(
-          Math.floor((totalSeconds % 3600) / 60)
-        ).padStart(2, "0");
+  // Retrieve previously stored identifiers.
+  const clickIds = readStoredClickIds();
 
-        elements.seconds.textContent = String(
-          totalSeconds % 60
-        ).padStart(2, "0");
+  // Capture identifiers from the incoming landing-page URL.
+  const incomingParams = new URLSearchParams(window.location.search);
 
-        if (remaining === 0) {
-          elements.label.textContent = "Black Friday is here";
-        }
+  CLICK_ID_KEYS.forEach(function (key) {
+    const value = incomingParams.get(key);
+
+    if (value) {
+      clickIds[key] = value;
+    }
+  });
+
+  // Save the latest available identifiers.
+  saveClickIds(clickIds);
+
+  // Make the values accessible to other page scripts.
+  window.growthForgeGoogleAdsClickIds = clickIds;
+
+
+  /* =========================================
+     CAL.COM BOOKING URL METADATA FORWARDING
+     ========================================= */
+
+  function appendClickIdsToBookingUrl(link) {
+    const destination = new URL(link.href, window.location.href);
+
+    const isCalBookingLink =
+      destination.hostname === "cal.com" ||
+      destination.hostname.endsWith(".cal.com");
+
+    if (!isCalBookingLink) {
+      return destination.toString();
+    }
+
+    // Refresh from storage before forwarding.
+    const savedIds = readStoredClickIds();
+
+    CLICK_ID_KEYS.forEach(function (key) {
+      const value = savedIds[key];
+
+      if (!value) {
+        return;
       }
 
-      updateCountdown();
-      window.setInterval(updateCountdown, 1000);
+      // Preserve the standard click ID parameter.
+      destination.searchParams.set(key, value);
 
-      /*
-       * Send CTA clicks to Google Tag Manager.
-       * Configure a GTM custom event trigger for campaign_cta_click.
-       */
-      document.addEventListener("click", function (event) {
-        const link = event.target.closest("a[data-campaign-cta]");
-        if (!link) return;
+      // Explicitly pass the identifier as Cal.com booking metadata.
+      destination.searchParams.set(
+        "metadata[" + key + "]",
+        value
+      );
+    });
 
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "campaign_cta_click",
-          campaign_name: "black_friday_2026",
-          cta_location: link.dataset.campaignCta,
-          link_url: link.href
-        });
-      });
-    })();
+    return destination.toString();
+  }
+
+
+  /* =========================================
+     GOOGLE TAG MANAGER CTA EVENT
+     ========================================= */
+
+  document.addEventListener("click", function (event) {
+    const target = event.target;
+
+    if (!target || typeof target.closest !== "function") {
+      return;
+    }
+
+    const link = target.closest("a[data-campaign-cta]");
+
+    if (!link) {
+      return;
+    }
+
+    // Add click identifiers to Cal.com booking links.
+    const updatedUrl = appendClickIdsToBookingUrl(link);
+
+    link.href = updatedUrl;
+
+    const currentIds = readStoredClickIds();
+
+    // Send the existing campaign CTA event to GTM.
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+      event: "campaign_cta_click",
+      campaign_name: "black_friday_2026",
+      cta_location: link.dataset.campaignCta,
+      link_url: link.href,
+
+      gclid: currentIds.gclid || null,
+      gbraid: currentIds.gbraid || null,
+      wbraid: currentIds.wbraid || null
+    });
+  });
+
+
+  /* =========================================
+     BLACK FRIDAY 2026 COUNTDOWN
+     ========================================= */
+
+  const target = new Date(
+    "2026-11-27T00:00:00+01:00"
+  ).getTime();
+
+  const elements = {
+    days: document.getElementById("gf-bf-days"),
+    hours: document.getElementById("gf-bf-hours"),
+    minutes: document.getElementById("gf-bf-minutes"),
+    seconds: document.getElementById("gf-bf-seconds"),
+    label: document.getElementById("gf-bf-countdown-label")
+  };
+
+  function updateCountdown() {
+    if (
+      !elements.days ||
+      !elements.hours ||
+      !elements.minutes ||
+      !elements.seconds ||
+      !elements.label
+    ) {
+      return;
+    }
+
+    const remaining = Math.max(0, target - Date.now());
+    const totalSeconds = Math.floor(remaining / 1000);
+
+    elements.days.textContent = String(
+      Math.floor(totalSeconds / 86400)
+    ).padStart(2, "0");
+
+    elements.hours.textContent = String(
+      Math.floor((totalSeconds % 86400) / 3600)
+    ).padStart(2, "0");
+
+    elements.minutes.textContent = String(
+      Math.floor((totalSeconds % 3600) / 60)
+    ).padStart(2, "0");
+
+    elements.seconds.textContent = String(
+      totalSeconds % 60
+    ).padStart(2, "0");
+
+    if (remaining === 0) {
+      elements.label.textContent = "Black Friday is here";
+    }
+  }
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
+
+})();
   </script>
 
 </body>
