@@ -1054,24 +1054,28 @@ document.getElementById("discovery-form").addEventListener("submit", async funct
                 if (redirected) return;
 
                 redirected = true;
-                window.location.href = lead.property_payment_url;
-            };
+window.dataLayer = window.dataLayer || [];
 
-            gtag("event", "executive_growth_audit_submit", {
-                form_id: "discovery-form",
-                form_name: "Executive Growth Audit",
-                page_location: window.location.href,
-                value: 750.00,
-                currency: "USD",
-                event_callback: redirectToPayment
-            });
+let redirected = false;
 
-            /*
-             * Fallback in case GA4 does not fire the callback.
-             * Prevents the user from getting stuck on the page.
-             */
-            setTimeout(redirectToPayment, 1000);
+const redirectToPayment = function () {
+    if (redirected) return;
 
+    redirected = true;
+    window.location.href = lead.property_payment_url;
+};
+
+window.dataLayer.push({
+    event: "executive_growth_audit_submit",
+    form_id: "discovery-form",
+    form_name: "Executive Growth Audit",
+    value: 750.00,
+    currency: "USD",
+    eventCallback: redirectToPayment,
+    eventTimeout: 1500
+});
+
+setTimeout(redirectToPayment, 2000);
         } else {
 
             /*
