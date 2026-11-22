@@ -178,726 +178,657 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<header class="site-header">
 
-    <div class="container">
+<style>
+/* =========================================
+   GROWTHFORGE — EXECUTIVE GROWTH AUDIT
+========================================= */
 
-        <div class="header-inner">
+.audit-hero {
+    padding: 76px 0 48px;
+}
 
-            <a href="/" class="header-logo" aria-label="GrowthForge">
-                <span>Growth</span><strong>Forge</strong>
-            </a>
+.audit-hero .hero-content {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+}
 
-            <nav class="header-nav" aria-label="Primary navigation">
+.audit-hero .eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 7px 15px;
+    border-radius: 30px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
 
-                <a href="/about">About</a>
-                <a href="/insights">Insights</a>
-                <a href="/pricing">Pricing</a>
-                <a href="/contact">Contact</a>
+.audit-hero h1 {
+    max-width: 850px;
+    margin: 0 auto 18px;
+    font: 800 clamp(34px, 4vw, 46px)/1.12 Manrope, sans-serif;
+    letter-spacing: -.035em;
+    color: #0f172a;
+}
 
-            </nav>
+.audit-hero .lead {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.65;
+    color: #64748b;
+}
 
-            <a href="/discovery" class="header-cta">
-                Start Executive Growth Audit
-                <span aria-hidden="true">→</span>
-            </a>
+/* =========================================
+   UNIFIED AUDIT OVERVIEW
+========================================= */
 
-        </div>
+.audit-overview {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    max-width: 1080px;
+    margin: 30px auto 0;
+    padding: 18px 10px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(15,23,42,.045);
+}
 
-    </div>
+.overview-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 76px;
+    padding: 8px 22px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+}
 
-</header>
+.overview-item:not(:last-child) {
+    border-right: 1px solid #e2e8f0;
+}
 
+.overview-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.overview-item strong {
+    display: block;
+    font: 700 14px/1.45 Manrope, sans-serif;
+    color: #0f172a;
+}
+
+/* =========================================
+   FORM SECTION
+========================================= */
+
+.audit-form-section {
+    padding: 72px 0 90px;
+}
+
+.audit-form-section .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.audit-form-section .section-heading {
+    max-width: 700px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.audit-form-section .section-heading h2 {
+    margin: 0 0 12px;
+    font: 800 36px/1.2 Manrope, sans-serif;
+    letter-spacing: -.035em;
+    color: #0f172a;
+}
+
+.audit-form-section .section-heading p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.audit-form-card {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 36px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(15,23,42,.045);
+}
+
+.audit-form {
+    display: grid;
+    gap: 22px;
+}
+
+.audit-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.audit-form .form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.audit-form .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.audit-form .form-group label {
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.4;
+    color: #1e293b;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.audit-form input,
+.audit-form textarea,
+.audit-form select {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 13px;
+    border: 1px solid #dbe3ed;
+    border-radius: 9px;
+    background: #fff;
+    font: 400 13px/1.5 Inter, sans-serif;
+    color: #0f172a;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.audit-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.audit-form input::placeholder,
+.audit-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+.audit-form input:focus,
+.audit-form textarea:focus,
+.audit-form select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.09);
+}
+
+/* =========================================
+   SERVICES MULTI-SELECT
+========================================= */
+
+.audit-form select[multiple] {
+    min-height: 130px;
+    padding: 7px;
+}
+
+.audit-form select[multiple] option {
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+/* =========================================
+   FORM FOOTER
+========================================= */
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.required-note {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.audit-purchase-btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 18px;
+    margin-top: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* =========================================
+   NOTES & PRIVACY
+========================================= */
+
+.audit-note {
+    max-width: 700px;
+    margin: 24px auto 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #64748b;
+}
+
+.privacy-card {
+    max-width: 860px;
+    margin: 22px auto 0;
+    padding: 20px 24px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.privacy-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #475569;
+}
+
+.privacy-card strong {
+    color: #0f172a;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+    .audit-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .overview-item:nth-child(2) {
+        border-right: 0;
+    }
+
+    .overview-item:nth-child(-n+2) {
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .audit-form-card {
+        padding: 28px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+    .audit-hero {
+        padding: 52px 0 32px;
+    }
+
+    .audit-hero .hero-content {
+        padding: 0 18px;
+    }
+
+    .audit-hero h1 {
+        font-size: 34px;
+        line-height: 1.12;
+    }
+
+    .audit-hero .lead {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .audit-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 22px;
+        padding: 12px 6px;
+        border-radius: 12px;
+    }
+
+    .overview-item {
+        min-height: 70px;
+        padding: 10px 12px;
+    }
+
+    .overview-label {
+        font-size: 9px;
+    }
+
+    .overview-item strong {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .audit-form-section {
+        padding: 52px 0 64px;
+    }
+
+    .audit-form-section .container {
+        padding: 0 16px;
+    }
+
+    .audit-form-section .section-heading {
+        margin-bottom: 26px;
+    }
+
+    .audit-form-section .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .audit-form-section .section-heading p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .audit-form-card {
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .audit-form {
+        gap: 18px;
+    }
+
+    .audit-form .form-grid {
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+    }
+
+    .audit-form .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .audit-form .form-group label {
+        font-size: 12px;
+    }
+
+    .audit-note {
+        font-size: 12px;
+    }
+
+    .privacy-card {
+        padding: 16px;
+    }
+
+    .privacy-card p {
+        font-size: 12px;
+    }
+}
+</style>
+
+<!-- =========================================
+     EXECUTIVE GROWTH AUDIT HERO
+========================================= -->
 
 <section class="audit-hero">
+    <div class="hero-content">
 
-<div class="hero-content">
+        <p class="eyebrow">Executive Growth Audit</p>
 
-    <p class="eyebrow">
-        Executive Growth Audit
-    </p>
+        <h1>
+            Find the Hidden Revenue Opportunities Limiting Your Growth.
+        </h1>
 
-    <h1>
-        Find the Hidden Revenue Opportunities Limiting Your Growth.
-    </h1>
+        <p class="lead">
+            Complete the application below to begin your Executive Growth Audit.
+            Every audit includes a founder-led strategic assessment, an executive
+            presentation, and a prioritized 90-day growth roadmap tailored to your business.
+        </p>
 
-    <p class="lead">
-        Complete the application below to begin your Executive Growth Audit. Every audit includes a founder-led strategic assessment, an executive presentation, and a prioritized 90-day growth roadmap tailored to your business.
-    </p>
+        <div class="audit-overview">
 
-    <div class="audit-overview">
+            <div class="overview-item">
+                <span class="overview-label">Investment</span>
+                <strong>$750 Fixed</strong>
+            </div>
 
-        <div class="overview-item">
+            <div class="overview-item">
+                <span class="overview-label">Deliverable</span>
+                <strong>Executive Audit + 90-Day Roadmap</strong>
+            </div>
 
-            <span class="overview-label">
-                Investment
-            </span>
+            <div class="overview-item">
+                <span class="overview-label">Led By</span>
+                <strong>Charlie Chan</strong>
+            </div>
 
-            <strong>
-                $750 Fixed
-            </strong>
-
-        </div>
-
-        <div class="overview-item">
-
-            <span class="overview-label">
-                Deliverable
-            </span>
-
-            <strong>
-                Executive Audit + 90-Day Roadmap
-            </strong>
-
-        </div>
-
-        <div class="overview-item">
-
-            <span class="overview-label">
-                Led By
-            </span>
-
-            <strong>
-                Charlie Chan
-            </strong>
-
-        </div>
-
-        <div class="overview-item">
-
-            <span class="overview-label">
-                Availability
-            </span>
-
-            <strong>
-                Limited Weekly Capacity
-            </strong>
+            <div class="overview-item">
+                <span class="overview-label">Availability</span>
+                <strong>Limited Weekly Capacity</strong>
+            </div>
 
         </div>
 
     </div>
-
-</div>
-
 </section>
 
-  <section class="audit-divider">
+<!-- =========================================
+     EXECUTIVE GROWTH AUDIT APPLICATION
+========================================= -->
+
+<section class="audit-form-section" id="audit-application">
 
     <div class="container">
 
-        <div class="divider-line"></div>
+        <div class="section-heading">
 
-    </div>
+            <h2>Start Your Executive Growth Audit</h2>
 
-</section>
+            <p>
+                Complete the application below. We work with a limited number
+                of clients at a time, so available audit slots can fill quickly.
+                After submission, you'll proceed to secure payment. Once payment
+                is confirmed, we'll begin your Executive Growth Audit and contact
+                you within 24 hours to schedule your Executive Strategy Session.
+            </p>
 
-<section class="audit-form-section">
+        </div>
 
-<div class="container">
+        <div class="audit-form-card">
 
-    <div class="section-heading">
+            <form id="discovery-form" class="audit-form">
 
-        <h2>
-            Start Your Executive Growth Audit
-        </h2>
+                <div class="form-grid">
 
-        <p>
-Complete the Executive Growth Audit application below. We work with a limited number of clients at a time, so available audit slots can fill quickly. After submission, you'll proceed to secure payment. Once payment is confirmed, we'll begin your Executive Growth Audit and contact you within 24 hours to schedule your Executive Strategy Session.        
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website *</label>
+                        <input
+                            type="url"
+                            id="website"
+                            name="website"
+                            required
+                            placeholder="https://"
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="industry">Industry *</label>
+                        <input
+                            type="text"
+                            id="industry"
+                            name="industry"
+                            required
+                            placeholder="e.g., SaaS, Healthcare, E-commerce, Professional Services"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="employees">Number of Employees *</label>
+                        <select id="employees" name="employees" required>
+                            <option value="">Select...</option>
+                            <option value="1-5">1-5</option>
+                            <option value="6-20">6-20</option>
+                            <option value="21-50">21-50</option>
+                            <option value="51-100">51-100</option>
+                            <option value="101-250">101-250</option>
+                            <option value="250+">250+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="revenue">Annual Revenue (Optional)</label>
+                        <select id="revenue" name="revenue">
+                            <option value="">Prefer not to say</option>
+                            <option value="<1M">&lt;$1M</option>
+                            <option value="1-5M">$1-5M</option>
+                            <option value="5-10M">$5-10M</option>
+                            <option value="10-50M">$10-50M</option>
+                            <option value="50M+">$50M+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="challenge">Primary Growth Challenge *</label>
+                        <textarea
+                            id="challenge"
+                            name="challenge"
+                            required
+                            placeholder="What's your biggest growth challenge right now? What's blocking your growth?"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="services">Services of Interest *</label>
+                        <select
+                            id="services"
+                            name="services[]"
+                            multiple
+                            required
+                        >
+                            <option value="ai-seo">AI SEO (Generative Engine Optimization)</option>
+                            <option value="google-ads">Google Ads</option>
+                            <option value="meta-ads">Meta Ads (Facebook &amp; Instagram)</option>
+                            <option value="cro">Conversion Rate Optimization (CRO)</option>
+                            <option value="automation">Marketing Automation &amp; AI</option>
+                            <option value="consulting">Executive Consulting</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Monthly Marketing Budget *</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">Select...</option>
+                            <option value="<1500">Under $1,500</option>
+                            <option value="1500-3000">$1,500–3,000</option>
+                            <option value="3000-5000">$3,000–5,000</option>
+                            <option value="5000+">$5,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start-date">Expected Start Date *</label>
+                        <select id="start-date" name="start-date" required>
+                            <option value="">Select...</option>
+                            <option value="immediately">Immediately</option>
+                            <option value="30-days">Within 30 Days</option>
+                            <option value="90-days">Within 90 Days</option>
+                            <option value="exploring">Just Exploring</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-footer">
+
+                    <p class="required-note">* Required fields</p>
+
+                    <button
+                        type="submit"
+                        class="btn audit-purchase-btn"
+                    >
+                        Continue to Payment →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <p class="audit-note">
+            We'll respond within 24 hours with available time slots.
+            You can book directly on our calendar.
         </p>
 
-    </div>
-
-    <div class="audit-form-card">
-
-        <form id="discovery-form" class="audit-form">
-
-            <div class="form-grid">
-
-                <div class="form-group">
-                    <label>Company Name *</label>
-                    <input type="text" name="company" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Your Name *</label>
-                    <input type="text" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email *</label>
-                    <input type="email" name="email" required>
-                </div>
-
-<div class="form-group">
-    <label for="website">Website *</label>
-    <input
-        type="url"
-        id="website"
-        name="website"
-        required
-    >
-</div>
-
-                <div class="form-group full-width">
-                    <label>Industry *</label>
-
-                    <input
-                        type="text"
-                        name="industry"
-                        required
-                        placeholder="e.g., SaaS, Healthcare, E-commerce, Professional Services">
-                </div>
-
-                <div class="form-group">
-                    <label>Number of Employees *</label>
-
-                    <select name="employees" required>
-
-                        <option value="">Select...</option>
-                        <option value="1-5">1-5</option>
-                        <option value="6-20">6-20</option>
-                        <option value="21-50">21-50</option>
-                        <option value="51-100">51-100</option>
-                        <option value="101-250">101-250</option>
-                        <option value="250+">250+</option>
-
-                    </select>
-
-                </div>
-
-                <div class="form-group">
-                    <label>Annual Revenue (Optional)</label>
-
-                    <select name="revenue">
-
-                        <option value="">Prefer not to say</option>
-                        <option value="<1M">&lt;$1M</option>
-                        <option value="1-5M">$1-5M</option>
-                        <option value="5-10M">$5-10M</option>
-                        <option value="10-50M">$10-50M</option>
-                        <option value="50M+">$50M+</option>
-
-                    </select>
-
-                </div>
-
-                <div class="form-group full-width">
-
-                    <label>Primary Growth Challenge *</label>
-
-                    <textarea
-                        name="challenge"
-                        required
-                        placeholder="What's your biggest growth challenge right now? What's blocking your growth?"></textarea>
-
-                </div>
-
-<div class="form-group">
-
-    <label for="services">
-        Services of Interest *
-    </label>
-
-    <select
-        id="services"
-        name="services[]"
-        multiple
-        required
-    >
-        <option value="ai-seo">
-            AI SEO (Generative Engine Optimization)
-        </option>
-
-        <option value="google-ads">
-            Google Ads
-        </option>
-
-        <option value="meta-ads">
-            Meta Ads (Facebook &amp; Instagram)
-        </option>
-
-        <option value="cro">
-            Conversion Rate Optimization (CRO)
-        </option>
-
-        <option value="automation">
-            Marketing Automation &amp; AI
-        </option>
-
-        <option value="consulting">
-            Executive Consulting
-        </option>
-
-    </select>
-
-</div>
-              <div class="form-group"> <label>Monthly Marketing Budget *</label> <select name="budget" required> <option value="">Select...</option> <option value="<1500">Under $1,500</option> <option value="1500-3000">$1,500–3,000</option> <option value="3000-5000">$3,000–5,000</option> <option value="5000+">$5,000+</option> </select> </div>
-
-                <div class="form-group">
-                    <label>Expected Start Date *</label>
-
-                    <select name="start-date" required>
-
-                        <option value="">Select...</option>
-                        <option value="immediately">Immediately</option>
-                        <option value="30-days">Within 30 Days</option>
-                        <option value="90-days">Within 90 Days</option>
-                        <option value="exploring">Just Exploring</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-            <div class="form-footer">
-
-                <p class="required-note">
-                    * Required fields
-                </p>
-
-                <button
-                    type="submit"
-                    class="btn audit-purchase-btn">
-
-                    Continue to Payment →
-
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-    <p class="audit-note">
-        We'll respond within 24 hours with available time slots. You can book directly on our calendar.
-    </p>
-
-    <div class="privacy-card">
-
-        <p>
-
-            <strong>Data Privacy & Security:</strong>
-
-            Your business data is treated as a critical asset. Information shared for your Executive Growth Audit, including analytics, advertising performance, and growth data, is used solely to analyze opportunities, identify revenue improvements, and prepare strategic recommendations. GrowthForge does not sell, share, or use your business data for purposes unrelated to delivering your requested services.
-
-        </p>
-
-    </div>
-
-</div>
-
-</section>
-
-<section class="growthforge-audit-preview-section">
-
-  <div class="growthforge-audit-preview-container">
-
-    <!-- Section Header -->
-    <div class="growthforge-audit-preview-header">
-
-      <span class="growthforge-audit-preview-eyebrow">
-        WHAT YOU'LL RECEIVE
-      </span>
-
-      <h2>Sample Executive Growth Audit</h2>
-
-      <p>
-        Here's a preview of the actual audit you'll receive —
-        a comprehensive strategic assessment and 90-day roadmap.
-      </p>
-
-    </div>
-
-
-    <!-- Actual Audit Preview -->
-    <div class="growthforge-audit-preview-showcase">
-
-      <!-- 01 -->
-      <div class="growthforge-audit-preview-item">
-
-        <div class="growthforge-audit-preview-image">
-          <img
-            src="/images/audit/goal-station-cover.webp"
-            alt="Executive Growth Audit sample cover"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="growthforge-audit-preview-description">
-
-          <h3>
-            <span>1.</span>
-            Executive Summary
-          </h3>
-
-          <p>
-            Overview, scorecard, and strategic highlights.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- 02 -->
-      <div class="growthforge-audit-preview-item">
-
-        <div class="growthforge-audit-preview-image">
-          <img
-            src="/images/audit/goal-station-ai-readiness-assessment.webp"
-            alt="AI Readiness Assessment sample"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="growthforge-audit-preview-description">
-
-          <h3>
-            <span>2.</span>
-            AI Readiness Assessment
-          </h3>
-
-          <p>
-            AI discoverability, crawlability, and structured data review.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- 03 -->
-      <div class="growthforge-audit-preview-item">
-
-        <div class="growthforge-audit-preview-image">
-          <img
-            src="/images/audit/goal-station-priority-growth-issues.webp"
-            alt="Priority Growth Issues sample"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="growthforge-audit-preview-description">
-
-          <h3>
-            <span>3.</span>
-            Priority Growth Issues
-          </h3>
-
-          <p>
-            Top issues impacting visibility, performance, and growth.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- 04 -->
-      <div class="growthforge-audit-preview-item">
-
-        <div class="growthforge-audit-preview-image">
-          <img
-            src="/images/audit/goal-station-90-day-roadmap.webp"
-            alt="90-Day Implementation Roadmap sample"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="growthforge-audit-preview-description">
-
-          <h3>
-            <span>4.</span>
-            90-Day Roadmap
-          </h3>
-
-          <p>
-            Phased plan with prioritized actions across 90 days.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- 05 -->
-      <div class="growthforge-audit-preview-item">
-
-        <div class="growthforge-audit-preview-image">
-          <img
-            src="/images/audit/goal-station-cro.webp"
-            alt="Conversion Optimization Audit sample"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="growthforge-audit-preview-description">
-
-          <h3>
-            <span>5.</span>
-            Conversion Optimization Audit
-          </h3>
-
-          <p>
-            Funnel analysis, UX audit, and conversion opportunities.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- Pagination -->
-    <div class="growthforge-audit-preview-pagination" aria-hidden="true">
-      <span class="growthforge-audit-preview-dot active"></span>
-      <span class="growthforge-audit-preview-dot"></span>
-      <span class="growthforge-audit-preview-dot"></span>
-      <span class="growthforge-audit-preview-dot"></span>
-      <span class="growthforge-audit-preview-dot"></span>
-    </div>
-
-
-    <!-- Full Presentation Callout -->
-    <div class="growthforge-audit-preview-callout">
-
-      <div class="growthforge-audit-preview-callout-icon">
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <rect
-            x="5"
-            y="3"
-            width="14"
-            height="18"
-            rx="2"
-            stroke="currentColor"
-            stroke-width="1.8"
-          />
-          <path
-            d="M8 8H16M8 12H16M8 16H13"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-
-
-      <div class="growthforge-audit-preview-callout-content">
-
-        <strong>
-          Full Executive Presentation Included
-        </strong>
-
-        <span>
-          You'll receive a detailed slide deck (25–40 slides)
-          and 90-day actionable roadmap.
-        </span>
-
-      </div>
-
-
-    <a
-    href="#"
-    class="growthforge-audit-preview-callout-button"
-    id="view-audit-pdf"
->
-    View Full Sample Report
-    <span>→</span>
-</a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- SAMPLE EXECUTIVE GROWTH AUDIT POPUP -->
-
-<div class="audit-pdf-popup" id="audit-pdf-popup">
-
-    <button
-        class="audit-pdf-popup-close"
-        type="button"
-        aria-label="Close sample audit"
-    >
-        &times;
-    </button>
-
-    <div class="audit-pdf-popup-content">
-
-        <div class="audit-pdf-popup-title">
-            <span>EXECUTIVE GROWTH AUDIT</span>
-            <h2>Sample Executive Growth Audit</h2>
-        </div>
-
-        <div class="audit-pdf-slides">
-
-            <img
-                src="/images/audit/goal-station-cover.webp"
-                alt="Sample Executive Growth Audit — Executive Summary"
-            >
-
-            <img
-                src="/images/audit/goal-station-ai-readiness-assessment.webp"
-                alt="Sample Executive Growth Audit — AI Readiness Assessment"
-            >
-
-            <img
-                src="/images/audit/goal-station-priority-growth-issues.webp"
-                alt="Sample Executive Growth Audit — Priority Growth Issues"
-            >
-
-            <img
-                src="/images/audit/goal-station-90-day-roadmap.webp"
-                alt="Sample Executive Growth Audit — 90-Day Implementation Roadmap"
-            >
-
-            <img
-                src="/images/audit/goal-station-cro.webp"
-                alt="Sample Executive Growth Audit — Conversion Optimization Audit"
-            >
-
-        </div>
-
-    </div>
-
-</div>
-
-  
-
-<section id="discovery-faq" class="faq-section">
-
-    <div class="container">
-
-        <div class="faq-layout">
-
-            <!-- LEFT COLUMN -->
-
-            <div class="faq-left">
-
-                <div class="section-heading">
-
-                    <span class="section-badge">
-                        Discovery
-                    </span>
-
-                    <h2>
-                        Frequently Asked Questions
-                    </h2>
-
-                    <p>
-                        Everything you need to know about the Executive Growth Audit, what happens after purchase, and how GrowthForge evaluates whether we're the right long-term growth partner for your business.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN -->
-
-            <div class="faq-right">
-
-                <details class="faq-item" open>
-
-                    <summary>
-                        What is an Executive Growth Audit?
-                    </summary>
-
-                    <p>
-                        The Executive Growth Audit is a comprehensive strategic assessment of your business, marketing, AI visibility, SEO, GEO, paid media, website performance, conversion optimization, analytics, and growth opportunities. You'll receive executive recommendations, prioritized initiatives, and a customized 90-day growth roadmap.
-                    </p>
-
-                </details>
-
-                <details class="faq-item">
-
-                    <summary>
-                        Who is the Executive Growth Audit designed for?
-                    </summary>
-
-                    <p>
-                        It's designed for founders, CEOs, business owners, B2B SaaS companies, healthcare organizations, professional service firms, and growth-focused businesses seeking strategic clarity before making larger growth investments.
-                    </p>
-
-                </details>
-
-                <details class="faq-item">
-
-                    <summary>
-                        What happens after I purchase an Executive Growth Audit?
-                    </summary>
-
-                    <p>
-                        Once your purchase is confirmed, we'll begin reviewing your business and contact you within 24 hours to schedule your private Executive Strategy Session. During the session, we'll present your findings, recommendations, and your customized 90-day growth roadmap.
-                    </p>
-
-                </details>
-
-                <details class="faq-item">
-
-                    <summary>
-                        Can Executive Strategy Sessions be scheduled internationally?
-                    </summary>
-
-                    <p>
-                        Yes. GrowthForge works with businesses across multiple regions and time zones. If you have scheduling preferences, simply let us know during your application or contact us directly, and we'll do our best to accommodate your availability.
-                    </p>
-
-                </details>
-
-                <details class="faq-item">
-
-                    <summary>
-                        What if I'm not sure which GrowthForge partnership I need?
-                    </summary>
-
-                    <p>
-                        That's exactly why every engagement begins with an Executive Growth Audit. We evaluate your business objectives, current performance, AI readiness, customer acquisition strategy, and growth opportunities before recommending the partnership that best aligns with your goals.
-                    </p>
-
-                </details>
-
-                <details class="faq-item">
-
-                    <summary>
-                        What happens if we're a good fit?
-                    </summary>
-
-                    <p>
-                        We'll discuss the Growth Partner, Growth Accelerator, or Growth Engine engagement that best supports your objectives, explain expected outcomes, implementation priorities, investment, and answer any remaining questions before moving forward.
-                    </p>
-
-                </details>
-
-                <details class="faq-item">
-
-                    <summary>
-                        What if we're not the right fit?
-                    </summary>
-
-                    <p>
-                        We'll tell you honestly. You'll still leave with your Executive Growth Audit, strategic recommendations, and actionable roadmap. Our goal is to provide objective guidance, even if a long-term partnership isn't the right next step.
-                    </p>
-
-                </details>
-
-            </div>
+        <div class="privacy-card">
+
+            <p>
+                <strong>Data Privacy &amp; Security:</strong>
+                Your business data is treated as a critical asset. Information
+                shared for your Executive Growth Audit, including analytics,
+                advertising performance, and growth data, is used solely to
+                analyze opportunities, identify revenue improvements, and
+                prepare strategic recommendations. GrowthForge does not sell,
+                share, or use your business data for purposes unrelated to
+                delivering your requested services.
+            </p>
 
         </div>
 
     </div>
 
 </section>
+
   
 <footer>
 
