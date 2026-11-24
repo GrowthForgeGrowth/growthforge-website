@@ -1334,193 +1334,207 @@
   </main>
 
   <script>
-  (function () {
-    "use strict";
+  
+(function () {
+  "use strict";
 
-    /* ==========================================
-       1. STORE GOOGLE ADS CLICK IDENTIFIERS
-       ========================================== */
+  /* ==========================================
+     1. CAPTURE AND STORE GOOGLE ADS CLICK IDs
+     ========================================== */
 
-    const CLICK_ID_KEYS = [
-      "gclid",
-      "gbraid",
-      "wbraid"
-    ];
+  const CLICK_ID_KEYS = ["gclid", "gbraid", "wbraid"];
 
-    function getStoredClickIds() {
-      const values = {};
+  function getStoredClickIds() {
+    const values = {};
 
-      CLICK_ID_KEYS.forEach(function (key) {
-        try {
-          values[key] = localStorage.getItem("gf_" + key) || "";
-        } catch (error) {
-          values[key] = "";
-        }
-      });
-
-      return values;
-    }
-
-    function storeClickIds() {
-      const params = new URLSearchParams(
-        window.location.search
-      );
-
-      CLICK_ID_KEYS.forEach(function (key) {
-        const value = params.get(key);
-
-        if (value) {
-          try {
-            localStorage.setItem("gf_" + key, value);
-          } catch (error) {
-            // Continue if browser storage is unavailable.
-          }
-        }
-      });
-    }
-
-    storeClickIds();
-
-
-    /* ==========================================
-       2. INITIALIZE CAL.COM EMBED
-       ========================================== */
-
-    (function (C, A, L) {
-      let p = function (a, ar) {
-        a.q.push(ar);
-      };
-
-      let d = C.document;
-
-      C.Cal = C.Cal || function () {
-        let cal = C.Cal;
-        let ar = arguments;
-
-        if (!cal.loaded) {
-          cal.ns = {};
-          cal.q = cal.q || [];
-
-          const script = d.createElement("script");
-          script.src = A;
-          script.async = true;
-
-          d.head.appendChild(script);
-          cal.loaded = true;
-        }
-
-        if (ar[0] === L) {
-          const api = function () {
-            p(api, arguments);
-          };
-
-          const namespace = ar[1];
-          api.q = api.q || [];
-
-          if (typeof namespace === "string") {
-            cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else {
-            p(cal, ar);
-          }
-
-          return;
-        }
-
-        p(cal, ar);
-      };
-    })(
-      window,
-      "https://app.cal.com/embed/embed.js",
-      "init"
-    );
-
-    Cal("init", "growthforge", {
-      origin: "https://app.cal.com"
-    });
-
-
-    /* ==========================================
-       3. TRACK SUCCESSFUL CAL.COM BOOKINGS
-       ========================================== */
-
-    let activeBookingMetadata = {};
-    let lastTrackedBookingUid = null;
-
-    // IMPORTANT: Register the callback on the SAME
-    // namespace used to initialize and open the embed.
-
-    Cal.ns.growthforge("on", {
-      action: "bookingSuccessfulV2",
-
-      callback: function (event) {
-        const detail =
-          event && event.detail ? event.detail : {};
-
-        const bookingData = detail.data || detail;
-        const savedIds = getStoredClickIds();
-
-        const bookingUid =
-          bookingData.uid ||
-          bookingData.bookingUid ||
+    CLICK_ID_KEYS.forEach(function (key) {
+      try {
+        values[key] =
+          localStorage.getItem("gf_" + key) ||
+          sessionStorage.getItem("gf_" + key) ||
           "";
-
-        // Prevent duplicate event pushes for the same booking.
-        if (
-          bookingUid &&
-          bookingUid === lastTrackedBookingUid
-        ) {
-          return;
-        }
-
-        if (bookingUid) {
-          lastTrackedBookingUid = bookingUid;
-        }
-
-        window.dataLayer = window.dataLayer || [];
-
-        window.dataLayer.push({
-          event: "booking_completed",
-
-          campaign_name: "black_friday_2026",
-          conversion_type: "growth_strategy_call",
-
-          booking_uid: bookingUid,
-          booking_title: bookingData.title || "",
-          booking_status: bookingData.status || "",
-
-          event_type_id: bookingData.eventTypeId || null,
-
-          gclid: savedIds.gclid || null,
-          gbraid: savedIds.gbraid || null,
-          wbraid: savedIds.wbraid || null,
-
-          cta_location:
-            activeBookingMetadata.cta_location || "unknown",
-
-          utm_source:
-            activeBookingMetadata.utm_source || "website",
-
-          utm_medium:
-            activeBookingMetadata.utm_medium || "landing_page",
-
-          utm_campaign:
-            activeBookingMetadata.utm_campaign ||
-            "black_friday_2026"
-        });
-
-        console.log(
-          "GrowthForge: booking_completed sent to GTM",
-          {
-            bookingUid: bookingUid,
-            bookingData: bookingData,
-            clickIds: savedIds
-          }
-        );
+      } catch (error) {
+        values[key] = "";
       }
     });
 
+    return values;
+  }
+
+  function storeClickIds() {
+    const params = new URLSearchParams(window.location.search);
+    const hashParams = new URLSearchParams(
+      window.location.hash.split("?")[1] || ""
+    );
+
+    CLICK_ID_KEYS.forEach(function (key) {
+      const value =
+        params.get(key) ||
+        hashParams.get(key);
+
+      if (value) {
+        try {
+          localStorage.setItem("gf_" + key, value);
+        } catch (error) {}
+
+        try {
+          sessionStorage.setItem("gf_" + key, value);
+        } catch (error) {}
+      }
+    });
+  }
+
+  // Capture immediately on page load.
+  storeClickIds();
+
+  // Capture again when the page becomes visible.
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) {
+      storeClickIds();
+    }
+  });
+
+  // Capture again when browser navigation restores the page.
+  window.addEventListener("pageshow", storeClickIds);
+
+
+  /* ==========================================
+     2. INITIALIZE CAL.COM EMBED
+     ========================================== */
+
+  (function (C, A, L) {
+    let p = function (a, ar) {
+      a.q.push(ar);
+    };
+
+    let d = C.document;
+
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal;
+      let ar = arguments;
+
+      if (!cal.loaded) {
+        cal.ns = {};
+        cal.q = cal.q || [];
+
+        const script = d.createElement("script");
+        script.src = A;
+        script.async = true;
+
+        d.head.appendChild(script);
+        cal.loaded = true;
+      }
+
+      if (ar[0] === L) {
+        const api = function () {
+          p(api, arguments);
+        };
+
+        const namespace = ar[1];
+        api.q = api.q || [];
+
+        if (typeof namespace === "string") {
+          cal.ns[namespace] = cal.ns[namespace] || api;
+          p(cal.ns[namespace], ar);
+          p(cal, ["initNamespace", namespace]);
+        } else {
+          p(cal, ar);
+        }
+
+        return;
+      }
+
+      p(cal, ar);
+    };
+  })(
+    window,
+    "https://app.cal.com/embed/embed.js",
+    "init"
+  );
+
+  Cal("init", "growthforge", {
+    origin: "https://app.cal.com"
+  });
+
+
+  /* ==========================================
+     3. TRACK SUCCESSFUL CAL.COM BOOKINGS
+     ========================================== */
+
+  let activeBookingMetadata = {};
+  let lastTrackedBookingUid = null;
+
+  Cal.ns.growthforge("on", {
+    action: "bookingSuccessfulV2",
+
+    callback: function (event) {
+      const detail =
+        event && event.detail ? event.detail : {};
+
+      const bookingData = detail.data || detail;
+      const savedIds = getStoredClickIds();
+
+      const bookingUid =
+        bookingData.uid ||
+        bookingData.bookingUid ||
+        "";
+
+      // Prevent duplicate event pushes for the same booking.
+      if (
+        bookingUid &&
+        bookingUid === lastTrackedBookingUid
+      ) {
+        return;
+      }
+
+      if (bookingUid) {
+        lastTrackedBookingUid = bookingUid;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+        event: "booking_completed",
+
+        campaign_name: "black_friday_2026",
+        conversion_type: "growth_strategy_call",
+
+        booking_uid: bookingUid,
+        booking_title: bookingData.title || "",
+        booking_status: bookingData.status || "",
+
+        event_type_id: bookingData.eventTypeId || null,
+
+        gclid: savedIds.gclid || null,
+        gbraid: savedIds.gbraid || null,
+        wbraid: savedIds.wbraid || null,
+
+        cta_location:
+          activeBookingMetadata.cta_location || "unknown",
+
+        utm_source:
+          activeBookingMetadata.utm_source || "website",
+
+        utm_medium:
+          activeBookingMetadata.utm_medium || "landing_page",
+
+        utm_campaign:
+          activeBookingMetadata.utm_campaign ||
+          "black_friday_2026"
+      });
+
+      console.log(
+        "GrowthForge: booking_completed sent to GTM",
+        {
+          bookingUid: bookingUid,
+          bookingData: bookingData,
+          clickIds: savedIds
+        }
+      );
+    }
+  });
+
+})();
 
     /* ==========================================
        4. CREATE BOOKING POPUP
