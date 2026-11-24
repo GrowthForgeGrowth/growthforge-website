@@ -1724,19 +1724,28 @@
       modal.classList.add("gf-cal-modal-open");
       document.body.style.overflow = "hidden";
 
-      // Use the same namespace as the registered callback.
-      Cal.ns.growthforge("inline", {
-        elementOrSelector: "#" + embedContainer.id,
+      
+      // Convert metadata into Cal.com's supported format.
+      const calConfig = {
+        layout: "month_view"
+      };
 
-        calLink:
-          "charlie-chan-j6zugj/10min-growth-strategy-call",
-
-        config: {
-          layout: "month_view",
-          metadata: metadata
+      Object.entries(metadata).forEach(function ([key, value]) {
+        if (
+          value !== undefined &&
+          value !== null &&
+          String(value).trim() !== ""
+        ) {
+          calConfig[`metadata[${key}]`] = String(value);
         }
       });
 
+      Cal.ns.growthforge("inline", {
+        elementOrSelector: "#" + embedContainer.id,
+        calLink: "charlie-chan-j6zugj/10min-growth-strategy-call",
+        config: calConfig
+      });
+      
       // Track CTA click in GTM.
       window.dataLayer = window.dataLayer || [];
 
