@@ -1354,6 +1354,10 @@
           sessionStorage.getItem("gf_" + key) ||
           "";
       } catch (error) {
+        console.error(
+          "GrowthForge: Could not retrieve " + key,
+          error
+        );
         values[key] = "";
       }
     });
@@ -1363,25 +1367,60 @@
 
   function storeClickIds() {
     const params = new URLSearchParams(window.location.search);
-    const hashParams = new URLSearchParams(
-      window.location.hash.split("?")[1] || ""
-    );
+
+    const hashQuery = window.location.hash.includes("?")
+      ? window.location.hash.split("?").slice(1).join("?")
+      : "";
+
+    const hashParams = new URLSearchParams(hashQuery);
 
     CLICK_ID_KEYS.forEach(function (key) {
       const value =
         params.get(key) ||
         hashParams.get(key);
 
-      if (value) {
-        try {
-          localStorage.setItem("gf_" + key, value);
-        } catch (error) {}
+      if (!value) return;
 
-        try {
-          sessionStorage.setItem("gf_" + key, value);
-        } catch (error) {}
+      let stored = false;
+
+      try {
+        localStorage.setItem("gf_" + key, value);
+
+        if (localStorage.getItem("gf_" + key) === value) {
+          stored = true;
+        }
+      } catch (error) {
+        console.warn(
+          "GrowthForge: localStorage failed for " + key,
+          error
+        );
+      }
+
+      try {
+        sessionStorage.setItem("gf_" + key, value);
+
+        if (sessionStorage.getItem("gf_" + key) === value) {
+          stored = true;
+        }
+      } catch (error) {
+        console.warn(
+          "GrowthForge: sessionStorage failed for " + key,
+          error
+        );
+      }
+
+      if (stored) {
+        console.log(
+          "GrowthForge: Successfully captured " + key
+        );
+      } else {
+        console.error(
+          "GrowthForge: Failed to store " + key
+        );
       }
     });
+
+    return getStoredClickIds();
   }
 
   // Capture immediately on page load.
@@ -1395,8 +1434,9 @@
   });
 
   // Capture again when browser navigation restores the page.
-  window.addEventListener("pageshow", storeClickIds);
-
+  window.addEventListener("pageshow", function () {
+    storeClickIds();
+  });
 
   /* ==========================================
      2. INITIALIZE CAL.COM EMBED
