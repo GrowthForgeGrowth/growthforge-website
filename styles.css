@@ -627,561 +627,378 @@ header .logo{flex-shrink:0}
 
 
 /* =========================================================
-   KPI METRICS
+   GROWTHFORGE — US MARKET ENTRY BLUEPRINT
    ========================================================= */
 
-.audit-dashboard__metrics {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-    gap: 9px;
-
-    margin: 17px 0 18px;
-}
-
-
-.audit-metric {
-    min-width: 0;
-
-    padding: 14px 9px 13px;
-
-    text-align: center;
-
-    border:
-        1px solid rgba(96, 165, 250, .14);
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15, 23, 42, .78),
-            rgba(8, 15, 31, .62)
-        );
-
+.audit-dashboard.expansion-blueprint {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 620px;
+    padding: 27px;
+    overflow: hidden;
     box-sizing: border-box;
 
-    transition:
-        transform .25s ease,
-        border-color .25s ease;
+    color: #f8fafc;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(79, 70, 229, .20),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(12, 23, 51, .97),
+            rgba(4, 12, 30, .98)
+        );
+
+    border: 1px solid rgba(96, 165, 250, .25);
+    border-radius: 20px;
+
+    box-shadow:
+        0 28px 70px rgba(0, 0, 0, .38),
+        0 0 45px rgba(37, 99, 235, .12),
+        inset 0 1px 0 rgba(255,255,255,.06);
 }
 
-.audit-metric:hover {
-    transform: translateY(-2px);
+/* HEADER */
 
-    border-color:
-        rgba(96, 165, 250, .38);
+.blueprint-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+
+    padding-bottom: 21px;
+    border-bottom: 1px solid rgba(148, 163, 184, .16);
 }
 
+.blueprint-eyebrow {
+    display: block;
+    margin-bottom: 8px;
 
-/* =========================================================
-   METRIC ICON
-   ========================================================= */
+    color: #60a5fa;
+    font: 800 9px/1.4 Manrope, sans-serif;
+    letter-spacing: .14em;
+}
 
-.audit-metric__icon {
+.blueprint-header h3 {
+    margin: 0 0 7px;
+    color: #fff;
+
+    font: 800 23px/1.2 Manrope, sans-serif;
+    letter-spacing: -.04em;
+}
+
+.blueprint-header p {
+    margin: 0;
+    color: #94a3b8;
+
+    font: 400 11px/1.6 Inter, sans-serif;
+}
+
+.blueprint-status {
+    flex-shrink: 0;
+    padding: 7px 9px;
+
+    color: #93c5fd;
+    background: rgba(37, 99, 235, .12);
+    border: 1px solid rgba(96, 165, 250, .22);
+    border-radius: 6px;
+
+    font: 800 7px/1.2 Manrope, sans-serif;
+    letter-spacing: .06em;
+}
+
+/* ORIGIN */
+
+.blueprint-origin {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-top: 23px;
+    padding: 15px;
+
+    background: rgba(30, 64, 175, .12);
+    border: 1px solid rgba(96, 165, 250, .22);
+    border-radius: 12px;
+}
+
+.origin-icon {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 42px;
-    height: 42px;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
 
-    margin: 0 auto 9px;
+    color: #bfdbfe;
+    background: rgba(37, 99, 235, .22);
+    border: 1px solid rgba(96, 165, 250, .35);
+    border-radius: 10px;
 
-    border-radius: 50%;
-
-    font-size: 16px;
-
-    background:
-        rgba(37, 99, 235, .10);
-
-    border:
-        1px solid rgba(59, 130, 246, .40);
-
-    color: #60a5fa;
-
-    box-shadow:
-        0 0 18px rgba(37, 99, 235, .20);
+    font: 800 13px Manrope, sans-serif;
 }
 
-.audit-metric:nth-child(2) .audit-metric__icon {
-    color: #a855f7;
-
-    border-color:
-        rgba(168, 85, 247, .45);
-
-    background:
-        rgba(168, 85, 247, .10);
-
-    box-shadow:
-        0 0 18px rgba(168, 85, 247, .20);
-}
-
-.audit-metric:nth-child(3) .audit-metric__icon {
-    color: #22d3ee;
-
-    border-color:
-        rgba(34, 211, 238, .45);
-
-    background:
-        rgba(34, 211, 238, .08);
-
-    box-shadow:
-        0 0 18px rgba(34, 211, 238, .18);
-}
-
-.audit-metric:nth-child(4) .audit-metric__icon {
-    color: #4ade80;
-
-    border-color:
-        rgba(74, 222, 128, .45);
-
-    background:
-        rgba(74, 222, 128, .08);
-
-    box-shadow:
-        0 0 18px rgba(74, 222, 128, .18);
-}
-
-
-/* =========================================================
-   METRIC VALUE
-   ========================================================= */
-
-.audit-metric__value {
+.blueprint-origin strong,
+.blueprint-origin span:not(.origin-icon) {
     display: block;
+}
 
-    margin: 0 0 5px;
+.blueprint-origin strong {
+    margin-bottom: 4px;
+    color: #f8fafc;
+    font: 700 12px Manrope, sans-serif;
+}
+
+.blueprint-origin div span {
+    color: #94a3b8;
+    font: 400 10px/1.5 Inter, sans-serif;
+}
+
+/* CONNECTOR */
+
+.blueprint-connector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 22px 0;
+}
+
+.blueprint-connector span {
+    height: 1px;
+    flex: 1;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(96, 165, 250, .4)
+    );
+}
+
+.blueprint-connector span:last-child {
+    transform: rotate(180deg);
+}
+
+.blueprint-connector small {
+    color: #60a5fa;
+    font: 800 8px Manrope, sans-serif;
+    letter-spacing: .12em;
+    white-space: nowrap;
+}
+
+/* STRATEGIC STAGES */
+
+.blueprint-stages {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+}
+
+.blueprint-stage {
+    position: relative;
+    min-width: 0;
+    min-height: 145px;
+    padding: 16px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(30, 41, 70, .75),
+        rgba(15, 23, 42, .65)
+    );
+
+    border: 1px solid rgba(148, 163, 184, .15);
+    border-radius: 12px;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.blueprint-stage:hover {
+    transform: translateY(-3px);
+    border-color: rgba(96, 165, 250, .42);
+    background: rgba(30, 58, 110, .55);
+}
+
+.stage-number {
+    position: absolute;
+    top: 13px;
+    right: 14px;
+
+    color: rgba(148, 163, 184, .55);
+    font: 800 9px Manrope, sans-serif;
+}
+
+.stage-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    margin-bottom: 13px;
+
+    color: #93c5fd;
+    background: rgba(37, 99, 235, .15);
+    border: 1px solid rgba(96, 165, 250, .24);
+    border-radius: 9px;
+
+    font-size: 18px;
+}
+
+.blueprint-stage:nth-child(2) .stage-icon {
+    color: #c4b5fd;
+    background: rgba(139, 92, 246, .13);
+    border-color: rgba(167, 139, 250, .25);
+}
+
+.blueprint-stage:nth-child(3) .stage-icon {
+    color: #67e8f9;
+    background: rgba(6, 182, 212, .12);
+    border-color: rgba(103, 232, 249, .22);
+}
+
+.blueprint-stage:nth-child(4) .stage-icon {
+    color: #86efac;
+    background: rgba(34, 197, 94, .12);
+    border-color: rgba(134, 239, 172, .22);
+}
+
+.blueprint-stage strong {
+    display: block;
+    margin-bottom: 7px;
 
     color: #f8fafc;
-
-    font-family: Manrope, sans-serif;
-    font-size: 24px;
-    font-weight: 800;
-
-    line-height: 1;
-
-    letter-spacing: -.04em;
+    font: 700 12px Manrope, sans-serif;
 }
 
-.audit-metric__label {
-    display: block;
-
-    color: #a7b2c5;
-
-    font-family: Manrope, sans-serif;
-    font-size: 9px;
-    font-weight: 600;
-
-    line-height: 1.35;
-}
-
-
-/* =========================================================
-   FINDINGS
-   ========================================================= */
-
-.audit-dashboard__findings {
+.blueprint-stage p {
     margin: 0;
+    color: #94a3b8;
+
+    font: 400 10px/1.6 Inter, sans-serif;
 }
 
-.audit-dashboard__findings-header {
+/* FOOTER */
+
+.blueprint-footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 12px;
 
-    margin: 0 0 5px;
-    padding-bottom: 5px;
+    margin-top: 17px;
+    padding: 15px;
 
-    color: #64748b;
+    background: rgba(37, 99, 235, .10);
+    border: 1px solid rgba(96, 165, 250, .18);
+    border-radius: 10px;
+}
 
-    font-family: Manrope, sans-serif;
-    font-size: 7px;
-    font-weight: 800;
+.footer-label {
+    display: block;
+    margin-bottom: 5px;
 
-    line-height: 1.4;
+    color: #60a5fa;
+    font: 800 8px Manrope, sans-serif;
     letter-spacing: .1em;
 }
 
-.audit-finding {
-    display: grid;
-
-    grid-template-columns:
-        minmax(160px, .8fr)
-        minmax(140px, 1.2fr);
-
-    align-items: center;
-
-    gap: 16px;
-
-    min-height: 40px;
-
-    border-bottom:
-        1px solid rgba(30, 41, 59, .55);
+.blueprint-footer strong {
+    color: #e2e8f0;
+    font: 700 11px Manrope, sans-serif;
 }
 
-.audit-finding:last-child {
-    border-bottom: 0;
-}
-
-.audit-finding__label {
+.footer-arrow {
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    gap: 9px;
+    width: 31px;
+    height: 31px;
+    flex-shrink: 0;
 
-    min-width: 0;
-}
-
-.audit-finding__dot {
-    flex: 0 0 6px;
-
-    width: 6px;
-    height: 6px;
-
+    color: #bfdbfe;
+    background: rgba(37, 99, 235, .2);
     border-radius: 50%;
 
-    background: #3b82f6;
-
-    box-shadow:
-        0 0 8px rgba(59, 130, 246, .65);
+    font-size: 17px;
 }
-
-.audit-finding:nth-child(3) .audit-finding__dot {
-    background: #a855f7;
-
-    box-shadow:
-        0 0 8px rgba(168, 85, 247, .65);
-}
-
-.audit-finding:nth-child(4) .audit-finding__dot {
-    background: #22d3ee;
-
-    box-shadow:
-        0 0 8px rgba(34, 211, 238, .65);
-}
-
-.audit-finding:nth-child(5) .audit-finding__dot {
-    background: #4ade80;
-
-    box-shadow:
-        0 0 8px rgba(74, 222, 128, .65);
-}
-
-.audit-finding__label > span:not(.audit-finding__dot) {
-    color: #d1d9e6;
-
-    font-family: Manrope, sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-
-    line-height: 1.35;
-}
-
 
 /* =========================================================
-   FINDING DATA
-   ========================================================= */
-
-.audit-finding__data {
-    display: grid;
-
-    grid-template-columns:
-        1fr auto;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-.audit-finding__bar {
-    width: 100%;
-    height: 4px;
-
-    overflow: hidden;
-
-    border-radius: 999px;
-
-    background:
-        rgba(30, 41, 59, .90);
-}
-
-.audit-finding__bar span {
-    display: block;
-
-    height: 100%;
-
-    border-radius: inherit;
-
-    background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #60a5fa
-        );
-}
-
-
-/* =========================================================
-   LARGE DESKTOP
+   RESPONSIVE
    ========================================================= */
 
 @media (min-width: 1400px) {
-
-    .hero {
-        padding: 64px 0 58px;
+    .audit-dashboard.expansion-blueprint {
+        max-width: 650px;
     }
-
-    .hero-inner {
-        gap: 56px;
-    }
-
-    .hero h1 {
-        font-size: 68px;
-    }
-
-    .hero-visual {
-        min-height: 520px;
-    }
-
-    .audit-dashboard {
-        max-width: 700px;
-    }
-
 }
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
 
 @media (max-width: 1100px) {
-
-    .hero {
-        padding: 52px 28px 55px;
-    }
-
-    .hero .container {
-        max-width: 100%;
-    }
-
-    .hero-inner {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(440px, .9fr);
-
-        gap: 38px;
-    }
-
-    .hero h1 {
-        font-size: clamp(44px, 5vw, 60px);
-    }
-
-    .hero .lead {
-        font-size: 16px;
-    }
-
-    .hero-visual {
-        min-height: 470px;
-    }
-
-    .hero-glow {
-        width: 480px;
-        height: 480px;
-    }
-
-    .hero-lines {
-        width: 440px;
-        height: 440px;
-    }
-
-    .audit-dashboard {
+    .audit-dashboard.expansion-blueprint {
         padding: 22px;
     }
-
-    .audit-dashboard__metrics {
-        gap: 8px;
-    }
-
-    .audit-metric {
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-
 }
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
 @media (max-width: 768px) {
-
-    .hero {
-        padding: 48px 24px 55px;
-    }
-
-    .hero-inner {
-        grid-template-columns: 1fr;
-
-        gap: 38px;
-    }
-
-    .hero-content {
+    .audit-dashboard.expansion-blueprint {
         max-width: 100%;
     }
-
-    .hero h1 {
-        max-width: 100%;
-
-        font-size:
-            clamp(40px, 9vw, 52px);
-
-        line-height: 1.04;
-        letter-spacing: -.045em;
-    }
-
-    .hero .lead {
-        max-width: 100%;
-
-        font-size: 17px;
-        line-height: 1.6;
-    }
-
-    .hero-visual {
-        min-height: auto;
-
-        padding: 4px 0;
-    }
-
-    .hero-glow {
-        width: 420px;
-        height: 420px;
-    }
-
-    .hero-lines {
-        width: 400px;
-        height: 400px;
-    }
-
-    .audit-dashboard {
-        max-width: 100%;
-    }
-
-    .audit-dashboard__metrics {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
 @media (max-width: 480px) {
-
-    .hero {
-        padding: 42px 20px 48px;
-    }
-
-    .hero h1 {
-        font-size: 37px;
-        line-height: 1.06;
-    }
-
-    .hero .lead {
-        font-size: 16px;
-    }
-
-    .hero .cta {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero .cta .btn,
-    .hero .cta .ghost {
-        width: 100%;
-        white-space: normal;
-    }
-
-    .hero-benefits {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-benefit,
-    .hero-benefit + .hero-benefit {
-        padding: 14px 0;
-
-        border-left: 0;
-
-        border-bottom:
-            1px solid rgba(148, 163, 184, .15);
-    }
-
-    .hero-benefit:last-child {
-        border-bottom: 0;
-    }
-
-    .audit-dashboard {
+    .audit-dashboard.expansion-blueprint {
         padding: 17px;
-
-        border-radius: 14px;
+        border-radius: 15px;
     }
 
-    .audit-dashboard__header {
-        gap: 9px;
+    .blueprint-header {
+        flex-direction: column;
     }
 
-    .audit-dashboard__header h3 {
-        font-size: 18px;
-    }
-
-    .audit-dashboard__status {
-        font-size: 7px;
-        padding: 0 7px;
-    }
-
-    .audit-dashboard__metrics {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 7px;
-    }
-
-    .audit-metric {
-        padding: 12px 7px;
-    }
-
-    .audit-metric__icon {
-        width: 36px;
-        height: 36px;
-
-        margin-bottom: 8px;
-    }
-
-    .audit-metric__value {
+    .blueprint-header h3 {
         font-size: 20px;
     }
 
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .hero .cta .btn,
-    .hero .cta .ghost,
-    .audit-metric {
-        transition: none;
+    .blueprint-stages {
+        gap: 8px;
     }
 
+    .blueprint-stage {
+        min-height: 150px;
+        padding: 12px;
+    }
+
+    .blueprint-stage strong {
+        font-size: 11px;
+    }
+
+    .blueprint-stage p {
+        font-size: 9px;
+    }
+
+    .blueprint-footer {
+        padding: 12px;
+    }
+
+    .blueprint-footer strong {
+        font-size: 10px;
+    }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .blueprint-stage {
+        transition: none;
+    }
+}
+
 
 /* =========================================================
    GROWTHFORGE — METHODOLOGY
