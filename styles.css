@@ -2746,7 +2746,6 @@ SMALL MOBILE
     }
 
 }
-```
 
 /* =========================================================
    GROWTHFORGE EXECUTIVE GROWTH AUDIT
@@ -2757,23 +2756,26 @@ SMALL MOBILE
     position: relative;
     isolation: isolate;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
-    gap: 48px;
+    justify-content: center;
+    gap: 36px;
 
-    width: calc(100% - 48px);
-    max-width: 1380px;
-    margin: 40px auto;
-    padding: 42px;
-
+    width: calc(100% - 60px);
+    max-width: 1240px;
+    height: auto;
     min-height: 0;
-    overflow: hidden;
+    max-height: none;
 
+    margin: 35px auto;
+    padding: 30px;
+
+    overflow: hidden;
     border: 1px solid rgba(120, 145, 255, .15);
-    border-radius: 20px;
+    border-radius: 18px;
 
     background:
-        radial-gradient(circle at 15% 40%, rgba(44, 91, 190, .14), transparent 42%),
+        radial-gradient(circle at 15% 40%, rgba(44, 91, 190, .12), transparent 42%),
         linear-gradient(135deg, #11182c, #0d1221 65%, #141a30);
 
     color: #ffffff;
@@ -2817,13 +2819,18 @@ SMALL MOBILE
 
 .audit-document-preview {
     position: relative;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+
+    overflow: hidden;
     border: 1px solid rgba(148, 163, 184, .18);
-    border-radius: 18px;
+    border-radius: 12px;
 
     background: #10172a;
 
@@ -2836,13 +2843,14 @@ SMALL MOBILE
 /* DOCUMENT HEADER */
 
 .audit-preview-header {
-    min-height: 54px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 18px;
 
-    padding: 12px 16px;
+    height: 48px;
+    min-height: 48px;
+    padding: 8px 12px;
 
     border-bottom: 1px solid rgba(148, 163, 184, .13);
     background: rgba(255, 255, 255, .025);
@@ -2854,7 +2862,7 @@ SMALL MOBILE
     gap: 10px;
 
     color: #f8fafc;
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: -.4px;
 }
@@ -2872,10 +2880,10 @@ SMALL MOBILE
 .audit-preview-meta {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
 
     color: #8997b3;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 750;
     letter-spacing: 1px;
 }
@@ -2892,9 +2900,14 @@ SMALL MOBILE
 
 .audit-preview-stage {
     display: grid;
-    grid-template-columns: 105px minmax(0, 1fr);
-    height: 360px;
-    min-height: 0;
+    grid-template-columns: 82px minmax(0, 1fr);
+
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
+
+    overflow: hidden;
 
     background:
         radial-gradient(ellipse at center, rgba(56, 91, 160, .13), transparent 75%),
@@ -2907,24 +2920,27 @@ SMALL MOBILE
 .preview-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 
-    padding: 12px 9px;
+    width: 82px;
+    height: 300px;
+    max-height: 300px;
+
+    padding: 9px 6px;
 
     border-right: 1px solid rgba(148, 163, 184, .12);
     background: rgba(5, 12, 28, .25);
 
     overflow-y: auto;
-    max-height: 360px;
 }
 
 .preview-sidebar-label {
     margin-bottom: 5px;
 
     color: #7888a8;
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 800;
-    letter-spacing: 1.1px;
+    letter-spacing: .5px;
 }
 
 
@@ -2934,13 +2950,13 @@ SMALL MOBILE
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
 
     width: 100%;
-    padding: 5px;
+    padding: 4px;
 
     border: 1px solid rgba(148, 163, 184, .15);
-    border-radius: 10px;
+    border-radius: 8px;
 
     background: rgba(255, 255, 255, .035);
     color: #aebbd2;
@@ -2964,9 +2980,9 @@ SMALL MOBILE
 
 .preview-thumb span {
     display: block;
-    font-size: 9px;
+    font-size: 7px;
     font-weight: 650;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 .preview-thumb:hover {
@@ -2995,14 +3011,17 @@ SMALL MOBILE
 
 .preview-canvas {
     position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    min-width: 0;
-    height: 360px;
-    padding: 25px 32px;
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
 
+    padding: 25px;
     overflow: hidden;
 }
 
@@ -3012,7 +3031,7 @@ SMALL MOBILE
     justify-content: center;
 
     width: 100%;
-    max-width: 620px;
+    max-width: 480px;
     height: auto;
     aspect-ratio: 16 / 9;
 
@@ -3021,9 +3040,7 @@ SMALL MOBILE
 
     background: #ffffff;
 
-    box-shadow:
-        0 20px 55px rgba(0, 0, 0, .3),
-        0 0 0 1px rgba(255, 255, 255, .1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .2);
 }
 
 .preview-document img {
@@ -3049,8 +3066,8 @@ SMALL MOBILE
     align-items: center;
     justify-content: center;
 
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
 
     border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 50%;
@@ -3058,7 +3075,7 @@ SMALL MOBILE
     background: rgba(255, 255, 255, .96);
     color: #10182b;
 
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1;
 
     cursor: pointer;
@@ -3069,11 +3086,11 @@ SMALL MOBILE
 }
 
 .preview-arrow.left {
-    left: 8px;
+    left: 5px;
 }
 
 .preview-arrow.right {
-    right: 8px;
+    right: 5px;
 }
 
 .preview-arrow:hover {
@@ -3093,10 +3110,18 @@ SMALL MOBILE
 ========================================================= */
 
 .audit-preview-footer {
-    padding: 12px 16px;
+    display: block;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+
+    margin: 0;
+    padding: 10px 12px;
 
     border-top: 1px solid rgba(148, 163, 184, .13);
-    background: rgba(255, 255, 255, .025);
+    background: #10172a;
 }
 
 .preview-progress {
@@ -3123,22 +3148,24 @@ SMALL MOBILE
 
 .preview-controls {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 15px;
 
-    padding-top: 10px;
+    height: auto;
+    min-height: 28px;
+    padding-top: 7px;
 
     color: #8e9db8;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 750;
-    letter-spacing: .9px;
+    letter-spacing: .5px;
 }
 
 .preview-control-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 9px;
 }
 
 .preview-control-actions button {
@@ -3146,8 +3173,8 @@ SMALL MOBILE
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
+    width: 27px;
+    height: 27px;
 
     border: 1px solid rgba(148, 163, 184, .2);
     border-radius: 50%;
@@ -3167,7 +3194,7 @@ SMALL MOBILE
 .preview-control-actions a {
     color: #75bfff;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 750;
     letter-spacing: 0;
 }
@@ -3183,14 +3210,23 @@ SMALL MOBILE
 
 .audit-info {
     position: relative;
-    min-width: 0;
-    max-width: 100%;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
+    align-self: center;
 
-    padding: 0;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    max-height: none;
+
+    margin: 0;
+    padding: 8px 0;
+
+    gap: 0;
     opacity: 1 !important;
 }
 
@@ -3202,7 +3238,7 @@ SMALL MOBILE
     align-items: center;
     gap: 8px;
 
-    padding: 8px 13px;
+    padding: 6px 11px;
 
     border: 1px solid rgba(95, 109, 255, .35);
     border-radius: 30px;
@@ -3210,7 +3246,7 @@ SMALL MOBILE
     background: rgba(81, 76, 225, .13);
 
     color: #9b9cff;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 800;
     letter-spacing: 1.2px;
 }
@@ -3230,7 +3266,7 @@ SMALL MOBILE
     margin-top: 10px;
 
     color: #8190ad;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 800;
     letter-spacing: 1.5px;
 }
@@ -3239,19 +3275,24 @@ SMALL MOBILE
 /* HEADLINE */
 
 .audit-info h2 {
-    max-width: 480px;
+    display: block;
+    visibility: visible;
 
-    margin: 15px 0 18px;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    min-height: 0;
 
-    font-family: Manrope, sans-serif;
-    font-size: clamp(30px, 2.8vw, 40px);
-    font-weight: 800;
-    line-height: 1.12;
-    letter-spacing: -1.5px;
+    margin: 17px 0 16px;
 
     color: #ffffff !important;
-    opacity: 1 !important;
     -webkit-text-fill-color: #ffffff !important;
+
+    font-family: Manrope, sans-serif;
+    font-size: clamp(27px, 2.5vw, 36px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.2px;
 }
 
 
@@ -3261,14 +3302,14 @@ SMALL MOBILE
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 
-    margin: 0 0 16px;
+    margin: 0 0 13px;
 }
 
 .audit-price .amount {
     font-family: Manrope, sans-serif;
-    font-size: 54px;
+    font-size: 48px;
     font-weight: 850;
     line-height: 1;
 
@@ -3281,7 +3322,7 @@ SMALL MOBILE
 }
 
 .audit-price .price-tag {
-    padding: 9px 12px;
+    padding: 8px 10px;
 
     border: 1px solid rgba(101, 139, 255, .3);
     border-radius: 10px;
@@ -3289,7 +3330,7 @@ SMALL MOBILE
     background: rgba(61, 102, 216, .1);
 
     color: #c5d6ff;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 750;
 }
 
@@ -3300,19 +3341,19 @@ SMALL MOBILE
     margin: 0 0 9px;
 
     color: #f2f5ff;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 750;
     line-height: 1.5;
 }
 
 .audit-description {
-    max-width: 530px;
+    max-width: 460px;
 
-    margin: 0 0 18px;
+    margin: 0 0 15px;
 
-    color: #c0cbe0;
-    font-size: 13px;
-    line-height: 1.65;
+    color: #bdc9df;
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 
@@ -3324,39 +3365,40 @@ SMALL MOBILE
     width: 100%;
 
     margin: 0 0 12px;
-    padding: 14px 16px;
+    padding: 13px 15px;
 
     border: 1px solid rgba(91, 129, 255, .2);
-    border-radius: 12px;
+    border-radius: 10px;
 
     background: rgba(66, 96, 174, .09);
 }
 
 .audit-section-label {
     display: block;
-    margin-bottom: 9px;
+    margin-bottom: 6px;
 
     color: #6ec8ff;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 850;
     letter-spacing: 1.3px;
 }
 
 .audit-session h3 {
-    margin: 0 0 7px;
+    margin: 0 0 6px;
 
     color: #ffffff;
     font-family: Manrope, sans-serif;
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 750;
+    line-height: 1.15;
 }
 
 .audit-session p {
     margin: 0;
 
     color: #a8b5cb;
-    font-size: 11px;
-    line-height: 1.65;
+    font-size: 10px;
+    line-height: 1.5;
 }
 
 
@@ -3369,7 +3411,7 @@ SMALL MOBILE
 
     width: 100%;
 
-    margin: 0 0 14px;
+    margin: 0 0 12px;
     padding: 0;
 
     list-style: none;
@@ -3378,16 +3420,16 @@ SMALL MOBILE
 .audit-info .audit-list li {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 9px;
 
-    padding: 9px 0;
+    padding: 7px 0;
 
     border-bottom: 1px solid rgba(148, 163, 184, .13);
 
     color: #e0e7f5;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 650;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .audit-info .audit-list li span {
@@ -3395,9 +3437,9 @@ SMALL MOBILE
     align-items: center;
     justify-content: center;
 
-    width: 23px;
-    height: 23px;
-    flex: 0 0 23px;
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
 
     border: 1px solid rgba(63, 150, 255, .3);
     border-radius: 7px;
@@ -3405,7 +3447,7 @@ SMALL MOBILE
     background: rgba(48, 113, 232, .12);
 
     color: #67c5ff;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 850;
 }
 
@@ -3417,12 +3459,12 @@ SMALL MOBILE
 .audit-strategy-session {
     display: flex;
     align-items: flex-start;
-    gap: 13px;
+    gap: 10px;
 
     width: 100%;
 
-    margin: 0 0 16px;
-    padding: 12px;
+    margin: 0 0 12px;
+    padding: 10px 12px;
 
     border: 1px solid rgba(148, 163, 184, .16);
     border-radius: 11px;
@@ -3435,9 +3477,9 @@ SMALL MOBILE
     align-items: center;
     justify-content: center;
 
-    width: 35px;
-    height: 35px;
-    flex: 0 0 35px;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
 
     border-radius: 9px;
 
@@ -3453,7 +3495,7 @@ SMALL MOBILE
     margin-bottom: 5px;
 
     color: #f4f7ff;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
 }
 
@@ -3461,7 +3503,7 @@ SMALL MOBILE
     margin: 0;
 
     color: #9eacc4;
-    font-size: 10px;
+    font-size: 9px;
     line-height: 1.6;
 }
 
@@ -3473,7 +3515,7 @@ SMALL MOBILE
 .audit-actions {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 8px;
 
     width: 100%;
 }
@@ -3485,9 +3527,9 @@ SMALL MOBILE
     gap: 16px;
 
     width: 100%;
-    min-height: 49px;
+    min-height: 44px;
 
-    padding: 12px 16px;
+    padding: 10px 14px;
 
     border: 1px solid rgba(131, 135, 255, .5);
     border-radius: 11px;
@@ -3498,7 +3540,7 @@ SMALL MOBILE
     text-decoration: none;
     text-align: left;
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
 
     box-shadow: 0 12px 32px rgba(65, 73, 224, .25);
@@ -3527,7 +3569,7 @@ SMALL MOBILE
     color: #9bbcff;
     text-decoration: none;
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 750;
 
     transition: .2s ease;
@@ -3540,13 +3582,165 @@ SMALL MOBILE
 
 .audit-purchase-note {
     display: block;
-    margin-top: 10px;
+    margin-top: 8px;
 
     color: #71809d;
-    font-size: 9px;
+    font-size: 8px;
     line-height: 1.6;
 }
 
+
+/* =========================================================
+   LEGACY PURCHASE BUTTON
+========================================================= */
+
+.audit-purchase-btn {
+    width: 100%;
+    min-height: 50px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #4658ed, #6849e9);
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 15px 35px rgba(65, 73, 224, .3);
+
+    transition: .25s ease;
+}
+
+.audit-purchase-btn:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(135deg, #536bff, #7859ff);
+
+    box-shadow: 0 20px 42px rgba(65, 73, 224, .4);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .audit-product {
+        width: calc(100% - 40px);
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 720px;
+        padding: 24px;
+    }
+
+    .audit-document-preview {
+        max-width: 100%;
+    }
+
+    .audit-info {
+        max-width: 100%;
+    }
+
+    .audit-info h2 {
+        max-width: 600px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .audit-product {
+        width: calc(100% - 24px);
+        margin: 18px auto;
+        padding: 13px;
+        gap: 20px;
+    }
+
+    .audit-preview-header {
+        height: 42px;
+        min-height: 42px;
+        padding: 7px 9px;
+    }
+
+    .audit-preview-brand {
+        font-size: 11px;
+    }
+
+    .audit-preview-meta {
+        font-size: 7px;
+    }
+
+    .audit-preview-meta span:first-child {
+        display: none;
+    }
+
+    .audit-preview-stage {
+        grid-template-columns: 65px minmax(0, 1fr);
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+    }
+
+    .preview-sidebar {
+        width: 65px;
+        height: 220px;
+        max-height: 220px;
+        padding: 7px 4px;
+    }
+
+    .preview-thumb span {
+        font-size: 6px;
+    }
+
+    .preview-canvas {
+        height: 220px;
+        min-height: 220px;
+        max-height: 220px;
+        padding: 18px 15px;
+    }
+
+    .preview-arrow {
+        width: 27px;
+        height: 27px;
+        font-size: 13px;
+    }
+
+    .audit-info h2 {
+        font-size: 29px;
+    }
+
+    .audit-price .amount {
+        font-size: 43px;
+    }
+
+    .audit-session h3 {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .audit-product *,
+    .audit-purchase-btn {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
 
 /* =========================================================
    HOW GROWTHFORGE WORKS — METHODOLOGY
