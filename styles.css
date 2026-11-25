@@ -2748,68 +2748,50 @@ SMALL MOBILE
 }
 
 /* =========================================================
-   GROWTHFORGE EXECUTIVE GROWTH AUDIT
-   COMPACT PREMIUM DARK HERO
+   GROWTHFORGE — EXECUTIVE GROWTH AUDIT
+   FINAL OVERRIDE: READABILITY, CONTRAST & PROPORTIONS
+
+   Append this AFTER the existing audit CSS.
 ========================================================= */
 
-.audit-product {
-    position: relative;
-    isolation: isolate;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
+/* MAIN SECTION */
 
-    width: calc(100% - 60px);
-    max-width: 1240px;
-    height: auto;
-    min-height: 0;
-    max-height: none;
+html body #executive-growth-audit.audit-product {
+    position: relative !important;
+    isolation: isolate !important;
 
-    margin: 35px auto;
-    padding: 30px;
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr) !important;
+    align-items: center !important;
+    gap: 32px !important;
 
-    overflow: hidden;
-    border: 1px solid rgba(120, 145, 255, .15);
-    border-radius: 18px;
+    width: calc(100% - 48px) !important;
+    max-width: 1180px !important;
+    min-height: 0 !important;
+    height: auto !important;
 
-    background:
-        radial-gradient(circle at 15% 40%, rgba(44, 91, 190, .12), transparent 42%),
-        linear-gradient(135deg, #11182c, #0d1221 65%, #141a30);
+    margin: 35px auto !important;
+    padding: 28px !important;
 
-    color: #ffffff;
-    box-shadow: 0 30px 90px rgba(4, 10, 28, .28);
+    overflow: hidden !important;
+
+    background: #10182b !important;
+    border: 1px solid #2b3a58 !important;
+    border-radius: 18px !important;
+
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    box-shadow: 0 20px 55px rgba(5, 12, 28, .22) !important;
 }
 
-.audit-product::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
+/* Prevent decorative overlays from obscuring content */
 
-    background:
-        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-
-    background-size: 48px 48px;
-    mask-image: linear-gradient(to bottom, black, transparent 90%);
-}
-
-.audit-product::after {
-    content: "";
-    position: absolute;
-    width: 460px;
-    height: 460px;
-    top: -250px;
-    right: -120px;
-    z-index: -1;
-
-    border-radius: 50%;
-    background: rgba(65, 92, 255, .12);
-    filter: blur(100px);
-    pointer-events: none;
+html body #executive-growth-audit.audit-product::before,
+html body #executive-growth-audit.audit-product::after {
+    pointer-events: none !important;
+    z-index: -1 !important;
 }
 
 
@@ -2817,638 +2799,525 @@ SMALL MOBILE
    LEFT COLUMN — PDF PREVIEW
 ========================================================= */
 
-.audit-document-preview {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+html body #executive-growth-audit .audit-document-preview {
+    display: flex !important;
+    flex-direction: column !important;
 
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    max-height: none;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
 
-    overflow: hidden;
-    border: 1px solid rgba(148, 163, 184, .18);
-    border-radius: 12px;
+    overflow: hidden !important;
 
-    background: #10172a;
+    background: #111a2e !important;
+    border: 1px solid #34425e !important;
+    border-radius: 12px !important;
+}
 
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, .3),
-        0 0 35px rgba(49, 96, 255, .07);
+html body #executive-growth-audit .audit-preview-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 8px 12px !important;
+
+    background: #17223a !important;
+    border-bottom: 1px solid #34425e !important;
+}
+
+html body #executive-growth-audit .audit-preview-brand {
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+}
+
+html body #executive-growth-audit .audit-preview-meta {
+    color: #c1cce0 !important;
+    font-size: 8px !important;
+    letter-spacing: .6px !important;
+}
+
+html body #executive-growth-audit .audit-preview-meta span:last-child {
+    color: #59caff !important;
 }
 
 
-/* DOCUMENT HEADER */
+/* PREVIEW STAGE */
 
-.audit-preview-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
+html body #executive-growth-audit .audit-preview-stage {
+    display: grid !important;
+    grid-template-columns: 76px minmax(0, 1fr) !important;
 
-    height: 48px;
-    min-height: 48px;
-    padding: 8px 12px;
+    width: 100% !important;
+    height: 285px !important;
+    min-height: 285px !important;
+    max-height: 285px !important;
 
-    border-bottom: 1px solid rgba(148, 163, 184, .13);
-    background: rgba(255, 255, 255, .025);
-}
-
-.audit-preview-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    color: #f8fafc;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: -.4px;
-}
-
-.audit-preview-indicator {
-    width: 9px;
-    height: 9px;
-    flex-shrink: 0;
-
-    border-radius: 50%;
-    background: #36c8ff;
-    box-shadow: 0 0 12px rgba(54, 200, 255, .75);
-}
-
-.audit-preview-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    color: #8997b3;
-    font-size: 8px;
-    font-weight: 750;
-    letter-spacing: 1px;
-}
-
-.audit-preview-meta span:last-child {
-    color: #62c7ff;
-    white-space: nowrap;
+    overflow: hidden !important;
+    background: #18243a !important;
 }
 
 
-/* =========================================================
-   DOCUMENT STAGE
-========================================================= */
+/* THUMBNAIL SIDEBAR */
 
-.audit-preview-stage {
-    display: grid;
-    grid-template-columns: 82px minmax(0, 1fr);
+html body #executive-growth-audit .preview-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
 
-    width: 100%;
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
+    width: 76px !important;
+    height: 285px !important;
+    max-height: 285px !important;
 
-    overflow: hidden;
+    padding: 9px 6px !important;
 
-    background:
-        radial-gradient(ellipse at center, rgba(56, 91, 160, .13), transparent 75%),
-        #111a2e;
+    overflow-y: auto !important;
+
+    background: #111a2d !important;
+    border-right: 1px solid #34425e !important;
 }
 
-
-/* SIDEBAR */
-
-.preview-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-
-    width: 82px;
-    height: 300px;
-    max-height: 300px;
-
-    padding: 9px 6px;
-
-    border-right: 1px solid rgba(148, 163, 184, .12);
-    background: rgba(5, 12, 28, .25);
-
-    overflow-y: auto;
+html body #executive-growth-audit .preview-sidebar-label {
+    color: #b2c2dc !important;
+    font-size: 7px !important;
+    font-weight: 800 !important;
 }
 
-.preview-sidebar-label {
-    margin-bottom: 5px;
-
-    color: #7888a8;
-    font-size: 7px;
-    font-weight: 800;
-    letter-spacing: .5px;
-}
-
-
-/* THUMBNAILS */
-
-.preview-thumb {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-
-    width: 100%;
-    padding: 4px;
-
-    border: 1px solid rgba(148, 163, 184, .15);
-    border-radius: 8px;
-
-    background: rgba(255, 255, 255, .035);
-    color: #aebbd2;
-    text-align: left;
-
-    cursor: pointer;
-    transition: .25s ease;
-}
-
-.preview-thumb img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-
-    object-fit: cover;
-    object-position: top center;
-
-    border-radius: 5px;
-    background: #202b42;
-}
-
-.preview-thumb span {
-    display: block;
-    font-size: 7px;
-    font-weight: 650;
-    line-height: 1.2;
-}
-
-.preview-thumb:hover {
-    border-color: rgba(73, 141, 255, .7);
-    background: rgba(53, 101, 213, .12);
-    transform: translateY(-2px);
-}
-
-.preview-thumb.active {
-    border: 1px solid #397cff;
-    background: rgba(44, 104, 255, .14);
-
-    box-shadow:
-        0 0 0 2px rgba(57, 124, 255, .12),
-        0 0 20px rgba(57, 124, 255, .12);
-}
-
-.preview-thumb.active span {
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   MAIN PDF CANVAS
-========================================================= */
-
-.preview-canvas {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: 300px;
-    min-height: 300px;
-    max-height: 300px;
-
-    padding: 25px;
-    overflow: hidden;
-}
-
-.preview-document {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    max-width: 480px;
-    height: auto;
-    aspect-ratio: 16 / 9;
-
-    overflow: hidden;
-    border-radius: 5px;
-
-    background: #ffffff;
-
-    box-shadow: 0 12px 35px rgba(0, 0, 0, .2);
-}
-
-.preview-document img {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    background: #ffffff;
-
-    transition: opacity .2s ease;
-}
-
-
-/* PAGE NAVIGATION */
-
-.preview-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 3;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 34px;
-    height: 34px;
-
-    border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, .96);
-    color: #10182b;
-
-    font-size: 16px;
-    line-height: 1;
-
-    cursor: pointer;
-    transform: translateY(-50%);
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, .2);
-    transition: .25s ease;
-}
-
-.preview-arrow.left {
-    left: 5px;
-}
-
-.preview-arrow.right {
-    right: 5px;
-}
-
-.preview-arrow:hover {
-    background: #4778ff;
-    color: #ffffff;
-    transform: translateY(-50%) scale(1.08);
-}
-
-.preview-arrow:disabled {
-    opacity: .35;
-    cursor: not-allowed;
-}
-
-
-/* =========================================================
-   PREVIEW FOOTER
-========================================================= */
-
-.audit-preview-footer {
-    display: block;
-
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    max-height: none;
-
-    margin: 0;
-    padding: 10px 12px;
-
-    border-top: 1px solid rgba(148, 163, 184, .13);
-    background: #10172a;
-}
-
-.preview-progress {
-    width: 100%;
-    height: 3px;
-
-    overflow: hidden;
-    border-radius: 10px;
-
-    background: rgba(148, 163, 184, .17);
-}
-
-.preview-progress-fill {
-    width: 3.33%;
-    height: 100%;
-
-    border-radius: inherit;
-
-    background: linear-gradient(90deg, #20c7f5, #6559ff);
-    box-shadow: 0 0 12px rgba(62, 133, 255, .5);
-
-    transition: width .3s ease;
-}
-
-.preview-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-
-    height: auto;
-    min-height: 28px;
-    padding-top: 7px;
-
-    color: #8e9db8;
-    font-size: 8px;
-    font-weight: 750;
-    letter-spacing: .5px;
-}
-
-.preview-control-actions {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-}
-
-.preview-control-actions button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 27px;
-    height: 27px;
-
-    border: 1px solid rgba(148, 163, 184, .2);
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, .06);
-    color: #dce6ff;
-
-    cursor: pointer;
-    transition: .2s ease;
-}
-
-.preview-control-actions button:hover {
-    border-color: #4778ff;
-    background: rgba(71, 120, 255, .18);
-}
-
-.preview-control-actions a {
-    color: #75bfff;
-    text-decoration: none;
-    font-size: 9px;
-    font-weight: 750;
-    letter-spacing: 0;
-}
-
-.preview-control-actions a:hover {
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   RIGHT COLUMN — AUDIT OFFER
-========================================================= */
-
-.audit-info {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    align-self: center;
-
-    width: 100%;
-    height: auto;
-    min-width: 0;
-    min-height: 0;
-    max-height: none;
-
-    margin: 0;
-    padding: 8px 0;
-
-    gap: 0;
+html body #executive-growth-audit .preview-thumb {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+
+    width: 100% !important;
+    padding: 4px !important;
+
+    background: #202d46 !important;
+    border: 1px solid #40506c !important;
+    border-radius: 7px !important;
+
+    color: #e3ebf8 !important;
     opacity: 1 !important;
 }
 
-
-/* BADGES */
-
-.audit-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 6px 11px;
-
-    border: 1px solid rgba(95, 109, 255, .35);
-    border-radius: 30px;
-
-    background: rgba(81, 76, 225, .13);
-
-    color: #9b9cff;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1.2px;
+html body #executive-growth-audit .preview-thumb img {
+    display: block !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+    border-radius: 4px !important;
 }
 
-.audit-badge::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-    background: #35c8ff;
-
-    box-shadow: 0 0 10px rgba(53, 200, 255, .8);
+html body #executive-growth-audit .preview-thumb span {
+    color: #e3ebf8 !important;
+    font-size: 7px !important;
+    line-height: 1.25 !important;
 }
 
-.audit-version {
-    margin-top: 10px;
+html body #executive-growth-audit .preview-thumb.active {
+    background: #263f68 !important;
+    border: 1px solid #4b91ff !important;
+}
 
-    color: #8190ad;
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+html body #executive-growth-audit .preview-thumb.active span {
+    color: #ffffff !important;
+}
+
+
+/* MAIN PDF CANVAS */
+
+html body #executive-growth-audit .preview-canvas {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    height: 285px !important;
+    min-height: 285px !important;
+    max-height: 285px !important;
+
+    padding: 22px !important;
+    overflow: hidden !important;
+
+    background: #1b2941 !important;
+}
+
+html body #executive-growth-audit .preview-document {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    max-width: 440px !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+
+    overflow: hidden !important;
+    border-radius: 5px !important;
+
+    background: #ffffff !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25) !important;
+}
+
+html body #executive-growth-audit .preview-document img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    background: #ffffff !important;
+}
+
+
+/* PREVIEW ARROWS */
+
+html body #executive-growth-audit .preview-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    z-index: 5 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 32px !important;
+    height: 32px !important;
+
+    padding: 0 !important;
+
+    background: #ffffff !important;
+    border: 1px solid #d5dfef !important;
+    border-radius: 50% !important;
+
+    color: #10182b !important;
+    font-size: 15px !important;
+
+    opacity: 1 !important;
+    transform: translateY(-50%) !important;
+}
+
+html body #executive-growth-audit .preview-arrow.left {
+    left: 5px !important;
+}
+
+html body #executive-growth-audit .preview-arrow.right {
+    right: 5px !important;
+}
+
+html body #executive-growth-audit .preview-arrow:hover {
+    background: #4778ff !important;
+    color: #ffffff !important;
+}
+
+
+/* PREVIEW FOOTER */
+
+html body #executive-growth-audit .audit-preview-footer {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 10px 12px !important;
+
+    background: #111a2e !important;
+    border-top: 1px solid #34425e !important;
+}
+
+html body #executive-growth-audit .preview-progress {
+    width: 100% !important;
+    height: 3px !important;
+    background: #34425e !important;
+}
+
+html body #executive-growth-audit .preview-progress-fill {
+    height: 100% !important;
+    background: linear-gradient(90deg, #20c7f5, #6559ff) !important;
+}
+
+html body #executive-growth-audit .preview-controls {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+
+    padding-top: 7px !important;
+
+    color: #c1cce0 !important;
+    font-size: 8px !important;
+    font-weight: 750 !important;
+}
+
+html body #executive-growth-audit .preview-control-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+}
+
+html body #executive-growth-audit .preview-control-actions button {
+    color: #ffffff !important;
+    background: #263957 !important;
+    border: 1px solid #50617e !important;
+}
+
+html body #executive-growth-audit .preview-control-actions a {
+    color: #75caff !important;
+    font-size: 9px !important;
+    font-weight: 750 !important;
+}
+
+
+/* =========================================================
+   RIGHT COLUMN — OFFER
+========================================================= */
+
+html body #executive-growth-audit .audit-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    gap: 0 !important;
+
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* BADGE */
+
+html body #executive-growth-audit .audit-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+
+    padding: 6px 11px !important;
+
+    background: #1c2e4d !important;
+    border: 1px solid #405c91 !important;
+    border-radius: 30px !important;
+
+    color: #a9c7ff !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+}
+
+html body #executive-growth-audit .audit-version {
+    margin-top: 9px !important;
+
+    color: #aebdd5 !important;
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.2px !important;
 }
 
 
 /* HEADLINE */
 
-.audit-info h2 {
-    display: block;
-    visibility: visible;
+html body #executive-growth-audit .audit-info h2 {
+    display: block !important;
 
-    width: 100%;
-    max-width: 440px;
-    height: auto;
-    min-height: 0;
+    width: 100% !important;
+    max-width: 460px !important;
+    height: auto !important;
+    min-height: 0 !important;
 
-    margin: 17px 0 16px;
+    margin: 15px 0 15px !important;
+    padding: 0 !important;
 
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 
-    font-family: Manrope, sans-serif;
-    font-size: clamp(27px, 2.5vw, 36px);
-    font-weight: 800;
-    line-height: 1.12;
-    letter-spacing: -1.2px;
+    font-family: Manrope, sans-serif !important;
+    font-size: clamp(26px, 2.4vw, 34px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -1px !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 
 /* PRICE */
 
-.audit-price {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+html body #executive-growth-audit .audit-price {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 11px !important;
 
-    margin: 0 0 13px;
+    margin: 0 0 13px !important;
 }
 
-.audit-price .amount {
-    font-family: Manrope, sans-serif;
-    font-size: 48px;
-    font-weight: 850;
-    line-height: 1;
+html body #executive-growth-audit .audit-price .amount {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
-    letter-spacing: -3px;
-
-    background: linear-gradient(120deg, #ffffff 10%, #8caeff 75%, #7a78ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: Manrope, sans-serif !important;
+    font-size: 43px !important;
+    font-weight: 850 !important;
+    line-height: 1 !important;
+    letter-spacing: -2px !important;
 }
 
-.audit-price .price-tag {
-    padding: 8px 10px;
+html body #executive-growth-audit .audit-price .price-tag {
+    padding: 8px 10px !important;
 
-    border: 1px solid rgba(101, 139, 255, .3);
-    border-radius: 10px;
+    background: #243653 !important;
+    border: 1px solid #506a9a !important;
+    border-radius: 8px !important;
 
-    background: rgba(61, 102, 216, .1);
-
-    color: #c5d6ff;
-    font-size: 10px;
-    font-weight: 750;
+    color: #e0eaff !important;
+    font-size: 9px !important;
+    font-weight: 750 !important;
 }
 
 
 /* DESCRIPTION */
 
-.audit-subtitle {
-    margin: 0 0 9px;
+html body #executive-growth-audit .audit-subtitle {
+    max-width: 540px !important;
+    margin: 0 0 9px !important;
 
-    color: #f2f5ff;
-    font-size: 13px;
-    font-weight: 750;
-    line-height: 1.5;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 750 !important;
+    line-height: 1.55 !important;
+
+    opacity: 1 !important;
 }
 
-.audit-description {
-    max-width: 460px;
+html body #executive-growth-audit .audit-description {
+    max-width: 500px !important;
+    margin: 0 0 14px !important;
 
-    margin: 0 0 15px;
+    color: #d0d9e9 !important;
+    font-size: 12px !important;
+    line-height: 1.65 !important;
 
-    color: #bdc9df;
-    font-size: 12px;
-    line-height: 1.6;
+    opacity: 1 !important;
 }
 
 
 /* =========================================================
-   AUDIT DELIVERABLES
+   ROADMAP DELIVERABLES
 ========================================================= */
 
-.audit-session {
-    width: 100%;
+html body #executive-growth-audit .audit-session {
+    display: block !important;
 
-    margin: 0 0 12px;
-    padding: 13px 15px;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
 
-    border: 1px solid rgba(91, 129, 255, .2);
-    border-radius: 10px;
+    margin: 0 0 12px !important;
+    padding: 14px 15px !important;
 
-    background: rgba(66, 96, 174, .09);
+    background: #1d2b45 !important;
+    border: 1px solid #40577f !important;
+    border-radius: 10px !important;
+
+    opacity: 1 !important;
 }
 
-.audit-section-label {
-    display: block;
-    margin-bottom: 6px;
+html body #executive-growth-audit .audit-section-label {
+    display: block !important;
+    margin-bottom: 7px !important;
 
-    color: #6ec8ff;
-    font-size: 8px;
-    font-weight: 850;
-    letter-spacing: 1.3px;
+    color: #68caff !important;
+    font-size: 8px !important;
+    font-weight: 850 !important;
+    letter-spacing: 1.2px !important;
 }
 
-.audit-session h3 {
-    margin: 0 0 6px;
+html body #executive-growth-audit .audit-session h3 {
+    margin: 0 0 7px !important;
 
-    color: #ffffff;
-    font-family: Manrope, sans-serif;
-    font-size: 19px;
-    font-weight: 750;
-    line-height: 1.15;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    font-family: Manrope, sans-serif !important;
+    font-size: clamp(21px, 2vw, 26px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -.6px !important;
 }
 
-.audit-session p {
-    margin: 0;
+html body #executive-growth-audit .audit-session p {
+    margin: 0 !important;
 
-    color: #a8b5cb;
-    font-size: 10px;
-    line-height: 1.5;
+    color: #c5d1e4 !important;
+    font-size: 10px !important;
+    line-height: 1.55 !important;
 }
 
 
 /* DELIVERABLE LIST */
 
-.audit-info .audit-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+html body #executive-growth-audit .audit-info .audit-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
 
-    width: 100%;
+    width: 100% !important;
+    margin: 0 0 12px !important;
+    padding: 0 !important;
 
-    margin: 0 0 12px;
-    padding: 0;
-
-    list-style: none;
+    list-style: none !important;
 }
 
-.audit-info .audit-list li {
-    display: flex;
-    align-items: center;
-    gap: 9px;
+html body #executive-growth-audit .audit-info .audit-list li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 
-    padding: 7px 0;
+    width: 100% !important;
+    padding: 7px 0 !important;
 
-    border-bottom: 1px solid rgba(148, 163, 184, .13);
+    border-bottom: 1px solid #35435d !important;
 
-    color: #e0e7f5;
-    font-size: 10px;
-    font-weight: 650;
-    line-height: 1.4;
+    color: #eaf0fa !important;
+    font-size: 10px !important;
+    font-weight: 650 !important;
+    line-height: 1.4 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-.audit-info .audit-list li span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+html body #executive-growth-audit .audit-info .audit-list li span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    width: 21px;
-    height: 21px;
-    flex: 0 0 21px;
+    width: 21px !important;
+    height: 21px !important;
+    flex: 0 0 21px !important;
 
-    border: 1px solid rgba(63, 150, 255, .3);
-    border-radius: 7px;
+    background: #263e62 !important;
+    border: 1px solid #4d80bd !important;
+    border-radius: 6px !important;
 
-    background: rgba(48, 113, 232, .12);
-
-    color: #67c5ff;
-    font-size: 8px;
-    font-weight: 850;
+    color: #a5d7ff !important;
+    font-size: 8px !important;
+    font-weight: 850 !important;
 }
 
 
@@ -3456,170 +3325,109 @@ SMALL MOBILE
    ONE-HOUR STRATEGY SESSION
 ========================================================= */
 
-.audit-strategy-session {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+html body #executive-growth-audit .audit-strategy-session {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
 
-    width: 100%;
+    width: 100% !important;
+    margin: 0 0 12px !important;
+    padding: 11px 12px !important;
 
-    margin: 0 0 12px;
-    padding: 10px 12px;
-
-    border: 1px solid rgba(148, 163, 184, .16);
-    border-radius: 11px;
-
-    background: rgba(255, 255, 255, .035);
+    background: #1b2941 !important;
+    border: 1px solid #3b4d6a !important;
+    border-radius: 9px !important;
 }
 
-.strategy-session-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+html body #executive-growth-audit .strategy-session-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    width: 30px;
-    height: 30px;
-    flex: 0 0 30px;
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
 
-    border-radius: 9px;
+    background: #2b4166 !important;
+    border-radius: 8px !important;
 
-    background: rgba(75, 104, 255, .18);
-    color: #84a8ff;
-
-    font-size: 18px;
-    font-weight: 800;
+    color: #a8ceff !important;
 }
 
-.audit-strategy-session strong {
-    display: block;
-    margin-bottom: 5px;
+html body #executive-growth-audit .audit-strategy-session strong {
+    display: block !important;
+    margin-bottom: 4px !important;
 
-    color: #f4f7ff;
-    font-size: 10px;
-    font-weight: 800;
+    color: #ffffff !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
 }
 
-.audit-strategy-session p {
-    margin: 0;
+html body #executive-growth-audit .audit-strategy-session p {
+    margin: 0 !important;
 
-    color: #9eacc4;
-    font-size: 9px;
-    line-height: 1.6;
+    color: #c2cee0 !important;
+    font-size: 9px !important;
+    line-height: 1.55 !important;
 }
 
 
 /* =========================================================
-   CALLS TO ACTION
+   CTA
 ========================================================= */
 
-.audit-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+html body #executive-growth-audit .audit-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
 
-    width: 100%;
+    width: 100% !important;
 }
 
-.audit-actions .btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+html body #executive-growth-audit .audit-actions .btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
 
-    width: 100%;
-    min-height: 44px;
+    width: 100% !important;
+    min-height: 45px !important;
 
-    padding: 10px 14px;
+    padding: 11px 14px !important;
 
-    border: 1px solid rgba(131, 135, 255, .5);
-    border-radius: 11px;
+    background: linear-gradient(110deg, #4658ed, #6849e9) !important;
+    border: 1px solid #777cff !important;
+    border-radius: 9px !important;
 
-    background: linear-gradient(110deg, #4658ed, #6849e9);
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
-    color: #ffffff;
-    text-decoration: none;
-    text-align: left;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
 
-    font-size: 11px;
-    font-weight: 800;
-
-    box-shadow: 0 12px 32px rgba(65, 73, 224, .25);
-
-    transition: .25s ease;
+    opacity: 1 !important;
 }
 
-.audit-actions .btn:hover {
-    transform: translateY(-3px);
-
-    background: linear-gradient(110deg, #536bff, #7859ff);
-
-    box-shadow: 0 18px 40px rgba(65, 73, 224, .38);
+html body #executive-growth-audit .audit-actions .btn span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
-.audit-actions .btn span {
-    font-size: 19px;
+html body #executive-growth-audit .audit-actions .ghost {
+    color: #a9ccff !important;
+    font-size: 10px !important;
+    font-weight: 750 !important;
+    text-decoration: none !important;
 }
 
-.audit-actions .ghost {
-    display: inline-flex;
-    align-items: center;
+html body #executive-growth-audit .audit-purchase-note {
+    display: block !important;
+    margin-top: 8px !important;
 
-    width: fit-content;
-
-    color: #9bbcff;
-    text-decoration: none;
-
-    font-size: 10px;
-    font-weight: 750;
-
-    transition: .2s ease;
-}
-
-.audit-actions .ghost:hover {
-    color: #ffffff;
-    transform: translateX(4px);
-}
-
-.audit-purchase-note {
-    display: block;
-    margin-top: 8px;
-
-    color: #71809d;
-    font-size: 8px;
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   LEGACY PURCHASE BUTTON
-========================================================= */
-
-.audit-purchase-btn {
-    width: 100%;
-    min-height: 50px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: linear-gradient(135deg, #4658ed, #6849e9);
-    color: #ffffff;
-
-    font-size: 14px;
-    font-weight: 800;
-
-    cursor: pointer;
-
-    box-shadow: 0 15px 35px rgba(65, 73, 224, .3);
-
-    transition: .25s ease;
-}
-
-.audit-purchase-btn:hover {
-    transform: translateY(-3px);
-
-    background: linear-gradient(135deg, #536bff, #7859ff);
-
-    box-shadow: 0 20px 42px rgba(65, 73, 224, .4);
+    color: #aebbd0 !important;
+    font-size: 8px !important;
+    line-height: 1.5 !important;
 }
 
 
@@ -3627,27 +3435,26 @@ SMALL MOBILE
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
 
-    .audit-product {
-        width: calc(100% - 40px);
-        grid-template-columns: 1fr;
-        gap: 25px;
-        max-width: 720px;
-        padding: 24px;
+    html body #executive-growth-audit.audit-product {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+
+        width: calc(100% - 36px) !important;
+        max-width: 720px !important;
+
+        padding: 22px !important;
     }
 
-    .audit-document-preview {
-        max-width: 100%;
+    html body #executive-growth-audit .audit-info {
+        width: 100% !important;
     }
 
-    .audit-info {
-        max-width: 100%;
+    html body #executive-growth-audit .audit-info h2 {
+        max-width: 600px !important;
     }
 
-    .audit-info h2 {
-        max-width: 600px;
-    }
 }
 
 
@@ -3657,84 +3464,92 @@ SMALL MOBILE
 
 @media (max-width: 600px) {
 
-    .audit-product {
-        width: calc(100% - 24px);
-        margin: 18px auto;
-        padding: 13px;
-        gap: 20px;
+    html body #executive-growth-audit.audit-product {
+        width: calc(100% - 24px) !important;
+        margin: 18px auto !important;
+        padding: 13px !important;
+        gap: 19px !important;
+        border-radius: 13px !important;
     }
 
-    .audit-preview-header {
-        height: 42px;
-        min-height: 42px;
-        padding: 7px 9px;
+    html body #executive-growth-audit .audit-preview-header {
+        height: 40px !important;
+        min-height: 40px !important;
+        padding: 7px 9px !important;
     }
 
-    .audit-preview-brand {
-        font-size: 11px;
+    html body #executive-growth-audit .audit-preview-meta {
+        font-size: 7px !important;
     }
 
-    .audit-preview-meta {
-        font-size: 7px;
+    html body #executive-growth-audit .audit-preview-meta span:first-child {
+        display: none !important;
     }
 
-    .audit-preview-meta span:first-child {
-        display: none;
+    html body #executive-growth-audit .audit-preview-stage {
+        grid-template-columns: 62px minmax(0, 1fr) !important;
+        height: 210px !important;
+        min-height: 210px !important;
+        max-height: 210px !important;
     }
 
-    .audit-preview-stage {
-        grid-template-columns: 65px minmax(0, 1fr);
-        height: 220px;
-        min-height: 220px;
-        max-height: 220px;
+    html body #executive-growth-audit .preview-sidebar {
+        width: 62px !important;
+        height: 210px !important;
+        max-height: 210px !important;
+        padding: 6px 4px !important;
     }
 
-    .preview-sidebar {
-        width: 65px;
-        height: 220px;
-        max-height: 220px;
-        padding: 7px 4px;
+    html body #executive-growth-audit .preview-canvas {
+        height: 210px !important;
+        min-height: 210px !important;
+        max-height: 210px !important;
+        padding: 16px 12px !important;
     }
 
-    .preview-thumb span {
-        font-size: 6px;
+    html body #executive-growth-audit .preview-thumb span {
+        font-size: 6px !important;
     }
 
-    .preview-canvas {
-        height: 220px;
-        min-height: 220px;
-        max-height: 220px;
-        padding: 18px 15px;
+    html body #executive-growth-audit .preview-arrow {
+        width: 27px !important;
+        height: 27px !important;
+        font-size: 13px !important;
     }
 
-    .preview-arrow {
-        width: 27px;
-        height: 27px;
-        font-size: 13px;
+    html body #executive-growth-audit .audit-info h2 {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
     }
 
-    .audit-info h2 {
-        font-size: 29px;
+    html body #executive-growth-audit .audit-price .amount {
+        font-size: 40px !important;
     }
 
-    .audit-price .amount {
-        font-size: 43px;
+    html body #executive-growth-audit .audit-subtitle {
+        font-size: 12px !important;
     }
 
-    .audit-session h3 {
-        font-size: 17px;
+    html body #executive-growth-audit .audit-description {
+        font-size: 11px !important;
     }
+
+    html body #executive-growth-audit .audit-session h3 {
+        font-size: 21px !important;
+    }
+
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   ACCESSIBILITY — REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .audit-product *,
-    .audit-purchase-btn {
+    html body #executive-growth-audit *,
+    html body #executive-growth-audit *::before,
+    html body #executive-growth-audit *::after {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
