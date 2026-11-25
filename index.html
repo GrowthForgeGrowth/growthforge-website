@@ -4452,97 +4452,263 @@ function displayResult(result) {
 });
 </script>
 
+
 <script>
-    /* =========================================================
-   GROWTHFORGE — EXECUTIVE GROWTH AUDIT TABS
+/* =========================================================
+   GROWTHFORGE — EXECUTIVE GROWTH AUDIT PREVIEW
    Homepage
-   Scoped to .audit-preview
-   ========================================================= */
+   Scoped to .audit-document-preview
+========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const auditSection = document.querySelector(".audit-preview");
+    const auditPreview = document.querySelector(
+        ".audit-document-preview"
+    );
 
-    if (!auditSection) {
-        return;
-    }
+    if (!auditPreview) return;
 
 
     /* =====================================================
        ELEMENTS
-       ===================================================== */
+    ===================================================== */
 
-    const tabs = auditSection.querySelectorAll(
-        ".audit-tab[data-audit-tab]"
+    const previewImage = auditPreview.querySelector(
+        "#auditPreviewImage"
     );
 
-    const panels = auditSection.querySelectorAll(
-        ".audit-tab-panel[data-audit-panel]"
+    const previewDocument = auditPreview.querySelector(
+        "#previewDocument"
+    );
+
+    const pageCounter = auditPreview.querySelector(
+        "#pageCounter"
+    );
+
+    const previousButton = auditPreview.querySelector(
+        "#prevPreview"
+    );
+
+    const nextButton = auditPreview.querySelector(
+        "#nextPreview"
+    );
+
+    const pauseButton = auditPreview.querySelector(
+        "#pausePreview"
+    );
+
+    const progressFill = auditPreview.querySelector(
+        ".preview-progress-fill"
+    );
+
+    const thumbnails = Array.from(
+        auditPreview.querySelectorAll(
+            ".preview-thumb[data-page]"
+        )
     );
 
 
-    if (!tabs.length || !panels.length) {
+    if (
+        !previewImage ||
+        !previewDocument ||
+        !thumbnails.length
+    ) {
         return;
     }
 
 
     /* =====================================================
-       ACTIVATE TAB
-       ===================================================== */
+       CONFIGURATION
+    ===================================================== */
 
-    function activateAuditTab(tab) {
+    const AUTOPLAY_INTERVAL = 5000;
 
-        const target = tab.getAttribute("data-audit-tab");
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-        if (!target) {
-            return;
+    const previewPages = thumbnails.map(function (thumbnail) {
+
+        const image = thumbnail.querySelector("img");
+
+        return {
+            element: thumbnail,
+            page: Number(thumbnail.dataset.page),
+            image: image ? image.getAttribute("src") : null,
+            alt: image ? image.getAttribute("alt") : "Audit report preview"
+        };
+
+    }).filter(function (item) {
+        return item.image && item.page > 0;
+    });
+
+
+    if (!previewPages.length) return;
+
+
+    /* =====================================================
+       STATE
+    ===================================================== */
+
+    let currentIndex = 0;
+
+    let autoplayTimer = null;
+
+    let isPaused = prefersReducedMotion;
+
+    let isChangingPage = false;
+
+
+    /* =====================================================
+       UPDATE PREVIEW
+    ===================================================== */
+
+    function showPreview(index) {
+
+        if (isChangingPage) return;
+
+        isChangingPage = true;
+
+        currentIndex =
+            (index + previewPages.length) %
+            previewPages.length;
+
+        const selectedPage = previewPages[currentIndex];
+
+
+        /* ---------------------------------------------
+           UPDATE MAIN IMAGE
+        --------------------------------------------- */
+
+        previewImage.style.opacity = "0";
+
+        const nextImage = new Image();
+
+        nextImage.onload = function () {
+
+            previewImage.src = selectedPage.image;
+            previewImage.alt = selectedPage.alt;
+
+            previewImage.style.opacity = "1";
+
+            isChangingPage = false;
+
+        };
+
+        nextImage.onerror = function () {
+
+            previewImage.style.opacity = "1";
+
+            isChangingPage = false;
+
+        };
+
+        nextImage.src = selectedPage.image;
+
+
+        /* ---------------------------------------------
+           UPDATE PAGE COUNTER
+        --------------------------------------------- */
+
+        if (pageCounter) {
+
+            pageCounter.textContent =
+                "PREVIEW " +
+                (currentIndex + 1) +
+                " OF " +
+                previewPages.length;
+
         }
 
 
         /* ---------------------------------------------
-           UPDATE TABS
-           --------------------------------------------- */
+           UPDATE ACTIVE THUMBNAIL
+        --------------------------------------------- */
 
-        tabs.forEach(function (currentTab) {
+        previewPages.forEach(function (item, index) {
 
-            const isActive = currentTab === tab;
+            const isActive = index === currentIndex;
 
-            currentTab.classList.toggle(
-                "is-active",
+            item.element.classList.toggle(
+                "active",
                 isActive
             );
 
-            currentTab.setAttribute(
-                "aria-selected",
-                isActive ? "true" : "false"
-            );
+            if (isActive) {
 
-            currentTab.setAttribute(
-                "tabindex",
-                isActive ? "0" : "-1"
-            );
+                item.element.setAttribute(
+                    "aria-current",
+                    "true"
+                );
+
+            } else {
+
+                item.element.removeAttribute(
+                    "aria-current"
+                );
+
+            }
 
         });
 
 
         /* ---------------------------------------------
-           UPDATE PANELS
-           --------------------------------------------- */
+           UPDATE PROGRESS BAR
+        --------------------------------------------- */
 
-        panels.forEach(function (panel) {
+        if (progressFill) {
 
-            const panelTarget = panel.getAttribute(
-                "data-audit-panel"
-            );
+            const progress =
+                ((currentIndex + 1) / previewPages.length) * 100;
 
-            const isActive = panelTarget === target;
+            progressFill.style.width = progress + "%";
 
-            panel.classList.toggle(
-                "is-active",
-                isActive
-            );
+        }
 
-            panel.hidden = !isActive;
+
+        /* ---------------------------------------------
+           UPDATE NAVIGATION BUTTONS
+        --------------------------------------------- */
+
+        if (previousButton) {
+
+            previousButton.disabled =
+                previewPages.length <= 1;
+
+        }
+
+        if (nextButton) {
+
+            nextButton.disabled =
+                previewPages.length <= 1;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       PREVIOUS / NEXT NAVIGATION
+    ===================================================== */
+
+    if (previousButton) {
+
+        previousButton.addEventListener("click", function () {
+
+            stopAutoplay();
+            showPreview(currentIndex - 1);
+
+        });
+
+    }
+
+
+    if (nextButton) {
+
+        nextButton.addEventListener("click", function () {
+
+            stopAutoplay();
+            showPreview(currentIndex + 1);
 
         });
 
@@ -4550,121 +4716,206 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLICK HANDLERS
-       ===================================================== */
+       THUMBNAIL NAVIGATION
+    ===================================================== */
 
-    tabs.forEach(function (tab) {
+    previewPages.forEach(function (item, index) {
 
-        tab.addEventListener("click", function () {
+        item.element.setAttribute("type", "button");
 
-            activateAuditTab(tab);
+        item.element.setAttribute(
+            "aria-label",
+            "View " + item.alt
+        );
+
+        item.element.addEventListener("click", function () {
+
+            stopAutoplay();
+            showPreview(index);
 
         });
 
     });
+
+
+    /* =====================================================
+       AUTOPLAY
+    ===================================================== */
+
+    function startAutoplay() {
+
+        stopAutoplay();
+
+        if (
+            isPaused ||
+            prefersReducedMotion ||
+            previewPages.length <= 1
+        ) {
+            return;
+        }
+
+        autoplayTimer = window.setInterval(function () {
+
+            showPreview(currentIndex + 1);
+
+        }, AUTOPLAY_INTERVAL);
+
+    }
+
+
+    function stopAutoplay() {
+
+        if (autoplayTimer !== null) {
+
+            window.clearInterval(autoplayTimer);
+
+            autoplayTimer = null;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       PAUSE / RESUME
+    ===================================================== */
+
+    function updatePauseButton() {
+
+        if (!pauseButton) return;
+
+        pauseButton.textContent = isPaused ? "▶" : "❚❚";
+
+        pauseButton.setAttribute(
+            "aria-label",
+            isPaused
+                ? "Resume automatic preview"
+                : "Pause automatic preview"
+        );
+
+        pauseButton.setAttribute(
+            "aria-pressed",
+            isPaused ? "true" : "false"
+        );
+
+    }
+
+
+    if (pauseButton) {
+
+        pauseButton.addEventListener("click", function () {
+
+            isPaused = !isPaused;
+
+            updatePauseButton();
+
+            if (isPaused) {
+
+                stopAutoplay();
+
+            } else {
+
+                startAutoplay();
+
+            }
+
+        });
+
+    }
 
 
     /* =====================================================
        KEYBOARD NAVIGATION
-       ===================================================== */
+    ===================================================== */
 
-    tabs.forEach(function (tab, index) {
+    previewDocument.setAttribute("tabindex", "0");
 
-        tab.addEventListener("keydown", function (event) {
+    previewDocument.setAttribute(
+        "aria-label",
+        "Executive Growth Audit page preview. Use left and right arrow keys to navigate."
+    );
 
-            let newIndex = null;
+    previewDocument.addEventListener("keydown", function (event) {
 
+        if (event.key === "ArrowLeft") {
 
-            /* ---------------------------------------------
-               RIGHT / DOWN
-               --------------------------------------------- */
+            event.preventDefault();
 
-            if (
-                event.key === "ArrowRight" ||
-                event.key === "ArrowDown"
-            ) {
+            stopAutoplay();
 
-                newIndex = (index + 1) % tabs.length;
+            showPreview(currentIndex - 1);
 
-            }
+        }
 
+        if (event.key === "ArrowRight") {
 
-            /* ---------------------------------------------
-               LEFT / UP
-               --------------------------------------------- */
+            event.preventDefault();
 
-            else if (
-                event.key === "ArrowLeft" ||
-                event.key === "ArrowUp"
-            ) {
+            stopAutoplay();
 
-                newIndex =
-                    (index - 1 + tabs.length) %
-                    tabs.length;
+            showPreview(currentIndex + 1);
 
-            }
-
-
-            /* ---------------------------------------------
-               HOME
-               --------------------------------------------- */
-
-            else if (event.key === "Home") {
-
-                newIndex = 0;
-
-            }
-
-
-            /* ---------------------------------------------
-               END
-               --------------------------------------------- */
-
-            else if (event.key === "End") {
-
-                newIndex = tabs.length - 1;
-
-            }
-
-
-            /* ---------------------------------------------
-               ACTIVATE
-               --------------------------------------------- */
-
-            if (newIndex !== null) {
-
-                event.preventDefault();
-
-                const nextTab = tabs[newIndex];
-
-                nextTab.focus();
-
-                activateAuditTab(nextTab);
-
-            }
-
-        });
+        }
 
     });
 
 
     /* =====================================================
-       INITIAL STATE
-       ===================================================== */
+       PAUSE WHEN USER INTERACTS WITH PREVIEW
+    ===================================================== */
 
-    let initialTab = auditSection.querySelector(
-        ".audit-tab.is-active[data-audit-tab]"
-    );
+    auditPreview.addEventListener("mouseenter", function () {
 
-    if (!initialTab) {
-        initialTab = tabs[0];
-    }
+        stopAutoplay();
+
+    });
+
+    auditPreview.addEventListener("mouseleave", function () {
+
+        startAutoplay();
+
+    });
 
 
-    activateAuditTab(initialTab);
+    auditPreview.addEventListener("focusin", function () {
+
+        stopAutoplay();
+
+    });
+
+    auditPreview.addEventListener("focusout", function (event) {
+
+        if (!auditPreview.contains(event.relatedTarget)) {
+
+            startAutoplay();
+
+        }
+
+    });
+
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    showPreview(0);
+
+    updatePauseButton();
+
+    startAutoplay();
+
+
+    /* =====================================================
+       CLEANUP
+    ===================================================== */
+
+    window.addEventListener("pagehide", function () {
+
+        stopAutoplay();
+
+    }, { once: true });
 
 });
-
 </script>
     
 </body>
