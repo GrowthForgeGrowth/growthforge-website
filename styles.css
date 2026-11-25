@@ -38,32 +38,33 @@ header .logo{flex-shrink:0}
 .link{color:#2563eb;text-decoration:none;font-weight:600}
 .link:hover{text-decoration:underline}
 
+
 /* =========================================================
    GROWTHFORGE — HOMEPAGE HERO
-   COMPACT DESKTOP VERSION
+   COMPACT DESKTOP + RESPONSIVE VERSION
    MARQUEE CSS NOT INCLUDED
    ========================================================= */
 
 .hero {
+    position: relative;
     width: 100%;
     margin: 0;
-    padding: 58px 0 52px;
-    color: #ffffff;
-    box-sizing: border-box;
+    padding: 38px 0 34px;
     overflow: hidden;
-    position: relative;
+    box-sizing: border-box;
+    color: #fff;
 
     background:
         radial-gradient(
-            700px 700px at 91% 35%,
-            rgba(91, 39, 255, 0.78) 0%,
-            rgba(60, 43, 210, 0.48) 28%,
-            rgba(20, 45, 130, 0.20) 55%,
+            560px 560px at 91% 35%,
+            rgba(91, 39, 255, .65) 0%,
+            rgba(60, 43, 210, .35) 28%,
+            rgba(20, 45, 130, .14) 55%,
             transparent 76%
         ),
         radial-gradient(
-            600px 600px at 72% 85%,
-            rgba(24, 82, 220, 0.28),
+            460px 460px at 72% 85%,
+            rgba(24, 82, 220, .20),
             transparent 70%
         ),
         linear-gradient(
@@ -76,7 +77,6 @@ header .logo{flex-shrink:0}
         );
 }
 
-
 /* =========================================================
    SUBTLE HERO LIGHT
    ========================================================= */
@@ -87,29 +87,26 @@ header .logo{flex-shrink:0}
     inset: 0;
     pointer-events: none;
 
-    background:
-        radial-gradient(
-            500px 500px at 82% 42%,
-            rgba(59, 130, 246, 0.14),
-            transparent 70%
-        );
+    background: radial-gradient(
+        420px 420px at 82% 42%,
+        rgba(59, 130, 246, .11),
+        transparent 70%
+    );
 }
-
 
 /* =========================================================
    CONTAINER
    ========================================================= */
 
 .hero .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
-
 
 /* =========================================================
    HERO GRID
@@ -117,16 +114,10 @@ header .logo{flex-shrink:0}
 
 .hero-inner {
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(520px, .98fr);
-
+    grid-template-columns: minmax(0, 1fr) minmax(0, .88fr);
     align-items: center;
-
-    gap: 48px;
+    gap: 32px;
 }
-
 
 /* =========================================================
    HERO CONTENT
@@ -135,9 +126,9 @@ header .logo{flex-shrink:0}
 .hero-content {
     position: relative;
     z-index: 5;
-    max-width: 680px;
+    max-width: 570px;
+    min-width: 0;
 }
-
 
 /* =========================================================
    EYEBROW
@@ -145,59 +136,47 @@ header .logo{flex-shrink:0}
 
 .hero .eyebrow {
     display: inline-block;
-
-    margin: 0 0 16px;
+    margin: 0 0 11px;
 
     color: #60a5fa;
-
     font-family: Manrope, sans-serif;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 800;
     line-height: 1.4;
-
     letter-spacing: .13em;
     text-transform: uppercase;
 }
-
 
 /* =========================================================
    HEADLINE
    ========================================================= */
 
 .hero h1 {
-    max-width: 680px;
+    max-width: 570px;
+    margin: 0 0 14px;
 
-    margin: 0 0 20px;
-
-    color: #ffffff !important;
-
+    color: #fff !important;
     font-family: Manrope, sans-serif;
-    font-size: clamp(48px, 4.7vw, 66px);
+    font-size: clamp(35px, 3.7vw, 51px);
     font-weight: 800;
-
-    line-height: 1.01;
-    letter-spacing: -.055em;
+    line-height: 1.07;
+    letter-spacing: -.05em;
 }
-
 
 /* =========================================================
    LEAD
    ========================================================= */
 
 .hero .lead {
-    max-width: 610px;
-
-    margin: 0 0 24px;
+    max-width: 510px;
+    margin: 0 0 19px;
 
     color: #cbd5e1 !important;
-
     font-family: Manrope, sans-serif;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 400;
-
-    line-height: 1.58;
+    line-height: 1.6;
 }
-
 
 /* =========================================================
    CTA
@@ -207,9 +186,7 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-
-    gap: 11px;
-
+    gap: 9px;
     margin: 0;
 }
 
@@ -219,68 +196,54 @@ header .logo{flex-shrink:0}
     align-items: center;
     justify-content: center;
 
-    min-height: 48px;
-
-    padding: 0 21px;
-
-    border-radius: 9px;
-
+    min-height: 42px;
+    padding: 0 17px;
     box-sizing: border-box;
 
-    font-family: Manrope, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
+    border-radius: 8px;
 
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
 
     transition:
-        transform .25s ease,
-        background-color .25s ease,
-        border-color .25s ease,
-        color .25s ease,
-        box-shadow .25s ease;
+        transform .2s ease,
+        background-color .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease;
 }
 
 .hero .cta .btn {
     background: #2563eb;
-
     border: 1px solid #3b82f6;
+    color: #fff !important;
 
-    color: #ffffff !important;
-
-    box-shadow:
-        0 8px 25px rgba(37, 99, 235, .30);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, .25);
 }
 
 .hero .cta .btn:hover {
     background: #3b82f6;
     border-color: #60a5fa;
-
     transform: translateY(-1px);
-
-    box-shadow:
-        0 12px 30px rgba(37, 99, 235, .40);
+    box-shadow: 0 9px 22px rgba(37, 99, 235, .35);
 }
 
 .hero .cta .ghost {
     background: rgba(2, 6, 23, .18);
-
     border: 1px solid rgba(148, 163, 184, .40);
-
     color: #f1f5f9 !important;
-
     backdrop-filter: blur(8px);
 }
 
 .hero .cta .ghost:hover {
     background: rgba(15, 23, 42, .55);
     border-color: rgba(148, 163, 184, .70);
-
     transform: translateY(-1px);
 }
-
 
 /* =========================================================
    PROOF METRICS
@@ -288,14 +251,12 @@ header .logo{flex-shrink:0}
 
 .hero-benefits {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     width: 100%;
-    max-width: 620px;
+    max-width: 540px;
 
-    margin: 25px 0 0;
+    margin: 21px 0 0;
     padding: 0;
 
     border-top: 1px solid rgba(148, 163, 184, .18);
@@ -303,100 +264,35 @@ header .logo{flex-shrink:0}
 
 .hero-benefit {
     min-width: 0;
-
-    padding: 17px 17px 0 0;
+    padding: 13px 13px 0 0;
 }
 
 .hero-benefit + .hero-benefit {
-    padding-left: 17px;
-
-    border-left:
-        1px solid rgba(148, 163, 184, .18);
+    padding-left: 13px;
+    border-left: 1px solid rgba(148, 163, 184, .18);
 }
 
 .hero-benefit h4 {
-    margin: 0 0 6px;
+    margin: 0 0 5px;
 
-    color: #ffffff;
-
+    color: #fff;
     font-family: Manrope, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
-
     line-height: 1;
     letter-spacing: -.035em;
 }
 
 .hero-benefit p {
-    max-width: 155px;
-
+    max-width: 145px;
     margin: 0;
 
     color: #a8b4c7;
-
-    font-family: Manrope, sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   TRUST
-   ========================================================= */
-
-.hero-trust {
-    margin-top: 21px;
-}
-
-.hero-trust > span {
-    display: block;
-
-    margin: 0 0 9px;
-
-    color: #71809a;
-
-    font-family: Manrope, sans-serif;
-    font-size: 9px;
-    font-weight: 800;
-
-    letter-spacing: .12em;
-    line-height: 1.4;
-}
-
-.hero-industries {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 6px;
-}
-
-.hero-industries span {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 26px;
-
-    padding: 0 10px;
-
-    border: 1px solid rgba(148, 163, 184, .18);
-    border-radius: 999px;
-
-    background: rgba(15, 23, 42, .35);
-
-    color: #9aa8bd;
-
     font-family: Manrope, sans-serif;
     font-size: 10px;
     font-weight: 600;
-
-    line-height: 1;
-
-    backdrop-filter: blur(6px);
+    line-height: 1.45;
 }
-
 
 /* =========================================================
    HERO VISUAL
@@ -404,20 +300,14 @@ header .logo{flex-shrink:0}
 
 .hero-visual {
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     min-width: 0;
-
-    /*
-     * Reduced from the previous 620px.
-     * This is one of the main causes of the oversized hero.
-     */
-    min-height: 500px;
+    min-height: 0;
+    padding: 8px 0;
 }
-
 
 /* =========================================================
    BLUE / PURPLE GLOW
@@ -425,71 +315,60 @@ header .logo{flex-shrink:0}
 
 .hero-glow {
     position: absolute;
-
-    width: 520px;
-    height: 520px;
-
-    top: 48%;
-    left: 56%;
+    width: 420px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(70, 70, 255, .35) 0%,
-            rgba(76, 29, 149, .22) 38%,
-            transparent 72%
-        );
+    background: radial-gradient(
+        circle,
+        rgba(70, 70, 255, .28) 0%,
+        rgba(76, 29, 149, .17) 38%,
+        transparent 72%
+    );
 
-    filter: blur(40px);
-
-    transform:
-        translate(-50%, -50%);
-
+    filter: blur(35px);
+    transform: translate(-50%, -50%);
     pointer-events: none;
 }
 
-
 /* =========================================================
-   GRID
+   BACKGROUND GRID
    ========================================================= */
 
 .hero-grid {
     position: absolute;
-
-    inset: -80px;
+    inset: -50px;
 
     background-image:
         linear-gradient(
-            rgba(96, 165, 250, .045) 1px,
+            rgba(96, 165, 250, .04) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(96, 165, 250, .045) 1px,
+            rgba(96, 165, 250, .04) 1px,
             transparent 1px
         );
 
-    background-size: 38px 38px;
+    background-size: 34px 34px;
 
-    mask-image:
-        radial-gradient(
-            circle at center,
-            black 15%,
-            transparent 72%
-        );
+    mask-image: radial-gradient(
+        circle at center,
+        black 15%,
+        transparent 72%
+    );
 
-    -webkit-mask-image:
-        radial-gradient(
-            circle at center,
-            black 15%,
-            transparent 72%
-        );
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        black 15%,
+        transparent 72%
+    );
 
     pointer-events: none;
 }
-
 
 /* =========================================================
    CIRCULAR LIGHT LINES
@@ -497,177 +376,72 @@ header .logo{flex-shrink:0}
 
 .hero-lines {
     position: absolute;
+    width: 390px;
+    height: 390px;
 
-    width: 480px;
-    height: 480px;
-
-    border:
-        1px solid rgba(96, 165, 250, .09);
-
+    border: 1px solid rgba(96, 165, 250, .08);
     border-radius: 50%;
 
     box-shadow:
-        0 0 0 50px rgba(96, 165, 250, .025),
-        0 0 0 100px rgba(96, 165, 250, .015);
+        0 0 0 40px rgba(96, 165, 250, .02),
+        0 0 0 80px rgba(96, 165, 250, .012);
 
     pointer-events: none;
 }
 
-
 /* =========================================================
-   DASHBOARD
-   ========================================================= */
-
-.audit-dashboard {
-    position: relative;
-
-    z-index: 3;
-
-    width: 100%;
-    max-width: 680px;
-
-    padding: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15, 23, 42, .90),
-            rgba(5, 13, 32, .92)
-        );
-
-    border:
-        1px solid rgba(148, 163, 184, .28);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 30px 75px rgba(0, 0, 0, .46),
-        0 0 60px rgba(37, 99, 235, .11),
-        inset 0 1px 0 rgba(255, 255, 255, .04);
-
-    box-sizing: border-box;
-
-    backdrop-filter: blur(18px);
-}
-
-
-/* =========================================================
-   DASHBOARD HEADER
-   ========================================================= */
-
-.audit-dashboard__header {
-    display: flex;
-
-    align-items: flex-start;
-    justify-content: space-between;
-
-    gap: 16px;
-
-    padding-bottom: 17px;
-
-    border-bottom:
-        1px solid rgba(148, 163, 184, .16);
-}
-
-.audit-dashboard__eyebrow {
-    display: block;
-
-    margin: 0 0 6px;
-
-    color: #60a5fa;
-
-    font-family: Manrope, sans-serif;
-    font-size: 9px;
-    font-weight: 800;
-
-    line-height: 1.4;
-    letter-spacing: .12em;
-}
-
-.audit-dashboard__header h3 {
-    margin: 0;
-
-    color: #f8fafc;
-
-    font-family: Manrope, sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-
-    line-height: 1.2;
-    letter-spacing: -.025em;
-}
-
-.audit-dashboard__status {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 27px;
-
-    padding: 0 10px;
-
-    border:
-        1px solid rgba(34, 197, 94, .30);
-
-    border-radius: 999px;
-
-    background:
-        rgba(34, 197, 94, .08);
-
-    color: #86efac;
-
-    font-family: Manrope, sans-serif;
-    font-size: 7px;
-    font-weight: 800;
-
-    line-height: 1;
-    letter-spacing: .08em;
-
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   GROWTHFORGE — US MARKET ENTRY BLUEPRINT
-   COMPACT VERSION
+   US MARKET ENTRY BLUEPRINT
    ========================================================= */
 
 .audit-dashboard.expansion-blueprint {
     position: relative;
     z-index: 3;
+
     width: 100%;
-    max-width: 490px;
-    padding: 19px;
+    max-width: 460px;
+    padding: 17px;
+
     overflow: hidden;
     box-sizing: border-box;
     color: #f8fafc;
 
     background:
-        radial-gradient(circle at 100% 0%, rgba(79, 70, 229, .16), transparent 42%),
-        linear-gradient(145deg, rgba(12, 23, 51, .97), rgba(4, 12, 30, .98));
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(79, 70, 229, .16),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(12, 23, 51, .97),
+            rgba(4, 12, 30, .98)
+        );
 
     border: 1px solid rgba(96, 165, 250, .25);
-    border-radius: 16px;
+    border-radius: 15px;
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, .30),
-        0 0 30px rgba(37, 99, 235, .10),
+        0 16px 38px rgba(0, 0, 0, .28),
+        0 0 25px rgba(37, 99, 235, .09),
         inset 0 1px 0 rgba(255,255,255,.06);
 }
 
-/* HEADER */
+/* BLUEPRINT HEADER */
 
 .blueprint-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 10px;
-    padding-bottom: 14px;
+    gap: 9px;
+
+    padding-bottom: 12px;
     border-bottom: 1px solid rgba(148, 163, 184, .16);
 }
 
 .blueprint-eyebrow {
     display: block;
     margin-bottom: 5px;
+
     color: #60a5fa;
     font: 800 8px/1.4 Manrope, sans-serif;
     letter-spacing: .12em;
@@ -676,52 +450,60 @@ header .logo{flex-shrink:0}
 .blueprint-header h3 {
     margin: 0 0 5px;
     color: #fff;
-    font: 800 19px/1.2 Manrope, sans-serif;
+
+    font: 800 18px/1.2 Manrope, sans-serif;
     letter-spacing: -.035em;
 }
 
 .blueprint-header p {
     margin: 0;
     color: #94a3b8;
-    font: 400 10px/1.5 Inter, sans-serif;
+    font: 400 9px/1.5 Inter, sans-serif;
 }
 
 .blueprint-status {
     flex-shrink: 0;
-    padding: 6px 8px;
+    padding: 6px 7px;
+
     color: #93c5fd;
     background: rgba(37, 99, 235, .12);
     border: 1px solid rgba(96, 165, 250, .22);
     border-radius: 5px;
+
     font: 800 7px/1.2 Manrope, sans-serif;
     letter-spacing: .05em;
 }
 
-/* ORIGIN */
+/* BLUEPRINT ORIGIN */
 
 .blueprint-origin {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-    padding: 11px;
+    gap: 9px;
+
+    margin-top: 13px;
+    padding: 10px;
+
     background: rgba(30, 64, 175, .12);
     border: 1px solid rgba(96, 165, 250, .22);
-    border-radius: 9px;
+    border-radius: 8px;
 }
 
 .origin-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+
+    width: 33px;
+    height: 33px;
     flex-shrink: 0;
+
     color: #bfdbfe;
     background: rgba(37, 99, 235, .22);
     border: 1px solid rgba(96, 165, 250, .35);
-    border-radius: 8px;
-    font: 800 11px Manrope, sans-serif;
+    border-radius: 7px;
+
+    font: 800 10px Manrope, sans-serif;
 }
 
 .blueprint-origin strong,
@@ -732,27 +514,32 @@ header .logo{flex-shrink:0}
 .blueprint-origin strong {
     margin-bottom: 3px;
     color: #f8fafc;
-    font: 700 11px Manrope, sans-serif;
+    font: 700 10px Manrope, sans-serif;
 }
 
 .blueprint-origin div span {
     color: #94a3b8;
-    font: 400 9px/1.45 Inter, sans-serif;
+    font: 400 8px/1.45 Inter, sans-serif;
 }
 
-/* CONNECTOR */
+/* BLUEPRINT CONNECTOR */
 
 .blueprint-connector {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: 15px 0;
+    margin: 13px 0;
 }
 
 .blueprint-connector span {
     height: 1px;
     flex: 1;
-    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, .4));
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(96, 165, 250, .4)
+    );
 }
 
 .blueprint-connector span:last-child {
@@ -766,26 +553,34 @@ header .logo{flex-shrink:0}
     white-space: nowrap;
 }
 
-/* STRATEGIC STAGES */
+/* BLUEPRINT STAGES */
 
 .blueprint-stages {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
+    gap: 8px;
 }
 
 .blueprint-stage {
     position: relative;
     min-width: 0;
-    min-height: 112px;
-    padding: 12px;
+    min-height: 104px;
+    padding: 10px;
     box-sizing: border-box;
 
-    background: linear-gradient(145deg, rgba(30, 41, 70, .75), rgba(15, 23, 42, .65));
-    border: 1px solid rgba(148, 163, 184, .15);
-    border-radius: 9px;
+    background: linear-gradient(
+        145deg,
+        rgba(30, 41, 70, .75),
+        rgba(15, 23, 42, .65)
+    );
 
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    border: 1px solid rgba(148, 163, 184, .15);
+    border-radius: 8px;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
 }
 
 .blueprint-stage:hover {
@@ -796,8 +591,9 @@ header .logo{flex-shrink:0}
 
 .stage-number {
     position: absolute;
-    top: 10px;
-    right: 11px;
+    top: 9px;
+    right: 10px;
+
     color: rgba(148, 163, 184, .55);
     font: 800 8px Manrope, sans-serif;
 }
@@ -806,14 +602,17 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 29px;
-    height: 29px;
-    margin-bottom: 9px;
+
+    width: 27px;
+    height: 27px;
+    margin-bottom: 8px;
+
     color: #93c5fd;
     background: rgba(37, 99, 235, .15);
     border: 1px solid rgba(96, 165, 250, .24);
     border-radius: 7px;
-    font-size: 15px;
+
+    font-size: 14px;
 }
 
 .blueprint-stage:nth-child(2) .stage-icon {
@@ -836,26 +635,29 @@ header .logo{flex-shrink:0}
 
 .blueprint-stage strong {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+
     color: #f8fafc;
-    font: 700 11px Manrope, sans-serif;
+    font: 700 10px Manrope, sans-serif;
 }
 
 .blueprint-stage p {
     margin: 0;
     color: #94a3b8;
-    font: 400 9px/1.5 Inter, sans-serif;
+    font: 400 8px/1.5 Inter, sans-serif;
 }
 
-/* FOOTER */
+/* BLUEPRINT FOOTER */
 
 .blueprint-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    margin-top: 12px;
-    padding: 11px;
+    gap: 9px;
+
+    margin-top: 10px;
+    padding: 10px;
+
     background: rgba(37, 99, 235, .10);
     border: 1px solid rgba(96, 165, 250, .18);
     border-radius: 8px;
@@ -864,6 +666,7 @@ header .logo{flex-shrink:0}
 .footer-label {
     display: block;
     margin-bottom: 4px;
+
     color: #60a5fa;
     font: 800 7px Manrope, sans-serif;
     letter-spacing: .09em;
@@ -871,77 +674,227 @@ header .logo{flex-shrink:0}
 
 .blueprint-footer strong {
     color: #e2e8f0;
-    font: 700 10px Manrope, sans-serif;
+    font: 700 9px Manrope, sans-serif;
 }
 
 .footer-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 27px;
-    height: 27px;
+
+    width: 25px;
+    height: 25px;
     flex-shrink: 0;
+
     color: #bfdbfe;
     background: rgba(37, 99, 235, .2);
     border-radius: 50%;
-    font-size: 15px;
+
+    font-size: 14px;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   REMOVE OUTDATED INDUSTRY TRUST SECTION
+   ========================================================= */
 
-@media (min-width: 1400px) {
-    .audit-dashboard.expansion-blueprint {
-        max-width: 490px;
+.hero-trust,
+.hero-industries {
+    display: none !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 32px 0;
     }
-}
 
-@media (max-width: 1100px) {
-    .audit-dashboard.expansion-blueprint {
-        max-width: 460px;
-        padding: 17px;
+    .hero .container {
+        padding: 0 22px;
     }
-}
 
-@media (max-width: 768px) {
-    .audit-dashboard.expansion-blueprint {
-        max-width: 100%;
+    .hero-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+        gap: 22px;
     }
-}
 
-@media (max-width: 480px) {
+    .hero h1 {
+        font-size: clamp(33px, 4.1vw, 43px);
+    }
+
+    .hero .lead {
+        font-size: 13px;
+    }
+
     .audit-dashboard.expansion-blueprint {
         padding: 15px;
-        border-radius: 13px;
-    }
-
-    .blueprint-header h3 {
-        font-size: 17px;
     }
 
     .blueprint-stage {
-        min-height: 105px;
-        padding: 10px;
-    }
-
-    .blueprint-stage strong {
-        font-size: 10px;
-    }
-
-    .blueprint-stage p {
-        font-size: 9px;
-    }
-
-    .blueprint-footer {
-        padding: 10px;
+        min-height: 100px;
     }
 }
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero .container {
+        padding: 0 20px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        font-size: clamp(33px, 7.5vw, 42px);
+        line-height: 1.08;
+    }
+
+    .hero .lead {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        padding: 0;
+    }
+
+    .audit-dashboard.expansion-blueprint {
+        max-width: 490px;
+    }
+
+    .hero-glow {
+        width: 320px;
+        height: 320px;
+    }
+
+    .hero-lines {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 26px 0 30px;
+    }
+
+    .hero .container {
+        padding: 0 16px;
+    }
+
+    .hero .eyebrow {
+        margin-bottom: 9px;
+        font-size: 8px;
+    }
+
+    .hero h1 {
+        margin-bottom: 11px;
+        font-size: clamp(30px, 8.3vw, 36px);
+    }
+
+    .hero .lead {
+        margin-bottom: 16px;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .hero .cta {
+        gap: 8px;
+    }
+
+    .hero .cta .btn,
+    .hero .cta .ghost {
+        min-height: 40px;
+        padding: 0 13px;
+        font-size: 11px;
+    }
+
+    .hero-benefits {
+        margin-top: 18px;
+    }
+
+    .hero-benefit {
+        padding: 11px 9px 0 0;
+    }
+
+    .hero-benefit + .hero-benefit {
+        padding-left: 9px;
+    }
+
+    .hero-benefit h4 {
+        font-size: 17px;
+    }
+
+    .hero-benefit p {
+        font-size: 9px;
+    }
+
+    .audit-dashboard.expansion-blueprint {
+        padding: 13px;
+        border-radius: 12px;
+    }
+
+    .blueprint-header h3 {
+        font-size: 16px;
+    }
+
+    .blueprint-header p {
+        font-size: 8px;
+    }
+
+    .blueprint-stage {
+        min-height: 100px;
+        padding: 9px;
+    }
+
+    .blueprint-stage strong {
+        font-size: 9px;
+    }
+
+    .blueprint-stage p {
+        font-size: 8px;
+    }
+
+    .blueprint-footer {
+        padding: 9px;
+    }
+
+    .blueprint-footer strong {
+        font-size: 8px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
+    .hero .cta .btn,
+    .hero .cta .ghost,
     .blueprint-stage {
         transition: none;
     }
 }
-
 
 /* =========================================================
    GROWTHFORGE — METHODOLOGY
