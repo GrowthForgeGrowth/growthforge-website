@@ -2750,29 +2750,31 @@ SMALL MOBILE
 
 /* =========================================================
    GROWTHFORGE EXECUTIVE GROWTH AUDIT
-   PREMIUM DARK HERO DESIGN
+   COMPACT PREMIUM DARK HERO
 ========================================================= */
 
 .audit-product {
     position: relative;
     isolation: isolate;
     display: grid;
-    grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
     align-items: center;
-    gap: 0;
+    gap: 48px;
 
-    max-width: 1540px;
-    margin: 0 auto;
-    padding: 76px 5.5%;
+    width: calc(100% - 48px);
+    max-width: 1380px;
+    margin: 40px auto;
+    padding: 42px;
 
+    min-height: 0;
     overflow: hidden;
+
     border: 1px solid rgba(120, 145, 255, .15);
-    border-radius: 26px;
+    border-radius: 20px;
 
     background:
-        radial-gradient(ellipse at 15% 45%, rgba(34, 94, 220, .13), transparent 42%),
-        radial-gradient(ellipse at 85% 10%, rgba(91, 65, 220, .12), transparent 35%),
-        linear-gradient(135deg, #11182c 0%, #0d1221 55%, #101629 100%);
+        radial-gradient(circle at 15% 40%, rgba(44, 91, 190, .14), transparent 42%),
+        linear-gradient(135deg, #11182c, #0d1221 65%, #141a30);
 
     color: #ffffff;
     box-shadow: 0 30px 90px rgba(4, 10, 28, .28);
@@ -2815,6 +2817,8 @@ SMALL MOBILE
 
 .audit-document-preview {
     position: relative;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
     overflow: hidden;
 
@@ -2832,13 +2836,13 @@ SMALL MOBILE
 /* DOCUMENT HEADER */
 
 .audit-preview-header {
-    min-height: 72px;
+    min-height: 54px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 18px;
 
-    padding: 16px 22px;
+    padding: 12px 16px;
 
     border-bottom: 1px solid rgba(148, 163, 184, .13);
     background: rgba(255, 255, 255, .025);
@@ -2862,7 +2866,6 @@ SMALL MOBILE
 
     border-radius: 50%;
     background: #36c8ff;
-
     box-shadow: 0 0 12px rgba(54, 200, 255, .75);
 }
 
@@ -2889,8 +2892,9 @@ SMALL MOBILE
 
 .audit-preview-stage {
     display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
-    min-height: 500px;
+    grid-template-columns: 105px minmax(0, 1fr);
+    height: 360px;
+    min-height: 0;
 
     background:
         radial-gradient(ellipse at center, rgba(56, 91, 160, .13), transparent 75%),
@@ -2903,22 +2907,22 @@ SMALL MOBILE
 .preview-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 
-    padding: 20px 14px;
+    padding: 12px 9px;
 
     border-right: 1px solid rgba(148, 163, 184, .12);
     background: rgba(5, 12, 28, .25);
 
     overflow-y: auto;
-    max-height: 560px;
+    max-height: 360px;
 }
 
 .preview-sidebar-label {
     margin-bottom: 5px;
 
     color: #7888a8;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 800;
     letter-spacing: 1.1px;
 }
@@ -2930,16 +2934,15 @@ SMALL MOBILE
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 4px;
 
     width: 100%;
-    padding: 7px;
+    padding: 5px;
 
     border: 1px solid rgba(148, 163, 184, .15);
     border-radius: 10px;
 
     background: rgba(255, 255, 255, .035);
-
     color: #aebbd2;
     text-align: left;
 
@@ -2961,7 +2964,7 @@ SMALL MOBILE
 
 .preview-thumb span {
     display: block;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 650;
     line-height: 1.4;
 }
@@ -2974,7 +2977,6 @@ SMALL MOBILE
 
 .preview-thumb.active {
     border: 1px solid #397cff;
-
     background: rgba(44, 104, 255, .14);
 
     box-shadow:
@@ -2998,7 +3000,8 @@ SMALL MOBILE
     justify-content: center;
 
     min-width: 0;
-    padding: 38px 45px;
+    height: 360px;
+    padding: 25px 32px;
 
     overflow: hidden;
 }
@@ -3009,7 +3012,8 @@ SMALL MOBILE
     justify-content: center;
 
     width: 100%;
-    max-width: 760px;
+    max-width: 620px;
+    height: auto;
     aspect-ratio: 16 / 9;
 
     overflow: hidden;
@@ -3024,7 +3028,6 @@ SMALL MOBILE
 
 .preview-document img {
     display: block;
-
     width: 100%;
     height: 100%;
 
@@ -3046,8 +3049,8 @@ SMALL MOBILE
     align-items: center;
     justify-content: center;
 
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
 
     border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 50%;
@@ -3055,7 +3058,7 @@ SMALL MOBILE
     background: rgba(255, 255, 255, .96);
     color: #10182b;
 
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1;
 
     cursor: pointer;
@@ -3066,11 +3069,11 @@ SMALL MOBILE
 }
 
 .preview-arrow.left {
-    left: 14px;
+    left: 8px;
 }
 
 .preview-arrow.right {
-    right: 14px;
+    right: 8px;
 }
 
 .preview-arrow:hover {
@@ -3090,7 +3093,7 @@ SMALL MOBILE
 ========================================================= */
 
 .audit-preview-footer {
-    padding: 15px 22px 18px;
+    padding: 12px 16px;
 
     border-top: 1px solid rgba(148, 163, 184, .13);
     background: rgba(255, 255, 255, .025);
@@ -3124,7 +3127,7 @@ SMALL MOBILE
     align-items: center;
     gap: 15px;
 
-    padding-top: 14px;
+    padding-top: 10px;
 
     color: #8e9db8;
     font-size: 10px;
@@ -3181,12 +3184,14 @@ SMALL MOBILE
 .audit-info {
     position: relative;
     min-width: 0;
+    max-width: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
-    padding: 15px 0 15px 64px;
+    padding: 0;
+    opacity: 1 !important;
 }
 
 
@@ -3222,7 +3227,7 @@ SMALL MOBILE
 }
 
 .audit-version {
-    margin-top: 17px;
+    margin-top: 10px;
 
     color: #8190ad;
     font-size: 9px;
@@ -3234,17 +3239,19 @@ SMALL MOBILE
 /* HEADLINE */
 
 .audit-info h2 {
-    max-width: 540px;
+    max-width: 480px;
 
-    margin: 20px 0 24px;
+    margin: 15px 0 18px;
 
     font-family: Manrope, sans-serif;
-    font-size: clamp(34px, 3.4vw, 51px);
+    font-size: clamp(30px, 2.8vw, 40px);
     font-weight: 800;
-    line-height: 1.08;
-    letter-spacing: -1.9px;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
 
-    color: #f8fafc;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
 
@@ -3254,14 +3261,14 @@ SMALL MOBILE
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
 
-    margin: 0 0 22px;
+    margin: 0 0 16px;
 }
 
 .audit-price .amount {
     font-family: Manrope, sans-serif;
-    font-size: clamp(52px, 5vw, 72px);
+    font-size: 54px;
     font-weight: 850;
     line-height: 1;
 
@@ -3274,15 +3281,15 @@ SMALL MOBILE
 }
 
 .audit-price .price-tag {
-    padding: 11px 14px;
+    padding: 9px 12px;
 
     border: 1px solid rgba(101, 139, 255, .3);
     border-radius: 10px;
 
     background: rgba(61, 102, 216, .1);
 
-    color: #a9c4ff;
-    font-size: 12px;
+    color: #c5d6ff;
+    font-size: 11px;
     font-weight: 750;
 }
 
@@ -3290,22 +3297,22 @@ SMALL MOBILE
 /* DESCRIPTION */
 
 .audit-subtitle {
-    margin: 0 0 12px;
+    margin: 0 0 9px;
 
     color: #f2f5ff;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 750;
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
 .audit-description {
     max-width: 530px;
 
-    margin: 0 0 26px;
+    margin: 0 0 18px;
 
-    color: #a8b5cb;
-    font-size: 14px;
-    line-height: 1.8;
+    color: #c0cbe0;
+    font-size: 13px;
+    line-height: 1.65;
 }
 
 
@@ -3316,8 +3323,8 @@ SMALL MOBILE
 .audit-session {
     width: 100%;
 
-    margin: 0 0 17px;
-    padding: 18px 20px;
+    margin: 0 0 12px;
+    padding: 14px 16px;
 
     border: 1px solid rgba(91, 129, 255, .2);
     border-radius: 12px;
@@ -3340,7 +3347,7 @@ SMALL MOBILE
 
     color: #ffffff;
     font-family: Manrope, sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 750;
 }
 
@@ -3348,7 +3355,7 @@ SMALL MOBILE
     margin: 0;
 
     color: #a8b5cb;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.65;
 }
 
@@ -3362,7 +3369,7 @@ SMALL MOBILE
 
     width: 100%;
 
-    margin: 0 0 20px;
+    margin: 0 0 14px;
     padding: 0;
 
     list-style: none;
@@ -3373,12 +3380,12 @@ SMALL MOBILE
     align-items: center;
     gap: 12px;
 
-    padding: 12px 0;
+    padding: 9px 0;
 
     border-bottom: 1px solid rgba(148, 163, 184, .13);
 
-    color: #d4dced;
-    font-size: 12px;
+    color: #e0e7f5;
+    font-size: 11px;
     font-weight: 650;
     line-height: 1.5;
 }
@@ -3388,9 +3395,9 @@ SMALL MOBILE
     align-items: center;
     justify-content: center;
 
-    width: 25px;
-    height: 25px;
-    flex: 0 0 25px;
+    width: 23px;
+    height: 23px;
+    flex: 0 0 23px;
 
     border: 1px solid rgba(63, 150, 255, .3);
     border-radius: 7px;
@@ -3414,8 +3421,8 @@ SMALL MOBILE
 
     width: 100%;
 
-    margin: 5px 0 25px;
-    padding: 15px 16px;
+    margin: 0 0 16px;
+    padding: 12px;
 
     border: 1px solid rgba(148, 163, 184, .16);
     border-radius: 11px;
@@ -3446,7 +3453,7 @@ SMALL MOBILE
     margin-bottom: 5px;
 
     color: #f4f7ff;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
 }
 
@@ -3454,7 +3461,7 @@ SMALL MOBILE
     margin: 0;
 
     color: #9eacc4;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.6;
 }
 
@@ -3466,7 +3473,7 @@ SMALL MOBILE
 .audit-actions {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 9px;
 
     width: 100%;
 }
@@ -3478,9 +3485,9 @@ SMALL MOBILE
     gap: 16px;
 
     width: 100%;
-    min-height: 58px;
+    min-height: 49px;
 
-    padding: 16px 20px;
+    padding: 12px 16px;
 
     border: 1px solid rgba(131, 135, 255, .5);
     border-radius: 11px;
@@ -3491,7 +3498,7 @@ SMALL MOBILE
     text-decoration: none;
     text-align: left;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
 
     box-shadow: 0 12px 32px rgba(65, 73, 224, .25);
@@ -3520,7 +3527,7 @@ SMALL MOBILE
     color: #9bbcff;
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 750;
 
     transition: .2s ease;
@@ -3533,10 +3540,10 @@ SMALL MOBILE
 
 .audit-purchase-note {
     display: block;
-    margin-top: 15px;
+    margin-top: 10px;
 
     color: #71809d;
-    font-size: 10px;
+    font-size: 9px;
     line-height: 1.6;
 }
 
@@ -3547,7 +3554,9 @@ SMALL MOBILE
 
 .methodology {
     position: relative;
+    width: 100%;
     padding: 110px 24px;
+    overflow: hidden;
 
     background: #f8fafc;
     color: #101a30;
@@ -3711,27 +3720,27 @@ SMALL MOBILE
    TABLET
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
 
     .audit-product {
+        width: calc(100% - 40px);
         grid-template-columns: 1fr;
-        gap: 45px;
-
-        padding: 48px;
+        gap: 32px;
+        padding: 30px;
     }
 
     .audit-info {
-        padding: 0;
-        max-width: 760px;
-    }
-
-    .audit-document-preview {
-        width: 100%;
+        max-width: 700px;
     }
 
     .audit-info h2 {
-        max-width: 700px;
-        font-size: 46px;
+        max-width: 650px;
+        font-size: 38px;
+    }
+
+    .audit-preview-stage,
+    .preview-canvas {
+        height: 390px;
     }
 
     .process {
@@ -3752,19 +3761,20 @@ SMALL MOBILE
 @media (max-width: 650px) {
 
     .audit-product {
-        padding: 22px 15px 32px;
-        gap: 32px;
-
+        width: calc(100% - 24px);
+        margin: 20px auto;
+        padding: 16px;
+        gap: 25px;
         border-radius: 16px;
     }
 
     .audit-preview-header {
-        min-height: 62px;
-        padding: 13px;
+        min-height: 54px;
+        padding: 10px;
     }
 
     .audit-preview-brand {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .audit-preview-meta {
@@ -3777,14 +3787,14 @@ SMALL MOBILE
     }
 
     .audit-preview-stage {
-        grid-template-columns: 86px minmax(0, 1fr);
-        min-height: 270px;
+        grid-template-columns: 72px minmax(0, 1fr);
+        height: 245px;
     }
 
     .preview-sidebar {
-        gap: 9px;
-        padding: 12px 7px;
-        max-height: 340px;
+        gap: 8px;
+        padding: 8px 5px;
+        max-height: 245px;
     }
 
     .preview-sidebar-label {
@@ -3799,11 +3809,12 @@ SMALL MOBILE
     }
 
     .preview-thumb span {
-        font-size: 8px;
+        font-size: 7px;
     }
 
     .preview-canvas {
-        padding: 28px 22px;
+        height: 245px;
+        padding: 20px 17px;
     }
 
     .preview-document {
@@ -3811,9 +3822,9 @@ SMALL MOBILE
     }
 
     .preview-arrow {
-        width: 31px;
-        height: 31px;
-        font-size: 16px;
+        width: 29px;
+        height: 29px;
+        font-size: 14px;
     }
 
     .preview-arrow.left {
@@ -3848,7 +3859,7 @@ SMALL MOBILE
 
     .audit-info h2 {
         margin: 18px 0;
-        font-size: 36px;
+        font-size: 32px;
         letter-spacing: -1.3px;
     }
 
@@ -3857,7 +3868,7 @@ SMALL MOBILE
     }
 
     .audit-price .amount {
-        font-size: 53px;
+        font-size: 46px;
     }
 
     .audit-price .price-tag {
@@ -3886,8 +3897,8 @@ SMALL MOBILE
     }
 
     .audit-actions .btn {
-        min-height: 54px;
-        padding: 14px 16px;
+        min-height: 49px;
+        padding: 12px 16px;
         font-size: 12px;
     }
 
