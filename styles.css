@@ -628,37 +628,29 @@ header .logo{flex-shrink:0}
 
 /* =========================================================
    GROWTHFORGE — US MARKET ENTRY BLUEPRINT
+   COMPACT VERSION
    ========================================================= */
 
 .audit-dashboard.expansion-blueprint {
     position: relative;
     z-index: 3;
     width: 100%;
-    max-width: 620px;
-    padding: 27px;
+    max-width: 490px;
+    padding: 19px;
     overflow: hidden;
     box-sizing: border-box;
-
     color: #f8fafc;
 
     background:
-        radial-gradient(
-            circle at 100% 0%,
-            rgba(79, 70, 229, .20),
-            transparent 42%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(12, 23, 51, .97),
-            rgba(4, 12, 30, .98)
-        );
+        radial-gradient(circle at 100% 0%, rgba(79, 70, 229, .16), transparent 42%),
+        linear-gradient(145deg, rgba(12, 23, 51, .97), rgba(4, 12, 30, .98));
 
     border: 1px solid rgba(96, 165, 250, .25);
-    border-radius: 20px;
+    border-radius: 16px;
 
     box-shadow:
-        0 28px 70px rgba(0, 0, 0, .38),
-        0 0 45px rgba(37, 99, 235, .12),
+        0 18px 45px rgba(0, 0, 0, .30),
+        0 0 30px rgba(37, 99, 235, .10),
         inset 0 1px 0 rgba(255,255,255,.06);
 }
 
@@ -668,47 +660,41 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 14px;
-
-    padding-bottom: 21px;
+    gap: 10px;
+    padding-bottom: 14px;
     border-bottom: 1px solid rgba(148, 163, 184, .16);
 }
 
 .blueprint-eyebrow {
     display: block;
-    margin-bottom: 8px;
-
+    margin-bottom: 5px;
     color: #60a5fa;
-    font: 800 9px/1.4 Manrope, sans-serif;
-    letter-spacing: .14em;
+    font: 800 8px/1.4 Manrope, sans-serif;
+    letter-spacing: .12em;
 }
 
 .blueprint-header h3 {
-    margin: 0 0 7px;
+    margin: 0 0 5px;
     color: #fff;
-
-    font: 800 23px/1.2 Manrope, sans-serif;
-    letter-spacing: -.04em;
+    font: 800 19px/1.2 Manrope, sans-serif;
+    letter-spacing: -.035em;
 }
 
 .blueprint-header p {
     margin: 0;
     color: #94a3b8;
-
-    font: 400 11px/1.6 Inter, sans-serif;
+    font: 400 10px/1.5 Inter, sans-serif;
 }
 
 .blueprint-status {
     flex-shrink: 0;
-    padding: 7px 9px;
-
+    padding: 6px 8px;
     color: #93c5fd;
     background: rgba(37, 99, 235, .12);
     border: 1px solid rgba(96, 165, 250, .22);
-    border-radius: 6px;
-
+    border-radius: 5px;
     font: 800 7px/1.2 Manrope, sans-serif;
-    letter-spacing: .06em;
+    letter-spacing: .05em;
 }
 
 /* ORIGIN */
@@ -716,31 +702,26 @@ header .logo{flex-shrink:0}
 .blueprint-origin {
     display: flex;
     align-items: center;
-    gap: 13px;
-
-    margin-top: 23px;
-    padding: 15px;
-
+    gap: 10px;
+    margin-top: 15px;
+    padding: 11px;
     background: rgba(30, 64, 175, .12);
     border: 1px solid rgba(96, 165, 250, .22);
-    border-radius: 12px;
+    border-radius: 9px;
 }
 
 .origin-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 43px;
-    height: 43px;
+    width: 35px;
+    height: 35px;
     flex-shrink: 0;
-
     color: #bfdbfe;
     background: rgba(37, 99, 235, .22);
     border: 1px solid rgba(96, 165, 250, .35);
-    border-radius: 10px;
-
-    font: 800 13px Manrope, sans-serif;
+    border-radius: 8px;
+    font: 800 11px Manrope, sans-serif;
 }
 
 .blueprint-origin strong,
@@ -749,14 +730,14 @@ header .logo{flex-shrink:0}
 }
 
 .blueprint-origin strong {
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     color: #f8fafc;
-    font: 700 12px Manrope, sans-serif;
+    font: 700 11px Manrope, sans-serif;
 }
 
 .blueprint-origin div span {
     color: #94a3b8;
-    font: 400 10px/1.5 Inter, sans-serif;
+    font: 400 9px/1.45 Inter, sans-serif;
 }
 
 /* CONNECTOR */
@@ -764,20 +745,14 @@ header .logo{flex-shrink:0}
 .blueprint-connector {
     display: flex;
     align-items: center;
-    gap: 10px;
-
-    margin: 22px 0;
+    gap: 8px;
+    margin: 15px 0;
 }
 
 .blueprint-connector span {
     height: 1px;
     flex: 1;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(96, 165, 250, .4)
-    );
+    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, .4));
 }
 
 .blueprint-connector span:last-child {
@@ -786,8 +761,8 @@ header .logo{flex-shrink:0}
 
 .blueprint-connector small {
     color: #60a5fa;
-    font: 800 8px Manrope, sans-serif;
-    letter-spacing: .12em;
+    font: 800 7px Manrope, sans-serif;
+    letter-spacing: .1em;
     white-space: nowrap;
 }
 
@@ -796,60 +771,49 @@ header .logo{flex-shrink:0}
 .blueprint-stages {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 11px;
+    gap: 9px;
 }
 
 .blueprint-stage {
     position: relative;
     min-width: 0;
-    min-height: 145px;
-    padding: 16px;
+    min-height: 112px;
+    padding: 12px;
+    box-sizing: border-box;
 
-    background: linear-gradient(
-        145deg,
-        rgba(30, 41, 70, .75),
-        rgba(15, 23, 42, .65)
-    );
-
+    background: linear-gradient(145deg, rgba(30, 41, 70, .75), rgba(15, 23, 42, .65));
     border: 1px solid rgba(148, 163, 184, .15);
-    border-radius: 12px;
+    border-radius: 9px;
 
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        background .25s ease;
+    transition: transform .2s ease, border-color .2s ease, background .2s ease;
 }
 
 .blueprint-stage:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: rgba(96, 165, 250, .42);
     background: rgba(30, 58, 110, .55);
 }
 
 .stage-number {
     position: absolute;
-    top: 13px;
-    right: 14px;
-
+    top: 10px;
+    right: 11px;
     color: rgba(148, 163, 184, .55);
-    font: 800 9px Manrope, sans-serif;
+    font: 800 8px Manrope, sans-serif;
 }
 
 .stage-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 34px;
-    height: 34px;
-    margin-bottom: 13px;
-
+    width: 29px;
+    height: 29px;
+    margin-bottom: 9px;
     color: #93c5fd;
     background: rgba(37, 99, 235, .15);
     border: 1px solid rgba(96, 165, 250, .24);
-    border-radius: 9px;
-
-    font-size: 18px;
+    border-radius: 7px;
+    font-size: 15px;
 }
 
 .blueprint-stage:nth-child(2) .stage-icon {
@@ -872,17 +836,15 @@ header .logo{flex-shrink:0}
 
 .blueprint-stage strong {
     display: block;
-    margin-bottom: 7px;
-
+    margin-bottom: 5px;
     color: #f8fafc;
-    font: 700 12px Manrope, sans-serif;
+    font: 700 11px Manrope, sans-serif;
 }
 
 .blueprint-stage p {
     margin: 0;
     color: #94a3b8;
-
-    font: 400 10px/1.6 Inter, sans-serif;
+    font: 400 9px/1.5 Inter, sans-serif;
 }
 
 /* FOOTER */
@@ -891,59 +853,52 @@ header .logo{flex-shrink:0}
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-
-    margin-top: 17px;
-    padding: 15px;
-
+    gap: 10px;
+    margin-top: 12px;
+    padding: 11px;
     background: rgba(37, 99, 235, .10);
     border: 1px solid rgba(96, 165, 250, .18);
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .footer-label {
     display: block;
-    margin-bottom: 5px;
-
+    margin-bottom: 4px;
     color: #60a5fa;
-    font: 800 8px Manrope, sans-serif;
-    letter-spacing: .1em;
+    font: 800 7px Manrope, sans-serif;
+    letter-spacing: .09em;
 }
 
 .blueprint-footer strong {
     color: #e2e8f0;
-    font: 700 11px Manrope, sans-serif;
+    font: 700 10px Manrope, sans-serif;
 }
 
 .footer-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 31px;
-    height: 31px;
+    width: 27px;
+    height: 27px;
     flex-shrink: 0;
-
     color: #bfdbfe;
     background: rgba(37, 99, 235, .2);
     border-radius: 50%;
-
-    font-size: 17px;
+    font-size: 15px;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* RESPONSIVE */
 
 @media (min-width: 1400px) {
     .audit-dashboard.expansion-blueprint {
-        max-width: 650px;
+        max-width: 490px;
     }
 }
 
 @media (max-width: 1100px) {
     .audit-dashboard.expansion-blueprint {
-        padding: 22px;
+        max-width: 460px;
+        padding: 17px;
     }
 }
 
@@ -955,29 +910,21 @@ header .logo{flex-shrink:0}
 
 @media (max-width: 480px) {
     .audit-dashboard.expansion-blueprint {
-        padding: 17px;
-        border-radius: 15px;
-    }
-
-    .blueprint-header {
-        flex-direction: column;
+        padding: 15px;
+        border-radius: 13px;
     }
 
     .blueprint-header h3 {
-        font-size: 20px;
-    }
-
-    .blueprint-stages {
-        gap: 8px;
+        font-size: 17px;
     }
 
     .blueprint-stage {
-        min-height: 150px;
-        padding: 12px;
+        min-height: 105px;
+        padding: 10px;
     }
 
     .blueprint-stage strong {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .blueprint-stage p {
@@ -985,11 +932,7 @@ header .logo{flex-shrink:0}
     }
 
     .blueprint-footer {
-        padding: 12px;
-    }
-
-    .blueprint-footer strong {
-        font-size: 10px;
+        padding: 10px;
     }
 }
 
