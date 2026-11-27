@@ -41774,27 +41774,29 @@ File: goalstation-bottleneck.css
 
 }
 
+
 /* =========================================================
-   GROWTHFORGE — WHO WE CATER TO
-   HOMEPAGE ONLY — REFINED
+   GROWTHFORGE — EXECUTIVE GROWTH POSITIONING
+   HOMEPAGE | COMPACT EDITORIAL DESIGN
    ========================================================= */
 
 .executive-visual {
+    position: relative;
     width: 100%;
     margin: 0;
-    padding: 0 0 90px;
+    padding: 52px 24px 60px;
+    overflow: hidden;
     background: #ffffff;
     box-sizing: border-box;
 }
 
 .executive-visual .container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1120px;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 /* =========================================================
    TWO-COLUMN LAYOUT
@@ -41802,12 +41804,11 @@ File: goalstation-bottleneck.css
 
 .executive-visual__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(380px, .92fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
     align-items: center;
-    gap: 82px;
+    gap: 54px;
     width: 100%;
 }
-
 
 /* =========================================================
    IMAGE
@@ -41816,19 +41817,20 @@ File: goalstation-bottleneck.css
 .executive-visual__image {
     width: 100%;
     min-width: 0;
+    position: relative;
 }
 
 .executive-visual__image img {
     display: block;
     width: 100%;
-    height: 350px;
+    height: 320px;
     margin: 0;
     object-fit: cover;
     object-position: center 44%;
     border-radius: 12px;
-    box-shadow: 0 14px 35px rgba(15, 23, 42, .08);
-}
 
+    box-shadow: 0 12px 30px rgba(15, 23, 42, .07);
+}
 
 /* =========================================================
    CONTENT
@@ -41836,49 +41838,53 @@ File: goalstation-bottleneck.css
 
 .executive-visual__content {
     width: 100%;
-    max-width: 520px;
+    max-width: 490px;
 }
 
 .executive-visual__content .section-badge {
     display: inline-flex;
     align-items: center;
-    min-height: 40px;
-    margin: 0 0 22px;
-    padding: 0 20px;
-    border: 1px solid #bfdbfe;
-    border-radius: 999px;
-    background: #f8fbff;
+
+    min-height: 28px;
+    margin: 0 0 15px;
+    padding: 0 11px;
+
     color: #2563eb;
-    font-family: Manrope, sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 1;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+
+    font: 800 9px/1 Manrope, sans-serif;
     letter-spacing: .11em;
     text-transform: uppercase;
+
     box-sizing: border-box;
 }
 
 .executive-visual__content h2 {
-    max-width: 520px;
-    margin: 0 0 22px;
+    max-width: 490px;
+    margin: 0 0 15px;
+
     color: #0f172a;
+
     font-family: Manrope, sans-serif;
-    font-size: clamp(36px, 3.35vw, 50px);
+    font-size: clamp(31px, 3.2vw, 42px);
     font-weight: 800;
-    line-height: 1.06;
+    line-height: 1.1;
     letter-spacing: -.045em;
 }
 
 .executive-visual__content p {
-    max-width: 510px;
-    margin: 0 0 28px;
+    max-width: 470px;
+    margin: 0 0 20px;
+
     color: #64748b;
-    font-family: Manrope, sans-serif;
-    font-size: 17px;
+
+    font-family: Inter, sans-serif;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.7;
 }
-
 
 /* =========================================================
    TEXT LINK
@@ -41887,13 +41893,17 @@ File: goalstation-bottleneck.css
 .executive-visual__link {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 8px;
+
     color: #2563eb;
+
     font-family: Manrope, sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     line-height: 1.4;
     text-decoration: none;
+
+    transition: color .2s ease;
 }
 
 .executive-visual__link span {
@@ -41909,125 +41919,105 @@ File: goalstation-bottleneck.css
     transform: translateX(4px);
 }
 
-
 /* =========================================================
    TABLET
    ========================================================= */
 
-@media (max-width: 1100px) {
-
+@media (max-width: 1024px) {
     .executive-visual {
-        padding: 0 28px 80px;
+        padding: 44px 22px 50px;
     }
 
     .executive-visual__grid {
-        grid-template-columns: minmax(0, 1fr) minmax(320px, .85fr);
-        gap: 50px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+        gap: 32px;
     }
 
     .executive-visual__image img {
-        height: 320px;
+        height: 290px;
     }
 
     .executive-visual__content h2 {
-        font-size: clamp(34px, 4vw, 44px);
+        font-size: clamp(29px, 3.8vw, 37px);
     }
-
 }
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 768px) {
-
     .executive-visual {
-        padding: 0 24px 70px;
+        padding: 38px 20px 44px;
     }
 
     .executive-visual__grid {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 25px;
     }
 
     .executive-visual__image img {
-        height: 270px;
-        border-radius: 11px;
+        height: 260px;
+        border-radius: 10px;
     }
 
     .executive-visual__content {
         max-width: 100%;
     }
 
-    .executive-visual__content .section-badge {
-        margin-bottom: 18px;
-    }
-
     .executive-visual__content h2 {
         max-width: 100%;
-        margin-bottom: 18px;
-        font-size: clamp(34px, 8.5vw, 44px);
-        line-height: 1.07;
+        font-size: clamp(30px, 7vw, 38px);
     }
 
     .executive-visual__content p {
         max-width: 100%;
-        font-size: 16px;
-        line-height: 1.7;
+        font-size: 13px;
     }
-
 }
-
 
 /* =========================================================
    SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
-
     .executive-visual {
-        padding: 0 20px 60px;
+        padding: 32px 16px 38px;
     }
 
     .executive-visual__grid {
-        gap: 30px;
+        gap: 21px;
     }
 
     .executive-visual__image img {
         height: 220px;
-        border-radius: 10px;
     }
 
     .executive-visual__content .section-badge {
-        min-height: 36px;
-        padding: 0 16px;
-        font-size: 11px;
+        min-height: 26px;
+        font-size: 8px;
     }
 
     .executive-visual__content h2 {
-        font-size: 34px;
+        font-size: 30px;
         letter-spacing: -.04em;
     }
 
     .executive-visual__content p {
-        font-size: 16px;
+        font-size: 13px;
+        line-height: 1.65;
     }
-
 }
-
 
 /* =========================================================
    REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
     .executive-visual__link,
     .executive-visual__link span {
         transition: none;
     }
-
 }
 
 /* =========================================================
