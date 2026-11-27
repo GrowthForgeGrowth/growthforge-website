@@ -40432,9 +40432,11 @@ File: goalstation-bottleneck.css
 
 }
 
+
 /* =========================================================
    GROWTHFORGE — GROWTH SYSTEM SCORE
-   Fully isolated component styles
+   Premium Interactive Redesign
+   Original HTML selectors and integration preserved
    ========================================================= */
 
 
@@ -40443,116 +40445,188 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-section {
-    width: 100%;
+    --gss-blue: #3678e8;
+    --gss-blue-dark: #205ec8;
+    --gss-navy: #14263f;
+    --gss-ink: #17263c;
+    --gss-muted: #718096;
+    --gss-border: #e4eaf2;
+
     position: relative;
-    padding: 110px 24px;
+    width: 100%;
+    padding: 78px 24px;
+    overflow: hidden;
+
     background:
         radial-gradient(
-            circle at 15% 20%,
-            rgba(37, 99, 235, 0.07),
-            transparent 38%
+            circle at 8% 12%,
+            rgba(54, 120, 232, .075),
+            transparent 34%
         ),
         radial-gradient(
-            circle at 85% 80%,
-            rgba(124, 58, 237, 0.06),
-            transparent 40%
+            circle at 92% 88%,
+            rgba(54, 120, 232, .055),
+            transparent 35%
         ),
-        #f8fafc;
-    overflow: hidden;
+        #f4f7fb;
+
+    color: var(--gss-ink);
+    font-family: "Inter", sans-serif;
+}
+
+.growth-system-score-section *,
+.growth-audit-modal * {
+    box-sizing: border-box;
 }
 
 
 /* =========================================================
-   DEDICATED COMPONENT CONTAINER
+   MAIN CONTAINER
    ========================================================= */
 
 .growth-system-score-container {
-    width: 100%;
-    max-width: 1180px;
-    min-height: 520px;
-    margin: 0 auto;
-    padding: 64px 72px;
-
+    position: relative;
     display: grid;
+
     grid-template-columns:
-        minmax(0, 1.25fr)
-        minmax(320px, 0.75fr);
+        minmax(0, 1.12fr)
+        minmax(290px, .88fr);
 
     align-items: center;
-    gap: 80px;
+    gap: 48px;
 
-    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 445px;
 
-    background: #ffffff;
+    margin: 0 auto;
+    padding: 45px 50px;
 
-    border: 1px solid rgba(226, 232, 240, 0.95);
-    border-radius: 28px;
+    overflow: hidden;
+
+    border: 1px solid rgba(226, 234, 244, .95);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .97);
 
     box-shadow:
-        0 20px 60px rgba(15, 23, 42, 0.08),
-        0 4px 14px rgba(15, 23, 42, 0.04);
+        0 20px 60px rgba(20, 38, 63, .065),
+        0 3px 12px rgba(20, 38, 63, .025);
+
+    transition: box-shadow .3s ease;
+}
+
+.growth-system-score-container::before {
+    content: "";
+    position: absolute;
+    top: -220px;
+    right: -170px;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(54, 120, 232, .065),
+        transparent 68%
+    );
+
+    pointer-events: none;
+}
+
+.growth-system-score-container::after {
+    content: "";
+    position: absolute;
+    bottom: -230px;
+    left: -180px;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(104, 153, 239, .045),
+        transparent 70%
+    );
+
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   INPUT / RESULT CONTENT AREA
+   CONTENT
    ========================================================= */
 
 .growth-system-score-content,
 .growth-system-score-result {
+    position: relative;
+    z-index: 2;
     min-width: 0;
 }
 
 
 /* =========================================================
-   BADGE
+   BADGES
    ========================================================= */
 
 .growth-system-score-badge,
 .growth-system-score-result-badge {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 9px;
 
-    padding: 8px 14px;
-    margin-bottom: 22px;
+    padding: 8px 12px;
+    margin-bottom: 23px;
 
-    border-radius: 999px;
+    border: 1px solid rgba(54, 120, 232, .14);
+    border-radius: 50px;
 
-    background: rgba(37, 99, 235, 0.08);
-    border: 1px solid rgba(37, 99, 235, 0.14);
+    background: #edf4ff;
 
-    color: #2563eb;
+    color: var(--gss-blue);
 
-    font-family: "Inter", sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 0.11em;
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 1.4px;
     line-height: 1;
 
     text-transform: uppercase;
 }
 
+.growth-system-score-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: #39b88a;
+
+    box-shadow: 0 0 0 4px rgba(57, 184, 138, .11);
+}
+
 
 /* =========================================================
-   MAIN TITLE
+   HEADINGS
    ========================================================= */
 
 .growth-system-score-title,
 .growth-system-score-result-title {
-    max-width: 720px;
+    max-width: 620px;
 
     margin: 0;
 
-    color: #0f172a;
+    color: var(--gss-navy);
 
     font-family: "Manrope", sans-serif;
-    font-size: clamp(38px, 4vw, 56px);
+    font-size: clamp(34px, 3.8vw, 47px);
     font-weight: 800;
 
-    letter-spacing: -0.045em;
-    line-height: 1.06;
+    letter-spacing: -1.8px;
+    line-height: 1.12;
 }
 
 
@@ -40562,17 +40636,15 @@ File: goalstation-bottleneck.css
 
 .growth-system-score-description,
 .growth-system-score-result-description {
-    max-width: 620px;
+    max-width: 470px;
 
-    margin: 22px 0 0;
+    margin: 17px 0 0;
 
-    color: #64748b;
+    color: var(--gss-muted);
 
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 400;
-
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 
@@ -40582,43 +40654,44 @@ File: goalstation-bottleneck.css
 
 .growth-system-score-form {
     width: 100%;
-    margin-top: 34px;
+    max-width: 510px;
+
+    margin-top: 28px;
 }
 
 
 /* =========================================================
-   WEBSITE INPUT WRAPPER
+   INPUT WRAPPER
    ========================================================= */
 
 .growth-system-score-input-wrapper {
-    width: 100%;
-
     display: flex;
-    align-items: stretch;
+    align-items: center;
+    gap: 7px;
 
+    width: 100%;
     padding: 6px;
 
-    background: #ffffff;
+    border: 1px solid #dce4ef;
+    border-radius: 10px;
 
-    border: 1px solid #cbd5e1;
-    border-radius: 14px;
+    background: #fff;
 
     box-shadow:
-        0 8px 24px rgba(15, 23, 42, 0.06),
-        0 1px 3px rgba(15, 23, 42, 0.04);
+        0 5px 18px rgba(20, 38, 63, .045);
 
     transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
 }
 
-
 .growth-system-score-input-wrapper:focus-within {
-    border-color: #2563eb;
+    border-color: #80aaf0;
 
     box-shadow:
-        0 0 0 4px rgba(37, 99, 235, 0.10),
-        0 8px 24px rgba(15, 23, 42, 0.07);
+        0 0 0 4px rgba(54, 120, 232, .09),
+        0 8px 24px rgba(20, 38, 63, .06);
 }
 
 
@@ -40627,99 +40700,90 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-input {
-    min-width: 0;
     flex: 1;
+    min-width: 0;
 
-    height: 54px;
+    height: 46px;
+    padding: 0 13px;
 
-    padding: 0 18px;
+    border: 0 !important;
+    outline: 0 !important;
 
-    border: 0;
-    outline: 0;
+    background: transparent !important;
+    box-shadow: none !important;
 
-    background: transparent;
-
-    color: #0f172a;
+    color: var(--gss-ink);
 
     font-family: "Inter", sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 550;
 }
-
 
 .growth-system-score-input::placeholder {
-    color: #94a3b8;
+    color: #a0adbd;
 }
 
-
 .growth-system-score-input:focus {
-    outline: none;
+    outline: none !important;
 }
 
 
 /* =========================================================
-   GET MY SCORE BUTTON
+   SUBMIT BUTTON
    ========================================================= */
 
 .growth-system-score-submit {
+    display: inline-flex;
     flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 
-    min-height: 54px;
-
-    padding: 0 24px;
+    min-height: 46px;
+    padding: 0 17px;
 
     border: 0;
-    border-radius: 10px;
+    border-radius: 7px;
 
-    background: #2563eb;
-
-    color: #ffffff;
+    background: var(--gss-blue);
+    color: #fff;
 
     cursor: pointer;
 
     font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-
-    letter-spacing: -0.01em;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: -.1px;
     white-space: nowrap;
 
-    box-shadow:
-        0 6px 16px rgba(37, 99, 235, 0.22);
+    box-shadow: 0 5px 14px rgba(54, 120, 232, .2);
 
     transition:
-        background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
 }
-
 
 .growth-system-score-submit:hover {
-    background: #1d4ed8;
+    background: var(--gss-blue-dark);
+    transform: translateY(-2px);
 
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 9px 20px rgba(37, 99, 235, 0.28);
+    box-shadow: 0 8px 19px rgba(54, 120, 232, .25);
 }
-
 
 .growth-system-score-submit:active {
     transform: translateY(0);
 }
 
-
 .growth-system-score-submit:disabled {
+    opacity: .65;
     cursor: wait;
+    transform: none;
+    box-shadow: none;
 }
 
-
-/* =========================================================
-   BUTTON FOCUS
-   ========================================================= */
-
 .growth-system-score-submit:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline: 3px solid rgba(54, 120, 232, .25);
     outline-offset: 3px;
 }
 
@@ -40729,15 +40793,17 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-error {
-    margin-top: 12px;
+    margin-top: 10px;
 
-    color: #dc2626;
+    color: #c24141;
 
-    font-family: "Inter", sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 550;
+    line-height: 1.6;
+}
 
-    line-height: 1.5;
+.growth-system-score-error[hidden] {
+    display: none !important;
 }
 
 
@@ -40747,18 +40813,20 @@ File: goalstation-bottleneck.css
 
 .growth-system-score-meta {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-
+    align-items: center;
     gap: 9px;
 
     margin-top: 17px;
 
-    color: #94a3b8;
+    color: #8a98aa;
 
-    font-family: "Inter", sans-serif;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.growth-system-score-meta span:nth-child(even) {
+    color: #c0c9d5;
 }
 
 
@@ -40767,31 +40835,75 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-visual {
+    position: relative;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    min-height: 330px;
+    min-width: 0;
+    min-height: 345px;
 
-    padding: 32px;
+    padding: 26px;
 
-    border-radius: 24px;
+    overflow: hidden;
+
+    border: 1px solid #e3ebf7;
+    border-radius: 15px;
 
     background:
         radial-gradient(
-            circle at 50% 38%,
-            rgba(96, 165, 250, 0.18),
-            transparent 45%
+            circle at 50% 40%,
+            rgba(83, 145, 239, .15),
+            transparent 48%
         ),
         linear-gradient(
             145deg,
-            #eff6ff 0%,
-            #f8fafc 55%,
-            #f5f3ff 100%
+            #f5f9ff 0%,
+            #f9fbfe 55%,
+            #f3f6fc 100%
         );
 
-    border: 1px solid rgba(191, 219, 254, 0.7);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.growth-system-score-visual:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(30, 75, 140, .075);
+}
+
+.growth-system-score-visual::before {
+    content: "";
+    position: absolute;
+
+    top: -90px;
+    right: -80px;
+
+    width: 210px;
+    height: 210px;
+
+    border: 1px solid rgba(54, 120, 232, .09);
+    border-radius: 50%;
+}
+
+.growth-system-score-visual::after {
+    content: "";
+    position: absolute;
+
+    bottom: -120px;
+    left: -100px;
+
+    width: 250px;
+    height: 250px;
+
+    border: 1px solid rgba(54, 120, 232, .07);
+    border-radius: 50%;
 }
 
 
@@ -40800,85 +40912,97 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-circle {
-    width: 220px;
-    height: 220px;
+    position: relative;
+    z-index: 1;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    position: relative;
+    width: 205px;
+    height: 205px;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 
-    background:
-        conic-gradient(
-            #2563eb 0deg,
-            #60a5fa 220deg,
-            #dbeafe 220deg,
-            #dbeafe 360deg
-        );
+    background: conic-gradient(
+        from 0deg,
+        #3678e8 0deg,
+        #72b2ff 220deg,
+        #e2ebf8 220deg,
+        #e2ebf8 360deg
+    );
 
     box-shadow:
-        0 18px 40px rgba(37, 99, 235, 0.14);
+        0 12px 32px rgba(54, 120, 232, .14),
+        0 0 0 8px rgba(54, 120, 232, .035);
 
     transition:
-        background 0.8s ease,
-        transform 0.4s ease;
+        background 1s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
+
+    animation: gssCircleAppear .8s ease both;
 }
-
-
-/* =========================================================
-   INNER CIRCLE
-   ========================================================= */
 
 .growth-system-score-circle::before {
     content: "";
 
     position: absolute;
-
     inset: 9px;
 
     border-radius: 50%;
 
-    background: #ffffff;
+    background: #fff;
+}
+
+.growth-system-score-circle::after {
+    content: "";
+
+    position: absolute;
+    inset: -7px;
+
+    border: 1px solid rgba(54, 120, 232, .11);
+    border-radius: 50%;
+
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   SCORE VALUE
+   SCORE NUMBER
    ========================================================= */
 
 .growth-system-score-circle-inner {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
     display: flex;
     align-items: baseline;
     justify-content: center;
 }
 
-
 .growth-system-score-number {
-    color: #0f172a;
+    color: var(--gss-navy);
 
     font-family: "Manrope", sans-serif;
-    font-size: 68px;
-    font-weight: 800;
+    font-size: 65px;
+    font-weight: 850;
 
-    letter-spacing: -0.06em;
+    letter-spacing: -4px;
     line-height: 1;
+
+    transition: color .3s ease;
 }
 
-
 .growth-system-score-denominator {
-    margin-left: 4px;
+    margin-left: 5px;
 
-    color: #94a3b8;
+    color: #99a7b9;
 
-    font-family: "Inter", sans-serif;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 
@@ -40887,15 +41011,17 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-label {
-    margin-top: 24px;
+    position: relative;
+    z-index: 2;
 
-    color: #475569;
+    margin-top: 23px;
 
-    font-family: "Inter", sans-serif;
-    font-size: 11px;
-    font-weight: 800;
+    color: #61728b;
 
-    letter-spacing: 0.12em;
+    font-size: 9px;
+    font-weight: 850;
+
+    letter-spacing: 1.5px;
     line-height: 1;
 
     text-transform: uppercase;
@@ -40907,91 +41033,101 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-result {
-    min-width: 0;
+    grid-column: 1 / -1;
+
+    width: 100%;
+    max-width: 760px;
+
+    animation: gssResultReveal .55s ease both;
 }
 
+.growth-system-score-result[hidden] {
+    display: none !important;
+}
+
+.growth-system-score-result-badge {
+    margin-bottom: 17px;
+}
 
 .growth-system-score-result-title {
-    max-width: 650px;
+    max-width: 700px;
+
+    font-size: clamp(31px, 3.5vw, 43px);
 }
 
-
 .growth-system-score-result-description {
-    max-width: 600px;
+    max-width: 610px;
+    margin-top: 15px;
 }
 
 
 /* =========================================================
-   EXECUTIVE GROWTH AUDIT CTA
+   RESULT CTA
    ========================================================= */
 
 .growth-system-score-audit-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 13px;
 
-    margin-top: 30px;
-    padding: 15px 22px;
+    margin-top: 25px;
+    padding: 14px 19px;
 
-    border-radius: 10px;
+    border: 0;
+    border-radius: 8px;
 
-    background: #2563eb;
-
-    color: #ffffff;
+    background: var(--gss-blue);
+    color: #fff !important;
 
     font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 750;
 
     text-decoration: none;
 
-    box-shadow:
-        0 8px 20px rgba(37, 99, 235, 0.22);
+    box-shadow: 0 6px 17px rgba(54, 120, 232, .2);
 
     transition:
-        background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
 }
-
 
 .growth-system-score-audit-link:hover {
-    background: #1d4ed8;
+    background: var(--gss-blue-dark);
+    transform: translateY(-2px);
 
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 11px 24px rgba(37, 99, 235, 0.28);
+    box-shadow: 0 10px 22px rgba(54, 120, 232, .25);
 }
 
-
 .growth-system-score-audit-link:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline: 3px solid rgba(54, 120, 232, .25);
     outline-offset: 3px;
 }
 
-
 .growth-system-score-audit-price {
     display: block;
-
     margin-top: 11px;
 
-    color: #94a3b8;
+    color: #8b99aa;
 
-    font-family: "Inter", sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
 }
 
 
 /* =========================================================
-   RESULT STATE — SCORE CIRCLE
+   RESULT VISUAL STATE
    ========================================================= */
 
 .growth-system-score-section.is-result
-    .growth-system-score-circle {
-    transform: scale(1.02);
+.growth-system-score-circle {
+    transform: scale(1.035);
+
+    box-shadow:
+        0 16px 38px rgba(54, 120, 232, .2),
+        0 0 0 9px rgba(54, 120, 232, .045);
 }
 
 
@@ -41000,10 +41136,512 @@ File: goalstation-bottleneck.css
    ========================================================= */
 
 .growth-system-score-section.is-loading
-    .growth-system-score-submit {
+.growth-system-score-submit {
     pointer-events: none;
-    opacity: 0.7;
+    opacity: .75;
 }
+
+.growth-system-score-section.is-loading
+.growth-system-score-submit span {
+    opacity: .85;
+}
+
+.growth-system-score-section.is-loading
+.growth-system-score-circle {
+    animation: gssScanning 1.5s ease-in-out infinite alternate;
+}
+
+.growth-system-score-section.is-loading
+.growth-system-score-number {
+    animation: gssNumberPulse 1.2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes gssCircleAppear {
+    from {
+        opacity: 0;
+        transform: scale(.88);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes gssResultReveal {
+    from {
+        opacity: 0;
+        transform: translateY(13px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gssScanning {
+    from {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+
+    to {
+        filter: brightness(1.08);
+        transform: scale(1.025);
+    }
+}
+
+@keyframes gssNumberPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .45;
+    }
+}
+
+
+/* =========================================================
+   EXECUTIVE GROWTH AUDIT MODAL
+   ========================================================= */
+
+.growth-audit-modal[hidden] {
+    display: none !important;
+}
+
+.growth-audit-modal {
+    position: fixed;
+    z-index: 99999;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.growth-audit-modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(9, 22, 40, .72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.growth-audit-modal-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 510px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 17px;
+
+    background: #fff;
+
+    box-shadow: 0 30px 100px rgba(0, 0, 0, .25);
+
+    animation: gssResultReveal .3s ease both;
+}
+
+.growth-audit-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f0f3f7;
+    color: #617087;
+
+    cursor: pointer;
+    font-size: 22px;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.growth-audit-modal-close:hover {
+    background: #e4eaf2;
+    transform: rotate(90deg);
+}
+
+.growth-audit-modal-content {
+    padding: 39px 40px 31px;
+}
+
+.growth-audit-modal-badge {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    color: var(--gss-blue);
+
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 1.5px;
+}
+
+.growth-audit-modal-title {
+    margin: 0 0 12px;
+
+    color: var(--gss-navy);
+
+    font-family: "Manrope", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.growth-audit-modal-description {
+    margin: 0 0 23px;
+
+    color: #718096;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MODAL FEATURES
+   ========================================================= */
+
+.growth-audit-modal-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 13px;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #e8edf3;
+    border-bottom: 1px solid #e8edf3;
+}
+
+.growth-audit-modal-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    color: #45546a;
+
+    font-size: 11px;
+    font-weight: 550;
+    line-height: 1.55;
+}
+
+.growth-audit-modal-feature > span:first-child {
+    flex-shrink: 0;
+
+    color: #329b79;
+
+    font-size: 14px;
+    font-weight: 850;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.growth-audit-modal-actions {
+    display: grid;
+    gap: 9px;
+
+    margin-top: 23px;
+}
+
+.growth-audit-modal-primary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    min-height: 47px;
+    padding: 0 17px;
+
+    border-radius: 8px;
+
+    background: var(--gss-blue);
+    color: #fff !important;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.growth-audit-modal-primary:hover {
+    background: var(--gss-blue-dark);
+    transform: translateY(-1px);
+}
+
+.growth-audit-modal-primary span {
+    font-size: 17px;
+}
+
+.growth-audit-modal-secondary {
+    min-height: 36px;
+
+    border: 0;
+    background: transparent;
+
+    color: #8290a2;
+
+    cursor: pointer;
+
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 650;
+
+    transition: color .2s ease;
+}
+
+.growth-audit-modal-secondary:hover {
+    color: var(--gss-navy);
+}
+
+
+/* =========================================================
+   MODAL PRICE
+   ========================================================= */
+
+.growth-audit-modal-price {
+    margin-top: 18px;
+
+    color: #8794a5;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .growth-system-score-section {
+        padding: 60px 20px;
+    }
+
+    .growth-system-score-container {
+        grid-template-columns:
+            minmax(0, 1.1fr)
+            minmax(250px, .9fr);
+
+        gap: 30px;
+
+        padding: 38px 34px;
+    }
+
+    .growth-system-score-title {
+        font-size: clamp(32px, 4vw, 40px);
+    }
+
+    .growth-system-score-visual {
+        min-height: 310px;
+        padding: 20px;
+    }
+
+    .growth-system-score-circle {
+        width: 185px;
+        height: 185px;
+    }
+
+    .growth-system-score-number {
+        font-size: 59px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+    .growth-system-score-section {
+        padding: 45px 16px;
+    }
+
+    .growth-system-score-container {
+        grid-template-columns: 1fr;
+        gap: 29px;
+
+        min-height: auto;
+        padding: 29px 23px;
+
+        border-radius: 16px;
+    }
+
+    .growth-system-score-badge {
+        margin-bottom: 18px;
+        font-size: 8px;
+    }
+
+    .growth-system-score-title {
+        font-size: clamp(31px, 8vw, 38px);
+        letter-spacing: -1.3px;
+    }
+
+    .growth-system-score-description {
+        margin-top: 13px;
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .growth-system-score-form {
+        margin-top: 22px;
+    }
+
+    .growth-system-score-visual {
+        width: 100%;
+        min-height: 295px;
+        padding: 23px;
+    }
+
+    .growth-system-score-circle {
+        width: 185px;
+        height: 185px;
+    }
+
+    .growth-system-score-number {
+        font-size: 60px;
+    }
+
+    .growth-system-score-result {
+        grid-column: auto;
+    }
+
+    .growth-system-score-result-title {
+        font-size: 31px;
+    }
+
+    .growth-system-score-result-description {
+        font-size: 12px;
+    }
+
+    .growth-system-score-audit-link {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+    .growth-system-score-section {
+        padding: 35px 12px;
+    }
+
+    .growth-system-score-container {
+        padding: 24px 17px;
+        gap: 24px;
+    }
+
+    .growth-system-score-title {
+        font-size: 31px;
+    }
+
+    .growth-system-score-input-wrapper {
+        flex-wrap: wrap;
+        gap: 3px;
+        padding: 6px;
+    }
+
+    .growth-system-score-input {
+        width: 100%;
+        flex: 1 1 100%;
+        height: 42px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .growth-system-score-submit {
+        width: 100%;
+        min-height: 43px;
+    }
+
+    .growth-system-score-meta {
+        gap: 7px;
+        font-size: 9px;
+    }
+
+    .growth-system-score-visual {
+        min-height: 270px;
+    }
+
+    .growth-system-score-circle {
+        width: 170px;
+        height: 170px;
+    }
+
+    .growth-system-score-number {
+        font-size: 54px;
+    }
+
+    .growth-audit-modal-content {
+        padding: 33px 23px 25px;
+    }
+
+    .growth-audit-modal-title {
+        font-size: 24px;
+    }
+
+    .growth-audit-modal-features {
+        grid-template-columns: 1fr;
+        gap: 11px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .growth-system-score-section *,
+    .growth-audit-modal * {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
 
 
 /* =========================================================
